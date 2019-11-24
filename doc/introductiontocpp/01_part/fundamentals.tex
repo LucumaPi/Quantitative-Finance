@@ -1,0 +1,253 @@
+% Chapter 3
+\chapter{C++ Fundamentals and My First Option Class}
+
+\section{Introduction and objectives}
+
+\section{Class \texttt{==} member data \texttt{+} member functions}
+
+\begin{lstlisting}
+ExactEuropeanOption myobject ("P", "Index Option");
+
+// ...
+
+double d = myObject.Price();
+\end{lstlisting}
+
+\section{The header file (function prototypes)}
+
+\lstinputpath{../../src/chapter_3}
+
+\begin{lstlisting}
+// EuropeanOption.hpp
+class EuropeanOption
+{
+private:
+
+	void init();	// Initialise all default values
+	void copy(const EuropeanOption& o2);
+	// "Kernel" functions for option calculations
+	double CallPrice() const;
+	double PutPrice() const;
+	double CallDelta() const;
+	double PutDelta() const;
+
+public:
+	// Public member data for convenience only
+	double r;	// Interest rate
+	double sig;	// Volatility
+	double K;	// Strike price
+	double T;	// Expiry date
+	double U;	// Current underlying price
+	double b;	// Cost of carry
+
+	string optType;	// Option name (call, put)
+
+public:
+// Constructors
+EuropeanOption();	// Default call option
+EuropeanOption(const EuropeanOption& option2);	// Copy constructor
+EuropeanOption (const string& optionType);	// Create option type
+
+// Destructor
+virtual ~EuropeanOption();
+
+// Assignment operator
+EuropeanOption& operator = (const EuropeanOption& option2);
+
+// Functions that calculate option price and (some) sensitivities
+double Price() const;
+double Delta() const;
+
+// Modifier functions
+void toggle();	// Change option type (C/P, P/C)
+};
+\end{lstlisting}
+
+\section{The class body (code file)}
+
+\begin{lstlisting}
+#include "EuropeanOption.hpp"	// Declaration of functions
+#include <cmath>	// For mathematical functions, e.g. std::exp()
+\end{lstlisting}
+
+\begin{lstlisting}
+double EuropeanOption::PutPrice() const
+{
+	double tmp = sig * std::sqrt(T);
+
+	double d1 = ( std::log(U/K) + (b + (sig*sig)*0.5) * T) / tmp;
+	double d2 = d1 - tmp;
+
+	return (K * exp(-r * T)* N(-d2))  - (U * std::exp((b - r)*T) * N(-d1));
+}
+\end{lstlisting}
+
+\lstinputlisting[
+	caption={European options.},
+	label=EuropeanOption.cpp,
+]{EuropeanOption.cpp}
+
+
+\section{Using the class}
+
+\lstinputlisting[
+	caption={TestEuropeanOption options.},
+	label=TestEuropeanOption.cpp,
+]{TestEuropeanOption.cpp}
+
+\lstinputlisting[
+	language=bash,
+	caption={Output of \texttt{TestEuropeanOption.cpp}.},
+	label=TestEuropeanOption.txt,
+]{TestEuropeanOption.txt}
+
+\section{Examining the class in detail}
+
+\subsection{Accessibility issues}
+
+\subsection{Using standard libraries}
+
+\subsection{The scope resolution operator ``\texttt{::}''}
+
+\begin{lstlisting}
+double EuropeanOption::Price() const
+{
+	if (optType == "C")
+	{
+		return CallPrice();
+	}
+	else
+		return PutPrice();
+}
+\end{lstlisting}
+
+\subsection{Virtual destructor: better safe than sorry}
+
+\begin{center}\itshape
+Declare all destructors to be virtual.
+\end{center}
+
+\section{Other paradigms}
+
+\lstinputlisting[
+	caption={Simple functions for interest rate calculations.},
+	label=SimpleBondPricing.hpp,
+]{SimpleBondPricing.hpp}
+
+\begin{lstlisting}
+double fv2 = Chapter3CPPBook::FutureValue(P, nPeriods, r, freq);
+\end{lstlisting}
+
+\begin{lstlisting}
+using namespace Chapter3CPPBook;
+std::cout << "**Future with " << m << " periods: " << FutureValue(PO, nPeriods, r, m) << std::endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+// Future value of a sum of money invested today
+double FutureValue(double PO, long nPeriods, double r)
+{
+	double factor = 1.0 + r;
+	return PO * power(factor, nPeriods);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+// Non-recursive function to calculate power of a number.
+double power(double d, long n)
+{
+	if (n == 0) return 1.0;
+	if (n == 1) return d;
+	double result = d;
+	for (long j = 1; j < n; j++)
+	{
+		result *= d;
+	}
+	return result;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+// Handy shorthand synonyms
+typdef vector<double> Vector;
+\end{lstlisting}
+
+\begin{lstlisting}
+// Present Value of a series of future values
+double PresentValue(const Vector& Prices, long nPeriods, double r)
+{
+	// Number of periods MUST == size of the vector
+	assert (nPeriods == prices.size());
+
+	double factor = 1.0 + r;
+
+	double PV = 0.0;
+
+	for (long t = 0; t < nPeriods; t++)
+	{
+		PV += prices[t] / power(factor, t + 1);
+	}
+
+	return PV;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+// Present Value of a series of future values
+Vector futureValues(5);	// For five years, calls constructor
+for (long j = 0; j < 4; j++)
+{	// The first 4 years
+		futureValues[j] = 100.0;	// Vector has indexing []
+}
+futureValues[4] = 1100.0;
+
+int nPeriods = 5;
+double r = 0.0625;
+std::cout << "**Present value, series: " << PresentValue(futureValues, nPeriods, r) << std::endl;
+\end{lstlisting}
+
+\section{Summary and conclusions}
+
+\section{Questions, exercises and projects}
+
+Consider the future value of a sum of money
+\begin{itemize}
+	\item $P_{n}\coloneqq P_{0}{\left(1+r\right)}^{n}$.
+	\item $n$ is the number of periods.
+	\item $P_{n}$ is the future value $n$ periods from now.
+	\item $P_{0}$ is the original principal.
+	\item $r$ is the interest rate per period (decimal form)
+\end{itemize}
+Future value of an ordinary annuity
+\begin{itemize}
+	\item $P_{n}\coloneqq A\left[\frac{{\left(1+r\right)}^{n}-1}{r}\right]$.
+	\item $A$ is the annuity amount.
+	\item $r$ is the interest rate.
+	\item $n$ is the number of periods.
+\end{itemize}
+Simple present values calculations
+\begin{itemize}
+	\item $PV\coloneqq P_{0}=P_{n}\left[\frac{1}{{\left(1+r\right)}^{n}}\right]$
+	\item $P_{n}$ is the future value $n$ periods from now.
+	\item $r$ is the interest rate.
+	\item $PV$ is the present value.
+\end{itemize}
+Present value of a series of future values
+\begin{itemize}
+	\item $PV\coloneqq\sum_{t=1}^{n}\frac{P_{t}}{{\left(1+r\right)}^{t}}$
+	\item $P_{t}$ is the value at period $t$ from now.
+	\item $r$ is the interest rate.
+\end{itemize}
+Present value of an ordinary annuity
+\begin{itemize}
+	\item $PV=A\left\{\frac{1-\frac{1}{{\left(1+r\right)}^{n}}}{r}\right\}$
+	\item $A$ is the amount of the annuity
+\end{itemize}
+Continuous Compounding
+\begin{itemize}
+	\item $P_{n}\coloneqq P_{0}e^{rn}$.
+	\item $r$ is the interest rate.
+	\item $P_{0}$ is the original principal.
+	\item $n$ is the number of years.
+\end{itemize}
+$m$--Period Compounding \[ P_{n}=P_{0}{\left(1+\frac{r}{m}\right)}^{mn}. \]

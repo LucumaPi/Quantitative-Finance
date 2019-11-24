@@ -1,0 +1,386 @@
+% Chapter 6
+\chapter{Memory Management in C++}
+
+\section{Introduction and objectives}
+
+\section{Single objects and arrays of objects on the stack}
+
+\begin{lstlisting}
+int main()
+{
+	{	// Define a scope
+		int j = 2;
+		cout << j << endl;
+	}
+
+	cout << j;
+
+	return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+int myArr[10];
+
+// Initialise the array
+for (int j = 0; j < 10; j++)
+{
+		myArr[j] = j + 1;
+		cout << myArr[j] << ",";
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+cout << endl << myArr[-1];
+cout << endl << myArr[1000];
+\end{lstlisting}
+
+\begin{lstlisting}
+class SimpleOption
+{
+public:
+		double T;
+		double K;
+		// ...
+
+		SimpleOption () { T = 1.0; K = 100.0; }
+
+	void print() const
+	{	// Read contents of option
+
+	cout << "Expiry: "<< T << ", " << "Strike: " << K;
+	}
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+{	// Define a scope
+
+		SimpleOption opt1;
+		opt1.print();
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+SimpleOption myPortfolio[10];
+
+// Initialise the array
+for (int j = 0; j < 10; j++)
+{
+	myPortfolio[j].print();
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+myPortfolio[-1].print();
+myPortfolio[1000].print();
+\end{lstlisting}
+
+\section{Special operators: ``\texttt{new}'' and ``\texttt{delete}''}
+
+\subsection{Single objects}
+
+\begin{lstlisting}
+SimpleOption* opt;
+SimpleOption* opt2;
+\end{lstlisting}
+
+\begin{lstlisting}
+// Call default constructor
+opt = new SimpleOption;
+opt -> print();
+\end{lstlisting}
+
+\begin{lstlisting}
+(* opt).print();
+// Call constructor with 2 parameters
+opt2 = new SimpleOption(0.25, 90.0);
+opt2 -> print();
+\end{lstlisting}
+
+\begin{lstlisting}
+delete opt;
+delete opt2;
+\end{lstlisting}
+
+\begin{lstlisting}
+opt = new SimpleOption;
+(* opt).print();
+delete opt;
+\end{lstlisting}
+
+\subsection{Arrays of objects}
+
+\begin{lstlisting}
+// Now create an array of options
+SimpleOption* optArray;
+\end{lstlisting}
+
+\begin{lstlisting}
+const int N = 10;
+optArray = new SimpleOption[N]; // Default constructor called
+\end{lstlisting}
+
+\begin{lstlisting}
+for (int j = 0; j < N; j++)
+{ // Member data public for convenience only
+	optArray[j].T = 1.0; // 1 year expiry
+	optArray[j].K = 100.0; // Strike price
+	optArray[j].print();
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+delete [] optArray;
+\end{lstlisting}
+
+\section{Small application: working with complex numbers}
+
+\begin{lstlisting}
+Complex myFunc(const Complex& z)
+{ // Single valued function of a complex variable
+}
+return z * z;
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex z1(1.0, 1.0);
+Complex z2(2.0, 3.0);
+
+Complex z3 = z1 * z2;
+Complex z4 = 2.0 * z3;
+Complex z5 = - z3;
+
+// Create a dynamic list of Complex numbers
+int Size = 5;
+Complex* cpArray = new Complex[Size];
+cpArray[0] = z1;
+cpArray[1] = z2;
+cpArray[2] = z3;
+cpArray[3] = z4;
+cpArray[4] = z5;
+\end{lstlisting}
+
+\begin{lstlisting}
+// Call function and print values for each z
+for (int j = 0; j < Size; j++)
+{
+		cout << myFunc(cpArray[j]) << ", ";
+}
+
+delete [] cpArray;
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex ComplexProduct(Complex* carr, int n)
+{ // Complex function of several complex variables
+	Complex product = carr[0];
+
+	for (int j = 1; j < n; j++)
+	{
+		product * = carr[j];
+	}
+
+	return product;
+
+}
+
+Complex ComplexSum(Complex* carr, int n)
+{ // Complex function of several complex variables
+
+	Complex sum = carr[0];
+
+	for (int j = 1; j < n; j++)
+	{
+		sum += carr[j];
+	}
+
+	return sum;
+
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+const int N = 5;
+Complex fixedArray[5]; // The constant "5" is mandatory
+for (int i = 0; i < Size; i++)
+{
+		fixedArray[i] = Complex ((double) i, 0.0);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex product = ComplexProduct(fixedArray, Size);
+cout << "Product: " << product << endl;
+
+Complex sum = ComplexSum(fixedArray, Size);
+cout << "Sum: " << sum << endl;
+\end{lstlisting}
+
+\section{Creating an array class}
+
+\subsection{Memory allocation and deallocation}
+
+\begin{lstlisting}
+private:
+	Complex* arr;
+	int size;
+\end{lstlisting}
+
+\begin{lstlisting}
+ComplexArray(int size);
+ComplexArray(const ComplexArray& source);
+\end{lstlisting}
+
+\begin{lstlisting}
+// Constructor with size
+ComplexArray::ComplexArray(int Size)
+{
+	arr=new Complex[size];
+	size=Size;
+}
+
+// Copy constructor
+ComplexArray::ComplexArray(const ComplexArray& source)
+{
+	// Deep copy source
+	size=source.size;
+	arr=new Complex[size];
+	for (int i=0; i<size; i++) arr[i]=source.arr[i];
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+virtual ∼ComplexArray();
+\end{lstlisting}
+
+\begin{lstlisting}
+ComplexArray::∼ComplexArray()
+{
+	delete[] arr;
+}
+\end{lstlisting}
+
+\subsection{Accessing functions}
+
+\begin{lstlisting}
+int MinIndex() const; // Smallest index in array
+int MaxIndex() const; // Largest index in array
+\end{lstlisting}
+
+\begin{lstlisting}
+const Complex& operator[](int index) const;
+Complex& operator[](int index);
+\end{lstlisting}
+
+
+\begin{lstlisting}
+Complex ComplexSum(const ComplexArray& carr, int n)
+{	// Complex function of several complex variables
+
+		Complex sum = carr[carr.MinIndex()];
+
+		for(int j = carr.MinIndex() + 1; j <= carr.MaxIndex(); j++)
+		{
+			sum += carr[j];
+		}
+		return sum;
+}
+\end{lstlisting}
+
+\subsection{Examples}
+
+\begin{lstlisting}
+ComplexArray fixedArray(5);
+for (int i=fixedArray.MinIndex();i<=fixedArray.MaxIndex(); i++)
+{
+	fixedArray[i] = Complex ((double) i, 0.0);
+}
+\end{lstlisting}
+
+\subsection{The full header file}
+
+\lstinputpath{../../src/chapter_6}
+
+\lstinputlisting[
+	caption={Simple Complex Array class.},
+	label=ComplexArray.hpp,
+]{ComplexArray.hpp}
+
+\section{Summary and conclusions}
+
+\section{Exercises}
+
+\begin{lstlisting}
+// Compile-time
+Complex matrix [10][20];
+
+// Run-time (pointers to pointers)
+Complex** matrix2;
+
+// "Hybrid": pointers to fixed arrays
+Complex* matrix3[10];
+\end{lstlisting}
+
+\begin{lstlisting}
+void MySwap(Complex c1, Complex c2); // Call by value
+void MySwap2(Complex& c1, Complex& c2); // Call by reference
+void MySwap3(const Complex& c1, const Complex& c2); // const references
+void MySwap4(Complex* c1, Complex* c2); // Using pointers
+void MySwap5(const Complex* c1, const Complex* c2); // const pointers
+\end{lstlisting}
+
+\begin{lstlisting}
+struct Point
+{
+	double x;	// x coordinate
+	double y;	// y coordinate
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+class Stack
+{
+private:
+
+		// EXX What is the member data in this case?
+
+		Stack(const Stack& source);	// Copy constructor
+		// Operators
+		Stack& operator = (const Stack& source);
+
+public:
+		// Constructors & destructor
+		Stack();	// Default constructor
+		Stack(int NewSize);	// Initial size of the stack
+
+		void Push(double NewItem);	// Push element onto stack
+		double Pop();	// Pop last pushed element
+};
+
+#endif // STACK HPP
+\end{lstlisting}
+
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double m[10][20];
+
+	m[0][1] = 2.0;
+
+	// etc.
+
+	cout << m[0][1] << endl;
+
+	return 0;
+}
+\end{lstlisting}
+
+\section{Review questions and comments}
+
+\begin{lstlisting}
+double mat[10][20];
+\end{lstlisting}

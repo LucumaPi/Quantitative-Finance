@@ -1,0 +1,609 @@
+% Chapter 9
+\chapter{Run-Time Behaviour in C++}
+
+\section{Introduction and objectives}
+
+In this chapter we introduce C++ functionality that allows us to query objects at run-time, for example:
+\begin{itemize}
+	\item Determining the class than an object pointer ``points to'' (dynamic type checking)
+	\item Casting an object pointer to an object pointer of another class (dynamic casting)
+	\item Navigating in class hierarchies
+	\item \emph{Static casting}
+	\item Modelling run-time errors with the exception handling mechanism
+\end{itemize}
+We have included the above functionality in this chapter for three main reasons. First, it is an essential part of the language and we would like to be as complete as possible. Second, we need to use this functionality in specific (and sometimes very esoteric) applications. In fact, you may need to use it because of a design flaw that you wish to have a workaround for. Thus, it is for this reason good to know the essentials of run-time behaviour in C++.
+
+\section{An introduction to reflection and self-aware objects}
+
+Most of the examples up until now dealt with creation of classes and the instantiation of these classes to form objects. Having created an object we can then call its member functions.
+
+But we now want to view classes themselves as objects in the sense that we wish to find out certain things about their structural and behavioural properties, for example:
+\begin{itemize}
+	\item What are the member data of a given class?
+	\item What are the names (as strings) of the member functions of a class?
+	\item Execute a member functions by ``invoking'' it.
+\end{itemize}
+It should be obvious that these questions have to do with a high level of abstraction. This feature is called \emph{Reflection} and its added value is that it allows the programmer to query the characteristics of classes, objects and other software entities at run-time. In a sense we can create \emph{self-aware objects} that know about their data an methods. We speak of \emph{metadata}, or data that describes other data. A number of programming environments have extensive support for Reflection (for example ``'Microsoft's .NET framework') and support for the following feautures is not unusual:
+\begin{itemize}
+	\item Reading metadata of types, classes, interfaces, methods and other software entities.
+	\item Dynamic object creation.
+	\item Dynamic method invocation.
+	\item Code generation.
+\end{itemize}
+
+C++ has some support for these kinds of features. In the following sections we discuss these specific features in detail.
+
+In order to show how run-time functionality works we examine two model examples. The first example is generic and minimal and the second example discusses run-time behaviour associated with classes in a class hierarchy.
+
+\section{Run-time type information (RTTI)}
+
+In this section we begin our discussion of the run-time behaviour of objects. To this end, we introduce two features in C++:
+\begin{itemize}
+	\item The \texttt{typeid()} operator.
+	\item The \texttt{type\_info} class.
+\end{itemize}
+First, by using \texttt{type\_info} we can get the name of any object or built-in type in C++. Second, we use the \texttt{typeid()} operator on some object or built-in type to give a \texttt{const} reference to \texttt{type\_info}. The interface functions in \texttt{type\_info} are:
+
+\begin{lstlisting}
+class type info {
+
+public:
+	virtual ~type info();
+	int operator==(const type info& rhs) const;
+	int operator!=(const type info& rhs) const;
+	int before(const type info& rhs) const;
+	const char* name() const;
+	const char* raw name() const;
+};
+\end{lstlisting}
+We see from this interface that we can:
+\begin{itemize}
+	\item Compare two objects (operators \texttt{==} and \texttt{!=}).
+	\item Find the human-readable name of an object.
+\end{itemize}
+We do not discuss the other interface functions in this chapter as we think that they are too esoteric for most applications.
+
+We must take note of the fact that this RTTI feature only works for polymorphic classes, that is classes with at least one virtual function. Furthermore, some compilers (for example, Microsoft C++ compiler) demand that you define certain compiler settings, otherwise a run-time error will occur. In the Microsoft enviroment, for example the RTTI option must be enabled. See the relevant on-line help for that enviroment.
+
+We now take a simple generic example. To this end, we create a class hierarchy with two derived classes. The base class is defined as:
+\begin{lstlisting}
+class Base
+{
+	public:
+	Base() {}
+	virtual ~Base() {}
+
+	virtual void print() const { cout << "I'm base\ n"; }
+	virtual double calculate(double d) const = 0;
+
+};
+\end{lstlisting}
+and the derived classes are:
+\begin{lstlisting}
+class D1: public Base
+{
+
+public:
+	D1() {}
+	virtual ~D1() {}
+
+	virtual void print() const { cout << "I'm a D1\ n"; }
+	virtual double calculate(double d) const { return 1.0 * d; }
+};
+
+class D2: public Base
+{
+public:
+	D2() {}
+	virtual ~D2() {}
+
+	virtual void print() const { cout << "I'm a D2\ n"; }
+	virtual double calculate(double d) const { return 2.0 * d; }
+};
+\end{lstlisting}
+The first example creates instances of the derived classes and examines their run-time properties:
+\begin{lstlisting}
+D1 d1, d11;
+D2 d2;
+// Define a reference to type
+const type info& myRef = typeid(d1);
+
+cout << "Human-readable name: " << myRef.name() << endl;
+
+// Test if two objects have same type or not
+if (typeid(d1) == typeid(d11))
+{
+	cout << "Types are the same\ n";
+}
+
+if (typeid(d1) != typeid(d2))
+{
+	cout << "Types are NOT the same\ n";
+}
+\end{lstlisting}
+In this code we get the answers that we expect; first, the human-readable form of the class name is displayed on the console and second the classes corresponding to objects \texttt{d1}, \texttt{d11} and \texttt{d2} are compared. You can run this code to see how it works.
+
+We now note that RTTI can be applied to base classes pointers. Let us take a simple example. As already discussed in this book, we can assign base class pointers to addresses of derived classes. What is of interest now is that RTTI knows that the dereferenced pointer is actually a derived class object:
+\begin{lstlisting}
+Base* b = &d1;
+const type info& myRef2 = typeid(* b);
+cout << "Human-readable name: " << myRef2.name() << endl;
+\end{lstlisting}
+This is quite useful feature because in some applications we might have an array of base class pointers and we may wish to know what the ``real'' underlying types are. Here is an example in which we create an array to pointers to \texttt{D1} and \texttt{D2} instances. Then we iterate in the array to determine what the actual type is that is ``hiding'' behind the pointer:
+
+\begin{lstlisting}
+// Create an array of Base class pointers
+int size = 10;
+Base* myArr[10]; // An array of pointers!
+
+for (int j = 0; j < 6; j++)
+{
+	myArr[j] = &d1;
+}
+
+for (int k = 6; k < size; k++)
+{
+	myArr[k] = &d2;
+}
+
+// Now "filter" the real types. We have D1 and D2 types!
+int counterD1 = 0;
+int counterD2 = 0;
+
+for (int i = 0; i < size; i++)
+{
+	if (typeid(* myArr[i]) == typeid(D1))
+	{
+		cout << "We have a D1\ n"; counterD1++;
+	}
+
+	if (typeid(* myArr[i]) == typeid(D2))
+	{
+		cout << "We have a D2\ n"; counterD2++;
+	}
+}
+// Print final counts
+cout << "Number of D1s: " << counterD1 << endl;
+cout << "Number of D2s: " << counterD2 << endl;
+\end{lstlisting}
+We thus keep a count of the different types in the collection. This example could be modified to work in a financial engineering application. For example, let us suppose that we can have a class hierarchy of financial instruments with derived classes for options, bonds, futures and other specific derivatives products. We could then use RTTI to perform the following kinds of operations:
+\begin{itemize}
+	\item Select all options in the portfolio.
+	\item Select all derivatives except futures in the portfolio.
+	\item Remove all futures from the portfolio.
+	\item Update some member data in options in the portfolio.
+\end{itemize}
+In fact, we could create a simple query and manipulation language that allows us to access specific information in a portfolio. We could then use it in a pricing engine.
+
+One final remark; when working with pointers to base classes, it is in general not possible to determine what the ``real'' object (of a derived class) without using the RTTI functionality.
+
+\section{Casting between types}
+
+Casting is the process of converting an object pointer of one class to an object pointer of another class. In general we must distinguish between \emph{static casting} (for non-polymorphic classes) and \emph{dynamic casting} (for polymorphic classes, that is classes with at least one virtual function). To this end, C++ has several operator that allow us to perform casting:
+\begin{itemize}
+	\item \texttt{dynamic\_cast operator}.
+	\item \texttt{static\_cast operator}.
+\end{itemize}
+The first casting operator takes two operands:
+
+\begin{lstlisting}
+dynamic_cast<T*> (p)
+\end{lstlisting}
+In this case we attempt to cast the pointer \texttt{p} to one of class \texttt{T}, that is a pointer \texttt{T*}. We can use this operator when casting between base and derived class. An example is:
+\begin{lstlisting}
+D1 d1A;
+Base* base2 = &d1A;
+
+D1* d1Cast = dynamic cast<D1* > (base2);
+
+if (d1Cast == 0)
+{
+	cout << "Cast not possible:\ n";
+	// Should ideally throw an exception here
+}
+else
+{ // This function gets called
+	cout << "Cast is possible: ";
+	d1Cast -> print();
+}
+\end{lstlisting}
+In this case we have a pointer that points to a \texttt{D1} instance and we can convert it to a pointer of the same class because the return type is not zero. We now give an example in which we attempt to convert \texttt{D1} pointer to a \texttt{D2} pointer and of course this is not possible because they are completely different classes:
+\begin{lstlisting}
+// Now cast a D1 to a D2 (not possible)
+D2* d2Cast = dynamic cast<D2* > (base2);
+
+if (d2Cast == 0)
+{ // This function gets called
+	cout << "Cast not possible:\ n";
+}
+else
+{
+	cout << "Cast is possible:\ n";
+	d2Cast -> print();
+}
+\end{lstlisting}
+The above examples use \texttt{downcasting} because we are moving the base class pointer to one of a derived class. It does not always give desired results as we can see. \emph{Upcasting}, on the other hand allows us to cast a derived class pointer to a base class pointer (this is a consequence of the fact that we are implementing generalization/specialization relationships and in this case the operation will be successful). The casting to be done can be to a direct or indirect base class:
+
+\begin{lstlisting}
+D1* dd = new D1;
+Base* b3 = dynamic cast<Base* > (dd);
+
+if (b3 == 0)
+{ // This function gets called
+
+	cout << "Cast not possible:\ n";
+
+}
+else
+{
+	cout << "Cast is possible:\ n";
+	b3 -> print();
+	b3 -> doIt();
+}
+\end{lstlisting}
+There is a small run-time cost associated with the use of the \texttt{dynamic\_cast} operator. We now discuss static casting. We find it to be very esoteric and we do not use it at all. However, we include it for completeness. An example is:
+\begin{lstlisting}
+// Static casting
+Base* bA = &d1;
+Base* bB = &d2;
+D1* dA = static cast<D1*> (bA);
+
+// Unsafe static cast
+cout << "Unsafe cast ...\ n";
+D1* dB = static cast<D1* > (bB);
+dB -> print();
+\end{lstlisting}
+In the last case we are casting a \texttt{D2} pointer to a \texttt{D1} pointer! We advise against the use of this specific feature. A possible workaround is to redesign the problem or implement it in such a way that it does not have to use casting.
+
+\subsection{More esoteric casting}
+
+We discuss two more operators for casting between objects:
+\begin{itemize}
+	\item The \texttt{reinterpret\_cast}.
+	\item The \texttt{const\_cast}.
+\end{itemize}
+The \texttt{reinterpret\_cast} is the crudest and potentially nastiest of the type conversion operations. It delivers a value with the same bit pattern as its argument with the type required. It is used for implementation-dependent problems such as:
+\begin{itemize}
+	\item Converting integer values to pointers.
+	\item Converting pointers to integer values.
+\end{itemize}
+We give an example of this mechanism. Here we create an object and we assign it to a fixed memory location. Then we can convert the memory location by using \texttt{reinterpret\_cast}:
+\begin{lstlisting}
+D2 d2Any;
+Base* bb = reinterpret cast<Base* >(&d2Any);
+bb -> print();
+\end{lstlisting}
+In this case we create a new object by giving it the same bit pattern as its argument. Finally, we now discuss a mechanism that allows us to convert a const pointer to a non-const pointer. Here is an example:
+\begin{lstlisting}
+D1 dAny;
+const Base* bConst = &dAny;
+bConst -> print();
+// Base* bNonConst = bConst; DOES NOT WORK
+Base* bNonConst = const cast<Base* > (bConst);
+bNonConst -> print();
+\end{lstlisting}
+Please note that the following conversions on the \texttt{const} pointer will not work:
+\begin{lstlisting}
+Base* bNonConst1 = static cast<Base* > (bConst);
+Base* bNonConst2 = dynamic cast<Base* > (bConst);
+Base* bNonConst3 = reinterpret cast<Base* > (bConst);
+\end{lstlisting}
+The compiler error message you get is something like:
+\begin{lstlisting}
+d:\ users\ daniel\ books\ cppfeintro\ code\ chap14\ example1.cpp(193) :
+error C2440: "static cast" : cannot convert from "const class Base * "
+to "class Base * "
+\end{lstlisting}
+
+\section{Client-server programming and exception handling}
+In the following sections we introduce the reader to client-server programming in C++ and how this relates to the problem of run-time exceptions and errors that arise in a running program.
+
+We first discuss some things that can go wrong when clients call functions. In order to reduce the scope, let us examine a simple example of find the sum of reciprocals of a vector:
+\begin{lstlisting}
+template <class V> V sumReciprocals(const vector<V>& array)
+{ // Sum of reciprocals
+
+	V ans = V(0.0);
+	for (int j = 0; j < array.size(); j++)
+	{
+		ans += 1.0/array[j];
+	}
+	return ans;
+}
+\end{lstlisting}
+We see that if any one of the elements in the vector is zero we shall get a run-time error and your program will crash. To circumvent this problem we use the exception handling mechanism in C++ to provide the client of the software with a ``net'' as it were which will save the client if it encounters an exception. For example, consider the following code:
+
+\begin{lstlisting}
+int size = 10;
+double elementsValue = 3.1415;
+vector<double> myArray (size, elementsValue);
+myArray[5] = 0.0;
+
+double answer = sumReciprocals(myArray);
+\end{lstlisting}
+In this case only one element in the vector has a zero value but the end-result will not be correct. In fact, we get a value that is not a number, for example \emph{overflow}.
+Another example is when we change a value in a vector based on a given index. A problem is when you enter an index value is outside the range of the vector. The consequence in this case is that the value will not be changed at best and that some other part of the memory will be overwritten at worst. Consider the following code:
+\begin{lstlisting}
+cout << "Which index change value to new value? ";
+int index;
+cin >> index;
+myArray[index] = 2.0;
+print(myArray);
+\end{lstlisting}
+In both of the above cases we could argue that the client should provide good input values but this line of thought is too naive. Instead, we provide both client and server with tools to resolve the problem themselves. We now discuss the fine details of this mechanism.
+
+\section{\texttt{try}, \texttt{throw} and \texttt{catch}: ingredients of the C++ exception mechanism}
+
+\section{C++ implementation}
+
+\begin{lstlisting}
+class MathErr
+{ // Base class for my current exceptions
+private:
+	string mess;	// The error message
+	string meth;	// The method that threw the exception
+public:
+	MathErr()
+	{
+		mess = meth = string();
+	}
+	MathErr (const string& message, const string& method)
+	{
+		mess = message;
+		meth = method;
+	}
+	string Message() const { return mess; }
+	string Method() const { return meth; }
+
+	virtual vector<string> MessageDump() const = 0;
+
+	virtual void print() const
+	{
+		// This uses a Template method pattern
+
+		// Variant part
+		vector<string> r = MessageDump();
+
+		// Invariant part
+		for (int j = 0; j < r.size(); j++)
+		{
+			cout << r[j] << endl;
+		}
+	}
+};
+\end{lstlisting}
+and the interface for zero divide exceptions is given by:
+\begin{lstlisting}
+class ZeroDivide : public MathErr
+{
+private:
+	string mess;	// Extra information
+public:
+	ZeroDivide() : MathErr()
+	{
+		mess = string();
+	}
+	ZeroDivide(const string& message,const string& method, const string& annotation ) : MathErr (message, method)
+	{
+		mess = annotation;
+	}
+
+	vector<string> MessageDump() const
+	{ // Full message
+		vector<string> result(3);
+		result[0] = Message();
+		result[1] = Method();
+		result[2] = mess;
+		return result;
+	}
+};
+\end{lstlisting}
+We wish to use these exceptions in server code. In this case we extend the function \texttt{simReciprocals} so that it checks for zero divide:
+
+\begin{lstlisting}
+template <class V> V sumReciprocals(const vector<V>& array)
+{ // Sum of reciprocals
+
+	V ans = V(0.0);
+	for (int j = 0; j < array.size(); j++)
+	{
+		if (fabs(array[j] < 0.001)) // Magic number!
+		{
+			throw ZeroDivide("divide by zero", "sumReciprocals", string());
+		}
+		ans += 1.0/array[j];
+	}
+
+	return ans;
+}
+\end{lstlisting}
+Here we see that the code checks for zero divide conditions and if such an even occurs it will create an exception object of the appropiate type and throw it back to the client. It is then the client's responsibility to catch the exception and then determine what to do with it. Our \texttt{try/catch} block is:
+
+\begin{lstlisting}
+int size = 10;
+double elementsValue = 3.1415
+vector<double> myArray (size, elementsValue);
+myArray[5] = 0.0;
+print(myArray);
+
+// Now creates a try/catch block
+try
+{
+	double answer = sumReciprocals(myArray);
+	cout << "Sum of reciprocals: " << answer << endl;
+}
+catch (ZeroDivide& exception)
+{
+	exception.print();
+}
+\end{lstlisting}
+In this case the exception will be ``catched'' in the \emph{catch block} and the program continues. Incidentally, if a server code throws an exception and no try/catch block has been defined in the cliente clode a run-time error will occur and the program will terminate abnormally.
+
+We now investigate the case where the client can decide to repair the situation by giving itself the chance to give a new value for the offending value (namely \texttt{myArray[5] = 0.0}) or allowing it to exit the try block. To this end, the following code allows the client to give a new value and infinitum or it can exit giving the magic number \texttt{999}:
+\begin{lstlisting}
+Lab1: try
+{
+	cout << "\ nGive a new value for index number 5:";
+	double val;
+	cin >> val;
+	myArray[5] = val;
+	if (val == 999.0)
+	{
+		return 1; // Exit the program
+	}
+
+	double answer = sumReciprocals(myArray);
+	cout << "Sum of reciprocals: " << answer << endl;
+}
+catch (ZeroDivide& exception)
+{
+	exception.print();
+	goto Lab1;
+}
+\end{lstlisting}
+This completes our first example of the exception handling mechanism in C++. In later chapters we shall use the mechanism in financial engineering applications and test cases. Summarising, we have introduced the essentials of exception handling in C++ and we have shown how to use it. The knowledge can be applied in your applications.
+
+We have not discussed the following topics:
+\begin{itemize}
+	\item The throw specification (a function can declare the exceptions that it throws to the outside world).
+	\item Nested try blocks and rethrow of exceptions.
+	\item Alternative ways of implementing exception handling.
+	\item Exceptions with the constructor and destructors.
+	\item Exceptions and efficiency.
+\end{itemize}
+
+\section{Pragmatic exception mechanisms}
+Instead of creating a hierarchy of exceptions classes (which involves having to create and maintain these) we take a somewhat more pragmatic approach by creating a single class that we use in all applications. Typical information could be:
+\begin{itemize}
+	\item The error message.
+	\item The method that threw the exception
+	\item More informational message
+\end{itemize}
+All this information is implemented as strings. The complete interface is given by:
+\begin{lstlisting}
+#ifndef DatasimExceptions HPP
+#define DatasimExceptions HPP
+#include <string>
+#include <vector>
+using namespace std;
+#include <iostream>
+class DatasimException
+{ // Base class for my current exceptions
+private:
+	string mess;	// The error message
+	string meth;	// The method that threw the exception
+	string why;	// More info on message
+
+	// Redundant data
+	vector<string> result;
+
+public:
+	DatasimException();
+
+	DatasimException (const string& message, const string& method, const string& extraInfo);
+
+	string Message() const; //	The message itself
+	string rationale() const;	// Extra information
+	string Method() const;	// In which method?
+
+	// All information in one packet
+	vector<string> MessageDump() const;
+
+	// Print the full packet
+	virtual void print() const;
+};
+#endif
+\end{lstlisting}
+The code file is:
+\begin{lstlisting}
+#include "DatasimException.hpp"
+
+DatasimException::DatasimException()
+{
+	mess = meth = why = string();
+	result = vector<string>(3);
+	result[0] = mess;
+	result[1] = meth;
+	result[2] = why;
+}
+
+DatasimException::DatasimException (const string& message, const string& method, const string& extraInfo)
+{
+	mess = message;
+	meth = method;
+	why = extraInfo;
+	result = vector<string>(3);
+	result[0] = mess;
+	result[1] = meth;
+	result[2] = why;
+}
+string DatasimException::Message() const
+{
+	return mess;
+}
+string DatasimException::rationale() const
+{
+	return why;
+}
+
+string DatasimException::Method() const
+{
+	return meth;
+}
+
+vector<string> DatasimException::MessageDump() const
+{ // Full message
+	return result;
+}
+
+void DatasimException::print() const
+{
+	// Variant part
+	vector<string> r = MessageDump();
+
+	cout << endl << r[0] << endl;
+	// Invariant part
+	for (int j = 1; j < r.size(); j++)
+	{
+		cout << "\ t" << r[j] << endl;
+	}
+}
+\end{lstlisting}
+Please not the use of the Standard Template Library (STL) vector data container. This is forward reference and we shall discuss it in a later chapter.
+
+At some stage we could employ a single instance of the class \texttt{DatasimException} so that performance is improved because we create this object at program start and it is removed from memory when the program ends. In this sense, we can apply the \emph{Singleton} pattern to this problem. In fact, the Singleton is reminiscent of the \texttt{Err} object in early versions of the Visual Basic programming language.
+
+\subsection{An example of use}
+We give an example. In this case we take the trivial problem of dividing a number \texttt{x} by another number \texttt{y}. The answer is undefined if \texttt{y} is zero and in this case a run-time error will occur if no provisions are taken for dealing with the problem. Thus, we use exception handling as follows:
+
+\lstinputpath{../../src/chapter_9}
+\lstinputlisting[
+	caption={A},
+	label=TestExceptionSimple1.cpp,
+	linerange = {13-24}
+]{TestExceptionSimple.cpp}
+
+This is the server code. The client code resides in a main program:
+\lstinputlisting[
+	caption={B},
+	label=TestExceptionSimple2.cpp,
+	linerange = {25-30}
+]{TestExceptionSimple.cpp}
+If we run this program and enter \texttt{0.0} for \texttt{y} we shall get the following output:
+\begin{lstlisting}[language=bash]
+Give a number to divide by: 0.0
+Divide by zero
+In function Divide
+Try with non-zero value
+\end{lstlisting}
+In later chapters we shall encounter more applications of this exception class when we discuss a visualization package in Excel.
+
+\section{Conclusions and summary}
+We have given an introduction to a number of advanced and somewhat esoteric techniques that allow the programmer to investigate run-time behaviour in C++ programs. In particular, we discussed:
+\begin{itemize}
+	\item Determining class of an object at run-time.
+	\item Casting pointers.
+	\item Designing and implementing exceptions in C++.
+\end{itemize}
+We have included these topics for completeness. We shall use them here and there in future chapters.
+\section{Exercises and research}

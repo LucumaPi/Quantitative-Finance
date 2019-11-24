@@ -1,0 +1,539 @@
+% Chapter 5
+\chapter{Operator Overloading in C++}
+
+\section{Introduction and objectives}
+
+\begin{lstlisting}
+Complex z1(-23.0, 5.3);
+Complex z2(2.0, 3.0);
+Complex z3 = z1 * z2;
+Complex z4 = 2.0 * z4;
+Complex z5 = - z3;
+\end{lstlisting}
+
+\section{What is operator overloading and what are the possibilities?}
+
+\begin{lstlisting}
++	-	*	/	%	^	&	|	~
+~	=	<	>	<=	>=	==	+=	-=
+/=	++	--	!=	&&	>>	<<	&=	<<=
+>>=	^=	()	[]	new	delete
+\end{lstlisting}
+
+\begin{lstlisting}
+x + y
+os << "help";	// Using the operator <<
+a % b
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex z6 = z12* 2.0;
+Complex z7 = 2.0 * z2;
+Complex z8 = z6 * z7;;
+\end{lstlisting}
+
+\begin{lstlisting}
+Matrix m1(100, 50);	// A matrix with 100 rows and 50 columns
+Matrix m2 = m1;	// A new matrix of same size as m1
+\end{lstlisting}
+
+\begin{lstlisting}
+b = -a;	// b is the negative of a
+b++;	// Postfix incremenet
+++a;	// Prefix incremeent
+\end{lstlisting}
+
+\section{Why use operator overloading? The advantages}
+
+\begin{lstlisting}
+Matrix m3 = m1 * m2;
+Matrix m4 = m1.Add(m2);
+\end{lstlisting}
+
+\begin{lstlisting}
+DatasimDate fixed(1, 1, 94);
+DatasimDate current(1, 1, 94);
+int interval = 30;
+
+for (int j = 0; i < 12; j++)
+{
+	current = fixed - (j*interval);
+	std::cout << current << std::endl;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+1/1/94, 2/12/93, 2/11/93, 3/10/93, 3/9/93, 4/8/93
+5/7/93, 5/6/93, 6/5/93, 6/4/93, 7/3/93, 5/2/93
+\end{lstlisting}
+
+\begin{lstlisting}
+// Ofsets; quarters + half years
+std::cout << "Offset stuff\n";
+DatasimDate today;
+DatasimDate d3 = today.add_quarter();
+DatasimDate d4 = today.add_halfyear();
+
+std::cout << d3 << std::endl;
+std::cout << d4 << std::endl;
+
+d3 = d3.sub_quarter();
+d4 = d4.sub_quarter();
+
+std::cout << d3 << std::endl;
+std::cout << d4 << std::endl;
+\end{lstlisting}
+
+%TODO: Offset stuff
+
+\begin{lstlisting}
+Vector cross(const Vector& vec) const;	// Cross product
+Vector operator ^ (const Vector& vec) const;	// Cross product
+
+double dot(cont Vector& vec) const;	// Dot product
+double operator % (const Vector& vec) const;	// Dot product
+\end{lstlisting}
+
+\begin{lstlisting}
+Vector Vector::vtproduct(const Vector& B, const Vector& C) const
+{	// Vector triple product A X (B X C)
+
+	// Schaum Vectors page 17
+
+	Vector tmp = B ^ C;
+	return (*this) ^ tmp;
+}
+
+double Vector::stprodcut(const Vector& B, const Vector& C) const
+{// Scalar triple prodcut A . (B X C)
+
+		// Schaum Vectors, page 17
+		Vector tmp = B ^ C;	// Cross
+		return (*this) % tmp;	// Dot
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+class Plane
+{	// A class for a plane in three dimensions
+private:
+
+	Vector n;	// Normal unit vector to plane
+	Point p;	// Point on plane
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+Point Plane::closest(const Point& pt) const
+{	// The point on plane closest to the point pt
+		// GEMS IV page 154
+		double d = n % (p - pt);
+		Point result = pt + (n.componenets() * d);
+		return result;
+}
+\end{lstlisting}
+
+\section{Operator overloading: the steps}
+
+\begin{lstlisting}
+Complex add (const Complex& c2) const;
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex Complex:: add(const Complex& c2) const
+{	// Add two complex numbers
+
+	Complex result;
+	result.x = x + c2.x;
+	result.y = y + c2.y;
+
+	return result;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex z3 = z1.add(z2);
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex operator + (const Complex& c2) const;
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex Complex::operator + (const Complex& c2) const
+{	// Add two complex numbers
+	Complex result;
+	result.x = x + c2.x;
+	result.y = y + c2.y;
+
+	return result;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex Complex::operator + (const Complex& c2) const
+{	// Add two complex numbers
+
+		return Complex(x + c2.x, y + c2.y);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex operator - (const Complex& c2) const;
+Complex operator * (const Complex& c2) const;
+Complex operator / (const Complex& c2) const;
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex z2(2.0, 3.0);
+
+Complex z7 = 2.0 * z2;
+Complex z8 = z2 * 2.0;
+\end{lstlisting}
+
+\begin{lstlisting}
+friend Complex operator * (const Complex& c, double d);
+friend Complex operator * (double d, const Complex& c);
+\end{lstlisting}
+
+
+\begin{lstlisting}
+Complex operator * (const Complex & c, double d)
+{	// Scaling by a double
+
+		return Complex(c.x * d, c.y * d);
+}
+
+Complex operator * (double d, const Complex& c)
+{	// Scaling by a double
+		// Reuse already made operator
+		return c * d;
+}
+\end{lstlisting}
+
+\subsection{A special case: the assignment operator}
+
+\begin{lstlisting}
+Complex z7 = z2;
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex& operator = (const Complex& c);
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex& Complex::operator = (const Complex& c)
+{
+		// Avoid doing assign to myself
+		if (this == &c)
+			return *this;
+			
+		x = p.x;
+		y = p.y;
+
+		return *this;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex z0(1.0, 2.0);
+Complex z1, z2, z3, z4;
+z4 = z3 = z1 = z0;
+std::cout << "Chain: " << z0 << z1 << z3 << z4;
+\end{lstlisting}
+
+\begin{lstlisting}
++=, *=, -=, /=
+\end{lstlisting}
+
+\begin{lstlisting}
+z4 += z1;	// Multiply z4 by z1 and modify it
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex& operator += (const Complex& c);
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex& Complex::operator += (const Complex & c)
+{
+	x += c.x;
+	y += c.y;
+
+	return *this;
+}
+\end{lstlisting}
+
+\section{Using operator overloading for simple I/O}
+
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+\end{lstlisting}
+
+\begin{lstlisting}
+double real;
+double imaginary;
+cout << "Creating a complex number" << endl;
+cout << "Give real part: ";
+cin >> real;
+cout << "Give imaginary part: ";
+cin >> imaginary;
+
+// User-defined class and putput for its objects
+Complex c(real, imaginary);
+cout << c;
+\end{lstlisting}
+
+\begin{lstlisting}
+friend ostream& operator << (ostream& os, const Complex& cmp);
+\end{lstlisting}
+
+\begin{lstlisting}
+osteam& operator << (ostream& os, const Complex& cmp)
+{	// Print the complex number
+
+		os << "(" << cmp.x << ", " << cmp.y << ")\n";
+		return os;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+cout << "First: " << z1 << "Second: " << z2 << endl;
+\end{lstlisting}
+
+\section{Friend functions in general}
+
+\begin{lstlisting}
+friend Complex exp(const Complex& c);	// Exponential
+friend Complex cos(const Complex& c);	// Cosine function
+friend Complex sin(const Complex& c);	// Sine function
+friend Complex cosh(const Complex& c);	// Hyperbolic  cosine
+friend Complex sinh(const Complex& c);	// Hyperbolic sine
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex exp(const Complex& c)
+{	// Exponential function
+		double ex = std::exp(c.x);
+		return Complex(ex * cos(c.y), ex * sin(c.y));
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex cosh(const Complex& z)
+{	// Hyperbolic cosine function
+		return (exp(z) + exp(- (z))) * 0.5;
+}
+
+Complex cotanh(const Complex& z)
+{	// Hyperbolc cotangent
+		return cosh(z) / sinh(z);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Complex za = exp(Complex(0.0, 0.0));
+cout << za;
+
+Complex zs = sinh(za);
+Complex zc = cosh(za);
+
+cout << zs << zc;
+Complex c2(0.0, 0.0);
+cout << sinh(c2) << cosh(c2);
+\end{lstlisting}
+
+\subsection{Friend classes}
+
+\begin{lstlisting}
+class A
+{
+private: // Don’t tell others who my friends are
+friend class B; // Hi B class, you my friend
+
+// ...
+};
+\end{lstlisting}
+
+
+
+\section{Summary and conclusions}
+
+\section{Exercise}
+
+\lstinputpath{../../src/chapter_5}
+
+\lstinputlisting[
+	caption={Testing complex numbers.},
+	label=TestComplex.hpp,
+]{TestComplex.cpp}
+
+We concentrate on one-dimensional and two-dimensional data structures. To this end, we introduce basic \textit{foundation} classes, namely:
+
+\begin{itemize}
+	\item \texttt{Array}: sequential, indexible container containing arbitrary data types.
+	\item \texttt{Vector}: array class that contains numeric data.
+	\item \texttt{Matrix}: sequential, indexible container containing arbitrary data types.
+	\item \texttt{NumericMatrix}: matrix class that contains numeric data.
+\end{itemize}
+The code for these classes is on the accompanying CD. The classes \texttt{Array} and \texttt{Vector} are one-dimensional containers whose elements we access using a single index while \texttt{Matrix} and \texttt{NumericMatrix} are two-dimensional containers whose elements we access using two indices.
+
+We now discuss each of these classes in more detail.
+
+We start with the class \texttt{Array}. This is the most fundamental class in the library and it
+represents a sequential collection of values. This template class that we denote by \texttt{Array<V, I, S>} has three generic parameters:
+\begin{itemize}
+	\item V: the data type of the underlying values in the array.
+	\item I: the data type used for indexing the values in the array (integral).
+	\item S: the so-called storage class for the array.
+\end{itemize}
+The \textit{storage class} is in fact an encapsulation of the STL vector class and it is here that the data in the array is actually initialised. At the moment there are specific storage classes, namely \texttt{FullArray<V>} and \texttt{BandArray<V>} that store a full array and a banded array of values, respectively.
+
+Please note that it is \textbf{not} possible to change the size of an \texttt{Array} instance once it has been constructed. This is in contrast to the STL vector class where it is possible to let it grow.
+
+The declaration of the class \texttt{Array} is given by:
+
+The declaration of the class Array is given by:
+\begin{lstlisting}
+template <class V, class I = int, class S = FullArray<V> >
+class Array
+{
+private:
+	S m_structure; // The array structure
+	I m_start; // The start index
+};
+\end{lstlisting}
+
+We see that \texttt{Array} has an embedded storage object of type $S$ and a start index. The default storage is \texttt{FullArray<V>} and the default index type is \texttt{int}. This means that if we work with these types on a regular basis that we do not have to include them in the template declaration.
+
+Thus, the following three declarations are the same:
+\begin{lstlisting}
+Array<double, int, FullArray<double> > arr1;
+Array<double, int> arr1;
+Array<double> arr1;
+\end{lstlisting}
+
+You may choose whichever data types that are most suitable for your needs.
+
+The constructors in \texttt{Array} allow us to create instances based on size of the array, start index and so on. The constructors are:
+
+\begin{lstlisting}
+Array();	// Default constructor
+Array(size t size);	// Give length start index ==1
+Array(size t size, I start);	// Length and start index
+Array(size t size, I start, const V& value);	// Size, start, value
+Array(const Array<V, I, S>& source);	// Copy constructor
+\end{lstlisting}
+
+Once we have created an array, we may wish to navigate in the array, access the elements in the array and to modify these elements. The member functions to help you in this case are:
+\begin{lstlisting}
+// Selectors
+I MinIndex() const;	// Return the minimum index
+I MaxIndex() const;	// Return the maximum index
+size t Size() const;	// The size of the array
+const V& Element(I index) const;	// Element at position
+
+// Modifiers
+void Element(I index, const V& val);	// Change element at position
+void StartIndex(I index);	// Change the start index
+
+// Operators
+virtual V& operator [] (I index);	// Subscripting operator
+virtual const V& operator [] (I index) const;
+\end{lstlisting}
+This completes the description of the \texttt{Array} class. We do not describe the class that actually stores the data in the array. The reader can find the source code on the accompanying media kit. We now discuss the \texttt{Vector} and \texttt{NumericMatrix} classes in detail. These classes are derived from \texttt{Array} and \texttt{Matrix}, respectively. Furthermore, we have created constructors for \texttt{Vector} and \texttt{NumericMatrix} classes as well. So what have these classes got that their base classes do
+not have? The general answer is that \texttt{Vector} and \texttt{NumericMatrix} assume that their underlying types are numeric. We thus model these classes as implementations of the corresponding mathematical structures, namely \textit{vector space} and, \textit{inner product} spaces.
+
+We have implemented \texttt{Vector} and \texttt{NumericMatrix} as approximations to a vector space. In some cases we have added functionality to suit our needs. However, we have simplified things a little because we assume that the data types in a vector space are of the same types as the underlying field. This is for convenience only and it satisfies our needs for most applications in financial engineering.
+
+Class \texttt{Vector} is derived from \texttt{Array}. Its definition in C++ is:
+
+\begin{lstlisting}
+template <class V, class I=int, class S=FullArray<V> >
+class Vector: public Array<V, I, S>
+{
+private:
+	// No member data
+};
+\end{lstlisting}
+
+We give the prototypes for some of the mathematical operations in \texttt{Vector}. The first is a straight implementation of a vector space; notice that we have applied operator overloading in C++:
+
+\begin{lstlisting}
+Vector<V, I, S> operator - () const;
+Vector<V, I, S> operator + (const Vector<V, I, S>& v) const;
+Vector<V, I, S> operator - (const Vector<V, I, S>& v) const;
+\end{lstlisting}
+The second group of functions is useful because it provides functionality for \textit{offsetting} the values in a vector:
+\begin{lstlisting}
+Vector<V, I, S> operator + (const V& v) const;
+Vector<V, I, S> operator - (const V& v) const;
+Vector<V, I, S> operator * (const V& v) const;
+\end{lstlisting}
+The first function adds an element to each element in the vector and returns a new vector. The second and third functions are similar except that we apply subtraction and multiplication operators.
+
+Class \texttt{NumericMatrix} is derived from \texttt{Matrix}. Its definition in C++ is:
+
+\begin{lstlisting}
+template <class V, class I=int, class S=FullMatrix<V> >
+class NumericMatrix: public Matrix<V, I, S>
+{
+private:
+	// No member data
+};
+\end{lstlisting}
+The constructors in \texttt{NumericMatrix} are the same as for \texttt{Matrix}. We may also wish to manipulate the rows and columns of matrices to this end to provide ``set/get'' functionality. Notice that we return vectors for selectors but that modifiers accept \texttt{Array} instances (and instances of any derived class!):
+
+\begin{lstlisting}
+// Selectors
+Vector<V, I> Row(I row) const;
+Vector<V, I> Column(I column) const;
+
+// Modifiers
+void Row(I row, const Array<V, I>& val);
+void Column(I column, const Array<V, I>& val);
+\end{lstlisting}
+Since we will be solving linear systems of equations in later chapters we must provide functionality for multiplying matrices with vectors and with other matrices:
+\begin{itemize}
+	\item Multiply a matrix and a vector.
+	\item Multiply a (transpose of a) vector and a matrix.
+	\item Multiply two matrices
+\end{itemize}
+Notice that the last two functions are not member of \texttt{NumericMatrix} but are non-member friends. This ploy allows us to multiply a matrix by a vector or vice versa.
+
+We give some simple examples showing how to create vectors and how to perform some mathematical operations on the vectors.
+
+\begin{lstlisting}
+// Create some vectors
+Vector<double, int> vec1(10, 1, 2.0);	// Start = 1, value 2.0
+Vector<double, int> vec2(10, 1, 3.0);	// Start = 1, value 3.0
+
+Vector<double, int> vec3 = vec1 + vec2;
+Vector<double, int> vec4 = vec1 - vec2;
+
+Vector<double, int> vec5 = vec1 - 3.14;
+\end{lstlisting}
+We give an example to show how to use numeric matrices. The code is:
+\begin{lstlisting}
+int rowstart = 1;
+int colstart = 1;
+NumericMatrix<double, int> m3(3, 3, rowstart, colstart);
+for (int i = m3.MinRowIndex(); i <= m3.MaxRowIndex(); i++)
+{
+}
+	for (int j = m3.MinColumnIndex(); j <= m3.MaxColumnIndex(); j++)
+	{
+		m3(i, j) = 1.0 /(i + j -1.0);
+	}
+print (m3);
+\end{lstlisting}
+
+\begin{lstlisting}
+MinRowIndex: 1 , MaxRowIndex: 3
+MinColumnIndex: 1 , MaxColumnIndex: 3
+MAT:[
+Row 1 (1,0.5,0.333333,)
+Row 2 (0.5,0.333333,0.25,)
+Row 3 (0.333333,0.25,0.2,)]
+\end{lstlisting}

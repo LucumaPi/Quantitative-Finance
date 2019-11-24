@@ -1,0 +1,362 @@
+% Chapter 4
+\chapter{Creating Robust Classes}
+
+\section{Introduction and objectives}
+
+\section{Call by reference and call by value}
+
+\begin{lstlisting}
+double Max(double x, double y)
+{
+	if (x > y)
+		return x;
+	return y;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+dobule d1 = 1.0;
+double d2 = - 34536.00;
+
+// Copies of d1 and d2 offered to the function Max()
+double result = Max(d1, d2);
+std::cout << "Maxvalue is " << result << std::endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+class SampleClass
+{
+public:	// For convenience only
+	// This data created at compile time
+	double contents[100];
+
+public:
+	SampleClass(double d)
+	{
+		for (int i = 0; i < 1000; i++)
+		{
+			contents[i] = d;
+		}
+	}
+	virtual ~SampleClass()
+	{
+		std::cout << "SampleClass instancce being deleted\n";
+	}
+}'
+\end{lstlisting}
+
+\begin{lstlisting}
+double Sum(SampleClass myClass)
+{
+	double result = myClass.contents[0];
+	for (int i = 1; i < 1000; i ++)
+	{
+		result += myClass.contents[i];
+	}
+	return result;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+SampleClass sc(1.0);
+double sum = Sum(sc);
+\end{lstlisting}
+
+\begin{lstlisting}
+double Sum2(SampleClass & myClass)
+{
+	double result = myClass.contents[0];
+	for (int i = 1; i < 1000; i++)
+	{
+		result += myClass.contents[i];
+	}
+	return result;
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+double Sum2(SampleClass* myClass);
+\end{lstlisting}
+
+\section{Constant objects everywhere}
+
+\begin{lstlisting}
+double Sum3(SampleClass* myClass)
+{
+	// N.B. not possible to modify myClass
+};
+\end{lstlisting}
+
+\subsection{Read-only (const) member functions}
+
+\begin{lstlisting}
+class Point
+{
+private:
+	void init(double xs, double ys);
+
+	// Properties for x- and y-coordinates
+	double x;
+	double y;
+
+public:
+
+	// Constructors and destructor
+	Point();	// Default constructor
+	Point(double xs, double ys);	// Construct with coordinates
+	Point(const Point& source);	// Copy constructor
+	virtual ~Point();
+
+	// Selectors
+	double X() const;	// Return x
+	double Y() const;	// Return y
+	// ...
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+double Point::X() const
+{// Return x
+		return x;
+}
+
+double Point::Y() const
+{// Return y
+		return y;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+// Modifiers
+void X(double NewX);	// Set x
+void Y(double NewY);	// Set y
+\end{lstlisting}
+
+\begin{lstlisting}
+// Modifiers
+void Point::X(double NewX)
+{// Set x
+		x = NewX;
+}
+
+void Point::Y(double NewY)
+{// Set y
+y = NewY;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Point p1(1.0, 3.14);
+
+// Read the coordinate onto the Console
+std::cout << "First coordinate: " << p1.X() << std::endl;
+std::cout << "Second coordinate: " << p1.Y() << std::endl;
+
+// Modify coordinates
+p1.X(2.0);
+p1.Y(5.0);
+
+// Read the coordinate onto the Console
+std::cout << "First coordinate: " << p1.X() << std::endl;
+std::cout << "Second coordinate: " << p1.Y() << std::endl;
+\end{lstlisting}
+
+\section{Constructors in detail}
+
+\begin{lstlisting}
+Point::Point()
+{// Default constructor
+
+	init(0.0, 0.0);
+}
+
+Point::Point(double xs, double ys)
+{	// Normal constructor with coordinates
+
+		init(xs, ys);
+}
+
+Point::Point(const Point &source)
+{	// Copy constructor
+
+		init(source.x, source.y);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+void Point::init(double xs, double ys)
+{	/// Initialize the point
+
+		x = xs;
+		y = ys;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Point();	// Default constructor
+Point(const Point& source);	// Copy constructor
+\end{lstlisting}
+
+\begin{lstlisting}
+Point p1(1.0, 3.14);
+Point p2(p1);
+Point p3;
+\end{lstlisting}
+
+\subsection{Member initialisation}
+
+\begin{lstlisting}
+Point::Point(double newx, double newy)
+{	// Initialize using newx and newy
+		init(newx, newy);
+}
+
+Point::Point(double newx, double newy) : x(newx), y(newy)
+{	// Initialize using newx and newy
+		// init(newx, newy); NOT NEEDED
+}
+\end{lstlisting}
+
+\section{Static member data and static member functions}
+
+\begin{lstlisting}
+class Point: public Shape
+{
+private:
+
+	// Properties for x- and y-coordinates
+	double x;
+	double y;
+
+	static Point OriginPoint;
+
+public:
+
+	// Other members
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+Point Point::OriginPoint = Point(0.0, 0.0);
+\end{lstlisting}
+
+\begin{lstlisting}
+// Accessing the "global" object
+statics Point& GetOriginPoint();
+\end{lstlisting}
+
+\begin{lstlisting}
+Point& Point::GetOriginPoint()
+{
+	return OriginPoint;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+// Work with unique Origin Point
+std::cout << "Origin point: " << Point::GetOriginPoint() << std::endl;
+
+// Now choose new coordinates for the new origin
+Point::GetOriginPoint() = Point(1.0, 2.0);
+std::cout << "Origin point: " << Point::GetOriginPoint() << std::endl;
+\end{lstlisting}
+
+\section{Function overloading}
+
+\begin{lstlisting}
+Point();	// Default constructor
+Point(double xs, double ys);	// Construct with coordinates
+Point(const Point& source);	// Copy constructor
+\end{lstlisting}
+
+\section{Non-member functions}
+
+\section{Performance tips and guidelines}
+
+\subsection{The ``inline'' keyword}
+
+\begin{lstlisting}
+double X() const{return x;}
+double Y() const{return y;}
+\end{lstlisting}
+
+\begin{lstlisting}
+inline double X() const{return x;}
+inline double Y() const{return y;}
+\end{lstlisting}
+
+\subsection{Anonymous objects in function code}
+
+\begin{lstlisting}
+Pount MidPoint(const Point& p2) const;
+\end{lstlisting}
+
+\begin{lstlisting}
+Point Point::MidPoint(const Point& p2) const
+{	// Calculate the point between the two points
+
+		Point result((x + p2.x)*0.5, (y + p2.y)*0.5);
+		return result;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Point Point::MidPoint(const Point& p2) const
+{	// Calculate the point between the two points
+
+		// Create "any old" point
+		return Point( (x + p2.x)*0.5, (y + p2.y)*0.5);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Point pL(0.0, 0.0);
+Point pU(1.0, 1.0);
+
+Point pM = pL.MidPoint(pU);
+std::cout << "Midpoint: " << pM << std::endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+Point pM2 = pL.MidPoint(Point(1.0, 1.0));
+std::cout << "Midpoint: " << pM2 << std::endl;
+\end{lstlisting}
+
+\subsection{Loop optimization}
+
+\section{Summary and conclusions}
+
+\section{Questions, exercises and projects}
+
+\begin{lstlisting}
+// Incorrect example
+int& FlunkyFunc()
+{
+	int result = 1;
+	std::cout << "Funny";
+	return result;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+FlunkyFunc() = 12;
+std::cout << FlunkyFunc() << "eee";
+\end{lstlisting}
+
+\begin{lstlisting}
+double& WrongFunction()
+{
+	double d = 3.1415; return d;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Point pt; std::cout << "wrong" << pt.WrongFunction() << std::endl;
+\end{lstlisting}
+
+\lstinputpath{../../src/chapter_4}
+
+\lstinputlisting[
+	caption={Line segments in two dimensions.},
+	label=LineSegment.hpp,
+]{LineSegment.hpp}

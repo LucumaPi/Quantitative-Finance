@@ -1,0 +1,279 @@
+% Chapter 10
+\chapter{An Introduction to C++ Templates}
+
+\section{Introduction and objectives}
+
+C++ was in the first mainstream object-oriented language to support the \emph{generic programming paradigm}. In general terms this means that we can create classes that do not use a concrete underlying data type for their representation but rather use an unspecified data type that will later be replaced by a concrete type. The advantage of \emph{generic classes} is that we only have to write them once and they can subsequently be used again and again in many contexts. For example, a common data structure in financial engineering is one representing the data in the binomial method. We know that the binomial method has two dimensions, namely time $t$ and asset price $S$. When investigating this lattice we may wish to keep the following components as flexible as possible:
+\begin{itemize}
+	\item The index set (call it \texttt{I}) that describes the discrete time values.
+	\item The data type (call it \texttt{V}) that represents the values at the vertex points of the binomial mesh structure.
+\end{itemize}
+In a sense, we would like to write classes in a kind of macro language, using the data structures \texttt{I} and \texttt{V} and then replacing these by concrete types in our application. This feature is possible in C++ and is called C++ \emph{template mechanism}. Going back to above example we would declare the lattice class as depending on two generic parameters as follows:
+\begin{lstlisting}
+template <class I, class V> class Lattice
+{
+
+// private and public code here
+// Constructors, building a lattice, navigating
+};
+\end{lstlisting}
+Different users will have their own specific data types for the data structures \texttt{I} and \texttt{V}. For example, a common example in the literature is when we work with integers for the values in the time direction and \texttt{double} to hold the values at the nodes:
+\begin{lstlisting}
+Lattice<int, double> myBinomial(...);
+\end{lstlisting}
+In chapter 15, we shall use this generic data container as a storage medium for the binomial method. We shall also use it in chapter 19 when we discuss the trinomial method.
+
+Some applications may demand a more complex structure, for example where the index set is a date and the node values is an array (containing various parameters such as jump probabilities, prices and sensitivities:)
+\begin{lstlisting}
+Lattice<DatasimDate, Array> myCallableBond(...);
+\end{lstlisting}
+Thus, we only have to write the generic code once and then instantiate it for many different kinds of concrete data types, as the two examples above show.
+
+In this chapter we pay attention to the process of creating simple \emph{template classes} and \emph{template functions} as we think that this is one of the best ways to learn generic programming in C++. We learn by doing and by example. It is important to understand the corresponding syntax well because the compiler errors can be quite cryptic and difficult to understand. In most cases these errors are caused by typing errors or other silly mistakes. This may be the reason why generic programming techniques are not as popular as the more established object-oriented paradigm.
+
+After having read and understood this chapter you will have crossed one hurdle, namely mastering the essential syntax of C++ templates.
+
+We focus on syntax in this chapter. A good understanding of templates is a precondition for further progress.
+
+
+\section{My first template class}
+
+In general it is our goal to deal with each topic in this chapter as concisely as possible. To this end, we introduce the template mechanism in C++ by first giving a representative example.
+
+Templates in C++ are classes or functions that contain members or have parameters whose types are not yet specified but are generic. For example, we could create a class that represents complex numbers are \texttt{double} precision numbers we now would like to create a more generic complex number class in which the real and imaginary parts can take on any types.
+
+We now discuss the actual process of creating a template class. Our first remark is that creating template classes is not much more difficult than creating non-template classes.
+
+The main difference is that the template class depends on one or more generic parameters (generic type) and this has to be made known to the compiler. To this end, we need to introduce the keyword \texttt{template} in combination with the names of the generic types. We shall create a generic class that represents a one-dimensional interval or range. The header file for this class declares the class, its member data and member function prototypes:
+\begin{lstlisting}
+template <class Type = double> class Range
+{	// Default underlyng type is double
+
+private:
+	Type lo;
+	Type hi;
+	Range();	// Default constructor
+
+public:
+	// Constructos
+	Range(const Type& low, const Type& high);	// Low and high value
+	Range(const Range<Type>& ran2);	// Copy constructor
+
+	// Destructor
+	virtual ~Range();
+
+	// Modifier functions
+	void low(const Type& t1);	// Sets low value of current range
+	void high(const Type& t2);	// Sets high value of current range
+
+	// Accessing functions
+	Type low() const;	Lowest value in range
+	Type High() const;	// Highest value in the range
+
+	Type length() const;	High - Low value
+
+	// Boolean functions
+	bool left(const Type& value) const;	// Is value to the left?
+	bool right(const Type& value) const;	// Is value to the right?
+	bool contains(const Type& value) const;	// Range contains value?
+
+	// Operator overloading
+	Range<Type>& operator = (const Range<Type>& ran2);
+};
+\end{lstlisting}
+Thus, this class models one-dimensional intervals and it has the appropiate functionality for such entities, for example constructors, set-like operations and set/get functions. In this declaration we see that \texttt{Type} is generic (and not real class). Furthermore, the word \texttt{Range} is not a class because, being a template we must use it in combination with the underlying type \texttt{Type}. For example, the copy constructor must be declared as:
+\begin{lstlisting}
+Range(const Range<Type>& ran2);	// Copy constructor
+\end{lstlisting}
+We now must know how to implement the above member functions. The syntax is similar to the non-template-case; however, there are two issues that we must pay attention to:
+\begin{itemize}
+	\item The \texttt{template} keyword must be used with each function.
+	\item The class name is \texttt{Range<Type>}
+\end{itemize}
+The compiler needs this information because the generic type will be replaced by a real type in our applications, as we shall see.
+
+We give some examples. The following code represents some typical examples:
+\begin{lstlisting}
+template <class Type> Range <Type>::Range()
+{
+	// Default constructor.
+
+		// Not defined since privare
+}
+
+template<class Type> Range<Type>::Range(const Type& 1, const Type& h)
+{//
+	if (l < h)
+	{
+		lo = l;
+		hi = h;
+	}
+	else
+	{
+		hi = l;
+		lo = h;
+	}
+}
+
+template <class Type> bool Range<Type>::contains (const Type& t) const
+{// Does range contain t
+
+	if((lo <= t) && (hi >=t))
+		return true;
+	return false;
+}
+\end{lstlisting}
+Please note that constructors are called \texttt{Range} and not \texttt{Range<Type>}. This can be confusing but the constructors are just member functions.
+
+\section{Using template classes}
+
+A template class is a \emph{type}. In contrast to non-templated classes, it has no instances as such. Instead, when you wish to use template class in a program you need to \emph{instantiate the template class}, that is we replace the generic underlying type (or types) by some concrete type. The result is a ``normal'' C++ class. For example, we take the example of a range whose underlying data type is a date. This class is useful in many financial engeering aplications, for example when defining cash flow dates in fixed-income modeling applications:
+\begin{lstlisting}
+DatasimDate now;
+DatasimDate nextYear = now.add_years(1);
+Range<DatasimDate> dataSchedule(now, nextYear);
+\end{lstlisting}
+This is very useful because we can now reuse all the generic code to work with dates. Some examples are:
+\begin{lstlisting}
+DatasimDate datL = now - 1;	// yesterday
+DatasimDate datM = now.add_halfyear();
+DatasimDate datR = nextYear + 1;	// One year and a day from now
+
+if (dataSchedule.left(datL) == true)
+	cout << datL << "to left, OK\n";
+
+if (dataSchedule.left(datM) == true)
+	cout << datM << "in interval, OK\n";
+
+if (dataSchedule.right(datR) == true)
+	cout << datR << "to right, OK\n";
+\end{lstlisting}
+To take another example, we can instantiate the template class so that it works with integers, as the following code shows:
+\begin{lstlisting}
+Range<int> range1 (0, 10);
+
+int valL = -1;
+int valM = 5;
+int valR = 20;
+
+if (range1.left(valL) == true)
+	cout << valL << " to left, OK\ n";
+
+if (range1.contains(valM) == true)
+	cout << valM << " in interval, OK\ n";
+
+if (range1.right(valR) == true)
+	cout << valR << " to right, OK\ n";
+\end{lstlisting}
+Again, we did not have write any extra code because we instantiated the template class again. On the other hand, the template class assumes that the underlying data type implements a number of functions and operators (for example, \texttt{<}, \texttt{>}, \texttt{<=}). You must realise this fact. We have used the following syntax in the declaration of the range class:
+\begin{lstlisting}
+template <class Type = double> class Range
+\end{lstlisting}
+This means that when you instantiate the template class without a parameter the underlying type will be \texttt{double}! This save you typing the data type each time (which can become quite tedious, especially then working with multiple data types). To this end, we can define synonyms by using \texttt{typedef}:
+\begin{lstlisting}
+ttypedef Range<> DoubleRange;
+DoubleRange d1(-1.0, 1.0);
+print(d1);
+\end{lstlisting}
+When working with dates we can proceed as follows:
+\begin{lstlisting}
+typedef Range<DatasimDate> DateRange;
+DatasimDate anotherDate = today + 365;
+DateRange whatsAnotherYear(today, anotherDate);
+print(whatsAnotherYear);
+\end{lstlisting}
+It is advisable to define all your synonyms in one place so that you can easily locate them later.
+\subsection{(Massive) reusability of the range template class}
+
+Let us pause for a moment to think about what we have done. We have created a template class that can be used in many kinds of applications. In the current book, there are many situations where we can use and reuse the range template class:
+\begin{itemize}
+	\item Binomial, trinomial and finite difference methods
+	\item Interval arithmetic and solution of linear and non-linear equations: interval arithmetic is based on achieving two-sided estimates for some (unknown) quantity.
+	\item Range as a building block in larger data structures as we shall see in Chapters 16 and 17.
+\end{itemize}
+On the down side, if you are not satisfied with the functionality that a template class delivers you can always extend the functionality using any one of the three mechanisms:
+\begin{itemize}
+	\item Inheritance
+	\item Composition and delegation
+	\item Defining non-member function that accept an instance of a template class
+\end{itemize}
+
+\section{Template functions}
+In the previous section we have discussed how to create and instantiate a template class. It is perhaps worth mentioning that is possible to create non-member (or C-style) template functions. This is useful feature for several reasons. It is sometimes cumbersome or even wrong to be forced to embed functionality as a member function of some artificial class and second we wish to extend the functionality of a class without having to inherit from it. Let us take a simple example to show how to define a tempate function. To this end, we wish to write a function to swap two instances of the same class (incidentally , the Standard Template Library (STL) has a function to swap any two objects). The code for the swap function is given by:
+\begin{lstlisting}
+template <class V> void mySwap(V& v1, V& v2)
+{
+	V tmp = v2;
+	v2 = v1;
+	v1 = tmp;
+}
+\end{lstlisting}
+The code is very easy to understand. Of course, we see that the underlying type \texttt{V} should have a public assignment operator defined. If it is private, for example the code will not compile when we instantiate \texttt{V} with some concrete data type. Some examples of using the swap functions are:
+\begin{lstlisting}
+int j = 10;
+int k = 20;
+mySwap(j, k);
+
+Range<int> range1 (0, 10);
+Range<int> range2 (20, 30);
+
+mySwap (range1, range2);
+\end{lstlisting}
+We can write many kinds of related template functions and then group them into a namespace.
+This is the topic of the next section.
+
+\section{Consolidation: understanding templates}
+It takes some time to master templates in C++ and most compiler errors are caused by invalid syntax, typing errors and forgetting to supply all the syntax that is needed. To make matters worse, the compiler can become confused and it then produces error messages that can be very difficult to understand.
+
+In this and the following sections we give a complete example of a template class that you should read and understand. It models a point in two dimensions whose coordinates may belong to different data types. There are a number of issues to take care of:
+\begin{itemize}
+	\item Declare that the class is a template class.
+	\item Define the class' member data.
+	\item Define the class constructors and destructor.
+	\item Define the other member and non-member functions
+\end{itemize}
+The full interface is now given. Please study it:
+
+\lstinputpath{../../src/chapter_10}
+
+\lstinputlisting[
+	caption={Generic point class},
+	label=Point.cpp,
+]{Point.cpp}
+
+\subsection{A test program}
+We now show how to use the above template class in an application. First, it is mandatory to include the file that contains the source code of the member functions (int this case, \texttt{Point.cpp}) include the file that contains the source code of the member functions (in this case, \texttt{Point.cpp}) in client code. Any other construction will not work. Then we replace the generic data types by specific data types (this is called the \emph{instantiation process}). To this end, consider the following code:
+
+\lstinputlisting[
+	caption={Testing generic points},
+	label=TestGeneric.cpp,
+]{TestGeneric.cpp}
+
+In this case we create points whose underlying types are double.
+
+\section{Summary and conclusions}
+
+This chapter introduced the notion of generic programming as a programming paradigm and in particular we showed -- by examples -- how it is realised in C++ by the template mechanism.
+
+We focused on the syntax that we must learn if we are going to be successful in using template classes and functions in Quantitative Finance applications.
+
+
+A template class is not much different from a non-template class except that we explicitly state that certain members are generic. Second, all functions that use the generic data types must that it is using these types, for example:
+
+\begin{lstlisting}
+template <class TFirst, class TSecond> Point<TFirst, TSecond>::Point()
+{
+	m_first = TFirst();
+	m_second = TSecond();
+}
+\end{lstlisting}
+This chapter lays the foundation for the rest of this book in the sense that many of the specific instantiated classes and resulting applications make use of template classes and functions.
+
+A good way to learn template programming is to take a working non-template class and then port it to a templated equivalent. A good example is the C++ class that models complex numbers. We have already discussed this class in Chapter 5.
+
+\section{Exercises and projects}
+
+%\lstinputlisting[
+%	caption={},
+%	label=.cpp,
+%]{.cpp}

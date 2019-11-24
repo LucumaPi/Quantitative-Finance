@@ -1,0 +1,47 @@
+% Chapter 1
+\chapter{Introduction to C++ and Quantitative Finance}
+
+\section{Introduction and objectives}
+
+\section{A short history of C++}
+
+\section{C++, a multi-paradigm language}
+
+\subsection{Object-oriented paradigm}
+
+\begin{lstlisting}
+double PutPrince()
+{
+	double tmp = sig * sqrt(T);
+	double d2 = d1 - tmp;
+	return (K * exp(-r * T)* N(-d2)) - (U * exp((b - r)*T)* N(-d1));
+}
+\end{lstlisting}
+
+\subsection{Generic programming}
+
+\begin{lstlisting}
+template <ckass Numeric>
+	Numeric Max(const Numeric& x, const Numeric& y)
+{
+	if (x > y)
+		return x;
+	return y;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+long dA = 12334; long dB = 2;
+std::cout << "\n\nMax and min of two numbers: " << std::endl;
+std::cout << "Max value is: " << Max<long>(dA, dB) << std::endl;
+\end{lstlisting}
+
+\subsection{Procedural, modular and functional programming}
+
+\section{C++ and quantitative finance: what’s the relationship?}
+
+\section{What is software quality?}
+
+\section{Summary and conclusions}
+
+\section{Exercises}

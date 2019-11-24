@@ -1,0 +1,161 @@
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','aux','synctex.gz','out','toc','loa','lol']
+% arara: --> }
+% arara: lualatex: { draft: yes }
+% arara: lualatex: {
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','aux','synctex.gz','out','toc','loa','lol']
+% arara: --> }
+\documentclass[
+	a4paper,
+	10pt,
+	oneside
+]{scrbook}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmonofont{Fira Code}[
+	Contextuals=Alternate  % Activate the calt feature
+]
+\setmainfont{TeX Gyre Pagella}
+\usepackage{amsmath,amssymb,amsthm,bm,mathtools}
+\usepackage{scrhack}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {./../img} }
+\usepackage{listings}
+\usepackage{lstfiracode} % https://ctan.org/pkg/lstfiracode
+\lstset{
+	language=C++,
+	style=FiraCodeStyle,   % Use predefined FiraCodeStyle
+	basicstyle=\ttfamily,   % Use \ttfamily for source code listings
+	commentstyle=\color{orange},
+	moreliterate=
+	{;;}{{;;}}2
+	{///}{{///}}3
+}
+\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
+
+\usepackage[ruled,vlined]{algorithm2e}
+
+\usepackage[
+	colorlinks,
+	citecolor=blue,
+	linkcolor=red,
+	pdfpagelabels
+]{hyperref}
+
+\hypersetup{pageanchor=false}
+%\usepackage[spanish,es-sloppy]{babel}
+%\spanishdatedel
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{10}
+
+\begin{document}
+\title{
+	Finite Differences Methods in Financial Engineering
+}
+\subtitle{
+	A partial Differential Equation Approach
+}
+
+\author{Daniel J. Duffy}
+
+\maketitle
+
+\frontmatter
+
+\tableofcontents
+\lstlistoflistings
+\listofalgorithms
+
+\hypersetup{pageanchor=false}
+
+\mainmatter
+
+\include{./00_part/goals}
+
+\part{The continuous theory of partial differential equations}
+
+\begingroup
+\let\clearpage\relax
+\include{./01_part/introductionode}
+\include{./01_part/introductionpde}
+\include{./01_part/parabolic}
+\include{./01_part/heatequation}
+\include{./01_part/characteristic}
+\endgroup
+
+\part{Finite difference methods: The Fundamentals}
+
+\begingroup
+\let\clearpage\relax
+\include{./02_part/fdm}
+\include{./02_part/lines}
+\include{./02_part/fdmtheory}
+\include{./02_part/fdmschemes}
+\include{./02_part/fdm1d}
+\include{./02_part/exponentiallyfdm}
+\endgroup
+
+\part{Applying FDM to one-factor instrument pricing}
+
+\begingroup
+\let\clearpage\relax
+\include{./03_part/explicitfdm}
+\include{./03_part/trinomial}
+\include{./03_part/exponentiallyfdm}
+\include{./03_part/lookback}
+\include{./03_part/meshless}
+\include{./03_part/extendingbs}
+\endgroup
+
+\part{FDM for multidimensional problems}
+
+\begingroup
+\let\clearpage\relax
+\include{./04_part/fdmndim}
+\include{./04_part/splitting}
+\include{./04_part/fractionalsteps}
+\include{./04_part/modernsplitting}
+\endgroup
+
+\part{Applying FDM to multi-factor instrument pricing}
+
+\begingroup
+\let\clearpage\relax
+\include{./05_part/heston}
+\include{./05_part/asian}
+\include{./05_part/multiasset}
+\include{./05_part/fixedincome}
+\endgroup
+
+\part{Free and moving boundary problems}
+
+\begingroup
+\let\clearpage\relax
+\include{./06_part/bvp}
+\include{./06_part/freebvp}
+\include{./06_part/american}
+\include{./06_part/variationalamerican}
+\endgroup
+
+\part{Design and implementation in C++}
+
+\begingroup
+\let\clearpage\relax
+\include{./07_part/finding}
+\include{./07_part/design}
+\include{./07_part/moving2bs}
+\include{./07_part/hierarchies}
+\endgroup
+
+\backmatter
+
+\end{document}

@@ -1,0 +1,445 @@
+% Chapter 7
+\chapter{Functions, Namespaces and Introduction to Inheritance}
+
+\section{Introduction and objectives}
+
+\section{Functions and function pointers}
+
+\subsection{Functions in financial engineering}
+
+\subsection{Function categories}
+
+A common notation for a function $f$ from $D$ to $R$ is \[ f\colon D\rightarrow R. \] Functions can be composed. For example, suppose $f$ is a mapping from $D$ to $R1$ and $g$ is a mapping from $R_{1}$ and $g$ is a mapping from $R1$ to $R2$ then the composition of $g$ and $f$ is defined by \[ \left(gf\right)\left(x\right)=g\left(f\left(x\right)\right)\text{ for all }x\text{ in }D. \] Notice that the range of the composed mapping $gf$ is $R2$.
+
+\begin{lstlisting}
+void genericFunction (double myX, double myY, double (* f) (double x, double y))
+{
+
+	// Call the function f with arguments myX and myY
+	double result = (* f)(myX, myY);
+
+	cout << "Result is: " << result << endl;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+double add(double x, double y)
+{
+	cout << "** Adding two numbers: " << x << ", " << y << endl;
+	return x + y;
+}
+double multiply(double x, double y)
+{
+	cout << "** Multiplying two numbers: " << x << ", " << y << endl;
+	return x * y;
+}
+double subtract(double x, double y)
+{
+	cout << "** Subtracting two numbers: " << x << ", " << y << endl;
+	return x - y;
+}
+\end{lstlisting}
+
+\subsection{Modelling functions in C++}
+
+\begin{lstlisting}
+int main()
+{
+	double x = 3.0;
+	double y = 2.0;
+	genericFunction(x, y, add);
+	genericFunction(x, y, multiply);
+	genericFunction(x, y, subtract);
+
+	return 0;
+}
+\end{lstlisting}
+
+\subsection{Application areas for function pointers, part I}
+
+\section{An introduction to namespaces in C++}
+
+\begin{lstlisting}
+namespace MyFunctions
+{
+	double diffusion (double x) { return x; }
+	double convection (double x) { return x* x; }
+}
+namespace YourFunctions
+{
+	double diffusion (double x) { return 2.0; }
+	double convection (double x) { return 1.0; }
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+cout << YourFunctions::convection (10.0) << endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+using YourFunctions::convection;
+cout << convection (10.0) << endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+using namespace MyFunctions;
+cout << "Directive: \ n";
+cout << convection (10.0) << endl;
+cout << diffusion (2.0) << endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+using namespace YourFunctions;
+cout << convection (10.0) << endl;
+cout << diffusion (2.0) << endl;
+\end{lstlisting}
+
+\subsection{Some extra functionality}
+
+\begin{lstlisting}
+namespace YA = YourFunctions; // Define alias NS called YA
+cout << YA::diffusion (2.0) << endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+namespace StandardInterface
+{
+	// Namespace consisting of function pointers
+	double (* func1) (double x);
+	double (* func2) (double x, double y);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+namespace Implementation1
+{
+	double F1 (double x) { return x; }
+	double F2 (double x, double y) { return x* y; }
+}
+
+namespace Implementation2
+{
+	double G1 (double x) { return -x; }
+	double G2 (double x, double y) { return -x* y; }
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+// Assign the function pointers from NS
+StandardInterface::func1 = Implementation1::F1;
+StandardInterface::func2 = Implementation1::F2;
+\end{lstlisting}
+
+\begin{lstlisting}
+using namespace StandardInterface;
+cout << func1(2.0) << ", " << func2(3.0, -4.0) << endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+func1 = Implementation2::G1;
+func2 = Implementation2::G2;
+cout << func1(2.0) << ", " << func2(3.0, -4.0) << endl;
+\end{lstlisting}
+
+\section{An introduction to the inheritance mechanism in C++}
+
+\begin{lstlisting}
+class Person
+{
+public: // Everything public, for convenience only
+	// Data
+	string nam;	// Name of person
+	DatasimDate dob;	// Date of birth
+	DatasimDate createdD;	// Internal, date created
+	DatasimDateTime createdT;	// Internal, time created
+public:
+	// Public functions
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+Person (const string& name, const DatasimDate& DateofBirth)
+{
+	nam = name;
+	dob = DateofBirth;
+	createdD = DatasimDate();	// default, today REALLY!
+	createdT = DatasimDateTime();	// default, now REALLY!
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+void print() const
+{
+// Who am I?
+	cout << "\ n** Person Data ** \ n";
+	cout << "Name: " << nam << "Date of birth: " << dob
+		<< ", Age: " << age() << endl;
+	cout << "Object created: " << createdD
+		<< " "; createdT.print(); cout << endl;
+}
+int age() const
+{
+	return int( double(DatasimDate() - dob) / 365.0);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+DatasimDate myBirthday(29, 8, 1952);
+string myName ("Daniel J. Duffy");
+Person dd(myName, myBirthday);
+dd.print();
+
+DatasimDate bBirthday(06, 8, 1994);
+string bName ("Brendan Duffy");
+Person bd(bName, bBirthday);
+bd.print();
+\end{lstlisting}
+
+\subsection{Basic inheritance structure}
+
+\lstinputpath{../../src/chapter_7}
+
+\lstinputlisting[
+	caption={Output of \texttt{Person.cpp}.},
+	label=Person.txt,
+]{Person.txt}
+
+\begin{lstlisting}
+class Employee : public Person
+{
+public: // For convenience only
+	std::string fun; // Function
+	double sal; // Salary
+	int rAge; // Retirement age
+	// other functions
+};
+\end{lstlisting}
+
+\subsection{Adding new functionality}
+
+\begin{lstlisting}
+void print() const
+{ // Who am I and what do I do?
+
+// Print Base class data
+cout << "\ n** Employee Data ** \ n";
+Person::print(); // Call print() in the base class
+
+// Now print data from current derived class
+cout << "\ nFunction: " << fun << ", Salary: " << sal
+	<< ", Retires at: " << rAge << endl
+	<< YearsToRetirement() << " years to retirement.\ n";
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+int YearsToRetirement() const
+{ // How many more years slogging away at C++?
+	return rAge - age();
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Employee dde (myName, myBirthday, string("Cuchulainn Chief"), 0.01, 65);
+dde.print();
+\end{lstlisting}
+
+\lstinputlisting[
+	caption={Output of \texttt{TestPersonAndEmployee.cpp}.},
+	label=TestPersonAndEmployee.txt,
+]{TestPersonAndEmployee.txt}
+
+\subsection{Overriding functionality: polymorphic and non-polymorphic behaviour}
+
+\begin{lstlisting}
+Employee dde (myName, myBirthday, string("Cuchulainn"), 0.01, 65);
+Person* p = &dde;
+p -> print();
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash]
+** Person Data **
+Name: Daniel J. Duffy, Date of birth: 29/8/1952, Age: 52
+Object created: 15/4/2005 19:11:32
+Working with pointers II
+\end{lstlisting}
+
+\begin{lstlisting}
+virtual void DeepPrint() const
+{
+	print(); // Calls Person::print()
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+void DeepPrint() const
+{
+	print(); // Calls Employee::print()
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+Employee dde (myName, myBirthday, std::string("Cuchulainn Chief"), 0.01, 65);
+Person* p = &dde;
+p -> DeepPrint();
+\end{lstlisting}
+
+\begin{lstlisting}
+** Employee Data **
+** Person Data **
+Name: Daniel J. Duffy, Date of birth: 29/8/1952, Age: 52
+Object created: 15/4/2005 19:11:32
+Function: Cuchulainn, Salary: 0.01, Retires at: 65
+13 years to retirement.
+\end{lstlisting}
+
+\begin{lstlisting}
+Person* parr[3]; // Array of pointers
+parr[0] = new Employee(...);
+parr[1] = new TaxPayer(...);
+parr[2] = new ShareHolder(...);
+// Now print the array
+for (int j = 0; j < 3; j++)
+{
+	parr[j] -> DeepPrint();
+}
+\end{lstlisting}
+
+\section{Multiple inheritance}
+
+\begin{lstlisting}
+class D: public Base1, public Base2
+{
+	// Members of D here
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+class D : public Base1
+{
+private:
+	Base2* base2;
+public:
+	// Members here
+};
+\end{lstlisting}
+
+\section{Solution of nonlinear equations}
+
+In this section we discus the problem of finding real values $x$ that satisft the equation \[ f\left(x\right)=0 \] where $f$ is a real-valued function. The methods to be discussed are:
+\begin{itemize}
+	\item Bisection method.
+	\item Newton's method.
+	\item Secant method.
+	\item Steffensen iteration
+\end{itemize}
+
+The \emph{bisection method} assume that the function $f\left(x\right)$ has a zero in the interval $\left(a,b\right)$ and we assume that the signs are opposite at the end points, that is $f\left(a\right)f\left(b\right)<0$. The essence of the method is to divide the interval into equals parts until we arrive at an interval that is so small that contains the zero of the function and is small enough to satisfy the given tolerance. The basic algorithm is defined using a sequence of intervals of ever-diminishing size: \[ \left(a,b\right)\supset\left(a_{1},b_{1}\right)\supset\left(a_{2},b_{2}\right)\supset\left(a_{3},b_{3}\right)\supset\cdots \] where \[ \left(a_{k},b_{k}\right)=\begin{cases}\left(m_{k},b_{k-1}\right)&\text{if }f\left(m_{k}\right)<0\\\left(a_{k-1},m_{k}\right)&\text{if }f\left(m_{k}\right)>0\end{cases} \] and \[ m_{k}=\frac{1}{2}\left(a_{k-1}+b_{k-1}\right). \] After $n$ steps the root is in an interval having a length given by \[ b_{n}-a_{n}=2^{-1}\left(b_{n-1}-a_{n-1}\right)=2^{-n}\left(b-a\right). \] Thus the deviation from the exact root $\alpha$ is given by \[ \alpha = m_{n+1}\pm d_{n},\quad d_{n}=2^{-n-1}\left(b-a\right). \] In general we are interested in locating the zero of the function to within a given tolerance \texttt{TOL}. This means that we wish to calculate the number of subdivisions of the original interval $\left(a,b\right)$. To this end, some arithmetic based on the equation below give us the following estimate: \[ n>\frac{\log\left(\frac{b-a}{\texttt{TOL}}\right)}{\log2}-1. \] The advantage of the Bisection method is that we always can define an interval of arbitrary size in which the zero is located. The disadvantage is that convergence is slow. In fact, at each step we gain one binary digit in accuracy. We note also that the rate of convergence is independent of the given function $f\left(x\right)$. The method may be used to give us good initial approximations to more sophisticated nonlinear solvers.
+
+Newton's method (or the \emph{Newton-Raphson} method as it is also called) is probably one of the most famous iterative schemes in Numerical Analysis.
+
+The main advantage of the Newton-Raphson method is that it converges quickly. We say thaat its order of convergence is two by which we mean that the error at each iteration decreases quadratically: \[ x_{n+1}=x_{n}+h_{n},\quad h_{n}=-\frac{f\left(x_{n}\right)}{f^{\prime}\left(x_{n}\right)}. \] The disadvantage is that the choice of the initial approximation is vitally important. If this is not chosen carefully the method may not converge at all or it may even converge to the wrong solution. Furthermore, we must have an analytical expression for the derivative of $f$ and this may not always be available.
+
+The \emph{secant method} can be derived from the Newton-Raphson methody by approximating the derivate by a divided difference. The resulting iterative scheme now becomes: \[ x_{n+1}=x_{n}+h_{n},\quad h_{n}=-f_{n}\frac{x_{n}-x_{n-1}}{f_{n}-f_{n-1}},\quad f_{n}\neq f_{n-1}. \] We note that the secant needs two initial approximations in contrast to Newton-Raphson, that only needs one initial approximation. In general, we must be careful when programming the secant method when the function values are close and/or the solutions at levels $n$ and $n+1$ are close; in such cases we calculate terms that effectively $0/0!$
+
+A disadvantage of the secant method is that it is only first-order accurate. In order to achieve second-order accuracy without having to evaluate derivatives we propose \emph{Steffensen's method}, given by the scheme: \[ x_{n+1}=x_{n}-\frac{f\left(x_{n}\right)}{g\left(x_{n}\right)} \] \[ g\left(x_{n}\right)=\frac{f\left(x_{n}+f\left(x_{n}\right)\right)-f\left(x_{n}\right)}{f\left(x_{n}\right)}. \] This scheme requires two function evaluations but no computation of a derivative. With the exception of the bisection method, the choice of the initial approximation is vital and it must be ``close'' to the exact solution, otherwise the iterative scheme may not converge. There are iterative methods based on the continuation (or homotopy) methods that converge to the true solution een when the initial guess is not good, but a discussion of these techniques it outside the scope of this book.
+
+\section{Nonlinear solvers in C++: design and implementation}
+
+\begin{lstlisting}
+class NonlinearSolver
+{
+public:
+	double (*myF)(double x);	// Function whose root we want
+	double tol;	// Desired accuracy
+public:
+	NonlinearSolver(double (* function)(double)) { }
+	virtual double solve() = 0;
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+class SteffensensSolver : public NonlinearSolver
+{ // One-step nonlinear solver
+private:
+	double x0;	// Initial guess
+	double xPrevious, xCurrent;
+	long n;	// Number of iterations taken
+public:
+	SteffensensSolver(double guess, double (* myFunc)(double x))
+	{
+		x0 = guess; xPrevious = x0;
+		myF = myFunc;
+	}
+
+double solve()
+	{
+		double tmp; double hn; n = 1; xPrevious = x0;
+L1:
+		tmp = myF(xPrevious);
+		hn = (myF(xPrevious + tmp) - tmp)/ tmp;
+		hn = tmp/hn;
+		xCurrent = xPrevious - hn;
+
+		xPrevious = xCurrent;
+		n++;
+		if (::fabs(hn) <= tol)
+		{
+			return xCurrent;
+
+		}
+		gotoL1;
+	}
+	void printStatistics() const
+	{
+		cout << "\ nData pertaining to Steffensen's method\ n";
+		}
+		cout << "Value: " << xCurrent << endl;
+		cout << "Number of iterations (actual): "
+		<< n << endl;
+	}
+};
+\end{lstlisting}
+
+\section{Applying nonlinear solvers: calculating volatility}
+
+\begin{lstlisting}
+double CallPrice(double sig)
+{
+	// Test case Haug p. 172; student exercise to extend it
+	double S = 59.0;
+	double K = 60.0;
+	double r = 0.067;
+	double marketPrice = 2.82;	// The call price
+	double b = r;
+	double T = 0.25;	// Three months
+
+	double tmp = sig * sqrt(T);
+	double d1 = ( log(S/K) + (b+ (sig* sig)* 0.5 ) * T )/ tmp;
+	double d2 = d1 - tmp;
+
+	double calculatedValue = (S * exp((b-r)* T) * N(d1)) - (K * exp(-r * T)* N(d2));
+
+	// Function in the form f(x) = 0
+	return marketPrice - calculatedValue;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+// Steffensen's method
+double guess = 0.2;
+
+SteffensensSolver steff(guess, CallPrice);
+steff.tol = 0.0001;
+
+double resultST= steff.solve();
+cout << "Steffensen's Method: " << resultST << endl;
+
+steff.printStatistics();
+\end{lstlisting}
+
+\section{Summary and conclusions}
+
+\section{Exercises and projects}
+
+\[ y=f\left(a\right)+\frac{f\left(a\right)-f\left(b\right)}{a-b}\left(x-a\right) \] giving the estimate for $c$: \[ c = a - \frac{\left(a-b\right)f\left(a\right)}{f\left(a\right)-f\left(b\right)}. \] This all translates to the algorithm: \[ x_{n}=x_{n-1}-\frac{\left(x_{n-1}-x_{n-2}\right)f\left(x_{n-1}\right)}{f\left(x_{n-1}\right)-f\left(x_{n}-2\right)}. \]

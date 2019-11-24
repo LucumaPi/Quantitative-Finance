@@ -1,0 +1,119 @@
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','aux','synctex.gz','out','toc','loa','lol']
+% arara: --> }
+% arara: lualatex: { draft: yes }
+% arara: lualatex: {
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','aux','synctex.gz','out','toc','loa','lol']
+% arara: --> }
+\documentclass[
+	a4paper,
+	10pt,
+	oneside
+]{scrbook}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmonofont{Fira Code}[
+	Contextuals=Alternate  % Activate the calt feature
+]
+\setmainfont{TeX Gyre Pagella}
+\usepackage{amsmath,amssymb,amsthm,bm,mathtools}
+\usepackage{scrhack}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {./../img} }
+\usepackage{listings}
+\usepackage{lstfiracode} % https://ctan.org/pkg/lstfiracode
+\lstset{
+	language=C++,
+	style=FiraCodeStyle,   % Use predefined FiraCodeStyle
+	basicstyle=\ttfamily,   % Use \ttfamily for source code listings
+	commentstyle=\color{orange},
+	moreliterate=
+	{;;}{{;;}}2
+	{///}{{///}}3
+}
+\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
+
+\usepackage[ruled,vlined]{algorithm2e}
+
+\usepackage[
+	colorlinks,
+	citecolor=blue,
+	linkcolor=red,
+	pdfpagelabels
+]{hyperref}
+
+\hypersetup{pageanchor=false}
+%\usepackage[spanish,es-sloppy]{babel}
+%\spanishdatedel
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{10}
+
+\begin{document}
+\title{
+	Introduction to C++ for Financial Engineers
+}
+\subtitle{
+	An object-oriented approach
+}
+
+\author{Daniel J. Duffy}
+
+\maketitle
+
+\frontmatter
+
+\tableofcontents
+\lstlistoflistings
+\listofalgorithms
+
+\hypersetup{pageanchor=false}
+
+\mainmatter
+
+\include{./00_part/goals}
+
+\part{C++ Essential Skills}
+
+\begingroup
+\let\clearpage\relax
+\include{./01_part/introduction}
+\include{./01_part/mechanism}
+\include{./01_part/fundamentals}
+\include{./01_part/robust}
+\include{./01_part/overloading}
+\include{./01_part/memory}
+\include{./01_part/inheritance}
+\include{./01_part/payoff}
+\include{./01_part/runtime}
+\include{./01_part/templates}
+\endgroup
+
+\part{Data structures, templates and patterns}
+
+\begingroup
+\let\clearpage\relax
+\include{./02_part/generic}
+\include{./02_part/interfaces}
+\include{./02_part/datastructures}
+\include{./02_part/designpattern}
+\endgroup
+
+\part{QF Applications}
+
+\begingroup
+\let\clearpage\relax
+\include{./03_part/binomial}
+\include{./03_part/onefactor}
+\endgroup
+
+\backmatter
+\end{document}

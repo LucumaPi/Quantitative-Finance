@@ -1,0 +1,593 @@
+% Chapter 8
+\chapter{Advanced Inheritance and Payoff Class Hierarchies}
+
+\section{Introduction and objectives}
+
+\section{The \texttt{virtual} specifier and memory deallocation}
+
+\begin{lstlisting}
+class B
+{ // Class with non-virtual destructor
+private:
+	double* d;
+public:
+	B() { d = new double (1.0); }
+	∼B() { cout << "Base destructor\ n"; delete d; }
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+class D : public B
+{ // Derived class
+private:
+	int* iarr;
+public:
+	D(int N) { iarr = new int[N]; }
+	∼D() { cout << "Derived destructor\ n"; delete [] iarr; }
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+int main()
+{
+	{
+		B* b = new D(10);
+		delete b;
+	}
+
+	return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+virtual ∼B() { cout << "Base destructor\ n"; delete d; }
+\end{lstlisting}
+
+\begin{verbatim}
+Derived destructor
+Base destructor
+\end{verbatim}
+
+\section{Abstract and concrete classes}
+
+\begin{lstlisting}
+class Payoff
+{
+public:
+	// Constructors and destructor
+	Payoff();	// Default constructor
+	Payoff(const Payoff& source);	// Copy constructor
+	virtual ∼Payoff();// Destructor
+
+	// Operator overloading
+	Payoff& operator = (const Payoff& source);
+
+	// Pure virtual payoff function
+	virtual double payoff(double S) const = 0; // Spot price S
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+class CallPayoff: public Payoff
+{
+private:
+
+	double K;	// Strike price
+
+public:
+	// Constructors and destructor
+	CallPayoff();
+	CallPayoff(double strike);
+	CallPayoff(const CallPayoff& source);
+	virtual ∼CallPayoff();
+
+	// Selectors
+	double Strike() const;	// Return strike price
+
+	// Modifiers
+	void Strike(double NewStrike);	// Set strike price
+
+	CallPayoff& operator = (const CallPayoff& source);
+
+	// Implement the pure virtual payoff function from base class
+	double payoff(double S) const; // For a given spot price
+};
+\end{lstlisting}
+
+We see that this class has private number data representing the strike price of the call option as well as public set/get member for this data. Furthermore, we have coded all essential functions in this class:
+\begin{itemize}
+	\item Default constructor.
+	\item Copy constructor.
+	\item Virtual destructor.
+	\item Assigment operator.
+\end{itemize}
+We call this \emph{canonical header file}. Finally, we must implement the \texttt{payoff()} function, otherwise \texttt{CallPayoff} will itself be an abstract class.
+We now examine the bodies of the member functions of \texttt{CallPayoff}. In general, a constructor in a derived class must initialise the local as well as the data in the class that it is derived from. For the former case we use normal assignment but we can also use the so-called colon syntax to initialise the data in a base class. For example, the copy constructor in \texttt{CallPayoff} is given by:
+
+\begin{lstlisting}
+CallPayoff::CallPayoff(const CallPayoff& source): Payoff(source)
+{ // Copy constructor
+	K = source.K;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+CallPayoff& CallPayoff::operator = (const CallPayoff &source)
+{ // Assignment operator
+
+		// Exit if same object
+		if (this==&source) return * this;
+
+		// Call base class assignment
+		Payoff::operator = (source);
+
+		// Copy state
+		K = source.K;
+
+		return * this;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+double CallPayoff::Strike() const
+{
+// Return K
+	return K;
+}
+
+void CallPayoff::Strike(double NewStrike)
+{// Set K
+	K = NewStrike;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+double CallPayoff::payoff(double S) const
+{ // For a given spot price
+
+	if (S > K)
+		return (S - K);
+	return 0.0;
+	// remark; possible to say max (S - K, 0)if you prefer
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+double BullSpreadPayoff::payoff(double S) const
+{ // Based on Hull's book
+
+	if (S >= K2)
+		return K2 - K1;
+	if (S <= K1)
+		return 0.0;
+
+	// In the interval [K1, K2]
+	return S - K1;
+}
+\end{lstlisting}
+
+\subsection{Using payoff classes}
+
+\begin{lstlisting}
+CallPayoff call(20.0);
+
+cout << "Give a stock price (plain Call): ";
+double S;
+cin >> S;
+
+cout << "Call Payoff is: " << call.payoff(S) << endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+double K1 = 30.0;	// Strike price of bought call
+double K2 = 35.0;	// Strike price of sell call
+double costBuy = 3.0;	// Cost to buy a call
+double sellPrice = 1.0; // Sell price for call
+BullSpreadPayoff bs(K1, K2, costBuy, sellPrice);
+cout << "Give a stock price (BullSpread): ";
+cin >> S;
+
+cout << "Bull Spread Payoff is: " << bs.payoff(S) << endl;
+cout << "Bull Spread Profit is: " << bs.profit(S) << endl;
+\end{lstlisting}
+
+\begin{lstlisting}
+double BullSpreadPayoff::profit(double S) const
+{ // Profit
+	return payoff(S) - (buyValue - sellValue);
+}
+\end{lstlisting}
+The techniques developed in this section can be used in other applications in which we need to create derived classes in C++.
+
+\section{Lightweight payoff classes}
+
+\begin{lstlisting}
+class Payoff
+{
+private:
+	PayoffStrategy* ps;
+public:
+	// Constructors and destructor
+	Payoff(PayoffStrategy& pstrat);
+
+// Other member functions
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+class PayoffStrategy
+{
+public:
+	virtual double payoff(double S) const = 0;
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+class CallStrategy : public PayoffStrategy
+{
+private:
+	double K;
+public:
+	CallStrategy(double strike) { K = strike;}
+	double payoff(double S) const
+	{
+		if (S > K)
+			return (S - K);
+
+		return 0.0;
+	}
+};
+\end{lstlisting}
+
+\begin{lstlisting}
+// Create a strategy and couple it with a payoff
+CallStrategy call(20.0);
+Payoff pay1(call);
+\end{lstlisting}
+
+\section{Super lightweight payoff functions}
+
+\begin{lstlisting}
+class OneFactorPayoff
+{
+private:
+	double K;
+	double (* payoffFN)(double K, double S);
+public:
+	// Constructors and destructor
+	OneFactorPayoff(double strike, double(* payoff)(double K,double S));
+	// More ...
+
+	double payoff(double S) const; // For a given spot price
+
+};
+\end{lstlisting}
+
+The bodies of these member functions are given by:
+
+\begin{lstlisting}
+OneFactorPayoff::OneFactorPayoff(double strike, double (* pay)(double K, double S))
+{
+	K = strike;
+	payoffFN = pay;
+}
+double OneFactorPayoff::payoff(double S) const
+{ // For a given spot price
+
+	return payoffFN(K, S); // Call function
+}
+\end{lstlisting}
+
+An example of specific payoff functions is:
+
+\begin{lstlisting}
+double CallPayoffFN(double K, double S)
+{
+	if (S > K)
+	return (S - K);
+}
+return 0.0;
+
+double PutPayoffFN(double K, double S)
+{
+	// max (K-S, 0)
+	if (K > S)
+		return (K - S);
+
+	return (K -return 0.0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+int main()
+{
+	OneFactorPayoff pay1(20.0, CallPayoffFN);
+	cout << "Give a stock price (plain Call): ";
+	double S;
+	cin >> S;
+
+	cout << "Call Payoff is: " << pay1.payoff(S) << endl;
+
+	OneFactorPayoff pay2(20.0, PutPayoffFN);
+
+	cout << "Give a stock price (plain Put): ";
+	cin >> S;
+
+	cout << "Put Payoff is: " << pay2.payoff(S) << endl;
+
+	return 0;
+}
+\end{lstlisting}
+
+\section{The dangers of inheritance: a counterexample}
+
+We now discuss some of the issues to look out for when creating a C++ class hierarchy. In general, deriving a class \texttt{D} from a class \texttt{B} introduces dependencies between \texttt{B} and \texttt{D}; in other words changes to \texttt{B} may result to changes in \texttt{D}.
+
+Even though the inheritance mechanism is very powerful and useful it can be misused and its capabilities stretched to unacceptable limits. We now give an example to show how subtle errors can enter your code by the incorrect use of the inheritance mechanism. We shall then show how to resolve the corresponding problems induced by using the mechanism. We shall then show how to resolve the corresponding problems induced by using the mechanism. The example that we take is unambiguous and there is little chance of it being misinterpreted. To this end, we create two-dimensional shapes, namely rectangles and squares. Of course, we would like to create code that is as resuable as possible. The first solution that might spring to mind is to say that a square is a specilisation of a rectangle. This sounds reasonable. We investigate the consequences of this decision. The interface for the rectangle class is:
+\begin{lstlisting}
+class Rectangle : public Shape
+{
+protected: // Derived classes can access this data directly
+	Point bp; // Base point, Point class given
+	double h; // height
+	double w; // width
+
+public:
+	Rectangle()
+	{
+		bp = Point();
+		h = 1.0;
+		w = 2.0;
+	}
+	Rectangle(const Point& basePoint, double height, double width)
+	{
+		bp = basePoint;
+		h = height;
+		w = width;
+	}
+
+	void setHeight(double newHeight)
+	{
+		h = newHeight;
+	}
+
+	void setWidth(double newWidth)
+	{
+		w = newWidth;
+	}
+
+	void print() const
+	{
+		cout << bp;
+		cout << "Dimensions (H, W): " << h << ", "
+		<< w <<endl;
+	}
+};
+\end{lstlisting}
+Thus, we can create rectangles and change its dimensions. We now derive a square class from it as follows
+\begin{lstlisting}
+class BadSquare : public Rectangle
+{ // Version 1, a Square is a Rectangle
+private:
+	// No member data, inherited from Rectangle
+public:
+	BadSquare() : Rectangle (Point(), 1.0, 1.0)
+	{
+		// We must implement this, otherwise this
+			// default constructor inherits a default rectangle
+	}
+
+	BadSquare (const Point& basePoint, double size)
+	{
+		bp = basePoint;
+		h = w = size;	// Starts off well
+	}
+};
+\end{lstlisting}
+This class has no member data because it is derived from \texttt{Rectangle}. In this case we defined the data in \texttt{Rectangle} as being protected (this means that it is directly available to derived classes) for convenience only. Furthermore, we need to say something about default constructors. Some rules are:
+\begin{itemize}
+	\item A default constructor will be generated if you do not provide one
+	\item The default constructor in the derived class will automatically call the default constructor in the base class
+\end{itemize}
+In general, we prefer to write default constructors in all classes because we control what default behaviour will be. Secondly, a default constructor in class \texttt{BadSquare} is not necessarily a default \texttt{Rectangle}! For this reason we must do things differently as can be seen in the above code.
+
+We now come to the next attention point. Since squares are publicly derived from rectangles we can call all the latter's member function for instances of \texttt{BadSquare}. Let us take an example:
+\begin{lstlisting}
+BadSquare bs;
+bs.print();
+\end{lstlisting}
+This code creates a square at the origin with a side of $1$. Now we call a member function that is inherited from the base class:
+\begin{lstlisting}
+// Now change the size
+bs.setHeight(2.0);
+bs.print();
+\end{lstlisting}
+When we print the square we see that the height and width are different. So we do not have a square anymore!
+
+What is the problem? At a superficial level the square inherits functionality that destroys its consistency. At a deeper level, a square is not a specialisation of a rectangle. We resolve this problem by using a slightly different design technique that is well documented in the literature but is not as well known as inheritance.
+
+In general terms, we implement a new class that uses a rectangle as a private member data and we develop the member functions in the new square while we supress those functions that are not relevant. That UML diagram is shown in Figure %TODO
+and here we use the \emph{Composition} technique: a square is composed from a rectangle. Furthermore, square delegates needed functionality to rectangle. The source code is given by:
+\begin{lstlisting}
+class GoodSquare : public Shape
+{ // Version 2, adapts a Rectangle's interface
+	private:
+	Rectangle r;
+public:
+	GoodSquare ()
+	{
+		double size = 1.0;
+		r = Rectangle (Point(), size, size); // Unit square
+	}
+	GoodSquare (const Point& basePoint, double size)
+	{
+		r = Rectangle (basePoint, size, size);
+	}
+
+	void setSize(double newSize)
+	{ // An adaptor function, this ensures that constraints
+		// on the square are always satisfied
+
+			r.setHeight(newSize);
+			r.setWidth(newSize);
+	}
+	void print() const
+	{
+		// Delegate to the embedded rectangle’s output
+
+		r.print();
+	}
+};
+\end{lstlisting}
+Not much can go wrong now; the square publishes its member functions to client code that have no idea that the square is implemented as a rectangle. The following source code shows how to use a new functionality:
+\begin{lstlisting}
+GoodSquare gs;
+gs.print();
+
+// Now change the size
+gs.setSize(2.0);
+gs.print();
+\end{lstlisting}
+Concluding, we have given an example to show that inheritance is not always the best way to extend the functionality of a class. The above discussion has relevance to many situations in object-orient design. In particular, the same warnings apply when developing C++ class hierarchies in financial engineering applications.
+
+\section{Implementation inheritance and fragile base class problem}
+We know that a derived class \texttt{D} can use the public and protected members in a class \texttt{B} that is is derived from. In general, when a member (data or functions) is changed in \texttt{B} then it may be necessary to change the code in \texttt{D}. Of course, a change in \texttt{D} may trigger other changes in \emph{its} derived classes. This particular situation is called the \emph{Fragile Base Class Problem}.
+
+There are some possible solutions to this problemm, depending on the context:
+\begin{itemize}
+	\item Instead of using inheritance we could consider using Composition and adapting the interface of \texttt{B}.
+	\item Try to create base classes with as few member data as possible.
+	\item Avoid deep inheritance hierarchies.
+\end{itemize}
+
+\subsection{Deep hierarchies}
+
+This is a problem that we, as C++ community have inherited (no pun intended) from the 1990's. In the past we had seen inheritance hierarchies with the ``most deep'' derived class having up to six indirect base classes. Some of the disadvantages are:
+\begin{itemize}
+	\item It has been proven that the human brain can hold approximately seven pieces of information in short-term memory at any one moment in time; this number is much less than the amount of information that we need to understand when working with deep C++ class hierarchies.
+	\item The chances that the structural relationships between the classes are correct decreases as the hierarchy grows.
+\end{itemize}
+
+\subsection{Multiple inheritance problems}
+
+We have discussed multiple inheritance in Chapter $7$. I do not use it for three main reasons:
+\begin{itemize}
+	\item Its use leads to unmaintainable software systems.
+	\item It is a flawed way of thinking about relationships between entities in general and C++ classes in particular (in the author's opinion)
+	\item In some cases we can use single inheritance for base class \texttt{B1} and composition with class \texttt{B2} instead of deriving class \texttt{D} from both\texttt{B1} and \texttt{B2}.
+\end{itemize}
+In the last case we see that \texttt{D} inherits all of the functionality from \texttt{B1} and it \emph{adapts} the interface functions in \texttt{B2} to suit its own needs.
+
+\section{Two-factor payoff functions and classes}
+
+In this section we give an overview of some kinds of options that depend on two or more underlying assets. These are called \emph{correlation options} in general. Our interest in these options is to cast them in PDE form. In particular, we must define the payoff function, boundary conditions and the coefficients of the PDE and we focus on the following specific types:
+\begin{itemize}
+	\item Exchange options
+	\item Rainbow options
+	\item Basket options
+	\item Best/worst options
+	\item Quotient options
+	\item Foreign exchange options
+	\item Spread options
+	\item Dual-strike options
+	\item Out-performance options
+\end{itemize}
+We have discussed the finnancial and mathematical background to these option types in detail in Duffy (2006). In particular we solved the partial differential equations associated with these option types by the finite difference method. In this book we concentrate on the C++ implementation for the payoff functions for these types and to this end we create a C++ class hierarchy consisting of a base class and derived classes, with one derived class for each payoff function. The abstract base class (note, it has no member data) is defined as:
+
+\begin{lstlisting}
+class MultiAssetPayoffStrategy
+{ // Interface specification
+public:
+	virtual double payoff(double S1, double S2) const = 0;
+};
+\end{lstlisting}
+There is no default structure or behaviour defined here, only pure virtual function specification describing the pricing function based on two underlyings. Each derived class must implement this function. For example, for a basket option class we have the specification:
+
+\begin{lstlisting}
+class BasketStrategy : public MultiAssetPayoffStrategy
+{ // 2-asset basket option payoff
+private:
+	double K;	// Strike
+	double w;	// +1 call, -1 put
+	double w1, w2; // w1 + w2 = 1
+public:
+	// All classes need default constructor
+	BasketStrategy(): MultiAssetPayoffStrategy()
+	{ K = 95.0; w = +1; w1 = 0.5; w2 = 0.5;
+	}
+	BasketStrategy(double strike, double cp,double weight1, double weight2) : MultiAssetPayoffStrategy()
+	{ K = strike; w = cp; w1 = weight1; w2 = weight2;
+	}
+	double payoff(double S1, double S2) const
+	{
+		double sum = w1* S1 + w2* S2;
+		return DMax(w* (sum - K), 0.0);
+	}
+};
+\end{lstlisting}
+Please not that we use the colon syntax ``:'' to call the constructor of the base class from the derived class. This ensures that the member data in the base class will be initialised. Of course, the base class in this case has no member data (at the moment) but it might have in a future version of the software.
+
+We have used two-factor payfoff classes in conjunction with the finite difference method (see Duffy, 2006). The actual data and the relationship with the payoff function can be seen in the following classes (note that we have taken a basket option payoff for readability but it is easy to extend to be more general case):
+
+\begin{lstlisting}
+class TwoFactorInstrument
+{ // Empty class
+public:
+
+};
+class TwoFactorOptionData : public TwoFactorInstrument
+{
+//private:
+public:	// For convenience only
+	// An option uses a polymorphic payoff object
+	BasketStrategy pay;
+public:
+	// PUBLIC, PURE FOR PEDAGOGICAL REASONS, 13 parameters
+	double r;	// Interest rate
+	double D1, D2;	// Dividends
+	double sig1, sig2;	// Volatility
+	double rho;	// Cross correlation
+	double K;	// Strike price, now place in IC
+	double T;	// Expiry date
+	double SMax1, SMax2;	// Far field condition
+	double w1, w2;
+	int type;	// Call +1 or put -1
+
+	TwoFactorOptionData()
+	{
+		// Initialise all data and the payoff
+		// Use Topper's data as the default, Table 7.1
+		r = 0.01;
+		D1 = D2 = 0.0;
+		sig1 = 0.1; sig2 = 0.2;
+		rho = 0.5;
+		K = 40.0;
+		T = 0.5;
+		w1 = 1.0;
+		w2 = 20.0;
+
+		type = -1;
+		// Now create the payoff Strategy object
+		BasketStrategy(double strike, double cp, double weight1, double weight2)
+		{ K = strike; w = cp; w1 = weight1; w2 = weight2;}
+
+		pay = BasketStrategy(K, type, w1, w2);
+
+		// In general 1) we need a Factory object as we have done
+		// in the one-dimensional case and 2) work with pointers to
+		// base classes
+	}
+	double payoff(double x, double y) const
+	{
+		return pay.payoff(x, y);
+	}
+};
+\end{lstlisting}
+We hope that this example gives an idea of using the inheritance mechanism in quantitative finance, To be honest, inheritance has its uses but the generic programming model is also useful. We discuss this topic later, beginning with Chapter 10 where we introduce template programming in C++.
+
+The source code for two-factor payoff classes is to be found on the CD.
+
+\section{Conclusions and summary}
+We have given a detailed discussion of using inheritance in applications. In particular, we showed how to derive a class from another, more general base class. We applied this knowledge to creating a hierarchy of option payoff functions. Finally, we have included several sections on the potential problems when using inheritance, why they occur and how they can be mitigated.
+
+\section{Exercises and projects}

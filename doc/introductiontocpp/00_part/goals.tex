@@ -1,0 +1,69 @@
+\setcounter{chapter}{-1}
+
+% Chapter 0
+\chapter{Goals of this Book and Global Overview}
+
+\section{What is this book?}
+
+\section{Why has this book been written?}
+
+\section{For whom is this book intended?}
+
+\section{Why should I read this book?}
+
+\section{The structure of this book}
+
+\section{What this book does not cover}
+
+\section{More information and support}
+
+\lstinputpath{../../src/chapter_15}
+\lstinputlisting[
+	caption={Array class},
+	label=array.cpp,
+]{array.cpp}
+
+\lstinputlisting[
+	caption={CMakeLists},
+	label=CMakeLists.txt,
+]{CMakeLists.txt}
+
+\begin{algorithm}
+\DontPrintSemicolon
+\KwData{$G=(X,U)$ such that $G^{tc}$ is an order.}
+\KwResult{$G^{\prime}=(X,V)$ with $V\subseteq U$ such that $G^{\prime tc}$ is aninterval order.}
+\Begin{
+	$V \longleftarrow U$\;
+	$S \longleftarrow \emptyset$\;
+	\For{$x\in X$}{
+		$\operatorname{NbSuccInS}(x) \longleftarrow 0$\;
+		$\operatorname{NbPredInMin}(x) \longleftarrow 0$\;
+		$\operatorname{NbPredNotInMin}(x) \longleftarrow \left|\operatorname{ImPred}(x)\right|$\;
+	}
+	\For{$x \in X$}{
+		\If{$\operatorname{NbPredInMin}(x) = 0~\mathbf{and}~\operatorname{NbPredNotInMin}(x) = 0$}{
+			$\operatorname{AppendToMin}(x)$}
+	}
+	\nl\While{$S \neq \emptyset$}{\label{InRes1}
+		\nlset{REM} remove $x$ from the list of $T$ of maximal index\;\label{InResR}
+		\lnl{InRes2}\While{$|S \cap \operatorname{ImSucc}(x)| \neq |S|$}{
+			\For{$ y \in  S-ImSucc(x)$}{
+				\{ remove from $V$ all the arcs $zy$ : \}\;
+				\For{$z \in  \operatorname{ImPred}(y) \cap  \operatorname{Min}$}{
+					remove the arc $zy$ from $V$\;
+					$\operatorname{NbSuccInS}(z) \longleftarrow \operatorname{NbSuccInS}(z) - 1$\;
+					move $z$ in $T$ to the list preceding its present list\;
+					\{i.e. If $z \in T[k]$, move $z$ from $T[k]$ to
+					$T[k-1]$\}\;
+				}
+				$\operatorname{NbPredInMin}(y) \longleftarrow 0$\;
+				$\operatorname{NbPredNotInMin}(y) \longleftarrow 0$\;
+				$S \longleftarrow S - \{y\}$\;
+				$\operatorname{AppendToMin}(y)$\;
+			}
+		}
+		$\operatorname{RemoveFromMin}(x)$\;
+	}
+}
+\caption{IntervalRestriction\label{IR}}
+\end{algorithm}
