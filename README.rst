@@ -9,9 +9,9 @@ Quantitative-Finance
     $ echo enter to build
     $ cd build
     $ echo execute cmake command
-    $ cmake ..
+    $ cmake -GNinja ..
     $ echo compiler
-    $ make
+    $ ninja
 
 
 .. code-block:: bash

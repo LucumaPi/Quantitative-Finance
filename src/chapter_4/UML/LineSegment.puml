@@ -1,0 +1,17 @@
+@startuml
+scale 1.5
+class LineSegment {
+    + LineSegment()
+    + LineSegment(const Point& p1, const Point& p2)
+    + LineSegment(const LineSegment& l)
+    - Point e1
+    - Point e2
+    ~ virtual ~LineSegment()
+    + Point start() const
+    + Point end() const
+    + void start(const Point& pt)
+    + void end(const Point& pt)
+    + double length() const;
+    + Point midPoint() const
+}
+@enduml

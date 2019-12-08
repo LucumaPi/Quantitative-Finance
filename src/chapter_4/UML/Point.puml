@@ -1,0 +1,23 @@
+@startuml
+scale 1.5
+class alias {
+    +void Point::init(double dx, double dy)
+    -string privateVariable
+    ~void packagePrivateMethod()
+    #{abstract} char protectedMethod(int param)
+}
+
+@enduml
+
+@startuml
+
+	Class Stage
+	Class Timeout {
+		+constructor:function(cfg)
+		+timeout:function(ctx)
+		+overdue:function(ctx)
+		+stage: Stage
+	}
+ 	Stage <|-- Timeout
+
+@enduml

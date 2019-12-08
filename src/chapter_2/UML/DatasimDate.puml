@@ -1,0 +1,12 @@
+@startuml
+scale 1.5
+class DatasimDate {
+    - julTy Julian_days
+    - julTy j_days(julTy days, julTy months, julTy years) const
+    - void init(julTy days, julTy months, julTy years)
+    + DatasimDate();
+    + DatasimDate(const julTy& days);
+}
+' Inequalities <|-- Class02
+' Inequalities :  Max()
+@enduml
