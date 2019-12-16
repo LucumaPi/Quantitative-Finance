@@ -17,18 +17,21 @@
 #ifndef BSIBVPIMP_HPP
 #define BSIBVPIMP_HPP
 
-
-#include "ibvpimp.hpp"
+//#include "option.hpp"
+#include "ibvpImp.hpp"
 #include "Instrument.hpp"
-
+#include "OneFactorPayoff.hpp"
 
 class BSIBVPImp : public IBVPImp
 {
 public:
 	
-		Option* opt;
-		
-		BSIBVPImp(Option& option);
+		//Option* opt;
+		TwoFactorOptionData *opt;
+
+		OneFactorPayoff *OptionPoff;
+		//BSIBVPImp(Option& option);
+		BSIBVPImp(TwoFactorOptionData& option);
 
 		double diffusion(double x, double t) const;
 		

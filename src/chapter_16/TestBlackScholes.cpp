@@ -45,8 +45,8 @@ int main()
 
 	// Black Scholes example
 	InstrumentFactory* myFactory = GetInstrumentFactory();
-	Option* myOption = myFactory->CreateOption();
-	myOption -> print();
+	TwoFactorOptionData* myOption = myFactory->CreateOption();
+	//myOption -> print();
 
 	//cout << "1) European or 2) American style: ";
 	//int exStyle = 1; cin >> exStyle;
@@ -60,7 +60,7 @@ int main()
 	/////////////////////// Geometry //////////////////////////
 
 	// Define region in (S, t) space
-	Range<double> rangeX(0.0, myOption->SMax);
+	Range<double> rangeX(0.0, myOption->SMax1);
 
 	Range<double> rangeT(0.0, myOption ->T); // Time horizon
 	/////////////////////// Geometry ////////////////////////////
@@ -103,8 +103,8 @@ int main()
 	{
 		try
 		{
-			printMatrixInExcel(myFDM->result(), fdm.TValues(), fdm.XValues(), 
-						string("BSEulerE"));
+			/*printMatrixInExcel(myFDM->result(), fdm.TValues(), fdm.XValues(), 
+						string("BSEulerE"));*/
 
 			//print(myFDM->result());
 		}
@@ -120,8 +120,8 @@ int main()
 		
 		try 
 		{   // Matrix is (N+1)X(J+1), TValues == N+1, XValues == J+1
-			printMatrixChartsInExcel(f, myFDM->result(), fdm.TValues(), fdm.XValues(),
-					string("BSEulerI"));
+			/*printMatrixChartsInExcel(f, myFDM->result(), fdm.TValues(), fdm.XValues(),
+					string("BSEulerI"));*/
 
 		//	print(myFDM->result());
 		}

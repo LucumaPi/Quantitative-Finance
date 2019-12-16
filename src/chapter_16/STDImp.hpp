@@ -11,7 +11,7 @@
 #ifndef STDIMP_HPP
 #define STDIMP_HPP
 
-#include "ibvpimp.hpp"
+#include "ibvpImp.hpp"
 
 // Domain-independent class for Parabolic IBVP
 class STDIBVPImp : public IBVPImp

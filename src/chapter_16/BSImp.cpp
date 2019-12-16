@@ -21,22 +21,22 @@
 //
 // (C) Datasim Component Technology BV 2000-2006
 
-
+#include "OneFactorPayoff.hpp"		// Payoff function hierarchy
 #include "BSImp.hpp"			
 #include <math.h>
-#include "OneFactorPayoff.hpp"		// Payoff function hierarchy
 #include "Instrument.hpp"			// Basic Option hierarchy
 	
 
-BSIBVPImp::BSIBVPImp(Option& option) 
+BSIBVPImp::BSIBVPImp(TwoFactorOptionData& option) 
 {
 	opt = &option;
+	OptionPoff = new OneFactorPayoff();
 }
 
 double BSIBVPImp::diffusion(double x, double t) const
 { // simulates diffusion
 
-	double v = (opt -> sig); // volatility
+	double v = (opt -> sig1); // volatility
 			
 	return 0.5 * v * v * x * x;
 
@@ -78,7 +78,7 @@ double BSIBVPImp::BCR(double t) const					// Right hand boundary condition
 {
 	if (opt->type == 'C')
 	{
-		return opt->SMax; // Magic number
+		return opt->SMax1; // Magic number
 	}
 	else
 	{
@@ -88,6 +88,7 @@ double BSIBVPImp::BCR(double t) const					// Right hand boundary condition
 
 double BSIBVPImp::IC(double x) const					// Initial condition
 {
-	return (*opt).OptionPayoff.payoff(x);
+	//return (*opt).OptionPayoff.payoff(x);
+	return OptionPoff->payoff(x);
 }
 
