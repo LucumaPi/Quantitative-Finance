@@ -5,7 +5,7 @@
 // (C) Datasim Education BV 2005
 //
 
-#include <duffy/range.hh>
+#include <duffy/Range.hh>
 #include <duffy/DatasimDate.hh> // Dates and other useful stuff
 
 template <class Numeric>

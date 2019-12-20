@@ -54,8 +54,6 @@ public:
 	// Modifiers
 //	void add(const AI& key, const V& value);
 //	void remove(const AI& key);
-
-
 };
 #include "../../src/AssocArray.cc"
 #endif	// AssocArray_HH

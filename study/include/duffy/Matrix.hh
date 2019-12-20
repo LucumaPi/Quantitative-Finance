@@ -53,4 +53,4 @@ public:
 	Matrix<V, I, S>& operator = (const Matrix<V, I, S>& source);
 };
 #include "../../src/Matrix.cc"
-#endif	// Matrix_hh
+#endif	// Matrix_HH

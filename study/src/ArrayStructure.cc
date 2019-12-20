@@ -31,16 +31,15 @@ ArrayStructure<V>::~ArrayStructure()
 
 // Selectors
 template <class V>
-inline const V& ArrayStructure<V>::Element(size_t index) const
+inline const V& ArrayStructure<V>::Element(std::size_t index) const
 { // Get element at position
 
 	// Use the subscript operator in derived classes
 	return ((*this)[index]);
-	
 }
 
 template <class V>
-size_t ArrayStructure<V>::MinIndex() const
+std::size_t ArrayStructure<V>::MinIndex() const
 { // Return the minimum index
 
 	// Always ONE
@@ -48,16 +47,14 @@ size_t ArrayStructure<V>::MinIndex() const
 }
 
 template <class V>
-size_t ArrayStructure<V>::MaxIndex() const
+std::size_t ArrayStructure<V>::MaxIndex() const
 { // Return the maximum index
-
-
 	return Size();
 }
 
 // Modifiers
 template <class V>
-inline void ArrayStructure<V>::Element(size_t index, const V& val)
+inline void ArrayStructure<V>::Element(std::size_t index, const V& val)
 { // Change element at position
 
 	// Use the subscript operator in derived classes
@@ -67,7 +64,6 @@ inline void ArrayStructure<V>::Element(size_t index, const V& val)
 template <class V>
 ArrayStructure<V>& ArrayStructure<V>::operator = (const ArrayStructure<V>& source)
 { // Assignment operator
-	
 	return *this;
 }
 #endif

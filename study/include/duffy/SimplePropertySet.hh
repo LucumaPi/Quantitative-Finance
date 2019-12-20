@@ -15,16 +15,13 @@
 #ifndef SimplePropertySet_hh
 #define SimplePropertySet_hh
 
-#include "property.hh"
+#include "Property.hh"
 #include <map>
 #include <string>
 
 #include "Set.hh"
 
-using namespace std;
-
-
-template <class N = string, class V = double> class SimplePropertySet 
+template <class N = std::string, class V = double> class SimplePropertySet 
 		: public PropertyThing<N, V>
 {
 private:
@@ -32,14 +29,14 @@ private:
 	N nam;		// The name of the set
 
 	// The SimplePropertySet list using the STL map
-	map<N, V> sl;
+	std::map<N, V> sl;
 	Set<N> keys;
 
 
 public:
 	// User can use the STL iterator
-	typedef typename map<N, V>::iterator iterator;
-	typedef typename map<N, V>::const_iterator const_iterator;
+	typedef typename std::map<N, V>::iterator iterator;
+	typedef typename std::map<N, V>::const_iterator const_iterator;
 
 	// Constructors and destructor
 	SimplePropertySet();		// Default constructor
@@ -91,4 +88,4 @@ public:
 
 };
 #include "../../src/SimplePropertySet.cc"
-#endif	// SimplePropertySet_hh
+#endif	// SimplePropertySet_HH

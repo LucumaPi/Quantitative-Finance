@@ -9,8 +9,8 @@
 // (C) Datasim Education BV 2003-2006
 //
 
-#ifndef LatticeMechanisms_CPP
-#define LatticeMechanisms_CPP
+#ifndef LatticeMechanisms_CC
+#define LatticeMechanisms_CC
 
 #include <duffy/Lattice.hh>
 #include <duffy/Matrix.hh>

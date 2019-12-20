@@ -6,7 +6,7 @@
 //
 
 
-#include <duffy/range.hh>
+#include <duffy/Range.hh>
 #include <iostream>
 
 template <class Numeric>

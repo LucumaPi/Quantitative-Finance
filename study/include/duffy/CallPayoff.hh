@@ -4,8 +4,8 @@
 //
 // (C) Datasim Education BV 1998 - 2005
 
-#ifndef CallPayoff_hh
-#define CallPayoff_hh
+#ifndef CallPayoff_HH
+#define CallPayoff_HH
 
 #include "Payoff.hh"
 
@@ -33,7 +33,6 @@ public:
 
 	// Implement the pure virtual payoff function from base class
 	double payoff(double S) const; // For a given spot price
-
 };
 
-#endif // CallPayoff_hh
+#endif // CallPayoff_HH

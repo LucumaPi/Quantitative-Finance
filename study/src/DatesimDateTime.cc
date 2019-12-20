@@ -1,11 +1,11 @@
 // DateTime.cpp
 //
-       /*****************************************************************
-        * Prog. Name : DDatasimDate.CXX                                        *
-        * Copyright  : Datasim b.v. 1990                                *
-        * Author     : Eric Manshande & Henri Schenau  14-3-1990        *
-        * Descr.     : This file contains the class DatasimDate.               *
-	*****************************************************************/
+/****************************************************************
+* Prog. Name : DDatasimDate.CXX                                 *
+* Copyright  : Datasim b.v. 1990                                *
+* Author     : Eric Manshande & Henri Schenau  14-3-1990        *
+* Descr.     : This file contains the class DatasimDate.        *
+*****************************************************************/
 
 // Last modification DatasimDates:
 //
@@ -81,13 +81,12 @@ int DatasimDateTime::min_test(int minutes)
  *	of -1, a valid value will be returned.
  */
 {
-        if (minutes > 59 OR minutes < 0)
-			return(-1);
-		else
-			return(minutes);
+	if (minutes > 59 OR minutes < 0)
+		return(-1);
+	else
+		return(minutes);
 }
- 
- 
+
 int DatasimDateTime::sec_test(int secos)
 /*
  *	test if seconds has a valid value. It must be between 0 and 59, 
@@ -100,8 +99,7 @@ int DatasimDateTime::sec_test(int secos)
 	else
 		return(secos);
 }
- 
- 
+
 DatasimDateTime::DatasimDateTime(secTy secs, long* over)
 /*
  *	construct a time from a number of seconds. If the number of 
@@ -134,21 +132,17 @@ DatasimDateTime::DatasimDateTime()
  *	should be machine independant.
  */
 {
-        time_t local_time;              // type to hold time
-        struct tm *t_ptr;               // struct to contain time, date etc
- 
-        local_time = time(NULL);        // get time (and date) from system
-        t_ptr = localtime(&local_time); // convert to struct 
-        int hour_t = hour_test(t_ptr->tm_hour);	// test hour.
-        int min_t = min_test(t_ptr->tm_min);	// test minute
-        int sec_t = sec_test(t_ptr->tm_sec);	// test second
-        seconds = secs(hour_t, min_t, sec_t);	// cal. seconds from midnight
-}
- 
- 
- 
+	time_t local_time;              // type to hold time
+	struct tm *t_ptr;               // struct to contain time, date etc
 
- 
+	local_time = time(NULL);        // get time (and date) from system
+	t_ptr = localtime(&local_time); // convert to struct 
+	int hour_t = hour_test(t_ptr->tm_hour);	// test hour.
+	int min_t = min_test(t_ptr->tm_min);	// test minute
+	int sec_t = sec_test(t_ptr->tm_sec);	// test second
+	seconds = secs(hour_t, min_t, sec_t);	// cal. seconds from midnight
+}
+
 int DatasimDateTime::ret_hour()
 /*
  *	return the hour of the day from this DatasimDateTime.
@@ -477,8 +471,7 @@ DatasimDateTime DatasimDateTime::add_minutes(long minutes)
 		tmp = sub_period(0, minutes * -1); // subtract minutes
 	return(tmp);			// return result
 }
- 
- 
+
 DatasimDateTime DatasimDateTime::sub_minutes(long minutes)
 /*
  *	return a number of minutes subtracted from this DatasimDateTime. If the DatasimDateTime 

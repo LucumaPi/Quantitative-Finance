@@ -51,5 +51,5 @@ public:
 	Range<Type>& operator = (const Range<Type>& ran2);
 
 };
-#include "../../src/range.cc"
+#include "../../src/Range.cc"
 #endif

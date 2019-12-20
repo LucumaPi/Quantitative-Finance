@@ -5,9 +5,8 @@
 // (C) Datasim Component Technology BV 2003
 //
 
-#ifndef EuropeanOption_cpp
-#define EuropeanOption_cpp
-
+#ifndef EuropeanOption_CC
+#define EuropeanOption_CC
 
 #include <duffy/EuropeanOption.hh>
 
@@ -15,16 +14,12 @@
 
 double EuropeanOption::n(double x) const
 { 
-
 	double A = 1.0/std::sqrt(2.0 * 3.1415);
 	return A * std::exp(-x*x*0.5);
-
 }
 
 double EuropeanOption::N(double x) const
 { // The approximation to the cumulative normal distribution
-
-
 	double a1 = 0.4361836;
 	double a2 = -0.1201676;
 	double a3 = 0.9372980;
@@ -46,27 +41,22 @@ double EuropeanOption::N(double x) const
 // Kernel Functions (Haug)
 double EuropeanOption::CallPrice() const
 {
-
 	double tmp = sig * std::sqrt(T);
 
 	double d1 = ( std::log(U/K) + (b+ (sig*sig)*0.5 ) * T )/ tmp;
 	double d2 = d1 - tmp;
 
-
 	return (U * std::exp((b-r)*T) * N(d1)) - (K * std::exp(-r * T)* N(d2));
-
 }
 
 double EuropeanOption::PutPrice() const
 {
-
 	double tmp = sig * std::sqrt(T);
 
 	double d1 = ( std::log(U/K) + (b+ (sig*sig)*0.5 ) * T )/ tmp;
 	double d2 = d1 - tmp;
 
 	return (K * std::exp(-r * T)* N(-d2)) - (U * std::exp((b-r)*T) * N(-d1));
-
 }
 
 double EuropeanOption::CallDelta() const
@@ -88,10 +78,6 @@ double EuropeanOption::PutDelta() const
 	return std::exp((b-r)*T) * (N(d1) - 1.0);
 }
 
-
-
-/////////////////////////////////////////////////////////////////////////////////////
-
 void EuropeanOption::init()
 {	// Initialise all default values
 
@@ -104,63 +90,46 @@ void EuropeanOption::init()
 	b = r;			// Black and Scholes stock option model (1973)
 
 	optType = "C";		// European Call Option (this is the default type)
-
-
-
 }
 
 void EuropeanOption::copy(const EuropeanOption& o2)
 {
-
 	r	= o2.r;
 	sig = o2.sig;	
 	K	= o2.K;
 	T	= o2.T;
 	U	= o2.U;
 	b	= o2.b;
-	
-	optType = o2.optType;
 
-
-	
+	optType = o2.optType;	
 }
 
 EuropeanOption::EuropeanOption() 
 { // Default call option
-
 	init();
 }
 
 EuropeanOption::EuropeanOption(const EuropeanOption& o2)
 { // Copy constructor
-
 	copy(o2);
 }
 
 EuropeanOption::EuropeanOption (const std::string& optionType)
 {	// Create option type
-
 	init();
 	optType = optionType;
 
 	if (optType == "c")
 		optType = "C";
-
 }
-
-
 
 EuropeanOption::~EuropeanOption()
 {
-
 }
-
 
 EuropeanOption& EuropeanOption::operator = (const EuropeanOption& option2)
 {
-
 	if (this == &option2) return *this;
-
 	copy (option2);
 
 	return *this;
@@ -169,14 +138,12 @@ EuropeanOption& EuropeanOption::operator = (const EuropeanOption& option2)
 // Functions that calculate option price and sensitivities
 double EuropeanOption::Price() const 
 {
-
 	if (optType == "C")
 	{
 		return CallPrice();
 	}
 	else
 		return PutPrice();
-
 }
 
 double EuropeanOption::Delta() const 
@@ -185,10 +152,7 @@ double EuropeanOption::Delta() const
 		return CallDelta();
 	else
 		return PutDelta();
-
 }
-
-
 
 // Modifier functions
 void EuropeanOption::toggle()
@@ -201,4 +165,3 @@ void EuropeanOption::toggle()
 }
 
 #endif
-

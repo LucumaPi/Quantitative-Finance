@@ -55,5 +55,5 @@ public:
 	//void accept(PropertyThingVisitor<Name, Value>& pv);
 
 };
-#include "../../src/property.cc"
+#include "../../src/Property.cc"
 #endif // PROPERTY_HH

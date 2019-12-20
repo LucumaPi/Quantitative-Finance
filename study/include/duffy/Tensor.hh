@@ -56,4 +56,4 @@ public:
 	Tensor<V, I>& operator = (const Tensor<V, I>& source);
 };
 #include "../../src/Tensor.cc"
-#endif	// Tensor_HH
+#endif	// TENSOR_HH

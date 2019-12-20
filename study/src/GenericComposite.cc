@@ -20,7 +20,7 @@ void GenericComposite<T>::Copy(const GenericComposite<T>& source)
 { // Copy the source composite to this Generic composite
 
 	// Create STL list iterator
-	std::list<T*>::const_iterator it;
+	typename std::list<T*>::const_iterator it;
 
 	for (it=source.sl.begin(); it!=source.sl.end(); it++)
 	{ // Copy the whole list
@@ -53,28 +53,28 @@ GenericComposite<T>::~GenericComposite()
 
 // Iterator functions
 template <class T>
-GenericComposite<T>::iterator GenericComposite<T>::Begin()
+typename GenericComposite<T>::iterator GenericComposite<T>::Begin()
 { // Return iterator at begin of composite
 
 	return sl.begin();
 }
 
 template <class T>
-GenericComposite<T>::const_iterator GenericComposite<T>::Begin() const
+typename GenericComposite<T>::const_iterator GenericComposite<T>::Begin() const
 { // Return const iterator at begin of composite
 
 	return sl.begin();
 }
 
 template <class T>
-GenericComposite<T>::iterator GenericComposite<T>::End()
+typename GenericComposite<T>::iterator GenericComposite<T>::End()
 { // Return iterator after end of composite
 
 	return sl.end();
 }
 
 template <class T>
-GenericComposite<T>::const_iterator GenericComposite<T>::End() const
+typename GenericComposite<T>::const_iterator GenericComposite<T>::End() const
 { // Return const iterator after end of composite
 
 	return sl.end();
@@ -134,14 +134,12 @@ template <class T>
 	
 }
 
-
-
 template <class T>
 void GenericComposite<T>::RemoveAll()
 { // Remove all Generics from the list
 
 	// Create STL list iterator
-	std::list<T*>::iterator it;
+	typename std::list<T*>::iterator it;
 
 	for (it=sl.begin(); it!=sl.end(); it++)
 	{ // Delete every Generic in the list

@@ -20,7 +20,7 @@
 #ifndef property_CC
 #define property_CC
 
-#include <duffy/property.hh>
+#include <duffy/Property.hh>
 // Constructors and destructor
 template <class Name, class Value> 
 Property< Name,  Value>::Property()

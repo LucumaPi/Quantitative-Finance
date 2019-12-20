@@ -3,14 +3,12 @@
 // Class representing dates and times in one entity.
 //
 // (C) Datasim Education BV 2004
-//                    
-
- 
+//
 #ifndef DatasimDateTime_HH
 #define DatasimDateTime_HH
- 
+
 #include <ctime>
-#include "temporaltype.hh"
+#include "TemporalType.hh"
 
 #define OR ||
 #define AND &&
@@ -19,16 +17,15 @@ enum DatasimDateTime_type {HR12, HR24};
 
 typedef unsigned long secTy;
 static const unsigned long day_seconds = (24l * 60l * 60l);
- 
 class DatasimDateTime: public TemporalType
 {
  private:
 	secTy seconds;			// number of seconds from midnight
 
-	secTy secs(long hours, long minutes, long seconds); // calc #seconds from midnight
-	int hour_test(int hour);	// test validity of hour
-	int min_test(int minute);	// test             minute
-	int sec_test(int seconds);	// test		    seconds
+	secTy secs(long hours, long minutes, long seconds);	// calc #seconds from midnight
+	int hour_test(int hour);							// test validity of hour
+	int min_test(int minute);							// test validity of minute
+	int sec_test(int seconds);							// test validity of seconds
 
  	void secs_to_DatasimDateTime(int& h, int& m, int& s, long* over = 0);
 					// give time from seconds 
@@ -72,5 +69,5 @@ class DatasimDateTime: public TemporalType
 					// give time from seconds 
 
 };
- 
+
 #endif /* DatasimDateTime_HH */

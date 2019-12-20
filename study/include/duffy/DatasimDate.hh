@@ -5,23 +5,17 @@
 //
 // (C) Datasim Education BV 2004
 //                    
-
-
-
 #ifndef DatasimDate_HH
 #define DatasimDate_HH
 
 #include <iostream>
-#include <ctime>
-#include <cctype>
-#include "temporaltype.hh"
+#include "TemporalType.hh"
 
 #define OR	||
 #define AND	&&
  
 typedef	unsigned long julTy;
 static const julTy century = 2000;
- 
 
 class DatasimDate : public TemporalType
 {
@@ -89,9 +83,6 @@ public:
 	long difference (const DatasimDate& DatasimDate_2) const;	// give difference in days between DatasimDate's
 	long operator - (const DatasimDate& d2) const;
 
-	
 	friend std::ostream& operator << (std::ostream& os, const DatasimDate& dat);
-
 };
-
 #endif

@@ -4,8 +4,8 @@
 //
 // (C) Datasim Education BV  1995-2003
 
-#ifndef ComplexArray_hh
-#define ComplexArray_hh
+#ifndef ComplexArray_HH
+#define ComplexArray_HH
 
 #include "Complex.hh"
 
@@ -36,4 +36,4 @@ public:
 	ComplexArray& operator = (const ComplexArray& source);
 };
 
-#endif // ComplexArray_hh
+#endif // ComplexArray_HH

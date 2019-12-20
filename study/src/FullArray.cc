@@ -21,7 +21,7 @@ FullArray<V, TA>::FullArray(): ArrayStructure<V>()
 }
 
 template <class V, class TA>
-FullArray<V, TA>::FullArray(size_t size): ArrayStructure<V>()
+FullArray<V, TA>::FullArray(std::size_t size): ArrayStructure<V>()
 { // Constructor with size
 
 	m_vector=std::vector<V, TA>(size);
@@ -41,7 +41,7 @@ FullArray<V, TA>::~FullArray()
 
 // Selectors
 template <class V, class TA>
-size_t FullArray<V, TA>::Size() const
+std::size_t FullArray<V, TA>::Size() const
 { // Size of the array
 
 	return m_vector.size();
@@ -52,7 +52,7 @@ size_t FullArray<V, TA>::Size() const
 
 // Operators
 template <class V, class TA>
-V& FullArray<V, TA>::operator[] (size_t index)
+V& FullArray<V, TA>::operator[] (std::size_t index)
 { // Subscripting operator
 
 
@@ -60,7 +60,7 @@ V& FullArray<V, TA>::operator[] (size_t index)
 }
 
 template <class V, class TA>
-const V& FullArray<V, TA>::operator[] (size_t index) const
+const V& FullArray<V, TA>::operator[] (std::size_t index) const
 { // Subscripting operator
 
 

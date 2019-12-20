@@ -23,7 +23,7 @@
 #ifndef Range_CC
 #define Range_CC
 
-#include <duffy/range.hh>
+#include <duffy/Range.hh>
 
 // Constructors
 template <class Type>

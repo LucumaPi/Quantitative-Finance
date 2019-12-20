@@ -1,0 +1,192 @@
+// EurpeanOption.cpp
+//
+//	Author: Daniel Duffy
+//
+// (C) Datasim Component Technology BV 2003
+//
+
+#ifndef EuropeanOption_cpp
+#define EuropeanOption_cpp
+
+#include <duffy/EuropeanOption.hh>
+#include <cmath>
+#include <iostream>
+//////////// Gaussian functions /////////////////////////////////
+
+double EuropeanOption::n(double x) const
+{ 
+
+	double A = 1.0/std::sqrt(2.0 * 3.1415);
+	return A * std::exp(-x*x*0.5);
+
+}
+
+double EuropeanOption::N(double x) const
+{ // The approximation to the cumulative normal distribution
+
+
+	double a1 = 0.4361836;
+	double a2 = -0.1201676;
+	double a3 = 0.9372980;
+
+	double k = 1.0/(1.0 + (0.33267 * x));
+	
+	if (x >= 0.0)
+	{
+		return 1.0 - n(x)* (a1*k + (a2*k*k) + (a3*k*k*k));
+	}
+	else
+	{
+		return 1.0 - N(-x);
+	}
+
+}
+
+
+// Kernel Functions (Haug)
+double EuropeanOption::CallPrice() const
+{
+
+	double tmp = sig * std::sqrt(T);
+
+	double d1 = ( std::log(U/K) + (b+ (sig*sig)*0.5 ) * T )/ tmp;
+	double d2 = d1 - tmp;
+
+
+	return (U * std::exp((b-r)*T) * N(d1)) - (K * std::exp(-r * T)* N(d2));
+
+}
+
+double EuropeanOption::PutPrice() const
+{
+
+	double tmp = sig * std::sqrt(T);
+
+	double d1 = ( std::log(U/K) + (b+ (sig*sig)*0.5 ) * T )/ tmp;
+	double d2 = d1 - tmp;
+
+	return (K * std::exp(-r * T)* N(-d2)) - (U * std::exp((b-r)*T) * N(-d1));
+
+}
+
+double EuropeanOption::CallDelta() const
+{
+	double tmp = sig * std::sqrt(T);
+
+	double d1 = ( std::log(U/K) + (b+ (sig*sig)*0.5 ) * T )/ tmp;
+
+
+	return std::exp((b-r)*T) * N(d1);
+}
+
+double EuropeanOption::PutDelta() const
+{
+	double tmp = sig * std::sqrt(T);
+
+	double d1 = ( std::log(U/K) + (b+ (sig*sig)*0.5 ) * T )/ tmp;
+
+	return std::exp((b-r)*T) * (N(d1) - 1.0);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+void EuropeanOption::init()
+{	// Initialise all default values
+
+	// Default values
+	r = 0.08;
+	sig= 0.30;
+	K = 65.0;
+	T = 0.25;
+	U = 60.0;		// U == stock in this case
+	b = r;			// Black and Scholes stock option model (1973)
+
+	std::string otyp = "C";		// European Call Option (this is the default type)
+}
+
+void EuropeanOption::copy(const EuropeanOption& o2)
+{
+
+	r	= o2.r;
+	sig = o2.sig;	
+	K	= o2.K;
+	T	= o2.T;
+	U	= o2.U;
+	b	= o2.b;
+	
+	std::string otyp = o2.otyp;
+}
+
+EuropeanOption::EuropeanOption() 
+{ // Default call option
+
+	init();
+}
+
+EuropeanOption::EuropeanOption(const EuropeanOption& o2)
+{ // Copy constructor
+
+	copy(o2);
+}
+
+EuropeanOption::EuropeanOption (const std::string& optionType)
+{	// Create option type
+
+	init();
+	otyp = optionType;
+
+	if (otyp == "c")
+		otyp = "C";
+}
+
+EuropeanOption::~EuropeanOption()
+{
+
+}
+
+
+EuropeanOption& EuropeanOption::operator = (const EuropeanOption& option2)
+{
+
+	if (this == &option2) return *this;
+
+	copy (option2);
+
+	return *this;
+}
+
+// Functions that calculate option price and sensitivities
+double EuropeanOption::Price() const 
+{
+
+	if (otyp == "C")
+	{
+		return CallPrice();
+	}
+	else
+		return PutPrice();
+
+}
+
+double EuropeanOption::Delta() const 
+{
+	if (otyp == "C")
+		return CallDelta();
+	else
+		return PutDelta();
+
+}
+
+
+
+// Modifier functions
+void EuropeanOption::toggle()
+{ // Change option type (C/P, P/C)
+
+	if (otyp == "C")
+		otyp = "P";
+	else
+		otyp = "C";
+}
+
+#endif

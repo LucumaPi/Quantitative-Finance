@@ -11,7 +11,7 @@
 namespace PayoffNamespace
 {
 	double K;
-	// int type;
+	int type;
 
 	namespace CallPayoff
 	{

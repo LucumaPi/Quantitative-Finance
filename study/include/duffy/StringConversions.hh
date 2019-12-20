@@ -17,7 +17,7 @@ std::string getString(long j);
 
 std::string getString(int j);
 
-std::string getString(size_t j);
+std::string getString(std::size_t j);
 
 std::string getString(double d);
 

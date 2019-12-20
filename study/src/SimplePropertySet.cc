@@ -28,7 +28,7 @@ SimplePropertySet<N,V>::SimplePropertySet()
 { // Default constructor
 
 	nam = N();
-	sl=map<N,V>();
+	sl=std::map<N,V>();
 	keys = Set<N>();
 }
 
@@ -37,7 +37,7 @@ SimplePropertySet<N,V>::SimplePropertySet(const N& name)
 { // Named property set
 
 	nam = name;
-	sl=map<N,V>();
+	sl=std::map<N,V>();
 	keys = Set<N>();
 	keys.Insert(name);
 }
@@ -157,7 +157,7 @@ template <class N, class V>
 void SimplePropertySet<N,V>::ClearAll()
 {	// Remove all its properties
 
-	sl = map<N,V>();
+	sl = std::map<N,V>();
 }
 
 template <class N, class V>
@@ -170,7 +170,7 @@ template <class N, class V>
 
 	// ;( Sledgehammer, use find!!
 	// We iterate over the list until we find the value
-	typename map<N,V>::const_iterator it;
+	typename std::map<N,V>::const_iterator it;
 
 	for (it=sl.begin(); it!=sl.end(); it++)
 	{ 
@@ -195,7 +195,7 @@ void SimplePropertySet<N,V>::value(const N& name, const V& value)
 
 	// ;( Sledgehammer
 	// We iterate over the list until we find the value
-	typename map<N,V>::iterator it;
+	typename std::map<N,V>::iterator it;
 
 	for (it=sl.begin(); it!=sl.end(); it++)
 	{ 
@@ -222,7 +222,7 @@ void SimplePropertySet<N,V>::add(const N& key, const V& value)
 { // Add a key+value pair to the list
 
 
-	pair<N,V> tmp;
+	std::pair<N,V> tmp;
 	tmp.first = key;
 	tmp.second = value;
 
@@ -237,7 +237,7 @@ void SimplePropertySet<N,V>::add(const Property<N, V>& pr)
 { // Add a key+value pair to the list
 
 
-	pair<N,V> tmp;
+	std::pair<N,V> tmp;
 	tmp.first = pr.name();
 	tmp.second = pr();
 

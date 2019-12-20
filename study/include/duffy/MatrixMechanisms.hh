@@ -37,7 +37,7 @@ template <class V, class I> V llNorm(const NumericMatrix<V,I>& matrix);
 template <class V, class I> V FrobeniusNorm(const NumericMatrix<V,I>& matrix); // Euclidean norm
 template <class V, class I> V lInfinityNorm(const NumericMatrix<V,I>& matrix);
 
-template <class V, class I> SimplePropertySet<string, double> allNorms(const NumericMatrix<V,I>& x);
+template <class V, class I> SimplePropertySet<std::string, double> allNorms(const NumericMatrix<V,I>& x);
 
 // All diagonal elements get the value v
 //template <class V, class I> setDiagonal(Matrix<V,I>& m, const V& v);
@@ -71,7 +71,7 @@ template <class V, class I> bool diagonallyDominant(const NumericMatrix<V,I>& x)
 // lower and upper bounds
 template <class V, class I> NumericMatrix<V,I> eigenvalueBounds(const NumericMatrix<V,I>& x);
 
-// Other results for vectors and matrces
+// Other results for vectors and matrices
 template <class V, class I> V quadraticForm(const NumericMatrix<V,I>& A, const Vector<V,I>& x);
 template <class V, class I> V RayleighQuotient(const NumericMatrix<V,I>& A, const Vector<V,I>& x);
 // Calculate largest eigenvalue by Power method

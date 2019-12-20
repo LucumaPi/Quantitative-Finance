@@ -17,20 +17,20 @@ add_library(duffy#SHARED,STATIC,MODULE
     CallPayoff.cc
     Payoff.cc
     Rectangle.cc
-    MultiAssetPayoff.cc
+    #MultiAssetPayoff.cc
     Array.cc
     ArrayStructure.cc
     FullArray.cc
     Vector.cc
     DatasimException.cc
-    range.cc
+    Range.cc
     NumericMatrix.cc
     Tensor.cc
     ArrayMechanisms.cc
     PointTemplate.cc
     Set.cc
     Matrix.cc
-    property.cc
+    Property.cc
     FullMatrix.cc
     MatrixStructure.cc
     PropertyThing.cc
@@ -41,6 +41,21 @@ add_library(duffy#SHARED,STATIC,MODULE
     Lattice.cc
     MatrixMechanisms.cc
     #LatticeMechanisms.cc
+    # GenericComposite.cc
+    BinomialMethod.cc
+    BinomialLatticeStrategy.cc
+    # BackupEuropeanOption2.cc
+    IBVP.cc
+    IBVPImp.cc
+    IBVPSolver.cc
+    BSIBVPImp.cc
+    EEulerIBVPSolver.cc
+    IEulerIBVPSolver.cc
+    Mesher.cc
+    LUSolver.cc
+    STDImp.cc
+    # ExcelDriver.cc
+    # ExcelMechanisms.cc
     #${HEADER_LIST}
 )
 

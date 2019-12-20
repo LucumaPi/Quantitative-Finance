@@ -2,12 +2,12 @@
 //
 // Base class for array storage structure.
 // A size_t is used for indexing. Indexing starts at 1 in this class and its
-// dervived classes. These derived classes must implement the indexing [] operator.
+// derived classes. These derived classes must implement the indexing [] operator.
 //
 // (C) Datasim Component Technology 1999
 
-#ifndef ArrayStructure_hh
-#define ArrayStructure_hh
+#ifndef ArrayStructure_HH
+#define ArrayStructure_HH
 #include <cstddef>
 
 template <class V>
@@ -20,20 +20,20 @@ public:
 	virtual ~ArrayStructure();										// Destructor
 
 	// Selectors
-	virtual size_t Size() const=0;									// Size of the array
-	const V& Element(size_t index) const;						// Get element at position
+	virtual std::size_t Size() const=0;									// Size of the array
+	const V& Element(std::size_t index) const;						// Get element at position
 
-	size_t MinIndex() const;									// Return the minimum index == 1
-	size_t MaxIndex() const;									// Return the maximum index == size
+	std::size_t MinIndex() const;									// Return the minimum index == 1
+	std::size_t MaxIndex() const;									// Return the maximum index == size
 
 	// Modifiers
 	void Element(size_t index, const V& val);					// Change element at position
 
 	// Operators
-	virtual V& operator[] (size_t index) = 0;			
-	virtual const V& operator[] (size_t index) const = 0;
+	virtual V& operator[] (std::size_t index) = 0;			
+	virtual const V& operator[] (std::size_t index) const = 0;
 
 	ArrayStructure<V>& operator = (const ArrayStructure<V>& source);
 };
 #include "../../src/ArrayStructure.cc"
-#endif	// ArrayStructure_hh
+#endif	// ArrayStructure_HH

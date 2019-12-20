@@ -5,13 +5,13 @@
 // (C) Datasim Education BV 2005
 //
 
-#ifndef PayoffNamespace_cpp
-#define PayoffNamespace_cpp
+#ifndef PayoffNamespace_CC
+#define PayoffNamespace_CC
 
 namespace PayoffNamespace
 {
 	double K;
-	// int type;
+	int type;
 
 	namespace CallPayoff
 	{

@@ -37,11 +37,10 @@ public:
 
 	BullSpreadPayoff& operator = (const BullSpreadPayoff& source);	// Assignment operator
 
-	// Implment the pure virtual payoff function from base class
+	// Implement the pure virtual payoff function from base class
 	double payoff(double S) const; // For a given spot price
 
 	double profit(double S) const;			// Profit
 
 };
-
 #endif // BullSpreadPayoff_hh

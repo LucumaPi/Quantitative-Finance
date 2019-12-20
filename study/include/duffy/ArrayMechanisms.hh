@@ -19,10 +19,10 @@
 #define ArrayMechanisms_hh
 
 #include "SimplePropertySet.hh"
-#include "range.hh"
+#include "Range.hh"
 #include "Tensor.hh"
+#include <cmath>
 
-///////////////////////////////////////////////////////////////////////////////////////////////
 // Sums and averages
 template <class V, class I> V sum(const Vector<V,I>& x); // Sum of elements
 template <class V, class I> V product(const Vector<V,I>& x); // Product of elements
@@ -49,11 +49,9 @@ template <class V, class I> V quadraticMean(const Vector<V,I>& x);
 template <class V, class I> V sumSquares(const Vector<V,I>& x);
 
 // A function returning all of the above values in one foul swoop (performance)
-template <class V, class I> SimplePropertySet<string, double> allAverages(const Vector<V,I>& x);
-
+template <class V, class I> SimplePropertySet<std::string, double> allAverages(const Vector<V,I>& x);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 // Measures of Dispersion
 
@@ -62,10 +60,7 @@ template <class V, class I> V standardDeviation(const Vector<V,I>& x);
 template <class V, class I> V variance(const Vector<V,I>& x);
 
 // A function returning all of the above values in one foul swoop (performance)
-template <class V, class I> SimplePropertySet<string, double> allDispersions(const Vector<V,I>& x);
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-
+template <class V, class I> SimplePropertySet<std::string, double> allDispersions(const Vector<V,I>& x);
 
 // Moments, Skewness and Kurtosis
 
@@ -95,9 +90,6 @@ template <class V, class I> V mode(const Vector<V,I>& x);
 
 template <class V, class I> V skewness(const Vector<V,I>& x);
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // Extremum operations on vectors
 
 template <class V, class I> V maxValue(const Vector<V,I>& x);
@@ -121,8 +113,6 @@ template <class V, class I> V minValue(const Vector<V,I>& vectorA, const Vector<
 template <class V, class I> V maxAbsValue(const Vector<V,I>& vectorA, const Vector<V,I>& vectorB);
 template <class V, class I> V minAbsValue(const Vector<V,I>& vectorA, const Vector<V,I>& vectorB);
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // Vector and matrix norms
 
 template <class V, class I> V innerProduct(const Vector<V,I>& vectorA, const Vector<V,I>& vectorB);
@@ -131,7 +121,7 @@ template <class V, class I> V l2Norm(const Vector<V,I>& x);		// Euclidean norm
 template <class V, class I> V lpNorm(const Vector<V,I>& x, const I& p);		
 template <class V, class I> V lInfinityNorm(const Vector<V,I>& x);	// L infinity norm
 
-template <class V, class I> SimplePropertySet<string, double> allNorms(const Vector<V,I>& x);
+template <class V, class I> SimplePropertySet<std::string, double> allNorms(const Vector<V,I>& x);
 
 // Same vector morms as above except for the difference of two vectors
 template <class V, class I> V l1Norm(const Vector<V,I>& vectorA, const Vector<V,I>& vectorB);
@@ -139,14 +129,8 @@ template <class V, class I> V l2Norm(const Vector<V,I>& vectorA, const Vector<V,
 template <class V, class I> V lpNorm(const Vector<V,I>& vectorA, const Vector<V,I>& vectorB, const I& p);		
 template <class V, class I> V lInfinityNorm(const Vector<V,I>& vectorA, const Vector<V,I>& vectorB);	// L infinity norm
 
-template <class V, class I> SimplePropertySet<string, double> allNorms(const Vector<V,I>& vectorA, const Vector<V,I>& vectorB);
+template <class V, class I> SimplePropertySet<std::string, double> allNorms(const Vector<V,I>& vectorA, const Vector<V,I>& vectorB);
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 // Functions for Operations Research and Numerical Linear Algebra
 
 // Comparing vectors with each other
@@ -164,22 +148,18 @@ template <class V, class I> bool operator >= (const Vector<V,I>& v1, const Vecto
 template <class V, class I> bool operator == (const Vector<V,I>& v1, const Vector<V,I>& v2);
 template <class V, class I> bool operator != (const Vector<V,I>& v1, const Vector<V,I>& v2);
 
-
-
-
 // Utility functions
 
 // Create an STL vector from a general Vector
-template <class V> vector<V> createSTLvector (const Vector<V,int>& myVector);
+template <class V> std::vector<V> createSTLvector (const Vector<V,int>& myVector);
 // Create a general Vector from an STL vector
-template <class V> Vector<V, int> createDatasimVector (const vector<V>& mySTLvector);
+template <class V> Vector<V, int> createDatasimVector (const std::vector<V>& mySTLvector);
 
 // Cumulative vector c[j] = c[j-1] + x[j]
-template <class V, class I> Vector<V, I> cumulativeVector (const vector<V>& x);
+template <class V, class I> Vector<V, I> cumulativeVector (const std::vector<V>& x);
 
 // First shall be last
 template <class V, class I> Vector<V, I> reverse (const Vector<V,I>& x);
-
 
 ////////////// Useful and Basic Print Functions ////////////////////////////////////////////////////
 template <class V, class I> void print(const Array<V,I>& v);

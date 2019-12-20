@@ -4,7 +4,6 @@
 //
 // (C) Datasim Education BV 2005 - 2006
 //
-
 #ifndef DatasimExceptions_HH
 #define DatasimExceptions_HH
 
@@ -15,31 +14,28 @@
 class DatasimException
 { // Base class for my current exceptions
 private:
-		std::string mess;			// The error message
-		std::string meth;			// The method that threw the exception
-		std::string why;				// More info on message
+	std::string mess;			// The error message
+	std::string meth;			// The method that threw the exception
+	std::string why;				// More info on message
 
-		// Redundant data
-		std::vector<std::string> result;
+	// Redundant data
+	std::vector<std::string> result;
 
 public:
-		DatasimException();
-	
-		DatasimException (const std::string& message, const std::string& method,
-							const std::string& extraInfo);
-		
+	DatasimException();
 
-		std::string Message() const;		// The message itself
-		std::string rationale() const;	// Extra information
-		std::string Method() const;		// In which method?
+	DatasimException (const std::string& message, const std::string& method,
+						const std::string& extraInfo);
+	
 
-		// Al information in one packet
-		std::vector<std::string> MessageDump() const;	// Length 3
-	
-		// Print the full packet
-		virtual void print() const;
-	
+	std::string Message() const;		// The message itself
+	std::string rationale() const;	// Extra information
+	std::string Method() const;		// In which method?
+
+	// Al information in one packet
+	std::vector<std::string> MessageDump() const;	// Length 3
+
+	// Print the full packet
+	virtual void print() const;
 };
-
-
 #endif

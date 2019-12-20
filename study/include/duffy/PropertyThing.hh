@@ -10,7 +10,6 @@
 
 #include <string>
 
-
 template <class Name, class Value>
 	class PropertyThing
 {

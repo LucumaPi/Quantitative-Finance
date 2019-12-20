@@ -11,7 +11,7 @@
 void print(const SimplePropertySet<std::string,double>& pset)
 {
 
-	SimplePropertySet<string,double>::const_iterator it;
+	SimplePropertySet<std::string,double>::const_iterator it;
 	
 	std::cout << "\nPrinting Property Set\n";
 

@@ -20,7 +20,6 @@
 template <class V, class AI> 
 	AssocArray<V, AI>::AssocArray()
 {
-
 	str = std::map<AI,V>();
 	keys = Set<AI>();
 }
@@ -28,25 +27,19 @@ template <class V, class AI>
 template <class V, class AI> 
 	AssocArray<V, AI>::AssocArray(const AssocArray<V, AI>& arr2)
 {
-
 	str = arr2.str;
 	keys = arr2.keys;
 }
 
-
-
 // Construct the map from a list of names and a REPEATED val
-
 
 template <class V, class AI> 
 	AssocArray<V, AI>::AssocArray(const Set<AI>& names, const V& val)
 {
-
 	typename Set<AI>::const_iterator it;
 	for (it = names.Begin(); it != names.End(); it++)
 	{
 		str.insert(std::pair<AI,V>(*it, val));
-
 	}
 
 	keys = names;
@@ -58,16 +51,13 @@ template <class V, class AI>
 	if (&ass2 == this)
 		return *this;
 
-
 	 str = ass2.str;
 
 	// Use copy algorithm to copy the maps
-//	copy(ass2.str.begin(), ass2.end(), str.begin());
-	
+//	copy(ass2.str.begin(), ass2.end(), str.begin());	
 	keys = ass2.keys;
 
 	return *this;
-
 }
 
 
@@ -75,39 +65,31 @@ template <class V, class AI>
 template <class V, class AI> 
 	V& AssocArray<V, AI>::operator [] (const AI& index)
 {
-
 	return str[index];
-
-
 }
-
 
 // Iterator functions
 template <class V, class AI> typename
 AssocArray<V, AI>::iterator AssocArray<V, AI>::Begin()
 { // Return iterator at begin of composite
-
 	return str.begin();
 }
 
 template <class V, class AI> typename
 AssocArray<V, AI>::const_iterator AssocArray<V, AI>::Begin() const
 { // Return const iterator at begin of composite
-
 	return str.begin();
 }
 
 template <class V, class AI> typename
 AssocArray<V, AI>::iterator AssocArray<V, AI>::End()
 { // Return iterator after end of composite
-
 	return str.end();
 }
 
 template <class V, class AI> typename
 AssocArray<V, AI>::const_iterator AssocArray<V, AI>::End() const
 { // Return const iterator after end of composite
-
 	return str.end();
 }
 

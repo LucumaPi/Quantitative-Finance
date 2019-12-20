@@ -18,14 +18,14 @@ template <class T>
 private:
 	// The Genericlist using the STL list
 	std::list<T*> sl;
-	
+
 	GenericComposite(const GenericComposite& source);	// Copy constructor
 	void Copy(const GenericComposite<T>& source);
 
 public:
 	// User can use the STL iterator
-	typedef std::list<T*>::iterator iterator;
-	typedef std::list<T*>::const_iterator const_iterator;
+	typename std::list<T*>::iterator iterator;
+	typename std::list<T*>::const_iterator const_iterator;
 
 	// Constructors and destructor
 	GenericComposite();								// Default constructor

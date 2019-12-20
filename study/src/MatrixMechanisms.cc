@@ -24,11 +24,11 @@
 template <class V, class I> V sumAbsRow(const NumericMatrix<V,I>& m, const I& i)
 { // Add up for a given row i
 
-	V result = fabs(m(i, m.MinColumnIndex()));
+	V result = std::fabs(m(i, m.MinColumnIndex()));
 
 	for (I j = m.MinColumnIndex() + 1; j <= m.MaxColumnIndex(); j++)
 	{
-		result += fabs(m(i,j));
+		result += std::fabs(m(i,j));
 	}
 
 	return result;
@@ -38,12 +38,12 @@ template <class V, class I> V sumAbsRow(const NumericMatrix<V,I>& m, const I& i)
 template <class V, class I> V sumAbsColumn(const NumericMatrix<V,I>& m, const I& j)
 { // Add up for a given column j
 
-	V result = fabs(m(m.MinRowIndex(), j));
+	V result = std::fabs(m(m.MinRowIndex(), j));
 
 	for (I i = m.MinRowIndex() + 1; i <= m.MaxRowIndex(); i++)
 	{
 
-		result += fabs(m(i,j));
+		result += std::fabs(m(i,j));
 	}
 
 	return result;
@@ -83,7 +83,7 @@ template <class V, class I> Vector<V,I> sumAbsColumn(const NumericMatrix<V,I>& m
 
 
 template <class V, class I> V l1Norm(const NumericMatrix<V,I>& matrix)
-{ // Largest coulmn 
+{ // Largest column 
 
 		V ans = V(0.0);
 		V tmp(ans);
@@ -119,7 +119,7 @@ template <class V, class I> V FrobeniusNorm(const NumericMatrix<V,I>& matrix)
 
 		}
 
-		return sqrt(ans);
+		return std::sqrt(ans);
 } 
 
 template <class V, class I> V lInfinityNorm(const NumericMatrix<V,I>& matrix)
@@ -147,14 +147,14 @@ template <class V, class I> V lInfinityNorm(const NumericMatrix<V,I>& matrix)
 
 }
 
-template <class V, class I> SimplePropertySet<string, double> allNorms(const NumericMatrix<V,I>& m)
+template <class V, class I> SimplePropertySet<std::string, double> allNorms(const NumericMatrix<V,I>& m)
 {
 
-	SimplePropertySet<string, double> result;	// Empty list
+	SimplePropertySet<std::string, double> result;	// Empty list
 
-	result.add(Property<string, double> ("l1", l1Norm(m)));
-	result.add(Property<string, double> ("l2", FrobeniusNorm(m)));
-	result.add(Property<string, double> ("linf", lInfinityNorm(m)));
+	result.add(Property<std::string, double> ("l1", l1Norm(m)));
+	result.add(Property<std::string, double> ("l2", FrobeniusNorm(m)));
+	result.add(Property<std::string, double> ("linf", lInfinityNorm(m)));
 
 	return result;
 
@@ -449,16 +449,16 @@ template <class V, class I> void print(const Matrix<V,I>& mat)
 	for (int i = mat.MinRowIndex(); i <= mat.MaxRowIndex(); i++)
 	{
 	
-		cout << "\n[";
+		std::cout << "\n[";
 		for (I j = mat.MinColumnIndex(); j <= mat.MaxColumnIndex()-1; j++)
 		{
-			cout << mat(i,j) << ", ";
+			std::cout << mat(i,j) << ", ";
 		}
-		cout << mat(i, mat.MaxColumnIndex());
-		cout << "]" << endl;
+		std::cout << mat(i, mat.MaxColumnIndex());
+		std::cout << "]" << std::endl;
 	
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 
 #endif

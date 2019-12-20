@@ -4,8 +4,8 @@
 //
 // (C) Datasim Component Technology 1999-2006
 
-#ifndef Vector_hh
-#define Vector_hh
+#ifndef VECTOR_HH
+#define VECTOR_HH
 
 #include "Array.hh"
 
@@ -90,4 +90,4 @@ template <class V, class I> void toggleSign(Vector<V,I>& v); // -v (unary minus)
 
 template <class V, class I> void assign(Vector<V,I>& v, const V& RHS); // All elements = RHS
 #include "../../src/Vector.cc"
-#endif	// Vector_hh
+#endif	// VECTOR_HH

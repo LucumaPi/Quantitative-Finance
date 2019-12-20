@@ -17,7 +17,7 @@ void print(const GenericComposite<Shape>& sc)
 
 	for (i=sc.Begin(); i!=sc.End(); i++)
 	{
-		const type_info& pp = typeid(*i);
+		const std::type_info& pp = typeid(*i);
 		std::cout << pp.name() << std::endl;
 	}
 

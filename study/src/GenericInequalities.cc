@@ -2,7 +2,7 @@
 //
 // Code file containing bodies of functions
 //
-// Last Modific& valueation Dates:
+// Last Modific& valuation Dates:
 //
 //	2006-2-17 DD kic& valuek-off code
 //	2006-2-17 DD Copied from non-generic& value structure

@@ -7,7 +7,7 @@
 // (C) Datasim Education BV 2003-2006
 //
 
-#include <duffy/range.hh>
+#include <duffy/Range.hh>
 #include <iostream>
 
 int main()

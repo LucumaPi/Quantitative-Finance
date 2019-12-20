@@ -20,6 +20,4 @@ double Min(double x, double y);
 double Max(double x, double y, double z);
 double Min(double x, double y, double z);
 
-////////////////////////////////////////////////
-
 #endif

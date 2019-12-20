@@ -5,8 +5,8 @@
 //
 // (C) Datasim Education BV
 
-#ifndef ShapeComposite_HH
-#define ShapeComposite_HH
+#ifndef SHAPECOMPOSITE_HH
+#define SHAPECOMPOSITE_HH
 
 #include <duffy/Shape.hh>
 
@@ -51,4 +51,4 @@ public:
 	ShapeComposite& operator = (const ShapeComposite& source);
 };
 
-#endif	// ShapeComposite_HH
+#endif	// SHAPECOMPOSITE_HH

@@ -5,13 +5,11 @@
 //
 // (C) Datasim Education BV 2006
 //
-
+#ifndef PSETCREATORS_HPP
+#define PSETCREATORS_HPP
 #include "SimplePropertySet.hh"
 
-#include <iostream>
-#include <string>
-
-typedef SimplePropertySet<string, double> PSet;
+typedef SimplePropertySet<std::string, double> PSet;
 
 class PSetFactory
 {
@@ -28,7 +26,7 @@ public:
 	{
 		// Add key value pairs until finished
 
-		string k; double v;
+		std::string k; double v;
 
 		std::cout << "Give name of property set: ";
 		std::cin >> k;
@@ -36,8 +34,8 @@ public:
 		PSet* result = new PSet(k);
 
 L1:
-		std::cout << "Key name (EXIT): "; std::cin >> k; std::cout << endl;
-		if (k == string("EXIT"))
+		std::cout << "Key name (EXIT): "; std::cin >> k; std::cout << std::endl;
+		if (k == std::string("EXIT"))
 		{
 			return result;
 		}
@@ -52,3 +50,4 @@ L1:
 		return result;
 	}
 };
+#endif// PSETCREATORS_HH

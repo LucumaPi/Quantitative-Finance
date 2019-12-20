@@ -12,7 +12,7 @@
 
 int main()
 {
-	SimplePropertySet<string, Instrument*> myPortfolio;
+	SimplePropertySet<std::string, Instrument*> myPortfolio;
 
 	// Create a number of specific instruments and add to portfolio
 	Option myOpt;
@@ -25,12 +25,12 @@ int main()
 	myPortfolio.add(std::string("S"), &mySwap);
 
 	// Print out the PSet
-	SimplePropertySet<string, Instrument*>::const_iterator it;
+	SimplePropertySet<std::string, Instrument*>::const_iterator it;
 
 	for (it = myPortfolio.Begin(); it != myPortfolio.End(); it++)
 	{
 		std::string tmp = it->first;
-		cout << tmp.c_str() << ", ";
+		std::cout << tmp.c_str() << ", ";
 		(it->second)->print(); std::cout << std::endl;
 	}
 

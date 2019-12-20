@@ -7,8 +7,8 @@
 // (C) Datasim Component Technology BV 2003-2006
 //
 
-#ifndef EuropeanOption_hh
-#define EuropeanOption_hh
+#ifndef EuropeanOption_HH
+#define EuropeanOption_HH
 
 #include <cmath>
 #include <string>
@@ -29,7 +29,7 @@ public:				// For TEST purposes only
 	double PutGamma() const;
 	double CallVega() const;
 	double PutVega() const;
-	
+
 	// Gaussian functions
 	double n(double x) const;
 	double N(double x) const;
@@ -60,8 +60,5 @@ public:	// Public functions
 
 	// Modifier functions
 	void toggle();		// Change option type (C/P, P/C)
-
-
 };
-
 #endif

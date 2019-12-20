@@ -23,14 +23,14 @@ FullMatrix<V, TA>::FullMatrix(): MatrixStructure<V>()
 }
 
 template <class V, class TA>
-FullMatrix<V, TA>::FullMatrix(size_t rows, size_t columns): MatrixStructure<V>()
+FullMatrix<V, TA>::FullMatrix(std::size_t rows, std::size_t columns): MatrixStructure<V>()
 { // Constructor with size
 
 	// Create the rows
 	m_structure=FullArray<FullArray<V, TA>, std::allocator<FullArray<V, TA> > >(rows);
 
-	// Add the colums to the rows
-	for (size_t i=1; i<=m_structure.Size(); i++) m_structure[i]=FullArray<V, TA>(columns);
+	// Add the columns to the rows
+	for (std::size_t i=1; i<=m_structure.Size(); i++) m_structure[i]=FullArray<V, TA>(columns);
 
 	nr = rows; nc = columns;
 }
@@ -51,14 +51,14 @@ FullMatrix<V, TA>::~FullMatrix()
 
 // Selectors
 template <class V, class TA>
-size_t FullMatrix<V, TA>::Rows() const
+std::size_t FullMatrix<V, TA>::Rows() const
 { // Number of rows
 
 	return nr;
 }
 
 template <class V, class TA>
-size_t FullMatrix<V, TA>::Columns() const
+std::size_t FullMatrix<V, TA>::Columns() const
 { // Number of columns
 
 	return nc;
@@ -67,14 +67,14 @@ size_t FullMatrix<V, TA>::Columns() const
 // Modifiers
 // Operators
 template <class V, class TA>
-ArrayStructure<V>& FullMatrix<V, TA>::operator[] (size_t row)
+ArrayStructure<V>& FullMatrix<V, TA>::operator[] (std::size_t row)
 { // Subscripting operator
 
 	return m_structure[row];
 }
 
 template <class V, class TA>
-const ArrayStructure<V>& FullMatrix<V, TA>::operator[] (size_t row) const
+const ArrayStructure<V>& FullMatrix<V, TA>::operator[] (std::size_t row) const
 { // Subscripting operator
 
 	return m_structure[row];

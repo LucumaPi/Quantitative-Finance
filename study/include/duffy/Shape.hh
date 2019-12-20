@@ -7,8 +7,8 @@
 //
 // (C) Datasim Education BV 1998-2006
 
-#ifndef Shape_HH
-#define Shape_HH
+#ifndef SHAPE_HH
+#define SHAPE_HH
 
 class Shape
 {
@@ -22,4 +22,4 @@ public:
 	Shape& operator = (const Shape& source);	// Assignment operator
 };
 
-#endif // Shape_HH
+#endif // SHAPE_HH

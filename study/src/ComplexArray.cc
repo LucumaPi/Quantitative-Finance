@@ -6,34 +6,33 @@
 //
 // (C) Datasim Education BV  1995-2006
 
-#ifndef ComplexArray_cpp
-#define ComplexArray_cpp
+#ifndef ComplexArray_CC
+#define ComplexArray_CC
 
 #include <duffy/ComplexArray.hh>
-
 
 // Default constructor
 ComplexArray::ComplexArray()
 {
 	// Create an ComplexArray with default size == 1
-	arr=new Complex[1];
-	size=1;
+	arr = new Complex[1];
+	size = 1;
 }
 
 // Constructor with size
 ComplexArray::ComplexArray(int size)
 {
-	arr=new Complex[size];
-	size=size;
+	arr = new Complex[size];
+	size = size;
 }
 
 // Copy constructor
 ComplexArray::ComplexArray(const ComplexArray& source)
 {
 	// Deep copy source
-	size=source.size;
-	arr=new Complex[size];
-	for (int i=0; i<size; i++) arr[i]=source.arr[i];
+	size = source.size;
+	arr = new Complex[size];
+	for (int i = 0; i < size; i++) arr[i] = source.arr[i];
 }
 
 // Destructor
@@ -83,17 +82,16 @@ Complex& ComplexArray::operator[](int index)
 ComplexArray& ComplexArray::operator = (const ComplexArray& source)
 {
 	// Exit if same object
-	if (this==&source) return *this;
+	if (this == &source) return *this;
 
 	// Delete old memory
 	delete[] arr;
 
 	// Deep copy source
-	size=source.size;
-	arr=new Complex[size];
-	for (int i=0; i<size; i++) arr[i]=source.arr[i];
+	size = source.size;
+	arr = new Complex[size];
+	for (int i = 0; i < size; i++) arr[i] = source.arr[i];
 
 	return *this;
 }
-
-#endif // ComplexArray_cpp
+#endif // ComplexArray_CC

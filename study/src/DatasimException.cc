@@ -17,7 +17,6 @@ DatasimException::DatasimException()
 		result[0] = mess;
 		result[1] = meth;
 		result[2] = why;
-
 }
 
 DatasimException::DatasimException (const std::string& message, const std::string& method,
@@ -31,7 +30,6 @@ DatasimException::DatasimException (const std::string& message, const std::strin
 		result[0] = mess;
 		result[1] = meth;
 		result[2] = why;
-
 }
 
 std::string DatasimException::Message() const
@@ -51,13 +49,11 @@ std::string DatasimException::Method() const
 
 std::vector<std::string> DatasimException::MessageDump() const
 { // Full message
-	
 	return result;
 }
-	
-void DatasimException::print() const
-{ 
 
+void DatasimException::print() const
+{
 	// Variant part
 	std::vector<std::string> r = MessageDump();
 

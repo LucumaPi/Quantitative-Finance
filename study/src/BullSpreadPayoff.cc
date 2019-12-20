@@ -9,7 +9,6 @@
 
 #include <duffy/BullSpreadPayoff.hh>
 
-
 // Constructors and destructor
 BullSpreadPayoff::BullSpreadPayoff(): Payoff()
 { // Default constructor
@@ -43,32 +42,27 @@ BullSpreadPayoff::BullSpreadPayoff(const BullSpreadPayoff& source): Payoff(sourc
 
 BullSpreadPayoff:: ~BullSpreadPayoff()
 { // Destructor
-
 } 
 
 // Selectors
 double BullSpreadPayoff::Strike1() const
 {// Return K1
-
 	return K1;
 }
 
 double BullSpreadPayoff::Strike2() const
 {// Return K2
-
 	return K2;
 }
 
 // Modifiers
 void BullSpreadPayoff::Strike1(double NewStrike1)
 {// Set K1
-
 	K1 = NewStrike1;
 }
 
 void BullSpreadPayoff::Strike2(double NewStrike2)
 {// Set K2
-
 	K2 = NewStrike2;
 }
 
@@ -95,7 +89,6 @@ BullSpreadPayoff& BullSpreadPayoff::operator = (const BullSpreadPayoff &source)
 double BullSpreadPayoff::payoff(double S) const
 { // Based on Hull's book
 
-
 		if (S >= K2)
 			return K2 - K1;
 		if (S <= K1)
@@ -107,7 +100,5 @@ double BullSpreadPayoff::payoff(double S) const
 
 double BullSpreadPayoff::profit(double S) const
 { // Profit
-
 	return payoff(S) - (buyValue - sellValue);
-
 }

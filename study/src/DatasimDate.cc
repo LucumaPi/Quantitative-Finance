@@ -1,11 +1,11 @@
 // datasimDatasimDate.cpp
 //
-       /*****************************************************************
-        * Prog. Name : DDatasimDate.CXX                                        *
-        * Copyright  : Datasim b.v. 1990                                *
-        * Author     : Eric Manshande & Henri Schenau  14-3-1990        *
-        * Descr.     : This file contains the class DatasimDate.               *
-	*****************************************************************/
+/****************************************************************
+* Prog. Name : DDatasimDate.CXX                                 *
+* Copyright  : Datasim b.v. 1990                                *
+* Author     : Eric Manshande & Henri Schenau  14-3-1990        *
+* Descr.     : This file contains the class DatasimDate.        *
+*****************************************************************/
 
 // Last modification DatasimDates:
 //
@@ -44,31 +44,27 @@ int DatasimDate::year_test(int year) const
  */
 {
 		// Bug?
-        if (year < 0 OR year > 9999)
+		if (year < 0 OR year > 9999)
 			return 0;
 
 		// First line changed for the 21st Century; time returned from system
 		// is 100 + year in 21st century
 		if (year > 100)
-                return(century + year - 100);
+				return(century + year - 100);
 
-        if (year >= 1000)
-                return(year);
-        
+		if (year >= 1000)
+				return(year);
 		return(0);
 }
- 
- 
+
 int DatasimDate::mm_test(int month) const
 /*
  *	Test the value of month. If the value is between 1 and 12
  *	return the value, else return 0.
  */
 {
-        return( (month < 1 OR month > 12) ? 0 : month);
+	return( (month < 1 OR month > 12) ? 0 : month);
 }
- 
- 
 
 int DatasimDate::day_test(int day, int month, int year)  const
 /*
@@ -77,21 +73,20 @@ int DatasimDate::day_test(int day, int month, int year)  const
  *	If it is valid, return the given day, else return 0.
  */
 {
-        static int numdays[] =			// number of days in month
-                { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	static int numdays[] =			// number of days in month
+			{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-        if (day < 1 OR month < 1 OR month > 12 OR year == 0)
-			return(0);
-		else if (month == 2)
-                        if ((year % 4 != 0) OR (year % 100 == 0 AND year % 400 != 0))
-                                return(day <= 28 ? day : 0);
-                        else
-                                return(day <= 29 ? day : 0);
+	if (day < 1 OR month < 1 OR month > 12 OR year == 0)
+		return(0);
+	else if (month == 2)
+		if ((year % 4 != 0) OR (year % 100 == 0 AND year % 400 != 0))
+				return(day <= 28 ? day : 0);
 		else
-			return(day <= numdays[month - 1] ? day : 0);
+				return(day <= 29 ? day : 0);
+	else
+		return(day <= numdays[month - 1] ? day : 0);
 }
- 
- 
+
 DatasimDate::DatasimDate(const DatasimDate& DatasimDate_2)
 /*
  *	copy initializer.
@@ -113,7 +108,6 @@ DatasimDate& DatasimDate::operator=(const DatasimDate& DatasimDate_2)
 	return *this;				// for multiple assignment
 }
 
-
 DatasimDate::DatasimDate()
 /*
  *	This is the default constructor. The DatasimDate is initialized
@@ -122,19 +116,16 @@ DatasimDate::DatasimDate()
  *	independent.
  */
 {
-	
-        time_t local_time;              // type to hold time
-        struct tm *t_ptr;               // struct to contain time, DatasimDate etc
- 
-      //DD 2006-8-8  local_time = time((long*) 0);        // get time (and DatasimDate) from system
-		local_time = time(0);
-        t_ptr = localtime(&local_time); // convert to struct
-        julTy yy_t = year_test(t_ptr->tm_year);	// test year, month and day
-        julTy mm_t = mm_test(t_ptr->tm_mon + 1);
-        julTy dd_t = day_test(t_ptr->tm_mday, mm_t, yy_t);
-        init(dd_t, mm_t, yy_t);	// calculate Julian days
+	time_t local_time;              // type to hold time
+	struct tm *t_ptr;               // struct to contain time, DatasimDate etc
 
-
+	//DD 2006-8-8  local_time = time((long*) 0);        // get time (and DatasimDate) from system
+	local_time = time(0);
+	t_ptr = localtime(&local_time); // convert to struct
+	julTy yy_t = year_test(t_ptr->tm_year);	// test year, month and day
+	julTy mm_t = mm_test(t_ptr->tm_mon + 1);
+	julTy dd_t = day_test(t_ptr->tm_mday, mm_t, yy_t);
+	init(dd_t, mm_t, yy_t);	// calculate Julian days
 }
 
  
@@ -154,13 +145,9 @@ DatasimDate::DatasimDate(int days)
 {
 	Julian_days = days;
 }
- 
 
- 
 DatasimDate::DatasimDate(int day, int month, int year)
 { // Day, month, year
-
-
 	Julian_days = j_days(day, month, year);
 }
 
@@ -176,24 +163,23 @@ julTy DatasimDate::j_days(julTy day, julTy month, julTy year)  const
  */
 {
 	julTy c, ya;
- 
-        if (day == 0 OR month == 0 OR year == 0)	// wrong DatasimDate.
-                return(0);
-        else {		// valid DatasimDate, algorithm to convert to Julian days. 
-		if (month > 2)
-			month -= 3;
-		else {
-			month += 9;
-			year--;
-		}
-		c = year / 100;
-		ya = year - 100 * c;
-		return(((146097 * c) >> 2) + ((1461 * ya) >> 2) +
-			(153 * month + 2) / 5 + day + 1721119);
+
+	if (day == 0 OR month == 0 OR year == 0)	// wrong DatasimDate.
+			return(0);
+	else {		// valid DatasimDate, algorithm to convert to Julian days. 
+	if (month > 2)
+		month -= 3;
+	else {
+		month += 9;
+		year--;
+	}
+	c = year / 100;
+	ya = year - 100 * c;
+	return(((146097 * c) >> 2) + ((1461 * ya) >> 2) +
+		(153 * month + 2) / 5 + day + 1721119);
 	}
 }
-	
- 
+
 void DatasimDate::jul_to_greg(julTy& day, julTy& month, julTy& year) const
 /*
  *	get the Gregorian DatasimDate (returned in the referenced variables
@@ -228,11 +214,6 @@ void DatasimDate::jul_to_greg(julTy& day, julTy& month, julTy& year) const
 		}
 	}
 }
- 
- 
-
-
-
 
 int DatasimDate::ret_year() const
 /*
@@ -244,7 +225,6 @@ int DatasimDate::ret_year() const
 	return(y);
 }
 
-
 int DatasimDate::ret_month() const
 /*
  *	return the monthnumber of this DatasimDate. It will be between 1 and 12.
@@ -255,7 +235,6 @@ int DatasimDate::ret_month() const
 	return(m);
 }
 
-
 int DatasimDate::ret_day() const
 /*
  *	return the daynumber of this DatasimDate. It will be between 1 and 31.
@@ -265,8 +244,7 @@ int DatasimDate::ret_day() const
 	jul_to_greg(d, m, y);
 	return(d);
 }
- 
- 
+
 bool DatasimDate::operator==(const DatasimDate& DatasimDate_2)  const
 /*
  *	compare two DatasimDates. Return true if they are on the same day,
@@ -275,8 +253,7 @@ bool DatasimDate::operator==(const DatasimDate& DatasimDate_2)  const
 {
 	return(Julian_days == DatasimDate_2.Julian_days ? true : false);
 };
-		
- 
+
 bool DatasimDate::operator!=(const DatasimDate& DatasimDate_2)  const
 /*
  *	compare two DatasimDates. Return true if they are not on the same day,
@@ -285,7 +262,7 @@ bool DatasimDate::operator!=(const DatasimDate& DatasimDate_2)  const
 {
 	return(Julian_days != DatasimDate_2.Julian_days ? true : false);
 }
- 
+
 bool DatasimDate::operator>(const DatasimDate& DatasimDate_2)  const
 /*
  *	if this DatasimDate is later than DatasimDate_2, return true else return false.
@@ -293,7 +270,7 @@ bool DatasimDate::operator>(const DatasimDate& DatasimDate_2)  const
 {
 	return(Julian_days > DatasimDate_2.Julian_days ? true : false);
 }
- 
+
 bool DatasimDate::operator<(const DatasimDate& DatasimDate_2)  const
 /*
  *	if this DatasimDate is earlier than DatasimDate_2, return true else return false.
@@ -301,8 +278,7 @@ bool DatasimDate::operator<(const DatasimDate& DatasimDate_2)  const
 {
 	return(Julian_days < DatasimDate_2.Julian_days ? true : false);
 }
- 
- 
+
 bool DatasimDate::operator>=(const DatasimDate& DatasimDate_2)  const
 /*
  *	if DatasimDate_2 is earlier than this DatasimDate, return true else return false.
@@ -318,7 +294,6 @@ bool DatasimDate::operator<=(const DatasimDate& DatasimDate_2)  const
 {
 	return(Julian_days <= DatasimDate_2.Julian_days ? true : false);
 }
- 
 
 //DatasimDate DatasimDate::operator+=(const julTy& nr_days)  
 /*
@@ -328,7 +303,7 @@ bool DatasimDate::operator<=(const DatasimDate& DatasimDate_2)  const
 	Julian_days += nr_days;
 	return(*this);
 }*/
- 
+
 DatasimDate DatasimDate::operator+=(int nr_days)
 /*
  *	add number of days to this DatasimDate and return it. This is changed!
@@ -346,7 +321,7 @@ DatasimDate DatasimDate::operator+=(int nr_days)
 	Julian_days -= nr_days;
 	return(*this);
 }*/
- 
+
 DatasimDate DatasimDate::operator-=(int nr_days)
 /*
  *	subtract number of days from this DatasimDate and return it. This is changed!
@@ -355,8 +330,7 @@ DatasimDate DatasimDate::operator-=(int nr_days)
 	Julian_days -= nr_days;
 	return(*this);
 }
- 
- 
+
 DatasimDate DatasimDate::operator++()
 /*
  *	add 1 day to this DatasimDate and return it. This is changed!
@@ -365,8 +339,7 @@ DatasimDate DatasimDate::operator++()
 	Julian_days++;				// one day later
 	return(*this);				// return day later
 }
- 
- 
+
 DatasimDate DatasimDate::operator--()
 /*
  *	subtract one day from this DatasimDate and return it. This is changed!
@@ -375,8 +348,7 @@ DatasimDate DatasimDate::operator--()
 	Julian_days--;
 	return(*this);
 }
- 
- 
+
 //DatasimDate DatasimDate::operator+(const DatasimDate& d2)
 /*
  *	add two values. The values can be DatasimDates or one of them can
@@ -403,8 +375,7 @@ DatasimDate DatasimDate::operator-(int nr_days)  const
 	d.Julian_days -= nr_days;
 	return(d);
 }
- 
- 
+
 //DatasimDate DatasimDate::operator+(const julTy& nr_days)  const		// Add. nr_days to DatasimDate
 /*
  *	return this DatasimDate PLUS the number of days. This is not changed!
@@ -414,7 +385,7 @@ DatasimDate DatasimDate::operator-(int nr_days)  const
 	d.Julian_days += nr_days;
 	return(d);
 }*/
- 
+
  DatasimDate DatasimDate::operator+(int nr_days)  const
 /*
  *	return this DatasimDate PLUS the number of days. This is not changed!
@@ -424,8 +395,7 @@ DatasimDate DatasimDate::operator-(int nr_days)  const
 	d.Julian_days += nr_days;
 	return(d);
 }
- 
- 
+
 //DatasimDate DatasimDate::operator-(const julTy& nr_days)  const		// subtr. nr_days from DatasimDate
 /*
  *	return this DatasimDate minus the number of days. This is not changed!
@@ -435,7 +405,7 @@ DatasimDate DatasimDate::operator-(int nr_days)  const
 	d.Julian_days -= nr_days;
 	return(d);
 }*/
- 
+
 DatasimDate DatasimDate::add_period(const julTy& days, const julTy& months, const julTy& years)  const
 /*
  *	add a period of time to this (which itself will not be changed) DatasimDate
@@ -461,8 +431,7 @@ DatasimDate DatasimDate::add_period(const julTy& days, const julTy& months, cons
 	DatasimDate d(total_days);		// construct new DatasimDate
 	return(d);			// return new DatasimDate
 }
- 
- 
+
 DatasimDate DatasimDate::sub_period(julTy days, julTy months, julTy years)  const
 /*
  *	subtract a period of time from this (which will not be changed) DatasimDate
@@ -475,7 +444,7 @@ DatasimDate DatasimDate::sub_period(julTy days, julTy months, julTy years)  cons
  */
 {
 	julTy nday, nmonth, nyear;
- 
+
 	jul_to_greg(nday, nmonth, nyear); // calc Greg cal. from this DatasimDate
 	nyear -= (months / 12);		// how many years in months ?
 	months %= 12;			// remaining months;
@@ -492,8 +461,7 @@ DatasimDate DatasimDate::sub_period(julTy days, julTy months, julTy years)  cons
 	DatasimDate d(total_days);
 	return(d);
 }
-	
- 
+
 DatasimDate DatasimDate::add_months(long months)  const
 /*
  *	this function will return a DatasimDate which is a number of months later
@@ -506,38 +474,29 @@ DatasimDate DatasimDate::add_months(long months)  const
 	else				// negative number of months
 		return( this->sub_period(0, months * -1, 0) ); // subtract
 }
- 
+
 DatasimDate DatasimDate::add_quarter()  const
 { // Return this DatasimDate + 3 months ahead
-
 	long monthsInQuarter = 3;
 	return add_months(monthsInQuarter);
 }
 
-
 DatasimDate DatasimDate::add_halfyear()  const
 { // Return this DatasimDate + 6 months ahead
-
 	long monthsInhalfYear = 6;
 	return add_months(monthsInhalfYear);
-
 }
 
- 
 DatasimDate DatasimDate::sub_quarter()  const
 { // Return this DatasimDate - 3 months ahead
-
 	long monthsInQuarter = 3;
 	return sub_months(monthsInQuarter);
 }
 
-
 DatasimDate DatasimDate::sub_halfyear()  const
 { // Return this DatasimDate - 6 months ahead
-
 	long monthsInhalfYear = 6;
 	return sub_months(monthsInhalfYear);
-
 }
 
 
@@ -567,8 +526,7 @@ DatasimDate DatasimDate::sub_months(long months)  const
 	else				// negative number of months
 		return( this->add_period(0, months * -1, 0) ); // add
 }
- 
- 
+
 DatasimDate DatasimDate::sub_years(long years)  const
 /*
  *	this function will return a DatasimDate which is a number of years earlier
@@ -581,8 +539,6 @@ DatasimDate DatasimDate::sub_years(long years)  const
 	else				// negative number of years
 		return( this->add_period(0, 0, years * -1) ); // add
 }
- 
-
 
 long DatasimDate::difference(const DatasimDate& DatasimDate_2)  const
 /*
@@ -603,15 +559,11 @@ long DatasimDate::difference(const DatasimDate& DatasimDate_2)  const
 
 long DatasimDate::operator - (const DatasimDate& d)  const
 {
-
-
 	return difference(d);
 }
 
-
 std::ostream& operator << (std::ostream& os, const DatasimDate& dat)
 {
-
 	os << dat.ret_day() << "/" << dat.ret_month() << "/" << dat.ret_year();
 	return os;
 }
