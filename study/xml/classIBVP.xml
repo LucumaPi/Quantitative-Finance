@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classIBVP" kind="class" language="C++" prot="public">
+    <compoundname>IBVP</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classIBVP_1a0a2dc504516917584d6d8cc51e70c2d3" prot="private" static="no" mutable="no">
+        <type><ref refid="classRange" kindref="compound">Range</ref>&lt; double &gt;</type>
+        <definition>Range&lt;double&gt; IBVP::xaxis</definition>
+        <argsstring></argsstring>
+        <name>xaxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="23" column="7" bodyfile="include/duffy/IBVP.hh" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVP_1a66308a7c100dc464e2c266c606154fc2" prot="private" static="no" mutable="no">
+        <type><ref refid="classRange" kindref="compound">Range</ref>&lt; double &gt;</type>
+        <definition>Range&lt;double&gt; IBVP::taxis</definition>
+        <argsstring></argsstring>
+        <name>taxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="24" column="7" bodyfile="include/duffy/IBVP.hh" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVP_1adca6c2920833c2681c7d96fb3228ebfd" prot="private" static="no" mutable="no">
+        <type><ref refid="classIBVPImp" kindref="compound">IBVPImp</ref> *</type>
+        <definition>IBVPImp* IBVP::imp</definition>
+        <argsstring></argsstring>
+        <name>imp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="26" column="9" bodyfile="include/duffy/IBVP.hh" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classIBVP_1a19d8cc9a30a342b7aabdc24b54ac7250" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IBVP::IBVP</definition>
+        <argsstring>()</argsstring>
+        <name>IBVP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="30" column="1" bodyfile="src/IBVP.cc" bodystart="21" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classIBVP_1a449355041ee520c752ab510137bd41a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IBVP::IBVP</definition>
+        <argsstring>(IBVPImp &amp;executor, const Range&lt; double &gt; &amp;xrange, const Range&lt; double &gt; &amp;trange)</argsstring>
+        <name>IBVP</name>
+        <param>
+          <type><ref refid="classIBVPImp" kindref="compound">IBVPImp</ref> &amp;</type>
+          <declname>executor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classRange" kindref="compound">Range</ref>&lt; double &gt; &amp;</type>
+          <declname>xrange</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classRange" kindref="compound">Range</ref>&lt; double &gt; &amp;</type>
+          <declname>trange</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="33" column="1" bodyfile="src/IBVP.cc" bodystart="28" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1a59a82bedba3a8de65997ce6b64e612b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBVP::diffusion</definition>
+        <argsstring>(double x, double t) const</argsstring>
+        <name>diffusion</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="38" column="8" bodyfile="src/IBVP.cc" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1a74f384836849c568e26b10bae327ace5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBVP::convection</definition>
+        <argsstring>(double x, double t) const</argsstring>
+        <name>convection</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="40" column="8" bodyfile="src/IBVP.cc" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1adf8e3d7993a300e7dd5c727d935ad8aa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBVP::zeroterm</definition>
+        <argsstring>(double x, double t) const</argsstring>
+        <name>zeroterm</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="42" column="8" bodyfile="src/IBVP.cc" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1abba7e8fa377fb7cc5dbbd0da5922eca5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBVP::RHS</definition>
+        <argsstring>(double x, double t) const</argsstring>
+        <name>RHS</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="44" column="8" bodyfile="src/IBVP.cc" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1a06a4841866f3ec0f7f62f67a7e800930" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBVP::BCL</definition>
+        <argsstring>(double t) const</argsstring>
+        <name>BCL</name>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="47" column="8" bodyfile="src/IBVP.cc" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1afd987bb4e41ff033ce8d0705818f4cef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBVP::BCR</definition>
+        <argsstring>(double t) const</argsstring>
+        <name>BCR</name>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="49" column="8" bodyfile="src/IBVP.cc" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1a06c09ce3034e1e915ef7aba3cfd99832" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBVP::IC</definition>
+        <argsstring>(double x) const</argsstring>
+        <name>IC</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="51" column="8" bodyfile="src/IBVP.cc" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classRange" kindref="compound">Range</ref>&lt; double &gt; &amp;</type>
+        <definition>Range&lt; double &gt; &amp; IBVP::xrange</definition>
+        <argsstring>()</argsstring>
+        <name>xrange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="55" column="7" bodyfile="src/IBVP.cc" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classRange" kindref="compound">Range</ref>&lt; double &gt; &amp;</type>
+        <definition>Range&lt; double &gt; &amp; IBVP::trange</definition>
+        <argsstring>()</argsstring>
+        <name>trange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVP.hh" line="57" column="7" bodyfile="src/IBVP.cc" bodystart="81" bodyend="84"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>IBVP</label>
+        <link refid="classIBVP"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/IBVP.hh" line="21" column="1" bodyfile="include/duffy/IBVP.hh" bodystart="20" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classIBVP_1a06a4841866f3ec0f7f62f67a7e800930" prot="public" virt="non-virtual"><scope>IBVP</scope><name>BCL</name></member>
+      <member refid="classIBVP_1afd987bb4e41ff033ce8d0705818f4cef" prot="public" virt="non-virtual"><scope>IBVP</scope><name>BCR</name></member>
+      <member refid="classIBVP_1a74f384836849c568e26b10bae327ace5" prot="public" virt="non-virtual"><scope>IBVP</scope><name>convection</name></member>
+      <member refid="classIBVP_1a59a82bedba3a8de65997ce6b64e612b5" prot="public" virt="non-virtual"><scope>IBVP</scope><name>diffusion</name></member>
+      <member refid="classIBVP_1a19d8cc9a30a342b7aabdc24b54ac7250" prot="private" virt="non-virtual"><scope>IBVP</scope><name>IBVP</name></member>
+      <member refid="classIBVP_1a449355041ee520c752ab510137bd41a4" prot="public" virt="non-virtual"><scope>IBVP</scope><name>IBVP</name></member>
+      <member refid="classIBVP_1a06c09ce3034e1e915ef7aba3cfd99832" prot="public" virt="non-virtual"><scope>IBVP</scope><name>IC</name></member>
+      <member refid="classIBVP_1adca6c2920833c2681c7d96fb3228ebfd" prot="private" virt="non-virtual"><scope>IBVP</scope><name>imp</name></member>
+      <member refid="classIBVP_1abba7e8fa377fb7cc5dbbd0da5922eca5" prot="public" virt="non-virtual"><scope>IBVP</scope><name>RHS</name></member>
+      <member refid="classIBVP_1a66308a7c100dc464e2c266c606154fc2" prot="private" virt="non-virtual"><scope>IBVP</scope><name>taxis</name></member>
+      <member refid="classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b" prot="public" virt="non-virtual"><scope>IBVP</scope><name>trange</name></member>
+      <member refid="classIBVP_1a0a2dc504516917584d6d8cc51e70c2d3" prot="private" virt="non-virtual"><scope>IBVP</scope><name>xaxis</name></member>
+      <member refid="classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1" prot="public" virt="non-virtual"><scope>IBVP</scope><name>xrange</name></member>
+      <member refid="classIBVP_1adf8e3d7993a300e7dd5c727d935ad8aa" prot="public" virt="non-virtual"><scope>IBVP</scope><name>zeroterm</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

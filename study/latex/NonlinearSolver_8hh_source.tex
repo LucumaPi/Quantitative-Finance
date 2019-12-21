@@ -1,0 +1,335 @@
+\hypertarget{NonlinearSolver_8hh_source}{}\doxysection{Nonlinear\+Solver.\+hh}
+\label{NonlinearSolver_8hh_source}\index{include/duffy/NonlinearSolver.hh@{include/duffy/NonlinearSolver.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// NonLinearSolver.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Various nonlinear solvers in one dimension.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Last modification dates:}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{//  2005-\/4-\/4 DD Kick off code}}
+\DoxyCodeLine{00008 \textcolor{comment}{//  2006-\/3-\/2 DD Testng: only Bisection and Newton, Secant and Stefennsen, }}
+\DoxyCodeLine{00009 \textcolor{comment}{//  others (e.g. Regula Falsi) are student projects}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{//}}
+\DoxyCodeLine{00013 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{comment}{// All the code here is inline}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#ifndef NonlinearSolver\_HH}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#define NonlinearSolver\_HH}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keyword}{namespace }NS\_NonlinearSolver}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00025}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{00025}} \textcolor{keyword}{class }\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028         double (*myF)(\textcolor{keywordtype}{double} x);    \textcolor{comment}{// Function whose root we want}}
+\DoxyCodeLine{00029         }
+\DoxyCodeLine{00030         \textcolor{keywordtype}{double} tol;                 \textcolor{comment}{// Desired accuracy}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}() \{\}}
+\DoxyCodeLine{00033         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}\& n2) \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this};\}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}(\textcolor{keywordtype}{double} (*\textcolor{keyword}{function})(\textcolor{keywordtype}{double}))}
+\DoxyCodeLine{00037         \{}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} solve() = 0;}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043 \};}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00045}\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver}{00045}} \textcolor{keyword}{class }\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver}{BisectionSolver}} : \textcolor{keyword}{public} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}}
+\DoxyCodeLine{00046 \{}
+\DoxyCodeLine{00047 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         \textcolor{comment}{// Interval where we seek a solution}}
+\DoxyCodeLine{00050         \textcolor{keywordtype}{double} a;}
+\DoxyCodeLine{00051         \textcolor{keywordtype}{double} b;}
+\DoxyCodeLine{00052     }
+\DoxyCodeLine{00053 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054         \textcolor{comment}{// Redundant data but useful as a log and postprocessing}}
+\DoxyCodeLine{00055         \textcolor{keywordtype}{int} n;          \textcolor{comment}{// Number of steps to take}}
+\DoxyCodeLine{00056         \textcolor{keywordtype}{double} myTol;}
+\DoxyCodeLine{00057         \textcolor{keywordtype}{double} aCurrent; \textcolor{keywordtype}{double} bCurrent;}
+\DoxyCodeLine{00058         \textcolor{keywordtype}{double} midPoint;}
+\DoxyCodeLine{00059 \textcolor{keyword}{public}: }
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{keywordtype}{double} solve() }
+\DoxyCodeLine{00062     \{}
+\DoxyCodeLine{00063         \textcolor{keywordtype}{double} aPrevious = a; \textcolor{keywordtype}{double} bPrevious = b;}
+\DoxyCodeLine{00064         n = 1;}
+\DoxyCodeLine{00065         myTol = b -\/ a;  \textcolor{comment}{// Variable tolerance, starts at main interval}}
+\DoxyCodeLine{00066 L1:}
+\DoxyCodeLine{00067         midPoint = 0.5 * (aPrevious + bPrevious);}
+\DoxyCodeLine{00068         }
+\DoxyCodeLine{00069         \textcolor{comment}{// Default interval}}
+\DoxyCodeLine{00070         \textcolor{keywordflow}{if} (myF(midPoint) <= 0.0)}
+\DoxyCodeLine{00071         \{}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073             aCurrent = midPoint;}
+\DoxyCodeLine{00074             bCurrent = bPrevious;}
+\DoxyCodeLine{00075         \}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077         \textcolor{keywordflow}{if} (myF(midPoint) > 0.0)}
+\DoxyCodeLine{00078         \{}
+\DoxyCodeLine{00079             aCurrent = aPrevious;}
+\DoxyCodeLine{00080             bCurrent = midPoint;}
+\DoxyCodeLine{00081         \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         myTol *= 0.5; \textcolor{comment}{// At each step we have a subdivision}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086         aPrevious = aCurrent;}
+\DoxyCodeLine{00087         bPrevious = bCurrent;}
+\DoxyCodeLine{00088         n++;}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090         \textcolor{keywordflow}{if} (myTol > tol) \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         \textcolor{comment}{// Now have answer}}
+\DoxyCodeLine{00094         midPoint = 0.5 * (aPrevious + bPrevious);}
+\DoxyCodeLine{00095     }
+\DoxyCodeLine{00096         \textcolor{keywordflow}{return} midPoint;}
+\DoxyCodeLine{00097     \}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099     \textcolor{keywordtype}{double} accuracy()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00100 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{00101         \textcolor{comment}{// How close is our solution?}}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103         \textcolor{keywordflow}{return} myTol;}
+\DoxyCodeLine{00104     \}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \textcolor{keywordtype}{void} printStatistics() }
+\DoxyCodeLine{00107     \{}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109         \textcolor{keywordtype}{double} m = solve();}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111         std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Bisection method\(\backslash\)n"};}
+\DoxyCodeLine{00112         std::cout << \textcolor{stringliteral}{"Interval containing value: ("} << aCurrent << \textcolor{stringliteral}{","}}
+\DoxyCodeLine{00113                                             << bCurrent << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{00114         std::cout << \textcolor{stringliteral}{"Value: "} << m << std::endl;}
+\DoxyCodeLine{00115         std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << n << std::endl;}
+\DoxyCodeLine{00116         std::cout << \textcolor{stringliteral}{"Number of iterations (scheduled): "} << estimate() << std::endl;}
+\DoxyCodeLine{00117     \}}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119     \textcolor{keywordtype}{long} estimate()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00120 \textcolor{keyword}{    }\{ \textcolor{comment}{// Estimates the number of needed iterations}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122             \textcolor{keywordtype}{double} tmp = (b -\/ a) / tol;}
+\DoxyCodeLine{00123             \textcolor{keywordtype}{double} val = 1.0 + (std::log(tmp)/std::log(2.0));}
+\DoxyCodeLine{00124             }
+\DoxyCodeLine{00125             \textcolor{keywordflow}{return} std::ceil(val);}
+\DoxyCodeLine{00126     \}}
+\DoxyCodeLine{00127 \};}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00130}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver}{00130}} \textcolor{keyword}{class }\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver}{NewtonRaphsonSolver}} : \textcolor{keyword}{public} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}}
+\DoxyCodeLine{00131 \{}
+\DoxyCodeLine{00132 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00133         double (*derivative)(\textcolor{keywordtype}{double} x); \textcolor{comment}{// Derivative of unknown function}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00136         \textcolor{keywordtype}{double} x0;      \textcolor{comment}{// Initial guess}}
+\DoxyCodeLine{00137         \textcolor{keywordtype}{double} xCurrent;}
+\DoxyCodeLine{00138         \textcolor{keywordtype}{int} n;          \textcolor{comment}{// Number of steps taken until now}}
+\DoxyCodeLine{00139 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00140     \mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver}{NewtonRaphsonSolver}}(\textcolor{keywordtype}{double} guess)}
+\DoxyCodeLine{00141     \{}
+\DoxyCodeLine{00142         x0 = guess;}
+\DoxyCodeLine{00143     \}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \textcolor{keywordtype}{double} solve() }
+\DoxyCodeLine{00146     \{}
+\DoxyCodeLine{00147         \textcolor{keywordtype}{double} xPrevious = x0;}
+\DoxyCodeLine{00148         \textcolor{keywordtype}{double} hn = 100.0;}
+\DoxyCodeLine{00149         n = 1;}
+\DoxyCodeLine{00150 L1:}
+\DoxyCodeLine{00151         hn = -\/ myF(xPrevious) / derivative(xPrevious);}
+\DoxyCodeLine{00152         xCurrent = xPrevious + hn;}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154         xPrevious = xCurrent;}
+\DoxyCodeLine{00155         n++;}
+\DoxyCodeLine{00156         \textcolor{keywordflow}{if} (fabs(hn) > tol) \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158         \textcolor{keywordflow}{return} xCurrent;}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160     \}}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162     \textcolor{keywordtype}{void} printStatistics()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00163 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165         std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Newton Raphson method\(\backslash\)n"};}
+\DoxyCodeLine{00166         std::cout << \textcolor{stringliteral}{"Value: "} << xCurrent << std::endl;}
+\DoxyCodeLine{00167         std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << n << std::endl;}
+\DoxyCodeLine{00168     \}}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170 \};}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00173}\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver}{00173}} \textcolor{keyword}{class }\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver}{SecantMethodSolver}} : \textcolor{keyword}{public} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}}
+\DoxyCodeLine{00174 \{ \textcolor{comment}{// Two-\/step nonlinear solver}}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00177         \textcolor{keywordtype}{double} x0;          \textcolor{comment}{// Initial guess}}
+\DoxyCodeLine{00178         \textcolor{keywordtype}{double} x1;          \textcolor{comment}{// Initial guess}}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180         \textcolor{comment}{// Parameters in iterations}}
+\DoxyCodeLine{00181         \textcolor{keywordtype}{double} xOld, xNew;  \textcolor{comment}{// x(n-\/1) and x(n)}}
+\DoxyCodeLine{00182         \textcolor{keywordtype}{double} fOld, fNew;  \textcolor{comment}{// f(n-\/1) and f(n)}}
+\DoxyCodeLine{00183         \textcolor{keywordtype}{double} xCurrent;}
+\DoxyCodeLine{00184         \textcolor{keywordtype}{long} n;             \textcolor{comment}{// Number of iterations taken}}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00187         \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver}{SecantMethodSolver}}(\textcolor{keywordtype}{double} guessZero, \textcolor{keywordtype}{double} guessOne,}
+\DoxyCodeLine{00188                                 \textcolor{keywordtype}{double} (*myFunction)(\textcolor{keywordtype}{double} x))}
+\DoxyCodeLine{00189         \{}
+\DoxyCodeLine{00190             x0 = guessZero;}
+\DoxyCodeLine{00191             x1 = guessOne;}
+\DoxyCodeLine{00192             myF = myFunction;}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194             xOld = x0; xNew = x1; xCurrent = xNew;}
+\DoxyCodeLine{00195             fOld = myF(xOld); fNew = myF(xNew);}
+\DoxyCodeLine{00196         \}}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198         \textcolor{keywordtype}{double} solve() }
+\DoxyCodeLine{00199         \{}
+\DoxyCodeLine{00200             \textcolor{keywordtype}{double} diff;}
+\DoxyCodeLine{00201             \textcolor{keywordtype}{double} hn; }
+\DoxyCodeLine{00202             n = 1;}
+\DoxyCodeLine{00203 L1:}
+\DoxyCodeLine{00204             assert(fOld != fNew);}
+\DoxyCodeLine{00205             diff = (xNew -\/ xOld)/(fNew -\/ fOld); \textcolor{comment}{// divide by zero?}}
+\DoxyCodeLine{00206             hn = -\/ myF(xNew) * diff;}
+\DoxyCodeLine{00207             xCurrent = xNew + hn;}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209             n++;}
+\DoxyCodeLine{00210             \textcolor{keywordflow}{if} (::fabs(hn) <= tol)}
+\DoxyCodeLine{00211             \{}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213                 \textcolor{keywordflow}{return} xCurrent;}
+\DoxyCodeLine{00214             \}}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216             \textcolor{comment}{// Update all registers}}
+\DoxyCodeLine{00217             xOld = xNew; xNew = xCurrent; }
+\DoxyCodeLine{00218             fOld = myF(xOld); fNew = myF(xNew);}
+\DoxyCodeLine{00219                 }
+\DoxyCodeLine{00220             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00221         \}}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223         \textcolor{keywordtype}{void} printStatistics()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00224 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{00226             std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Secant method\(\backslash\)n"};}
+\DoxyCodeLine{00227             std::cout << \textcolor{stringliteral}{"Value: "} << xCurrent << std::endl;}
+\DoxyCodeLine{00228             std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << n << std::endl;}
+\DoxyCodeLine{00229         \}}
+\DoxyCodeLine{00230 }
+\DoxyCodeLine{00231 \};}
+\DoxyCodeLine{00232 }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00233}\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver}{00233}} \textcolor{keyword}{class }\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver}{SteffensensSolver}} : \textcolor{keyword}{public} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}}
+\DoxyCodeLine{00234 \{ \textcolor{comment}{// One-\/step nonlinear solver}}
+\DoxyCodeLine{00235 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00236         \textcolor{keywordtype}{double} x0;          \textcolor{comment}{// Initial guess}}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238         \textcolor{keywordtype}{double} xPrevious, xCurrent;}
+\DoxyCodeLine{00239         \textcolor{keywordtype}{long} n;             \textcolor{comment}{// Number of iterations taken}}
+\DoxyCodeLine{00240 }
+\DoxyCodeLine{00241 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00242         \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver}{SteffensensSolver}}(\textcolor{keywordtype}{double} guess, \textcolor{keywordtype}{double} (*myFunction)(\textcolor{keywordtype}{double} x))}
+\DoxyCodeLine{00243         \{}
+\DoxyCodeLine{00244             x0 = guess; xPrevious = x0;}
+\DoxyCodeLine{00245             myF = myFunction;}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247         \}}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249         \textcolor{keywordtype}{double} solve() }
+\DoxyCodeLine{00250         \{}
+\DoxyCodeLine{00251             \textcolor{keywordtype}{double} tmp;}
+\DoxyCodeLine{00252             \textcolor{keywordtype}{double} hn; }
+\DoxyCodeLine{00253             n = 1;}
+\DoxyCodeLine{00254             xPrevious = x0;}
+\DoxyCodeLine{00255 L1:}
+\DoxyCodeLine{00256             tmp = myF(xPrevious);}
+\DoxyCodeLine{00257             hn = (myF(xPrevious + tmp)  -\/ tmp)/ tmp;}
+\DoxyCodeLine{00258             hn = tmp/hn;}
+\DoxyCodeLine{00259             xCurrent = xPrevious -\/ hn;}
+\DoxyCodeLine{00260             xPrevious = xCurrent;}
+\DoxyCodeLine{00261 }
+\DoxyCodeLine{00262             n++;}
+\DoxyCodeLine{00263             \textcolor{keywordflow}{if} (::fabs(hn) <= tol)}
+\DoxyCodeLine{00264             \{}
+\DoxyCodeLine{00265                 \textcolor{keywordflow}{return} xCurrent;}
+\DoxyCodeLine{00266                 }
+\DoxyCodeLine{00267             \}}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00269             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00270         \}}
+\DoxyCodeLine{00271 }
+\DoxyCodeLine{00272         \textcolor{keywordtype}{void} printStatistics()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00273 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275             std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Steffensen's method\(\backslash\)n"};}
+\DoxyCodeLine{00276             std::cout << \textcolor{stringliteral}{"Value: "} << xCurrent << std::endl;}
+\DoxyCodeLine{00277             std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << n << std::endl;}
+\DoxyCodeLine{00278         \}}
+\DoxyCodeLine{00279 }
+\DoxyCodeLine{00280 \};}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283 \}}
+\DoxyCodeLine{00284 \textcolor{comment}{/*}}
+\DoxyCodeLine{00285 \textcolor{comment}{\}}}
+\DoxyCodeLine{00286 \textcolor{comment}{class RegulaFalsi : public NonLinearSolver}}
+\DoxyCodeLine{00287 \textcolor{comment}{\{}}
+\DoxyCodeLine{00288 \textcolor{comment}{private:}}
+\DoxyCodeLine{00289 \textcolor{comment}{}}
+\DoxyCodeLine{00290 \textcolor{comment}{public:}}
+\DoxyCodeLine{00291 \textcolor{comment}{}}
+\DoxyCodeLine{00292 \textcolor{comment}{    double solve() const}}
+\DoxyCodeLine{00293 \textcolor{comment}{    \{}}
+\DoxyCodeLine{00294 \textcolor{comment}{        double aPrevious = a; double bPrevious = b;}}
+\DoxyCodeLine{00295 \textcolor{comment}{        double aCurrent; double bCurrent;}}
+\DoxyCodeLine{00296 \textcolor{comment}{        double w;}}
+\DoxyCodeLine{00297 \textcolor{comment}{        int counter = 1;}}
+\DoxyCodeLine{00298 \textcolor{comment}{L1:}}
+\DoxyCodeLine{00299 \textcolor{comment}{        fa = f(aPrevious);}}
+\DoxyCodeLine{00300 \textcolor{comment}{        fb = f(bPrevious);}}
+\DoxyCodeLine{00301 \textcolor{comment}{                }}
+\DoxyCodeLine{00302 \textcolor{comment}{        w = (fb * aPrevious -\/ fa * bPrevious) / (fb -\/ fa);}}
+\DoxyCodeLine{00303 \textcolor{comment}{}}
+\DoxyCodeLine{00304 \textcolor{comment}{        }}
+\DoxyCodeLine{00305 \textcolor{comment}{        // Default interval}}
+\DoxyCodeLine{00306 \textcolor{comment}{        aCurrent = w;}}
+\DoxyCodeLine{00307 \textcolor{comment}{        bCurrent = bPrevious;}}
+\DoxyCodeLine{00308 \textcolor{comment}{}}
+\DoxyCodeLine{00309 \textcolor{comment}{        if (fa * f(w) <= 0.0)}}
+\DoxyCodeLine{00310 \textcolor{comment}{        \{}}
+\DoxyCodeLine{00311 \textcolor{comment}{            aCurrent = aPrevious;}}
+\DoxyCodeLine{00312 \textcolor{comment}{            bCurrent = w;}}
+\DoxyCodeLine{00313 \textcolor{comment}{        \}}}
+\DoxyCodeLine{00314 \textcolor{comment}{}}
+\DoxyCodeLine{00315 \textcolor{comment}{        if (counter < n) goto L1;}}
+\DoxyCodeLine{00316 \textcolor{comment}{}}
+\DoxyCodeLine{00317 \textcolor{comment}{        aPrevious = aCurrent;}}
+\DoxyCodeLine{00318 \textcolor{comment}{        bPrevious = bCurrent;}}
+\DoxyCodeLine{00319 \textcolor{comment}{        }}
+\DoxyCodeLine{00320 \textcolor{comment}{        if (counter++ < n) goto L1;}}
+\DoxyCodeLine{00321 \textcolor{comment}{}}
+\DoxyCodeLine{00322 \textcolor{comment}{        // Now have answer}}
+\DoxyCodeLine{00323 \textcolor{comment}{        return w;}}
+\DoxyCodeLine{00324 \textcolor{comment}{    \}}}
+\DoxyCodeLine{00325 \textcolor{comment}{}}
+\DoxyCodeLine{00326 \textcolor{comment}{}}
+\DoxyCodeLine{00327 \textcolor{comment}{\};}}
+\DoxyCodeLine{00328 \textcolor{comment}{****************************************************/}}
+\DoxyCodeLine{00329 \textcolor{preprocessor}{\#endif // NonlinearSolver\_HH}}
+
+\end{DoxyCode}

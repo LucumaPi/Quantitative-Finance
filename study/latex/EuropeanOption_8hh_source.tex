@@ -1,0 +1,70 @@
+\hypertarget{EuropeanOption_8hh_source}{}\doxysection{European\+Option.\+hh}
+\label{EuropeanOption_8hh_source}\index{include/duffy/EuropeanOption.hh@{include/duffy/EuropeanOption.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// EuropeanOption2.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Class that represents  solutions to European options. This is}}
+\DoxyCodeLine{00004 \textcolor{comment}{// an implementation using basic C++ syntax only. It has been }}
+\DoxyCodeLine{00005 \textcolor{comment}{// written for pedagogical reasons}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Component Technology BV 2003-\/2006}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef EuropeanOption\_HH}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#define EuropeanOption\_HH}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{keyword}{class }\mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018 \textcolor{keyword}{public}:             \textcolor{comment}{// For TEST purposes only}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \textcolor{keywordtype}{void} init();    \textcolor{comment}{// Initialise all default values}}
+\DoxyCodeLine{00021     \textcolor{keywordtype}{void} copy(\textcolor{keyword}{const} \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}\& o2);}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{comment}{// 'Kernel' functions for option calculations}}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{double} CallPrice() \textcolor{keyword}{const};}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{double} PutPrice() \textcolor{keyword}{const};}
+\DoxyCodeLine{00026     \textcolor{keywordtype}{double} CallDelta() \textcolor{keyword}{const};}
+\DoxyCodeLine{00027     \textcolor{keywordtype}{double} PutDelta() \textcolor{keyword}{const};}
+\DoxyCodeLine{00028     \textcolor{keywordtype}{double} CallGamma() \textcolor{keyword}{const};}
+\DoxyCodeLine{00029     \textcolor{keywordtype}{double} PutGamma() \textcolor{keyword}{const};}
+\DoxyCodeLine{00030     \textcolor{keywordtype}{double} CallVega() \textcolor{keyword}{const};}
+\DoxyCodeLine{00031     \textcolor{keywordtype}{double} PutVega() \textcolor{keyword}{const};}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{comment}{// Gaussian functions}}
+\DoxyCodeLine{00034     \textcolor{keywordtype}{double} n(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const};}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{double} N(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const};}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{keywordtype}{double} r;       \textcolor{comment}{// Interest rate}}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{double} sig; \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{double} K;       \textcolor{comment}{// Strike price}}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{double} T;       \textcolor{comment}{// Expiry date}}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{double} U;       \textcolor{comment}{// Current underlying price (e.g. stock, forward)}}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{double} b;       \textcolor{comment}{// Cost of carry}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     std::string optType;    \textcolor{comment}{// Option name (call, put)}}
+\DoxyCodeLine{00046     std::string unam;   \textcolor{comment}{// Name of underlying asset}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \textcolor{keyword}{public}: \textcolor{comment}{// Public functions}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}();                         \textcolor{comment}{// Default call option}}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}(\textcolor{keyword}{const} \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}\& option2);  \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} (\textcolor{keyword}{const} std::string\& optionType);   \textcolor{comment}{// Create option type}}
+\DoxyCodeLine{00053     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}();    }
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}\& option2);}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{comment}{// Functions that calculate option price and sensitivities}}
+\DoxyCodeLine{00058     \textcolor{keywordtype}{double} Price() \textcolor{keyword}{const};}
+\DoxyCodeLine{00059     \textcolor{keywordtype}{double} Delta() \textcolor{keyword}{const};}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{comment}{// Modifier functions}}
+\DoxyCodeLine{00062     \textcolor{keywordtype}{void} toggle();      \textcolor{comment}{// Change option type (C/P, P/C)}}
+\DoxyCodeLine{00063 \};}
+\DoxyCodeLine{00064 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

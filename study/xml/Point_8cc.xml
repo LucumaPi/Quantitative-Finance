@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="Point_8cc" kind="file" language="C++">
+    <compoundname>Point.cc</compoundname>
+    <includes refid="Point_8hh" local="no">duffy/Point.hh</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>duffy/Point.hh</label>
+        <link refid="Point_8hh_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/Point.cc</label>
+        <link refid="Point_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Point_8cc_1aab55cf13db83c55c46a961b2b2441960" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Point &amp;p)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classPoint" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Point.cc" line="109" column="1" bodyfile="src/Point.cc" bodystart="109" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Point.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Header<sp/>file<sp/>for<sp/>Points<sp/>in<sp/>two<sp/>dimensions.<sp/>A<sp/>given<sp/>Point<sp/>has<sp/>3<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>for<sp/>compatibility<sp/>with<sp/>other<sp/>systems.<sp/>However,<sp/>it<sp/>is<sp/>not<sp/>possible<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>influence<sp/>the<sp/>third<sp/>coordinate<sp/>and<sp/>furthermore,<sp/>the<sp/>delivered<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>is<sp/>typically<sp/>two-dimensional.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Last<sp/>Modifications:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>chap04<sp/>AM<sp/>Kick<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>chap05<sp/>AM<sp/>Changed<sp/>using<sp/>const<sp/>and<sp/>reference</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>chap05<sp/>AM<sp/>Added<sp/>copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>2005-5-20<sp/>DD<sp/>modified<sp/>POINT<sp/>-&gt;<sp/>Point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Copyright<sp/>Datasim<sp/>BV<sp/>1995<sp/>-<sp/>2006</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Point.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Private<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Point::init(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>dx;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>dy;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">Point::Point()</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>init(0.0,<sp/>0.0);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">Point::Point(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newy)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight><highlight class="comment">//<sp/>Initialize<sp/>using<sp/>newx<sp/>and<sp/>newy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>init(newx,<sp/>newy);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">Point::Point(double<sp/>newx,<sp/>double<sp/>newy)<sp/>:<sp/>x(newx),<sp/>y(newy)</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">{//<sp/>Initialize<sp/>using<sp/>newx<sp/>and<sp/>newy</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>init(newx,<sp/>newy);<sp/>NOT<sp/>NEEDED</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">Point::Point(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>pt)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>pt.x;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>pt.y;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">Point::~Point()</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Point::X()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="54"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Point::Y()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="59"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Modifiers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Point::X(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>NewX)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>NewX;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Point::Y(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>NewY)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>NewY;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Arithmetic<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/>Point::add(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="76"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>(x<sp/>+<sp/>p.x,<sp/>y<sp/>+<sp/>p.y);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/>Point::subtract(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="81"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>(x<sp/>-<sp/>p.x,<sp/>y<sp/>-<sp/>p.y);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/>Point::scale(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="86"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Scale<sp/>a<sp/>Point<sp/>by<sp/>another<sp/>Point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>(x<sp/>*<sp/>p.x,<sp/>y<sp/>*<sp/>p.y);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/>Point::MidPoint(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>p2)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="91"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Scale<sp/>a<sp/>Point<sp/>by<sp/>another<sp/>Point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPoint" kindref="compound">Point</ref><sp/>result((x<sp/>+<sp/>p2.x)<sp/>*<sp/>0.5,<sp/>(y<sp/>+<sp/>p2.y)<sp/>*<sp/>0.5);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>Point::copy(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>p)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight><highlight class="comment">//<sp/>Copy<sp/>p<sp/>in<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>p.x;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>p.y;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">std::ostream&amp;<sp/>operator<sp/>&lt;&lt;<sp/>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>p)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Output<sp/>to<sp/>screen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Point:<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.X()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.Y()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/Point.cc"/>
+  </compounddef>
+</doxygen>

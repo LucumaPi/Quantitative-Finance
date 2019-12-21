@@ -1,0 +1,110 @@
+\hypertarget{classRelation}{}\doxysection{Relation$<$ D, R $>$ Class Template Reference}
+\label{classRelation}\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+
+
+Collaboration diagram for Relation$<$ D, R $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classRelation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRelation_af68e62c9cf16d7e2dff81950298dc778}\label{classRelation_af68e62c9cf16d7e2dff81950298dc778}} 
+typedef std\+::multimap$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::iterator {\bfseries iterator}
+\item 
+\mbox{\Hypertarget{classRelation_a281fd0ec83966c0c8ba00e59364c3152}\label{classRelation_a281fd0ec83966c0c8ba00e59364c3152}} 
+typedef std\+::multimap$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{classRelation_a3377b326df68d54e890873e4800ac522}\label{classRelation_a3377b326df68d54e890873e4800ac522}} 
+typedef std\+::multimap$<$ R, \mbox{\hyperlink{classD}{D}} $>$\+::iterator {\bfseries iterator\+Inv}
+\item 
+\mbox{\Hypertarget{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}\label{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}} 
+typedef std\+::multimap$<$ R, \mbox{\hyperlink{classD}{D}} $>$\+::const\+\_\+iterator {\bfseries const\+\_\+iterator\+Inv}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRelation_aae3172d175b898c286d82916f191174c}\label{classRelation_aae3172d175b898c286d82916f191174c}} 
+{\bfseries Relation} (const \mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \&domain\+Set, const \mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \&range\+Set)
+\item 
+\mbox{\Hypertarget{classRelation_af344472b21613144a5db861d5d7f1437}\label{classRelation_af344472b21613144a5db861d5d7f1437}} 
+{\bfseries Relation} (const \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \&r2)
+\item 
+\mbox{\Hypertarget{classRelation_a3850e9c9495624d27e7813cc6e0dc763}\label{classRelation_a3850e9c9495624d27e7813cc6e0dc763}} 
+void {\bfseries add\+Domain\+Element} (const \mbox{\hyperlink{classD}{D}} \&d)
+\item 
+\mbox{\Hypertarget{classRelation_a8bbc53597b97db93008a82d5b7ff54cb}\label{classRelation_a8bbc53597b97db93008a82d5b7ff54cb}} 
+void {\bfseries add\+Range\+Element} (const R \&r)
+\item 
+\mbox{\Hypertarget{classRelation_a30b7ecfff53dda24b5661215e63b3aeb}\label{classRelation_a30b7ecfff53dda24b5661215e63b3aeb}} 
+void {\bfseries remove\+Domain\+Element} (const \mbox{\hyperlink{classD}{D}} \&d)
+\item 
+\mbox{\Hypertarget{classRelation_adf2bd0433cf8eb255e0b595d8502afad}\label{classRelation_adf2bd0433cf8eb255e0b595d8502afad}} 
+void {\bfseries remove\+Range\+Element} (const R \&r)
+\item 
+\mbox{\Hypertarget{classRelation_a0d4bdc5ed486ffbef37ae2e489166834}\label{classRelation_a0d4bdc5ed486ffbef37ae2e489166834}} 
+void {\bfseries add\+Relation} (const \mbox{\hyperlink{classD}{D}} \&d, const R \&r)
+\item 
+\mbox{\Hypertarget{classRelation_a6fe1980b85fd0a4d59ed6ca3dbb52a2a}\label{classRelation_a6fe1980b85fd0a4d59ed6ca3dbb52a2a}} 
+void {\bfseries remove\+Relation} (const \mbox{\hyperlink{classD}{D}} \&d)
+\item 
+\mbox{\Hypertarget{classRelation_aac3d30ad0639de420ec0d496ca78696f}\label{classRelation_aac3d30ad0639de420ec0d496ca78696f}} 
+void {\bfseries Clear\+All} ()
+\item 
+\mbox{\Hypertarget{classRelation_a401a214a659d7005d830e1d5573075ed}\label{classRelation_a401a214a659d7005d830e1d5573075ed}} 
+void {\bfseries Clear\+Links} ()
+\item 
+\mbox{\Hypertarget{classRelation_a97ba3b83f8b68901191248b72b4d2a14}\label{classRelation_a97ba3b83f8b68901191248b72b4d2a14}} 
+iterator {\bfseries Begin} ()
+\item 
+\mbox{\Hypertarget{classRelation_a8c1e8ca4826fced1256829a4779d9d8c}\label{classRelation_a8c1e8ca4826fced1256829a4779d9d8c}} 
+const\+\_\+iterator {\bfseries Begin} () const
+\item 
+\mbox{\Hypertarget{classRelation_a068ca856b6e3b6bffd24117b405c01ae}\label{classRelation_a068ca856b6e3b6bffd24117b405c01ae}} 
+iterator {\bfseries End} ()
+\item 
+\mbox{\Hypertarget{classRelation_ab5fee537bbc5a9748881a6bbe25bbdd2}\label{classRelation_ab5fee537bbc5a9748881a6bbe25bbdd2}} 
+const\+\_\+iterator {\bfseries End} () const
+\item 
+\mbox{\Hypertarget{classRelation_ae76135e50d636a11e65658f44ffa0551}\label{classRelation_ae76135e50d636a11e65658f44ffa0551}} 
+iterator\+Inv {\bfseries Begin\+Inv} ()
+\item 
+\mbox{\Hypertarget{classRelation_ad8fc7581e55ca1f3ae7c174e928d0bd8}\label{classRelation_ad8fc7581e55ca1f3ae7c174e928d0bd8}} 
+const\+\_\+iterator\+Inv {\bfseries Begin\+Inv} () const
+\item 
+\mbox{\Hypertarget{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}\label{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}} 
+iterator\+Inv {\bfseries End\+Inv} ()
+\item 
+\mbox{\Hypertarget{classRelation_ada45ef3553ea10f6ffeb01429d41112c}\label{classRelation_ada45ef3553ea10f6ffeb01429d41112c}} 
+const\+\_\+iterator\+Inv {\bfseries End\+Inv} () const
+\item 
+\mbox{\Hypertarget{classRelation_a6df4cdb10cd950968cf21fafdec4bb83}\label{classRelation_a6df4cdb10cd950968cf21fafdec4bb83}} 
+const \mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \& {\bfseries Domain\+Set} ()
+\item 
+\mbox{\Hypertarget{classRelation_ae7d89135038109b9ff7ef4c6590a112e}\label{classRelation_ae7d89135038109b9ff7ef4c6590a112e}} 
+const \mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \& {\bfseries Range\+Set} ()
+\item 
+\mbox{\Hypertarget{classRelation_ab946892376f95ed757414e3fadc36f6d}\label{classRelation_ab946892376f95ed757414e3fadc36f6d}} 
+\mbox{\hyperlink{classSet}{Set}}$<$ R $>$ {\bfseries range} (const \mbox{\hyperlink{classD}{D}} \&d)
+\item 
+\mbox{\Hypertarget{classRelation_a0ff46cfb436345dab2707b36b94a152a}\label{classRelation_a0ff46cfb436345dab2707b36b94a152a}} 
+\mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ {\bfseries domain} (const R \&r)
+\item 
+\mbox{\Hypertarget{classRelation_af7602723b04b55522372eae5d70fff52}\label{classRelation_af7602723b04b55522372eae5d70fff52}} 
+bool {\bfseries in\+Domain} (const \mbox{\hyperlink{classD}{D}} \&d) const
+\item 
+\mbox{\Hypertarget{classRelation_a8dd9f0681135740849f9dd20ae4ee13a}\label{classRelation_a8dd9f0681135740849f9dd20ae4ee13a}} 
+bool {\bfseries in\+Range} (const \mbox{\hyperlink{classD}{D}} \&r) const
+\item 
+\mbox{\Hypertarget{classRelation_ae4668d138c1cc9cfc607729a32b2772e}\label{classRelation_ae4668d138c1cc9cfc607729a32b2772e}} 
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \&r2)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/duffy/Relation.\+hh\item 
+src/Relation.\+cc\end{DoxyCompactItemize}

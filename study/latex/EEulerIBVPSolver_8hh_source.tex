@@ -1,0 +1,39 @@
+\hypertarget{EEulerIBVPSolver_8hh_source}{}\doxysection{E\+Euler\+I\+B\+V\+P\+Solver.\+hh}
+\label{EEulerIBVPSolver_8hh_source}\index{include/duffy/EEulerIBVPSolver.hh@{include/duffy/EEulerIBVPSolver.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// EEulerIbvpSolver.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Solvers for initial boundary value problems. We }}
+\DoxyCodeLine{00004 \textcolor{comment}{// use an abstract base class; derived class implement}}
+\DoxyCodeLine{00005 \textcolor{comment}{// specific behaviour.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Component Technology BV 2003-\/2006}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef EEulerIBVPSOLVER\_HPP}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#define EEulerIBVPSOLVER\_HPP}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "IBVPSolver.hh"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{EEulerIBVPSolver_8hh_source_l00016}\mbox{\hyperlink{classExplicitEulerIBVP}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classExplicitEulerIBVP}{ExplicitEulerIBVP}} : \textcolor{keyword}{public} \mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \textcolor{keywordtype}{double} tmp1, tmp2;          \textcolor{comment}{// Work variables}}
+\DoxyCodeLine{00021     \textcolor{keywordtype}{double} alpha, beta, gamma;  \textcolor{comment}{// Coefficients in FD scheme}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classExplicitEulerIBVP}{ExplicitEulerIBVP}}();}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classExplicitEulerIBVP}{ExplicitEulerIBVP}}(\mbox{\hyperlink{classIBVP}{IBVP}}\& source, \textcolor{keywordtype}{long} NSteps, \textcolor{keywordtype}{long} JSteps);}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// Hook function for Template Method pattern }}
+\DoxyCodeLine{00028     \textcolor{keywordtype}{void} calculateBC();}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{keywordtype}{void} calculate();   }
+\DoxyCodeLine{00031 \};}
+\DoxyCodeLine{00032 \textcolor{preprocessor}{\#include "../../src/EEulerIBVPSolver.cc"}}
+\DoxyCodeLine{00033 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

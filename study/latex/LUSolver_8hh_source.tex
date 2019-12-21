@@ -1,0 +1,68 @@
+\hypertarget{LUSolver_8hh_source}{}\doxysection{L\+U\+Solver.\+hh}
+\label{LUSolver_8hh_source}\index{include/duffy/LUSolver.hh@{include/duffy/LUSolver.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// LUSolver.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Classes and functions for solving linear systems of equations }}
+\DoxyCodeLine{00004 \textcolor{comment}{// (numerical linear algebra). We use:}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{//  Direct methods (LU decomposition)}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 2003-\/2006}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef LUSolver\_HH}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#define LUSolver\_HH}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "Vector.hh"}            \textcolor{comment}{// Arrays with mathematical properties}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "NumericMatrix.hh"} \textcolor{comment}{// Matrices with numerical properties}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{LUSolver_8hh_source_l00017}\mbox{\hyperlink{classLUTridiagonalSolver}{00017}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keyword}{class }\mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}}
+\DoxyCodeLine{00018 \{ \textcolor{comment}{// Solve tridiagonal matrix equation}}
+\DoxyCodeLine{00019 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// Defining arrays (input)}}
+\DoxyCodeLine{00022     \textcolor{comment}{// V2 optimise so to work with pointers}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classVector}{Vector<V,I>}} a;   \textcolor{comment}{// The lower-\/diagonal array [1..J]}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classVector}{Vector<V,I>}} b;   \textcolor{comment}{// The diagonal array [1..J] "baseline array"}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classVector}{Vector<V,I>}} c;   \textcolor{comment}{// The upper-\/diagonal array [1..J]}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classVector}{Vector<V,I>}} r;   \textcolor{comment}{// The right-\/hand side of the equation Au = r [1..J]}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{comment}{// Work arrays}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{comment}{// Coefficients of Lower and Upper matrices: A = LU}}
+\DoxyCodeLine{00031     \textcolor{comment}{// V2 use of Templated static vectors, but we must be careful}}
+\DoxyCodeLine{00032     \mbox{\hyperlink{classVector}{Vector<V,I>}} beta;    \textcolor{comment}{// Range [1..J]}}
+\DoxyCodeLine{00033     \mbox{\hyperlink{classVector}{Vector<V,I>}} gamma;   \textcolor{comment}{// Range [1..J-\/1]}}
+\DoxyCodeLine{00034     \textcolor{comment}{// Solutions of temporary and final problems}}
+\DoxyCodeLine{00035     \mbox{\hyperlink{classVector}{Vector<V,I>}} z;       \textcolor{comment}{// Range [1..J]}}
+\DoxyCodeLine{00036     \mbox{\hyperlink{classVector}{Vector<V,I>}} u;       \textcolor{comment}{// Range [1..J]}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{keywordtype}{long} Size;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{keywordtype}{void} calculateBetaGamma();      \textcolor{comment}{// Calculate beta and gamma}}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{void} calculateZU();             \textcolor{comment}{// Calculate z and u}}
+\DoxyCodeLine{00042     }
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}();}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& lower\_A, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& diagonal\_B, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& upper\_C, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& rhs\_R);}
+\DoxyCodeLine{00047     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& source); }
+\DoxyCodeLine{00048     }
+\DoxyCodeLine{00049     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}();}
+\DoxyCodeLine{00050     }
+\DoxyCodeLine{00051     \textcolor{comment}{// Assignment operator }}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& source);}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{comment}{// Calculate the (final) solution to Au = r}}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classVector}{Vector<V,I>}} solve();}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{keywordtype}{bool} diagonallyDominant() \textcolor{keyword}{const};}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060 \};}
+\DoxyCodeLine{00061 \textcolor{preprocessor}{\#include "../../src/LUSolver.cc"}}
+\DoxyCodeLine{00062 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

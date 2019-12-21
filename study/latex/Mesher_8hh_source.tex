@@ -1,0 +1,47 @@
+\hypertarget{Mesher_8hh_source}{}\doxysection{Mesher.\+hh}
+\label{Mesher_8hh_source}\index{include/duffy/Mesher.hh@{include/duffy/Mesher.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// mesher.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// A simple mesher on a 1d domain. We divide}}
+\DoxyCodeLine{00004 \textcolor{comment}{// an interval into J+1 mesh points, J-\/1 of which}}
+\DoxyCodeLine{00005 \textcolor{comment}{// are internal mesh points.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// Future projects:}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{//  1. Separate space and time meshing}}
+\DoxyCodeLine{00010 \textcolor{comment}{//  2. Meshing in hypercubes (modelling geometric aspects)}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00013 \textcolor{comment}{//}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#ifndef Mesher\_HH}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#define Mesher\_HH}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "Vector.hh"}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include "Range.hh"}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{Mesher_8hh_source_l00021}\mbox{\hyperlink{classMesher}{00021}} \textcolor{keyword}{class }\mbox{\hyperlink{classMesher}{Mesher}}}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024         \textcolor{keywordtype}{double} a, b;    \textcolor{comment}{// In space (left, right)}}
+\DoxyCodeLine{00025         \textcolor{keywordtype}{double} LT, HT;  \textcolor{comment}{// In time (low, high)}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \mbox{\hyperlink{classMesher}{Mesher}}();}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         \mbox{\hyperlink{classMesher}{Mesher}} (\textcolor{keywordtype}{double} A, \textcolor{keywordtype}{double} \mbox{\hyperlink{classB}{B}}, \textcolor{keywordtype}{double} t, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         \mbox{\hyperlink{classMesher}{Mesher}} (\textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<double>}}\& rX, \textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<double>}}\& rT);}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         \mbox{\hyperlink{classVector}{Vector<double, long>}} xarr(\textcolor{keywordtype}{int} J);   \textcolor{comment}{// Mesh in direction 1}}
+\DoxyCodeLine{00036         \mbox{\hyperlink{classVector}{Vector<double, long>}} yarr(\textcolor{keywordtype}{int} N);   \textcolor{comment}{// Mesh in direction 2}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038         \textcolor{keywordtype}{double} timeStep(\textcolor{keywordtype}{int} N);}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 \};}
+\DoxyCodeLine{00041 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

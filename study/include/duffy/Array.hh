@@ -13,7 +13,7 @@
 #include "ArrayStructure.hh"
 #include "FullArray.hh"
 // Default structure is FullArray with default allocator. Default integral type is int.
-template <class V, class I=int, class S=FullArray<V> >
+template <class V, class I=int, class S = FullArray<V> >
 class Array
 {
 private:

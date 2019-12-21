@@ -1,0 +1,79 @@
+\hypertarget{DatesimDateTime_8hh_source}{}\doxysection{Datesim\+Date\+Time.\+hh}
+\label{DatesimDateTime_8hh_source}\index{include/duffy/DatesimDateTime.hh@{include/duffy/DatesimDateTime.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// DateTime.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Class representing dates and times in one entity.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2004}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#ifndef DatasimDateTime\_HH}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#define DatasimDateTime\_HH}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "TemporalType.hh"}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#define OR ||}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#define AND \&\&}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{keyword}{enum} DatasimDateTime\_type \{HR12, HR24\};}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} secTy;}
+\DoxyCodeLine{00019 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} day\_seconds = (24l * 60l * 60l);}
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8hh_source_l00020}\mbox{\hyperlink{classDatasimDateTime}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}}: \textcolor{keyword}{public} \mbox{\hyperlink{classTemporalType}{TemporalType}}}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023     secTy seconds;          \textcolor{comment}{// number of seconds from midnight}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     secTy secs(\textcolor{keywordtype}{long} hours, \textcolor{keywordtype}{long} minutes, \textcolor{keywordtype}{long} seconds); \textcolor{comment}{// calc \#seconds from midnight}}
+\DoxyCodeLine{00026     \textcolor{keywordtype}{int} hour\_test(\textcolor{keywordtype}{int} hour);                            \textcolor{comment}{// test validity of hour}}
+\DoxyCodeLine{00027     \textcolor{keywordtype}{int} min\_test(\textcolor{keywordtype}{int} minute);                           \textcolor{comment}{// test validity of minute}}
+\DoxyCodeLine{00028     \textcolor{keywordtype}{int} sec\_test(\textcolor{keywordtype}{int} seconds);                          \textcolor{comment}{// test validity of seconds}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{keywordtype}{void} secs\_to\_DatasimDateTime(\textcolor{keywordtype}{int}\& h, \textcolor{keywordtype}{int}\& m, \textcolor{keywordtype}{int}\& s, \textcolor{keywordtype}{long}* over = 0);}
+\DoxyCodeLine{00031                     \textcolor{comment}{// give time from seconds }}
+\DoxyCodeLine{00032  }
+\DoxyCodeLine{00033  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034     \textcolor{comment}{// Constructors}}
+\DoxyCodeLine{00035     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}}();           \textcolor{comment}{// default constructor=time today}}
+\DoxyCodeLine{00036     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}}\&);          \textcolor{comment}{// copy in initialization}}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}}(secTy secs, \textcolor{keywordtype}{long}* over = 0); \textcolor{comment}{// constr time from number of secs after midnight}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordtype}{int} ret\_hour();     \textcolor{comment}{// return hour of this DatasimDateTime}}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{int} ret\_minute();       \textcolor{comment}{// return minute (0..59) of DatasimDateTime}}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{int} ret\_second();       \textcolor{comment}{// return second (0..59) of DatasimDateTime}}
+\DoxyCodeLine{00042  }
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2);  \textcolor{comment}{// return TRUE if on the same time}}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{bool} operator!=(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2);  \textcolor{comment}{// return TRUE if not on the same time}}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{bool} operator>(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2);   \textcolor{comment}{// time is later than time\_2}}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{bool} operator<(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2);   \textcolor{comment}{// DatasimDateTime is earlier than DatasimDateTime\_2}}
+\DoxyCodeLine{00048     \textcolor{keywordtype}{bool} operator>=(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2);  \textcolor{comment}{// DatasimDateTime is later than DatasimDateTime\_2}}
+\DoxyCodeLine{00049     \textcolor{keywordtype}{bool} operator<=(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2);  \textcolor{comment}{// DatasimDateTime is earlier than DatasimDateTime\_2}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator=(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2); \textcolor{comment}{// copy}}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator+(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2); \textcolor{comment}{// add two DatasimDateTimes}}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator+(\textcolor{keywordtype}{long} seconds);}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator-\/(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2); \textcolor{comment}{// subtract DatasimDateTime\_2 from this DatasimDateTime}}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator-\/(\textcolor{keywordtype}{long} seconds); \textcolor{comment}{// subtract \#seconds from this DatasimDateTime}}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator++();        \textcolor{comment}{// add 1 second to DatasimDateTime}}
+\DoxyCodeLine{00056     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator-\/-\/();        \textcolor{comment}{// subtract one second from DatasimDateTime}}
+\DoxyCodeLine{00057     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator+=(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2);\textcolor{comment}{// add secs seconds to this DatasimDateTime}}
+\DoxyCodeLine{00058     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator+=(\textcolor{keywordtype}{long} secs);   \textcolor{comment}{// add secs seconds to this DatasimDateTime}}
+\DoxyCodeLine{00059     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator-\/=(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2);\textcolor{comment}{// subtract seconds from this DatasimDateTime}}
+\DoxyCodeLine{00060     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} operator-\/=(\textcolor{keywordtype}{long} secs);   \textcolor{comment}{// subtract seconds from this DatasimDateTime}}
+\DoxyCodeLine{00061     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} add\_hours(\textcolor{keywordtype}{long} hours);   \textcolor{comment}{// return this DatasimDateTime + \#hours}}
+\DoxyCodeLine{00062     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} add\_minutes(\textcolor{keywordtype}{long} minutes);\textcolor{comment}{// return this DatasimDateTime + \#minutes}}
+\DoxyCodeLine{00063     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} sub\_hours(\textcolor{keywordtype}{long} hours);   \textcolor{comment}{// return this DatasimDateTime -\/ \#hours}}
+\DoxyCodeLine{00064     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} sub\_minutes(\textcolor{keywordtype}{long} minutes);\textcolor{comment}{// return this DatasimDateTime -\/ \#minutes}}
+\DoxyCodeLine{00065     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} add\_period(secTy secs, secTy mins = 0, secTy hours = 0);}
+\DoxyCodeLine{00066     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} sub\_period(secTy secs, secTy mins = 0, secTy hours = 0);}
+\DoxyCodeLine{00067     \textcolor{keywordtype}{void} print() \textcolor{keyword}{const};         \textcolor{comment}{// print the time}}
+\DoxyCodeLine{00068     \textcolor{keywordtype}{void} secs\_to\_dtime(\textcolor{keywordtype}{int}\& h, \textcolor{keywordtype}{int}\& m, \textcolor{keywordtype}{int}\& s, \textcolor{keywordtype}{long}* over = 0) \textcolor{keyword}{const};}
+\DoxyCodeLine{00069                     \textcolor{comment}{// give time from seconds }}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071 \};}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DatasimDateTime\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

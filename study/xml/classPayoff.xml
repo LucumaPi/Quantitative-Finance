@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classPayoff" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Payoff</compoundname>
+    <derivedcompoundref refid="classBullSpreadPayoff" prot="public" virt="non-virtual">BullSpreadPayoff</derivedcompoundref>
+    <derivedcompoundref refid="classCallPayoff" prot="public" virt="non-virtual">CallPayoff</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Payoff::K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PayoffNew.cc" line="5" column="8" bodyfile="src/PayoffNew.cc" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classPayoff_1a0f46e76a129a9f3a98d957b083c30157" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Payoff::Payoff</definition>
+        <argsstring>()</argsstring>
+        <name>Payoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/Payoff.hh" line="14" column="1" bodyfile="src/Payoff.cc" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classPayoff_1aed160eb3d239b007c0901c0cac6cfebf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Payoff::Payoff</definition>
+        <argsstring>(const Payoff &amp;source)</argsstring>
+        <name>Payoff</name>
+        <param>
+          <type>const <ref refid="classPayoff" kindref="compound">Payoff</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/Payoff.hh" line="15" column="1" bodyfile="src/Payoff.cc" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classPayoff_1a8503707f7af67b9f6b0cfdac6d277480" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Payoff::~Payoff</definition>
+        <argsstring>()</argsstring>
+        <name>~Payoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/Payoff.hh" line="16" column="9" bodyfile="src/Payoff.cc" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classPayoff_1ad2a5f6ec9c8336d4dc6ab00ecdd83393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classPayoff" kindref="compound">Payoff</ref> &amp;</type>
+        <definition>Payoff &amp; Payoff::operator=</definition>
+        <argsstring>(const Payoff &amp;source)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classPayoff" kindref="compound">Payoff</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/Payoff.hh" line="19" column="8" bodyfile="src/Payoff.cc" bodystart="26" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classPayoff_1a541081708c4999142c3db9d5a27b2313" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Payoff::payoff</definition>
+        <argsstring>(double S) const =0</argsstring>
+        <name>payoff</name>
+        <reimplementedby refid="classCallPayoff_1a388ddb411d45108ab253f9c4dd50bcbb">payoff</reimplementedby>
+        <reimplementedby refid="classBullSpreadPayoff_1a6c3f86354323a9a6149ba2cf88a74ba7">payoff</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/Payoff.hh" line="22" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classPayoff_1a0f46e76a129a9f3a98d957b083c30157" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Payoff::Payoff</definition>
+        <argsstring>()</argsstring>
+        <name>Payoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PayoffNew.cc" line="7" column="1" bodyfile="src/PayoffNew.cc" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classPayoff_1a7ebefaac65b94bb3a43f2984ebe9afc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Payoff::Payoff</definition>
+        <argsstring>(double strike)</argsstring>
+        <name>Payoff</name>
+        <param>
+          <type>double</type>
+          <declname>strike</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PayoffNew.cc" line="8" column="1" bodyfile="src/PayoffNew.cc" bodystart="8" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classPayoff_1a81ee255183b0babc5e6d9663196a83de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Payoff::Call</definition>
+        <argsstring>(double S)</argsstring>
+        <name>Call</name>
+        <param>
+          <type>double</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PayoffNew.cc" line="10" column="8" bodyfile="src/PayoffNew.cc" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classPayoff_1a5d0222f2d42995f5ab01820272761e21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Payoff::Put</definition>
+        <argsstring>(double S)</argsstring>
+        <name>Put</name>
+        <param>
+          <type>double</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PayoffNew.cc" line="11" column="8" bodyfile="src/PayoffNew.cc" bodystart="11" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Payoff</label>
+        <link refid="classPayoff"/>
+      </node>
+      <node id="2">
+        <label>BullSpreadPayoff</label>
+        <link refid="classBullSpreadPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>CallPayoff</label>
+        <link refid="classCallPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Payoff</label>
+        <link refid="classPayoff"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/Payoff.hh" line="11" column="1" bodyfile="include/duffy/Payoff.hh" bodystart="10" bodyend="23"/>
+    <listofallmembers>
+      <member refid="classPayoff_1a81ee255183b0babc5e6d9663196a83de" prot="public" virt="non-virtual"><scope>Payoff</scope><name>Call</name></member>
+      <member refid="classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c" prot="public" virt="non-virtual"><scope>Payoff</scope><name>K</name></member>
+      <member refid="classPayoff_1ad2a5f6ec9c8336d4dc6ab00ecdd83393" prot="public" virt="non-virtual"><scope>Payoff</scope><name>operator=</name></member>
+      <member refid="classPayoff_1a541081708c4999142c3db9d5a27b2313" prot="public" virt="pure-virtual"><scope>Payoff</scope><name>payoff</name></member>
+      <member refid="classPayoff_1a0f46e76a129a9f3a98d957b083c30157" prot="public" virt="non-virtual"><scope>Payoff</scope><name>Payoff</name></member>
+      <member refid="classPayoff_1aed160eb3d239b007c0901c0cac6cfebf" prot="public" virt="non-virtual"><scope>Payoff</scope><name>Payoff</name></member>
+      <member refid="classPayoff_1a0f46e76a129a9f3a98d957b083c30157" prot="public" virt="non-virtual"><scope>Payoff</scope><name>Payoff</name></member>
+      <member refid="classPayoff_1a7ebefaac65b94bb3a43f2984ebe9afc8" prot="public" virt="non-virtual"><scope>Payoff</scope><name>Payoff</name></member>
+      <member refid="classPayoff_1a5d0222f2d42995f5ab01820272761e21" prot="public" virt="non-virtual"><scope>Payoff</scope><name>Put</name></member>
+      <member refid="classPayoff_1a8503707f7af67b9f6b0cfdac6d277480" prot="public" virt="virtual"><scope>Payoff</scope><name>~Payoff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

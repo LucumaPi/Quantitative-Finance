@@ -1,0 +1,87 @@
+\hypertarget{IBVPSolver_8hh_source}{}\doxysection{I\+B\+V\+P\+Solver.\+hh}
+\label{IBVPSolver_8hh_source}\index{include/duffy/IBVPSolver.hh@{include/duffy/IBVPSolver.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ibvpsolver.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Solvers for initial boundary value problems. We }}
+\DoxyCodeLine{00004 \textcolor{comment}{// use an abstract base class; derived class implement}}
+\DoxyCodeLine{00005 \textcolor{comment}{// specific behaviour.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// This class makes use of the Template Method Pattern.}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// 2005-\/9-\/36 DD kick-\/off}}
+\DoxyCodeLine{00010 \textcolor{comment}{// 2005-\/10-\/1 DD next rev.}}
+\DoxyCodeLine{00011 \textcolor{comment}{// 2005-\/10-\/11 DD last revision?}}
+\DoxyCodeLine{00012 \textcolor{comment}{//}}
+\DoxyCodeLine{00013 \textcolor{comment}{// (C) Datasim Component Technology BV 2003-\/2006}}
+\DoxyCodeLine{00014 \textcolor{comment}{//}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#ifndef IBVPSOLVER\_HH}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#define IBVPSOLVER\_HH}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#include "IBVP.hh"}}
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#include "NumericMatrix.hh"}}
+\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include "LUSolver.hh"}      \textcolor{comment}{// !! for convenience}}
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include "Mesher.hh"}}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00025 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{\Hypertarget{IBVPSolver_8hh_source_l00027}\mbox{\hyperlink{classIBVPFDM}{00027}} \textcolor{keyword}{class }\mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}}
+\DoxyCodeLine{00028 \{ \textcolor{comment}{// Set of finite difference to solve scalar initial}}
+\DoxyCodeLine{00029   \textcolor{comment}{// boundary value problems}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032     \textcolor{comment}{// Utility functions}}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{void} initMesh(\textcolor{keywordtype}{long} NSteps, \textcolor{keywordtype}{long} JSteps);}
+\DoxyCodeLine{00034     \textcolor{keywordtype}{void} initIC();}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classIBVP}{IBVP}}* ibvp;             \textcolor{comment}{// Pointer to 'parent'}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordtype}{long} N;                 \textcolor{comment}{// The number of subdivision of interval in IBVP }}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{double} k;               \textcolor{comment}{// Step length; redundant data but is efficient }}
+\DoxyCodeLine{00041     }
+\DoxyCodeLine{00042     \textcolor{keywordtype}{long} J;                 \textcolor{comment}{// The number of subdivisions of interval in IBVP }}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{double} h, h2;           \textcolor{comment}{// Step length; redundant data but is efficient }}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{keywordtype}{double} DN;}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{double} DJ;}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{double} DJJ;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{keywordtype}{double} tprev, tnow;}
+\DoxyCodeLine{00050     \textcolor{keywordtype}{long} currentIndex, maxIndex;}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classMesher}{Mesher}} m;}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classVector}{Vector<double, long>}} xarr; \textcolor{comment}{// Useful work array}}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classVector}{Vector<double, long>}} tarr; \textcolor{comment}{// Useful work array}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{comment}{// Help functions (Strategy) and redundant data}}
+\DoxyCodeLine{00056     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}} res;     \textcolor{comment}{// Will contain the results of the calculations}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{comment}{// Other data }}
+\DoxyCodeLine{00059     \textcolor{keywordtype}{long} n;     \textcolor{comment}{// Current counter}}
+\DoxyCodeLine{00060     \mbox{\hyperlink{classVector}{Vector<double, long>}} vecOld;}
+\DoxyCodeLine{00061     \mbox{\hyperlink{classVector}{Vector<double, long>}} vecNew;}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}(\textcolor{keyword}{const} \mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}\& source); }
+\DoxyCodeLine{00064     \mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}\& source);}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067     \mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}();}
+\DoxyCodeLine{00068     \mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}(\mbox{\hyperlink{classIBVP}{IBVP}}\& source, \textcolor{keywordtype}{long} NSteps, \textcolor{keywordtype}{long} JSteps);}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}();}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{comment}{// N.B. !!! Resulting output of size N+1 and start index 1 !!!!!!}}
+\DoxyCodeLine{00073     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& result();       \textcolor{comment}{// The result of the calculation}}
+\DoxyCodeLine{00074     \mbox{\hyperlink{classVector}{Vector<double, long>}} XValues() \textcolor{keyword}{const};       \textcolor{comment}{// Array of x values}}
+\DoxyCodeLine{00075     \mbox{\hyperlink{classVector}{Vector<double, long>}} TValues() \textcolor{keyword}{const};       \textcolor{comment}{// Array of time values}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{comment}{// Hook function for Template Method pattern }}
+\DoxyCodeLine{00078     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} calculateBC() = 0; \textcolor{comment}{// Tells how to calculate sol. at n+1}}
+\DoxyCodeLine{00079     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} calculate() = 0; \textcolor{comment}{// Tells how to calculate sol. at n+1}}
+\DoxyCodeLine{00080 \};}
+\DoxyCodeLine{00081 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classNS__NonlinearSolver_1_1BisectionSolver" kind="class" language="C++" prot="public">
+    <compoundname>NS_NonlinearSolver::BisectionSolver</compoundname>
+    <basecompoundref refid="classNS__NonlinearSolver_1_1NonlinearSolver" prot="public" virt="non-virtual">NS_NonlinearSolver::NonlinearSolver</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::BisectionSolver::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="50" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::BisectionSolver::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="51" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1BisectionSolver_1ad7fd938842b7c053a61e6cb6c24dadef" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int NS_NonlinearSolver::BisectionSolver::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="55" column="5" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1BisectionSolver_1a44a033d7754b675d96291efa3ad3cbf7" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::BisectionSolver::myTol</definition>
+        <argsstring></argsstring>
+        <name>myTol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="56" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1BisectionSolver_1a9ecf4f2b8c79f69ede92476f99b16ef3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::BisectionSolver::aCurrent</definition>
+        <argsstring></argsstring>
+        <name>aCurrent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="57" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1BisectionSolver_1ad0838c58eb18a53998c39f242c6000fb" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::BisectionSolver::bCurrent</definition>
+        <argsstring></argsstring>
+        <name>bCurrent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="57" column="24" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1BisectionSolver_1abc10fc50c2480efcb15be7afaf100d61" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::BisectionSolver::midPoint</definition>
+        <argsstring></argsstring>
+        <name>midPoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="58" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNS__NonlinearSolver_1_1BisectionSolver_1a92b3d483b030f4f4e7014f8097dfd3db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::BisectionSolver::solve</definition>
+        <argsstring>()</argsstring>
+        <name>solve</name>
+        <reimplements refid="classNS__NonlinearSolver_1_1NonlinearSolver_1a7336902d70e3ae47194eb92abac04333">solve</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="61" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="61" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classNS__NonlinearSolver_1_1BisectionSolver_1a8aa6679debb70886fdfaac7aae6d25aa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::BisectionSolver::accuracy</definition>
+        <argsstring>() const</argsstring>
+        <name>accuracy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="99" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="99" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classNS__NonlinearSolver_1_1BisectionSolver_1a1bd5e1ca8a817f8443cd4c510fcaf3af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void NS_NonlinearSolver::BisectionSolver::printStatistics</definition>
+        <argsstring>()</argsstring>
+        <name>printStatistics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="106" column="6" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="106" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classNS__NonlinearSolver_1_1BisectionSolver_1a2b63b5bd50b9a316b68b0c3253685630" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long NS_NonlinearSolver::BisectionSolver::estimate</definition>
+        <argsstring>() const</argsstring>
+        <name>estimate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="119" column="6" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="119" bodyend="126"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>NS_NonlinearSolver::NonlinearSolver</label>
+        <link refid="classNS__NonlinearSolver_1_1NonlinearSolver"/>
+      </node>
+      <node id="1">
+        <label>NS_NonlinearSolver::BisectionSolver</label>
+        <link refid="classNS__NonlinearSolver_1_1BisectionSolver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>NS_NonlinearSolver::NonlinearSolver</label>
+        <link refid="classNS__NonlinearSolver_1_1NonlinearSolver"/>
+      </node>
+      <node id="1">
+        <label>NS_NonlinearSolver::BisectionSolver</label>
+        <link refid="classNS__NonlinearSolver_1_1BisectionSolver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/NonlinearSolver.hh" line="46" column="1" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="45" bodyend="127"/>
+    <listofallmembers>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>a</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1a8aa6679debb70886fdfaac7aae6d25aa" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>accuracy</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1a9ecf4f2b8c79f69ede92476f99b16ef3" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>aCurrent</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>b</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1ad0838c58eb18a53998c39f242c6000fb" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>bCurrent</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1a2b63b5bd50b9a316b68b0c3253685630" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>estimate</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1abc10fc50c2480efcb15be7afaf100d61" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>midPoint</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>myF</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1a44a033d7754b675d96291efa3ad3cbf7" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>myTol</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1ad7fd938842b7c053a61e6cb6c24dadef" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>n</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1a5371c3342836f79f66b556b2e6dc110f" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>NonlinearSolver</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1a9fefab630c3d0243c1b98893baa56711" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>NonlinearSolver</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1adf16f5f92db6f555e4352f26673dd8f5" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>operator=</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1a1bd5e1ca8a817f8443cd4c510fcaf3af" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>printStatistics</name></member>
+      <member refid="classNS__NonlinearSolver_1_1BisectionSolver_1a92b3d483b030f4f4e7014f8097dfd3db" prot="public" virt="virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>solve</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::BisectionSolver</scope><name>tol</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

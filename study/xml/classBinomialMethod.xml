@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classBinomialMethod" kind="class" language="C++" prot="public">
+    <compoundname>BinomialMethod</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBinomialMethod_1a6d4344455e0833d62cdfe6a8aaa84f56" prot="private" static="no" mutable="no">
+        <type><ref refid="classLattice" kindref="compound">Lattice</ref>&lt; double, int, 2 &gt;</type>
+        <definition>Lattice&lt;double, int, 2&gt; BinomialMethod::lattice</definition>
+        <argsstring></argsstring>
+        <name>lattice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="24" column="9" bodyfile="include/duffy/BinomialMethod.hh" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBinomialMethod_1a91bd7d42e9b017660e38235a92125a21" prot="private" static="no" mutable="no">
+        <type><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref> *</type>
+        <definition>BinomialLatticeStrategy* BinomialMethod::str</definition>
+        <argsstring></argsstring>
+        <name>str</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="25" column="25" bodyfile="include/duffy/BinomialMethod.hh" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBinomialMethod_1a609e8e54e6e9645749b7d12ffba5c5a8" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double BinomialMethod::disc</definition>
+        <argsstring></argsstring>
+        <name>disc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="27" column="8" bodyfile="include/duffy/BinomialMethod.hh" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBinomialMethod_1a98ef45a14e91d551785c1edfdbfd99a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BinomialMethod::BinomialMethod</definition>
+        <argsstring>()</argsstring>
+        <name>BinomialMethod</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="31" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classBinomialMethod_1a6784aec62cfedac9ccfac10852c8143c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BinomialMethod::BinomialMethod</definition>
+        <argsstring>(double discounting, BinomialLatticeStrategy &amp;strategy, int N)</argsstring>
+        <name>BinomialMethod</name>
+        <param>
+          <type>double</type>
+          <declname>discounting</declname>
+        </param>
+        <param>
+          <type><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref> &amp;</type>
+          <declname>strategy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="34" column="1" bodyfile="src/BinomialMethod.cc" bodystart="31" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classBinomialMethod_1a31651b3bcaa64a57e7a6e26f9f00ef05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BinomialMethod::buildLattice</definition>
+        <argsstring>(int N)</argsstring>
+        <name>buildLattice</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="37" column="6" bodyfile="src/BinomialMethod.cc" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classBinomialMethod_1a232d7301afe8bab7df7ee5633ff841e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BinomialMethod::modifyLattice</definition>
+        <argsstring>(double U)</argsstring>
+        <name>modifyLattice</name>
+        <param>
+          <type>double</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="40" column="6" bodyfile="src/BinomialMethod.cc" bodystart="43" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classBinomialMethod_1a62b8aa2bf9779858bbb0f27825af9268" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double BinomialMethod::getPrice</definition>
+        <argsstring>(const Vector&lt; double, int &gt; &amp;RHS)</argsstring>
+        <name>getPrice</name>
+        <param>
+          <type>const <ref refid="classVector" kindref="compound">Vector</ref>&lt; double, int &gt; &amp;</type>
+          <declname>RHS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="43" column="8" bodyfile="src/BinomialMethod.cc" bodystart="63" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classBinomialMethod_1ab3b69b60ccd9242119c3c5f6befc3690" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, int &gt;</type>
+        <definition>Vector&lt; double, int &gt; BinomialMethod::BasePyramidVector</definition>
+        <argsstring>() const</argsstring>
+        <name>BasePyramidVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="46" column="8" bodyfile="src/BinomialMethod.cc" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classBinomialMethod_1a45f662c73ae8b3d9cf3530a1c500f9ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classLattice" kindref="compound">Lattice</ref>&lt; double, int, 2 &gt; &amp;</type>
+        <definition>const Lattice&lt; double, int, 2 &gt; &amp; BinomialMethod::getLattice</definition>
+        <argsstring>() const</argsstring>
+        <name>getLattice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialMethod.hh" line="49" column="15" bodyfile="src/BinomialMethod.cc" bodystart="91" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>BinomialMethod</label>
+        <link refid="classBinomialMethod"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/BinomialMethod.hh" line="21" column="1" bodyfile="include/duffy/BinomialMethod.hh" bodystart="20" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classBinomialMethod_1ab3b69b60ccd9242119c3c5f6befc3690" prot="public" virt="non-virtual"><scope>BinomialMethod</scope><name>BasePyramidVector</name></member>
+      <member refid="classBinomialMethod_1a98ef45a14e91d551785c1edfdbfd99a4" prot="public" virt="non-virtual"><scope>BinomialMethod</scope><name>BinomialMethod</name></member>
+      <member refid="classBinomialMethod_1a6784aec62cfedac9ccfac10852c8143c" prot="public" virt="non-virtual"><scope>BinomialMethod</scope><name>BinomialMethod</name></member>
+      <member refid="classBinomialMethod_1a31651b3bcaa64a57e7a6e26f9f00ef05" prot="public" virt="non-virtual"><scope>BinomialMethod</scope><name>buildLattice</name></member>
+      <member refid="classBinomialMethod_1a609e8e54e6e9645749b7d12ffba5c5a8" prot="private" virt="non-virtual"><scope>BinomialMethod</scope><name>disc</name></member>
+      <member refid="classBinomialMethod_1a45f662c73ae8b3d9cf3530a1c500f9ca" prot="public" virt="non-virtual"><scope>BinomialMethod</scope><name>getLattice</name></member>
+      <member refid="classBinomialMethod_1a62b8aa2bf9779858bbb0f27825af9268" prot="public" virt="non-virtual"><scope>BinomialMethod</scope><name>getPrice</name></member>
+      <member refid="classBinomialMethod_1a6d4344455e0833d62cdfe6a8aaa84f56" prot="private" virt="non-virtual"><scope>BinomialMethod</scope><name>lattice</name></member>
+      <member refid="classBinomialMethod_1a232d7301afe8bab7df7ee5633ff841e6" prot="public" virt="non-virtual"><scope>BinomialMethod</scope><name>modifyLattice</name></member>
+      <member refid="classBinomialMethod_1a91bd7d42e9b017660e38235a92125a21" prot="private" virt="non-virtual"><scope>BinomialMethod</scope><name>str</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

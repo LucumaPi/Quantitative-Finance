@@ -1,0 +1,44 @@
+\hypertarget{STDImp_8hh_source}{}\doxysection{S\+T\+D\+Imp.\+hh}
+\label{STDImp_8hh_source}\index{include/duffy/STDImp.hh@{include/duffy/STDImp.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Stdimp.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Implementation class for one-\/factor initial boundary}}
+\DoxyCodeLine{00004 \textcolor{comment}{// value problems.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// YOu can customise the class to test your own one-\/factor PDEs}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Component Technology BV 2000-\/2006}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifndef STDIMP\_HH}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#define STDIMP\_HH}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <duffy/IBVPImp.hh>}}
+\DoxyCodeLine{00015 \textcolor{comment}{// Domain-\/independent class for Parabolic IBVP}}
+\DoxyCodeLine{\Hypertarget{STDImp_8hh_source_l00016}\mbox{\hyperlink{classSTDIBVPImp}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classSTDIBVPImp}{STDIBVPImp}} : \textcolor{keyword}{public} \mbox{\hyperlink{classIBVPImp}{IBVPImp}}}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018 \textcolor{keyword}{public}: }
+\DoxyCodeLine{00019 \textcolor{comment}{// Selector functions}}
+\DoxyCodeLine{00020 \textcolor{comment}{// Coefficients of parabolic second order operator}}
+\DoxyCodeLine{00021     \mbox{\hyperlink{classSTDIBVPImp}{STDIBVPImp}}();}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keywordtype}{double} diffusion(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const}; \textcolor{comment}{// Coefficient of second derivative}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{keywordtype}{double} convection(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};    \textcolor{comment}{// Coefficient of first derivative}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{keywordtype}{double} zeroterm(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};  \textcolor{comment}{// Coefficient of zero derivative}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordtype}{double} RHS(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};   \textcolor{comment}{// Inhomogeneous forcing term}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{comment}{// Boundary and initial conditions}}
+\DoxyCodeLine{00032     \textcolor{keywordtype}{double} BCL(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const};     \textcolor{comment}{// Left hand boundary condition}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordtype}{double} BCR(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const};     \textcolor{comment}{// Right hand boundary condition}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordtype}{double} IC(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const};      \textcolor{comment}{// Initial condition}}
+\DoxyCodeLine{00037 \};}
+\DoxyCodeLine{00038 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,36 @@
+\hypertarget{SpecialPayoffFunctions_8hh_source}{}\doxysection{Special\+Payoff\+Functions.\+hh}
+\label{SpecialPayoffFunctions_8hh_source}\index{include/duffy/SpecialPayoffFunctions.hh@{include/duffy/SpecialPayoffFunctions.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// SpecialPayoffFunctions.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Specific payoff functions}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef SpecialPayoffFunctions\_HPP}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define SpecialPayoffFunctions\_HPP}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keywordtype}{double} MyCallPayoffFN(\textcolor{keywordtype}{double} K, \textcolor{keywordtype}{double} S) }
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014         \textcolor{keywordflow}{if} (S > K)}
+\DoxyCodeLine{00015             \textcolor{keywordflow}{return} (S -\/ K);}
+\DoxyCodeLine{00016         }
+\DoxyCodeLine{00017         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{keywordtype}{double} MyPutPayoffFN(\textcolor{keywordtype}{double} K, \textcolor{keywordtype}{double} S) }
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023         \textcolor{comment}{// max (K-\/S, 0)}}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{if} (K > S)}
+\DoxyCodeLine{00025             \textcolor{keywordflow}{return} (K -\/ S);}
+\DoxyCodeLine{00026         }
+\DoxyCodeLine{00027         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00028 \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

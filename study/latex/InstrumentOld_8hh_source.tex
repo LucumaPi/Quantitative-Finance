@@ -1,0 +1,66 @@
+\hypertarget{InstrumentOld_8hh_source}{}\doxysection{Instrument\+Old.\+hh}
+\label{InstrumentOld_8hh_source}\index{include/duffy/InstrumentOld.hh@{include/duffy/InstrumentOld.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Instrument.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// }}
+\DoxyCodeLine{00004 \textcolor{comment}{// Simple classes to show the rationale of heterogeneous}}
+\DoxyCodeLine{00005 \textcolor{comment}{// property sets.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// }}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 2004-\/2006}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#ifndef InstrumentOld\_HPP}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#define InstrumentOld\_HPP}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{keyword}{class }\mbox{\hyperlink{classInstrument}{Instrument}}}
+\DoxyCodeLine{00018 \{ \textcolor{comment}{// Base class for all derivative products}}
+\DoxyCodeLine{00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} print() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \};}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025 \textcolor{keyword}{class }\mbox{\hyperlink{classOption}{Option}}: \textcolor{keyword}{public} \mbox{\hyperlink{classInstrument}{Instrument}}}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordtype}{void} print()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00030 \textcolor{keyword}{    }\{ }
+\DoxyCodeLine{00031         std::cout << \textcolor{stringliteral}{"An option\(\backslash\)n"};}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034                                         }
+\DoxyCodeLine{00035 \};  }
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{\Hypertarget{InstrumentOld_8hh_source_l00037}\mbox{\hyperlink{classBond}{00037}} \textcolor{keyword}{class }\mbox{\hyperlink{classBond}{Bond}}: \textcolor{keyword}{public} \mbox{\hyperlink{classInstrument}{Instrument}}}
+\DoxyCodeLine{00038 \{}
+\DoxyCodeLine{00039 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keywordtype}{void} print()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00042 \textcolor{keyword}{    }\{ }
+\DoxyCodeLine{00043         std::cout << \textcolor{stringliteral}{"A bond\(\backslash\)n"};}
+\DoxyCodeLine{00044     \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046                                         }
+\DoxyCodeLine{00047 \};  }
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{\Hypertarget{InstrumentOld_8hh_source_l00049}\mbox{\hyperlink{classSwap}{00049}} \textcolor{keyword}{class }\mbox{\hyperlink{classSwap}{Swap}}: \textcolor{keyword}{public} \mbox{\hyperlink{classInstrument}{Instrument}}}
+\DoxyCodeLine{00050 \{}
+\DoxyCodeLine{00051 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordtype}{void} print()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00054 \textcolor{keyword}{    }\{ }
+\DoxyCodeLine{00055         std::cout << \textcolor{stringliteral}{"A swap\(\backslash\)n"};}
+\DoxyCodeLine{00056     \}}
+\DoxyCodeLine{00057                                         }
+\DoxyCodeLine{00058 \};  }
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

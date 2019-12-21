@@ -1,0 +1,53 @@
+\hypertarget{NumericMatrix_8hh_source}{}\doxysection{Numeric\+Matrix.\+hh}
+\label{NumericMatrix_8hh_source}\index{include/duffy/NumericMatrix.hh@{include/duffy/NumericMatrix.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// NumericMatrix.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Numeric matrix class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// This is a matrix class for numerical data. Derived from Matrix and }}
+\DoxyCodeLine{00005 \textcolor{comment}{// it adds mathematical functions.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2006}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#ifndef NumericMatrix\_hh}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#define NumericMatrix\_hh}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "Matrix.hh"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "Vector.hh"}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{comment}{// Default structure is FullArray with default allocator. Default integral type is int.}}
+\DoxyCodeLine{00016 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I = \textcolor{keywordtype}{int}, \textcolor{keyword}{class} S = FullMatrix<V> >}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8hh_source_l00017}\mbox{\hyperlink{classNumericMatrix}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classNumericMatrix}{NumericMatrix}}: \textcolor{keyword}{public} \mbox{\hyperlink{classMatrix}{Matrix}}<V, I, S>}
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022     \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix}}();                                           \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix}}(I rows, I columns);                          \textcolor{comment}{// Constructor with size. Start index=1.}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix}}(I rows, I columns, I rowStart, I columnStart);\textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& source);               \textcolor{comment}{// Constructor with matrix}}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& source);     \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00028     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classNumericMatrix}{NumericMatrix}}();                                  \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classVector}{Vector<V, I>}} Row(I row) \textcolor{keyword}{const};              \textcolor{comment}{// Return row. Overloads Matrix::Row() to return Vector instead of Array}}
+\DoxyCodeLine{00032     \mbox{\hyperlink{classVector}{Vector<V, I>}} Column(I column) \textcolor{keyword}{const};        \textcolor{comment}{// Return column. Overloads Matrix::Row() to return Vector instead of Array}}
+\DoxyCodeLine{00033     }
+\DoxyCodeLine{00034     \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{void} Row(I row, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val);     \textcolor{comment}{// Replace row}}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{void} Column(I column, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val);   \textcolor{comment}{// Replace column}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00039     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& source);}
+\DoxyCodeLine{00040     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} operator -\/ () \textcolor{keyword}{const};                                   \textcolor{comment}{// Unary minus}}
+\DoxyCodeLine{00041     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} operator + (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& m) \textcolor{keyword}{const};  \textcolor{comment}{// Add the elements}}
+\DoxyCodeLine{00042     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} operator -\/ (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& m) \textcolor{keyword}{const};  \textcolor{comment}{// Subtract the elements}}
+\DoxyCodeLine{00043     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} operator * (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& m) \textcolor{keyword}{const};  \textcolor{comment}{// Multiply the matrices}}
+\DoxyCodeLine{00044     \mbox{\hyperlink{classVector}{Vector<V, I>}} operator * (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I>}}\& v) \textcolor{keyword}{const};}
+\DoxyCodeLine{00045 \};}
+\DoxyCodeLine{00046 \textcolor{preprocessor}{\#include "../../src/NumericMatrix.cc"}}
+\DoxyCodeLine{00047 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

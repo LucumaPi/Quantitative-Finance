@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="DatasimDate_8hh" kind="file" language="C++">
+    <compoundname>DatasimDate.hh</compoundname>
+    <includes local="no">iostream</includes>
+    <includes refid="TemporalType_8hh" local="yes">TemporalType.hh</includes>
+    <includedby refid="Person_8hh" local="yes">include/duffy/Person.hh</includedby>
+    <includedby refid="PersonAndEmployee_8hh" local="yes">include/duffy/PersonAndEmployee.hh</includedby>
+    <includedby refid="DatasimDate_8cc" local="no">src/DatasimDate.cc</includedby>
+    <includedby refid="TestPerson_8cc" local="no">tests/TestPerson.cc</includedby>
+    <includedby refid="TestRangeSimple_8cc" local="no">tests/TestRangeSimple.cc</includedby>
+    <includedby refid="TestWrapper_8cc" local="no">tests/TestWrapper.cc</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+      <node id="1">
+        <label>include/duffy/DatasimDate.hh</label>
+        <link refid="DatasimDate_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>TemporalType.hh</label>
+        <link refid="TemporalType_8hh_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/duffy/Person.hh</label>
+        <link refid="Person_8hh_source"/>
+      </node>
+      <node id="3">
+        <label>include/duffy/PersonAndEmployee.hh</label>
+        <link refid="PersonAndEmployee_8hh_source"/>
+      </node>
+      <node id="1">
+        <label>include/duffy/DatasimDate.hh</label>
+        <link refid="DatasimDate_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDatasimDate" prot="public">DatasimDate</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="DatasimDate_8hh_1a3363ca4d6d3cc0230b2804280591c991" prot="public" static="no">
+        <name>OR</name>
+        <initializer>||</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="14" column="9" bodyfile="include/duffy/DatasimDate.hh" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="DatasimDate_8hh_1acd1b97556dfbbac61063a63031d2f91d" prot="public" static="no">
+        <name>AND</name>
+        <initializer>&amp;&amp;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="15" column="9" bodyfile="include/duffy/DatasimDate.hh" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="DatasimDate_8hh_1aa9a232826470cac21be923b0358e7a50" prot="public" static="no">
+        <type>unsigned long</type>
+        <definition>typedef unsigned long julTy</definition>
+        <argsstring></argsstring>
+        <name>julTy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="17" column="22" bodyfile="include/duffy/DatasimDate.hh" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="DatasimDate_8hh_1a66ad83b00e701778a616667740561761" prot="public" static="yes" mutable="no">
+        <type>const julTy</type>
+        <definition>const julTy century</definition>
+        <argsstring></argsstring>
+        <name>century</name>
+        <initializer>= 2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="18" column="20" bodyfile="include/duffy/DatasimDate.hh" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>DatasimDatasimDate.hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DatasimDate<sp/>class<sp/>that<sp/>contains<sp/>numeric<sp/>and<sp/>calculation<sp/>functionality<sp/>for<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DatasimDates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DatasimDate_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DatasimDate_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;TemporalType.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OR<sp/><sp/>||</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AND<sp/>&amp;&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>julTy;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>julTy<sp/>century<sp/>=<sp/>2000;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classDatasimDate" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classTemporalType" kindref="compound">TemporalType</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>real<sp/>member<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>julTy<sp/>Julian_days;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>Julian<sp/>days</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Private<sp/>member<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>init(julTy<sp/>days,<sp/>julTy<sp/>months,<sp/>julTy<sp/>years);<sp/></highlight><highlight class="comment">//<sp/>general<sp/>init<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>julTy<sp/>j_days(julTy<sp/>days,<sp/>julTy<sp/>months,<sp/>julTy<sp/>years)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>calc<sp/>#Julian<sp/>days</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>test<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year_test(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>year<sp/>(999&lt;year&lt;=9999),<sp/>or<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mm_test(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>month<sp/>(1&lt;=month&lt;=12),<sp/>or<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day_test(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight><highlight class="comment">//<sp/>test<sp/>if<sp/>day<sp/>in<sp/>month<sp/>and<sp/>year</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>default<sp/>constructor<sp/>=<sp/>DatasimDate<sp/>today</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>d2);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>julTy&amp;<sp/>days);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>construct<sp/>DatasimDate<sp/>from<sp/>Julian<sp/>days</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>days);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>construct<sp/>DatasimDate<sp/>from<sp/>Julian<sp/>days</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year);<sp/><sp/></highlight><highlight class="comment">//<sp/>Day,<sp/>month,<sp/>year</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Selector<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret_year()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>year<sp/>of<sp/>this<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret_month()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>monthnumber<sp/>(1..12)<sp/>of<sp/>this<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret_day()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>daynumber<sp/>(1..31)<sp/>of<sp/>this<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jul_to_greg(julTy&amp;<sp/>d,<sp/>julTy&amp;<sp/>m,<sp/>julTy&amp;<sp/>y)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>give<sp/>Gregorian<sp/>DatasimDate<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Comparison<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DatasimDate_2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compare<sp/>DatasimDates,<sp/>TRUE<sp/>if<sp/>same<sp/>days</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DatasimDate_2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compare<sp/>DatasimDates,<sp/>TRUE<sp/>if<sp/>not<sp/>the<sp/>same<sp/>day</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&gt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DatasimDate_2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>DatasimDate<sp/>is<sp/>later<sp/>than<sp/>DatasimDate_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DatasimDate_2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>DatasimDate<sp/>is<sp/>earlier<sp/>than<sp/>DatasimDate_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&gt;=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DatasimDate_2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>DatasimDate<sp/>is<sp/>later<sp/>than<sp/>DatasimDate_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&lt;=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DatasimDate_2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>DatasimDate<sp/>is<sp/>earlier<sp/>than<sp/>DatasimDate_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arithmetic<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DatasimDate_2);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DatasimDate<sp/>operator+(const<sp/>DatasimDate&amp;<sp/>d2);//<sp/>add<sp/>two<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>operator+(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>days)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>days<sp/>to<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DatasimDate<sp/>operator+(const<sp/>julTy&amp;<sp/>days)<sp/>const;<sp/><sp/><sp/>//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>operator-(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>days)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>subtract<sp/>days<sp/>from<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DatasimDate<sp/>operator-(const<sp/>julTy&amp;<sp/>days)<sp/>const;<sp/><sp/><sp/>//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>operator++();<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>1<sp/>day<sp/>to<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>operator--();<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>subtract<sp/>one<sp/>day<sp/>from<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DatasimDate<sp/>operator+=(const<sp/>julTy&amp;<sp/>days);<sp/><sp/><sp/><sp/>//<sp/>add<sp/>days<sp/>to<sp/>this<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>operator+=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>days);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>days<sp/>to<sp/>this<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DatasimDate<sp/>operator-=(const<sp/>julTy&amp;<sp/>days);<sp/><sp/><sp/><sp/>//<sp/>subtract<sp/>days<sp/>from<sp/>this<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>operator-=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>days);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>subtract<sp/>days<sp/>from<sp/>this<sp/>DatasimDate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>add_months(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>months)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>+<sp/>#months</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>add_quarter()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>+<sp/>3<sp/>months<sp/>ahead</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>add_halfyear()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>+<sp/>6<sp/>months<sp/>ahead</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>add_years(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>years)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>+<sp/>#years</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>sub_months(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>months)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>-<sp/>#months</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>sub_quarter()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>-<sp/>3<sp/>months<sp/>ahead</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>sub_halfyear()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>-<sp/>6<sp/>months<sp/>ahead</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>sub_years(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>years)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>-<sp/>#years</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>add_period(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>julTy&amp;<sp/>days,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>julTy&amp;<sp/>months<sp/>=<sp/>0,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>julTy<sp/>&amp;years<sp/>=<sp/>0)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>plus<sp/>a<sp/>period<sp/>of<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref><sp/>sub_period(julTy<sp/>days,<sp/>julTy<sp/>months<sp/>=<sp/>0,<sp/>julTy<sp/>years<sp/>=<sp/>0)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>this<sp/>DatasimDate<sp/>minus<sp/>a<sp/>period<sp/>of<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>difference<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DatasimDate_2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>give<sp/>difference<sp/>in<sp/>days<sp/>between<sp/>DatasimDate&apos;s</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>operator<sp/>-<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>d2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/>operator<sp/>&lt;&lt;<sp/>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>dat);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/duffy/DatasimDate.hh"/>
+  </compounddef>
+</doxygen>

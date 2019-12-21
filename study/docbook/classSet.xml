@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSet">
+<title>Set&lt; V &gt; Class Template Reference</title>
+<indexterm><primary>Set&lt; V &gt;</primary></indexterm>
+Inheritance diagram for Set&lt; V &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classSet__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Set&lt; V &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classSet__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f"/>typedef std::set&lt; V &gt;::iterator <emphasis role="strong">iterator</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1ac9c538ffe3c823f5f28fd65910289b24"/>typedef std::set&lt; V &gt;::const_iterator <emphasis role="strong">const_iterator</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSet_1a1c22f4531f0962c3a354e3bacc0bad9a"/><emphasis role="strong">Set</emphasis> (const std::set&lt; V &gt; &amp;stlSet)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a739f06b4b802b7bcd41179e77c83bcc6"/><emphasis role="strong">Set</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a7e184745fde7d92a8caf9aa4bf1d122f"/><emphasis role="strong">Set</emphasis> (const std::list&lt; V &gt; &amp;con)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1ac5fb97b30e904016e81e2660ad1af712"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1ac70bbbfa5d581958225a4b5be178ac8a"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator^</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1aa5301a8039e0f02db70fc3179dcd8361"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator+</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1af0015d618dfb0075fa0139cac663e53e"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator-</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a2417374d39e95e1cedc36e3fcd3aa651"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator%</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1aacfb08150129e254b0c5b74c47c2337f"/>template&lt;class V2 &gt; </para><para><link linkend="_classSet">Set</link>&lt; std::pair&lt; V, V2 &gt; &gt; <emphasis role="strong">operator*</emphasis> (const <link linkend="_classSet">Set</link>&lt; V2 &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1ae688c6cb7ec18e29b45eb020c444362f"/>template&lt;class V2 &gt; </para><para><link linkend="_classSet">Set</link>&lt; std::pair&lt; V, V2 &gt; &gt; <emphasis role="strong">CartesianProduct</emphasis> (const <link linkend="_classSet">Set</link>&lt; V2 &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98"/>iterator <emphasis role="strong">Begin</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1af72b60644e986ecd02279b64b56e86f3"/>const_iterator <emphasis role="strong">Begin</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec"/>iterator <emphasis role="strong">End</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1abfa04b4e41038f371b6b12d7553da6c6"/>const_iterator <emphasis role="strong">End</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1aec2bedbb313cfc25c7100c6984760dd3"/>long <emphasis role="strong">Size</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a25791eed3b7ef4be9af5059cf09767f2"/>void <emphasis role="strong">Insert</emphasis> (const V &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1aba4fd7b02967ba79b7e51ea38e33639a"/>void <emphasis role="strong">Insert</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a7c93429f1d8f232c421a6fde25cb982b"/>void <emphasis role="strong">Remove</emphasis> (const V &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a1feb21675fad80514ee3b41fb67f8c20"/>void <emphasis role="strong">Replace</emphasis> (const V &amp;Old, const V &amp;New)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1af4c48c3aca006588ac6d572c7e1f984c"/>void <emphasis role="strong">Clear</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a685c7dec3d054d0d9972457f13873568"/>bool <emphasis role="strong">Contains</emphasis> (const V &amp;v) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1ace9e8eb82ba76d99dcb8b016c3107e15"/>bool <emphasis role="strong">Empty</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1aef67658b41a94e9f8c788cee280ffd92"/>void <emphasis role="strong">operator+</emphasis> (const V &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a2306e1e18b56c40b1ec81d41641e7e1d"/>void <emphasis role="strong">operator-</emphasis> (const V &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1ac7bb2705235f0d44e4793262510e1dc6"/>bool <emphasis role="strong">Subset</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1abec7a201bd7d6632f4cf2a84e9ca2e0f"/>bool <emphasis role="strong">Superset</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1ac66e1af1032a7cc83b80a3d6b8a8ef30"/>bool <emphasis role="strong">Intersects</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSet_1aa6f2d4a71a5915ece9dcc5367d09b715"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">Intersection</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a64d819415225059c47e2c10173d70f7b"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">Union</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1adc454e79bea59a84cda183370001a91f"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">Difference</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSet_1a226443fc57c552d16d44f6b782bfe515"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">SymmetricDifference</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/duffy/Set.hhsrc/Set.cc</section>

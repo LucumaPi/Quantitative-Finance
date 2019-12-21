@@ -25,17 +25,16 @@ public:
 		{
 			if (S > K)
 				return (S - K);
-		
+
 			return 0.0;
 		}
 		else
 		{
 			if (S < K)
 				return -(S - K);
-		
+
 			return 0.0;
 		}
 	}
 };
-
 #endif

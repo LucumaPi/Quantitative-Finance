@@ -1,0 +1,59 @@
+\hypertarget{PSetCreators_8hh_source}{}\doxysection{P\+Set\+Creators.\+hh}
+\label{PSetCreators_8hh_source}\index{include/duffy/PSetCreators.hh@{include/duffy/PSetCreators.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// PSetCreators.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// The Abstract Factory for Simple Property sets}}
+\DoxyCodeLine{00004 \textcolor{comment}{// Version 1}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef PSETCREATORS\_HPP}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define PSETCREATORS\_HPP}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "SimplePropertySet.hh"}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{typedef} \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{classSimplePropertySet}{PSet}};}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{PSetCreators_8hh_source_l00014}\mbox{\hyperlink{classPSetFactory}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classPSetFactory}{PSetFactory}}}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017     \textcolor{keyword}{virtual} \mbox{\hyperlink{classSimplePropertySet}{PSet}}* CreatePSet() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00018 \};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{PSetCreators_8hh_source_l00021}\mbox{\hyperlink{classConsolePSetFactory}{00021}} \textcolor{keyword}{class }\mbox{\hyperlink{classConsolePSetFactory}{ConsolePSetFactory}}: \textcolor{keyword}{public} \mbox{\hyperlink{classPSetFactory}{PSetFactory}}}
+\DoxyCodeLine{00022 \{ \textcolor{comment}{// Create properties using cout/cin}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classSimplePropertySet}{PSet}}* CreatePSet()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00026 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{00027         \textcolor{comment}{// Add key value pairs until finished}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         std::string k; \textcolor{keywordtype}{double} v;}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         std::cout << \textcolor{stringliteral}{"Give name of property set: "};}
+\DoxyCodeLine{00032         std::cin >> k;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \mbox{\hyperlink{classSimplePropertySet}{PSet}}* result = \textcolor{keyword}{new} \mbox{\hyperlink{classSimplePropertySet}{PSet}}(k);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 L1:}
+\DoxyCodeLine{00037         std::cout << \textcolor{stringliteral}{"Key name (EXIT): "}; std::cin >> k; std::cout << std::endl;}
+\DoxyCodeLine{00038         \textcolor{keywordflow}{if} (k == std::string(\textcolor{stringliteral}{"EXIT"}))}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00041         \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         std::cout << \textcolor{stringliteral}{"Value: "}; std::cin >> v; std::cout << std::endl;}
+\DoxyCodeLine{00044         }
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         result-\/>add(k, v);}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048         \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052 \};}
+\DoxyCodeLine{00053 \textcolor{preprocessor}{\#endif// PSETCREATORS\_HH}}
+
+\end{DoxyCode}

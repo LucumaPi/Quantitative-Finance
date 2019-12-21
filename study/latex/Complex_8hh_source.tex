@@ -1,0 +1,93 @@
+\hypertarget{Complex_8hh_source}{}\doxysection{Complex.\+hh}
+\label{Complex_8hh_source}\index{include/duffy/Complex.hh@{include/duffy/Complex.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// complex.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Class of complex number in two-\/dimensional space.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Copyright Datasim Education BV 1992-\/2005}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// The information contained in this file is property of Datasim BV Amsterdam Nederland.}}
+\DoxyCodeLine{00008 \textcolor{comment}{// The information contained herein is subject to change without notice. No part}}
+\DoxyCodeLine{00009 \textcolor{comment}{// of this information may be reproduced or transmitted in any form or by any means,}}
+\DoxyCodeLine{00010 \textcolor{comment}{// electronic or mechanical, for any purpose, without the express written permission}}
+\DoxyCodeLine{00011 \textcolor{comment}{// of Datasim BV.}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#ifndef COMPLEX\_HH}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#define COMPLEX\_HH}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{Complex_8hh_source_l00019}\mbox{\hyperlink{classComplex}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classComplex}{Complex}}}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keywordtype}{double} x, y;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} mpi(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z);    \textcolor{comment}{// Multiply z by i == sqrt(-\/1)}}
+\DoxyCodeLine{00026 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027     \textcolor{comment}{// Constructors}}
+\DoxyCodeLine{00028     \mbox{\hyperlink{classComplex}{Complex}}();                           \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00029     \mbox{\hyperlink{classComplex}{Complex}}(\textcolor{keywordtype}{double} real);}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classComplex}{Complex}}(\textcolor{keywordtype}{double} real, \textcolor{keywordtype}{double} imag);   \textcolor{comment}{// Cartesian form}}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classComplex}{Complex}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& p);}
+\DoxyCodeLine{00032     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classComplex}{Complex}}();}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{comment}{// Accessing functions}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{double} xVal() \textcolor{keyword}{const};}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{double} yVal() \textcolor{keyword}{const};}
+\DoxyCodeLine{00037     \textcolor{keyword}{friend} \textcolor{keywordtype}{double} real(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);        \textcolor{comment}{// Real part of number}}
+\DoxyCodeLine{00038     \textcolor{keyword}{friend} \textcolor{keywordtype}{double} imag(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);        \textcolor{comment}{// Imaginary part of number}}
+\DoxyCodeLine{00039     \textcolor{keyword}{friend} \textcolor{keywordtype}{double} rad(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// Distance from origin}}
+\DoxyCodeLine{00040     \textcolor{keyword}{friend} \textcolor{keywordtype}{double} modulus(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// Distance from the origin}}
+\DoxyCodeLine{00041     \textcolor{keyword}{friend} \textcolor{keywordtype}{double} abs(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// Absolute value of complex number}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{comment}{// Member operator overloading}}
+\DoxyCodeLine{00044     \mbox{\hyperlink{classComplex}{Complex}}  operator -\/ () \textcolor{keyword}{const};}
+\DoxyCodeLine{00045     \mbox{\hyperlink{classComplex}{Complex}}\& operator =  (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classComplex}{Complex}}\& operator += (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);}
+\DoxyCodeLine{00047     \mbox{\hyperlink{classComplex}{Complex}}\& operator *= (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);}
+\DoxyCodeLine{00048     \mbox{\hyperlink{classComplex}{Complex}}\& operator -\/= (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);}
+\DoxyCodeLine{00049     \mbox{\hyperlink{classComplex}{Complex}}\& operator /= (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classComplex}{Complex}}  add (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2) \textcolor{keyword}{const};}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classComplex}{Complex}}  operator +  (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2) \textcolor{keyword}{const};}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classComplex}{Complex}}  operator -\/  (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2) \textcolor{keyword}{const};}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classComplex}{Complex}}  operator *  (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2) \textcolor{keyword}{const};}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classComplex}{Complex}}  operator /  (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2) \textcolor{keyword}{const};}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classComplex}{Complex}}  operator /  (\textcolor{keywordtype}{double} d)          \textcolor{keyword}{const};}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{comment}{// Functionality}}
+\DoxyCodeLine{00058     \textcolor{keywordtype}{double} distance (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2); \textcolor{comment}{// Euclidean distance}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     \textcolor{comment}{// Global operator overloading}}
+\DoxyCodeLine{00061     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} operator * (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c, \textcolor{keywordtype}{double} d);}
+\DoxyCodeLine{00062     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} operator * (\textcolor{keywordtype}{double} d, \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);}
+\DoxyCodeLine{00063     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} operator + (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c, \textcolor{keywordtype}{double} d);}
+\DoxyCodeLine{00064     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} operator + (\textcolor{keywordtype}{double} d, \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);}
+\DoxyCodeLine{00065     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} operator -\/ (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c, \textcolor{keywordtype}{double} d);}
+\DoxyCodeLine{00066     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} operator -\/ (\textcolor{keywordtype}{double} d, \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{comment}{// Other functions}}
+\DoxyCodeLine{00069     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} conjugate(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);   \textcolor{comment}{// X + iY -\/-\/> X -\/ iY}}
+\DoxyCodeLine{00070     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} inverse(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// X + iY -\/-\/> 1.0 /(X + iY)}}
+\DoxyCodeLine{00071     }
+\DoxyCodeLine{00072     \textcolor{comment}{// Complex trigonometric functions}}
+\DoxyCodeLine{00073     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} exp(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// Exponential function}}
+\DoxyCodeLine{00074     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} cos(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// Cosine function}}
+\DoxyCodeLine{00075     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} sin(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// Sine function}}
+\DoxyCodeLine{00076     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} cosh(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);        \textcolor{comment}{// Hyperbolic cosine function}}
+\DoxyCodeLine{00077     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} sinh(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);        \textcolor{comment}{// Hyperbolic sine function}}
+\DoxyCodeLine{00078     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} tanh(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);        \textcolor{comment}{// Hyperbolic tangent}}
+\DoxyCodeLine{00079     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} sech(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);        \textcolor{comment}{// Hyperbolic secant}}
+\DoxyCodeLine{00080     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} csch(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);        \textcolor{comment}{// Hyperbolic cosecant}}
+\DoxyCodeLine{00081     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} coth(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);        \textcolor{comment}{// Hyperbolic cotangent}}
+\DoxyCodeLine{00082     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} tan(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// The tangent function}}
+\DoxyCodeLine{00083     \textcolor{keyword}{friend} \mbox{\hyperlink{classComplex}{Complex}} cgt(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c);     \textcolor{comment}{// The cotangent function}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \textcolor{keyword}{friend} std::ostream\& operator << (std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& cmp);}
+\DoxyCodeLine{00086 \};}
+\DoxyCodeLine{00087 \textcolor{preprocessor}{\#endif   // Complex\_HH}}
+
+\end{DoxyCode}

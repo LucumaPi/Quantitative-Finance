@@ -3,44 +3,39 @@
 // 2005-9-20 DD kick off
 // 2005-9-26 DD new stuff fo IBVP
 // 2005-10-9 DD code for exact solution of heat equation
-//
+#include <duffy/Instrument.hh>
 #include <duffy/EEulerIBVPSolver.hh>
 #include <duffy/BSIBVPImp.hh>
 #include <duffy/STDImp.hh>
-#include <duffy/ArrayMechanisms.hh>
 #include <duffy/MatrixMechanisms.hh>
 //#include "exceldriver.cpp"
-#include <string>
 
 InstrumentFactory* GetInstrumentFactory()
 {
-
 	// Only 1 factory in this version, like model T
 	return new ConsoleInstrumentFactory;
 }
 
 int main()
 {
-
 	// A. The Continuous Problem
 	// Derived implementation class
-	// STDIBVPImp stdImp;
+	STDIBVPImp stdImp;
 	
 	// Now the client class IVP
-	// IBVPImp* myImp2 = &stdImp;
+	IBVPImp* myImp2 = &stdImp;
 
 	double Smax = 200.0;
 	Range<double> rangeX(0.0, Smax);
 	Range<double> rangeT(0.0, 1.0);
 
-	// IBVP i2(*myImp2, rangeX, rangeT);
+	IBVP i2(*myImp2, rangeX, rangeT);
 
 	// B. Finite Difference Schemes
 	long J = 5;
 	long N = 50;
-	// ExplicitEulerIBVP fdm(i2, N, J);
+	ExplicitEulerIBVP fdm(i2, N, J);
 //	print(fdm.result());
-	
 
 	int kk;
 // 	cin >> kk;
@@ -53,10 +48,10 @@ int main()
 	// Mesher m(rangeX, rangeT);
 	// Vector<double, long> XARR = m.xarr(6);
 	// Vector<double, long> vec = fdm.result()[2];
-	// printOneExcel(XARR, vec, string("explicit");
+	// printOneExcel(XARR, vec, std::string("explicit");
 
 //	Vector<double, long> vec2 = fdm2.result()[2];
-//	printOneExcel(XARR, vec2, string("implicit");
+//	printOneExcel(XARR, vec2, std::string("implicit");
 
 
  	// Black Scholes example

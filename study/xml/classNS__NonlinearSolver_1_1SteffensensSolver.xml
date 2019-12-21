@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classNS__NonlinearSolver_1_1SteffensensSolver" kind="class" language="C++" prot="public">
+    <compoundname>NS_NonlinearSolver::SteffensensSolver</compoundname>
+    <basecompoundref refid="classNS__NonlinearSolver_1_1NonlinearSolver" prot="public" virt="non-virtual">NS_NonlinearSolver::NonlinearSolver</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1SteffensensSolver_1a0d9c9a01bcea9b2e71f2bf3fa7a7780c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::SteffensensSolver::x0</definition>
+        <argsstring></argsstring>
+        <name>x0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="236" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1SteffensensSolver_1a276c26145d4b7c887df9d111480f8a71" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::SteffensensSolver::xPrevious</definition>
+        <argsstring></argsstring>
+        <name>xPrevious</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="238" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1SteffensensSolver_1a507d457175bd0975f94cb5a0888f6009" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::SteffensensSolver::xCurrent</definition>
+        <argsstring></argsstring>
+        <name>xCurrent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="238" column="18" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNS__NonlinearSolver_1_1SteffensensSolver_1af6ea31cf0d7f1a2447faf809fcd6f6ce" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NS_NonlinearSolver::SteffensensSolver::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="239" column="6" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNS__NonlinearSolver_1_1SteffensensSolver_1a558377d506d5fba156a5a05d4e900cbd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>NS_NonlinearSolver::SteffensensSolver::SteffensensSolver</definition>
+        <argsstring>(double guess, double(*myFunction)(double x))</argsstring>
+        <name>SteffensensSolver</name>
+        <param>
+          <type>double</type>
+          <declname>guess</declname>
+        </param>
+        <param>
+          <type>double(*)(double x)</type>
+          <declname>myFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="242" column="1" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="242" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classNS__NonlinearSolver_1_1SteffensensSolver_1ac3e56e12f820cf138e42ea6f3ed5577b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double NS_NonlinearSolver::SteffensensSolver::solve</definition>
+        <argsstring>()</argsstring>
+        <name>solve</name>
+        <reimplements refid="classNS__NonlinearSolver_1_1NonlinearSolver_1a7336902d70e3ae47194eb92abac04333">solve</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="249" column="8" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="249" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classNS__NonlinearSolver_1_1SteffensensSolver_1a14a38fa950c91319a6c0334830dd6c57" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void NS_NonlinearSolver::SteffensensSolver::printStatistics</definition>
+        <argsstring>() const</argsstring>
+        <name>printStatistics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/NonlinearSolver.hh" line="272" column="6" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="272" bodyend="278"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>NS_NonlinearSolver::NonlinearSolver</label>
+        <link refid="classNS__NonlinearSolver_1_1NonlinearSolver"/>
+      </node>
+      <node id="1">
+        <label>NS_NonlinearSolver::SteffensensSolver</label>
+        <link refid="classNS__NonlinearSolver_1_1SteffensensSolver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>NS_NonlinearSolver::NonlinearSolver</label>
+        <link refid="classNS__NonlinearSolver_1_1NonlinearSolver"/>
+      </node>
+      <node id="1">
+        <label>NS_NonlinearSolver::SteffensensSolver</label>
+        <link refid="classNS__NonlinearSolver_1_1SteffensensSolver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/NonlinearSolver.hh" line="234" column="1" bodyfile="include/duffy/NonlinearSolver.hh" bodystart="233" bodyend="280"/>
+    <listofallmembers>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>myF</name></member>
+      <member refid="classNS__NonlinearSolver_1_1SteffensensSolver_1af6ea31cf0d7f1a2447faf809fcd6f6ce" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>n</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1a5371c3342836f79f66b556b2e6dc110f" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>NonlinearSolver</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1a9fefab630c3d0243c1b98893baa56711" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>NonlinearSolver</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1adf16f5f92db6f555e4352f26673dd8f5" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>operator=</name></member>
+      <member refid="classNS__NonlinearSolver_1_1SteffensensSolver_1a14a38fa950c91319a6c0334830dd6c57" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>printStatistics</name></member>
+      <member refid="classNS__NonlinearSolver_1_1SteffensensSolver_1ac3e56e12f820cf138e42ea6f3ed5577b" prot="public" virt="virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>solve</name></member>
+      <member refid="classNS__NonlinearSolver_1_1SteffensensSolver_1a558377d506d5fba156a5a05d4e900cbd" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>SteffensensSolver</name></member>
+      <member refid="classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba" prot="public" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>tol</name></member>
+      <member refid="classNS__NonlinearSolver_1_1SteffensensSolver_1a0d9c9a01bcea9b2e71f2bf3fa7a7780c" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>x0</name></member>
+      <member refid="classNS__NonlinearSolver_1_1SteffensensSolver_1a507d457175bd0975f94cb5a0888f6009" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>xCurrent</name></member>
+      <member refid="classNS__NonlinearSolver_1_1SteffensensSolver_1a276c26145d4b7c887df9d111480f8a71" prot="private" virt="non-virtual"><scope>NS_NonlinearSolver::SteffensensSolver</scope><name>xPrevious</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

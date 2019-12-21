@@ -1,0 +1,62 @@
+\hypertarget{Point_8hh_source}{}\doxysection{Point.\+hh}
+\label{Point_8hh_source}\index{include/duffy/Point.hh@{include/duffy/Point.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Point.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Header file for Points in two dimensions. A given Point has 3 coordinates}}
+\DoxyCodeLine{00004 \textcolor{comment}{// for compatibility with other systems. However, it is not possible to}}
+\DoxyCodeLine{00005 \textcolor{comment}{// influence the third coordinate and furthermore, the delivered functionality}}
+\DoxyCodeLine{00006 \textcolor{comment}{// is typically two-\/dimensional.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Copyright Datasim BV 1995 -\/ 2005}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef Point\_HH}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#define Point\_HH}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{Point_8hh_source_l00015}\mbox{\hyperlink{classShape}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{classShape}{Shape}}}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017 \};}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{Point_8hh_source_l00019}\mbox{\hyperlink{classPoint}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classPoint}{Point}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}}}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022     \textcolor{keywordtype}{double} x;   \textcolor{comment}{// X coordinate}}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{double} y;   \textcolor{comment}{// Y coordinate}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} dx, \textcolor{keywordtype}{double} dy);}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028     \textcolor{comment}{// Constructors}}
+\DoxyCodeLine{00029     \mbox{\hyperlink{classPoint}{Point}}();                               \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classPoint}{Point}}(\textcolor{keywordtype}{double} xval, \textcolor{keywordtype}{double} yval);       \textcolor{comment}{// Initialize with x and y value}}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classPoint}{Point}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& pt);                   \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00032     ~\mbox{\hyperlink{classPoint}{Point}}();                              \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{comment}{// Accessing functions}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{double} X() \textcolor{keyword}{const};                   \textcolor{comment}{// The x-\/coordinate}}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{double} Y() \textcolor{keyword}{const};                   \textcolor{comment}{// The y-\/coordinate}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{void} X(\textcolor{keywordtype}{double} NewX);                }
+\DoxyCodeLine{00040     \textcolor{keywordtype}{void} Y(\textcolor{keywordtype}{double} NewY);}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{comment}{// Arithmetic functions}}
+\DoxyCodeLine{00043     \mbox{\hyperlink{classPoint}{Point}} add(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& p) \textcolor{keyword}{const};      \textcolor{comment}{// Return current + p}}
+\DoxyCodeLine{00044     \mbox{\hyperlink{classPoint}{Point}} subtract(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& p) \textcolor{keyword}{const}; \textcolor{comment}{// Return current -\/ p}}
+\DoxyCodeLine{00045     \mbox{\hyperlink{classPoint}{Point}} scale(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& pt) \textcolor{keyword}{const};       \textcolor{comment}{// Return current * p}}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classPoint}{Point}} MidPoint(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& pt) \textcolor{keyword}{const};        \textcolor{comment}{// Point midway}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// Copy}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classPoint}{Point}}\& copy(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& p);          \textcolor{comment}{// Copy p in current}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052 \};}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     std::ostream\& operator << (std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& p);}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056 \textcolor{preprocessor}{\#endif // Point\_HH}}
+
+\end{DoxyCode}

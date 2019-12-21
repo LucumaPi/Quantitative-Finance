@@ -1,0 +1,66 @@
+\hypertarget{IBVP_8hh_source}{}\doxysection{I\+B\+V\+P.\+hh}
+\label{IBVP_8hh_source}\index{include/duffy/IBVP.hh@{include/duffy/IBVP.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ibvp.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Modelling PDE as C++ classes. This is a simple model in one space}}
+\DoxyCodeLine{00004 \textcolor{comment}{// dimension where we assume that Dirichlet boundary conditions are in }}
+\DoxyCodeLine{00005 \textcolor{comment}{// force.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// }}
+\DoxyCodeLine{00007 \textcolor{comment}{// In a component environment (e.g. C\#) we could define intefaces and }}
+\DoxyCodeLine{00008 \textcolor{comment}{// abstract base classes.}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{// (C) Datasim Component Technology BV 2000-\/2006}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#ifndef IBVP\_HH}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#define IBVP\_HH}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include "Range.hh"} \textcolor{comment}{// Template class}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "IBVPImp.hh"}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{IBVP_8hh_source_l00020}\mbox{\hyperlink{classIBVP}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classIBVP}{IBVP}}}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classRange}{Range<double>}} xaxis;       \textcolor{comment}{// Space interval}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classRange}{Range<double>}} taxis;       \textcolor{comment}{// Time  interval}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \mbox{\hyperlink{classIBVPImp}{IBVPImp}}* imp;                \textcolor{comment}{// Bridge implementation}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \mbox{\hyperlink{classIBVP}{IBVP}}();}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032 \textcolor{keyword}{public}: }
+\DoxyCodeLine{00033     \mbox{\hyperlink{classIBVP}{IBVP}} (\mbox{\hyperlink{classIBVPImp}{IBVPImp}}\& executor, \textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<double>}}\& xrange,}
+\DoxyCodeLine{00034                 \textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<double>}}\& trange);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{comment}{// Selector functions}}
+\DoxyCodeLine{00037     \textcolor{comment}{// Coefficients of parabolic second order operator}}
+\DoxyCodeLine{00038     \textcolor{keywordtype}{double} diffusion(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const}; \textcolor{comment}{// Coefficient of second derivative}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{keywordtype}{double} convection(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};    \textcolor{comment}{// Coefficient of first derivative}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordtype}{double} zeroterm(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};  \textcolor{comment}{// Coefficient of zero derivative}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{keywordtype}{double} RHS(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};           \textcolor{comment}{// Inhomogeneous forcing term}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{comment}{// Boundary and initial conditions}}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{double} BCL(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const};         \textcolor{comment}{// Left hand boundary condition}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{keywordtype}{double} BCR(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const};         \textcolor{comment}{// Right hand boundary condition}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     \textcolor{keywordtype}{double} IC(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const};          \textcolor{comment}{// Initial condition}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     }
+\DoxyCodeLine{00054     \textcolor{comment}{// The domain in which the PDE is 'played'}}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classRange}{Range<double>}}\& xrange(); }
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \mbox{\hyperlink{classRange}{Range<double>}}\& trange();}
+\DoxyCodeLine{00058 \};}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

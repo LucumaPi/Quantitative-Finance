@@ -1,0 +1,60 @@
+\hypertarget{ShapeComposite_8hh_source}{}\doxysection{Shape\+Composite.\+hh}
+\label{ShapeComposite_8hh_source}\index{include/duffy/ShapeComposite.hh@{include/duffy/ShapeComposite.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ShapeComposite.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Simple shape composite class using the STL list class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// The composite stores shape pointers. It does it's own memory management.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef SHAPECOMPOSITE\_HH}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define SHAPECOMPOSITE\_HH}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <duffy/Shape.hh>}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8hh_source_l00014}\mbox{\hyperlink{classShapeComposite}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classShapeComposite}{ShapeComposite}}: \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}}}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017     \textcolor{comment}{// The shapelist using the STL list}}
+\DoxyCodeLine{00018     std::list<Shape*> sl;}
+\DoxyCodeLine{00019     }
+\DoxyCodeLine{00020     \mbox{\hyperlink{classShapeComposite}{ShapeComposite}}(\textcolor{keyword}{const} \mbox{\hyperlink{classShapeComposite}{ShapeComposite}}\& source);   \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023     \textcolor{comment}{// User can use the STL iterator}}
+\DoxyCodeLine{00024     \textcolor{keyword}{typedef} std::list<Shape*>::iterator iterator;}
+\DoxyCodeLine{00025     \textcolor{keyword}{typedef} std::list<Shape*>::const\_iterator const\_iterator;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// Constructors and destructor}}
+\DoxyCodeLine{00028     \mbox{\hyperlink{classShapeComposite}{ShapeComposite}}();                             \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classShapeComposite}{ShapeComposite}}();                        \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{comment}{// Iterator functions}}
+\DoxyCodeLine{00033     iterator Begin();                               \textcolor{comment}{// Return iterator at begin of composite}}
+\DoxyCodeLine{00034     const\_iterator Begin() \textcolor{keyword}{const};                   \textcolor{comment}{// Return const iterator at begin of composite}}
+\DoxyCodeLine{00035     iterator End();                                 \textcolor{comment}{// Return iterator after end of composite}}
+\DoxyCodeLine{00036     const\_iterator End() \textcolor{keyword}{const};                     \textcolor{comment}{// Return const iterator after end of composite}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{int} Count() \textcolor{keyword}{const};                              \textcolor{comment}{// The number of shapes in the list}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{comment}{// Add functions}}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{void} AddFront(\mbox{\hyperlink{classShape}{Shape}}* s);                       \textcolor{comment}{// Add shape at the beginning of shapelist. No copy is made but composite takes care of deletion.}}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{void} AddBack(\mbox{\hyperlink{classShape}{Shape}}* s);                            \textcolor{comment}{// Add shape at the end of shapelist. No copy is made but composite takes care of deletion.}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{comment}{// Remove functions}}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{void} RemoveFirst();                             \textcolor{comment}{// Remove first shape}}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{void} RemoveLast();                              \textcolor{comment}{// Remove last shape}}
+\DoxyCodeLine{00048     \textcolor{keywordtype}{void} RemoveAll();                               \textcolor{comment}{// Remove all shapes from the list}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classShapeComposite}{ShapeComposite}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classShapeComposite}{ShapeComposite}}\& source);}
+\DoxyCodeLine{00052 \};}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054 \textcolor{preprocessor}{\#endif  // SHAPECOMPOSITE\_HH}}
+
+\end{DoxyCode}

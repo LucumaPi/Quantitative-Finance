@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classExcelDriver" kind="class" language="C++" prot="public">
+    <compoundname>ExcelDriver</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classExcelDriver_1ac96d94025899d3fce69a29a5cef0b14e" prot="private" static="no" mutable="no">
+        <type>Excel::_ApplicationPtr</type>
+        <definition>Excel::_ApplicationPtr ExcelDriver::xl</definition>
+        <argsstring></argsstring>
+        <name>xl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="30" column="24" bodyfile="include/duffy/ExcelDriver.hh" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classExcelDriver_1ab2e5cfd4d88e590f71c08364dfd072f0" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long ExcelDriver::curDataColumn</definition>
+        <argsstring></argsstring>
+        <name>curDataColumn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="31" column="6" bodyfile="include/duffy/ExcelDriver.hh" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classExcelDriver_1a280d652e60af564922cce627b420099a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::ToSheetHorizontal</definition>
+        <argsstring>(Excel::_WorksheetPtr sheet, long sheetRow, long sheetColumn, const std::string &amp;label, const Vector&lt; double, long &gt; &amp;values)</argsstring>
+        <name>ToSheetHorizontal</name>
+        <param>
+          <type>Excel::_WorksheetPtr</type>
+          <declname>sheet</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>sheetRow</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>sheetColumn</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>label</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="34" column="6" bodyfile="src/ExcelDriver.cc" bodystart="39" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1a6eab5d620950de44ed8d9cadcc824420" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::ToSheetVertical</definition>
+        <argsstring>(Excel::_WorksheetPtr sheet, long sheetRow, long sheetColumn, const std::string &amp;label, const Vector&lt; double, long &gt; &amp;values)</argsstring>
+        <name>ToSheetVertical</name>
+        <param>
+          <type>Excel::_WorksheetPtr</type>
+          <declname>sheet</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>sheetRow</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>sheetColumn</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>label</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="39" column="6" bodyfile="src/ExcelDriver.cc" bodystart="65" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1a997f0ec28a4c03010e45f38ef9fcd21e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::ThrowAsString</definition>
+        <argsstring>(_com_error &amp;error)</argsstring>
+        <name>ThrowAsString</name>
+        <param>
+          <type>_com_error &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="45" column="6" bodyfile="src/ExcelDriver.cc" bodystart="90" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classExcelDriver_1a9dbf535e7ef5053210dd2cdbeaa9e76c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ExcelDriver::ExcelDriver</definition>
+        <argsstring>()</argsstring>
+        <name>ExcelDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="49" column="1" bodyfile="src/ExcelDriver.cc" bodystart="102" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1a111f747fcefaa4b38d986c5c72e742b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ExcelDriver::~ExcelDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~ExcelDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="52" column="9" bodyfile="src/ExcelDriver.cc" bodystart="126" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::CreateChart</definition>
+        <argsstring>(const Vector&lt; double, long &gt; &amp;x, const std::list&lt; std::string &gt; &amp;labels, const std::list&lt; Vector&lt; double, long &gt; &gt; &amp;vectorList, const std::string &amp;chartTitle, const std::string &amp;xTitle=&quot;X&quot;, const std::string &amp;yTitle=&quot;Y&quot;)</argsstring>
+        <name>CreateChart</name>
+        <param>
+          <type>const <ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const std::list&lt; std::string &gt; &amp;</type>
+          <declname>labels</declname>
+        </param>
+        <param>
+          <type>const std::list&lt; <ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt; &gt; &amp;</type>
+          <declname>vectorList</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>chartTitle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>xTitle</declname>
+          <defval>&quot;X&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>yTitle</declname>
+          <defval>&quot;Y&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="64" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1afdeb32319d1437b249fc5727a5420fc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::CreateChart</definition>
+        <argsstring>(const Vector&lt; double, long &gt; &amp;x, const Vector&lt; double, long &gt; &amp;y, const std::string &amp;chartTitle, const std::string &amp;xTitle=&quot;X&quot;, const std::string &amp;yTitle=&quot;Y&quot;)</argsstring>
+        <name>CreateChart</name>
+        <param>
+          <type>const <ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>chartTitle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>xTitle</declname>
+          <defval>&quot;X&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>yTitle</declname>
+          <defval>&quot;Y&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="74" column="6" bodyfile="src/ExcelDriver.cc" bodystart="226" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1a63753818c5895ff1ed84dad214de4332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::AddMatrix</definition>
+        <argsstring>(const std::string &amp;sheetName, const NumericMatrix&lt; double, long &gt; &amp;matrix, const std::list&lt; std::string &gt; &amp;rowLabels, const std::list&lt; std::string &gt; &amp;columnLabels)</argsstring>
+        <name>AddMatrix</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sheetName</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classNumericMatrix" kindref="compound">NumericMatrix</ref>&lt; double, long &gt; &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <param>
+          <type>const std::list&lt; std::string &gt; &amp;</type>
+          <declname>rowLabels</declname>
+        </param>
+        <param>
+          <type>const std::list&lt; std::string &gt; &amp;</type>
+          <declname>columnLabels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="79" column="6" bodyfile="src/ExcelDriver.cc" bodystart="238" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1a3af0bbb50e01ade900e974ea6d2a15ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::AddMatrix</definition>
+        <argsstring>(const NumericMatrix&lt; double, long &gt; &amp;matrix, const std::string &amp;SheetName=&quot;Matrix&quot;)</argsstring>
+        <name>AddMatrix</name>
+        <param>
+          <type>const <ref refid="classNumericMatrix" kindref="compound">NumericMatrix</ref>&lt; double, long &gt; &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>SheetName</declname>
+          <defval>&quot;Matrix&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="82" column="6" bodyfile="src/ExcelDriver.cc" bodystart="280" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::MakeVisible</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>MakeVisible</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="84" column="6" bodyfile="src/ExcelDriver.cc" bodystart="315" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1afa7a45b8d3499de788e722c75627e284" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::printStringInExcel</definition>
+        <argsstring>(const std::string &amp;s, long rowNumber, long colNumber, const std::string &amp;sheetName)</argsstring>
+        <name>printStringInExcel</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>rowNumber</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>colNumber</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sheetName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="87" column="6" bodyfile="src/ExcelDriver.cc" bodystart="335" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classExcelDriver_1a5ad2471080decc9d3681f164a4b2746c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ExcelDriver::printStringInExcel</definition>
+        <argsstring>(const std::list&lt; std::string &gt; &amp;s, long rowNumber, long colNumber, const std::string &amp;sheetName)</argsstring>
+        <name>printStringInExcel</name>
+        <param>
+          <type>const std::list&lt; std::string &gt; &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>rowNumber</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>colNumber</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sheetName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="89" column="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classExcelDriver" kindref="compound">ExcelDriver</ref> &amp;</type>
+        <definition>ExcelDriver &amp; ExcelDriver::Instance</definition>
+        <argsstring>()</argsstring>
+        <name>Instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/ExcelDriver.hh" line="55" column="20" bodyfile="src/ExcelDriver.cc" bodystart="133" bodyend="137"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ExcelDriver</label>
+        <link refid="classExcelDriver"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/ExcelDriver.hh" line="27" column="1" bodyfile="include/duffy/ExcelDriver.hh" bodystart="26" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classExcelDriver_1a63753818c5895ff1ed84dad214de4332" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>AddMatrix</name></member>
+      <member refid="classExcelDriver_1a3af0bbb50e01ade900e974ea6d2a15ff" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>AddMatrix</name></member>
+      <member refid="classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>CreateChart</name></member>
+      <member refid="classExcelDriver_1afdeb32319d1437b249fc5727a5420fc7" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>CreateChart</name></member>
+      <member refid="classExcelDriver_1ab2e5cfd4d88e590f71c08364dfd072f0" prot="private" virt="non-virtual"><scope>ExcelDriver</scope><name>curDataColumn</name></member>
+      <member refid="classExcelDriver_1a9dbf535e7ef5053210dd2cdbeaa9e76c" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>ExcelDriver</name></member>
+      <member refid="classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>Instance</name></member>
+      <member refid="classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>MakeVisible</name></member>
+      <member refid="classExcelDriver_1afa7a45b8d3499de788e722c75627e284" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>printStringInExcel</name></member>
+      <member refid="classExcelDriver_1a5ad2471080decc9d3681f164a4b2746c" prot="public" virt="non-virtual"><scope>ExcelDriver</scope><name>printStringInExcel</name></member>
+      <member refid="classExcelDriver_1a997f0ec28a4c03010e45f38ef9fcd21e" prot="private" virt="non-virtual"><scope>ExcelDriver</scope><name>ThrowAsString</name></member>
+      <member refid="classExcelDriver_1a280d652e60af564922cce627b420099a" prot="private" virt="non-virtual"><scope>ExcelDriver</scope><name>ToSheetHorizontal</name></member>
+      <member refid="classExcelDriver_1a6eab5d620950de44ed8d9cadcc824420" prot="private" virt="non-virtual"><scope>ExcelDriver</scope><name>ToSheetVertical</name></member>
+      <member refid="classExcelDriver_1ac96d94025899d3fce69a29a5cef0b14e" prot="private" virt="non-virtual"><scope>ExcelDriver</scope><name>xl</name></member>
+      <member refid="classExcelDriver_1a111f747fcefaa4b38d986c5c72e742b2" prot="public" virt="virtual"><scope>ExcelDriver</scope><name>~ExcelDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

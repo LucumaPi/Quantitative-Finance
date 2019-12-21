@@ -25,38 +25,35 @@ STDIBVPImp::STDIBVPImp() {}
 double STDIBVPImp::diffusion(double x, double t) const // Coefficient of second derivative
 {
 	return 1.0;
-
 }
 
 double STDIBVPImp::convection(double x, double t) const	// Coefficient of first derivative
 {
-		return 0.0;
+	return 0.0;
 }
 
-double STDIBVPImp::zeroterm(double x, double t) const	// Coefficient of zero derivative
+double STDIBVPImp::zeroterm(double x, double t) const// Coefficient of zero derivative
 {
-		return 0.0;	
-		
+	return 0.0;
 }
 
-double STDIBVPImp::RHS(double x, double t) const			// Inhomogeneous forcing term
+double STDIBVPImp::RHS(double x, double t) const// Inhomogeneous forcing term
 {
 	return 0.0;
 }
 
 // Boundary and initial conditions
-double STDIBVPImp::BCL(double t) const			// Left hand boundary condition
-{
-	return 0.0;
-
-}
-
-double STDIBVPImp::BCR(double t) const			// Right hand boundary condition
+double STDIBVPImp::BCL(double t) const		// Left hand boundary condition
 {
 	return 0.0;
 }
 
-double STDIBVPImp::IC(double x) const			// Initial condition
+double STDIBVPImp::BCR(double t) const		// Right hand boundary condition
+{
+	return 0.0;
+}
+
+double STDIBVPImp::IC(double x) const		// Initial condition
 {
 	//return 0.0;
 	if (x >= 0.0 && x <= 0.5)
@@ -66,11 +63,8 @@ double STDIBVPImp::IC(double x) const			// Initial condition
 
 	return 2.0 * (1.0 - x);
 
-
-		/*	if (x < 0.9)
-				return 0.0;
-			return 1.0; */
-
+/*	if (x < 0.9)
+		return 0.0;
+	return 1.0; */
 }
-
 #endif

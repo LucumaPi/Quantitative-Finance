@@ -1,0 +1,42 @@
+\hypertarget{IEulerIBVPSolver_8hh_source}{}\doxysection{I\+Euler\+I\+B\+V\+P\+Solver.\+hh}
+\label{IEulerIBVPSolver_8hh_source}\index{include/duffy/IEulerIBVPSolver.hh@{include/duffy/IEulerIBVPSolver.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// IEulerIvpSolver.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Solvers for initial boundary value problems. We }}
+\DoxyCodeLine{00004 \textcolor{comment}{// use an abstract base class; derived class implement}}
+\DoxyCodeLine{00005 \textcolor{comment}{// specific behaviour.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Component Technology BV 2003-\/2006}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef IEulerIBVPSOLVER\_HH}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#define IEulerIBVPSOLVER\_HH}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "IBVPSolver.hh"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{IEulerIBVPSolver_8hh_source_l00016}\mbox{\hyperlink{classImplicitEulerIBVP}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classImplicitEulerIBVP}{ImplicitEulerIBVP}} : \textcolor{keyword}{public} \mbox{\hyperlink{classIBVPFDM}{IBVPFDM}}}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019     \textcolor{comment}{// We must build these in constructors}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// Notice that we store the data that 'belongs' to}}
+\DoxyCodeLine{00022     \textcolor{comment}{// this class. It is private and will not pollute the}}
+\DoxyCodeLine{00023     \textcolor{comment}{// other classes.}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classVector}{Vector<double, long>}} A, \mbox{\hyperlink{classB}{B}}, C; \textcolor{comment}{// Lower, diagonal, upper}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classVector}{Vector<double, long>}} F;   \textcolor{comment}{// Right-\/hand side of matrix}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028     \mbox{\hyperlink{classImplicitEulerIBVP}{ImplicitEulerIBVP}}();}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \mbox{\hyperlink{classImplicitEulerIBVP}{ImplicitEulerIBVP}}(\mbox{\hyperlink{classIBVP}{IBVP}}\& source, \textcolor{keywordtype}{long} NSteps, \textcolor{keywordtype}{long} JSteps);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{keywordtype}{void} calculateBC();}
+\DoxyCodeLine{00033     }
+\DoxyCodeLine{00034     \textcolor{keywordtype}{void} calculate();}
+\DoxyCodeLine{00035 \};}
+\DoxyCodeLine{00036 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

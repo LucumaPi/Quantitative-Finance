@@ -11,75 +11,69 @@
 // (C) Datasim Education BV 2006
 //
 
-#ifndef Mesher_CPP
-#define Mesher_CPP
+#ifndef Mesher_CC
+#define Mesher_CC
 
 #include <duffy/Mesher.hh>
 
 Mesher::Mesher()
 {
-			a = 0.0; b = 1.0;
-			LT = 0.0; HT = 1.0;
+	a = 0.0; b = 1.0;
+	LT = 0.0; HT = 1.0;
 }
 
 Mesher::Mesher(double A, double B, double t, double T)
 { // Describe the domain of integration
-
-			a = A; b = B;
-			LT = t; HT = T;
+	a = A; b = B;
+	LT = t; HT = T;
 }
 
 Mesher::Mesher(const Range<double>& rX, const Range<double>& rT)
 { // Describe the domain of integration
-
-			a = rX.low(); b = rX.high();
-			LT = rT.low(); HT = rT.high();
+	a = rX.low(); b = rX.high();
+	LT = rT.low(); HT = rT.high();
 }
-
 
 Vector<double, long> Mesher::xarr(int J)
 {
-			// NB Full array (includes end points)
+	// NB Full array (includes end points)
+	double h = (b - a) / double (J);
+	
+	int size = J + 1;
+	int start = 1;
 
-			double h = (b - a) / double (J);
-			
-			int size = J+1;
-			int start = 1;
+	Vector<double, long> result(size, start);
+	result[result.MinIndex()] = a;
 
-			Vector<double, long> result(size, start);
-			result[result.MinIndex()] = a;
+	for (int j = result.MinIndex() + 1; j <= result.MaxIndex(); j++)
+	{
+		result[j] = result[j - 1] + h;
+	}
 
-			for (int j = result.MinIndex()+1; j <= result.MaxIndex(); j++)
-			{
-				result[j] = result[j-1] + h;
-			}
-
-			return result;
+	return result;
 }
 
 Vector<double, long> Mesher::yarr(int N)
 {
-			// NB Full array (includes end points)
+	// NB Full array (includes end points)
+	double k = (HT - LT) / double (N);
+	
+	int size = N + 1;
+	int start = 1;
 
-			double k = (HT - LT) / double (N);
-			
-			int size = N+1;
-			int start = 1;
+	Vector<double, long> result(size, start);
+	result[result.MinIndex()] = LT;
 
-			Vector<double, long> result(size, start);
-			result[result.MinIndex()] = LT;
+	for (int j = result.MinIndex() + 1; j <= result.MaxIndex(); j++)
+	{
+		result[j] = result[j - 1] + k;
+	}
 
-			for (int j = result.MinIndex()+1; j <= result.MaxIndex(); j++)
-			{
-				result[j] = result[j-1] + k;
-			}
-
-			return result;
+	return result;
 }
 
 double Mesher::timeStep(int N)
 {
-			return (HT - LT)/double (N);
+	return (HT - LT)/double (N);
 }
-
 #endif

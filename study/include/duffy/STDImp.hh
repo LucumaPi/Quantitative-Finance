@@ -8,34 +8,31 @@
 //
 // (C) Datasim Component Technology BV 2000-2006
 
-#ifndef STDIMP_HPP
-#define STDIMP_HPP
+#ifndef STDIMP_HH
+#define STDIMP_HH
 
 #include <duffy/IBVPImp.hh>
-
 // Domain-independent class for Parabolic IBVP
 class STDIBVPImp : public IBVPImp
 {
 public:	
-		// Selector functions
-		// Coefficients of parabolic second order operator
+// Selector functions
+// Coefficients of parabolic second order operator
+	STDIBVPImp();
 
-		STDIBVPImp();
+	double diffusion(double x, double t) const; // Coefficient of second derivative
 
-		double diffusion(double x, double t) const; // Coefficient of second derivative
+	double convection(double x, double t) const;	// Coefficient of first derivative
 
-		double convection(double x, double t) const;	// Coefficient of first derivative
+	double zeroterm(double x, double t) const;	// Coefficient of zero derivative
 
-		double zeroterm(double x, double t) const;	// Coefficient of zero derivative
+	double RHS(double x, double t) const;	// Inhomogeneous forcing term
 
-		double RHS(double x, double t) const;			// Inhomogeneous forcing term
+	// Boundary and initial conditions
+	double BCL(double t) const;		// Left hand boundary condition
 
-		// Boundary and initial conditions
-		double BCL(double t) const;			// Left hand boundary condition
+	double BCR(double t) const;		// Right hand boundary condition
 
-		double BCR(double t) const;			// Right hand boundary condition
-
-		double IC(double x) const;			// Initial condition
-
+	double IC(double x) const;		// Initial condition
 };
 #endif

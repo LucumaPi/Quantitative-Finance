@@ -1,0 +1,47 @@
+\hypertarget{FullMatrix_8hh_source}{}\doxysection{Full\+Matrix.\+hh}
+\label{FullMatrix_8hh_source}\index{include/duffy/FullMatrix.hh@{include/duffy/FullMatrix.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// FullMatrix.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Template class for normal matrices.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// A size\_t is used for indexing. Indexing starts at 1.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Component Technology 1999}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef FullMatrix\_HH}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define FullMatrix\_HH}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "MatrixStructure.hh"}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "FullArray.hh"}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{keyword}{template} <\textcolor{keyword}{class} TValue, \textcolor{keyword}{class} TA=std::allocator<TValue> >}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8hh_source_l00015}\mbox{\hyperlink{classFullMatrix}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{classFullMatrix}{FullMatrix}}: \textcolor{keyword}{public} \mbox{\hyperlink{classMatrixStructure}{MatrixStructure}}<TValue>}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     \mbox{\hyperlink{classFullArray}{FullArray<FullArray<TValue, TA>}}, std::allocator<FullArray<TValue, TA> > > m\_structure;}
+\DoxyCodeLine{00018     \textcolor{comment}{// Redundant data }}
+\DoxyCodeLine{00019     std::size\_t nr, nc;}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022     \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classFullMatrix}{FullMatrix}}();                                                 \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classFullMatrix}{FullMatrix}}(std::size\_t rows, std::size\_t columns);                        \textcolor{comment}{// Constructor with size}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classFullMatrix}{FullMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classFullMatrix}{FullMatrix<TValue, TA>}}\& source);               \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00026     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classFullMatrix}{FullMatrix}}();                                            \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00029     \textcolor{keyword}{virtual} std::size\_t Rows() \textcolor{keyword}{const};                                   \textcolor{comment}{// Number of rows}}
+\DoxyCodeLine{00030     \textcolor{keyword}{virtual} std::size\_t Columns() \textcolor{keyword}{const};                                    \textcolor{comment}{// Number of columns}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00035     \textcolor{keyword}{virtual} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<TValue>}}\& operator[] (std::size\_t index);                   \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00036     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<TValue>}}\& operator[] (std::size\_t index) \textcolor{keyword}{const};       \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \mbox{\hyperlink{classFullMatrix}{FullMatrix<TValue, TA>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classFullMatrix}{FullMatrix<TValue, TA>}}\& source);}
+\DoxyCodeLine{00039 \};}
+\DoxyCodeLine{00040 \textcolor{preprocessor}{\#include "../../src/FullMatrix.cc"}}
+\DoxyCodeLine{00041 \textcolor{preprocessor}{\#endif  // FullMatrix\_HH}}
+
+\end{DoxyCode}

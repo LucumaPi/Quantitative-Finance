@@ -1,0 +1,26 @@
+\hypertarget{MathsInterfaces_8hh_source}{}\doxysection{Maths\+Interfaces.\+hh}
+\label{MathsInterfaces_8hh_source}\index{include/duffy/MathsInterfaces.hh@{include/duffy/MathsInterfaces.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef MathsInterfaces\_HH}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define MathsInterfaces\_HH}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{comment}{// Simulate C\# in C++ for a possible migration}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#define interface struct}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I = \textcolor{keywordtype}{int}>}
+\DoxyCodeLine{00008 \textcolor{keyword}{interface }IOneDimensionalAccess}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00011     \textcolor{keyword}{virtual} V\& operator [] (I index) = 0;               \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00012 \};}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I = \textcolor{keywordtype}{int}>}
+\DoxyCodeLine{00015 \textcolor{keyword}{interface }ITwoDimensionalAccess}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00018     \textcolor{keyword}{virtual} V\& operator () (I row, I column) = 0;   \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00019 \};}
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

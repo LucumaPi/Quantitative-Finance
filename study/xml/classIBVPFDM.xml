@@ -1,0 +1,602 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classIBVPFDM" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>IBVPFDM</compoundname>
+    <derivedcompoundref refid="classExplicitEulerIBVP" prot="public" virt="non-virtual">ExplicitEulerIBVP</derivedcompoundref>
+    <derivedcompoundref refid="classImplicitEulerIBVP" prot="public" virt="non-virtual">ImplicitEulerIBVP</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b" prot="protected" static="no" mutable="no">
+        <type><ref refid="classIBVP" kindref="compound">IBVP</ref> *</type>
+        <definition>IBVP* IBVPFDM::ibvp</definition>
+        <argsstring></argsstring>
+        <name>ibvp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="37" column="6" bodyfile="include/duffy/IBVPSolver.hh" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1aac47fc0313cfd94d1c76185636f01e09" prot="protected" static="no" mutable="no">
+        <type>long</type>
+        <definition>long IBVPFDM::N</definition>
+        <argsstring></argsstring>
+        <name>N</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="39" column="6" bodyfile="include/duffy/IBVPSolver.hh" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double IBVPFDM::k</definition>
+        <argsstring></argsstring>
+        <name>k</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="40" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4" prot="protected" static="no" mutable="no">
+        <type>long</type>
+        <definition>long IBVPFDM::J</definition>
+        <argsstring></argsstring>
+        <name>J</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="42" column="6" bodyfile="include/duffy/IBVPSolver.hh" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1a20ec2ca54a8768c22ae5579021bcbc21" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double IBVPFDM::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="43" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double IBVPFDM::h2</definition>
+        <argsstring></argsstring>
+        <name>h2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="43" column="10" bodyfile="include/duffy/IBVPSolver.hh" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1a7dc9a42c9aa5e88a0ce91bb2381083ef" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double IBVPFDM::DN</definition>
+        <argsstring></argsstring>
+        <name>DN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="45" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1aadd87ba406920f5c4441d26108568e7b" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double IBVPFDM::DJ</definition>
+        <argsstring></argsstring>
+        <name>DJ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="46" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1aad9a3178a48c9a131dd577cea5490495" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double IBVPFDM::DJJ</definition>
+        <argsstring></argsstring>
+        <name>DJJ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="47" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1adcbf3a3c0024261777514d461f5fa28c" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double IBVPFDM::tprev</definition>
+        <argsstring></argsstring>
+        <name>tprev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="49" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double IBVPFDM::tnow</definition>
+        <argsstring></argsstring>
+        <name>tnow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="49" column="14" bodyfile="include/duffy/IBVPSolver.hh" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622" prot="protected" static="no" mutable="no">
+        <type>long</type>
+        <definition>long IBVPFDM::currentIndex</definition>
+        <argsstring></argsstring>
+        <name>currentIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="50" column="6" bodyfile="include/duffy/IBVPSolver.hh" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1a11c7f409e503aec453107f69460d4d5b" prot="protected" static="no" mutable="no">
+        <type>long</type>
+        <definition>long IBVPFDM::maxIndex</definition>
+        <argsstring></argsstring>
+        <name>maxIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="50" column="19" bodyfile="include/duffy/IBVPSolver.hh" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1a8852681de171f76e8351a07c6bb3fe8c" prot="protected" static="no" mutable="no">
+        <type><ref refid="classMesher" kindref="compound">Mesher</ref></type>
+        <definition>Mesher IBVPFDM::m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="51" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1acde024de54dc2124db544dc6424365c7" prot="protected" static="no" mutable="no">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt;double, long&gt; IBVPFDM::xarr</definition>
+        <argsstring></argsstring>
+        <name>xarr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="52" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1aecdb91332047c215ff4548e897f8e2d8" prot="protected" static="no" mutable="no">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt;double, long&gt; IBVPFDM::tarr</definition>
+        <argsstring></argsstring>
+        <name>tarr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="53" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1af4d88dae8cdfdc020b7ab0b296a7c8d5" prot="protected" static="no" mutable="no">
+        <type><ref refid="classNumericMatrix" kindref="compound">NumericMatrix</ref>&lt; double, long &gt;</type>
+        <definition>NumericMatrix&lt;double, long&gt; IBVPFDM::res</definition>
+        <argsstring></argsstring>
+        <name>res</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="56" column="15" bodyfile="include/duffy/IBVPSolver.hh" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1aa060a346aafe2c9d6f563e86211652f9" prot="protected" static="no" mutable="no">
+        <type>long</type>
+        <definition>long IBVPFDM::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="59" column="6" bodyfile="include/duffy/IBVPSolver.hh" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1a9b5cf717e24fa77775650cbc2913785f" prot="protected" static="no" mutable="no">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt;double, long&gt; IBVPFDM::vecOld</definition>
+        <argsstring></argsstring>
+        <name>vecOld</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="60" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c" prot="protected" static="no" mutable="no">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt;double, long&gt; IBVPFDM::vecNew</definition>
+        <argsstring></argsstring>
+        <name>vecNew</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="61" column="8" bodyfile="include/duffy/IBVPSolver.hh" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classIBVPFDM_1a82fad4c97d0d852ccd676ddc2a805302" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IBVPFDM::initMesh</definition>
+        <argsstring>(long NSteps, long JSteps)</argsstring>
+        <name>initMesh</name>
+        <param>
+          <type>long</type>
+          <declname>NSteps</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>JSteps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="33" column="6" bodyfile="src/IBVPSolver.cc" bodystart="26" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1acc2ec172a2cf403559ee8ef15aaf7990" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IBVPFDM::initIC</definition>
+        <argsstring>()</argsstring>
+        <name>initIC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="34" column="6" bodyfile="src/IBVPSolver.cc" bodystart="64" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classIBVPFDM_1a7614c8116ab9c08f6ccfb97dc6c1ff61" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IBVPFDM::IBVPFDM</definition>
+        <argsstring>(const IBVPFDM &amp;source)</argsstring>
+        <name>IBVPFDM</name>
+        <param>
+          <type>const <ref refid="classIBVPFDM" kindref="compound">IBVPFDM</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="63" column="1" bodyfile="src/IBVPSolver.cc" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1a3102b8d994991d993193a35df3d6c5ee" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classIBVPFDM" kindref="compound">IBVPFDM</ref> &amp;</type>
+        <definition>IBVPFDM &amp; IBVPFDM::operator=</definition>
+        <argsstring>(const IBVPFDM &amp;source)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classIBVPFDM" kindref="compound">IBVPFDM</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="64" column="9" bodyfile="src/IBVPSolver.cc" bodystart="117" bodyend="121"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classIBVPFDM_1a5a131f0efb8cb71abea192b6afd26cd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IBVPFDM::IBVPFDM</definition>
+        <argsstring>()</argsstring>
+        <name>IBVPFDM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="67" column="1" bodyfile="src/IBVPSolver.cc" bodystart="87" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1aa371f76cfb9f2b95ba24d6bbf1291353" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IBVPFDM::IBVPFDM</definition>
+        <argsstring>(IBVP &amp;source, long NSteps, long JSteps)</argsstring>
+        <name>IBVPFDM</name>
+        <param>
+          <type><ref refid="classIBVP" kindref="compound">IBVP</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>NSteps</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>JSteps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="68" column="1" bodyfile="src/IBVPSolver.cc" bodystart="96" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1a08763948c0e366be4f87d4fc7173b1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>IBVPFDM::~IBVPFDM</definition>
+        <argsstring>()</argsstring>
+        <name>~IBVPFDM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="70" column="9" bodyfile="src/IBVPSolver.cc" bodystart="113" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1ab78e1e05532a2359e674a4a729314b9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classNumericMatrix" kindref="compound">NumericMatrix</ref>&lt; double, long &gt; &amp;</type>
+        <definition>NumericMatrix&lt; double, long &gt; &amp; IBVPFDM::result</definition>
+        <argsstring>()</argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="73" column="15" bodyfile="src/IBVPSolver.cc" bodystart="123" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1a7172f8bc3eebc85940ece135065f96ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt; double, long &gt; IBVPFDM::XValues</definition>
+        <argsstring>() const</argsstring>
+        <name>XValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="74" column="8" bodyfile="src/IBVPSolver.cc" bodystart="146" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1a95e702453d0b896062b632498e40438c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt; double, long &gt; IBVPFDM::TValues</definition>
+        <argsstring>() const</argsstring>
+        <name>TValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="75" column="8" bodyfile="src/IBVPSolver.cc" bodystart="151" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1a42bd377e3c0b16ddb05d8a3dea7a873b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IBVPFDM::calculateBC</definition>
+        <argsstring>()=0</argsstring>
+        <name>calculateBC</name>
+        <reimplementedby refid="classExplicitEulerIBVP_1a01074c892ad9625daa7885cba20afccc">calculateBC</reimplementedby>
+        <reimplementedby refid="classImplicitEulerIBVP_1afc239aeb2cd0d045f4836dca607abaa6">calculateBC</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="78" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classIBVPFDM_1a5b73954c7ae1987e856c02b985387872" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IBVPFDM::calculate</definition>
+        <argsstring>()=0</argsstring>
+        <name>calculate</name>
+        <reimplementedby refid="classExplicitEulerIBVP_1af7590356fa10c6c1a218634e2b0b52b4">calculate</reimplementedby>
+        <reimplementedby refid="classImplicitEulerIBVP_1af71d063f8fb5df6a5a269c3c4f82fbc3">calculate</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IBVPSolver.hh" line="79" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>IBVPFDM</label>
+        <link refid="classIBVPFDM"/>
+      </node>
+      <node id="3">
+        <label>ImplicitEulerIBVP</label>
+        <link refid="classImplicitEulerIBVP"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ExplicitEulerIBVP</label>
+        <link refid="classExplicitEulerIBVP"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>NumericMatrix&lt; double, long &gt;</label>
+        <link refid="classNumericMatrix"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; double, long &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Array&lt; double, long, FullArray&lt; double &gt; &gt;</label>
+        <link refid="classArray"/>
+        <childnode refid="10" relation="template-instance">
+          <edgelabel>&lt; double, long, FullArray&lt; double &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Mesher</label>
+        <link refid="classMesher"/>
+      </node>
+      <node id="7">
+        <label>NumericMatrix&lt; V, I, S &gt;</label>
+        <link refid="classNumericMatrix"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Matrix&lt; V, I, S &gt;</label>
+        <link refid="classMatrix"/>
+      </node>
+      <node id="1">
+        <label>IBVPFDM</label>
+        <link refid="classIBVPFDM"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>#ibvp</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>#m</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>#res</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>#vecOld</edgelabel>
+          <edgelabel>#xarr</edgelabel>
+          <edgelabel>#vecNew</edgelabel>
+          <edgelabel>#tarr</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IBVP</label>
+        <link refid="classIBVP"/>
+      </node>
+      <node id="11">
+        <label>Vector&lt; V, I, S &gt;</label>
+        <link refid="classVector"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Matrix&lt; double, long, FullMatrix&lt; double &gt; &gt;</label>
+        <link refid="classMatrix"/>
+        <childnode refid="6" relation="template-instance">
+          <edgelabel>&lt; double, long, FullMatrix&lt; double &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Array&lt; V, I, S &gt;</label>
+        <link refid="classArray"/>
+      </node>
+      <node id="8">
+        <label>Vector&lt; double, long &gt;</label>
+        <link refid="classVector"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; double, long &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/IBVPSolver.hh" line="28" column="1" bodyfile="include/duffy/IBVPSolver.hh" bodystart="27" bodyend="80"/>
+    <listofallmembers>
+      <member refid="classIBVPFDM_1a5b73954c7ae1987e856c02b985387872" prot="public" virt="pure-virtual"><scope>IBVPFDM</scope><name>calculate</name></member>
+      <member refid="classIBVPFDM_1a42bd377e3c0b16ddb05d8a3dea7a873b" prot="public" virt="pure-virtual"><scope>IBVPFDM</scope><name>calculateBC</name></member>
+      <member refid="classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>currentIndex</name></member>
+      <member refid="classIBVPFDM_1aadd87ba406920f5c4441d26108568e7b" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>DJ</name></member>
+      <member refid="classIBVPFDM_1aad9a3178a48c9a131dd577cea5490495" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>DJJ</name></member>
+      <member refid="classIBVPFDM_1a7dc9a42c9aa5e88a0ce91bb2381083ef" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>DN</name></member>
+      <member refid="classIBVPFDM_1a20ec2ca54a8768c22ae5579021bcbc21" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>h</name></member>
+      <member refid="classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>h2</name></member>
+      <member refid="classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>ibvp</name></member>
+      <member refid="classIBVPFDM_1a7614c8116ab9c08f6ccfb97dc6c1ff61" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>IBVPFDM</name></member>
+      <member refid="classIBVPFDM_1a5a131f0efb8cb71abea192b6afd26cd2" prot="public" virt="non-virtual"><scope>IBVPFDM</scope><name>IBVPFDM</name></member>
+      <member refid="classIBVPFDM_1aa371f76cfb9f2b95ba24d6bbf1291353" prot="public" virt="non-virtual"><scope>IBVPFDM</scope><name>IBVPFDM</name></member>
+      <member refid="classIBVPFDM_1acc2ec172a2cf403559ee8ef15aaf7990" prot="private" virt="non-virtual"><scope>IBVPFDM</scope><name>initIC</name></member>
+      <member refid="classIBVPFDM_1a82fad4c97d0d852ccd676ddc2a805302" prot="private" virt="non-virtual"><scope>IBVPFDM</scope><name>initMesh</name></member>
+      <member refid="classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>J</name></member>
+      <member refid="classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>k</name></member>
+      <member refid="classIBVPFDM_1a8852681de171f76e8351a07c6bb3fe8c" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>m</name></member>
+      <member refid="classIBVPFDM_1a11c7f409e503aec453107f69460d4d5b" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>maxIndex</name></member>
+      <member refid="classIBVPFDM_1aac47fc0313cfd94d1c76185636f01e09" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>N</name></member>
+      <member refid="classIBVPFDM_1aa060a346aafe2c9d6f563e86211652f9" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>n</name></member>
+      <member refid="classIBVPFDM_1a3102b8d994991d993193a35df3d6c5ee" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>operator=</name></member>
+      <member refid="classIBVPFDM_1af4d88dae8cdfdc020b7ab0b296a7c8d5" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>res</name></member>
+      <member refid="classIBVPFDM_1ab78e1e05532a2359e674a4a729314b9a" prot="public" virt="non-virtual"><scope>IBVPFDM</scope><name>result</name></member>
+      <member refid="classIBVPFDM_1aecdb91332047c215ff4548e897f8e2d8" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>tarr</name></member>
+      <member refid="classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>tnow</name></member>
+      <member refid="classIBVPFDM_1adcbf3a3c0024261777514d461f5fa28c" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>tprev</name></member>
+      <member refid="classIBVPFDM_1a95e702453d0b896062b632498e40438c" prot="public" virt="non-virtual"><scope>IBVPFDM</scope><name>TValues</name></member>
+      <member refid="classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>vecNew</name></member>
+      <member refid="classIBVPFDM_1a9b5cf717e24fa77775650cbc2913785f" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>vecOld</name></member>
+      <member refid="classIBVPFDM_1acde024de54dc2124db544dc6424365c7" prot="protected" virt="non-virtual"><scope>IBVPFDM</scope><name>xarr</name></member>
+      <member refid="classIBVPFDM_1a7172f8bc3eebc85940ece135065f96ba" prot="public" virt="non-virtual"><scope>IBVPFDM</scope><name>XValues</name></member>
+      <member refid="classIBVPFDM_1a08763948c0e366be4f87d4fc7173b1a2" prot="public" virt="virtual"><scope>IBVPFDM</scope><name>~IBVPFDM</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

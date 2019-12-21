@@ -1,0 +1,804 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classDatasimDate" kind="class" language="C++" prot="public">
+    <compoundname>DatasimDate</compoundname>
+    <basecompoundref refid="classTemporalType" prot="public" virt="non-virtual">TemporalType</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDatasimDate_1a28abb04fdb71b1da639d17ee18f167c9" prot="private" static="no" mutable="no">
+        <type>julTy</type>
+        <definition>julTy DatasimDate::Julian_days</definition>
+        <argsstring></argsstring>
+        <name>Julian_days</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="25" column="7" bodyfile="include/duffy/DatasimDate.hh" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDatasimDate_1a8c8c8be76fb9645a95f98adfb9c4ed9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasimDate::init</definition>
+        <argsstring>(julTy days, julTy months, julTy years)</argsstring>
+        <name>init</name>
+        <param>
+          <type>julTy</type>
+          <declname>days</declname>
+        </param>
+        <param>
+          <type>julTy</type>
+          <declname>months</declname>
+        </param>
+        <param>
+          <type>julTy</type>
+          <declname>years</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="28" column="6" bodyfile="src/DatasimDate.cc" bodystart="27" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a356b63165441b1c51e7f19a99b6209de" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>julTy</type>
+        <definition>julTy DatasimDate::j_days</definition>
+        <argsstring>(julTy days, julTy months, julTy years) const</argsstring>
+        <name>j_days</name>
+        <param>
+          <type>julTy</type>
+          <declname>days</declname>
+        </param>
+        <param>
+          <type>julTy</type>
+          <declname>months</declname>
+        </param>
+        <param>
+          <type>julTy</type>
+          <declname>years</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="29" column="7" bodyfile="src/DatasimDate.cc" bodystart="153" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a8c46f4fa884b08813347f8734d2b8803" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DatasimDate::year_test</definition>
+        <argsstring>(int year) const</argsstring>
+        <name>year_test</name>
+        <param>
+          <type>int</type>
+          <declname>year</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="31" column="5" bodyfile="src/DatasimDate.cc" bodystart="37" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1aa210c1ba92958307c8635e61b93cb04e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DatasimDate::mm_test</definition>
+        <argsstring>(int month) const</argsstring>
+        <name>mm_test</name>
+        <param>
+          <type>int</type>
+          <declname>month</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="32" column="5" bodyfile="src/DatasimDate.cc" bodystart="59" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a8770b969d1bb8fd6a128755e2354bf4d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DatasimDate::day_test</definition>
+        <argsstring>(int day, int month, int year) const</argsstring>
+        <name>day_test</name>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>month</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>year</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="33" column="5" bodyfile="src/DatasimDate.cc" bodystart="68" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDatasimDate_1a9412931fe7dffe68654eb3727e396984" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DatasimDate::DatasimDate</definition>
+        <argsstring>()</argsstring>
+        <name>DatasimDate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="37" column="1" bodyfile="src/DatasimDate.cc" bodystart="110" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1ac12510cb0937e67a3f897015bc1e86eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DatasimDate::DatasimDate</definition>
+        <argsstring>(const DatasimDate &amp;d2)</argsstring>
+        <name>DatasimDate</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>d2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="38" column="1" bodyfile="src/DatasimDate.cc" bodystart="89" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a31fe9c8d8c1fa6be96d597d9b6fdb9d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DatasimDate::DatasimDate</definition>
+        <argsstring>(const julTy &amp;days)</argsstring>
+        <name>DatasimDate</name>
+        <param>
+          <type>const julTy &amp;</type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="39" column="1" bodyfile="src/DatasimDate.cc" bodystart="131" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a3525018c886193a16f5f1ce16c9f35ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DatasimDate::DatasimDate</definition>
+        <argsstring>(int days)</argsstring>
+        <name>DatasimDate</name>
+        <param>
+          <type>int</type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="40" column="1" bodyfile="src/DatasimDate.cc" bodystart="140" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a2056386fc83d278ecf1ad4393bce5ffd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DatasimDate::DatasimDate</definition>
+        <argsstring>(int day, int month, int year)</argsstring>
+        <name>DatasimDate</name>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>month</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>year</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="41" column="1" bodyfile="src/DatasimDate.cc" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a08a1a444c86d72c9dbd102b84ce9f538" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DatasimDate::ret_year</definition>
+        <argsstring>() const</argsstring>
+        <name>ret_year</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="44" column="5" bodyfile="src/DatasimDate.cc" bodystart="217" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a64d9bcbb8e0113497241b0e9498a9d93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DatasimDate::ret_month</definition>
+        <argsstring>() const</argsstring>
+        <name>ret_month</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="45" column="5" bodyfile="src/DatasimDate.cc" bodystart="227" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a352a61dc42b5607b2d11c25b0d1bdd23" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DatasimDate::ret_day</definition>
+        <argsstring>() const</argsstring>
+        <name>ret_day</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="46" column="5" bodyfile="src/DatasimDate.cc" bodystart="237" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a4ae786af9e5d429c3f62ea3bf4b41f57" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasimDate::jul_to_greg</definition>
+        <argsstring>(julTy &amp;d, julTy &amp;m, julTy &amp;y) const</argsstring>
+        <name>jul_to_greg</name>
+        <param>
+          <type>julTy &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>julTy &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>julTy &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="47" column="6" bodyfile="src/DatasimDate.cc" bodystart="182" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1af2124460d6e7514dcdeb6bbc140329fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DatasimDate::operator==</definition>
+        <argsstring>(const DatasimDate &amp;DatasimDate_2) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>DatasimDate_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="51" column="6" bodyfile="src/DatasimDate.cc" bodystart="247" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a4f91ccf46ff50ba8e30cda1c0fbdb34c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DatasimDate::operator!=</definition>
+        <argsstring>(const DatasimDate &amp;DatasimDate_2) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>DatasimDate_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="52" column="6" bodyfile="src/DatasimDate.cc" bodystart="256" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1af8137030468be122ad7f219a2ca3a99d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DatasimDate::operator&gt;</definition>
+        <argsstring>(const DatasimDate &amp;DatasimDate_2) const</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>DatasimDate_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="53" column="6" bodyfile="src/DatasimDate.cc" bodystart="265" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a10497a3d5e8c03f05d43709cc7315e87" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DatasimDate::operator&lt;</definition>
+        <argsstring>(const DatasimDate &amp;DatasimDate_2) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>DatasimDate_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="54" column="1" bodyfile="src/DatasimDate.cc" bodystart="273" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1aae3820e70cadbd75c06fe5e147100013" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DatasimDate::operator&gt;=</definition>
+        <argsstring>(const DatasimDate &amp;DatasimDate_2) const</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>DatasimDate_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="55" column="6" bodyfile="src/DatasimDate.cc" bodystart="281" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a90aa0b8f7e9a40747f558b9df825e0d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DatasimDate::operator&lt;=</definition>
+        <argsstring>(const DatasimDate &amp;DatasimDate_2) const</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>DatasimDate_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="56" column="1" bodyfile="src/DatasimDate.cc" bodystart="289" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a038976e58f3023965fe99d4ea4e4a227" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+        <definition>DatasimDate &amp; DatasimDate::operator=</definition>
+        <argsstring>(const DatasimDate &amp;DatasimDate_2)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>DatasimDate_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="59" column="13" bodyfile="src/DatasimDate.cc" bodystart="97" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1ad8e1e82c6743c375ad39b168f0cad24b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::operator+</definition>
+        <argsstring>(int days) const</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>int</type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="62" column="13" bodyfile="src/DatasimDate.cc" bodystart="388" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1ae8355e2cbc7e838e73273f7a238ecb15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::operator-</definition>
+        <argsstring>(int days) const</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>int</type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="64" column="13" bodyfile="src/DatasimDate.cc" bodystart="368" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1ab236f76c33b857eeafa2cc5a593a462f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="67" column="13" bodyfile="src/DatasimDate.cc" bodystart="333" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1ab03dff5107e481977651bdc7c6a05a7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::operator--</definition>
+        <argsstring>()</argsstring>
+        <name>operator--</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="68" column="13" bodyfile="src/DatasimDate.cc" bodystart="342" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a3599ffe8fec2cf745a80c887fc699808" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::operator+=</definition>
+        <argsstring>(int days)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>int</type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="70" column="13" bodyfile="src/DatasimDate.cc" bodystart="306" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1af0ad1dd97d2f54973091793eefecd1a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::operator-=</definition>
+        <argsstring>(int days)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>int</type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="72" column="13" bodyfile="src/DatasimDate.cc" bodystart="324" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a778102034e0996acbd7b5691966b7aab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::add_months</definition>
+        <argsstring>(long months) const</argsstring>
+        <name>add_months</name>
+        <param>
+          <type>long</type>
+          <declname>months</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="73" column="13" bodyfile="src/DatasimDate.cc" bodystart="464" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1af205687d9c5f85d69d6c3f68c75050df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::add_quarter</definition>
+        <argsstring>() const</argsstring>
+        <name>add_quarter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="74" column="13" bodyfile="src/DatasimDate.cc" bodystart="477" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1adefb5ed1054f46821f7f3886445a7386" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::add_halfyear</definition>
+        <argsstring>() const</argsstring>
+        <name>add_halfyear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="75" column="13" bodyfile="src/DatasimDate.cc" bodystart="483" bodyend="487"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a4a66bc65f73f0257cad52ae6a86653ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::add_years</definition>
+        <argsstring>(long years) const</argsstring>
+        <name>add_years</name>
+        <param>
+          <type>long</type>
+          <declname>years</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="76" column="13" bodyfile="src/DatasimDate.cc" bodystart="502" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1ae02dad4fd61b760ac4307e1bb63de654" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::sub_months</definition>
+        <argsstring>(long months) const</argsstring>
+        <name>sub_months</name>
+        <param>
+          <type>long</type>
+          <declname>months</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="77" column="13" bodyfile="src/DatasimDate.cc" bodystart="516" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a970503033187428b64491ddec799c699" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::sub_quarter</definition>
+        <argsstring>() const</argsstring>
+        <name>sub_quarter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="78" column="13" bodyfile="src/DatasimDate.cc" bodystart="489" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a7d2eae7c91ddc861ec6d2655d0bbc9bc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::sub_halfyear</definition>
+        <argsstring>() const</argsstring>
+        <name>sub_halfyear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="79" column="13" bodyfile="src/DatasimDate.cc" bodystart="495" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a3177c3d9596e617853fdea2bfbc345a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::sub_years</definition>
+        <argsstring>(long years) const</argsstring>
+        <name>sub_years</name>
+        <param>
+          <type>long</type>
+          <declname>years</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="80" column="13" bodyfile="src/DatasimDate.cc" bodystart="529" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1a9a44080fb927fc824d9cf864e5b0f76a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::add_period</definition>
+        <argsstring>(const julTy &amp;days, const julTy &amp;months=0, const julTy &amp;years=0) const</argsstring>
+        <name>add_period</name>
+        <param>
+          <type>const julTy &amp;</type>
+          <declname>days</declname>
+        </param>
+        <param>
+          <type>const julTy &amp;</type>
+          <declname>months</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>const julTy &amp;</type>
+          <declname>years</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="81" column="13" bodyfile="src/DatasimDate.cc" bodystart="408" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1af0c7e266045bee895f1660ad14a4f978" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref></type>
+        <definition>DatasimDate DatasimDate::sub_period</definition>
+        <argsstring>(julTy days, julTy months=0, julTy years=0) const</argsstring>
+        <name>sub_period</name>
+        <param>
+          <type>julTy</type>
+          <declname>days</declname>
+        </param>
+        <param>
+          <type>julTy</type>
+          <declname>months</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>julTy</type>
+          <declname>years</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="82" column="13" bodyfile="src/DatasimDate.cc" bodystart="434" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1ae4357570b57261934c7a88fd323a879e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long DatasimDate::difference</definition>
+        <argsstring>(const DatasimDate &amp;DatasimDate_2) const</argsstring>
+        <name>difference</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>DatasimDate_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="83" column="6" bodyfile="src/DatasimDate.cc" bodystart="542" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="classDatasimDate_1ac2ee018718765c5e4b92ad7dbe67dc2f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long DatasimDate::operator-</definition>
+        <argsstring>(const DatasimDate &amp;d2) const</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>d2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="84" column="6" bodyfile="src/DatasimDate.cc" bodystart="559" bodyend="562"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classDatasimDate_1ab845047325251d52f8d1548f2c9993a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const DatasimDate &amp;dat)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classDatasimDate" kindref="compound">DatasimDate</ref> &amp;</type>
+          <declname>dat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/DatasimDate.hh" line="86" column="8" bodyfile="src/DatasimDate.cc" bodystart="564" bodyend="568"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>TemporalType</label>
+        <link refid="classTemporalType"/>
+      </node>
+      <node id="1">
+        <label>DatasimDate</label>
+        <link refid="classDatasimDate"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>TemporalType</label>
+        <link refid="classTemporalType"/>
+      </node>
+      <node id="1">
+        <label>DatasimDate</label>
+        <link refid="classDatasimDate"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/DatasimDate.hh" line="21" column="1" bodyfile="include/duffy/DatasimDate.hh" bodystart="20" bodyend="87"/>
+    <listofallmembers>
+      <member refid="classDatasimDate_1adefb5ed1054f46821f7f3886445a7386" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>add_halfyear</name></member>
+      <member refid="classDatasimDate_1a778102034e0996acbd7b5691966b7aab" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>add_months</name></member>
+      <member refid="classDatasimDate_1a9a44080fb927fc824d9cf864e5b0f76a" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>add_period</name></member>
+      <member refid="classDatasimDate_1af205687d9c5f85d69d6c3f68c75050df" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>add_quarter</name></member>
+      <member refid="classDatasimDate_1a4a66bc65f73f0257cad52ae6a86653ab" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>add_years</name></member>
+      <member refid="classDatasimDate_1a9412931fe7dffe68654eb3727e396984" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>DatasimDate</name></member>
+      <member refid="classDatasimDate_1ac12510cb0937e67a3f897015bc1e86eb" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>DatasimDate</name></member>
+      <member refid="classDatasimDate_1a31fe9c8d8c1fa6be96d597d9b6fdb9d7" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>DatasimDate</name></member>
+      <member refid="classDatasimDate_1a3525018c886193a16f5f1ce16c9f35ef" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>DatasimDate</name></member>
+      <member refid="classDatasimDate_1a2056386fc83d278ecf1ad4393bce5ffd" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>DatasimDate</name></member>
+      <member refid="classDatasimDate_1a8770b969d1bb8fd6a128755e2354bf4d" prot="private" virt="non-virtual"><scope>DatasimDate</scope><name>day_test</name></member>
+      <member refid="classDatasimDate_1ae4357570b57261934c7a88fd323a879e" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>difference</name></member>
+      <member refid="classDatasimDate_1a8c8c8be76fb9645a95f98adfb9c4ed9c" prot="private" virt="non-virtual"><scope>DatasimDate</scope><name>init</name></member>
+      <member refid="classDatasimDate_1a356b63165441b1c51e7f19a99b6209de" prot="private" virt="non-virtual"><scope>DatasimDate</scope><name>j_days</name></member>
+      <member refid="classDatasimDate_1a4ae786af9e5d429c3f62ea3bf4b41f57" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>jul_to_greg</name></member>
+      <member refid="classDatasimDate_1a28abb04fdb71b1da639d17ee18f167c9" prot="private" virt="non-virtual"><scope>DatasimDate</scope><name>Julian_days</name></member>
+      <member refid="classDatasimDate_1aa210c1ba92958307c8635e61b93cb04e" prot="private" virt="non-virtual"><scope>DatasimDate</scope><name>mm_test</name></member>
+      <member refid="classDatasimDate_1a4f91ccf46ff50ba8e30cda1c0fbdb34c" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator!=</name></member>
+      <member refid="classDatasimDate_1ad8e1e82c6743c375ad39b168f0cad24b" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator+</name></member>
+      <member refid="classDatasimDate_1ab236f76c33b857eeafa2cc5a593a462f" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator++</name></member>
+      <member refid="classDatasimDate_1a3599ffe8fec2cf745a80c887fc699808" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator+=</name></member>
+      <member refid="classDatasimDate_1ae8355e2cbc7e838e73273f7a238ecb15" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator-</name></member>
+      <member refid="classDatasimDate_1ac2ee018718765c5e4b92ad7dbe67dc2f" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator-</name></member>
+      <member refid="classDatasimDate_1ab03dff5107e481977651bdc7c6a05a7e" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator--</name></member>
+      <member refid="classDatasimDate_1af0ad1dd97d2f54973091793eefecd1a8" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator-=</name></member>
+      <member refid="classDatasimDate_1a10497a3d5e8c03f05d43709cc7315e87" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator&lt;</name></member>
+      <member refid="classDatasimDate_1ab845047325251d52f8d1548f2c9993a1" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classDatasimDate_1a90aa0b8f7e9a40747f558b9df825e0d9" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator&lt;=</name></member>
+      <member refid="classDatasimDate_1a038976e58f3023965fe99d4ea4e4a227" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator=</name></member>
+      <member refid="classDatasimDate_1af2124460d6e7514dcdeb6bbc140329fa" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator==</name></member>
+      <member refid="classDatasimDate_1af8137030468be122ad7f219a2ca3a99d" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator&gt;</name></member>
+      <member refid="classDatasimDate_1aae3820e70cadbd75c06fe5e147100013" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>operator&gt;=</name></member>
+      <member refid="classDatasimDate_1a352a61dc42b5607b2d11c25b0d1bdd23" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>ret_day</name></member>
+      <member refid="classDatasimDate_1a64d9bcbb8e0113497241b0e9498a9d93" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>ret_month</name></member>
+      <member refid="classDatasimDate_1a08a1a444c86d72c9dbd102b84ce9f538" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>ret_year</name></member>
+      <member refid="classDatasimDate_1a7d2eae7c91ddc861ec6d2655d0bbc9bc" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>sub_halfyear</name></member>
+      <member refid="classDatasimDate_1ae02dad4fd61b760ac4307e1bb63de654" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>sub_months</name></member>
+      <member refid="classDatasimDate_1af0c7e266045bee895f1660ad14a4f978" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>sub_period</name></member>
+      <member refid="classDatasimDate_1a970503033187428b64491ddec799c699" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>sub_quarter</name></member>
+      <member refid="classDatasimDate_1a3177c3d9596e617853fdea2bfbc345a1" prot="public" virt="non-virtual"><scope>DatasimDate</scope><name>sub_years</name></member>
+      <member refid="classDatasimDate_1a8c46f4fa884b08813347f8734d2b8803" prot="private" virt="non-virtual"><scope>DatasimDate</scope><name>year_test</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

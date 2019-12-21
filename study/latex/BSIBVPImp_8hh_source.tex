@@ -1,0 +1,52 @@
+\hypertarget{BSIBVPImp_8hh_source}{}\doxysection{B\+S\+I\+B\+V\+P\+Imp.\+hh}
+\label{BSIBVPImp_8hh_source}\index{include/duffy/BSIBVPImp.hh@{include/duffy/BSIBVPImp.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// BSImp.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Implementation class for one-\/factor initial boundary}}
+\DoxyCodeLine{00004 \textcolor{comment}{// value problems.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// Class for the Black Scholes Parabolic IBVP. You can customise }}
+\DoxyCodeLine{00007 \textcolor{comment}{// it to suit your needs. e.g. time and asset dependent volatility.}}
+\DoxyCodeLine{00008 \textcolor{comment}{// Notice that the functions in the IBVP uses constant Properties }}
+\DoxyCodeLine{00009 \textcolor{comment}{// from an Option object.}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{// Note: in BCL() and BCR() you comment out code depending on whether}}
+\DoxyCodeLine{00012 \textcolor{comment}{// you use Call or Put. Diriclet boundary conditions only.}}
+\DoxyCodeLine{00013 \textcolor{comment}{//}}
+\DoxyCodeLine{00014 \textcolor{comment}{//}}
+\DoxyCodeLine{00015 \textcolor{comment}{// (C) Datasim Component Technology BV 2000-\/2006}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#ifndef BSIBVPIMP\_HH}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#define BSIBVPIMP\_HH}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#include "IBVPImp.hh"}}
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#include "Instrument.hh"}}
+\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8hh_source_l00024}\mbox{\hyperlink{classBSIBVPImp}{00024}} \textcolor{keyword}{class }\mbox{\hyperlink{classBSIBVPImp}{BSIBVPImp}} : \textcolor{keyword}{public} \mbox{\hyperlink{classIBVPImp}{IBVPImp}}}
+\DoxyCodeLine{00025 \{}
+\DoxyCodeLine{00026 \textcolor{keyword}{public}: }
+\DoxyCodeLine{00027         \mbox{\hyperlink{classOption}{Option}}* opt;}
+\DoxyCodeLine{00028         \mbox{\hyperlink{classBSIBVPImp}{BSIBVPImp}}(\mbox{\hyperlink{classOption}{Option}}\& option);}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030         \textcolor{keywordtype}{double} diffusion(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032         \textcolor{keywordtype}{double} convection(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \textcolor{keywordtype}{double} zeroterm(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};  \textcolor{comment}{// Coefficient of zero derivative}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         \textcolor{keywordtype}{double} RHS(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const};       \textcolor{comment}{// Inhomogeneous forcing term}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         \textcolor{comment}{// Boundary and initial conditions}}
+\DoxyCodeLine{00040         \textcolor{keywordtype}{double} BCL(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const};                 \textcolor{comment}{// Left hand boundary condition}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         \textcolor{keywordtype}{double} BCR(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const};                 \textcolor{comment}{// Right hand boundary condition}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044         \textcolor{keywordtype}{double} IC(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const};                  \textcolor{comment}{// Initial condition}}
+\DoxyCodeLine{00045 \};}
+\DoxyCodeLine{00046 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

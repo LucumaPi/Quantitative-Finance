@@ -10,25 +10,23 @@
 #include "Array.hh"
 
 // Default structure is FullArray with default allocator. Default integral type is int.
-template <class V, class I=int, class S=FullArray<V> >
+template <class V, class I=int, class S = FullArray<V> >
 class Vector: public Array<V, I, S>
 {
 private:
 public:
 	// Constructors & destructor
-	Vector();									// Default constructor
-	Vector(I size);						// Constructor with size. Start index=1.
+	Vector();								// Default constructor
+	Vector(I size);							// Constructor with size. Start index=1.
 	Vector(I size, I start);				// Constructor with size & start index
 	Vector(I size, I start, const V& val);	// Constructor with size & start index + value
-	Vector(const Vector<V, I, S>& source);		// Copy constructor
-	Vector(const Array<V, I, S>& source);		// Copy with an array as argument
-	virtual ~Vector();							// Destructor
-
+	Vector(const Vector<V, I, S>& source);	// Copy constructor
+	Vector(const Array<V, I, S>& source);	// Copy with an array as argument
+	virtual ~Vector();						// Destructor
 
 	// Return the sum of the elements
 	// Operators
 	Vector<V, I, S>& operator = (const Vector<V, I, S>& source);
-
 	Vector<V, I, S> operator - () const;		// Unary minus
 
 	template <class V1, class I1, class S1>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classB" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>B</compoundname>
+    <derivedcompoundref refid="classD" prot="public" virt="non-virtual">D</derivedcompoundref>
+    <derivedcompoundref refid="classD" prot="public" virt="non-virtual">D</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classB_1a49145363e77b98eca8ffd4c1be82a2e5" prot="private" static="no" mutable="no">
+        <type>double *</type>
+        <definition>double* B::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/VirtualDestructors.cc" line="12" column="8" bodyfile="tests/VirtualDestructors.cc" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classB_1a9532a74021f7efb003dffbc9d4145e65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>B::B</definition>
+        <argsstring>()</argsstring>
+        <name>B</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/Delegation.cc" line="14" column="1" bodyfile="tests/Delegation.cc" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classB_1a63badaaed2bfb7ac7756c13fe57fcbd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double B::getValue</definition>
+        <argsstring>()=0</argsstring>
+        <name>getValue</name>
+        <reimplementedby refid="classD_1a30083bc921f2ca1a443011d4798d6765">getValue</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/Delegation.cc" line="15" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classB_1aae47aa88befb57e1a716e8463097cc6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual B::~B</definition>
+        <argsstring>()</argsstring>
+        <name>~B</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/Delegation.cc" line="16" column="9" bodyfile="tests/Delegation.cc" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classB_1a9532a74021f7efb003dffbc9d4145e65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>B::B</definition>
+        <argsstring>()</argsstring>
+        <name>B</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/VirtualDestructors.cc" line="14" column="1" bodyfile="tests/VirtualDestructors.cc" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classB_1aae47aa88befb57e1a716e8463097cc6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual B::~B</definition>
+        <argsstring>()</argsstring>
+        <name>~B</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/VirtualDestructors.cc" line="15" column="9" bodyfile="tests/VirtualDestructors.cc" bodystart="15" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>B</label>
+        <link refid="classB"/>
+      </node>
+      <node id="2">
+        <label>D</label>
+        <link refid="classD"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>B</label>
+        <link refid="classB"/>
+      </node>
+    </collaborationgraph>
+    <location file="tests/Delegation.cc" line="10" column="1" bodyfile="tests/Delegation.cc" bodystart="9" bodyend="18"/>
+    <listofallmembers>
+      <member refid="classB_1a9532a74021f7efb003dffbc9d4145e65" prot="public" virt="non-virtual"><scope>B</scope><name>B</name></member>
+      <member refid="classB_1a9532a74021f7efb003dffbc9d4145e65" prot="public" virt="non-virtual"><scope>B</scope><name>B</name></member>
+      <member refid="classB_1a49145363e77b98eca8ffd4c1be82a2e5" prot="private" virt="non-virtual"><scope>B</scope><name>d</name></member>
+      <member refid="classB_1a63badaaed2bfb7ac7756c13fe57fcbd9" prot="public" virt="pure-virtual"><scope>B</scope><name>getValue</name></member>
+      <member refid="classB_1aae47aa88befb57e1a716e8463097cc6d" prot="public" virt="virtual"><scope>B</scope><name>~B</name></member>
+      <member refid="classB_1aae47aa88befb57e1a716e8463097cc6d" prot="public" virt="virtual"><scope>B</scope><name>~B</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

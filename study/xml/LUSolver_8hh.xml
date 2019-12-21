@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="LUSolver_8hh" kind="file" language="C++">
+    <compoundname>LUSolver.hh</compoundname>
+    <includes refid="Vector_8hh" local="yes">Vector.hh</includes>
+    <includes refid="NumericMatrix_8hh" local="yes">NumericMatrix.hh</includes>
+    <includes local="no">cmath</includes>
+    <includes refid="LUSolver_8cc" local="yes">../../src/LUSolver.cc</includes>
+    <includedby refid="IBVPSolver_8hh" local="yes">include/duffy/IBVPSolver.hh</includedby>
+    <includedby refid="LUSolver_8cc" local="no">src/LUSolver.cc</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Vector.hh</label>
+        <link refid="Vector_8hh_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ArrayStructure.hh</label>
+        <link refid="ArrayStructure_8hh_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/duffy/LUSolver.hh</label>
+        <link refid="LUSolver_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>cmath</label>
+      </node>
+      <node id="3">
+        <label>Array.hh</label>
+        <link refid="Array_8hh_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Matrix.hh</label>
+        <link refid="Matrix_8hh_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>FullMatrix.hh</label>
+        <link refid="FullMatrix_8hh_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>NumericMatrix.hh</label>
+        <link refid="NumericMatrix_8hh_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+      <node id="5">
+        <label>cstddef</label>
+      </node>
+      <node id="6">
+        <label>FullArray.hh</label>
+        <link refid="FullArray_8hh_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>MatrixStructure.hh</label>
+        <link refid="MatrixStructure_8hh_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/duffy/LUSolver.hh</label>
+        <link refid="LUSolver_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/duffy/IEulerIBVPSolver.hh</label>
+        <link refid="IEulerIBVPSolver_8hh_source"/>
+      </node>
+      <node id="3">
+        <label>include/duffy/EEulerIBVPSolver.hh</label>
+        <link refid="EEulerIBVPSolver_8hh_source"/>
+      </node>
+      <node id="2">
+        <label>include/duffy/IBVPSolver.hh</label>
+        <link refid="IBVPSolver_8hh_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classLUTridiagonalSolver" prot="public">LUTridiagonalSolver</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>LUSolver.hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Classes<sp/>and<sp/>functions<sp/>for<sp/>solving<sp/>linear<sp/>systems<sp/>of<sp/>equations<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(numerical<sp/>linear<sp/>algebra).<sp/>We<sp/>use:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Direct<sp/>methods<sp/>(LU<sp/>decomposition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2003-2006</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LUSolver_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LUSolver_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hh&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arrays<sp/>with<sp/>mathematical<sp/>properties</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;NumericMatrix.hh&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Matrices<sp/>with<sp/>numerical<sp/>properties</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classLUTridiagonalSolver" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>V,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>I&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Solve<sp/>tridiagonal<sp/>matrix<sp/>equation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Defining<sp/>arrays<sp/>(input)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>V2<sp/>optimise<sp/>so<sp/>to<sp/>work<sp/>with<sp/>pointers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>a;<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>lower-diagonal<sp/>array<sp/>[1..J]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>b;<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>diagonal<sp/>array<sp/>[1..J]<sp/>&quot;baseline<sp/>array&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>c;<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>upper-diagonal<sp/>array<sp/>[1..J]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>r;<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>right-hand<sp/>side<sp/>of<sp/>the<sp/>equation<sp/>Au<sp/>=<sp/>r<sp/>[1..J]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Work<sp/>arrays</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Coefficients<sp/>of<sp/>Lower<sp/>and<sp/>Upper<sp/>matrices:<sp/>A<sp/>=<sp/>LU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>V2<sp/>use<sp/>of<sp/>Templated<sp/>static<sp/>vectors,<sp/>but<sp/>we<sp/>must<sp/>be<sp/>careful</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>beta;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range<sp/>[1..J]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>gamma;<sp/><sp/></highlight><highlight class="comment">//<sp/>Range<sp/>[1..J-1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Solutions<sp/>of<sp/>temporary<sp/>and<sp/>final<sp/>problems</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>z;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range<sp/>[1..J]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>u;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range<sp/>[1..J]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>Size;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>calculateBetaGamma();<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>beta<sp/>and<sp/>gamma</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>calculateZU();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>z<sp/>and<sp/>u</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref>(<ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>lower_A,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>diagonal_B,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>upper_C,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>rhs_R);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/>source);<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/>source);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>the<sp/>(final)<sp/>solution<sp/>to<sp/>Au<sp/>=<sp/>r</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>solve();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>diagonallyDominant()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/LUSolver.cc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/duffy/LUSolver.hh"/>
+  </compounddef>
+</doxygen>

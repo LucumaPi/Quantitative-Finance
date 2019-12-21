@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classPrototypeCreator" kind="class" language="C++" prot="public">
+    <compoundname>PrototypeCreator</compoundname>
+    <basecompoundref refid="classAbstractFactory" prot="public" virt="non-virtual">AbstractFactory&lt; T &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classPrototypeCreator_1a28119d5d09dbbf22154c4dbf876097d3" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* PrototypeCreator&lt; T &gt;::proto</definition>
+        <argsstring></argsstring>
+        <name>proto</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GenericCreator.cc" line="34" column="3" bodyfile="src/GenericCreator.cc" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classPrototypeCreator_1af11e1a6eff1e0d0a879ecc0ed632ae5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PrototypeCreator&lt; T &gt;::PrototypeCreator</definition>
+        <argsstring>()</argsstring>
+        <name>PrototypeCreator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GenericCreator.cc" line="36" column="1" bodyfile="src/GenericCreator.cc" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classPrototypeCreator_1ad0d32c2d51be57184e61a4016783e5f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PrototypeCreator&lt; T &gt;::PrototypeCreator</definition>
+        <argsstring>(T *prototype)</argsstring>
+        <name>PrototypeCreator</name>
+        <param>
+          <type>T *</type>
+          <declname>prototype</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GenericCreator.cc" line="37" column="1" bodyfile="src/GenericCreator.cc" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classPrototypeCreator_1abd7061e565987226d957855f98fb6bc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>T *</type>
+        <definition>virtual T* PrototypeCreator&lt; T &gt;::Create</definition>
+        <argsstring>()</argsstring>
+        <name>Create</name>
+        <reimplements refid="classAbstractFactory_1a6c6ad72b50ce9e534f54145cd8ba4f47">Create</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GenericCreator.cc" line="39" column="11" bodyfile="src/GenericCreator.cc" bodystart="39" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AbstractFactory&lt; T &gt;</label>
+        <link refid="classAbstractFactory"/>
+      </node>
+      <node id="1">
+        <label>PrototypeCreator&lt; T &gt;</label>
+        <link refid="classPrototypeCreator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AbstractFactory&lt; T &gt;</label>
+        <link refid="classAbstractFactory"/>
+      </node>
+      <node id="1">
+        <label>PrototypeCreator&lt; T &gt;</label>
+        <link refid="classPrototypeCreator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/GenericCreator.cc" line="32" column="1" bodyfile="src/GenericCreator.cc" bodystart="31" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classPrototypeCreator_1abd7061e565987226d957855f98fb6bc2" prot="public" virt="virtual"><scope>PrototypeCreator</scope><name>Create</name></member>
+      <member refid="classPrototypeCreator_1a28119d5d09dbbf22154c4dbf876097d3" prot="private" virt="non-virtual"><scope>PrototypeCreator</scope><name>proto</name></member>
+      <member refid="classPrototypeCreator_1af11e1a6eff1e0d0a879ecc0ed632ae5f" prot="public" virt="non-virtual"><scope>PrototypeCreator</scope><name>PrototypeCreator</name></member>
+      <member refid="classPrototypeCreator_1ad0d32c2d51be57184e61a4016783e5f0" prot="public" virt="non-virtual"><scope>PrototypeCreator</scope><name>PrototypeCreator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

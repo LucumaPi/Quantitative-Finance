@@ -4,9 +4,8 @@
 //
 //
 // (C) Datasim Education BV 1998 - 2005
-
-#ifndef Payoff_hh
-#define Payoff_hh
+#ifndef Payoff_HH
+#define Payoff_HH
 
 class Payoff
 {
@@ -23,4 +22,4 @@ public:
 	virtual double payoff(double S) const = 0; // For a given spot price
 };
 
-#endif // Payoff_hh
+#endif // Payoff_HH

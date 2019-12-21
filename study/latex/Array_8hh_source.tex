@@ -1,0 +1,50 @@
+\hypertarget{Array_8hh_source}{}\doxysection{Array.\+hh}
+\label{Array_8hh_source}\index{include/duffy/Array.hh@{include/duffy/Array.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Array.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Array class. It uses an ArrayStructure for the actual storage.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// This class acts like a kind of adapter class since it defines a common }}
+\DoxyCodeLine{00005 \textcolor{comment}{// interface for different array structures like normal arrays and}}
+\DoxyCodeLine{00006 \textcolor{comment}{// sparse arrays. The array structure to use is given as template argument.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2006}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef Array\_HH}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#define Array\_HH}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "ArrayStructure.hh"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "FullArray.hh"}}
+\DoxyCodeLine{00015 \textcolor{comment}{// Default structure is FullArray with default allocator. Default integral type is int.}}
+\DoxyCodeLine{00016 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I=\textcolor{keywordtype}{int}, \textcolor{keyword}{class} S = FullArray<V> >}
+\DoxyCodeLine{\Hypertarget{Array_8hh_source_l00017}\mbox{\hyperlink{classArray}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classArray}{Array}}}
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020     S m\_structure;          \textcolor{comment}{// The array structure}}
+\DoxyCodeLine{00021     I m\_start;              \textcolor{comment}{// The start index}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024     \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classArray}{Array}}();                           \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classArray}{Array}}(I size);                 \textcolor{comment}{// Constructor with size. Start index=1.}}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classArray}{Array}}(I size, I start);        \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00028     \mbox{\hyperlink{classArray}{Array}}(I size, I start, \textcolor{keyword}{const} V\& value);    \textcolor{comment}{// Size, start and value}}
+\DoxyCodeLine{00029     \mbox{\hyperlink{classArray}{Array}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& source);     \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00030     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classArray}{Array}}();                  \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00033     I MinIndex() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the minimum index}}
+\DoxyCodeLine{00034     I MaxIndex() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the maximum index}}
+\DoxyCodeLine{00035     I Size() \textcolor{keyword}{const};                         \textcolor{comment}{// The size of the array}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00038     \textcolor{keyword}{virtual} V\& operator [] (I index);               \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00039     \textcolor{keyword}{virtual} \textcolor{keyword}{const} V\& operator [] (I index) \textcolor{keyword}{const};   \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& source);}
+\DoxyCodeLine{00042 \};}
+\DoxyCodeLine{00043 \textcolor{preprocessor}{\#include "../../src/Array.cc"}}
+\DoxyCodeLine{00044 \textcolor{preprocessor}{\#endif  // Array\_HH}}
+
+\end{DoxyCode}

@@ -1,0 +1,78 @@
+\hypertarget{ExcelMechanisms_8hh_source}{}\doxysection{Excel\+Mechanisms.\+hh}
+\label{ExcelMechanisms_8hh_source}\index{include/duffy/ExcelMechanisms.hh@{include/duffy/ExcelMechanisms.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ExcelMechanisms.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Useful functions for use with Excel.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef ExcelMechanisms\_HH}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define ExcelMechanisms\_HH}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "Vector.hh"}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "NumericMatrix.hh"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "Tensor.hh"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "StringConversions.hh"}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{comment}{// Print one line graph}}
+\DoxyCodeLine{00019 \textcolor{keywordtype}{void} printOneExcel(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& x,                       }
+\DoxyCodeLine{00020                     \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& functionResult,}
+\DoxyCodeLine{00021                     \textcolor{keyword}{const} std::string\& title = std::string(\textcolor{stringliteral}{"Title"}), }
+\DoxyCodeLine{00022                     \textcolor{keyword}{const} std::string\& horizontal = std::string(\textcolor{stringliteral}{"X"}), }
+\DoxyCodeLine{00023                     \textcolor{keyword}{const} std::string\& vertical = std::string(\textcolor{stringliteral}{"Y"}),}
+\DoxyCodeLine{00024                     \textcolor{keyword}{const} std::string\& legend = std::string(\textcolor{stringliteral}{"*"}));}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{comment}{// Print multiple lines on one graph}}
+\DoxyCodeLine{00028 \textcolor{keywordtype}{void} printInExcel(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& x,                        \textcolor{comment}{// X array}}
+\DoxyCodeLine{00029                     \textcolor{keyword}{const} std::list<std::string>\& labels,                   \textcolor{comment}{// Names of each vector}}
+\DoxyCodeLine{00030                     \textcolor{keyword}{const} std::list<\mbox{\hyperlink{classVector}{Vector<double, long>}} >\& functionResult, \textcolor{comment}{// The list of Y values}}
+\DoxyCodeLine{00031                     \textcolor{keyword}{const} std::string\& title = std::string(\textcolor{stringliteral}{"Title"}),}
+\DoxyCodeLine{00032                     \textcolor{keyword}{const} std::string\& horizontal = std::string(\textcolor{stringliteral}{"X"}), }
+\DoxyCodeLine{00033                     \textcolor{keyword}{const} std::string\& vertical = std::string(\textcolor{stringliteral}{"Y"}));}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 \textcolor{comment}{// Print a matrix as cell}}
+\DoxyCodeLine{00036 \textcolor{keywordtype}{void} printMatrixInExcel(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix,}
+\DoxyCodeLine{00037                  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& xarr, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& yarr, }
+\DoxyCodeLine{00038                  \textcolor{keyword}{const} std::string\& SheetName = std::string(\textcolor{stringliteral}{"Matrix"}));}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 \textcolor{comment}{// Print a matrix's rows as line graphs}}
+\DoxyCodeLine{00041 \textcolor{keywordtype}{void} printMatrixChartsInExcel(\textcolor{keywordtype}{int} freq, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix,}
+\DoxyCodeLine{00042                  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& rowAarr, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& colArr,}
+\DoxyCodeLine{00043                  \textcolor{keyword}{const} std::string\& SheetName = std::string(\textcolor{stringliteral}{"Matrix"}));}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{comment}{// Print an array of matrices}}
+\DoxyCodeLine{00046 \textcolor{keywordtype}{void} printTensorInExcel(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<double, long>}}\& tensor, \textcolor{keywordtype}{long} freq = 1);}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{comment}{// Print each matrix in tensor with associated row/column labels}}
+\DoxyCodeLine{00049 \textcolor{keywordtype}{void} printTensorInExcel(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<double, long>}}\& tensor,}
+\DoxyCodeLine{00050                         \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& xarr, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& yarr, }
+\DoxyCodeLine{00051                         \textcolor{keyword}{const} std::string\& SheetName = std::string(\textcolor{stringliteral}{"Tensor"}), \textcolor{keywordtype}{long} freq = 1);}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \textcolor{comment}{// Print the vector that is the difference of two vectors}}
+\DoxyCodeLine{00054 \textcolor{keywordtype}{void} printDifferenceInExcel(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& x,  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& y1,                 }
+\DoxyCodeLine{00055                     \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& y2,}
+\DoxyCodeLine{00056                     \textcolor{keyword}{const} std::string\& title = std::string(\textcolor{stringliteral}{"Difference"}), }
+\DoxyCodeLine{00057                     \textcolor{keyword}{const} std::string\& horizontal = std::string(\textcolor{stringliteral}{"X Values"}), }
+\DoxyCodeLine{00058                     \textcolor{keyword}{const} std::string\& vertical = std::string(\textcolor{stringliteral}{"Y Values"}),}
+\DoxyCodeLine{00059                     \textcolor{keyword}{const} std::string\& legend = std::string(\textcolor{stringliteral}{"*"}), \textcolor{keywordtype}{long} freq = 1);}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061 \textcolor{comment}{// Differences of two matrices}}
+\DoxyCodeLine{00062 \textcolor{keywordtype}{void} printMatrixDifferenceInExcel(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix1,}
+\DoxyCodeLine{00063                         \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix2,}
+\DoxyCodeLine{00064                  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& xarr, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& yarr, }
+\DoxyCodeLine{00065                  \textcolor{keyword}{const} std::string\& SheetName = std::string(\textcolor{stringliteral}{"Matrix"}));}
+\DoxyCodeLine{00066 \textcolor{comment}{// Print discrete values of a continuous function on interval [A,B]}}
+\DoxyCodeLine{00067 \textcolor{keywordtype}{void} printDiscreteFunctionValues(\textcolor{keywordtype}{double} (*f) (\textcolor{keywordtype}{double} x), \textcolor{keywordtype}{double} A, \textcolor{keywordtype}{double} \mbox{\hyperlink{classB}{B}},\textcolor{keywordtype}{long} nSteps, }
+\DoxyCodeLine{00068                     \textcolor{keyword}{const} std::string\& title, }
+\DoxyCodeLine{00069                     \textcolor{keyword}{const} std::string\& horizontal,  \textcolor{keyword}{const} std::string\& vertical,}
+\DoxyCodeLine{00070                     \textcolor{keyword}{const} std::string\& legend);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

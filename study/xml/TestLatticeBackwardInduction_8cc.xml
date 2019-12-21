@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="TestLatticeBackwardInduction_8cc" kind="file" language="C++">
+    <compoundname>TestLatticeBackwardInduction.cc</compoundname>
+    <includes refid="Lattice_8hh" local="no">duffy/Lattice.hh</includes>
+    <includes refid="Vector_8hh" local="no">duffy/Vector.hh</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Vector.hh</label>
+        <link refid="Vector_8hh_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ArrayStructure.hh</label>
+        <link refid="ArrayStructure_8hh_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>duffy/Lattice.hh</label>
+        <link refid="Lattice_8hh_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Array.hh</label>
+        <link refid="Array_8hh_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tests/TestLatticeBackwardInduction.cc</label>
+        <link refid="TestLatticeBackwardInduction_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="6">
+        <label>cstddef</label>
+      </node>
+      <node id="7">
+        <label>FullArray.hh</label>
+        <link refid="FullArray_8hh_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceBackwardInduction">BackwardInduction</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="TestLatticeBackwardInduction_8cc_1a4550ecc74ce63528016936d22984f853" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, int &gt;</type>
+        <definition>Vector&lt;double, int&gt; mycreateTerminalVector</definition>
+        <argsstring>(const Lattice&lt; double, int, 2 &gt; &amp;lattice)</argsstring>
+        <name>mycreateTerminalVector</name>
+        <param>
+          <type>const <ref refid="classLattice" kindref="compound">Lattice</ref>&lt; double, int, 2 &gt; &amp;</type>
+          <declname>lattice</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/TestLatticeBackwardInduction.cc" line="50" column="8" bodyfile="tests/TestLatticeBackwardInduction.cc" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="TestLatticeBackwardInduction_8cc_1ab6a22f5d618d1f2aef45ab03a2aed1de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double mynodeValue</definition>
+        <argsstring>(double upper, double lower)</argsstring>
+        <name>mynodeValue</name>
+        <param>
+          <type>double</type>
+          <declname>upper</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lower</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/TestLatticeBackwardInduction.cc" line="56" column="8" bodyfile="tests/TestLatticeBackwardInduction.cc" bodystart="56" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="TestLatticeBackwardInduction_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/TestLatticeBackwardInduction.cc" line="62" column="5" bodyfile="tests/TestLatticeBackwardInduction.cc" bodystart="62" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>testLatticeBackwardInduction.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Using<sp/>namespaces<sp/>to<sp/>create<sp/>different<sp/>a<sp/>backward<sp/>induction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>algorithm<sp/>for<sp/>a<sp/>binomial<sp/>tree.<sp/>The<sp/>algorithm<sp/>is<sp/>similar<sp/>to<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>template<sp/>method<sp/>pattern;<sp/>we<sp/>have<sp/>two<sp/>function<sp/>with<sp/>variant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>behaviours<sp/>and<sp/>these<sp/>must<sp/>be<sp/>initialised<sp/>in<sp/>a<sp/>main<sp/>program.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>2005-1-4<sp/>DD<sp/>Kick-off<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>2005-1-5<sp/>DD<sp/>might<sp/>be<sp/>OVERKILL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2005</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Lattice.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Vector.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">BackwardInduction</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Functions<sp/>to<sp/>be<sp/>overridden</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, int&gt;</ref><sp/>(*createTerminalVector)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/>lattice);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>a<sp/>node<sp/>value<sp/>from<sp/>two<sp/>upper<sp/>ones</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>double<sp/>(*nodeValue)(double,<sp/>upper,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lower);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Code<sp/>here<sp/>corresponds<sp/>to<sp/>backward<sp/>induction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>taverse(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/>lattice)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ei<sp/>=<sp/>lattice.MaxIndex();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lattice[ei]<sp/>=<sp/>createTerminalVector(lattice);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Loop<sp/>from<sp/>the<sp/>max<sp/>index<sp/>to<sp/>the<sp/>start<sp/>(min)<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>lattice.MaxIndex()<sp/>-<sp/>1;<sp/>n<sp/>&gt;=<sp/>lattice.MinIndex();<sp/>n--)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>std::copy[j].MinIndex();<sp/>i<sp/>&lt;=<sp/>std::copy[j].MaxIndex();<sp/>i++)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>copy[n][i]<sp/>=<sp/>discounting<sp/>*<sp/>(p<sp/>*<sp/>copy[n+1][i+1]<sp/>+<sp/>(1.0-p)<sp/>*<sp/>copy[n+1][i]);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lattice[n][i]<sp/>=<sp/>nodeValue(std::copy[n+1][i+1],<sp/>std::copy[n+1][i])</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>si<sp/>=<sp/>lattice.MinIndex();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lattice[si][lattice[si].MinIndex()];</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><ref refid="classVector" kindref="compound">Vector&lt;double, int&gt;</ref><sp/>mycreateTerminalVector(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/>lattice)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>mynodeValue(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>upper,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lower)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref><sp/>lattice;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>BackwardInduction::createTerminalVector<sp/>=<sp/>mycreateTerminalVector(lattice);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>upper<sp/>=<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lower<sp/>=<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>BackwardInduction::nodeValue<sp/>=<sp/>mynodeValue(uppper,<sp/>lower,<sp/>lattice);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">BackwardInduction;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>taverse(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/>lattice);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="tests/TestLatticeBackwardInduction.cc"/>
+  </compounddef>
+</doxygen>

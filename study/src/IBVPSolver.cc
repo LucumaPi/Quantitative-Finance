@@ -21,7 +21,7 @@
 #define IBVPSOLVER_CC
 
 #include <duffy/IBVPSolver.hh>
-#include <duffy/ArrayMechanisms.hh>
+#include <duffy/NumericMatrix.hh>
 
 void IBVPFDM::initMesh(long NSteps, long JSteps)
 { // Utility function to initialise the discrete meshes
@@ -46,19 +46,19 @@ void IBVPFDM::initMesh(long NSteps, long JSteps)
 //	print(xarr);
 
 	// Array in t direction
-	tarr = Vector<double, long>(N+1,1);
+	tarr = Vector<double, long>(N + 1,1);
 	tarr[tarr.MinIndex()] = 0.0;
 
 	for (long n = tarr.MinIndex()+1; n <= tarr.MaxIndex(); n++)
 	{
-		tarr[n] = tarr[n-1] + k;
+		tarr[n] = tarr[n - 1] + k;
 	}
 
 	vecOld = Vector<double, long> (xarr.Size(), xarr.MinIndex());
 	vecNew = Vector<double, long> (xarr.Size(), xarr.MinIndex());
 
 	// Rows are in time, columns in space
-	res = NumericMatrix<double, long> (N+1, J+1, 1, 1);	
+	res = NumericMatrix<double, long> (N + 1, J + 1, 1, 1);	
 }
 
 void IBVPFDM::initIC()
@@ -95,10 +95,10 @@ IBVPFDM:: IBVPFDM()
 
 IBVPFDM:: IBVPFDM(IBVP& source, long NSteps, long JSteps)
 {
-	// Decide which contonuous problem to use
+	// Decide which continuous problem to use
 	ibvp = &source;
 
-	// Crearte a mesh
+	// Create a mesh
 	initMesh(NSteps, JSteps);
 
 	// Initiase from the payoff function
@@ -117,10 +117,8 @@ IBVPFDM::~IBVPFDM()
 IBVPFDM& IBVPFDM::operator = (const  IBVPFDM& source)
 {
 	// Not allowed
-
 	return *this;
 }
-
 
 NumericMatrix<double, long>& IBVPFDM::result()
 { // The result of the calculation

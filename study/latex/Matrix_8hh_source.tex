@@ -1,0 +1,61 @@
+\hypertarget{Matrix_8hh_source}{}\doxysection{Matrix.\+hh}
+\label{Matrix_8hh_source}\index{include/duffy/Matrix.hh@{include/duffy/Matrix.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Matrix.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Matrix class. It uses an MatrixStructure for the actual storage.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// This class acts like a kind of adapter class since it defines a common interface}}
+\DoxyCodeLine{00005 \textcolor{comment}{// for different matrix structures like normal matrices and sparse matrices.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// The matrix structure to use is given as template argument.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2006}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef Matrix\_hh}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#define Matrix\_hh}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "FullMatrix.hh"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "Array.hh"}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{comment}{// Default structure is FullArray with default allocator. Default integral type is int.}}
+\DoxyCodeLine{00017 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I = \textcolor{keywordtype}{int}, \textcolor{keyword}{class} S = FullMatrix<V> >}
+\DoxyCodeLine{\Hypertarget{Matrix_8hh_source_l00018}\mbox{\hyperlink{classMatrix}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{classMatrix}{Matrix}}}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021     S m\_structure;          \textcolor{comment}{// The array structure}}
+\DoxyCodeLine{00022     I m\_rowstart;           \textcolor{comment}{// The row start index}}
+\DoxyCodeLine{00023     I m\_columnstart;        \textcolor{comment}{// The column start index}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{comment}{// Redundant data }}
+\DoxyCodeLine{00026     I nr, nc;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029     \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classMatrix}{Matrix}}();                                                                         \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classMatrix}{Matrix}}(I rows, I columns);                                                \textcolor{comment}{// Constructor with size. Start index=0.}}
+\DoxyCodeLine{00032     \mbox{\hyperlink{classMatrix}{Matrix}}(I rows, I columns, I rowStart, I columnStart);     \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00033     \mbox{\hyperlink{classMatrix}{Matrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& source);                     \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00034     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classMatrix}{Matrix}}();                                                                    \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00037     I MinRowIndex() \textcolor{keyword}{const};              \textcolor{comment}{// Return the minimum row index}}
+\DoxyCodeLine{00038     I MaxRowIndex() \textcolor{keyword}{const};              \textcolor{comment}{// Return the maximum row index}}
+\DoxyCodeLine{00039     I MinColumnIndex() \textcolor{keyword}{const};           \textcolor{comment}{// Return the minimum column index}}
+\DoxyCodeLine{00040     I MaxColumnIndex() \textcolor{keyword}{const};           \textcolor{comment}{// Return the maximum column index}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     I Rows() \textcolor{keyword}{const};             \textcolor{comment}{// The number of rows}}
+\DoxyCodeLine{00043     I Columns() \textcolor{keyword}{const};              \textcolor{comment}{// The number of columns}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{keywordtype}{void} Row(I row, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val); \textcolor{comment}{// Replace row}}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{void} Column(I column, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val);   \textcolor{comment}{// Replace column}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00049     \textcolor{keyword}{const} V\& operator () (I row, I column) \textcolor{keyword}{const};   \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00050     V\& operator () (I row, I column);               \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& source);}
+\DoxyCodeLine{00053 \};}
+\DoxyCodeLine{00054 \textcolor{preprocessor}{\#include "../../src/Matrix.cc"}}
+\DoxyCodeLine{00055 \textcolor{preprocessor}{\#endif  // Matrix\_HH}}
+
+\end{DoxyCode}

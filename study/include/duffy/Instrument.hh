@@ -108,8 +108,6 @@ public:
 		result->SMax = dSMax;
 
 		return result;
-
 	}
 };
-
 #endif

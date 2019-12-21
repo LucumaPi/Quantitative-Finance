@@ -1,0 +1,97 @@
+\hypertarget{Vector_8hh_source}{}\doxysection{Vector.\+hh}
+\label{Vector_8hh_source}\index{include/duffy/Vector.hh@{include/duffy/Vector.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Vector.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Vector class is an array with mathematical functions.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2006}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#ifndef VECTOR\_HH}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#define VECTOR\_HH}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "Array.hh"}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{comment}{// Default structure is FullArray with default allocator. Default integral type is int.}}
+\DoxyCodeLine{00013 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I=\textcolor{keywordtype}{int}, \textcolor{keyword}{class} S = FullArray<V> >}
+\DoxyCodeLine{\Hypertarget{Vector_8hh_source_l00014}\mbox{\hyperlink{classVector}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classVector}{Vector}}: \textcolor{keyword}{public} \mbox{\hyperlink{classArray}{Array}}<V, I, S>}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018     \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00019     \mbox{\hyperlink{classVector}{Vector}}();                             \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00020     \mbox{\hyperlink{classVector}{Vector}}(I size);                           \textcolor{comment}{// Constructor with size. Start index=1.}}
+\DoxyCodeLine{00021     \mbox{\hyperlink{classVector}{Vector}}(I size, I start);              \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00022     \mbox{\hyperlink{classVector}{Vector}}(I size, I start, \textcolor{keyword}{const} V\& val);    \textcolor{comment}{// Constructor with size \& start index + value}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classVector}{Vector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& source); \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classVector}{Vector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& source);   \textcolor{comment}{// Copy with an array as argument}}
+\DoxyCodeLine{00025     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classVector}{Vector}}();                        \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// Return the sum of the elements}}
+\DoxyCodeLine{00028     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00029     \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& source);}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{classVector_a4d3ac08839678685a6cc72df5d629588}{operator -\/ }}() \textcolor{keyword}{const};      \textcolor{comment}{// Unary minus}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{keyword}{template} <\textcolor{keyword}{class} V1, \textcolor{keyword}{class} I1, \textcolor{keyword}{class} S1>}
+\DoxyCodeLine{00033     \textcolor{keyword}{friend} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} operator + (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V1, I1, S1>}}\& v,\textcolor{keyword}{const} V1\& a);   \textcolor{comment}{// Add v to every element}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keyword}{template} <\textcolor{keyword}{class} V1, \textcolor{keyword}{class} I1, \textcolor{keyword}{class} S1>}
+\DoxyCodeLine{00036     \textcolor{keyword}{friend} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} operator + (\textcolor{keyword}{const} V1\& a,  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V1, I1, S1>}}\& v);}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{keyword}{template} <\textcolor{keyword}{class} V1, \textcolor{keyword}{class} I1, \textcolor{keyword}{class} S1>}
+\DoxyCodeLine{00039     \textcolor{keyword}{friend} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{classVector_a4d3ac08839678685a6cc72df5d629588}{operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V1, I1, S1>}}\& v, \textcolor{keyword}{const} V1\& a);   \textcolor{comment}{// Subtract v from every element}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keyword}{template} <\textcolor{keyword}{class} V1, \textcolor{keyword}{class} I1, \textcolor{keyword}{class} S1>}
+\DoxyCodeLine{00042     \textcolor{keyword}{friend} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{classVector_a4d3ac08839678685a6cc72df5d629588}{operator -\/ }}(\textcolor{keyword}{const} V1\& a,   \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V1, I1, S1>}}\& v);}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{keyword}{template} <\textcolor{keyword}{class} V1, \textcolor{keyword}{class} I1, \textcolor{keyword}{class} S1>}
+\DoxyCodeLine{00045     \textcolor{keyword}{friend} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} operator * (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V1, I1, S1>}}\& v, }
+\DoxyCodeLine{00046                                         \textcolor{keyword}{const} V1\& a);   \textcolor{comment}{// Multiply every element by v}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{keyword}{template} <\textcolor{keyword}{class} V1, \textcolor{keyword}{class} I1, \textcolor{keyword}{class} S1>}
+\DoxyCodeLine{00049     \textcolor{keyword}{friend} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} operator * (\textcolor{keyword}{const} V1\& a,  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V1, I1, S1>}}\& v);}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} operator / (\textcolor{keyword}{const} V\& a) \textcolor{keyword}{const};   \textcolor{comment}{// Divide every element by a}}
+\DoxyCodeLine{00052     }
+\DoxyCodeLine{00053     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} operator + (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v) \textcolor{keyword}{const};  \textcolor{comment}{// Add the elements}}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{classVector_a4d3ac08839678685a6cc72df5d629588}{operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v) \textcolor{keyword}{const};   \textcolor{comment}{// Subtract the elements}}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} operator * (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v) \textcolor{keyword}{const};  \textcolor{comment}{// Multiply the elements}}
+\DoxyCodeLine{00056     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} operator / (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v) \textcolor{keyword}{const};  \textcolor{comment}{// Divide the elements}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& operator += (\textcolor{keyword}{const} V\& v);   \textcolor{comment}{// Add v to every element}}
+\DoxyCodeLine{00059     \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& operator -\/= (\textcolor{keyword}{const} V\& v);   \textcolor{comment}{// Subtract v from every element}}
+\DoxyCodeLine{00060     \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& operator *= (\textcolor{keyword}{const} V\& v);   \textcolor{comment}{// Multiply every element by v}}
+\DoxyCodeLine{00061     \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& operator /= (\textcolor{keyword}{const} V\& v);   \textcolor{comment}{// Divide every element by v}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& operator += (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v);\textcolor{comment}{// Add the elements}}
+\DoxyCodeLine{00064     \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& operator -\/= (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v);\textcolor{comment}{// Subtract the elements}}
+\DoxyCodeLine{00065     \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& operator *= (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v);\textcolor{comment}{// Multiply the elements}}
+\DoxyCodeLine{00066 \};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068 \textcolor{comment}{// Some 'command' type functions that are useful in some applications. Most functions}}
+\DoxyCodeLine{00069 \textcolor{comment}{// are void and this promotes Efficiency. Usability is also enhanced. }}
+\DoxyCodeLine{00070 \textcolor{comment}{// }}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} scale(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a); \textcolor{comment}{// v * a}}
+\DoxyCodeLine{00073 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} scale(\textcolor{keyword}{const} V\& a, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v); \textcolor{comment}{// a * v}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} add(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a); \textcolor{comment}{// v + a}}
+\DoxyCodeLine{00076 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} V\& a, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v); \textcolor{comment}{// a + v}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} }
+\DoxyCodeLine{00079             scaleAndOffset(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a, \textcolor{keyword}{const} V\& b); \textcolor{comment}{// (a * v) + b   }}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} subtract(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a); \textcolor{comment}{// v -\/ a}}
+\DoxyCodeLine{00082 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} subtract(\textcolor{keyword}{const} V\& a, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v); \textcolor{comment}{// a -\/ v}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} divide(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a); \textcolor{comment}{// v / a}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} toggleSign(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v); \textcolor{comment}{// -\/v (unary minus)}}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} assign(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& RHS); \textcolor{comment}{// All elements = RHS}}
+\DoxyCodeLine{00090 \textcolor{preprocessor}{\#include "../../src/Vector.cc"}}
+\DoxyCodeLine{00091 \textcolor{preprocessor}{\#endif  // VECTOR\_HH}}
+
+\end{DoxyCode}

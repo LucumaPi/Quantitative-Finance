@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSimplePropertySet">
+<title>SimplePropertySet&lt; N, V &gt; Class Template Reference</title>
+<indexterm><primary>SimplePropertySet&lt; N, V &gt;</primary></indexterm>
+Inheritance diagram for SimplePropertySet&lt; N, V &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classSimplePropertySet__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for SimplePropertySet&lt; N, V &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classSimplePropertySet__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1ae7e2bc706a3ded16c053d59d7a1343be"/>typedef std::map&lt; N, V &gt;::iterator <emphasis role="strong">iterator</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1aab3d4fc3315979035be3d5c64c42d425"/>typedef std::map&lt; N, V &gt;::const_iterator <emphasis role="strong">const_iterator</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a023467dd53d24dc7ef5cb6b4d88aa7ce"/><emphasis role="strong">SimplePropertySet</emphasis> (const N &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1adda400272ff7f24ba0e4c3fab9e39f6b"/><emphasis role="strong">SimplePropertySet</emphasis> (const <link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt; N, V &gt; &amp;source)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a8b45e771b3efadcf2ccbcc3fdaa12f5e"/><emphasis role="strong">SimplePropertySet</emphasis> (const N &amp;name, const <link linkend="_classSet">Set</link>&lt; N &gt; &amp;keySet)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1af0c72b2e6a39f6d2d02ce443afa01de5"/>iterator <emphasis role="strong">Begin</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a6802c214360692877d33fa97de489c81"/>const_iterator <emphasis role="strong">Begin</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a6d3c8a051b7c6846508898c8375a2cfd"/>iterator <emphasis role="strong">End</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a5d6159e4afdef3815a3caa7840867f3c"/>const_iterator <emphasis role="strong">End</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1ab593364b7d18f4fa2639abc75c188d0c"/>int <emphasis role="strong">Size</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1adee2b738f8853c056e40c72384a442bf"/>N <emphasis role="strong">operator()</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a7674e0f5c6b6a747aa85d54bc52d1ab7"/>N <emphasis role="strong">name</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a6ba0b7ab8d9122312489ca390c4bf403"/><link linkend="_classSet">Set</link>&lt; N &gt; &amp; <emphasis role="strong">definingSet</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a1267fc2078252c8f5cde01bc082c7abb"/>bool <emphasis role="strong">hasProperty</emphasis> (const N &amp;search_name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a897907f8f6c0d4a68e6fadf6d6538773"/>V <emphasis role="strong">value</emphasis> (const N &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1ae7b7f24763a55b11e9e21cec05390965"/>void <emphasis role="strong">operator()</emphasis> (const N &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a6bf75b5e081e0a8dea7535811349e081"/>void <emphasis role="strong">value</emphasis> (const N &amp;name, const V &amp;value)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a0416ff1b79646897fc4f6d7019f8ed63"/>void <emphasis role="strong">value</emphasis> (const <link linkend="_classProperty">Property</link>&lt; N, V &gt; &amp;prop)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a10d2ad72a513d2b6727113b4d9ec0f78"/>void <emphasis role="strong">ClearAll</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca"/>void <emphasis role="strong">add</emphasis> (const <link linkend="_classProperty">Property</link>&lt; N, V &gt; &amp;p)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1ae25d67b8dc28ce9af587b769bbe1dfe3"/>void <emphasis role="strong">add</emphasis> (const N &amp;key, const V &amp;value)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1ade559928631fd263ac69aef08f4017d2"/>void <emphasis role="strong">remove</emphasis> (const N &amp;key)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a88c4fef57ef8e5279d28f6a13a10076c"/>void <emphasis role="strong">remove</emphasis> (const <link linkend="_classProperty">Property</link>&lt; N, V &gt; &amp;prop)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a3f605fbec62d086f9d5cd3fd204bb9e9"/><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt; N, V &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt; N, V &gt; &amp;source)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSimplePropertySet_1a5310d09ff2e7065a119dbf1368179cef"/><link linkend="_classPropertyThing">PropertyThing</link>&lt; N, V &gt; * <emphasis role="strong">Copy</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/duffy/SimplePropertySet.hhsrc/SimplePropertySet.cc</section>

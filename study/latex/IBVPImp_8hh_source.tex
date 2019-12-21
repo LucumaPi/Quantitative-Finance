@@ -1,0 +1,40 @@
+\hypertarget{IBVPImp_8hh_source}{}\doxysection{I\+B\+V\+P\+Imp.\+hh}
+\label{IBVPImp_8hh_source}\index{include/duffy/IBVPImp.hh@{include/duffy/IBVPImp.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ibvpImp.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Implementation class for one-\/factor initial boundary}}
+\DoxyCodeLine{00004 \textcolor{comment}{// value problems.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// Note that all functions are default inline for better}}
+\DoxyCodeLine{00007 \textcolor{comment}{// performance, ease of understanding and for the simple}}
+\DoxyCodeLine{00008 \textcolor{comment}{// reason that most of the functions are one-\/liners in }}
+\DoxyCodeLine{00009 \textcolor{comment}{// the main.}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{// (C) Datasim Component Technology BV 2000-\/2006}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#ifndef IBVPIMP\_HH}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#define IBVPIMP\_HH}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{IBVPImp_8hh_source_l00017}\mbox{\hyperlink{classIBVPImp}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classIBVPImp}{IBVPImp}}}
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// Selector functions}}
+\DoxyCodeLine{00022     \textcolor{comment}{// Coefficients of parabolic second order operator}}
+\DoxyCodeLine{00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} diffusion(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0; \textcolor{comment}{// Coefficient of second derivative}}
+\DoxyCodeLine{00024     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} convection(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0; \textcolor{comment}{// Coefficient of first derivative}}
+\DoxyCodeLine{00025     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} zeroterm(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;  \textcolor{comment}{// Coefficient of zero derivative}}
+\DoxyCodeLine{00026     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} RHS(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;       \textcolor{comment}{// Inhomogeneous forcing term}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{comment}{// Boundary and initial conditions}}
+\DoxyCodeLine{00029     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} BCL(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;         \textcolor{comment}{// Left hand boundary condition}}
+\DoxyCodeLine{00030     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} BCR(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;     \textcolor{comment}{// Right hand boundary condition}}
+\DoxyCodeLine{00031     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} IC(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const} = 0;      \textcolor{comment}{// Initial condition}}
+\DoxyCodeLine{00032 \};}
+\DoxyCodeLine{00033 \textcolor{preprocessor}{\#include "../../src/IBVPImp.cc"}}
+\DoxyCodeLine{00034 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

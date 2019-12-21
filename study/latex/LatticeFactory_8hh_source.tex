@@ -1,0 +1,179 @@
+\hypertarget{LatticeFactory_8hh_source}{}\doxysection{Lattice\+Factory.\+hh}
+\label{LatticeFactory_8hh_source}\index{include/duffy/LatticeFactory.hh@{include/duffy/LatticeFactory.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// LatticeFactory.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Abstract Factory for creating binomial lattice. Note}}
+\DoxyCodeLine{00004 \textcolor{comment}{// that there is a built-\/in Template Method pattern built}}
+\DoxyCodeLine{00005 \textcolor{comment}{// in here.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef LatticeFactory\_hpp}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#define LatticeFactory\_hpp}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "Lattice.hh"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{LatticeFactory_8hh_source_l00016}\mbox{\hyperlink{classLatticeFactory}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019         \textcolor{keywordtype}{double} u;}
+\DoxyCodeLine{00020         \textcolor{keywordtype}{double} d;}
+\DoxyCodeLine{00021         \textcolor{keywordtype}{double} p;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keywordtype}{double} s;}
+\DoxyCodeLine{00024         \textcolor{keywordtype}{double} r;}
+\DoxyCodeLine{00025         \textcolor{keywordtype}{double} k;}
+\DoxyCodeLine{00026     }
+\DoxyCodeLine{00027         \textcolor{keyword}{enum} Type \{Additive, Multiplicative\};}
+\DoxyCodeLine{00028         Type bType;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030         \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta)}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             s = vol;}
+\DoxyCodeLine{00033             r = interest;}
+\DoxyCodeLine{00034             k = delta;}
+\DoxyCodeLine{00035             bType = Multiplicative;}
+\DoxyCodeLine{00036         \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         \textcolor{comment}{// Useful function}}
+\DoxyCodeLine{00040         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} updateLattice}
+\DoxyCodeLine{00041             (\mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& source, \textcolor{keywordtype}{double} rootValue)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00042 \textcolor{keyword}{        }\{   \textcolor{comment}{// Find the depth of the lattice; this a Template Method Pattern}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \textcolor{keywordtype}{int} si = source.MinIndex();}
+\DoxyCodeLine{00045             source[si][source[si].MinIndex()] = rootValue;}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047             \textcolor{comment}{// Loop from the min index to the end index}}
+\DoxyCodeLine{00048             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = source.MinIndex() + 1; j <= source.MaxIndex(); j++)}
+\DoxyCodeLine{00049             \{}
+\DoxyCodeLine{00050                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = source[j].MinIndex(); i < source[j].MaxIndex(); i++)}
+\DoxyCodeLine{00051                 \{}
+\DoxyCodeLine{00052                     source[j][i] = d * source[j-\/1][i];}
+\DoxyCodeLine{00053                     source[j][i+1] = u * source[j-\/1][i];}
+\DoxyCodeLine{00054                 \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056             \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         \}}
+\DoxyCodeLine{00059 \};}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061   }
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{\Hypertarget{LatticeFactory_8hh_source_l00063}\mbox{\hyperlink{classCRRFactory}{00063}} \textcolor{keyword}{class }\mbox{\hyperlink{classCRRFactory}{CRRFactory}}: \textcolor{keyword}{public} \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}}
+\DoxyCodeLine{00064 \{}
+\DoxyCodeLine{00065 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066     \mbox{\hyperlink{classCRRFactory}{CRRFactory}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta) }
+\DoxyCodeLine{00067         : \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}(vol, interest, delta)}
+\DoxyCodeLine{00068     \{}
+\DoxyCodeLine{00069         \textcolor{keywordtype}{double} e = std::exp((r)*k);}
+\DoxyCodeLine{00070         \textcolor{keywordtype}{double} sr = std::sqrt(std::exp(vol*vol*k) -\/ 1.0);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073         u = e * (1.0 + sr);}
+\DoxyCodeLine{00074         d = e * (1.0 -\/ sr);}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         \textcolor{keywordtype}{double} discounting = std::exp(-\/ r*k);}
+\DoxyCodeLine{00077     }
+\DoxyCodeLine{00078         p = 0.5;}
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081 \};}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{\Hypertarget{LatticeFactory_8hh_source_l00083}\mbox{\hyperlink{classJRFactory}{00083}} \textcolor{keyword}{class }\mbox{\hyperlink{classJRFactory}{JRFactory}}: \textcolor{keyword}{public} \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}}
+\DoxyCodeLine{00084 \{}
+\DoxyCodeLine{00085 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00086     \mbox{\hyperlink{classJRFactory}{JRFactory}}(\textcolor{keywordtype}{double} s, \textcolor{keywordtype}{double} r, \textcolor{keywordtype}{double} k) }
+\DoxyCodeLine{00087         : \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}(s, r, k)}
+\DoxyCodeLine{00088     \{}
+\DoxyCodeLine{00089         \textcolor{keywordtype}{double} k2 = std::sqrt(k);}
+\DoxyCodeLine{00090         u = std::exp(s * k2);}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092         d = 1.0/u;}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094         p = 0.5 + ((r -\/ 0.5 * s * s) * k2 * 0.5) / s;}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     \}}
+\DoxyCodeLine{00097 \};}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{\Hypertarget{LatticeFactory_8hh_source_l00099}\mbox{\hyperlink{classEQPFactory}{00099}} \textcolor{keyword}{class }\mbox{\hyperlink{classEQPFactory}{EQPFactory}}: \textcolor{keyword}{public} \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}}
+\DoxyCodeLine{00100 \{}
+\DoxyCodeLine{00101 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00102     \mbox{\hyperlink{classEQPFactory}{EQPFactory}}(\textcolor{keywordtype}{double} s, \textcolor{keywordtype}{double} r, \textcolor{keywordtype}{double} k) }
+\DoxyCodeLine{00103         : \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}(s, r, k)}
+\DoxyCodeLine{00104     \{}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     bType = Additive;}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108     \textcolor{comment}{// Needed for additive method: page 19 Clewlow/Strickland formula 2.17 }}
+\DoxyCodeLine{00109     \textcolor{comment}{// "v" is "nu" here, for "v" see  page 17 formula 2.14}}
+\DoxyCodeLine{00110     \textcolor{keywordtype}{double} nu = r -\/ 0.5 * s * s;}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     \textcolor{keywordtype}{double} a = nu * k;}
+\DoxyCodeLine{00113     \textcolor{keywordtype}{double} b = 0.5 * std::sqrt( (4.0 * s * s * k) -\/ (3.0 * nu * nu * k * k) );}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{comment}{// EQP parameters: page 19 formula 2.17}}
+\DoxyCodeLine{00116     u = 0.5 * a + b;                                                        }
+\DoxyCodeLine{00117     d = 1.5 * a -\/ b;}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119     p = 0.5;}
+\DoxyCodeLine{00120     }
+\DoxyCodeLine{00121     \textcolor{comment}{// pd = 0.5 = (1-\/p)}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123     \}}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126 \};}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{\Hypertarget{LatticeFactory_8hh_source_l00129}\mbox{\hyperlink{classTRGFactory}{00129}} \textcolor{keyword}{class }\mbox{\hyperlink{classTRGFactory}{TRGFactory}}: \textcolor{keyword}{public} \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}}
+\DoxyCodeLine{00130 \{}
+\DoxyCodeLine{00131 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00132     \mbox{\hyperlink{classTRGFactory}{TRGFactory}}(\textcolor{keywordtype}{double} s, \textcolor{keywordtype}{double} r, \textcolor{keywordtype}{double} k) }
+\DoxyCodeLine{00133         : \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}(s, r, k)}
+\DoxyCodeLine{00134     \{}
+\DoxyCodeLine{00135     }
+\DoxyCodeLine{00136     bType = Additive;}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138     \textcolor{comment}{// Needed for additive method: page 19 formula 2.19 }}
+\DoxyCodeLine{00139     \textcolor{comment}{// "v" is "nu" here, for "v" see  page 17 formula 2.14}}
+\DoxyCodeLine{00140     \textcolor{keywordtype}{double} nu = r -\/ 0.5 * s * s;}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142     \textcolor{keywordtype}{double} nudt = nu * k;}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144     \textcolor{comment}{// TRG parameters: page 19 formula 2.19}}
+\DoxyCodeLine{00145     u = std::sqrt( s * s * k + nudt * nudt );}
+\DoxyCodeLine{00146     d = -\/ u;}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148     p = 0.5 * (1.0 + (nudt/u) );}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     \}}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153 \};}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{\Hypertarget{LatticeFactory_8hh_source_l00156}\mbox{\hyperlink{classModCRRFactory}{00156}} \textcolor{keyword}{class }\mbox{\hyperlink{classModCRRFactory}{ModCRRFactory}}: \textcolor{keyword}{public} \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}}
+\DoxyCodeLine{00157 \{}
+\DoxyCodeLine{00158 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00159     \mbox{\hyperlink{classModCRRFactory}{ModCRRFactory}}(\textcolor{keywordtype}{double} s, \textcolor{keywordtype}{double} r, \textcolor{keywordtype}{double} k, \textcolor{keywordtype}{double} S, \textcolor{keywordtype}{double} K, \textcolor{keywordtype}{int} N) }
+\DoxyCodeLine{00160         : \mbox{\hyperlink{classLatticeFactory}{LatticeFactory}}(s, r, k)}
+\DoxyCodeLine{00161     \{}
+\DoxyCodeLine{00162         }
+\DoxyCodeLine{00163         \textcolor{keywordtype}{double} KN = std::log(K/S) / double (N);}
+\DoxyCodeLine{00164         \textcolor{keywordtype}{double} VN = s * std::sqrt(k);}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166         u = std::exp(KN + VN);}
+\DoxyCodeLine{00167         d = std::exp(KN -\/ VN);}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169         p = (std::exp(r * k) -\/ d) / (u -\/ d);}
+\DoxyCodeLine{00170     \}}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172 \};}
+\DoxyCodeLine{00173 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

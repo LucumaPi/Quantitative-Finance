@@ -12,21 +12,21 @@
 
 // #include <duffy/IBVP.hh>
 // #include <duffy/IBVPSolver.hh>
-#include <duffy/BSIBVPImp.hh>
+// #include <duffy/BSIBVPImp.hh>
 // #include <duffy/EEulerIBVPSolver.hh>
 // #include <duffy/IEulerIBVPSolver.hh>
 // #include <duffy/ArrayMechanisms.hh>
 // #include <duffy/MatrixMechanisms.hh>
 #include <duffy/Instrument.hh>
-// // #include <duffy/ExcelMechanisms.hh>
+// #include <duffy/ExcelMechanisms.hh>
 #include <duffy/DatasimException.hh>
 
 InstrumentFactory* GetInstrumentFactory()
 {
-	//cout << "Instrument Factory : 1=Console ";
-	//int exStyle = 1; cin >> exStyle;
+	std::cout << "Instrument Factory : 1=Console ";
+	int exStyle = 1; std::cin >> exStyle;
 	// Only 1 factory in this version, like model T
-	//if(exStyle == 1)
+	if(exStyle == 1)
 		return new ConsoleInstrumentFactory;
 	
 }

@@ -1,0 +1,31 @@
+\hypertarget{Payoff_8hh_source}{}\doxysection{Payoff.\+hh}
+\label{Payoff_8hh_source}\index{include/duffy/Payoff.hh@{include/duffy/Payoff.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Payoff.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Base class for Payoffs.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 1998 -\/ 2005}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#ifndef Payoff\_HH}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#define Payoff\_HH}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{Payoff_8hh_source_l00010}\mbox{\hyperlink{classPayoff}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classPayoff}{Payoff}}}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013     \textcolor{comment}{// Constructors and destructor}}
+\DoxyCodeLine{00014     \mbox{\hyperlink{classPayoff}{Payoff}}();                         \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classPayoff}{Payoff}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPayoff}{Payoff}}\& source);       \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00016     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classPayoff}{Payoff}}();                    \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00017     }
+\DoxyCodeLine{00018     \textcolor{comment}{// Operator overloading}}
+\DoxyCodeLine{00019     \mbox{\hyperlink{classPayoff}{Payoff}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classPayoff}{Payoff}}\& source);  \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// Pure virtual payoff function}}
+\DoxyCodeLine{00022     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S) \textcolor{keyword}{const} = 0; \textcolor{comment}{// For a given spot price}}
+\DoxyCodeLine{00023 \};}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025 \textcolor{preprocessor}{\#endif // Payoff\_HH}}
+
+\end{DoxyCode}

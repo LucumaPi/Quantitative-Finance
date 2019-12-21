@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classAbstractFactory" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>AbstractFactory</compoundname>
+    <derivedcompoundref refid="classHeapCreator" prot="public" virt="non-virtual">HeapCreator&lt; T &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classPrototypeCreator" prot="public" virt="non-virtual">PrototypeCreator&lt; T &gt;</derivedcompoundref>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classAbstractFactory_1a6c6ad72b50ce9e534f54145cd8ba4f47" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>T *</type>
+        <definition>virtual T* AbstractFactory&lt; T &gt;::Create</definition>
+        <argsstring>()=0</argsstring>
+        <name>Create</name>
+        <reimplementedby refid="classHeapCreator_1a44904c9903236de51ee2b8f64ac542bc">Create</reimplementedby>
+        <reimplementedby refid="classPrototypeCreator_1abd7061e565987226d957855f98fb6bc2">Create</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GenericCreator.cc" line="17" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AbstractFactory&lt; T &gt;</label>
+        <link refid="classAbstractFactory"/>
+      </node>
+      <node id="3">
+        <label>PrototypeCreator&lt; T &gt;</label>
+        <link refid="classPrototypeCreator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>HeapCreator&lt; T &gt;</label>
+        <link refid="classHeapCreator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AbstractFactory&lt; T &gt;</label>
+        <link refid="classAbstractFactory"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/GenericCreator.cc" line="15" column="1" bodyfile="src/GenericCreator.cc" bodystart="14" bodyend="19"/>
+    <listofallmembers>
+      <member refid="classAbstractFactory_1a6c6ad72b50ce9e534f54145cd8ba4f47" prot="public" virt="pure-virtual"><scope>AbstractFactory</scope><name>Create</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

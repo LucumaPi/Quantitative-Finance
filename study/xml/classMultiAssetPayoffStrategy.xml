@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classMultiAssetPayoffStrategy" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>MultiAssetPayoffStrategy</compoundname>
+    <derivedcompoundref refid="classBasketStrategy" prot="public" virt="non-virtual">BasketStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classBestWorstStrategy" prot="public" virt="non-virtual">BestWorstStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classDualStrikeStrategy" prot="public" virt="non-virtual">DualStrikeStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classExchangeStrategy" prot="public" virt="non-virtual">ExchangeStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classOutPerformanceStrategy" prot="public" virt="non-virtual">OutPerformanceStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classQuantoStrategy" prot="public" virt="non-virtual">QuantoStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classQuotientStrategy" prot="public" virt="non-virtual">QuotientStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classRainbowStrategy" prot="public" virt="non-virtual">RainbowStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classSpreadStrategy" prot="public" virt="non-virtual">SpreadStrategy</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double MultiAssetPayoffStrategy::payoff</definition>
+        <argsstring>(double S1, double S2) const =0</argsstring>
+        <name>payoff</name>
+        <reimplementedby refid="classExchangeStrategy_1a5c96119a7eb988b67bfe3eba1aef1bd1">payoff</reimplementedby>
+        <reimplementedby refid="classRainbowStrategy_1ab2ef5cfa977258e831b102521ddef28e">payoff</reimplementedby>
+        <reimplementedby refid="classBasketStrategy_1a00fe40f08a80a69ae62c0134b350e02f">payoff</reimplementedby>
+        <reimplementedby refid="classBasketStrategy_1a00fe40f08a80a69ae62c0134b350e02f">payoff</reimplementedby>
+        <reimplementedby refid="classBestWorstStrategy_1a9f6f1a30e538d7c4ad18ea59bf808460">payoff</reimplementedby>
+        <reimplementedby refid="classQuotientStrategy_1a763e8600d4099546f0bd3e30eff53219">payoff</reimplementedby>
+        <reimplementedby refid="classQuantoStrategy_1a63d76c65a3c648b9ee08d74cde31fac1">payoff</reimplementedby>
+        <reimplementedby refid="classSpreadStrategy_1a2aa6d1c5c04c165e790771b82d2cceea">payoff</reimplementedby>
+        <reimplementedby refid="classDualStrikeStrategy_1a2b0c936589516174633636d12ea05e18">payoff</reimplementedby>
+        <reimplementedby refid="classOutPerformanceStrategy_1ab7f1f4f9607b5acb710f0e1252c3b5c7">payoff</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>S1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>S2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="21" column="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>ExchangeStrategy</label>
+        <link refid="classExchangeStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QuantoStrategy</label>
+        <link refid="classQuantoStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>OutPerformanceStrategy</label>
+        <link refid="classOutPerformanceStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MultiAssetPayoffStrategy</label>
+        <link refid="classMultiAssetPayoffStrategy"/>
+      </node>
+      <node id="9">
+        <label>RainbowStrategy</label>
+        <link refid="classRainbowStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>SpreadStrategy</label>
+        <link refid="classSpreadStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>DualStrikeStrategy</label>
+        <link refid="classDualStrikeStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>BestWorstStrategy</label>
+        <link refid="classBestWorstStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>BasketStrategy</label>
+        <link refid="classBasketStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuotientStrategy</label>
+        <link refid="classQuotientStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MultiAssetPayoffStrategy</label>
+        <link refid="classMultiAssetPayoffStrategy"/>
+      </node>
+    </collaborationgraph>
+    <location file="MultiAssetPayoffStrategy.hh" line="19" column="1" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="18" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8" prot="public" virt="pure-virtual"><scope>MultiAssetPayoffStrategy</scope><name>payoff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

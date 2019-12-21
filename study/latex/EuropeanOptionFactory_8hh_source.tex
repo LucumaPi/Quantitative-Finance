@@ -1,0 +1,54 @@
+\hypertarget{EuropeanOptionFactory_8hh_source}{}\doxysection{European\+Option\+Factory.\+hh}
+\label{EuropeanOptionFactory_8hh_source}\index{include/duffy/EuropeanOptionFactory.hh@{include/duffy/EuropeanOptionFactory.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// EuropeanOptionFactory.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Classes for creating Eurpean Options. This is}}
+\DoxyCodeLine{00004 \textcolor{comment}{// a Factory Method pattern.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef EuropeanOptionFactory\_HH}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define EuropeanOptionFactory\_HH}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "Option.hh"}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{EuropeanOptionFactory_8hh_source_l00014}\mbox{\hyperlink{classEuropeanOptionFactory}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classEuropeanOptionFactory}{EuropeanOptionFactory}}}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017     \textcolor{keyword}{virtual} \mbox{\hyperlink{classOption}{Option}}* create() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00018 \};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{EuropeanOptionFactory_8hh_source_l00020}\mbox{\hyperlink{classConsoleEuropeanOptionFactory}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classConsoleEuropeanOptionFactory}{ConsoleEuropeanOptionFactory}}: \textcolor{keyword}{public} \mbox{\hyperlink{classEuropeanOptionFactory}{EuropeanOptionFactory}}}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \mbox{\hyperlink{classOption}{Option}}* create()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00025 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{00026         std::cout << \textcolor{stringliteral}{"\(\backslash\)n*** Parameters for option object ***\(\backslash\)n"};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \mbox{\hyperlink{classOption}{Option}}* opt = \textcolor{keyword}{new} \mbox{\hyperlink{classOption}{Option}};}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030         std::cout << \textcolor{stringliteral}{"Strike: "};}
+\DoxyCodeLine{00031         std::cin >> opt-\/>K;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         std::cout << \textcolor{stringliteral}{"Volatility: "};}
+\DoxyCodeLine{00034         std::cin >> opt-\/>sig;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         std::cout << \textcolor{stringliteral}{"Interest rate: "};}
+\DoxyCodeLine{00037         std::cin >> opt-\/>r;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         std::cout << \textcolor{stringliteral}{"Expiry date: "};}
+\DoxyCodeLine{00040         std::cin >> opt-\/>T;}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         std::cout << \textcolor{stringliteral}{"1. Call, 2. Put: "};}
+\DoxyCodeLine{00043         std::cin >> opt-\/>type;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045         \textcolor{keywordflow}{return} opt;}
+\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{00047 \};}
+\DoxyCodeLine{00048 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

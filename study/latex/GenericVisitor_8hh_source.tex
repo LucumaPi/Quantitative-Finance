@@ -1,0 +1,30 @@
+\hypertarget{GenericVisitor_8hh_source}{}\doxysection{Generic\+Visitor.\+hh}
+\label{GenericVisitor_8hh_source}\index{include/duffy/GenericVisitor.hh@{include/duffy/GenericVisitor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// GenericVisitor.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Generic Visitor}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "GenericComposite.hh"} \textcolor{comment}{// New!! template class}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keyword}{template} <\textcolor{keyword}{class} Context, \textcolor{keyword}{class} Name>}
+\DoxyCodeLine{\Hypertarget{GenericVisitor_8hh_source_l00009}\mbox{\hyperlink{classGenericVisitor}{00009}}     \textcolor{keyword}{class }\mbox{\hyperlink{classGenericVisitor}{GenericVisitor}}}
+\DoxyCodeLine{00010 \{}
+\DoxyCodeLine{00011 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{void} visit(\mbox{\hyperlink{classGenericComposite}{GenericComposite<Context>}}\& context)}
+\DoxyCodeLine{00013     \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \mbox{\hyperlink{classGenericComposite}{GenericComposite<Context>::iterator}} it;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{comment}{// Send all shapes in the composite to the visitor}}
+\DoxyCodeLine{00018     \textcolor{keywordflow}{for} (it=sc.Begin(); it!=sc.End(); it++)}
+\DoxyCodeLine{00019     \{}
+\DoxyCodeLine{00020         (*it)-\/>accept(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022     }
+\DoxyCodeLine{00023     \}}
+\DoxyCodeLine{00024 \};}
+
+\end{DoxyCode}

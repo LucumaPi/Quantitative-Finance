@@ -1,0 +1,119 @@
+\hypertarget{classIBVPFDM}{}\doxysection{I\+B\+V\+P\+F\+DM Class Reference}
+\label{classIBVPFDM}\index{IBVPFDM@{IBVPFDM}}
+
+
+Inheritance diagram for I\+B\+V\+P\+F\+DM\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classIBVPFDM__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for I\+B\+V\+P\+F\+DM\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classIBVPFDM__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_aa371f76cfb9f2b95ba24d6bbf1291353}\label{classIBVPFDM_aa371f76cfb9f2b95ba24d6bbf1291353}} 
+{\bfseries I\+B\+V\+P\+F\+DM} (\mbox{\hyperlink{classIBVP}{I\+B\+VP}} \&source, long N\+Steps, long J\+Steps)
+\item 
+\mbox{\Hypertarget{classIBVPFDM_ab78e1e05532a2359e674a4a729314b9a}\label{classIBVPFDM_ab78e1e05532a2359e674a4a729314b9a}} 
+\mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \& {\bfseries result} ()
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a7172f8bc3eebc85940ece135065f96ba}\label{classIBVPFDM_a7172f8bc3eebc85940ece135065f96ba}} 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries X\+Values} () const
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a95e702453d0b896062b632498e40438c}\label{classIBVPFDM_a95e702453d0b896062b632498e40438c}} 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries T\+Values} () const
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}\label{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}} 
+virtual void {\bfseries calculate\+BC} ()=0
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}\label{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}} 
+virtual void {\bfseries calculate} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a7614c8116ab9c08f6ccfb97dc6c1ff61}\label{classIBVPFDM_a7614c8116ab9c08f6ccfb97dc6c1ff61}} 
+{\bfseries I\+B\+V\+P\+F\+DM} (const \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \&source)
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a3102b8d994991d993193a35df3d6c5ee}\label{classIBVPFDM_a3102b8d994991d993193a35df3d6c5ee}} 
+\mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \& {\bfseries operator=} (const \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \&source)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}\label{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}} 
+\mbox{\hyperlink{classIBVP}{I\+B\+VP}} $\ast$ {\bfseries ibvp}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_aac47fc0313cfd94d1c76185636f01e09}\label{classIBVPFDM_aac47fc0313cfd94d1c76185636f01e09}} 
+long {\bfseries N}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}\label{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}} 
+double {\bfseries k}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}\label{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}} 
+long {\bfseries J}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a20ec2ca54a8768c22ae5579021bcbc21}\label{classIBVPFDM_a20ec2ca54a8768c22ae5579021bcbc21}} 
+double {\bfseries h}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}\label{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}} 
+double {\bfseries h2}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a7dc9a42c9aa5e88a0ce91bb2381083ef}\label{classIBVPFDM_a7dc9a42c9aa5e88a0ce91bb2381083ef}} 
+double {\bfseries DN}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_aadd87ba406920f5c4441d26108568e7b}\label{classIBVPFDM_aadd87ba406920f5c4441d26108568e7b}} 
+double {\bfseries DJ}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_aad9a3178a48c9a131dd577cea5490495}\label{classIBVPFDM_aad9a3178a48c9a131dd577cea5490495}} 
+double {\bfseries D\+JJ}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}\label{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}} 
+double {\bfseries tprev}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}\label{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}} 
+double {\bfseries tnow}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}\label{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}} 
+long {\bfseries current\+Index}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a11c7f409e503aec453107f69460d4d5b}\label{classIBVPFDM_a11c7f409e503aec453107f69460d4d5b}} 
+long {\bfseries max\+Index}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a8852681de171f76e8351a07c6bb3fe8c}\label{classIBVPFDM_a8852681de171f76e8351a07c6bb3fe8c}} 
+\mbox{\hyperlink{classMesher}{Mesher}} {\bfseries m}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_acde024de54dc2124db544dc6424365c7}\label{classIBVPFDM_acde024de54dc2124db544dc6424365c7}} 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries xarr}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_aecdb91332047c215ff4548e897f8e2d8}\label{classIBVPFDM_aecdb91332047c215ff4548e897f8e2d8}} 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries tarr}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}\label{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}} 
+\mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ {\bfseries res}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_aa060a346aafe2c9d6f563e86211652f9}\label{classIBVPFDM_aa060a346aafe2c9d6f563e86211652f9}} 
+long {\bfseries n}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}\label{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}} 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries vec\+Old}
+\item 
+\mbox{\Hypertarget{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}\label{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}} 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries vec\+New}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/duffy/I\+B\+V\+P\+Solver.\+hh\item 
+src/I\+B\+V\+P\+Solver.\+cc\end{DoxyCompactItemize}

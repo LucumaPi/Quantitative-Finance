@@ -1,0 +1,45 @@
+\hypertarget{ComplexArray_8hh_source}{}\doxysection{Complex\+Array.\+hh}
+\label{ComplexArray_8hh_source}\index{include/duffy/ComplexArray.hh@{include/duffy/ComplexArray.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ComplexArray.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Simple Complex Array class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV  1995-\/2003}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#ifndef ComplexArray\_HH}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#define ComplexArray\_HH}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "Complex.hh"}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{ComplexArray_8hh_source_l00012}\mbox{\hyperlink{classComplexArray}{00012}} \textcolor{keyword}{class }\mbox{\hyperlink{classComplexArray}{ComplexArray}}}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classComplex}{Complex}}* arr;}
+\DoxyCodeLine{00016     \textcolor{keywordtype}{int} size;}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     \mbox{\hyperlink{classComplexArray}{ComplexArray}}();}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classComplexArray}{ComplexArray}}(\textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classComplexArray}{ComplexArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplexArray}{ComplexArray}}\& source);}
+\DoxyCodeLine{00025     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classComplexArray}{ComplexArray}}();}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00028     \textcolor{keywordtype}{int} Size() \textcolor{keyword}{const};}
+\DoxyCodeLine{00029     \textcolor{keywordtype}{int} MinIndex() \textcolor{keyword}{const};   \textcolor{comment}{// Smallest index in array}}
+\DoxyCodeLine{00030     \textcolor{keywordtype}{int} MaxIndex() \textcolor{keyword}{const};   \textcolor{comment}{// Largest index in array}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00033     \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& operator[](\textcolor{keywordtype}{int} index) \textcolor{keyword}{const};  \textcolor{comment}{// Index operator for const ComplexArrays}}
+\DoxyCodeLine{00034     \mbox{\hyperlink{classComplex}{Complex}}\& operator[](\textcolor{keywordtype}{int} index);              \textcolor{comment}{// Index operator for non const ComplexArrays}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \mbox{\hyperlink{classComplexArray}{ComplexArray}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classComplexArray}{ComplexArray}}\& source);}
+\DoxyCodeLine{00037 \};}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 \textcolor{preprocessor}{\#endif // ComplexArray\_HH}}
+
+\end{DoxyCode}

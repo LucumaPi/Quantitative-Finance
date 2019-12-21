@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classMathErr" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>MathErr</compoundname>
+    <derivedcompoundref refid="classGeneralMathErr" prot="public" virt="non-virtual">GeneralMathErr</derivedcompoundref>
+    <derivedcompoundref refid="classOutOfBounds" prot="public" virt="non-virtual">OutOfBounds</derivedcompoundref>
+    <derivedcompoundref refid="classZeroDivide" prot="public" virt="non-virtual">ZeroDivide</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMathErr_1adaf3cf7f8d16ffa250df210b17926457" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string MathErr::mess</definition>
+        <argsstring></argsstring>
+        <name>mess</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MathErr.cc" line="18" column="13" bodyfile="src/MathErr.cc" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMathErr_1afc8c8847648415a7d4baafef1f60545f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string MathErr::meth</definition>
+        <argsstring></argsstring>
+        <name>meth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MathErr.cc" line="19" column="13" bodyfile="src/MathErr.cc" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMathErr_1a92ae6f6640c3979720b743a62f106d95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MathErr::MathErr</definition>
+        <argsstring>()</argsstring>
+        <name>MathErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MathErr.cc" line="21" column="1" bodyfile="src/MathErr.cc" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classMathErr_1a2be93a878a77577c7c1ea9ec4f13e802" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MathErr::MathErr</definition>
+        <argsstring>(const std::string &amp;message, const std::string &amp;method)</argsstring>
+        <name>MathErr</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>method</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MathErr.cc" line="26" column="1" bodyfile="src/MathErr.cc" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classMathErr_1a02dab9085b81ab4ad1e1dd6ce3179e74" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string MathErr::Message</definition>
+        <argsstring>() const</argsstring>
+        <name>Message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MathErr.cc" line="32" column="13" bodyfile="src/MathErr.cc" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classMathErr_1a63e28b64f06194252a7723ef7d349148" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string MathErr::Method</definition>
+        <argsstring>() const</argsstring>
+        <name>Method</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MathErr.cc" line="33" column="13" bodyfile="src/MathErr.cc" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classMathErr_1a420f29972f9a21d2a9d8d3a90d0c844a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>virtual std::vector&lt;std::string&gt; MathErr::MessageDump</definition>
+        <argsstring>() const =0</argsstring>
+        <name>MessageDump</name>
+        <reimplementedby refid="classZeroDivide_1a0281c677520a3f336cd811c13c4ab17c">MessageDump</reimplementedby>
+        <reimplementedby refid="classOutOfBounds_1a7cf4254b246eb938886b6e9a549a5a00">MessageDump</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MathErr.cc" line="35" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classMathErr_1a08430e27bd7a6a09cfc5debdef3e8a65" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MathErr::print</definition>
+        <argsstring>() const</argsstring>
+        <name>print</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MathErr.cc" line="37" column="14" bodyfile="src/MathErr.cc" bodystart="37" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>GeneralMathErr</label>
+        <link refid="classGeneralMathErr"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ZeroDivide</label>
+        <link refid="classZeroDivide"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OutOfBounds</label>
+        <link refid="classOutOfBounds"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MathErr</label>
+        <link refid="classMathErr"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MathErr</label>
+        <link refid="classMathErr"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/MathErr.cc" line="16" column="1" bodyfile="src/MathErr.cc" bodystart="15" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classMathErr_1a92ae6f6640c3979720b743a62f106d95" prot="public" virt="non-virtual"><scope>MathErr</scope><name>MathErr</name></member>
+      <member refid="classMathErr_1a2be93a878a77577c7c1ea9ec4f13e802" prot="public" virt="non-virtual"><scope>MathErr</scope><name>MathErr</name></member>
+      <member refid="classMathErr_1adaf3cf7f8d16ffa250df210b17926457" prot="private" virt="non-virtual"><scope>MathErr</scope><name>mess</name></member>
+      <member refid="classMathErr_1a02dab9085b81ab4ad1e1dd6ce3179e74" prot="public" virt="non-virtual"><scope>MathErr</scope><name>Message</name></member>
+      <member refid="classMathErr_1a420f29972f9a21d2a9d8d3a90d0c844a" prot="public" virt="pure-virtual"><scope>MathErr</scope><name>MessageDump</name></member>
+      <member refid="classMathErr_1afc8c8847648415a7d4baafef1f60545f" prot="private" virt="non-virtual"><scope>MathErr</scope><name>meth</name></member>
+      <member refid="classMathErr_1a63e28b64f06194252a7723ef7d349148" prot="public" virt="non-virtual"><scope>MathErr</scope><name>Method</name></member>
+      <member refid="classMathErr_1a08430e27bd7a6a09cfc5debdef3e8a65" prot="public" virt="virtual"><scope>MathErr</scope><name>print</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

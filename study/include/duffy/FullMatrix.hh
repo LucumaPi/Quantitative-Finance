@@ -5,8 +5,8 @@
 //
 // (C) Datasim Component Technology 1999
 
-#ifndef FullMatrix_hh
-#define FullMatrix_hh
+#ifndef FullMatrix_HH
+#define FullMatrix_HH
 
 #include "MatrixStructure.hh"
 #include "FullArray.hh"
@@ -15,7 +15,6 @@ template <class TValue, class TA=std::allocator<TValue> >
 class FullMatrix: public MatrixStructure<TValue>
 {
 	FullArray<FullArray<TValue, TA>, std::allocator<FullArray<TValue, TA> > > m_structure;
-
 	// Redundant data 
 	std::size_t nr, nc;
 
@@ -39,4 +38,4 @@ public:
 	FullMatrix<TValue, TA>& operator = (const FullMatrix<TValue, TA>& source);
 };
 #include "../../src/FullMatrix.cc"
-#endif	// FullMatrix_hh
+#endif	// FullMatrix_HH

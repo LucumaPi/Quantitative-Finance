@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="BinomialLatticeStrategy_8hh" kind="file" language="C++">
+    <compoundname>BinomialLatticeStrategy.hh</compoundname>
+    <includes refid="Lattice_8hh" local="yes">Lattice.hh</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="BinomialLatticeStrategy_8cc" local="yes">../../src/BinomialLatticeStrategy.cc</includes>
+    <includedby refid="BinomialLatticeStrategy_8cc" local="no">src/BinomialLatticeStrategy.cc</includedby>
+    <includedby refid="BinomialMethod_8hh" local="yes">include/duffy/BinomialMethod.hh</includedby>
+    <includedby refid="director_8cc" local="no">tests/director.cc</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>Vector.hh</label>
+        <link refid="Vector_8hh_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ArrayStructure.hh</label>
+        <link refid="ArrayStructure_8hh_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>cmath</label>
+      </node>
+      <node id="2">
+        <label>Lattice.hh</label>
+        <link refid="Lattice_8hh_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Array.hh</label>
+        <link refid="Array_8hh_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>cstddef</label>
+      </node>
+      <node id="1">
+        <label>include/duffy/BinomialLatticeStrategy.hh</label>
+        <link refid="BinomialLatticeStrategy_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>FullArray.hh</label>
+        <link refid="FullArray_8hh_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/duffy/BinomialLatticeStrategy.hh</label>
+        <link refid="BinomialLatticeStrategy_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/duffy/BinomialMethod.hh</label>
+        <link refid="BinomialMethod_8hh_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classBinomialLatticeStrategy" prot="public">BinomialLatticeStrategy</innerclass>
+    <innerclass refid="classCRRStrategy" prot="public">CRRStrategy</innerclass>
+    <innerclass refid="classPadeCRRStrategy" prot="public">PadeCRRStrategy</innerclass>
+    <innerclass refid="classJRStrategy" prot="public">JRStrategy</innerclass>
+    <innerclass refid="classPadeJRStrategy" prot="public">PadeJRStrategy</innerclass>
+    <innerclass refid="classEQPStrategy" prot="public">EQPStrategy</innerclass>
+    <innerclass refid="classTRGStrategy" prot="public">TRGStrategy</innerclass>
+    <innerclass refid="classModCRRStrategy" prot="public">ModCRRStrategy</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="BinomialLatticeStrategy_8hh_1add398b812ca9f586ea244ce5a9dc8c99" prot="public" static="no" strong="no">
+        <type></type>
+        <name>BinomialType</name>
+        <enumvalue id="BinomialLatticeStrategy_8hh_1add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c" prot="public">
+          <name>Additive</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BinomialLatticeStrategy_8hh_1add398b812ca9f586ea244ce5a9dc8c99a8609fa7d8218524a919c5f648dd308b4" prot="public">
+          <name>Multiplicative</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/BinomialLatticeStrategy.hh" line="21" column="18" bodyfile="include/duffy/BinomialLatticeStrategy.hh" bodystart="21" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>BinomialLatticeStrategy.hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Strategy<sp/>pattern<sp/>for<sp/>creating<sp/>binomial<sp/>lattice.<sp/>Note</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>that<sp/>there<sp/>is<sp/>a<sp/>built-in<sp/>Template<sp/>Method<sp/>pattern<sp/>built</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>in<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>For<sp/>convenience<sp/>all<sp/>data<sp/>is<sp/>public<sp/>and<sp/>all<sp/>code<sp/>is<sp/>inline.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Furthermore,<sp/>classes<sp/>have<sp/>minimal<sp/>functionality.<sp/>We<sp/>can<sp/>make<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>production<sp/>code<sp/>from<sp/>this<sp/>at<sp/>a<sp/>later<sp/>stage.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2005-2006</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BinomialLatticeStrategy_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BinomialLatticeStrategy_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Lattice.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>BinomialType<sp/>{Additive,<sp/>Multiplicative};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classBinomialLatticeStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Based<sp/>on<sp/>Clewlow<sp/>and<sp/>Strickland<sp/>1998</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>u;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>s;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BinomialType<sp/>bType;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Useful<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateLattice</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/>source,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rootValue)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Public<sp/>inline<sp/>functions<sp/>for<sp/>normal<sp/>clients</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>downValue()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d;}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>upValue()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u;}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>probValue()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BinomialType<sp/>binomialType()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bType;}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classCRRStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCRRStrategy" kindref="compound">CRRStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCRRStrategy" kindref="compound">CRRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classPadeCRRStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPadeCRRStrategy" kindref="compound">PadeCRRStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPadeCRRStrategy" kindref="compound">PadeCRRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classJRStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classJRStrategy" kindref="compound">JRStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classJRStrategy" kindref="compound">JRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classPadeJRStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPadeJRStrategy" kindref="compound">PadeJRStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPadeJRStrategy" kindref="compound">PadeJRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="78" refid="classEQPStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEQPStrategy" kindref="compound">EQPStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEQPStrategy" kindref="compound">EQPStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classTRGStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTRGStrategy" kindref="compound">TRGStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTRGStrategy" kindref="compound">TRGStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classModCRRStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classModCRRStrategy" kindref="compound">ModCRRStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classModCRRStrategy" kindref="compound">ModCRRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/BinomialLatticeStrategy.cc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/duffy/BinomialLatticeStrategy.hh"/>
+  </compounddef>
+</doxygen>

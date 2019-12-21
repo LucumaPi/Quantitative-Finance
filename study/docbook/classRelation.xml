@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRelation">
+<title>Relation&lt; D, R &gt; Class Template Reference</title>
+<indexterm><primary>Relation&lt; D, R &gt;</primary></indexterm>
+Collaboration diagram for Relation&lt; D, R &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classRelation__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRelation_1af68e62c9cf16d7e2dff81950298dc778"/>typedef std::multimap&lt; <link linkend="_classD">D</link>, R &gt;::iterator <emphasis role="strong">iterator</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152"/>typedef std::multimap&lt; <link linkend="_classD">D</link>, R &gt;::const_iterator <emphasis role="strong">const_iterator</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a3377b326df68d54e890873e4800ac522"/>typedef std::multimap&lt; R, <link linkend="_classD">D</link> &gt;::iterator <emphasis role="strong">iteratorInv</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed"/>typedef std::multimap&lt; R, <link linkend="_classD">D</link> &gt;::const_iterator <emphasis role="strong">const_iteratorInv</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRelation_1aae3172d175b898c286d82916f191174c"/><emphasis role="strong">Relation</emphasis> (const <link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; &amp;domainSet, const <link linkend="_classSet">Set</link>&lt; R &gt; &amp;rangeSet)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1af344472b21613144a5db861d5d7f1437"/><emphasis role="strong">Relation</emphasis> (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp;r2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a3850e9c9495624d27e7813cc6e0dc763"/>void <emphasis role="strong">addDomainElement</emphasis> (const <link linkend="_classD">D</link> &amp;d)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a8bbc53597b97db93008a82d5b7ff54cb"/>void <emphasis role="strong">addRangeElement</emphasis> (const R &amp;r)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a30b7ecfff53dda24b5661215e63b3aeb"/>void <emphasis role="strong">removeDomainElement</emphasis> (const <link linkend="_classD">D</link> &amp;d)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1adf2bd0433cf8eb255e0b595d8502afad"/>void <emphasis role="strong">removeRangeElement</emphasis> (const R &amp;r)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a0d4bdc5ed486ffbef37ae2e489166834"/>void <emphasis role="strong">addRelation</emphasis> (const <link linkend="_classD">D</link> &amp;d, const R &amp;r)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a6fe1980b85fd0a4d59ed6ca3dbb52a2a"/>void <emphasis role="strong">removeRelation</emphasis> (const <link linkend="_classD">D</link> &amp;d)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1aac3d30ad0639de420ec0d496ca78696f"/>void <emphasis role="strong">ClearAll</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a401a214a659d7005d830e1d5573075ed"/>void <emphasis role="strong">ClearLinks</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a97ba3b83f8b68901191248b72b4d2a14"/>iterator <emphasis role="strong">Begin</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a8c1e8ca4826fced1256829a4779d9d8c"/>const_iterator <emphasis role="strong">Begin</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a068ca856b6e3b6bffd24117b405c01ae"/>iterator <emphasis role="strong">End</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1ab5fee537bbc5a9748881a6bbe25bbdd2"/>const_iterator <emphasis role="strong">End</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1ae76135e50d636a11e65658f44ffa0551"/>iteratorInv <emphasis role="strong">BeginInv</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1ad8fc7581e55ca1f3ae7c174e928d0bd8"/>const_iteratorInv <emphasis role="strong">BeginInv</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a2f972862a46f4d4fdd8f5e607f67a449"/>iteratorInv <emphasis role="strong">EndInv</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1ada45ef3553ea10f6ffeb01429d41112c"/>const_iteratorInv <emphasis role="strong">EndInv</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a6df4cdb10cd950968cf21fafdec4bb83"/>const <link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; &amp; <emphasis role="strong">DomainSet</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1ae7d89135038109b9ff7ef4c6590a112e"/>const <link linkend="_classSet">Set</link>&lt; R &gt; &amp; <emphasis role="strong">RangeSet</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1ab946892376f95ed757414e3fadc36f6d"/><link linkend="_classSet">Set</link>&lt; R &gt; <emphasis role="strong">range</emphasis> (const <link linkend="_classD">D</link> &amp;d)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a0ff46cfb436345dab2707b36b94a152a"/><link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; <emphasis role="strong">domain</emphasis> (const R &amp;r)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1af7602723b04b55522372eae5d70fff52"/>bool <emphasis role="strong">inDomain</emphasis> (const <link linkend="_classD">D</link> &amp;d) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1a8dd9f0681135740849f9dd20ae4ee13a"/>bool <emphasis role="strong">inRange</emphasis> (const <link linkend="_classD">D</link> &amp;r) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRelation_1ae4668d138c1cc9cfc607729a32b2772e"/><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp;r2)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/duffy/Relation.hhsrc/Relation.cc</section>

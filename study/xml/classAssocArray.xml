@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classAssocArray" kind="class" language="C++" prot="public">
+    <compoundname>AssocArray</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>V</declname>
+        <defname>V</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>AI</declname>
+        <defname>AI</defname>
+        <defval>std::string</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classAssocArray_1ac1d9fb1b2682577b76f6dae9e674711c" prot="public" static="no">
+        <type>std::map&lt; AI, V &gt;::iterator</type>
+        <definition>typedef std::map&lt;AI,V&gt;::iterator AssocArray&lt; V, AI &gt;::iterator</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="41" column="38" bodyfile="include/duffy/AssocArray.hh" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62" prot="public" static="no">
+        <type>std::map&lt; AI, V &gt;::const_iterator</type>
+        <definition>typedef std::map&lt;AI,V&gt;::const_iterator AssocArray&lt; V, AI &gt;::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>const_iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="42" column="44" bodyfile="include/duffy/AssocArray.hh" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classAssocArray_1aa1258904e58baa2cd3ccca721539fd50" prot="private" static="no" mutable="no">
+        <type>std::map&lt; AI, V &gt;</type>
+        <definition>std::map&lt;AI,V&gt; AssocArray&lt; V, AI &gt;::str</definition>
+        <argsstring></argsstring>
+        <name>str</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="23" column="10" bodyfile="include/duffy/AssocArray.hh" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAssocArray_1af4124cb425c9dc6da1b1119bcc29d9c7" prot="private" static="no" mutable="no">
+        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; AI &gt;</type>
+        <definition>Set&lt;AI&gt; AssocArray&lt; V, AI &gt;::keys</definition>
+        <argsstring></argsstring>
+        <name>keys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="26" column="5" bodyfile="include/duffy/AssocArray.hh" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classAssocArray_1a33a1d0f41fd0804939b454d02b8cace6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AssocArray&lt; V, AI &gt;::AssocArray</definition>
+        <argsstring>()</argsstring>
+        <name>AssocArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="30" column="1" bodyfile="src/AssocArray.cc" bodystart="21" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a44765aa15c3626fb21bd3a36b22ce684" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AssocArray&lt; V, AI &gt;::AssocArray</definition>
+        <argsstring>(const AssocArray&lt; V, AI &gt; &amp;arr2)</argsstring>
+        <name>AssocArray</name>
+        <param>
+          <type>const <ref refid="classAssocArray" kindref="compound">AssocArray</ref>&lt; V, AI &gt; &amp;</type>
+          <declname>arr2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="31" column="1" bodyfile="src/AssocArray.cc" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a750fa96eb605b58410e6daf9a3de73c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AssocArray&lt; V, AI &gt;::AssocArray</definition>
+        <argsstring>(const Set&lt; AI &gt; &amp;names, const V &amp;val)</argsstring>
+        <name>AssocArray</name>
+        <param>
+          <type>const <ref refid="classSet" kindref="compound">Set</ref>&lt; AI &gt; &amp;</type>
+          <declname>names</declname>
+        </param>
+        <param>
+          <type>const V &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="33" column="1" bodyfile="src/AssocArray.cc" bodystart="37" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a217b73381b1ab8ec100fd09d2acdc4b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classAssocArray" kindref="compound">AssocArray</ref>&lt; V, AI &gt; &amp;</type>
+        <definition>AssocArray&lt; V, AI &gt; &amp; AssocArray&lt; V, AI &gt;::operator=</definition>
+        <argsstring>(const AssocArray&lt; V, AI &gt; &amp;ass2)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classAssocArray" kindref="compound">AssocArray</ref>&lt; V, AI &gt; &amp;</type>
+          <declname>ass2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="35" column="12" bodyfile="src/AssocArray.cc" bodystart="49" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a8fac9fa310506a1319d71283e1dc54bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>V &amp;</type>
+        <definition>V &amp; AssocArray&lt; V, AI &gt;::operator[]</definition>
+        <argsstring>(const AI &amp;index)</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>const AI &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="38" column="11" bodyfile="src/AssocArray.cc" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>iterator</type>
+        <definition>AssocArray&lt; V, AI &gt;::iterator AssocArray&lt; V, AI &gt;::Begin</definition>
+        <argsstring>()</argsstring>
+        <name>Begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="45" column="14" bodyfile="src/AssocArray.cc" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a5d270d9533aec3d3bd5118ce699d26af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const_iterator</type>
+        <definition>AssocArray&lt; V, AI &gt;::const_iterator AssocArray&lt; V, AI &gt;::Begin</definition>
+        <argsstring>() const</argsstring>
+        <name>Begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="46" column="16" bodyfile="src/AssocArray.cc" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a600b9a0280c6f67380abc032dad1d755" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>iterator</type>
+        <definition>AssocArray&lt; V, AI &gt;::iterator AssocArray&lt; V, AI &gt;::End</definition>
+        <argsstring>()</argsstring>
+        <name>End</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="47" column="10" bodyfile="src/AssocArray.cc" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a5a974719d428e24d48e14ff5f43b73fc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const_iterator</type>
+        <definition>AssocArray&lt; V, AI &gt;::const_iterator AssocArray&lt; V, AI &gt;::End</definition>
+        <argsstring>() const</argsstring>
+        <name>End</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="48" column="20" bodyfile="src/AssocArray.cc" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1ab2ab7a330c94e3fb36060c9ec6e908ef" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long AssocArray&lt; V, AI &gt;::Size</definition>
+        <argsstring>() const</argsstring>
+        <name>Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="51" column="6" bodyfile="include/duffy/AssocArray.hh" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocArray_1a06535adaa02888ad24b3385eb1f83094" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; AI &gt;</type>
+        <definition>Set&lt;AI&gt; AssocArray&lt; V, AI &gt;::Keys</definition>
+        <argsstring>() const</argsstring>
+        <name>Keys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/AssocArray.hh" line="52" column="5" bodyfile="include/duffy/AssocArray.hh" bodystart="52" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>AssocArray&lt; long, AI2 &gt;</label>
+        <link refid="classAssocArray"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; long, AI2 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AssocArray&lt; long, AI1 &gt;</label>
+        <link refid="classAssocArray"/>
+        <childnode refid="1" relation="template-instance">
+          <edgelabel>&lt; long, AI1 &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>AssocArray&lt; V, AI &gt;</label>
+        <link refid="classAssocArray"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AssocArray&lt; V, AI &gt;</label>
+        <link refid="classAssocArray"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/AssocArray.hh" line="19" column="1" bodyfile="include/duffy/AssocArray.hh" bodystart="18" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classAssocArray_1a33a1d0f41fd0804939b454d02b8cace6" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>AssocArray</name></member>
+      <member refid="classAssocArray_1a44765aa15c3626fb21bd3a36b22ce684" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>AssocArray</name></member>
+      <member refid="classAssocArray_1a750fa96eb605b58410e6daf9a3de73c2" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>AssocArray</name></member>
+      <member refid="classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>Begin</name></member>
+      <member refid="classAssocArray_1a5d270d9533aec3d3bd5118ce699d26af" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>Begin</name></member>
+      <member refid="classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>const_iterator</name></member>
+      <member refid="classAssocArray_1a600b9a0280c6f67380abc032dad1d755" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>End</name></member>
+      <member refid="classAssocArray_1a5a974719d428e24d48e14ff5f43b73fc" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>End</name></member>
+      <member refid="classAssocArray_1ac1d9fb1b2682577b76f6dae9e674711c" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>iterator</name></member>
+      <member refid="classAssocArray_1af4124cb425c9dc6da1b1119bcc29d9c7" prot="private" virt="non-virtual"><scope>AssocArray</scope><name>keys</name></member>
+      <member refid="classAssocArray_1a06535adaa02888ad24b3385eb1f83094" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>Keys</name></member>
+      <member refid="classAssocArray_1a217b73381b1ab8ec100fd09d2acdc4b8" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>operator=</name></member>
+      <member refid="classAssocArray_1a8fac9fa310506a1319d71283e1dc54bc" prot="public" virt="virtual"><scope>AssocArray</scope><name>operator[]</name></member>
+      <member refid="classAssocArray_1ab2ab7a330c94e3fb36060c9ec6e908ef" prot="public" virt="non-virtual"><scope>AssocArray</scope><name>Size</name></member>
+      <member refid="classAssocArray_1aa1258904e58baa2cd3ccca721539fd50" prot="private" virt="non-virtual"><scope>AssocArray</scope><name>str</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

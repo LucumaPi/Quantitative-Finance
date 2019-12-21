@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classBasketStrategy" kind="class" language="C++" prot="public">
+    <compoundname>BasketStrategy</compoundname>
+    <basecompoundref refid="classMultiAssetPayoffStrategy" prot="public" virt="non-virtual">MultiAssetPayoffStrategy</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBasketStrategy_1afa0e733359a5d8beb3ec63274c5c0322" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double BasketStrategy::K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/InstrumentNew.hh" line="38" column="8" bodyfile="include/duffy/InstrumentNew.hh" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBasketStrategy_1a23a3c86d003fe1e1353cedeef1213053" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double BasketStrategy::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/InstrumentNew.hh" line="39" column="8" bodyfile="include/duffy/InstrumentNew.hh" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBasketStrategy_1a3be32d2bac8483c7b829aeffee03cb3f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double BasketStrategy::w1</definition>
+        <argsstring></argsstring>
+        <name>w1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/InstrumentNew.hh" line="40" column="8" bodyfile="include/duffy/InstrumentNew.hh" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBasketStrategy_1a54c62fd63339abe90bb2b2840acabe74" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double BasketStrategy::w2</definition>
+        <argsstring></argsstring>
+        <name>w2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/InstrumentNew.hh" line="40" column="11" bodyfile="include/duffy/InstrumentNew.hh" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBasketStrategy_1adacc028cabb72e5b0ffc09da09875093" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>BasketStrategy::BasketStrategy</definition>
+        <argsstring>()</argsstring>
+        <name>BasketStrategy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/InstrumentNew.hh" line="43" column="1" bodyfile="include/duffy/InstrumentNew.hh" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classBasketStrategy_1a951cb02138da0e0b55980fcbb8a685b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>BasketStrategy::BasketStrategy</definition>
+        <argsstring>(double strike, double cp, double weight1, double weight2)</argsstring>
+        <name>BasketStrategy</name>
+        <param>
+          <type>double</type>
+          <declname>strike</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cp</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/InstrumentNew.hh" line="47" column="1" bodyfile="include/duffy/InstrumentNew.hh" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classBasketStrategy_1a00fe40f08a80a69ae62c0134b350e02f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double BasketStrategy::payoff</definition>
+        <argsstring>(double S1, double S2) const</argsstring>
+        <name>payoff</name>
+        <reimplements refid="classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">payoff</reimplements>
+        <param>
+          <type>double</type>
+          <declname>S1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>S2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/InstrumentNew.hh" line="50" column="8" bodyfile="include/duffy/InstrumentNew.hh" bodystart="50" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classBasketStrategy_1adacc028cabb72e5b0ffc09da09875093" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>BasketStrategy::BasketStrategy</definition>
+        <argsstring>()</argsstring>
+        <name>BasketStrategy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="64" column="1" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classBasketStrategy_1a951cb02138da0e0b55980fcbb8a685b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>BasketStrategy::BasketStrategy</definition>
+        <argsstring>(double strike, double cp, double weight1, double weight2)</argsstring>
+        <name>BasketStrategy</name>
+        <param>
+          <type>double</type>
+          <declname>strike</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cp</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="68" column="1" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classBasketStrategy_1a00fe40f08a80a69ae62c0134b350e02f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double BasketStrategy::payoff</definition>
+        <argsstring>(double S1, double S2) const</argsstring>
+        <name>payoff</name>
+        <reimplements refid="classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">payoff</reimplements>
+        <param>
+          <type>double</type>
+          <declname>S1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>S2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="71" column="8" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="71" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MultiAssetPayoffStrategy</label>
+        <link refid="classMultiAssetPayoffStrategy"/>
+      </node>
+      <node id="1">
+        <label>BasketStrategy</label>
+        <link refid="classBasketStrategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MultiAssetPayoffStrategy</label>
+        <link refid="classMultiAssetPayoffStrategy"/>
+      </node>
+      <node id="1">
+        <label>BasketStrategy</label>
+        <link refid="classBasketStrategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/InstrumentNew.hh" line="35" column="1" bodyfile="include/duffy/InstrumentNew.hh" bodystart="34" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classBasketStrategy_1adacc028cabb72e5b0ffc09da09875093" prot="public" virt="non-virtual"><scope>BasketStrategy</scope><name>BasketStrategy</name></member>
+      <member refid="classBasketStrategy_1a951cb02138da0e0b55980fcbb8a685b4" prot="public" virt="non-virtual"><scope>BasketStrategy</scope><name>BasketStrategy</name></member>
+      <member refid="classBasketStrategy_1adacc028cabb72e5b0ffc09da09875093" prot="public" virt="non-virtual"><scope>BasketStrategy</scope><name>BasketStrategy</name></member>
+      <member refid="classBasketStrategy_1a951cb02138da0e0b55980fcbb8a685b4" prot="public" virt="non-virtual"><scope>BasketStrategy</scope><name>BasketStrategy</name></member>
+      <member refid="classBasketStrategy_1afa0e733359a5d8beb3ec63274c5c0322" prot="private" virt="non-virtual"><scope>BasketStrategy</scope><name>K</name></member>
+      <member refid="classBasketStrategy_1a00fe40f08a80a69ae62c0134b350e02f" prot="public" virt="virtual"><scope>BasketStrategy</scope><name>payoff</name></member>
+      <member refid="classBasketStrategy_1a00fe40f08a80a69ae62c0134b350e02f" prot="public" virt="virtual"><scope>BasketStrategy</scope><name>payoff</name></member>
+      <member refid="classBasketStrategy_1a23a3c86d003fe1e1353cedeef1213053" prot="private" virt="non-virtual"><scope>BasketStrategy</scope><name>w</name></member>
+      <member refid="classBasketStrategy_1a3be32d2bac8483c7b829aeffee03cb3f" prot="private" virt="non-virtual"><scope>BasketStrategy</scope><name>w1</name></member>
+      <member refid="classBasketStrategy_1a54c62fd63339abe90bb2b2840acabe74" prot="private" virt="non-virtual"><scope>BasketStrategy</scope><name>w2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

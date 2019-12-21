@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classAssocMatrix" kind="class" language="C++" prot="public">
+    <compoundname>AssocMatrix</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>V</declname>
+        <defname>V</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>AI1</declname>
+        <defname>AI1</defname>
+        <defval>std::string</defval>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>AI2</declname>
+        <defname>AI2</defname>
+        <defval>std::string</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classAssocMatrix_1a0f20b7d2e96213f0d16aae0a35fe5af8" prot="private" static="no" mutable="no">
+        <type><ref refid="classNumericMatrix" kindref="compound">NumericMatrix</ref>&lt; V, long &gt; *</type>
+        <definition>NumericMatrix&lt;V, long&gt;* AssocMatrix&lt; V, AI1, AI2 &gt;::mat</definition>
+        <argsstring></argsstring>
+        <name>mat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="45" column="15" bodyfile="AssocMatrix.hh" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAssocMatrix_1abd308a6bab7710a0235bfb4100f512e8" prot="private" static="no" mutable="no">
+        <type><ref refid="classAssocArray" kindref="compound">AssocArray</ref>&lt; long, AI1 &gt;</type>
+        <definition>AssocArray&lt;long, AI1&gt; AssocMatrix&lt; V, AI1, AI2 &gt;::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="46" column="12" bodyfile="AssocMatrix.hh" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAssocMatrix_1aaa2c3648465c6b9e1f444dcbd69ef40c" prot="private" static="no" mutable="no">
+        <type><ref refid="classAssocArray" kindref="compound">AssocArray</ref>&lt; long, AI2 &gt;</type>
+        <definition>AssocArray&lt;long, AI2&gt; AssocMatrix&lt; V, AI1, AI2 &gt;::c</definition>
+        <argsstring></argsstring>
+        <name>c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="47" column="12" bodyfile="AssocMatrix.hh" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAssocMatrix_1a1b6d396c4575463c3dfb5f3c4f5ccbb4" prot="private" static="no" mutable="no">
+        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; AI1 &gt;</type>
+        <definition>Set&lt;AI1&gt; AssocMatrix&lt; V, AI1, AI2 &gt;::keysRows</definition>
+        <argsstring></argsstring>
+        <name>keysRows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="50" column="5" bodyfile="AssocMatrix.hh" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classAssocMatrix_1a6766a85b951ce91b19010dfc2b775045" prot="private" static="no" mutable="no">
+        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; AI2 &gt;</type>
+        <definition>Set&lt;AI2&gt; AssocMatrix&lt; V, AI1, AI2 &gt;::keysColumns</definition>
+        <argsstring></argsstring>
+        <name>keysColumns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="51" column="5" bodyfile="AssocMatrix.hh" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classAssocMatrix_1a804b8f1b6123e030823f18abfdd0efb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AssocMatrix&lt; V, AI1, AI2 &gt;::AssocMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>AssocMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="55" column="1" bodyfile="AssocMatrix.cc" bodystart="24" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1a1aa35d61f052ac3898ab15e5561084c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AssocMatrix&lt; V, AI1, AI2 &gt;::AssocMatrix</definition>
+        <argsstring>(const AssocMatrix&lt; V, AI1, AI2 &gt; &amp;arr2)</argsstring>
+        <name>AssocMatrix</name>
+        <param>
+          <type>const <ref refid="classAssocMatrix" kindref="compound">AssocMatrix</ref>&lt; V, AI1, AI2 &gt; &amp;</type>
+          <declname>arr2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="56" column="1" bodyfile="AssocMatrix.cc" bodystart="37" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1a59922d6c221fc62abb54bc1bb91604ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AssocMatrix&lt; V, AI1, AI2 &gt;::AssocMatrix</definition>
+        <argsstring>(const Set&lt; AI1 &gt; &amp;Rnames, const Set&lt; AI2 &gt; &amp;Cnames, NumericMatrix&lt; V, long &gt; &amp;matrix)</argsstring>
+        <name>AssocMatrix</name>
+        <param>
+          <type>const <ref refid="classSet" kindref="compound">Set</ref>&lt; AI1 &gt; &amp;</type>
+          <declname>Rnames</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classSet" kindref="compound">Set</ref>&lt; AI2 &gt; &amp;</type>
+          <declname>Cnames</declname>
+        </param>
+        <param>
+          <type><ref refid="classNumericMatrix" kindref="compound">NumericMatrix</ref>&lt; V, long &gt; &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="58" column="1" bodyfile="AssocMatrix.cc" bodystart="53" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1a584ec0fa44e926ef4e44d6a251dcf01a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classAssocMatrix" kindref="compound">AssocMatrix</ref>&lt; V, AI1, AI2 &gt; &amp;</type>
+        <definition>AssocMatrix&lt; V, AI1, AI2 &gt; &amp; AssocMatrix&lt; V, AI1, AI2 &gt;::operator=</definition>
+        <argsstring>(const AssocMatrix&lt; V, AI1, AI2 &gt; &amp;ass2)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classAssocMatrix" kindref="compound">AssocMatrix</ref>&lt; V, AI1, AI2 &gt; &amp;</type>
+          <declname>ass2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="61" column="13" bodyfile="AssocMatrix.cc" bodystart="168" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1a0d1563baeba3a42f1b9abcd2d7877779" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>V &amp;</type>
+        <definition>V &amp; AssocMatrix&lt; V, AI1, AI2 &gt;::operator()</definition>
+        <argsstring>(const AI1 &amp;index1, const AI2 &amp;index2)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const AI1 &amp;</type>
+          <declname>index1</declname>
+        </param>
+        <param>
+          <type>const AI2 &amp;</type>
+          <declname>index2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="64" column="11" bodyfile="AssocMatrix.cc" bodystart="185" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1a326e6e4074d55872bc38d7968d2a3525" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AssocMatrix&lt; V, AI1, AI2 &gt;::modify</definition>
+        <argsstring>(const SpreadSheetRange&lt; AI1, AI2 &gt; &amp;range, void(*f)(V &amp;cellValue))</argsstring>
+        <name>modify</name>
+        <param>
+          <type>const <ref refid="structSpreadSheetRange" kindref="compound">SpreadSheetRange</ref>&lt; AI1, AI2 &gt; &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>void(*)(V &amp;cellValue)</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="68" column="6" bodyfile="AssocMatrix.cc" bodystart="93" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1a0bcc0fcd9e5ff08dc2af4dea25ddda41" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long AssocMatrix&lt; V, AI1, AI2 &gt;::Size</definition>
+        <argsstring>() const</argsstring>
+        <name>Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="71" column="6" bodyfile="AssocMatrix.hh" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1a74a3cfe29f843fd8e52ac0e24f6d62e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classNumericMatrix" kindref="compound">NumericMatrix</ref>&lt; V, long &gt;</type>
+        <definition>NumericMatrix&lt; V, long &gt; AssocMatrix&lt; V, AI1, AI2 &gt;::extract</definition>
+        <argsstring>(const SpreadSheetRange&lt; AI1, AI2 &gt; &amp;range)</argsstring>
+        <name>extract</name>
+        <param>
+          <type>const <ref refid="structSpreadSheetRange" kindref="compound">SpreadSheetRange</ref>&lt; AI1, AI2 &gt; &amp;</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="72" column="15" bodyfile="AssocMatrix.cc" bodystart="128" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1adce6a940baf8f9d7c5a7b258a447ab3a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; AI1 &gt;</type>
+        <definition>Set&lt;AI1&gt; AssocMatrix&lt; V, AI1, AI2 &gt;::RowKeys</definition>
+        <argsstring>() const</argsstring>
+        <name>RowKeys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="75" column="5" bodyfile="AssocMatrix.hh" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1a3d10f575ea198ec26e22048ce30e45f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; AI2 &gt;</type>
+        <definition>Set&lt;AI2&gt; AssocMatrix&lt; V, AI1, AI2 &gt;::ColumnKeys</definition>
+        <argsstring>() const</argsstring>
+        <name>ColumnKeys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="76" column="5" bodyfile="AssocMatrix.hh" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classAssocMatrix_1ac7671399c8b31d220d42d03da7e11182" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classNumericMatrix" kindref="compound">NumericMatrix</ref>&lt; V, long &gt; *</type>
+        <definition>NumericMatrix&lt;V, long&gt;* AssocMatrix&lt; V, AI1, AI2 &gt;::Data</definition>
+        <argsstring>()</argsstring>
+        <name>Data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AssocMatrix.hh" line="77" column="15" bodyfile="AssocMatrix.hh" bodystart="77" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>AssocMatrix&lt; V, AI1, AI2 &gt;</label>
+        <link refid="classAssocMatrix"/>
+      </node>
+    </collaborationgraph>
+    <location file="AssocMatrix.hh" line="39" column="1" bodyfile="AssocMatrix.hh" bodystart="38" bodyend="79"/>
+    <listofallmembers>
+      <member refid="classAssocMatrix_1a804b8f1b6123e030823f18abfdd0efb4" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>AssocMatrix</name></member>
+      <member refid="classAssocMatrix_1a1aa35d61f052ac3898ab15e5561084c7" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>AssocMatrix</name></member>
+      <member refid="classAssocMatrix_1a59922d6c221fc62abb54bc1bb91604ca" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>AssocMatrix</name></member>
+      <member refid="classAssocMatrix_1aaa2c3648465c6b9e1f444dcbd69ef40c" prot="private" virt="non-virtual"><scope>AssocMatrix</scope><name>c</name></member>
+      <member refid="classAssocMatrix_1a3d10f575ea198ec26e22048ce30e45f1" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>ColumnKeys</name></member>
+      <member refid="classAssocMatrix_1ac7671399c8b31d220d42d03da7e11182" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>Data</name></member>
+      <member refid="classAssocMatrix_1a74a3cfe29f843fd8e52ac0e24f6d62e8" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>extract</name></member>
+      <member refid="classAssocMatrix_1a6766a85b951ce91b19010dfc2b775045" prot="private" virt="non-virtual"><scope>AssocMatrix</scope><name>keysColumns</name></member>
+      <member refid="classAssocMatrix_1a1b6d396c4575463c3dfb5f3c4f5ccbb4" prot="private" virt="non-virtual"><scope>AssocMatrix</scope><name>keysRows</name></member>
+      <member refid="classAssocMatrix_1a0f20b7d2e96213f0d16aae0a35fe5af8" prot="private" virt="non-virtual"><scope>AssocMatrix</scope><name>mat</name></member>
+      <member refid="classAssocMatrix_1a326e6e4074d55872bc38d7968d2a3525" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>modify</name></member>
+      <member refid="classAssocMatrix_1a0d1563baeba3a42f1b9abcd2d7877779" prot="public" virt="virtual"><scope>AssocMatrix</scope><name>operator()</name></member>
+      <member refid="classAssocMatrix_1a584ec0fa44e926ef4e44d6a251dcf01a" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>operator=</name></member>
+      <member refid="classAssocMatrix_1abd308a6bab7710a0235bfb4100f512e8" prot="private" virt="non-virtual"><scope>AssocMatrix</scope><name>r</name></member>
+      <member refid="classAssocMatrix_1adce6a940baf8f9d7c5a7b258a447ab3a" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>RowKeys</name></member>
+      <member refid="classAssocMatrix_1a0bcc0fcd9e5ff08dc2af4dea25ddda41" prot="public" virt="non-virtual"><scope>AssocMatrix</scope><name>Size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

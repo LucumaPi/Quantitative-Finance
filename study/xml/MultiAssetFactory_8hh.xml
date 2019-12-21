@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="MultiAssetFactory_8hh" kind="file" language="C++">
+    <compoundname>MultiAssetFactory.hh</compoundname>
+    <includes refid="MultiAssetPayoffStrategy_8hh" local="yes">MultiAssetPayoffStrategy.hh</includes>
+    <includes local="no">string</includes>
+    <includes local="no">map</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>MultiAssetPayoffStrategy.hh</label>
+        <link refid="MultiAssetPayoffStrategy_8hh_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>map</label>
+      </node>
+      <node id="1">
+        <label>MultiAssetFactory.hh</label>
+        <link refid="MultiAssetFactory_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>Inequalities.hh</label>
+        <link refid="Inequalities_8hh_source"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classMultiAssetFactory" prot="public">MultiAssetFactory</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>MultiAssetFactory.hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Application<sp/>of<sp/>Factory<sp/>Method<sp/>pattern<sp/>to<sp/>create</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>2-factor<sp/>asset<sp/>payout<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>this<sp/>case<sp/>we<sp/>use<sp/>an<sp/>integer<sp/>identifier<sp/>(GOF<sp/>page<sp/>110-111).<sp/>This</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>is<sp/>handy<sp/>and<sp/>extendible.<sp/>The<sp/>actual<sp/>data<sp/>for<sp/>the<sp/>object<sp/>is<sp/>via<sp/>console</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>but<sp/>we<sp/>could<sp/>use<sp/>a<sp/>Bridge<sp/>at<sp/>a<sp/>later<sp/>stage.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Code<sp/>is<sp/>inline<sp/>in<sp/>this<sp/>version.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2006</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MultiAssetFactory_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MultiAssetFactory_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MultiAssetPayoffStrategy.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classMultiAssetFactory" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMultiAssetFactory" kindref="compound">MultiAssetFactory</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMultiAssetFactory" kindref="compound">MultiAssetFactory</ref>()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc<sp/>=<sp/>std::map&lt;int,<sp/>std::string&gt;();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(1,<sp/></highlight><highlight class="stringliteral">&quot;Exchange<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(2,<sp/></highlight><highlight class="stringliteral">&quot;Rainbow<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(3,<sp/></highlight><highlight class="stringliteral">&quot;Basket<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(4,<sp/></highlight><highlight class="stringliteral">&quot;BestWorst<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(5,<sp/></highlight><highlight class="stringliteral">&quot;Quotient<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(6,<sp/></highlight><highlight class="stringliteral">&quot;Quanto<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(7,<sp/></highlight><highlight class="stringliteral">&quot;SpreadStrategy<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(8,<sp/></highlight><highlight class="stringliteral">&quot;Dual<sp/>Strike<sp/>Strategy<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.insert(std::pair&lt;int,<sp/>std::string&gt;(9,<sp/></highlight><highlight class="stringliteral">&quot;Out<sp/>Perfomance<sp/>option\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>create(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>1)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateExchangeStrategy();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>2)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateRainbowStrategy();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>3)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateBasketStrategy();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>4)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateBestWorstStrategy();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>5)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateQuotientStrategy();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>6)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateQuantoStrategy();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>7)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateSpreadStrategy();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>8)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateDualStrikeStrategy();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>==<sp/>9)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreateOutPerformanceStrategy();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Exception</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>9<sp/>||<sp/>N<sp/>&lt;<sp/>1)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::string(</highlight><highlight class="stringliteral">&quot;Outside<sp/>range\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>display()</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">//<sp/>Show<sp/>options<sp/>for<sp/>a<sp/>choice</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;int,<sp/>std::string&gt;::<sp/>const_iterator<sp/>it;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(it<sp/>=<sp/>desc.begin();<sp/>it<sp/>!=<sp/>desc.end();<sp/>it++)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>(*it).first<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(*it).second<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;int,<sp/>std::string&gt;<sp/>desc;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Description</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateExchangeStrategy()</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[1];</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classExchangeStrategy" kindref="compound">ExchangeStrategy</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateRainbowStrategy()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[2];</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike<sp/>K:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K;<sp/>std::cin<sp/>&gt;&gt;<sp/>K;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Call<sp/>+1,<sp/>Put<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w;<sp/>std::cin<sp/>&gt;&gt;<sp/>w;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Max(max)<sp/>1<sp/>or<sp/>Max(min)<sp/>2:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type;<sp/>std::cin<sp/>&gt;&gt;<sp/>type;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classRainbowStrategy" kindref="compound">RainbowStrategy</ref>(K,<sp/>w,<sp/>type);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateBasketStrategy()</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[3];</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">L1:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike<sp/>K:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K;<sp/>std::cin<sp/>&gt;&gt;<sp/>K;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Call<sp/>+1,<sp/>Put<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w;<sp/>std::cin<sp/>&gt;&gt;<sp/>w;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;First<sp/>weight:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w1;<sp/>std::cin<sp/>&gt;&gt;<sp/>w1;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Second<sp/>weight:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w2;<sp/>std::cin<sp/>&gt;&gt;<sp/>w2;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(w1<sp/>+<sp/>w2<sp/>!=<sp/>1.0)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Weights<sp/>must<sp/>add<sp/>up<sp/>to<sp/>1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>L1;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classBasketStrategy" kindref="compound">BasketStrategy</ref>(K,<sp/>w,<sp/>w1,<sp/>w2);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateBestWorstStrategy()</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[4];</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike(cash)<sp/>K:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K;<sp/>std::cin<sp/>&gt;&gt;<sp/>K;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Best<sp/>+1,<sp/>Worst<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w;<sp/>std::cin<sp/>&gt;&gt;<sp/>w;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classBestWorstStrategy" kindref="compound">BestWorstStrategy</ref>(K,<sp/>w);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateQuotientStrategy()</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[5];</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike<sp/>K:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K;<sp/>std::cin<sp/>&gt;&gt;<sp/>K;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Call<sp/>+1,<sp/>Put<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w;<sp/>std::cin<sp/>&gt;&gt;<sp/>w;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classQuotientStrategy" kindref="compound">QuotientStrategy</ref>(K,<sp/>w);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateQuantoStrategy()</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[6];</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike<sp/>K<sp/>in<sp/>foreign<sp/>currency:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K;<sp/>std::cin<sp/>&gt;&gt;<sp/>K;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Fixed<sp/>exchange<sp/>rate:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>fer;<sp/>std::cin<sp/>&gt;&gt;<sp/>fer;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Call<sp/>+1,<sp/>Put<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w;<sp/>std::cin<sp/>&gt;&gt;<sp/>w;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classQuantoStrategy" kindref="compound">QuantoStrategy</ref>(K,<sp/>w,<sp/>fer);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateSpreadStrategy()</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[7];</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike<sp/>K:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K;<sp/>std::cin<sp/>&gt;&gt;<sp/>K;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Call<sp/>+1,<sp/>Put<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w;<sp/>std::cin<sp/>&gt;&gt;<sp/>w;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Value<sp/>&apos;a&apos;<sp/>&gt;<sp/>0:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a;<sp/>std::cin<sp/>&gt;&gt;<sp/>a;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Value<sp/>&apos;b&apos;<sp/>&lt;<sp/>0:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b;<sp/>std::cin<sp/>&gt;&gt;<sp/>b;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSpreadStrategy" kindref="compound">SpreadStrategy</ref>(w,<sp/>K,<sp/>a,<sp/>b);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateDualStrikeStrategy()</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[8];</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike<sp/>K1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K1;<sp/>std::cin<sp/>&gt;&gt;<sp/>K1;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Option1:<sp/>Call<sp/><sp/>+1,<sp/>Put<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w1;<sp/>std::cin<sp/>&gt;&gt;<sp/>w1;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike<sp/>K2:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K2;<sp/>std::cin<sp/>&gt;&gt;<sp/>K2;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Option2:<sp/>Call<sp/><sp/>+1,<sp/>Put<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w2;<sp/>std::cin<sp/>&gt;&gt;<sp/>w2;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDualStrikeStrategy" kindref="compound">DualStrikeStrategy</ref>(K1,<sp/>K2,<sp/>w1,<sp/>w2);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><ref refid="classMultiAssetPayoffStrategy" kindref="compound">MultiAssetPayoffStrategy</ref>*<sp/>CreateOutPerformanceStrategy()</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>desc[9];</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Underlying<sp/>I1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>I1;<sp/>std::cin<sp/>&gt;&gt;<sp/>I1;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Underlying<sp/>I2:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>I2;<sp/>std::cin<sp/>&gt;&gt;<sp/>I2;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Strike<sp/>rate<sp/>of<sp/>option:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k;<sp/>std::cin<sp/>&gt;&gt;<sp/>k;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Call<sp/><sp/>+1,<sp/>Put<sp/>-1:<sp/>&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w;<sp/>std::cin<sp/>&gt;&gt;<sp/>w;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classOutPerformanceStrategy" kindref="compound">OutPerformanceStrategy</ref>(I1,<sp/>I2,<sp/>w,<sp/>k);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MultiAssetFactory.hh"/>
+  </compounddef>
+</doxygen>

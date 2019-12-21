@@ -1,0 +1,65 @@
+\hypertarget{AssocArray_8hh_source}{}\doxysection{Assoc\+Array.\+hh}
+\label{AssocArray_8hh_source}\index{include/duffy/AssocArray.hh@{include/duffy/AssocArray.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// AssocArray.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Associative array class. In this case we access elements by }}
+\DoxyCodeLine{00004 \textcolor{comment}{// using non-\/integral indices. This is potentially a very useful class}}
+\DoxyCodeLine{00005 \textcolor{comment}{// and it can be used in many financial applications.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// }}
+\DoxyCodeLine{00007 \textcolor{comment}{// This class is essentially an Adaptor class from an STL map.}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2006}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifndef AssocArray\_HH}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#define AssocArray\_HH}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "Array.hh"}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "Set.hh"}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{\Hypertarget{AssocArray_8hh_source_l00018}\mbox{\hyperlink{classAssocArray}{00018}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI = std::\textcolor{keywordtype}{string}> \textcolor{keyword}{class }\mbox{\hyperlink{classAssocArray}{AssocArray}}}
+\DoxyCodeLine{00019 \{ \textcolor{comment}{// Note that the first index is the value and second index is }}
+\DoxyCodeLine{00020   \textcolor{comment}{// 'associative' key}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keyword}{private}: }
+\DoxyCodeLine{00023         std::map<AI,V> str; \textcolor{comment}{// The list of associative values, e.g. strings}}
+\DoxyCodeLine{00024         }
+\DoxyCodeLine{00025         \textcolor{comment}{// Redundant information for performance}}
+\DoxyCodeLine{00026         \mbox{\hyperlink{classSet}{Set<AI>}} keys;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029     \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classAssocArray}{AssocArray}}();}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classAssocArray}{AssocArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& arr2);}
+\DoxyCodeLine{00032     \textcolor{comment}{// Construct the map from a list of names and values}}
+\DoxyCodeLine{00033     \mbox{\hyperlink{classAssocArray}{AssocArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI>}}\& names, \textcolor{keyword}{const} V\& val);}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& ass2);}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{// New overloaded indexing operator}}
+\DoxyCodeLine{00038     \textcolor{keyword}{virtual} V\& operator [] (\textcolor{keyword}{const} AI\& index);   \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::map<AI,V>::iterator iterator;}
+\DoxyCodeLine{00042     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::map<AI,V>::const\_iterator const\_iterator;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{comment}{// Iterator functions}}
+\DoxyCodeLine{00045     iterator Begin();               \textcolor{comment}{// Return iterator at begin of assoc array}}
+\DoxyCodeLine{00046     const\_iterator Begin() \textcolor{keyword}{const};   \textcolor{comment}{// Return const iterator at begin of assoc array}}
+\DoxyCodeLine{00047     iterator End();                 \textcolor{comment}{// Return iterator after end of assoc array}}
+\DoxyCodeLine{00048     const\_iterator End() \textcolor{keyword}{const};     \textcolor{comment}{// Return const iterator after end of assoc array}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{long} Size()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} str.size(); \}}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classSet}{Set<AI>}} Keys()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} keys; \}        \textcolor{comment}{// Copy}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00055 \textcolor{comment}{//  void add(const AI\& key, const V\& value);}}
+\DoxyCodeLine{00056 \textcolor{comment}{//  void remove(const AI\& key);}}
+\DoxyCodeLine{00057 \};}
+\DoxyCodeLine{00058 \textcolor{preprocessor}{\#include "../../src/AssocArray.cc"}}
+\DoxyCodeLine{00059 \textcolor{preprocessor}{\#endif  // AssocArray\_HH}}
+
+\end{DoxyCode}

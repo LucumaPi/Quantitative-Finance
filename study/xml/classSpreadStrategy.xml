@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classSpreadStrategy" kind="class" language="C++" prot="public">
+    <compoundname>SpreadStrategy</compoundname>
+    <basecompoundref refid="classMultiAssetPayoffStrategy" prot="public" virt="non-virtual">MultiAssetPayoffStrategy</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSpreadStrategy_1af83dd3b418ddf5094eb7f48c75b4907d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SpreadStrategy::K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="137" column="8" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSpreadStrategy_1a7d332406c578722904cf0a8d80aaa0c3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SpreadStrategy::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="138" column="8" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSpreadStrategy_1ad87595d8ae51ca2c56f282a3b9846195" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SpreadStrategy::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="139" column="8" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSpreadStrategy_1a20650f2eccd147fb852f4ab32b846906" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SpreadStrategy::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="139" column="10" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSpreadStrategy_1a61b425f4d974110b6ab6be492955b61f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SpreadStrategy::SpreadStrategy</definition>
+        <argsstring>(double cp, double strike=0.0, double A=1.0, double B=-1.0)</argsstring>
+        <name>SpreadStrategy</name>
+        <param>
+          <type>double</type>
+          <declname>cp</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>strike</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>A</declname>
+          <defval>1.0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>B</declname>
+          <defval>-1.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="141" column="1" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="141" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classSpreadStrategy_1a2aa6d1c5c04c165e790771b82d2cceea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double SpreadStrategy::payoff</definition>
+        <argsstring>(double S1, double S2) const</argsstring>
+        <name>payoff</name>
+        <reimplements refid="classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">payoff</reimplements>
+        <param>
+          <type>double</type>
+          <declname>S1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>S2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="143" column="8" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="143" bodyend="149"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MultiAssetPayoffStrategy</label>
+        <link refid="classMultiAssetPayoffStrategy"/>
+      </node>
+      <node id="1">
+        <label>SpreadStrategy</label>
+        <link refid="classSpreadStrategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MultiAssetPayoffStrategy</label>
+        <link refid="classMultiAssetPayoffStrategy"/>
+      </node>
+      <node id="1">
+        <label>SpreadStrategy</label>
+        <link refid="classSpreadStrategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MultiAssetPayoffStrategy.hh" line="135" column="1" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="134" bodyend="150"/>
+    <listofallmembers>
+      <member refid="classSpreadStrategy_1ad87595d8ae51ca2c56f282a3b9846195" prot="private" virt="non-virtual"><scope>SpreadStrategy</scope><name>a</name></member>
+      <member refid="classSpreadStrategy_1a20650f2eccd147fb852f4ab32b846906" prot="private" virt="non-virtual"><scope>SpreadStrategy</scope><name>b</name></member>
+      <member refid="classSpreadStrategy_1af83dd3b418ddf5094eb7f48c75b4907d" prot="private" virt="non-virtual"><scope>SpreadStrategy</scope><name>K</name></member>
+      <member refid="classSpreadStrategy_1a2aa6d1c5c04c165e790771b82d2cceea" prot="public" virt="virtual"><scope>SpreadStrategy</scope><name>payoff</name></member>
+      <member refid="classSpreadStrategy_1a61b425f4d974110b6ab6be492955b61f" prot="public" virt="non-virtual"><scope>SpreadStrategy</scope><name>SpreadStrategy</name></member>
+      <member refid="classSpreadStrategy_1a7d332406c578722904cf0a8d80aaa0c3" prot="private" virt="non-virtual"><scope>SpreadStrategy</scope><name>w</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

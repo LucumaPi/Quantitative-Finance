@@ -1,0 +1,106 @@
+\hypertarget{Relation_8hh_source}{}\doxysection{Relation.\+hh}
+\label{Relation_8hh_source}\index{include/duffy/Relation.hh@{include/duffy/Relation.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Relation.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Generic classes that model N:N, N:1 and 1:1}}
+\DoxyCodeLine{00004 \textcolor{comment}{// relationships. These classes have a myriad of}}
+\DoxyCodeLine{00005 \textcolor{comment}{// applications.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// We define a class that maps elements of one Set S1}}
+\DoxyCodeLine{00008 \textcolor{comment}{// to another set S2. You can create N:N, N:1 and 1:1 }}
+\DoxyCodeLine{00009 \textcolor{comment}{// relationships between objects. The only restriction }}
+\DoxyCodeLine{00010 \textcolor{comment}{// is that the elements in the relation should be elements}}
+\DoxyCodeLine{00011 \textcolor{comment}{// of the Domain Set or Range Set.}}
+\DoxyCodeLine{00012 \textcolor{comment}{//}}
+\DoxyCodeLine{00013 \textcolor{comment}{// We note that it is possible to access all r in R for a }}
+\DoxyCodeLine{00014 \textcolor{comment}{// given d in D as well as all d in D for a given r in R.}}
+\DoxyCodeLine{00015 \textcolor{comment}{//}}
+\DoxyCodeLine{00016 \textcolor{comment}{// The class 'Set' is an encapsulation of STL 'set' and is easier}}
+\DoxyCodeLine{00017 \textcolor{comment}{// to understand}}
+\DoxyCodeLine{00018 \textcolor{comment}{//}}
+\DoxyCodeLine{00019 \textcolor{comment}{// (C) Datasim Education BV 2004}}
+\DoxyCodeLine{00020 \textcolor{comment}{//}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#ifndef Relation\_HH}}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#define Relation\_HH}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \textcolor{preprocessor}{\#include "Set.hh"}}
+\DoxyCodeLine{00027 \textcolor{preprocessor}{\#include <map>}      \textcolor{comment}{// Includes both map and multimap}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{\Hypertarget{Relation_8hh_source_l00029}\mbox{\hyperlink{classRelation}{00029}} \textcolor{keyword}{template} <\textcolor{keyword}{class} D, \textcolor{keyword}{class} R> \textcolor{keyword}{class }\mbox{\hyperlink{classRelation}{Relation}}}
+\DoxyCodeLine{00030 \{ \textcolor{comment}{// Classes representing mappings from D to R}}
+\DoxyCodeLine{00031 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{comment}{// 'Control' information}}
+\DoxyCodeLine{00034     \mbox{\hyperlink{classSet}{Set<D>}} s1;            \textcolor{comment}{// Domain Set}}
+\DoxyCodeLine{00035     \mbox{\hyperlink{classSet}{Set<R>}} s2;            \textcolor{comment}{// Range Set}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{// Information about the mapping itself. These two}}
+\DoxyCodeLine{00038     \textcolor{comment}{// multimaps must be kept consistent}}
+\DoxyCodeLine{00039     std::multimap<D, R> f;      \textcolor{comment}{// The mapping itself}}
+\DoxyCodeLine{00040     std::multimap<R, D> finv;   \textcolor{comment}{// The inverse mapping}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{comment}{// Private functions}}
+\DoxyCodeLine{00043     \textcolor{comment}{// template <class X, class Y> void removeElements(Relation<X,Y>\& r, const Y\& y);}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046     \textcolor{comment}{// Essential members}}
+\DoxyCodeLine{00047     \mbox{\hyperlink{classRelation}{Relation}}();     }
+\DoxyCodeLine{00048     \mbox{\hyperlink{classRelation}{Relation}} (\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<D>}}\& domainSet, \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<R>}}\& rangeSet);}
+\DoxyCodeLine{00049     \mbox{\hyperlink{classRelation}{Relation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& r2);}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{comment}{// Building and breaking the Relation}}
+\DoxyCodeLine{00053     \textcolor{comment}{// The set element in the relations}}
+\DoxyCodeLine{00054     \textcolor{keywordtype}{void} addDomainElement(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d); \textcolor{comment}{// Add d to Domain Set (no link)}}
+\DoxyCodeLine{00055     \textcolor{keywordtype}{void} addRangeElement(\textcolor{keyword}{const} R\& r);   \textcolor{comment}{// Add r to Range Set (no link)}}
+\DoxyCodeLine{00056     \textcolor{keywordtype}{void} removeDomainElement(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d);  \textcolor{comment}{// Remove d and all links}}
+\DoxyCodeLine{00057     \textcolor{keywordtype}{void} removeRangeElement(\textcolor{keyword}{const} R\& r);    \textcolor{comment}{// Remove r and all links}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{// Define relationship between EXISTING elements}}
+\DoxyCodeLine{00060     \textcolor{keywordtype}{void} addRelation(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d, \textcolor{keyword}{const} R\& r);  \textcolor{comment}{// }}
+\DoxyCodeLine{00061     \textcolor{keywordtype}{void} removeRelation(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d);   \textcolor{comment}{// Remove between d and ALL r}}
+\DoxyCodeLine{00062     \textcolor{keywordtype}{void} ClearAll();                    \textcolor{comment}{// Break all links and sets}}
+\DoxyCodeLine{00063     \textcolor{keywordtype}{void} ClearLinks();                  \textcolor{comment}{// Break links only, sets remain}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{comment}{// Iterator functions (going from D direction)}}
+\DoxyCodeLine{00067     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<D, R>::iterator iterator;}
+\DoxyCodeLine{00068     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<D, R>::const\_iterator const\_iterator;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     iterator Begin();               \textcolor{comment}{// Return iterator at begin of relation}}
+\DoxyCodeLine{00071     const\_iterator Begin() \textcolor{keyword}{const};   \textcolor{comment}{// Return const iterator at begin of relation}}
+\DoxyCodeLine{00072     iterator End();                 \textcolor{comment}{// Return iterator after end of relation}}
+\DoxyCodeLine{00073     const\_iterator End() \textcolor{keyword}{const};     \textcolor{comment}{// Return const iterator after end of relation}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{comment}{// Iterator functions (going from R direction)}}
+\DoxyCodeLine{00076     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<R, D>::iterator iteratorInv;}
+\DoxyCodeLine{00077     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<R, D>::const\_iterator const\_iteratorInv;}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     iteratorInv BeginInv();             \textcolor{comment}{// Return iterator at begin of relation}}
+\DoxyCodeLine{00080     const\_iteratorInv BeginInv() \textcolor{keyword}{const}; \textcolor{comment}{// Return const iterator at begin of relation}}
+\DoxyCodeLine{00081     iteratorInv EndInv();                   \textcolor{comment}{// Return iterator after end of relation}}
+\DoxyCodeLine{00082     const\_iteratorInv EndInv() \textcolor{keyword}{const};       \textcolor{comment}{// Return const iterator after end of relation}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00086     \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<D>}}\& DomainSet();}
+\DoxyCodeLine{00087     \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<R>}}\& RangeSet();}
+\DoxyCodeLine{00088         }
+\DoxyCodeLine{00089     \mbox{\hyperlink{classSet}{Set<R>}} range(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d);        \textcolor{comment}{// Set of r for a d}}
+\DoxyCodeLine{00090     \mbox{\hyperlink{classSet}{Set<D>}} domain(\textcolor{keyword}{const} R\& r);        \textcolor{comment}{// Set of d for an r}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     \textcolor{keywordtype}{bool} inDomain(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d) \textcolor{keyword}{const};   \textcolor{comment}{// Is an element in domain?}}
+\DoxyCodeLine{00093     \textcolor{keywordtype}{bool} inRange(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& r) \textcolor{keyword}{const};        \textcolor{comment}{// Is an element in range?}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classRelation}{Relation}}();}
+\DoxyCodeLine{00096     \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& r2);}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098 \};}
+\DoxyCodeLine{00099 \textcolor{preprocessor}{\#include "../../src/Relation.cc"}}
+\DoxyCodeLine{00100 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

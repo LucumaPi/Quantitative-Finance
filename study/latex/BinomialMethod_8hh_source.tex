@@ -1,0 +1,58 @@
+\hypertarget{BinomialMethod_8hh_source}{}\doxysection{Binomial\+Method.\+hh}
+\label{BinomialMethod_8hh_source}\index{include/duffy/BinomialMethod.hh@{include/duffy/BinomialMethod.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// BinomialMethod.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// An encapsulation of the Binomial Method. This is}}
+\DoxyCodeLine{00004 \textcolor{comment}{// a kind of Mediator between the underlying data}}
+\DoxyCodeLine{00005 \textcolor{comment}{// stucture (a lattice tree) and the different kinds}}
+\DoxyCodeLine{00006 \textcolor{comment}{// of algorithms (e.g. CRR) for initialising the tree.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// It also plays the role of a Builder pattern because it}}
+\DoxyCodeLine{00009 \textcolor{comment}{// creates data and objects on behalf of clients.}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{// (C) Datasim Education BV 2004-\/2006}}
+\DoxyCodeLine{00012 \textcolor{comment}{//}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#ifndef BinomialMethod\_HH}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#define BinomialMethod\_HH}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "Lattice.hh"}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "BinomialLatticeStrategy.hh"}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8hh_source_l00020}\mbox{\hyperlink{classBinomialMethod}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classBinomialMethod}{BinomialMethod}}}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023         \textcolor{comment}{// Underlying data structure}}
+\DoxyCodeLine{00024         \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}} lattice; \textcolor{comment}{// Magic number == 2 means binomial}}
+\DoxyCodeLine{00025         \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}* str;        \textcolor{comment}{// Pointer to an algorithm}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keywordtype}{double} disc;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030     \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classBinomialMethod}{BinomialMethod}}();}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{comment}{// Constructor taking discount factor, strategy (e.g. CRR) and number of steps}}
+\DoxyCodeLine{00034     \mbox{\hyperlink{classBinomialMethod}{BinomialMethod}} (\textcolor{keywordtype}{double} discounting, \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}\& strategy, \textcolor{keywordtype}{int} N);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{comment}{// Initialise lattice data structure}}
+\DoxyCodeLine{00037     \textcolor{keywordtype}{void} buildLattice(\textcolor{keywordtype}{int} N);}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{comment}{// Initialise lattice node values (Forward Induction)}}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{void} modifyLattice(\textcolor{keywordtype}{double} U);   }
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{comment}{// Calculate derivative price (Backward Induction)}}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{double} getPrice(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, int>}}\& RHS);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{comment}{// Handy function to give us the size at expiry date}}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classVector}{Vector<double, int>}} BasePyramidVector() \textcolor{keyword}{const};}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{comment}{// Underlying lattice}}
+\DoxyCodeLine{00049     \textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& getLattice() \textcolor{keyword}{const};}
+\DoxyCodeLine{00050 \};}
+\DoxyCodeLine{00051 \textcolor{preprocessor}{\#include "../../src/BinomialMethod.cc"}}
+\DoxyCodeLine{00052 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

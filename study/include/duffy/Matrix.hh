@@ -14,13 +14,13 @@
 #include "Array.hh"
 
 // Default structure is FullArray with default allocator. Default integral type is int.
-template <class V, class I=int, class S=FullMatrix<V> >
+template <class V, class I = int, class S = FullMatrix<V> >
 class Matrix
 {
 private:
-	S m_structure;				// The array structure
-	I m_rowstart;				// The row start index
-	I m_columnstart;			// The column start index
+	S m_structure;			// The array structure
+	I m_rowstart;			// The row start index
+	I m_columnstart;		// The column start index
 
 	// Redundant data 
 	I nr, nc;
@@ -44,7 +44,6 @@ public:
 
 	void Row(I row, const Array<V, I>& val);	// Replace row
 	void Column(I column, const Array<V, I>& val);	// Replace column
-
 
 	// Operators
 	const V& operator () (I row, I column) const;	// Get the element at position

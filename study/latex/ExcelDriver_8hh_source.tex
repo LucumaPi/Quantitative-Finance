@@ -1,0 +1,100 @@
+\hypertarget{ExcelDriver_8hh_source}{}\doxysection{Excel\+Driver.\+hh}
+\label{ExcelDriver_8hh_source}\index{include/duffy/ExcelDriver.hh@{include/duffy/ExcelDriver.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ExcelDriver.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Excel driver class. This class is for VISUALIZATION only}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2003 -\/ 2006}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef ExcelDriver\_HH}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define ExcelDriver\_HH}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{comment}{// !!!! RIGHT VERSION OF OFFICE!!!!!!}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../src/ExcelImports.cc"} \textcolor{comment}{// Contains all versions of Office}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{comment}{// STL list class.}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00017 \textcolor{comment}{// Datasim container TEMPLATE classes, that's why include CPP!!!!}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "Vector.hh"}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include "NumericMatrix.hh"}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{comment}{// Excel driver class definition. Contains functionality to add charts }}
+\DoxyCodeLine{00023 \textcolor{comment}{// and matrices. Hides all COM details. COM exceptions are re-\/thrown}}
+\DoxyCodeLine{00024 \textcolor{comment}{// as STL strings.}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8hh_source_l00026}\mbox{\hyperlink{classExcelDriver}{00026}} \textcolor{keyword}{class }\mbox{\hyperlink{classExcelDriver}{ExcelDriver}}}
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029     \textcolor{comment}{// Private member data.}}
+\DoxyCodeLine{00030     Excel::\_ApplicationPtr xl;      \textcolor{comment}{// Pointer to Excel.}}
+\DoxyCodeLine{00031     \textcolor{keywordtype}{long} curDataColumn;             \textcolor{comment}{// Current column of 'Chart Data'}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{comment}{// Writes label and vector to cells in horizontal direction.}}
+\DoxyCodeLine{00034     \textcolor{keywordtype}{void} ToSheetHorizontal( Excel::\_WorksheetPtr sheet,}
+\DoxyCodeLine{00035                     \textcolor{keywordtype}{long} sheetRow, \textcolor{keywordtype}{long} sheetColumn,}
+\DoxyCodeLine{00036                     \textcolor{keyword}{const} std::string\& label,\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& values );}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{comment}{// Writes label and vector to cells in vertical direction.}}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{void} ToSheetVertical( Excel::\_WorksheetPtr sheet,}
+\DoxyCodeLine{00040                     \textcolor{keywordtype}{long} sheetRow, \textcolor{keywordtype}{long} sheetColumn,}
+\DoxyCodeLine{00041                     \textcolor{keyword}{const} std::string\& label, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& values );}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{comment}{// Throw COM error as string.}}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{void} ThrowAsString( \_com\_error \& error );}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048     \textcolor{comment}{// Constructor. Starts Excel in invisible mode.}}
+\DoxyCodeLine{00049     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}();}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     \textcolor{comment}{// Destructor.}}
+\DoxyCodeLine{00052     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classExcelDriver}{ExcelDriver}}();}
+\DoxyCodeLine{00053     }
+\DoxyCodeLine{00054     \textcolor{comment}{// Access to single, shared instance of ExcelDriver (singleton).}}
+\DoxyCodeLine{00055     \textcolor{keyword}{static} \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& Instance();}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{comment}{// Create chart with a number of functions. The arguments are:}}
+\DoxyCodeLine{00058     \textcolor{comment}{//  x:          vector with input values}}
+\DoxyCodeLine{00059     \textcolor{comment}{//  labels:     labels for output values}}
+\DoxyCodeLine{00060     \textcolor{comment}{//  vectorList: list of vectors with output values.}}
+\DoxyCodeLine{00061     \textcolor{comment}{//  chartTitle: title of chart}}
+\DoxyCodeLine{00062     \textcolor{comment}{//  xTitle:     label of x axis}}
+\DoxyCodeLine{00063     \textcolor{comment}{//  yTitle:     label of y axis}}
+\DoxyCodeLine{00064     \textcolor{keywordtype}{void} CreateChart(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& x, \textcolor{keyword}{const} std::list<std::string> \& labels, }
+\DoxyCodeLine{00065         \textcolor{keyword}{const} std::list<\mbox{\hyperlink{classVector}{Vector<double, long>}} > \& vectorList, \textcolor{keyword}{const} std::string\& chartTitle, }
+\DoxyCodeLine{00066         \textcolor{keyword}{const} std::string\& xTitle = \textcolor{stringliteral}{"X"}, \textcolor{keyword}{const} std::string\& yTitle = \textcolor{stringliteral}{"Y"});}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{comment}{// Create chart with a number of functions. The arguments are:}}
+\DoxyCodeLine{00069     \textcolor{comment}{//  x:          vector with input values}}
+\DoxyCodeLine{00070     \textcolor{comment}{//  y:          vector with output values.}}
+\DoxyCodeLine{00071     \textcolor{comment}{//  chartTitle: title of chart}}
+\DoxyCodeLine{00072     \textcolor{comment}{//  xTitle:     label of x axis}}
+\DoxyCodeLine{00073     \textcolor{comment}{//  yTitle:     label of y axis}}
+\DoxyCodeLine{00074     \textcolor{keywordtype}{void} CreateChart(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& y, \textcolor{keyword}{const} std::string\& chartTitle, }
+\DoxyCodeLine{00075                  \textcolor{keyword}{const} std::string\& xTitle = \textcolor{stringliteral}{"X"}, \textcolor{keyword}{const} std::string\& yTitle = \textcolor{stringliteral}{"Y"});}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{comment}{// Add Matrix to the spreadsheet with row and column labels.}}
+\DoxyCodeLine{00079     \textcolor{keywordtype}{void} AddMatrix(\textcolor{keyword}{const} std::string\& sheetName, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix, }
+\DoxyCodeLine{00080                \textcolor{keyword}{const} std::list<std::string>\& rowLabels, \textcolor{keyword}{const} std::list<std::string>\& columnLabels);}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{keywordtype}{void} AddMatrix(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix,\textcolor{keyword}{const} std::string\& SheetName = \textcolor{stringliteral}{"Matrix"} );}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{keywordtype}{void} MakeVisible( \textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{comment}{// For debugging, for example}}
+\DoxyCodeLine{00087     \textcolor{keywordtype}{void} printStringInExcel(\textcolor{keyword}{const} std::string\& s, \textcolor{keywordtype}{long} rowNumber, \textcolor{keywordtype}{long} colNumber, }
+\DoxyCodeLine{00088                         \textcolor{keyword}{const} std::string\& sheetName);}
+\DoxyCodeLine{00089     \textcolor{keywordtype}{void} printStringInExcel(\textcolor{keyword}{const} std::list<std::string>\& s, \textcolor{keywordtype}{long} rowNumber, \textcolor{keywordtype}{long} colNumber, }
+\DoxyCodeLine{00090                         \textcolor{keyword}{const} std::string\& sheetName);}
+\DoxyCodeLine{00091 \};}
+\DoxyCodeLine{00092 \textcolor{comment}{// Help}}
+\DoxyCodeLine{00093 \mbox{\hyperlink{classVector}{Vector <double, long>}} createVector(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double,long>}}\& mat, \textcolor{keywordtype}{long} row);}
+\DoxyCodeLine{00094 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

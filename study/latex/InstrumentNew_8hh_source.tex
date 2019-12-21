@@ -1,0 +1,269 @@
+\hypertarget{InstrumentNew_8hh_source}{}\doxysection{Instrument\+New.\+hh}
+\label{InstrumentNew_8hh_source}\index{include/duffy/InstrumentNew.hh@{include/duffy/InstrumentNew.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Instrument.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Classes for instruments. Two Factor models.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// N.B.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// N.B. This class is special because it models what is }}
+\DoxyCodeLine{00007 \textcolor{comment}{// essentially a two-\/factor basket PUT option.}}
+\DoxyCodeLine{00008 \textcolor{comment}{// }}
+\DoxyCodeLine{00009 \textcolor{comment}{// You can easily modify this class for your own objectives. }}
+\DoxyCodeLine{00010 \textcolor{comment}{// But take care of the data for the payoff functions!}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{// See chapters 24 and 32 of my FDM book for more details. }}
+\DoxyCodeLine{00013 \textcolor{comment}{//}}
+\DoxyCodeLine{00014 \textcolor{comment}{// ALSO}}
+\DoxyCodeLine{00015 \textcolor{comment}{//          Topper 2005, page 216 (Case Study, Basket Option)}}
+\DoxyCodeLine{00016 \textcolor{comment}{//          (3D case)}}
+\DoxyCodeLine{00017 \textcolor{comment}{//          Topper 2005, page 197(Case Study, Basket Option)}}
+\DoxyCodeLine{00018 \textcolor{comment}{//          (2D case)}}
+\DoxyCodeLine{00019 \textcolor{comment}{//          Bhansali 1998, pages 210-\/212 }}
+\DoxyCodeLine{00020 \textcolor{comment}{//          }}
+\DoxyCodeLine{00021 \textcolor{comment}{//}}
+\DoxyCodeLine{00022 \textcolor{comment}{// 2006-\/1-\/31 DD new name TwoFactorOptionData + now work with a Specific}}
+\DoxyCodeLine{00023 \textcolor{comment}{// BasketStrategy}}
+\DoxyCodeLine{00024 \textcolor{comment}{// 2006-\/2-\/1 DD Prototype Factory created (save typing in information during debugging)}}
+\DoxyCodeLine{00025 \textcolor{comment}{//}}
+\DoxyCodeLine{00026 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00027 \textcolor{comment}{//}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{preprocessor}{\#ifndef INSTRUMENTNEW\_HH}}
+\DoxyCodeLine{00030 \textcolor{preprocessor}{\#define INSTRUMENTNEW\_HH}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{InstrumentNew_8hh_source_l00034}\mbox{\hyperlink{classBasketStrategy}{00034}} \textcolor{keyword}{class }\mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}          }
+\DoxyCodeLine{00035 \{ \textcolor{comment}{// 2-\/asset basket option payoff}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038         \textcolor{keywordtype}{double} K;       \textcolor{comment}{// Strike}}
+\DoxyCodeLine{00039         \textcolor{keywordtype}{double} w;       \textcolor{comment}{// +1 call, -\/1 put}}
+\DoxyCodeLine{00040         \textcolor{keywordtype}{double} w1, w2;  \textcolor{comment}{// w1 + w2 = 1}}
+\DoxyCodeLine{00041 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042         \textcolor{comment}{// All classes need default constructor}}
+\DoxyCodeLine{00043         \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}()}
+\DoxyCodeLine{00044         \{ K = 95.0; w = +1; w1 = 0.5; w2 = 0.5;}
+\DoxyCodeLine{00045         \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}(\textcolor{keywordtype}{double} strike, \textcolor{keywordtype}{double} cp,\textcolor{keywordtype}{double} weight1, \textcolor{keywordtype}{double} weight2)}
+\DoxyCodeLine{00048         \{ K = strike; w = cp; w1 = weight1; w2 = weight2;}
+\DoxyCodeLine{00049         \}}
+\DoxyCodeLine{00050         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00051 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{00052     }
+\DoxyCodeLine{00053             \textcolor{keywordtype}{double} sum = w1*S1 + w2*S2;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055             \textcolor{keywordflow}{if} (w*(sum-\/K) > 0.0)}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{return} (w*(sum -\/ K));}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00058         \}}
+\DoxyCodeLine{00059 \};}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{\Hypertarget{InstrumentNew_8hh_source_l00062}\mbox{\hyperlink{classTwoFactorInstrument}{00062}} \textcolor{keyword}{class }\mbox{\hyperlink{classTwoFactorInstrument}{TwoFactorInstrument}}}
+\DoxyCodeLine{00063 \{}
+\DoxyCodeLine{00064 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 \};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{\Hypertarget{InstrumentNew_8hh_source_l00068}\mbox{\hyperlink{classTwoFactorOptionData}{00068}} \textcolor{keyword}{class }\mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}} : \textcolor{keyword}{public} \mbox{\hyperlink{classTwoFactorInstrument}{TwoFactorInstrument}}}
+\DoxyCodeLine{00069 \{}
+\DoxyCodeLine{00070 \textcolor{comment}{//private:}}
+\DoxyCodeLine{00071 \textcolor{keyword}{public}: \textcolor{comment}{// For convenience only}}
+\DoxyCodeLine{00072     \textcolor{comment}{// An option uses a polymorphic payoff object}}
+\DoxyCodeLine{00073     \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}} pay;}
+\DoxyCodeLine{00074 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075     \textcolor{comment}{// PUBLIC, PURE FOR PEDAGOGICAL REASONS, 13 parameters}}
+\DoxyCodeLine{00076     \textcolor{keywordtype}{double} r;               \textcolor{comment}{// Interest rate}}
+\DoxyCodeLine{00077     \textcolor{keywordtype}{double} \mbox{\hyperlink{classD1}{D1}}, \mbox{\hyperlink{classD2}{D2}};          \textcolor{comment}{// Dividends}}
+\DoxyCodeLine{00078     \textcolor{keywordtype}{double} sig1, sig2;      \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{00079     \textcolor{keywordtype}{double} rho;             \textcolor{comment}{// Cross correlation}}
+\DoxyCodeLine{00080     \textcolor{keywordtype}{double} K;               \textcolor{comment}{// Strike price, now place in IC}}
+\DoxyCodeLine{00081     \textcolor{keywordtype}{double} T;               \textcolor{comment}{// Expiry date}}
+\DoxyCodeLine{00082     \textcolor{keywordtype}{double} SMax1, SMax2;    \textcolor{comment}{// Far field condition}}
+\DoxyCodeLine{00083     \textcolor{keywordtype}{double} w1, w2;}
+\DoxyCodeLine{00084     \textcolor{keywordtype}{int} type;               \textcolor{comment}{// Call +1 or put -\/1}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}()}
+\DoxyCodeLine{00087     \{}
+\DoxyCodeLine{00088         \textcolor{comment}{// Initialise all data and the payoff}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090         \textcolor{comment}{// Use Topper's data as the default, Table 7.1}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092         r = 0.01;}
+\DoxyCodeLine{00093         \mbox{\hyperlink{classD1}{D1}} = \mbox{\hyperlink{classD2}{D2}} = 0.0;}
+\DoxyCodeLine{00094         sig1 = 0.1; sig2 = 0.2;}
+\DoxyCodeLine{00095         rho = 0.5;}
+\DoxyCodeLine{00096         }
+\DoxyCodeLine{00097         K = 40.0;}
+\DoxyCodeLine{00098         T = 0.5;}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100         w1 = 1.0;}
+\DoxyCodeLine{00101         w2 = 20.0;}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103         type = -\/1;}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105         \textcolor{comment}{// Now create the payoff Strategy object}}
+\DoxyCodeLine{00106         \textcolor{comment}{/* BasketStrategy(double strike, double cp,double weight1, double weight2)}}
+\DoxyCodeLine{00107 \textcolor{comment}{        \{ K = strike; w = cp; w1 = weight1; w2 = weight2;\} */}}
+\DoxyCodeLine{00108         }
+\DoxyCodeLine{00109         pay = \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}(K, type, w1, w2);}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111         \textcolor{comment}{// In general 1) we need a Factory object as we have done}}
+\DoxyCodeLine{00112         \textcolor{comment}{// in the one-\/dimensional case and 2) work with pointers to}}
+\DoxyCodeLine{00113         \textcolor{comment}{// base classes}}
+\DoxyCodeLine{00114     \}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116     \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00117 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{00118         \textcolor{keywordflow}{return} pay.payoff(x, y);}
+\DoxyCodeLine{00119     \}}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121 \};}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123 \textcolor{keyword}{class }\mbox{\hyperlink{classInstrumentFactory}{InstrumentFactory}}}
+\DoxyCodeLine{00124 \{}
+\DoxyCodeLine{00125 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127     \textcolor{keyword}{virtual} \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}* CreateOption() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129 \};}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131 \textcolor{keyword}{class }\mbox{\hyperlink{classConsoleInstrumentFactory}{ConsoleInstrumentFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{classInstrumentFactory}{InstrumentFactory}}}
+\DoxyCodeLine{00132 \{}
+\DoxyCodeLine{00133 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135     \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}* CreateOption()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00136 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         \textcolor{keywordtype}{double} dr;      \textcolor{comment}{// Interest rate}}
+\DoxyCodeLine{00139         \textcolor{keywordtype}{double} dsig1, dsig2;    \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{00140         \textcolor{keywordtype}{double} div1, div2;  \textcolor{comment}{// Dividends}}
+\DoxyCodeLine{00141         \textcolor{keywordtype}{double} drho;}
+\DoxyCodeLine{00142         \textcolor{keywordtype}{double} dK;      \textcolor{comment}{// Strike price}}
+\DoxyCodeLine{00143         \textcolor{keywordtype}{double} dT;      \textcolor{comment}{// Expiry date}}
+\DoxyCodeLine{00144         \textcolor{keywordtype}{double} dSMax1, dSMax2;  \textcolor{comment}{// Far field boundary}}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146         \textcolor{keywordtype}{double} dw1, dw2;    \textcolor{comment}{// Weights of each asset}}
+\DoxyCodeLine{00147         \textcolor{keywordtype}{int} dtype;      \textcolor{comment}{// C +1, P -\/1}}
+\DoxyCodeLine{00148 L1:}
+\DoxyCodeLine{00149         std::cout << \textcolor{stringliteral}{"Type Call +1, Put -\/1: "};}
+\DoxyCodeLine{00150         std::cin >> dtype;}
+\DoxyCodeLine{00151         dtype = -\/1;     \textcolor{comment}{// !!! for the moment}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153         std::cout << \textcolor{stringliteral}{"Interest rate: "};}
+\DoxyCodeLine{00154         std::cin >> dr;}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156         std::cout << \textcolor{stringliteral}{"Strike: "};}
+\DoxyCodeLine{00157         std::cin >> dK;}
+\DoxyCodeLine{00158 }
+\DoxyCodeLine{00159         std::cout << \textcolor{stringliteral}{"Volatility 1: "};}
+\DoxyCodeLine{00160         std::cin >> dsig1;}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162         std::cout << \textcolor{stringliteral}{"Volatility 2: "};}
+\DoxyCodeLine{00163         std::cin >> dsig2;}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165         std::cout << \textcolor{stringliteral}{"Dividend 1: "};}
+\DoxyCodeLine{00166         std::cin >> div1;}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168         std::cout << \textcolor{stringliteral}{"Dividend 2: "};}
+\DoxyCodeLine{00169         std::cin >> div2;}
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171         std::cout << \textcolor{stringliteral}{"Correlation: "};}
+\DoxyCodeLine{00172         std::cin >> drho;}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174         std::cout << \textcolor{stringliteral}{"First Far Field: "};}
+\DoxyCodeLine{00175         std::cin >> dSMax1;}
+\DoxyCodeLine{00176         std::cout << \textcolor{stringliteral}{"Second Far Field: "};}
+\DoxyCodeLine{00177         std::cin >> dSMax2;}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179         std::cout << \textcolor{stringliteral}{"weight 1: "};}
+\DoxyCodeLine{00180         std::cin >> dw1;}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182         std::cout << \textcolor{stringliteral}{"Weight 2: "};}
+\DoxyCodeLine{00183         std::cin >> dw2;}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185         std::cout << \textcolor{stringliteral}{"Expiry: "};}
+\DoxyCodeLine{00186         std::cin >> dT;}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188         std::cout << \textcolor{stringliteral}{"Is this correct, carry on?"};}
+\DoxyCodeLine{00189         \textcolor{keywordtype}{char} c; std::cin >> c;}
+\DoxyCodeLine{00190         \textcolor{keywordflow}{if} (c != \textcolor{charliteral}{'y'} \&\& c != \textcolor{charliteral}{'Y'})}
+\DoxyCodeLine{00191         \{}
+\DoxyCodeLine{00192             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00193         \}}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195         \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}* result = \textcolor{keyword}{new} \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}};}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197         result-\/>r       = dr;}
+\DoxyCodeLine{00198         result-\/>sig1    = dsig1;}
+\DoxyCodeLine{00199         result-\/>sig2    = dsig2;}
+\DoxyCodeLine{00200         result-\/>rho     = drho;}
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202         result-\/>D1      = div1;}
+\DoxyCodeLine{00203         result-\/>D2      = div2;}
+\DoxyCodeLine{00204     }
+\DoxyCodeLine{00205         result-\/>K       = dK;}
+\DoxyCodeLine{00206         result-\/>T       = dT;}
+\DoxyCodeLine{00207         result-\/>SMax1   = dSMax1;}
+\DoxyCodeLine{00208         result-\/>SMax2   = dSMax2;}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210         result-\/>type    = dtype;}
+\DoxyCodeLine{00211     }
+\DoxyCodeLine{00212         result-\/>w1      = dw1;}
+\DoxyCodeLine{00213         result-\/>w2      = dw2;}
+\DoxyCodeLine{00214     }
+\DoxyCodeLine{00215         \textcolor{comment}{// Now assign the payoff function}}
+\DoxyCodeLine{00216         result-\/>pay = \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}(dK, dtype, dw1, dw2);}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221     \}   }
+\DoxyCodeLine{00222 \};}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{\Hypertarget{InstrumentNew_8hh_source_l00224}\mbox{\hyperlink{classPrototypeInstrumentFactory}{00224}} \textcolor{keyword}{class }\mbox{\hyperlink{classPrototypeInstrumentFactory}{PrototypeInstrumentFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{classInstrumentFactory}{InstrumentFactory}}}
+\DoxyCodeLine{00225 \{ \textcolor{comment}{// Returns a prototype object}}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00228 }
+\DoxyCodeLine{00229     \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}* CreateOption()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00230 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232         \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}* result = \textcolor{keyword}{new} \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}};}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234         \textcolor{comment}{// Results take from Topper 2005}}
+\DoxyCodeLine{00235         result-\/>r       = 0.0;  \textcolor{comment}{// Percentage}}
+\DoxyCodeLine{00236         result-\/>sig1    = 0.2;}
+\DoxyCodeLine{00237         result-\/>sig2    = 0.2;}
+\DoxyCodeLine{00238         result-\/>rho     = -\/0.9;}
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00240         result-\/>D1      = 0.0;}
+\DoxyCodeLine{00241         result-\/>D2      = 0.0;}
+\DoxyCodeLine{00242     }
+\DoxyCodeLine{00243         result-\/>K       = 4.0;}
+\DoxyCodeLine{00244         result-\/>T       = 2.5;}
+\DoxyCodeLine{00245         \textcolor{comment}{//result-\/>SMax1 = result-\/>K * 2.0;}}
+\DoxyCodeLine{00246         \textcolor{comment}{//result-\/>SMax2 = result-\/>K * 2.0;}}
+\DoxyCodeLine{00247 }
+\DoxyCodeLine{00248         result-\/>SMax1   = 40.0;}
+\DoxyCodeLine{00249         result-\/>SMax2   = 40.0;}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251         result-\/>type    = -\/1;   \textcolor{comment}{// Put, temp}}
+\DoxyCodeLine{00252     }
+\DoxyCodeLine{00253         result-\/>w1      = 1.0; \textcolor{comment}{// Topper}}
+\DoxyCodeLine{00254         result-\/>w2      = 1.0;}
+\DoxyCodeLine{00255     }
+\DoxyCodeLine{00256         \textcolor{comment}{// Now assign the payoff function}}
+\DoxyCodeLine{00257         result-\/>pay = \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}(result-\/>K, result-\/>type, result-\/>w1, result-\/>w2);}
+\DoxyCodeLine{00258 }
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00261 }
+\DoxyCodeLine{00262     \}   }
+\DoxyCodeLine{00263 \};}
+\DoxyCodeLine{00264 }
+\DoxyCodeLine{00265 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,56 @@
+\hypertarget{PointTemplate_8hh_source}{}\doxysection{Point\+Template.\+hh}
+\label{PointTemplate_8hh_source}\index{include/duffy/PointTemplate.hh@{include/duffy/PointTemplate.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Point.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Generic point class. The first coordinate is of one}}
+\DoxyCodeLine{00004 \textcolor{comment}{// type and the second coordinate is of the second type.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef PointTemplate\_hh}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define PointTemplate\_hh}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond> \textcolor{keyword}{class }\mbox{\hyperlink{classPoint}{Point}}}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016     \textcolor{comment}{// The two coordinates}}
+\DoxyCodeLine{00017     TFirst m\_first;}
+\DoxyCodeLine{00018     TSecond m\_second;}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021     \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00022     \mbox{\hyperlink{classPoint}{Point}}();                                           \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classPoint}{Point}}(TFirst first, TSecond second);               \textcolor{comment}{// Constructor with coordinates}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classPoint}{Point}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& source);     \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00025     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classPoint}{Point}}();                                  \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00028     TFirst First() \textcolor{keyword}{const};                               \textcolor{comment}{// Get first coordinates}}
+\DoxyCodeLine{00029     TSecond Second() \textcolor{keyword}{const};                             \textcolor{comment}{// Get second coordinate}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00032     \textcolor{keywordtype}{void} First(\textcolor{keyword}{const} TFirst\& val);                      \textcolor{comment}{// Set first coordinate}}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{void} Second(\textcolor{keyword}{const} TSecond\& val);                    \textcolor{comment}{// Set second coordinates}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{comment}{// Functions}}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{double} Distance(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& p) \textcolor{keyword}{const};   \textcolor{comment}{// Calculate distance}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00039     \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& source);}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{comment}{// Print}}
+\DoxyCodeLine{00042     \textcolor{comment}{//template <class TFirst, class TSecond> }}
+\DoxyCodeLine{00043     \textcolor{keyword}{friend} std::ostream\& operator << (std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& p)}
+\DoxyCodeLine{00044     \{}
+\DoxyCodeLine{00045         os << \textcolor{stringliteral}{"("} << p.m\_first << \textcolor{stringliteral}{","} << p.m\_second << \textcolor{stringliteral}{")\(\backslash\)n"};}
+\DoxyCodeLine{00046         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 \};}
+\DoxyCodeLine{00049 \textcolor{preprocessor}{\#include "../../src/PointTemplate.cc"}}
+\DoxyCodeLine{00050 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

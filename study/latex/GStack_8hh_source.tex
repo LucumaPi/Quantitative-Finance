@@ -1,0 +1,36 @@
+\hypertarget{GStack_8hh_source}{}\doxysection{G\+Stack.\+hh}
+\label{GStack_8hh_source}\index{include/duffy/GStack.hh@{include/duffy/GStack.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Stack.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Creating a stack class based on a list class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Composition and delegation}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{00013     \textcolor{keyword}{class }\mbox{\hyperlink{classStack}{Stack}}}
+\DoxyCodeLine{00014 \{ \textcolor{comment}{// Generic bounded stack}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017         std::list<T> elements;  \textcolor{comment}{// Elements of the stack}}
+\DoxyCodeLine{00018         \textcolor{keywordtype}{int} N;              \textcolor{comment}{// Size of stack}}
+\DoxyCodeLine{00019         \textcolor{comment}{// Other data ...}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022         }
+\DoxyCodeLine{00023         \textcolor{comment}{// Default constructor, initialise parts}}
+\DoxyCodeLine{00024         \mbox{\hyperlink{classStack}{Stack}}() : elements(std::list<T> ()) \{ N = 10;\}}
+\DoxyCodeLine{00025         \mbox{\hyperlink{classStack}{Stack}}(\textcolor{keywordtype}{int} size) \{ \textcolor{comment}{// TODO \}}}
+\DoxyCodeLine{00026     }
+\DoxyCodeLine{00027         \textcolor{comment}{// Manipulating elements}}
+\DoxyCodeLine{00028         T pop() \{ \textcolor{comment}{// TODO \}}}
+\DoxyCodeLine{00029         \textcolor{keywordtype}{void} push(\textcolor{keywordtype}{double} value)\{ \textcolor{comment}{// TODO \}}}
+\DoxyCodeLine{00030 \};}
+
+\end{DoxyCode}

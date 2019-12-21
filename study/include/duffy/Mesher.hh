@@ -12,8 +12,8 @@
 // (C) Datasim Education BV 2006
 //
 
-#ifndef Mesher_HPP
-#define Mesher_HPP
+#ifndef Mesher_HH
+#define Mesher_HH
 
 #include "Vector.hh"
 #include "Range.hh"

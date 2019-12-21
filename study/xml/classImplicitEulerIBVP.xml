@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classImplicitEulerIBVP" kind="class" language="C++" prot="public">
+    <compoundname>ImplicitEulerIBVP</compoundname>
+    <basecompoundref refid="classIBVPFDM" prot="public" virt="non-virtual">IBVPFDM</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classImplicitEulerIBVP_1a34b5f261394a94d17933bab495b4421c" prot="private" static="no" mutable="no">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt;double, long&gt; ImplicitEulerIBVP::A</definition>
+        <argsstring></argsstring>
+        <name>A</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IEulerIBVPSolver.hh" line="24" column="8" bodyfile="include/duffy/IEulerIBVPSolver.hh" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classImplicitEulerIBVP_1a1c629f86ef6030ecceec871319b28052" prot="private" static="no" mutable="no">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt;double, long&gt; ImplicitEulerIBVP::B</definition>
+        <argsstring></argsstring>
+        <name>B</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IEulerIBVPSolver.hh" line="24" column="10" bodyfile="include/duffy/IEulerIBVPSolver.hh" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classImplicitEulerIBVP_1a3f913746dd9868b17e0e7a3d5c795961" prot="private" static="no" mutable="no">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt;double, long&gt; ImplicitEulerIBVP::C</definition>
+        <argsstring></argsstring>
+        <name>C</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IEulerIBVPSolver.hh" line="24" column="12" bodyfile="include/duffy/IEulerIBVPSolver.hh" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classImplicitEulerIBVP_1a8e1a9698da74cc5838a01019fadd83d3" prot="private" static="no" mutable="no">
+        <type><ref refid="classVector" kindref="compound">Vector</ref>&lt; double, long &gt;</type>
+        <definition>Vector&lt;double, long&gt; ImplicitEulerIBVP::F</definition>
+        <argsstring></argsstring>
+        <name>F</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IEulerIBVPSolver.hh" line="25" column="8" bodyfile="include/duffy/IEulerIBVPSolver.hh" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classImplicitEulerIBVP_1ac6c81a57b70da3275fcb4b74b5e30f1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ImplicitEulerIBVP::ImplicitEulerIBVP</definition>
+        <argsstring>()</argsstring>
+        <name>ImplicitEulerIBVP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IEulerIBVPSolver.hh" line="28" column="1" bodyfile="src/IEulerIBVPSolver.cc" bodystart="22" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classImplicitEulerIBVP_1a2309820ab1e205587063b03d369c003d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ImplicitEulerIBVP::ImplicitEulerIBVP</definition>
+        <argsstring>(IBVP &amp;source, long NSteps, long JSteps)</argsstring>
+        <name>ImplicitEulerIBVP</name>
+        <param>
+          <type><ref refid="classIBVP" kindref="compound">IBVP</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>NSteps</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>JSteps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IEulerIBVPSolver.hh" line="30" column="1" bodyfile="src/IEulerIBVPSolver.cc" bodystart="32" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classImplicitEulerIBVP_1afc239aeb2cd0d045f4836dca607abaa6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ImplicitEulerIBVP::calculateBC</definition>
+        <argsstring>()</argsstring>
+        <name>calculateBC</name>
+        <reimplements refid="classIBVPFDM_1a42bd377e3c0b16ddb05d8a3dea7a873b">calculateBC</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IEulerIBVPSolver.hh" line="32" column="6" bodyfile="src/IEulerIBVPSolver.cc" bodystart="43" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classImplicitEulerIBVP_1af71d063f8fb5df6a5a269c3c4f82fbc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ImplicitEulerIBVP::calculate</definition>
+        <argsstring>()</argsstring>
+        <name>calculate</name>
+        <reimplements refid="classIBVPFDM_1a5b73954c7ae1987e856c02b985387872">calculate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/IEulerIBVPSolver.hh" line="34" column="6" bodyfile="src/IEulerIBVPSolver.cc" bodystart="54" bodyend="97"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IBVPFDM</label>
+        <link refid="classIBVPFDM"/>
+      </node>
+      <node id="1">
+        <label>ImplicitEulerIBVP</label>
+        <link refid="classImplicitEulerIBVP"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>NumericMatrix&lt; double, long &gt;</label>
+        <link refid="classNumericMatrix"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="template-instance">
+          <edgelabel>&lt; double, long &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Array&lt; double, long, FullArray&lt; double &gt; &gt;</label>
+        <link refid="classArray"/>
+        <childnode refid="11" relation="template-instance">
+          <edgelabel>&lt; double, long, FullArray&lt; double &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Mesher</label>
+        <link refid="classMesher"/>
+      </node>
+      <node id="8">
+        <label>NumericMatrix&lt; V, I, S &gt;</label>
+        <link refid="classNumericMatrix"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Matrix&lt; V, I, S &gt;</label>
+        <link refid="classMatrix"/>
+      </node>
+      <node id="2">
+        <label>IBVPFDM</label>
+        <link refid="classIBVPFDM"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>#ibvp</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>#m</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>#res</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>#vecOld</edgelabel>
+          <edgelabel>#xarr</edgelabel>
+          <edgelabel>#vecNew</edgelabel>
+          <edgelabel>#tarr</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ImplicitEulerIBVP</label>
+        <link refid="classImplicitEulerIBVP"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IBVP</label>
+        <link refid="classIBVP"/>
+      </node>
+      <node id="12">
+        <label>Vector&lt; V, I, S &gt;</label>
+        <link refid="classVector"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Matrix&lt; double, long, FullMatrix&lt; double &gt; &gt;</label>
+        <link refid="classMatrix"/>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; double, long, FullMatrix&lt; double &gt; &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Array&lt; V, I, S &gt;</label>
+        <link refid="classArray"/>
+      </node>
+      <node id="9">
+        <label>Vector&lt; double, long &gt;</label>
+        <link refid="classVector"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="template-instance">
+          <edgelabel>&lt; double, long &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/IEulerIBVPSolver.hh" line="17" column="1" bodyfile="include/duffy/IEulerIBVPSolver.hh" bodystart="16" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classImplicitEulerIBVP_1a34b5f261394a94d17933bab495b4421c" prot="private" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>A</name></member>
+      <member refid="classImplicitEulerIBVP_1a1c629f86ef6030ecceec871319b28052" prot="private" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>B</name></member>
+      <member refid="classImplicitEulerIBVP_1a3f913746dd9868b17e0e7a3d5c795961" prot="private" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>C</name></member>
+      <member refid="classImplicitEulerIBVP_1af71d063f8fb5df6a5a269c3c4f82fbc3" prot="public" virt="virtual"><scope>ImplicitEulerIBVP</scope><name>calculate</name></member>
+      <member refid="classImplicitEulerIBVP_1afc239aeb2cd0d045f4836dca607abaa6" prot="public" virt="virtual"><scope>ImplicitEulerIBVP</scope><name>calculateBC</name></member>
+      <member refid="classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>currentIndex</name></member>
+      <member refid="classIBVPFDM_1aadd87ba406920f5c4441d26108568e7b" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>DJ</name></member>
+      <member refid="classIBVPFDM_1aad9a3178a48c9a131dd577cea5490495" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>DJJ</name></member>
+      <member refid="classIBVPFDM_1a7dc9a42c9aa5e88a0ce91bb2381083ef" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>DN</name></member>
+      <member refid="classImplicitEulerIBVP_1a8e1a9698da74cc5838a01019fadd83d3" prot="private" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>F</name></member>
+      <member refid="classIBVPFDM_1a20ec2ca54a8768c22ae5579021bcbc21" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>h</name></member>
+      <member refid="classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>h2</name></member>
+      <member refid="classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>ibvp</name></member>
+      <member refid="classIBVPFDM_1a7614c8116ab9c08f6ccfb97dc6c1ff61" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>IBVPFDM</name></member>
+      <member refid="classIBVPFDM_1a5a131f0efb8cb71abea192b6afd26cd2" prot="public" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>IBVPFDM</name></member>
+      <member refid="classIBVPFDM_1aa371f76cfb9f2b95ba24d6bbf1291353" prot="public" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>IBVPFDM</name></member>
+      <member refid="classImplicitEulerIBVP_1ac6c81a57b70da3275fcb4b74b5e30f1e" prot="public" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>ImplicitEulerIBVP</name></member>
+      <member refid="classImplicitEulerIBVP_1a2309820ab1e205587063b03d369c003d" prot="public" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>ImplicitEulerIBVP</name></member>
+      <member refid="classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>J</name></member>
+      <member refid="classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>k</name></member>
+      <member refid="classIBVPFDM_1a8852681de171f76e8351a07c6bb3fe8c" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>m</name></member>
+      <member refid="classIBVPFDM_1a11c7f409e503aec453107f69460d4d5b" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>maxIndex</name></member>
+      <member refid="classIBVPFDM_1aac47fc0313cfd94d1c76185636f01e09" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>N</name></member>
+      <member refid="classIBVPFDM_1aa060a346aafe2c9d6f563e86211652f9" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>n</name></member>
+      <member refid="classIBVPFDM_1a3102b8d994991d993193a35df3d6c5ee" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>operator=</name></member>
+      <member refid="classIBVPFDM_1af4d88dae8cdfdc020b7ab0b296a7c8d5" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>res</name></member>
+      <member refid="classIBVPFDM_1ab78e1e05532a2359e674a4a729314b9a" prot="public" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>result</name></member>
+      <member refid="classIBVPFDM_1aecdb91332047c215ff4548e897f8e2d8" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>tarr</name></member>
+      <member refid="classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>tnow</name></member>
+      <member refid="classIBVPFDM_1adcbf3a3c0024261777514d461f5fa28c" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>tprev</name></member>
+      <member refid="classIBVPFDM_1a95e702453d0b896062b632498e40438c" prot="public" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>TValues</name></member>
+      <member refid="classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>vecNew</name></member>
+      <member refid="classIBVPFDM_1a9b5cf717e24fa77775650cbc2913785f" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>vecOld</name></member>
+      <member refid="classIBVPFDM_1acde024de54dc2124db544dc6424365c7" prot="protected" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>xarr</name></member>
+      <member refid="classIBVPFDM_1a7172f8bc3eebc85940ece135065f96ba" prot="public" virt="non-virtual"><scope>ImplicitEulerIBVP</scope><name>XValues</name></member>
+      <member refid="classIBVPFDM_1a08763948c0e366be4f87d4fc7173b1a2" prot="public" virt="virtual"><scope>ImplicitEulerIBVP</scope><name>~IBVPFDM</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

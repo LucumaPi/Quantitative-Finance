@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classDualStrikeStrategy" kind="class" language="C++" prot="public">
+    <compoundname>DualStrikeStrategy</compoundname>
+    <basecompoundref refid="classMultiAssetPayoffStrategy" prot="public" virt="non-virtual">MultiAssetPayoffStrategy</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDualStrikeStrategy_1af67e63c5212bfb72e940aa41db1821d9" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DualStrikeStrategy::K1</definition>
+        <argsstring></argsstring>
+        <name>K1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="155" column="8" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDualStrikeStrategy_1ab3a73b9dac13de4e31111fe798a24b35" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DualStrikeStrategy::K2</definition>
+        <argsstring></argsstring>
+        <name>K2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="155" column="11" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDualStrikeStrategy_1a595e7b983648aaecacdc9ed4abc2bf58" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DualStrikeStrategy::w1</definition>
+        <argsstring></argsstring>
+        <name>w1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="156" column="8" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDualStrikeStrategy_1a4a83e7d1249d364f965e2d4abe7116c2" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DualStrikeStrategy::w2</definition>
+        <argsstring></argsstring>
+        <name>w2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="156" column="11" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDualStrikeStrategy_1acb137e0591a87d9dc7fdabc0bea33ac9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DualStrikeStrategy::DualStrikeStrategy</definition>
+        <argsstring>(double strike1, double strike2, double cp1, double cp2)</argsstring>
+        <name>DualStrikeStrategy</name>
+        <param>
+          <type>double</type>
+          <declname>strike1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>strike2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cp1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cp2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="158" column="1" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classDualStrikeStrategy_1a2b0c936589516174633636d12ea05e18" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double DualStrikeStrategy::payoff</definition>
+        <argsstring>(double S1, double S2) const</argsstring>
+        <name>payoff</name>
+        <reimplements refid="classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">payoff</reimplements>
+        <param>
+          <type>double</type>
+          <declname>S1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>S2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MultiAssetPayoffStrategy.hh" line="163" column="8" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="163" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MultiAssetPayoffStrategy</label>
+        <link refid="classMultiAssetPayoffStrategy"/>
+      </node>
+      <node id="1">
+        <label>DualStrikeStrategy</label>
+        <link refid="classDualStrikeStrategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MultiAssetPayoffStrategy</label>
+        <link refid="classMultiAssetPayoffStrategy"/>
+      </node>
+      <node id="1">
+        <label>DualStrikeStrategy</label>
+        <link refid="classDualStrikeStrategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MultiAssetPayoffStrategy.hh" line="153" column="1" bodyfile="MultiAssetPayoffStrategy.hh" bodystart="152" bodyend="169"/>
+    <listofallmembers>
+      <member refid="classDualStrikeStrategy_1acb137e0591a87d9dc7fdabc0bea33ac9" prot="public" virt="non-virtual"><scope>DualStrikeStrategy</scope><name>DualStrikeStrategy</name></member>
+      <member refid="classDualStrikeStrategy_1af67e63c5212bfb72e940aa41db1821d9" prot="private" virt="non-virtual"><scope>DualStrikeStrategy</scope><name>K1</name></member>
+      <member refid="classDualStrikeStrategy_1ab3a73b9dac13de4e31111fe798a24b35" prot="private" virt="non-virtual"><scope>DualStrikeStrategy</scope><name>K2</name></member>
+      <member refid="classDualStrikeStrategy_1a2b0c936589516174633636d12ea05e18" prot="public" virt="virtual"><scope>DualStrikeStrategy</scope><name>payoff</name></member>
+      <member refid="classDualStrikeStrategy_1a595e7b983648aaecacdc9ed4abc2bf58" prot="private" virt="non-virtual"><scope>DualStrikeStrategy</scope><name>w1</name></member>
+      <member refid="classDualStrikeStrategy_1a4a83e7d1249d364f965e2d4abe7116c2" prot="private" virt="non-virtual"><scope>DualStrikeStrategy</scope><name>w2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

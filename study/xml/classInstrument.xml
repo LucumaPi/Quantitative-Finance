@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="classInstrument" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Instrument</compoundname>
+    <derivedcompoundref refid="classBond" prot="public" virt="non-virtual">Bond</derivedcompoundref>
+    <derivedcompoundref refid="classOption" prot="public" virt="non-virtual">Option</derivedcompoundref>
+    <derivedcompoundref refid="classOption" prot="public" virt="non-virtual">Option</derivedcompoundref>
+    <derivedcompoundref refid="classSwap" prot="public" virt="non-virtual">Swap</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classInstrument_1a226e295bf90dd8549f56860d9f7beb93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Instrument::print</definition>
+        <argsstring>() const =0</argsstring>
+        <name>print</name>
+        <reimplementedby refid="classOption_1a257e06989c7de5eff3047f2f947f5658">print</reimplementedby>
+        <reimplementedby refid="classBond_1a9172a3a7b02bde24552caa357216923b">print</reimplementedby>
+        <reimplementedby refid="classSwap_1aa6f7d3c774666d04fa67d270ce873623">print</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/duffy/InstrumentOld.hh" line="21" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Option</label>
+        <link refid="classOption"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Instrument</label>
+        <link refid="classInstrument"/>
+      </node>
+      <node id="4">
+        <label>Swap</label>
+        <link refid="classSwap"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bond</label>
+        <link refid="classBond"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Instrument</label>
+        <link refid="classInstrument"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/duffy/Instrument.hh" line="15" column="1" bodyfile="include/duffy/Instrument.hh" bodystart="14" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classInstrument_1a226e295bf90dd8549f56860d9f7beb93" prot="public" virt="pure-virtual"><scope>Instrument</scope><name>print</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
