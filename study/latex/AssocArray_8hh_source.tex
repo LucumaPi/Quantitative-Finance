@@ -15,8 +15,8 @@
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifndef AssocArray\_HH}}
 \DoxyCodeLine{00012 \textcolor{preprocessor}{\#define AssocArray\_HH}}
 \DoxyCodeLine{00013 }
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "Array.hh"}}
-\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "Set.hh"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Array_8hh}{Array.hh}}"}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Set_8hh}{Set.hh}}"}}
 \DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <map>}}
 \DoxyCodeLine{00017 }
 \DoxyCodeLine{\Hypertarget{AssocArray_8hh_source_l00018}\mbox{\hyperlink{classAssocArray}{00018}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI = std::\textcolor{keywordtype}{string}> \textcolor{keyword}{class }\mbox{\hyperlink{classAssocArray}{AssocArray}}}
@@ -31,29 +31,29 @@
 \DoxyCodeLine{00027 }
 \DoxyCodeLine{00028 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00029     \textcolor{comment}{// Constructors \& destructor}}
-\DoxyCodeLine{00030     \mbox{\hyperlink{classAssocArray}{AssocArray}}();}
-\DoxyCodeLine{00031     \mbox{\hyperlink{classAssocArray}{AssocArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& arr2);}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classAssocArray_a33a1d0f41fd0804939b454d02b8cace6}{AssocArray}}();}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classAssocArray_a33a1d0f41fd0804939b454d02b8cace6}{AssocArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& arr2);}
 \DoxyCodeLine{00032     \textcolor{comment}{// Construct the map from a list of names and values}}
-\DoxyCodeLine{00033     \mbox{\hyperlink{classAssocArray}{AssocArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI>}}\& names, \textcolor{keyword}{const} V\& val);}
+\DoxyCodeLine{00033     \mbox{\hyperlink{classAssocArray_a33a1d0f41fd0804939b454d02b8cace6}{AssocArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI>}}\& names, \textcolor{keyword}{const} V\& val);}
 \DoxyCodeLine{00034 }
-\DoxyCodeLine{00035     \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& ass2);}
+\DoxyCodeLine{00035     \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& \mbox{\hyperlink{classAssocArray_a217b73381b1ab8ec100fd09d2acdc4b8}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocArray}{AssocArray<V, AI>}}\& ass2);}
 \DoxyCodeLine{00036 }
 \DoxyCodeLine{00037     \textcolor{comment}{// New overloaded indexing operator}}
-\DoxyCodeLine{00038     \textcolor{keyword}{virtual} V\& operator [] (\textcolor{keyword}{const} AI\& index);   \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00038     \textcolor{keyword}{virtual} V\& \mbox{\hyperlink{classAssocArray_a8fac9fa310506a1319d71283e1dc54bc}{operator [] }}(\textcolor{keyword}{const} AI\& index);   \textcolor{comment}{// Subscripting operator}}
 \DoxyCodeLine{00039 }
 \DoxyCodeLine{00040 }
-\DoxyCodeLine{00041     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::map<AI,V>::iterator iterator;}
-\DoxyCodeLine{00042     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::map<AI,V>::const\_iterator const\_iterator;}
+\DoxyCodeLine{\Hypertarget{AssocArray_8hh_source_l00041}\mbox{\hyperlink{classAssocArray_ac1d9fb1b2682577b76f6dae9e674711c}{00041}}     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::map<AI,V>::iterator \mbox{\hyperlink{classAssocArray_ac1d9fb1b2682577b76f6dae9e674711c}{iterator}};}
+\DoxyCodeLine{\Hypertarget{AssocArray_8hh_source_l00042}\mbox{\hyperlink{classAssocArray_adea91a1cf7a2abbfdfd4c9bc7c746c62}{00042}}     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::map<AI,V>::const\_iterator \mbox{\hyperlink{classAssocArray_adea91a1cf7a2abbfdfd4c9bc7c746c62}{const\_iterator}};}
 \DoxyCodeLine{00043 }
 \DoxyCodeLine{00044     \textcolor{comment}{// Iterator functions}}
-\DoxyCodeLine{00045     iterator Begin();               \textcolor{comment}{// Return iterator at begin of assoc array}}
-\DoxyCodeLine{00046     const\_iterator Begin() \textcolor{keyword}{const};   \textcolor{comment}{// Return const iterator at begin of assoc array}}
-\DoxyCodeLine{00047     iterator End();                 \textcolor{comment}{// Return iterator after end of assoc array}}
-\DoxyCodeLine{00048     const\_iterator End() \textcolor{keyword}{const};     \textcolor{comment}{// Return const iterator after end of assoc array}}
+\DoxyCodeLine{00045     \mbox{\hyperlink{classAssocArray_ac1d9fb1b2682577b76f6dae9e674711c}{iterator}} \mbox{\hyperlink{classAssocArray_a3fbe23088af5d36d97acd4b76bcb0107}{Begin}}();              \textcolor{comment}{// Return iterator at begin of assoc array}}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classAssocArray_adea91a1cf7a2abbfdfd4c9bc7c746c62}{const\_iterator}} \mbox{\hyperlink{classAssocArray_a3fbe23088af5d36d97acd4b76bcb0107}{Begin}}() \textcolor{keyword}{const};    \textcolor{comment}{// Return const iterator at begin of assoc array}}
+\DoxyCodeLine{00047     \mbox{\hyperlink{classAssocArray_ac1d9fb1b2682577b76f6dae9e674711c}{iterator}} \mbox{\hyperlink{classAssocArray_a600b9a0280c6f67380abc032dad1d755}{End}}();                  \textcolor{comment}{// Return iterator after end of assoc array}}
+\DoxyCodeLine{00048     \mbox{\hyperlink{classAssocArray_adea91a1cf7a2abbfdfd4c9bc7c746c62}{const\_iterator}} \mbox{\hyperlink{classAssocArray_a600b9a0280c6f67380abc032dad1d755}{End}}() \textcolor{keyword}{const};        \textcolor{comment}{// Return const iterator after end of assoc array}}
 \DoxyCodeLine{00049 }
 \DoxyCodeLine{00050     \textcolor{comment}{// Selectors}}
-\DoxyCodeLine{00051     \textcolor{keywordtype}{long} Size()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} str.size(); \}}
-\DoxyCodeLine{00052     \mbox{\hyperlink{classSet}{Set<AI>}} Keys()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} keys; \}        \textcolor{comment}{// Copy}}
+\DoxyCodeLine{\Hypertarget{AssocArray_8hh_source_l00051}\mbox{\hyperlink{classAssocArray_ab2ab7a330c94e3fb36060c9ec6e908ef}{00051}}     \textcolor{keywordtype}{long} \mbox{\hyperlink{classAssocArray_ab2ab7a330c94e3fb36060c9ec6e908ef}{Size}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} str.size(); \}}
+\DoxyCodeLine{\Hypertarget{AssocArray_8hh_source_l00052}\mbox{\hyperlink{classAssocArray_a06535adaa02888ad24b3385eb1f83094}{00052}}     \mbox{\hyperlink{classSet}{Set<AI>}} \mbox{\hyperlink{classAssocArray_a06535adaa02888ad24b3385eb1f83094}{Keys}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} keys; \}        \textcolor{comment}{// Copy}}
 \DoxyCodeLine{00053 }
 \DoxyCodeLine{00054     \textcolor{comment}{// Modifiers}}
 \DoxyCodeLine{00055 \textcolor{comment}{//  void add(const AI\& key, const V\& value);}}

@@ -2,6 +2,10 @@
 \label{classMesher}\index{Mesher@{Mesher}}
 
 
+{\ttfamily \#include $<$Mesher.\+hh$>$}
+
+
+
 Collaboration diagram for Mesher\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,24 +16,167 @@ Collaboration diagram for Mesher\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classMesher_a41237fa5d56d9eeac6f5f2e5fff72e95}\label{classMesher_a41237fa5d56d9eeac6f5f2e5fff72e95}} 
-{\bfseries Mesher} (double A, double \mbox{\hyperlink{classB}{B}}, double t, double T)
+\mbox{\hyperlink{classMesher_a1d69a9028407d910b655ae908eed0b12}{Mesher}} ()
 \item 
-\mbox{\Hypertarget{classMesher_ac22307b6943d7e41d0908449a7b06daf}\label{classMesher_ac22307b6943d7e41d0908449a7b06daf}} 
-{\bfseries Mesher} (const \mbox{\hyperlink{classRange}{Range}}$<$ double $>$ \&rX, const \mbox{\hyperlink{classRange}{Range}}$<$ double $>$ \&rT)
+\mbox{\hyperlink{classMesher_a41237fa5d56d9eeac6f5f2e5fff72e95}{Mesher}} (double A, double \mbox{\hyperlink{classB}{B}}, double t, double T)
 \item 
-\mbox{\Hypertarget{classMesher_ac4ea39f27ea742098ff6fb8c911804a6}\label{classMesher_ac4ea39f27ea742098ff6fb8c911804a6}} 
-\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries xarr} (int J)
+\mbox{\hyperlink{classMesher_ac22307b6943d7e41d0908449a7b06daf}{Mesher}} (const \mbox{\hyperlink{classRange}{Range}}$<$ double $>$ \&rX, const \mbox{\hyperlink{classRange}{Range}}$<$ double $>$ \&rT)
 \item 
-\mbox{\Hypertarget{classMesher_a1069208ef6f02d47bf5464552309834c}\label{classMesher_a1069208ef6f02d47bf5464552309834c}} 
-\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries yarr} (int N)
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{classMesher_ac4ea39f27ea742098ff6fb8c911804a6}{xarr}} (int J)
 \item 
-\mbox{\Hypertarget{classMesher_abbdcb06b69e60ef36b71474494f38c0b}\label{classMesher_abbdcb06b69e60ef36b71474494f38c0b}} 
-double {\bfseries time\+Step} (int N)
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{classMesher_a1069208ef6f02d47bf5464552309834c}{yarr}} (int \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})
+\item 
+double \mbox{\hyperlink{classMesher_abbdcb06b69e60ef36b71474494f38c0b}{time\+Step}} (int \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Mesher_8hh_source_l00021}{21}} of file \mbox{\hyperlink{Mesher_8hh_source}{Mesher.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMesher_a1d69a9028407d910b655ae908eed0b12}\label{classMesher_a1d69a9028407d910b655ae908eed0b12}} 
+\index{Mesher@{Mesher}!Mesher@{Mesher}}
+\index{Mesher@{Mesher}!Mesher@{Mesher}}
+\doxysubsubsection{\texorpdfstring{Mesher()}{Mesher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Mesher\+::\+Mesher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mesher_8cc_source_l00019}{19}} of file \mbox{\hyperlink{Mesher_8cc_source}{Mesher.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021     a = 0.0; \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = 1.0;}
+\DoxyCodeLine{00022     LT = 0.0; HT = 1.0;}
+\DoxyCodeLine{00023 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMesher_a41237fa5d56d9eeac6f5f2e5fff72e95}\label{classMesher_a41237fa5d56d9eeac6f5f2e5fff72e95}} 
+\index{Mesher@{Mesher}!Mesher@{Mesher}}
+\index{Mesher@{Mesher}!Mesher@{Mesher}}
+\doxysubsubsection{\texorpdfstring{Mesher()}{Mesher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Mesher\+::\+Mesher (\begin{DoxyParamCaption}\item[{double}]{A,  }\item[{double}]{B,  }\item[{double}]{t,  }\item[{double}]{T }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mesher_8cc_source_l00025}{25}} of file \mbox{\hyperlink{Mesher_8cc_source}{Mesher.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026 \{ \textcolor{comment}{// Describe the domain of integration}}
+\DoxyCodeLine{00027     a = A; \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = \mbox{\hyperlink{classB}{B}};}
+\DoxyCodeLine{00028     LT = t; HT = \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}};}
+\DoxyCodeLine{00029 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMesher_ac22307b6943d7e41d0908449a7b06daf}\label{classMesher_ac22307b6943d7e41d0908449a7b06daf}} 
+\index{Mesher@{Mesher}!Mesher@{Mesher}}
+\index{Mesher@{Mesher}!Mesher@{Mesher}}
+\doxysubsubsection{\texorpdfstring{Mesher()}{Mesher()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Mesher\+::\+Mesher (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRange}{Range}}$<$ double $>$ \&}]{rX,  }\item[{const \mbox{\hyperlink{classRange}{Range}}$<$ double $>$ \&}]{rT }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mesher_8cc_source_l00031}{31}} of file \mbox{\hyperlink{Mesher_8cc_source}{Mesher.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{ \textcolor{comment}{// Describe the domain of integration}}
+\DoxyCodeLine{00033     a = rX.\mbox{\hyperlink{classRange_a885e2f67531baf6df9359f95c3f8ebaa}{low}}(); \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = rX.\mbox{\hyperlink{classRange_aa0f159ae114a4053113ba035b1fc7b21}{high}}();}
+\DoxyCodeLine{00034     LT = rT.\mbox{\hyperlink{classRange_a885e2f67531baf6df9359f95c3f8ebaa}{low}}(); HT = rT.\mbox{\hyperlink{classRange_aa0f159ae114a4053113ba035b1fc7b21}{high}}();}
+\DoxyCodeLine{00035 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMesher_abbdcb06b69e60ef36b71474494f38c0b}\label{classMesher_abbdcb06b69e60ef36b71474494f38c0b}} 
+\index{Mesher@{Mesher}!timeStep@{timeStep}}
+\index{timeStep@{timeStep}!Mesher@{Mesher}}
+\doxysubsubsection{\texorpdfstring{timeStep()}{timeStep()}}
+{\footnotesize\ttfamily double Mesher\+::time\+Step (\begin{DoxyParamCaption}\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mesher_8cc_source_l00075}{75}} of file \mbox{\hyperlink{Mesher_8cc_source}{Mesher.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076 \{}
+\DoxyCodeLine{00077     \textcolor{keywordflow}{return} (HT -\/ LT)/double (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00078 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMesher_ac4ea39f27ea742098ff6fb8c911804a6}\label{classMesher_ac4ea39f27ea742098ff6fb8c911804a6}} 
+\index{Mesher@{Mesher}!xarr@{xarr}}
+\index{xarr@{xarr}!Mesher@{Mesher}}
+\doxysubsubsection{\texorpdfstring{xarr()}{xarr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ Mesher\+::xarr (\begin{DoxyParamCaption}\item[{int}]{J }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mesher_8cc_source_l00037}{37}} of file \mbox{\hyperlink{Mesher_8cc_source}{Mesher.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038 \{}
+\DoxyCodeLine{00039     \textcolor{comment}{// NB Full array (includes end points)}}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{double} h = (\mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} -\/ a) / \textcolor{keywordtype}{double} (J);}
+\DoxyCodeLine{00041     }
+\DoxyCodeLine{00042     \textcolor{keywordtype}{int} size = J + 1;}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{int} start = 1;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \mbox{\hyperlink{classVector}{Vector<double, long>}} result(size, start);}
+\DoxyCodeLine{00046     result[result.MinIndex()] = a;}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = result.MinIndex() + 1; j <= result.MaxIndex(); j++)}
+\DoxyCodeLine{00049     \{}
+\DoxyCodeLine{00050         result[j] = result[j -\/ 1] + h;}
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00054 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMesher_a1069208ef6f02d47bf5464552309834c}\label{classMesher_a1069208ef6f02d47bf5464552309834c}} 
+\index{Mesher@{Mesher}!yarr@{yarr}}
+\index{yarr@{yarr}!Mesher@{Mesher}}
+\doxysubsubsection{\texorpdfstring{yarr()}{yarr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ Mesher\+::yarr (\begin{DoxyParamCaption}\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mesher_8cc_source_l00056}{56}} of file \mbox{\hyperlink{Mesher_8cc_source}{Mesher.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057 \{}
+\DoxyCodeLine{00058     \textcolor{comment}{// NB Full array (includes end points)}}
+\DoxyCodeLine{00059     \textcolor{keywordtype}{double} k = (HT -\/ LT) / \textcolor{keywordtype}{double} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00060     }
+\DoxyCodeLine{00061     \textcolor{keywordtype}{int} size = \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} + 1;}
+\DoxyCodeLine{00062     \textcolor{keywordtype}{int} start = 1;}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \mbox{\hyperlink{classVector}{Vector<double, long>}} result(size, start);}
+\DoxyCodeLine{00065     result[result.MinIndex()] = LT;}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = result.MinIndex() + 1; j <= result.MaxIndex(); j++)}
+\DoxyCodeLine{00068     \{}
+\DoxyCodeLine{00069         result[j] = result[j -\/ 1] + k;}
+\DoxyCodeLine{00070     \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00073 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Mesher.\+hh\item 
-src/Mesher.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{Mesher_8hh}{Mesher.\+hh}}\item 
+src/\mbox{\hyperlink{Mesher_8cc}{Mesher.\+cc}}\end{DoxyCompactItemize}

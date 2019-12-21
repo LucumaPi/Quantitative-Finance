@@ -1,0 +1,67 @@
+\hypertarget{TestAlias_8cc_source}{}\doxysection{Test\+Alias.\+cc}
+\label{TestAlias_8cc_source}\index{tests/TestAlias.cc@{tests/TestAlias.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestAlias.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Using namespace in combnation with function}}
+\DoxyCodeLine{00004 \textcolor{comment}{// pointers.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00011}\mbox{\hyperlink{namespaceStandardInterface}{00011}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceStandardInterface}{StandardInterface}} }
+\DoxyCodeLine{00012 \{ \textcolor{comment}{// Namespace consistig of function pointers}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00014}\mbox{\hyperlink{namespaceStandardInterface_afa25862520da09e39fb616cc82d176fe}{00014}}     double (*\mbox{\hyperlink{namespaceStandardInterface_afa25862520da09e39fb616cc82d176fe}{func1}}) (\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00015}\mbox{\hyperlink{namespaceStandardInterface_ab6feec59bff99719ea737d10fd58561f}{00015}}     double (*\mbox{\hyperlink{namespaceStandardInterface_ab6feec59bff99719ea737d10fd58561f}{func2}}) (\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y);}
+\DoxyCodeLine{00016 \}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00018}\mbox{\hyperlink{namespaceImplementation1}{00018}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceImplementation1}{Implementation1}}}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00021}\mbox{\hyperlink{namespaceImplementation1_ad559e3d656c53ac0faa602bc675bfe4e}{00021}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceImplementation1_ad559e3d656c53ac0faa602bc675bfe4e}{F1}} (\textcolor{keywordtype}{double} x) \{ \textcolor{keywordflow}{return} x; \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00023}\mbox{\hyperlink{namespaceImplementation1_a81345657302fb74643373ebf178181ff}{00023}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceImplementation1_a81345657302fb74643373ebf178181ff}{F2}} (\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y) \{ \textcolor{keywordflow}{return} x*y; \}}
+\DoxyCodeLine{00024 \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00026}\mbox{\hyperlink{namespaceImplementation2}{00026}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceImplementation2}{Implementation2}}}
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00029}\mbox{\hyperlink{namespaceImplementation2_aa5a74d287b1e742f9c9745be852dc6b5}{00029}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceImplementation2_aa5a74d287b1e742f9c9745be852dc6b5}{G1}} (\textcolor{keywordtype}{double} x) \{ \textcolor{keywordflow}{return} -\/x; \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00031}\mbox{\hyperlink{namespaceImplementation2_ad07ff5504a8c7b73bfb90514c95f2990}{00031}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceImplementation2_ad07ff5504a8c7b73bfb90514c95f2990}{G2}} (\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y) \{ \textcolor{keywordflow}{return} -\/x*y; \}}
+\DoxyCodeLine{00032 \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00034}\mbox{\hyperlink{classMyClass}{00034}} \textcolor{keyword}{class }\mbox{\hyperlink{classMyClass}{MyClass}}}
+\DoxyCodeLine{00035 \{}
+\DoxyCodeLine{00036 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00037}\mbox{\hyperlink{classMyClass_ad8594cad14ad24d08856050fb807fed5}{00037}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classMyClass_ad8594cad14ad24d08856050fb807fed5}{result}};}
+\DoxyCodeLine{00038 \textcolor{comment}{//  using namespace StandardInterface;}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00040}\mbox{\hyperlink{classMyClass_a8c56a953295afdced0c95908bf2663da}{00040}}     \mbox{\hyperlink{classMyClass_a8c56a953295afdced0c95908bf2663da}{MyClass}}()}
+\DoxyCodeLine{00041     \{}
+\DoxyCodeLine{00042 \textcolor{comment}{//      result = func1(2.0) * func2(1.0, 3.0);}}
+\DoxyCodeLine{00043     \}}
+\DoxyCodeLine{00044 \};}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{\Hypertarget{TestAlias_8cc_source_l00046}\mbox{\hyperlink{TestAlias_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00046}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestAlias_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()}
+\DoxyCodeLine{00047 \{}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// Assign the function pointers from NS}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{namespaceStandardInterface_afa25862520da09e39fb616cc82d176fe}{StandardInterface::func1}} = \mbox{\hyperlink{namespaceImplementation1_ad559e3d656c53ac0faa602bc675bfe4e}{Implementation1::F1}};}
+\DoxyCodeLine{00051     \mbox{\hyperlink{namespaceStandardInterface_ab6feec59bff99719ea737d10fd58561f}{StandardInterface::func2}} = \mbox{\hyperlink{namespaceImplementation1_a81345657302fb74643373ebf178181ff}{Implementation1::F2}};}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceStandardInterface}{StandardInterface}};}
+\DoxyCodeLine{00054     std::cout << \mbox{\hyperlink{namespaceStandardInterface_afa25862520da09e39fb616cc82d176fe}{func1}}(2.0) << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{namespaceStandardInterface_ab6feec59bff99719ea737d10fd58561f}{func2}}(3.0, -\/4.0) << std::endl;}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \mbox{\hyperlink{namespaceStandardInterface_afa25862520da09e39fb616cc82d176fe}{func1}} = \mbox{\hyperlink{namespaceImplementation2_aa5a74d287b1e742f9c9745be852dc6b5}{Implementation2::G1}};}
+\DoxyCodeLine{00057     \mbox{\hyperlink{namespaceStandardInterface_ab6feec59bff99719ea737d10fd58561f}{func2}} = \mbox{\hyperlink{namespaceImplementation2_ad07ff5504a8c7b73bfb90514c95f2990}{Implementation2::G2}};}
+\DoxyCodeLine{00058     std::cout << \mbox{\hyperlink{namespaceStandardInterface_afa25862520da09e39fb616cc82d176fe}{func1}}(2.0) << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{namespaceStandardInterface_ab6feec59bff99719ea737d10fd58561f}{func2}}(3.0, -\/4.0) << std::endl;}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00061 \}}
+
+\end{DoxyCode}

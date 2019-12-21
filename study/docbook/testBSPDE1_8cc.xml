@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_testBSPDE1_8cc">
+<title>tests/testBSPDE1.cc File Reference</title>
+<indexterm><primary>tests/testBSPDE1.cc</primary></indexterm>
+<programlisting>#include &quot;fdmdirector.cpp&quot;
+#include &lt;duffy/ArrayMechanisms.hh&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &quot;exceldriver.cpp&quot;
+</programlisting>Include dependency graph for testBSPDE1.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="testBSPDE1_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_testBSPDE1_8cc_1a149efd6e8bf55adf2d5ac330c54399e8">printOneExcel</link> (<link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;functionResult, string &amp;title)</para>
+</listitem>
+            <listitem><para>void <link linkend="_testBSPDE1_8cc_1a689883716e398917d98055ec15d2f26a">printInExcel</link> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, const list&lt; string &gt; &amp;labels, const list&lt; <link linkend="_classVector">Vector</link>&lt; double, long &gt; &gt; &amp;functionResult)</para>
+</listitem>
+            <listitem><para>double <link linkend="_testBSPDE1_8cc_1a5f20917ab7db101f63e800c0661cbdaf">mySigma</link> (double x, double t)</para>
+</listitem>
+            <listitem><para>double <link linkend="_testBSPDE1_8cc_1aa789daccad9f898dd8ee84bafa78562d">myMu</link> (double x, double t)</para>
+</listitem>
+            <listitem><para>double <link linkend="_testBSPDE1_8cc_1a78f556b51570bd9080d1930398b6f1cd">myB</link> (double x, double t)</para>
+</listitem>
+            <listitem><para>double <link linkend="_testBSPDE1_8cc_1a22864aa2fe212665fc7c0a8ca0ed56de">myF</link> (double x, double t)</para>
+</listitem>
+            <listitem><para>double <link linkend="_testBSPDE1_8cc_1a70741760b87deb1bba6bc22abb9251ef">myBCL</link> (double t)</para>
+</listitem>
+            <listitem><para>double <link linkend="_testBSPDE1_8cc_1a3b1df2aaa00e8165b1397d7ced71646a">myBCR</link> (double t)</para>
+</listitem>
+            <listitem><para>double <link linkend="_testBSPDE1_8cc_1a63e3842c00c76b5bb726e114fa382678">myIC</link> (double x)</para>
+</listitem>
+            <listitem><para>int <link linkend="_testBSPDE1_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_testBSPDE1_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 116 of file testBSPDE1.cc.</para>
+<programlisting>117 {
+118 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis>BlackScholesOneFactorIBVP;
+119 
+120 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Assignment&#32;of&#32;functions</emphasis>
+121 &#32;&#32;&#32;&#32;sigma&#32;=&#32;<link linkend="_testBSPDE1_8cc_1a5f20917ab7db101f63e800c0661cbdaf">mySigma</link>;
+122 &#32;&#32;&#32;&#32;mu&#32;=&#32;<link linkend="_testBSPDE1_8cc_1aa789daccad9f898dd8ee84bafa78562d">myMu</link>;
+123 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;<link linkend="_testBSPDE1_8cc_1a78f556b51570bd9080d1930398b6f1cd">myB</link>;
+124 &#32;&#32;&#32;&#32;f&#32;=&#32;<link linkend="_testBSPDE1_8cc_1a22864aa2fe212665fc7c0a8ca0ed56de">myF</link>;
+125 &#32;&#32;&#32;&#32;BCL&#32;=&#32;<link linkend="_testBSPDE1_8cc_1a70741760b87deb1bba6bc22abb9251ef">myBCL</link>;
+126 &#32;&#32;&#32;&#32;BCR&#32;=&#32;<link linkend="_testBSPDE1_8cc_1a3b1df2aaa00e8165b1397d7ced71646a">myBCR</link>;
+127 &#32;&#32;&#32;&#32;IC&#32;=&#32;<link linkend="_testBSPDE1_8cc_1a63e3842c00c76b5bb726e114fa382678">myIC</link>;
+128 
+129 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;=&#32;1.0;&#32;<emphasis role="keywordtype">int</emphasis>&#32;J=&#32;200;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;=&#32;4000-1;
+130 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Smax&#32;=&#32;100.0;
+131 &#32;&#32;&#32;&#32;FDMDirector&#32;fdir(Smax,&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>,&#32;J,&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>);
+132 &#32;&#32;&#32;&#32;fdir.Start();
+133 
+134 L1:
+135 &#32;&#32;&#32;&#32;fdir.doit();
+136 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;print(fdir.current());</emphasis>
+137 
+138 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fdir.isDone()&#32;==&#32;<emphasis role="keyword">false</emphasis>)
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+140 
+141 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;xresult(J+1,&#32;1);
+142 &#32;&#32;&#32;&#32;xresult[xresult.MinIndex()]&#32;=&#32;0.0;
+143 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;h&#32;=&#32;Smax&#32;/&#32;(double)&#32;(J);
+144 
+145 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;j&#32;=&#32;xresult.MinIndex()+1;&#32;j&#32;&lt;=&#32;xresult.MaxIndex();&#32;j++)
+146 &#32;&#32;&#32;&#32;{
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xresult[j]&#32;=&#32;xresult[j-1]&#32;+&#32;h;
+148 &#32;&#32;&#32;&#32;}
+149 
+150 &#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>&#32;(xresult);
+151 &#32;&#32;&#32;&#32;<emphasis role="comment">//print(fdir.current());</emphasis>
+152 
+153 &#32;&#32;&#32;&#32;<link linkend="_testBSPDE1_8cc_1a149efd6e8bf55adf2d5ac330c54399e8">printOneExcel</link>(xresult,&#32;fdir.current(),&#32;string(<emphasis role="stringliteral">&quot;Value&quot;</emphasis>));
+154 
+155 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+156 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1a78f556b51570bd9080d1930398b6f1cd"/>    <section>
+    <title>myB()</title>
+<indexterm><primary>myB</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>myB</secondary></indexterm>
+<para><computeroutput>double myB (double x, double t)</computeroutput></para><para>
+Definition at line 73 of file testBSPDE1.cc.</para>
+<programlisting>74 {
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.06;
+76 
+77 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;&#32;-<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+78 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1a70741760b87deb1bba6bc22abb9251ef"/>    <section>
+    <title>myBCL()</title>
+<indexterm><primary>myBCL</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>myBCL</secondary></indexterm>
+<para><computeroutput>double myBCL (double t)</computeroutput></para><para>
+Definition at line 85 of file testBSPDE1.cc.</para>
+<programlisting>86 {
+87 &#32;<emphasis role="comment">//return&#32;0.0;&#32;//&#32;C</emphasis>
+88 &#32;&#32;&#32;&#32;
+89 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;10;
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.06;
+91 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;=&#32;1.0;
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">::exp</link>(-<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;*&#32;(<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;-&#32;t));
+93 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1a3b1df2aaa00e8165b1397d7ced71646a"/>    <section>
+    <title>myBCR()</title>
+<indexterm><primary>myBCR</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>myBCR</secondary></indexterm>
+<para><computeroutput>double myBCR (double t)</computeroutput></para><para>
+Definition at line 95 of file testBSPDE1.cc.</para>
+<programlisting>96 {
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Smax&#32;=&#32;100;
+98 <emphasis role="comment">//&#32;&#32;return&#32;Smax;</emphasis>
+99 
+100 &#32;&#32;&#32;&#32;
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;&#32;<emphasis role="comment">//&#32;P</emphasis>
+102 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1a22864aa2fe212665fc7c0a8ca0ed56de"/>    <section>
+    <title>myF()</title>
+<indexterm><primary>myF</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>myF</secondary></indexterm>
+<para><computeroutput>double myF (double x, double t)</computeroutput></para><para>
+Definition at line 80 of file testBSPDE1.cc.</para>
+<programlisting>81 {
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;
+83 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1a63e3842c00c76b5bb726e114fa382678"/>    <section>
+    <title>myIC()</title>
+<indexterm><primary>myIC</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>myIC</secondary></indexterm>
+<para><computeroutput>double myIC (double x)</computeroutput></para><para>
+Definition at line 104 of file testBSPDE1.cc.</para>
+<programlisting>105 {
+106 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;10;
+107 &#32;&#32;&#32;&#32;
+108 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x&#32;&lt;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>)
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-(x&#32;-&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>);
+110 
+111 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;
+112 
+113 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1aa789daccad9f898dd8ee84bafa78562d"/>    <section>
+    <title>myMu()</title>
+<indexterm><primary>myMu</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>myMu</secondary></indexterm>
+<para><computeroutput>double myMu (double x, double t)</computeroutput></para><para>
+Definition at line 65 of file testBSPDE1.cc.</para>
+<programlisting>66 {
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.06;
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classD">D</link>&#32;=&#32;0.00;
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;-&#32;<link linkend="_classD">D</link>)&#32;*&#32;x;
+71 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1a5f20917ab7db101f63e800c0661cbdaf"/>    <section>
+    <title>mySigma()</title>
+<indexterm><primary>mySigma</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>mySigma</secondary></indexterm>
+<para><computeroutput>double mySigma (double x, double t)</computeroutput></para><para>
+Definition at line 57 of file testBSPDE1.cc.</para>
+<programlisting>58 {
+59 
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;sigmaS&#32;=&#32;0.30&#32;*&#32;0.30;
+61 
+62 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.5&#32;*&#32;sigmaS&#32;*&#32;x&#32;*&#32;x;
+63 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1a689883716e398917d98055ec15d2f26a"/>    <section>
+    <title>printInExcel()</title>
+<indexterm><primary>printInExcel</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>printInExcel</secondary></indexterm>
+<para><computeroutput>void printInExcel (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; x, const list&lt; string &gt; &amp; labels, const list&lt; <link linkend="_classVector">Vector</link>&lt; double, long &gt; &gt; &amp; functionResult)</computeroutput></para><para>
+Definition at line 35 of file testBSPDE1.cc.</para>
+<programlisting>38 {&#32;<emphasis role="comment">//&#32;Print&#32;a&#32;list&#32;of&#32;Vectors&#32;in&#32;Excel.&#32;Each&#32;vector&#32;is&#32;the&#32;output&#32;of</emphasis>
+39 &#32;&#32;<emphasis role="comment">//&#32;a&#32;finite&#32;difference&#32;scheme&#32;for&#32;a&#32;scalar&#32;IVP</emphasis>
+40 
+41 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Starting&#32;Excel\n&quot;</emphasis>;
+42 
+43 &#32;&#32;&#32;&#32;<link linkend="_classExcelDriver">ExcelDriver</link>&#32;&amp;&#32;excel&#32;=&#32;<link linkend="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8">ExcelDriver::Instance</link>();
+44 
+45 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b">MakeVisible</link>(<emphasis role="keyword">true</emphasis>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;is&#32;INVISIBLE!</emphasis>
+46 
+47 
+48 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Don&apos;t&#32;make&#32;the&#32;string&#32;names&#32;too&#32;long!!</emphasis>
+49 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4">CreateChart</link>(x,&#32;labels,&#32;functionResult,&#32;<emphasis role="keywordtype">string</emphasis>(<emphasis role="stringliteral">&quot;FDM&#32;Scalar&#32;IVP&quot;</emphasis>),
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>(<emphasis role="stringliteral">&quot;Time&#32;Axis&quot;</emphasis>),&#32;<emphasis role="keywordtype">string</emphasis>&#32;(<emphasis role="stringliteral">&quot;Value&quot;</emphasis>));
+51 
+52 
+53 }
+</programlisting>    </section><anchor xml:id="_testBSPDE1_8cc_1a149efd6e8bf55adf2d5ac330c54399e8"/>    <section>
+    <title>printOneExcel()</title>
+<indexterm><primary>printOneExcel</primary><secondary>testBSPDE1.cc</secondary></indexterm>
+<indexterm><primary>testBSPDE1.cc</primary><secondary>printOneExcel</secondary></indexterm>
+<para><computeroutput>void printOneExcel (<link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; x, <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; functionResult, string &amp; title)</computeroutput></para><para>
+Definition at line 17 of file testBSPDE1.cc.</para>
+<programlisting>20 {&#32;
+21 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;N.B.&#32;Excel&#32;has&#32;a&#32;limit&#32;of&#32;8&#32;charts;&#32;after&#32;that&#32;you&#32;get&#32;a&#32;run-time&#32;error</emphasis>
+22 
+23 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Starting&#32;Excel\n&quot;</emphasis>;
+24 
+25 &#32;&#32;&#32;&#32;<link linkend="_classExcelDriver">ExcelDriver</link>&#32;&amp;&#32;excel&#32;=&#32;<link linkend="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8">ExcelDriver::Instance</link>();
+26 
+27 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b">MakeVisible</link>(<emphasis role="keyword">true</emphasis>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;is&#32;INVISIBLE!</emphasis>
+28 
+29 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4">CreateChart</link>(x,&#32;functionResult,&#32;title,&#32;<emphasis role="stringliteral">&quot;X&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Y&quot;</emphasis>);
+30 
+31 &#32;&#32;&#32;&#32;
+32 }
+</programlisting></section>
+</section>
+</section>

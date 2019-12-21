@@ -2,6 +2,10 @@
 \label{classMultiAssetFactory}\index{MultiAssetFactory@{MultiAssetFactory}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Factory.\+hh$>$}
+
+
+
 Collaboration diagram for Multi\+Asset\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,14 +16,109 @@ Collaboration diagram for Multi\+Asset\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classMultiAssetFactory_af557ef4e09d2fd13505bd932e1c17e78}\label{classMultiAssetFactory_af557ef4e09d2fd13505bd932e1c17e78}} 
-virtual \mbox{\hyperlink{classMultiAssetPayoffStrategy}{Multi\+Asset\+Payoff\+Strategy}} $\ast$ {\bfseries create} (int N)
+\mbox{\hyperlink{classMultiAssetFactory_a2a3e41943a6d51f6c56ed746db443a86}{Multi\+Asset\+Factory}} ()
 \item 
-\mbox{\Hypertarget{classMultiAssetFactory_ac119d81cfec42e83368f632e261e59f1}\label{classMultiAssetFactory_ac119d81cfec42e83368f632e261e59f1}} 
-void {\bfseries display} ()
+virtual \mbox{\hyperlink{classMultiAssetPayoffStrategy}{Multi\+Asset\+Payoff\+Strategy}} $\ast$ \mbox{\hyperlink{classMultiAssetFactory_af557ef4e09d2fd13505bd932e1c17e78}{create}} (int \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})
+\item 
+void \mbox{\hyperlink{classMultiAssetFactory_ac119d81cfec42e83368f632e261e59f1}{display}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetFactory_8hh_source_l00023}{23}} of file \mbox{\hyperlink{MultiAssetFactory_8hh_source}{Multi\+Asset\+Factory.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMultiAssetFactory_a2a3e41943a6d51f6c56ed746db443a86}\label{classMultiAssetFactory_a2a3e41943a6d51f6c56ed746db443a86}} 
+\index{MultiAssetFactory@{MultiAssetFactory}!MultiAssetFactory@{MultiAssetFactory}}
+\index{MultiAssetFactory@{MultiAssetFactory}!MultiAssetFactory@{MultiAssetFactory}}
+\doxysubsubsection{\texorpdfstring{MultiAssetFactory()}{MultiAssetFactory()}}
+{\footnotesize\ttfamily Multi\+Asset\+Factory\+::\+Multi\+Asset\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetFactory_8hh_source_l00026}{26}} of file \mbox{\hyperlink{MultiAssetFactory_8hh_source}{Multi\+Asset\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027         \{}
+\DoxyCodeLine{00028             desc = std::map<int, std::string>();}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030             desc.insert(std::pair<int, std::string>(1, \textcolor{stringliteral}{"Exchange option\(\backslash\)n"}));}
+\DoxyCodeLine{00031             desc.insert(std::pair<int, std::string>(2, \textcolor{stringliteral}{"Rainbow option\(\backslash\)n"}));}
+\DoxyCodeLine{00032             desc.insert(std::pair<int, std::string>(3, \textcolor{stringliteral}{"Basket option\(\backslash\)n"}));}
+\DoxyCodeLine{00033             desc.insert(std::pair<int, std::string>(4, \textcolor{stringliteral}{"BestWorst option\(\backslash\)n"}));}
+\DoxyCodeLine{00034             desc.insert(std::pair<int, std::string>(5, \textcolor{stringliteral}{"Quotient option\(\backslash\)n"}));}
+\DoxyCodeLine{00035             desc.insert(std::pair<int, std::string>(6, \textcolor{stringliteral}{"Quanto option\(\backslash\)n"}));}
+\DoxyCodeLine{00036             desc.insert(std::pair<int, std::string>(7, \textcolor{stringliteral}{"SpreadStrategy option\(\backslash\)n"}));}
+\DoxyCodeLine{00037             desc.insert(std::pair<int, std::string>(8, \textcolor{stringliteral}{"Dual Strike Strategy option\(\backslash\)n"}));}
+\DoxyCodeLine{00038             desc.insert(std::pair<int, std::string>(9, \textcolor{stringliteral}{"Out Perfomance option\(\backslash\)n"}));}
+\DoxyCodeLine{00039         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMultiAssetFactory_af557ef4e09d2fd13505bd932e1c17e78}\label{classMultiAssetFactory_af557ef4e09d2fd13505bd932e1c17e78}} 
+\index{MultiAssetFactory@{MultiAssetFactory}!create@{create}}
+\index{create@{create}!MultiAssetFactory@{MultiAssetFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classMultiAssetPayoffStrategy}{Multi\+Asset\+Payoff\+Strategy}}$\ast$ Multi\+Asset\+Factory\+::create (\begin{DoxyParamCaption}\item[{int}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetFactory_8hh_source_l00041}{41}} of file \mbox{\hyperlink{MultiAssetFactory_8hh_source}{Multi\+Asset\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042         \{}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 1) \textcolor{keywordflow}{return} CreateExchangeStrategy();}
+\DoxyCodeLine{00045             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 2) \textcolor{keywordflow}{return} CreateRainbowStrategy();}
+\DoxyCodeLine{00046             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 3) \textcolor{keywordflow}{return} CreateBasketStrategy();}
+\DoxyCodeLine{00047             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 4) \textcolor{keywordflow}{return} CreateBestWorstStrategy();}
+\DoxyCodeLine{00048             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 5) \textcolor{keywordflow}{return} CreateQuotientStrategy();}
+\DoxyCodeLine{00049             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 6) \textcolor{keywordflow}{return} CreateQuantoStrategy();}
+\DoxyCodeLine{00050             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 7) \textcolor{keywordflow}{return} CreateSpreadStrategy();}
+\DoxyCodeLine{00051             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 8) \textcolor{keywordflow}{return} CreateDualStrikeStrategy();}
+\DoxyCodeLine{00052             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} == 9) \textcolor{keywordflow}{return} CreateOutPerformanceStrategy();}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054             \textcolor{comment}{// Exception}}
+\DoxyCodeLine{00055             \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} > 9 || \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} < 1)}
+\DoxyCodeLine{00056             \{}
+\DoxyCodeLine{00057                 \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"Outside range\(\backslash\)n"});}
+\DoxyCodeLine{00058             \}}
+\DoxyCodeLine{00059         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMultiAssetFactory_ac119d81cfec42e83368f632e261e59f1}\label{classMultiAssetFactory_ac119d81cfec42e83368f632e261e59f1}} 
+\index{MultiAssetFactory@{MultiAssetFactory}!display@{display}}
+\index{display@{display}!MultiAssetFactory@{MultiAssetFactory}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Multi\+Asset\+Factory\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetFactory_8hh_source_l00061}{61}} of file \mbox{\hyperlink{MultiAssetFactory_8hh_source}{Multi\+Asset\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062         \{ \textcolor{comment}{// Show options for a choice}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064             std::map<int, std::string>:: const\_iterator it;}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066             \textcolor{keywordflow}{for} (it = desc.begin(); it != desc.end(); it++)}
+\DoxyCodeLine{00067             \{}
+\DoxyCodeLine{00068                 std::cout << (*it).first << \textcolor{stringliteral}{", "} << (*it).second << std::endl;}
+\DoxyCodeLine{00069             \}}
+\DoxyCodeLine{00070         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Factory.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetFactory_8hh}{Multi\+Asset\+Factory.\+hh}}\end{DoxyCompactItemize}

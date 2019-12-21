@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestExceptionSimple_8cc">
+<title>tests/TestExceptionSimple.cc File Reference</title>
+<indexterm><primary>tests/TestExceptionSimple.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/StringConversions.hh&gt;
+#include &lt;duffy/DatasimException.hh&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestExceptionSimple.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestExceptionSimple_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_TestExceptionSimple_8cc_1a38de28707c9a94a220e3138f1f26572c">Divide</link> (double x, double y)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestExceptionSimple_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestExceptionSimple_8cc_1a38de28707c9a94a220e3138f1f26572c"/>    <section>
+    <title>Divide()</title>
+<indexterm><primary>Divide</primary><secondary>TestExceptionSimple.cc</secondary></indexterm>
+<indexterm><primary>TestExceptionSimple.cc</primary><secondary>Divide</secondary></indexterm>
+<para><computeroutput>double Divide (double x, double y)</computeroutput></para><para>
+Definition at line 13 of file TestExceptionSimple.cc.</para>
+<programlisting>14 {
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Precondition:&#32;y&#32;is&#32;not&#32;zero</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(y&#32;==&#32;0.0)
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+18 &#32;&#32;&#32;&#32;
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classDatasimException">DatasimException</link>(std::string(<emphasis role="stringliteral">&quot;\tDivide&#32;by&#32;zero&quot;</emphasis>),&#32;std::string(<emphasis role="stringliteral">&quot;In&#32;function&#32;Divide&quot;</emphasis>),
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string(<emphasis role="stringliteral">&quot;Try&#32;with&#32;non-zero&#32;value&quot;</emphasis>));
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+22 
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x/y;
+24 }
+</programlisting>    </section><anchor xml:id="_TestExceptionSimple_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestExceptionSimple.cc</secondary></indexterm>
+<indexterm><primary>TestExceptionSimple.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 26 of file TestExceptionSimple.cc.</para>
+<programlisting>27 {
+28 
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>
+30 &#32;&#32;&#32;&#32;{
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;a&#32;number&#32;to&#32;divide&#32;by:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;y;&#32;std::cin&#32;&gt;&gt;&#32;y;
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_TestExceptionSimple_8cc_1a38de28707c9a94a220e3138f1f26572c">Divide</link>(2.0,&#32;y);
+35 &#32;&#32;&#32;&#32;}
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>(<link linkend="_classDatasimException">DatasimException</link>&amp;&#32;e)
+37 &#32;&#32;&#32;&#32;{
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e.<link linkend="_classDatasimException_1a1b21cfcf91a5e6d5c60b6ebffe0967cf">print</link>();
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+40 &#32;&#32;&#32;&#32;}
+41 
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+43 }
+</programlisting></section>
+</section>
+</section>

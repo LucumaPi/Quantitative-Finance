@@ -1,0 +1,270 @@
+\hypertarget{Vector_8hh}{}\doxysection{include/duffy/\+Vector.hh File Reference}
+\label{Vector_8hh}\index{include/duffy/Vector.hh@{include/duffy/Vector.hh}}
+{\ttfamily \#include \char`\"{}Array.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../src/\+Vector.\+cc\char`\"{}}\newline
+Include dependency graph for Vector.\+hh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Vector_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Vector_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classVector}{Vector$<$ V, I, S $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_a6553f392c54a87ee890ecddd59a26675}{scale}} (\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v, const V \&a)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_a5f15071d730549f04efa382b61747ff9}{scale}} (const V \&a, \mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_af8ed022403e1f5df6daa9094218a4c0d}{add}} (\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v, const V \&a)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_a3cbb0860a42a282a26aa253ca68c6c17}{add}} (const V \&a, \mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_aa26460af602b9e4373900eff4dddad44}{scale\+And\+Offset}} (\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v, const V \&a, const V \&b)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_a54791aa42dc417c7354e496ead4f4f3d}{subtract}} (\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v, const V \&a)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_a0f66592839cd574711bf87a26a5b2a89}{subtract}} (const V \&a, \mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_ac65a469b31f9731cd9ad92430f432b71}{divide}} (\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v, const V \&a)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_ac52a9d15dae2f25b50260dfbae3d724b}{toggle\+Sign}} (\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\void \mbox{\hyperlink{Vector_8hh_af8510e3d2131a57d037a03f3c8e4596c}{assign}} (\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&v, const V \&R\+HS)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Vector_8hh_a3cbb0860a42a282a26aa253ca68c6c17}\label{Vector_8hh_a3cbb0860a42a282a26aa253ca68c6c17}} 
+\index{Vector.hh@{Vector.hh}!add@{add}}
+\index{add@{add}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void add (\begin{DoxyParamCaption}\item[{const V \&}]{a,  }\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00340}{340}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00341 \{ \textcolor{comment}{// a + v}}
+\DoxyCodeLine{00342 }
+\DoxyCodeLine{00343     \mbox{\hyperlink{Vector_8cc_af8ed022403e1f5df6daa9094218a4c0d}{add}}(v, a);}
+\DoxyCodeLine{00344 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_af8ed022403e1f5df6daa9094218a4c0d}\label{Vector_8hh_af8ed022403e1f5df6daa9094218a4c0d}} 
+\index{Vector.hh@{Vector.hh}!add@{add}}
+\index{add@{add}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v,  }\item[{const V \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00329}{329}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00330 \{ \textcolor{comment}{// v + a}}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00333     \{}
+\DoxyCodeLine{00334         v[i] += a;}
+\DoxyCodeLine{00335     \}}
+\DoxyCodeLine{00336 }
+\DoxyCodeLine{00337 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_af8510e3d2131a57d037a03f3c8e4596c}\label{Vector_8hh_af8510e3d2131a57d037a03f3c8e4596c}} 
+\index{Vector.hh@{Vector.hh}!assign@{assign}}
+\index{assign@{assign}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void assign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v,  }\item[{const V \&}]{R\+HS }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00400}{400}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00401 \{ \textcolor{comment}{// All elements = RHS}}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{00403     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00404     \{}
+\DoxyCodeLine{00405         v[i] = RHS;}
+\DoxyCodeLine{00406     \}}
+\DoxyCodeLine{00407 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_ac65a469b31f9731cd9ad92430f432b71}\label{Vector_8hh_ac65a469b31f9731cd9ad92430f432b71}} 
+\index{Vector.hh@{Vector.hh}!divide@{divide}}
+\index{divide@{divide}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{divide()}{divide()}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void divide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v,  }\item[{const V \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00381}{381}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00382 \{ \textcolor{comment}{// v / a}}
+\DoxyCodeLine{00383 }
+\DoxyCodeLine{00384     \textcolor{keywordflow}{for} (I i= v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00385     \{}
+\DoxyCodeLine{00386         v[i] /= a;}
+\DoxyCodeLine{00387     \}}
+\DoxyCodeLine{00388 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_a5f15071d730549f04efa382b61747ff9}\label{Vector_8hh_a5f15071d730549f04efa382b61747ff9}} 
+\index{Vector.hh@{Vector.hh}!scale@{scale}}
+\index{scale@{scale}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void scale (\begin{DoxyParamCaption}\item[{const V \&}]{a,  }\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00322}{322}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00323 \{ \textcolor{comment}{// a * v}}
+\DoxyCodeLine{00324 }
+\DoxyCodeLine{00325     \mbox{\hyperlink{Vector_8cc_a6553f392c54a87ee890ecddd59a26675}{scale}}(v, a);}
+\DoxyCodeLine{00326 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_a6553f392c54a87ee890ecddd59a26675}\label{Vector_8hh_a6553f392c54a87ee890ecddd59a26675}} 
+\index{Vector.hh@{Vector.hh}!scale@{scale}}
+\index{scale@{scale}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v,  }\item[{const V \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00311}{311}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00312 \{ \textcolor{comment}{// v * a}}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314     \textcolor{keywordflow}{for} (I i = v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00315     \{}
+\DoxyCodeLine{00316         v[i] *= a;}
+\DoxyCodeLine{00317     \}}
+\DoxyCodeLine{00318 }
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_aa26460af602b9e4373900eff4dddad44}\label{Vector_8hh_aa26460af602b9e4373900eff4dddad44}} 
+\index{Vector.hh@{Vector.hh}!scaleAndOffset@{scaleAndOffset}}
+\index{scaleAndOffset@{scaleAndOffset}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{scaleAndOffset()}{scaleAndOffset()}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void scale\+And\+Offset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v,  }\item[{const V \&}]{a,  }\item[{const V \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00348}{348}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00349 \{ \textcolor{comment}{// (a * v) + b    }}
+\DoxyCodeLine{00350 }
+\DoxyCodeLine{00351     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00352     \{}
+\DoxyCodeLine{00353         v[i] *= a;}
+\DoxyCodeLine{00354         v[i] += \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00355     \}}
+\DoxyCodeLine{00356 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_a0f66592839cd574711bf87a26a5b2a89}\label{Vector_8hh_a0f66592839cd574711bf87a26a5b2a89}} 
+\index{Vector.hh@{Vector.hh}!subtract@{subtract}}
+\index{subtract@{subtract}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void subtract (\begin{DoxyParamCaption}\item[{const V \&}]{a,  }\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00368}{368}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00369 \{ \textcolor{comment}{// a -\/ v}}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{00371     \textcolor{comment}{// This operation is not commutative, so redo the for loop}}
+\DoxyCodeLine{00372 }
+\DoxyCodeLine{00373     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00374     \{}
+\DoxyCodeLine{00375         v[i] = a -\/ v[i];}
+\DoxyCodeLine{00376     \}}
+\DoxyCodeLine{00377     }
+\DoxyCodeLine{00378 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_a54791aa42dc417c7354e496ead4f4f3d}\label{Vector_8hh_a54791aa42dc417c7354e496ead4f4f3d}} 
+\index{Vector.hh@{Vector.hh}!subtract@{subtract}}
+\index{subtract@{subtract}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void subtract (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v,  }\item[{const V \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00359}{359}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00360 \{ \textcolor{comment}{// v -\/ a}}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00363     \{}
+\DoxyCodeLine{00364         v[i] -\/= a;}
+\DoxyCodeLine{00365     \}}
+\DoxyCodeLine{00366 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Vector_8hh_ac52a9d15dae2f25b50260dfbae3d724b}\label{Vector_8hh_ac52a9d15dae2f25b50260dfbae3d724b}} 
+\index{Vector.hh@{Vector.hh}!toggleSign@{toggleSign}}
+\index{toggleSign@{toggleSign}!Vector.hh@{Vector.hh}}
+\doxysubsubsection{\texorpdfstring{toggleSign()}{toggleSign()}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+void toggle\+Sign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Vector_8cc_source_l00391}{391}} of file \mbox{\hyperlink{Vector_8cc_source}{Vector.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00392 \{ \textcolor{comment}{// -\/v (unary minus)}}
+\DoxyCodeLine{00393 }
+\DoxyCodeLine{00394     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00395     \{}
+\DoxyCodeLine{00396         v[i] = -\/v[i];}
+\DoxyCodeLine{00397     \}}
+\DoxyCodeLine{00398 \}}
+
+\end{DoxyCode}

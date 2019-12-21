@@ -12,10 +12,20 @@
       </node>
       <node id="5">
         <label>duffy/Set.hh</label>
-        <link refid="Set_8hh_source"/>
+        <link refid="Set_8hh"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -41,6 +51,9 @@
       </node>
       <node id="6">
         <label>set</label>
+      </node>
+      <node id="9">
+        <label>algorithm</label>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -101,16 +114,16 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Set.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Set_8hh" kindref="compound">duffy/Set.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>print(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;T&gt;</ref>&amp;<sp/>l,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight></codeline>
+<codeline lineno="15" refid="TestSetGroup_8cc_1afc656eda04a46b44b586d145450e773c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TestSetGroup_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;T&gt;</ref>&amp;<sp/>l,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight></codeline>
 <codeline lineno="16"><highlight class="normal">{<sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>the<sp/>contents<sp/>of<sp/>a<sp/>Set.<sp/>Notice<sp/>the<sp/>presence<sp/>of<sp/>a<sp/>constant<sp/>iterator.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>size<sp/>of<sp/>set<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>l.Size()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n[<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>size<sp/>of<sp/>set<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>l.<ref refid="classSet_1aec2bedbb313cfc25c7100c6984760dd3" kindref="member">Size</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n[<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::set&lt;T&gt;::const_iterator<sp/>i;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>l.Begin();<sp/>i<sp/>!=<sp/>l.End();<sp/>++i)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>l.<ref refid="classSet_1a3ca47221f02ee54c6b627ff73a9b5b98" kindref="member">Begin</ref>();<sp/>i<sp/>!=<sp/>l.<ref refid="classSet_1aeb4a4b2026eb040a24e9b251e0c49dec" kindref="member">End</ref>();<sp/>++i)</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>*i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
@@ -119,30 +132,30 @@
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="31" refid="TestSetGroup_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestSetGroup_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>Set&lt;int&gt;<sp/>&gt;<sp/>group;<sp/></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;int&gt;</ref><sp/>first;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>first.Insert(1);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>first.Insert(2);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>first.Insert(3);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;int&gt;</ref><sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>.Insert(1);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>.Insert(2);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>.Insert(3);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;int&gt;</ref><sp/>s11;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>s11.Insert(2);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>s11.Insert(3);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>s11.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(2);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>s11.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(3);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;int&gt;</ref><sp/>s12;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>s12.Insert(8);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>s12.Insert(9);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>s12.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(8);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>s12.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(9);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Using<sp/>indexing<sp/>to<sp/>define<sp/>the<sp/>keys<sp/>in<sp/>the<sp/>map</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>group[</highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">]<sp/><sp/>=<sp/>first;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>group[</highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">]<sp/><sp/>=<sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>group[</highlight><highlight class="stringliteral">&quot;b&quot;</highlight><highlight class="normal">]<sp/><sp/>=<sp/>s11;<sp/><sp/></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>group[</highlight><highlight class="stringliteral">&quot;c&quot;</highlight><highlight class="normal">]<sp/><sp/>=<sp/>s12;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>group[</highlight><highlight class="stringliteral">&quot;d&quot;</highlight><highlight class="normal">]<sp/><sp/>=<sp/>first;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>group[</highlight><highlight class="stringliteral">&quot;d&quot;</highlight><highlight class="normal">]<sp/><sp/>=<sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>group[</highlight><highlight class="stringliteral">&quot;e&quot;</highlight><highlight class="normal">]<sp/><sp/>=<sp/>s11;<sp/><sp/></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Size<sp/>of<sp/>map:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>group.size()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
@@ -152,7 +165,7 @@
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i<sp/>!=<sp/>group.end())</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print((*i).second,<sp/>(*i).first);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TestSetGroup_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>((*i).second,<sp/>(*i).first);</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>

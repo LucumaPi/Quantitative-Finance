@@ -21,14 +21,84 @@ Collaboration diagram for Prototype\+Creator$<$ T $>$\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPrototypeCreator_ad0d32c2d51be57184e61a4016783e5f0}\label{classPrototypeCreator_ad0d32c2d51be57184e61a4016783e5f0}} 
-{\bfseries Prototype\+Creator} (T $\ast$prototype)
+\mbox{\hyperlink{classPrototypeCreator_af11e1a6eff1e0d0a879ecc0ed632ae5f}{Prototype\+Creator}} ()
 \item 
-\mbox{\Hypertarget{classPrototypeCreator_abd7061e565987226d957855f98fb6bc2}\label{classPrototypeCreator_abd7061e565987226d957855f98fb6bc2}} 
-virtual T $\ast$ {\bfseries Create} ()
+\mbox{\hyperlink{classPrototypeCreator_ad0d32c2d51be57184e61a4016783e5f0}{Prototype\+Creator}} (T $\ast$prototype)
+\item 
+virtual T $\ast$ \mbox{\hyperlink{classPrototypeCreator_abd7061e565987226d957855f98fb6bc2}{Create}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Prototype\+Creator$<$ T $>$}
+
+
+
+Definition at line \mbox{\hyperlink{GenericCreator_8cc_source_l00031}{31}} of file \mbox{\hyperlink{GenericCreator_8cc_source}{Generic\+Creator.\+cc}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPrototypeCreator_af11e1a6eff1e0d0a879ecc0ed632ae5f}\label{classPrototypeCreator_af11e1a6eff1e0d0a879ecc0ed632ae5f}} 
+\index{PrototypeCreator$<$ T $>$@{PrototypeCreator$<$ T $>$}!PrototypeCreator@{PrototypeCreator}}
+\index{PrototypeCreator@{PrototypeCreator}!PrototypeCreator$<$ T $>$@{PrototypeCreator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PrototypeCreator()}{PrototypeCreator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classPrototypeCreator}{Prototype\+Creator}}$<$ T $>$\+::\mbox{\hyperlink{classPrototypeCreator}{Prototype\+Creator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GenericCreator_8cc_source_l00036}{36}} of file \mbox{\hyperlink{GenericCreator_8cc_source}{Generic\+Creator.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036 \{proto = 0;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPrototypeCreator_ad0d32c2d51be57184e61a4016783e5f0}\label{classPrototypeCreator_ad0d32c2d51be57184e61a4016783e5f0}} 
+\index{PrototypeCreator$<$ T $>$@{PrototypeCreator$<$ T $>$}!PrototypeCreator@{PrototypeCreator}}
+\index{PrototypeCreator@{PrototypeCreator}!PrototypeCreator$<$ T $>$@{PrototypeCreator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PrototypeCreator()}{PrototypeCreator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classPrototypeCreator}{Prototype\+Creator}}$<$ T $>$\+::\mbox{\hyperlink{classPrototypeCreator}{Prototype\+Creator}} (\begin{DoxyParamCaption}\item[{T $\ast$}]{prototype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GenericCreator_8cc_source_l00037}{37}} of file \mbox{\hyperlink{GenericCreator_8cc_source}{Generic\+Creator.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037 \{ proto = prototype; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrototypeCreator_abd7061e565987226d957855f98fb6bc2}\label{classPrototypeCreator_abd7061e565987226d957855f98fb6bc2}} 
+\index{PrototypeCreator$<$ T $>$@{PrototypeCreator$<$ T $>$}!Create@{Create}}
+\index{Create@{Create}!PrototypeCreator$<$ T $>$@{PrototypeCreator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual T$\ast$ \mbox{\hyperlink{classPrototypeCreator}{Prototype\+Creator}}$<$ T $>$\+::Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classAbstractFactory_a6c6ad72b50ce9e534f54145cd8ba4f47}{Abstract\+Factory$<$ T $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{GenericCreator_8cc_source_l00039}{39}} of file \mbox{\hyperlink{GenericCreator_8cc_source}{Generic\+Creator.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}(*proto);}
+\DoxyCodeLine{00042     \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/Generic\+Creator.\+cc\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{GenericCreator_8cc}{Generic\+Creator.\+cc}}\end{DoxyCompactItemize}

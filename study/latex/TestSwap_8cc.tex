@@ -1,0 +1,93 @@
+\hypertarget{TestSwap_8cc}{}\doxysection{tests/\+Test\+Swap.cc File Reference}
+\label{TestSwap_8cc}\index{tests/TestSwap.cc@{tests/TestSwap.cc}}
+{\ttfamily \#include $<$duffy/\+Range.\+hh$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Test\+Swap.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestSwap_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Numeric $>$ }\\void \mbox{\hyperlink{TestSwap_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}{print}} (const \mbox{\hyperlink{classRange}{Range}}$<$ Numeric $>$ \&range)
+\item 
+{\footnotesize template$<$class V $>$ }\\void \mbox{\hyperlink{TestSwap_8cc_a25424f68584552ee5e1a153c80f95201}{my\+Swap}} (V \&v1, V \&v2)
+\item 
+int \mbox{\hyperlink{TestSwap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestSwap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestSwap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestSwap.cc@{TestSwap.cc}!main@{main}}
+\index{main@{main}!TestSwap.cc@{TestSwap.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSwap_8cc_source_l00027}{27}} of file \mbox{\hyperlink{TestSwap_8cc_source}{Test\+Swap.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028 \{}
+\DoxyCodeLine{00029     \textcolor{keywordtype}{int} j = 10;}
+\DoxyCodeLine{00030     \textcolor{keywordtype}{int} k = 20;}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \mbox{\hyperlink{TestSwap_8cc_a25424f68584552ee5e1a153c80f95201}{mySwap}}(j, k);}
+\DoxyCodeLine{00033     std::cout << j << \textcolor{stringliteral}{", "} << k << std::endl;}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \mbox{\hyperlink{classRange}{Range<int>}} range1 (0, 10);}
+\DoxyCodeLine{00036     \mbox{\hyperlink{classRange}{Range<int>}} range2 (20, 30);}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \mbox{\hyperlink{TestSwap_8cc_a25424f68584552ee5e1a153c80f95201}{mySwap}} (range1, range2);}
+\DoxyCodeLine{00039     \mbox{\hyperlink{TestSwap_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}{print}} (range1);}
+\DoxyCodeLine{00040     \mbox{\hyperlink{TestSwap_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}{print}} (range2);}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSwap_8cc_a25424f68584552ee5e1a153c80f95201}\label{TestSwap_8cc_a25424f68584552ee5e1a153c80f95201}} 
+\index{TestSwap.cc@{TestSwap.cc}!mySwap@{mySwap}}
+\index{mySwap@{mySwap}!TestSwap.cc@{TestSwap.cc}}
+\doxysubsubsection{\texorpdfstring{mySwap()}{mySwap()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+void my\+Swap (\begin{DoxyParamCaption}\item[{V \&}]{v1,  }\item[{V \&}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSwap_8cc_source_l00018}{18}} of file \mbox{\hyperlink{TestSwap_8cc_source}{Test\+Swap.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     V tmp = v2;}
+\DoxyCodeLine{00022     v2 = v1;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     v1 = tmp;}
+\DoxyCodeLine{00025 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSwap_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}\label{TestSwap_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}} 
+\index{TestSwap.cc@{TestSwap.cc}!print@{print}}
+\index{print@{print}!TestSwap.cc@{TestSwap.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class Numeric $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRange}{Range}}$<$ Numeric $>$ \&}]{range }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSwap_8cc_source_l00013}{13}} of file \mbox{\hyperlink{TestSwap_8cc_source}{Test\+Swap.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015     std::cout << \textcolor{stringliteral}{"["} << range.\mbox{\hyperlink{classRange_a885e2f67531baf6df9359f95c3f8ebaa}{low}}() << \textcolor{stringliteral}{","} << range.\mbox{\hyperlink{classRange_aa0f159ae114a4053113ba035b1fc7b21}{high}}() << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00016 \}}
+
+\end{DoxyCode}

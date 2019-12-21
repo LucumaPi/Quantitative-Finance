@@ -1,0 +1,193 @@
+\hypertarget{BinomialLatticeStrategy_8cc_source}{}\doxysection{Binomial\+Lattice\+Strategy.\+cc}
+\label{BinomialLatticeStrategy_8cc_source}\index{src/BinomialLatticeStrategy.cc@{src/BinomialLatticeStrategy.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// BinomialLatticeStrategy.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Strategy pattern for creating binomial lattice. Note}}
+\DoxyCodeLine{00004 \textcolor{comment}{// that there is a built-\/in Template Method pattern built}}
+\DoxyCodeLine{00005 \textcolor{comment}{// in here.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// }}
+\DoxyCodeLine{00007 \textcolor{comment}{// For convenience all data is public and all code is inline.}}
+\DoxyCodeLine{00008 \textcolor{comment}{// Furthermore, classes have minimal functionality. We can make }}
+\DoxyCodeLine{00009 \textcolor{comment}{// production code from this at a later stage.}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{// Last Modification Dates:}}
+\DoxyCodeLine{00012 \textcolor{comment}{//}}
+\DoxyCodeLine{00013 \textcolor{comment}{//  2006-\/4-\/7 DD cpp file now}}
+\DoxyCodeLine{00014 \textcolor{comment}{//}}
+\DoxyCodeLine{00015 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00016 \textcolor{comment}{//}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#ifndef BinomialLatticeStrategy\_CC}}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00019}\mbox{\hyperlink{BinomialLatticeStrategy_8cc_a4400b553f9a11c3e808cb2ffbecb1cc6}{00019}} \textcolor{preprocessor}{\#define BinomialLatticeStrategy\_CC}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{BinomialLatticeStrategy_8hh}{duffy/BinomialLatticeStrategy.hh}}>}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00023}\mbox{\hyperlink{classBinomialLatticeStrategy_a30116db67055ec31490b298ad9fda14a}{00023}} \mbox{\hyperlink{classBinomialLatticeStrategy_a30116db67055ec31490b298ad9fda14a}{BinomialLatticeStrategy::BinomialLatticeStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta)}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} = vol;}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} = interest;}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}} = delta;}
+\DoxyCodeLine{00028     \mbox{\hyperlink{classBinomialLatticeStrategy_a2c17c2472572ea3ae463c7dd079c3035}{bType}} = \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99a8609fa7d8218524a919c5f648dd308b4}{Multiplicative}};}
+\DoxyCodeLine{00029 \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 \textcolor{comment}{// Useful function}}
+\DoxyCodeLine{00032 \textcolor{keywordtype}{void} \mbox{\hyperlink{classBinomialLatticeStrategy_ab9fa2c3c07acc19168da24dcc84f7af8}{BinomialLatticeStrategy::updateLattice}}}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00033}\mbox{\hyperlink{classBinomialLatticeStrategy_ab9fa2c3c07acc19168da24dcc84f7af8}{00033}}             (\mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& source, \textcolor{keywordtype}{double} rootValue) \textcolor{keyword}{const}}
+\DoxyCodeLine{00034 \{   \textcolor{comment}{// Find the depth of the lattice; this a Template Method Pattern}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{int} si = source.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}();}
+\DoxyCodeLine{00036     source[si][source[si].\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}()] = rootValue;}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{comment}{// Loop from the min index to the end index}}
+\DoxyCodeLine{00039     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = source.MinIndex() + 1; \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} <= source.MaxIndex(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++)}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = source[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}].MinIndex(); i < source[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}].MaxIndex(); i++)}
+\DoxyCodeLine{00042         \{}
+\DoxyCodeLine{00043             source[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}][i] = d * source[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/1][i];}
+\DoxyCodeLine{00044             source[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}][i+1] = u * source[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/1][i];}
+\DoxyCodeLine{00045         \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00050}\mbox{\hyperlink{classCRRStrategy_ad614899efc71dc828b9701383fa11993}{00050}} \mbox{\hyperlink{classCRRStrategy_ad614899efc71dc828b9701383fa11993}{CRRStrategy::CRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta) }
+\DoxyCodeLine{00051         : \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00052 \{}
+\DoxyCodeLine{00053     \textcolor{comment}{/* double e = ::exp((r)*k);}}
+\DoxyCodeLine{00054 \textcolor{comment}{    double sr = ::sqrt(exp(vol*vol*k) -\/ 1.0);}}
+\DoxyCodeLine{00055 \textcolor{comment}{    u = e * (1.0 + sr);}}
+\DoxyCodeLine{00056 \textcolor{comment}{    d = e * (1.0 -\/ sr);*/}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{keywordtype}{double} R1 = (\mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}}) * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}};}
+\DoxyCodeLine{00059     \textcolor{keywordtype}{double} R2 = \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * std::sqrt(\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(R1 + R2);}
+\DoxyCodeLine{00062     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(R1 -\/ R2);}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     std::cout << \textcolor{stringliteral}{"UD "} << \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}};}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordtype}{double} discounting = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/ \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}}*\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5;}
+\DoxyCodeLine{00070 \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00072}\mbox{\hyperlink{classPadeCRRStrategy_aa07d959ab5ca27e4a60e105e56a3fedc}{00072}} \mbox{\hyperlink{classPadeCRRStrategy_aa07d959ab5ca27e4a60e105e56a3fedc}{PadeCRRStrategy::PadeCRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta) }
+\DoxyCodeLine{00073         : \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00074 \{}
+\DoxyCodeLine{00075     \textcolor{comment}{/* double e = ::exp((r)*k);}}
+\DoxyCodeLine{00076 \textcolor{comment}{    double sr = ::sqrt(exp(vol*vol*k) -\/ 1.0);}}
+\DoxyCodeLine{00077 \textcolor{comment}{    u = e * (1.0 + sr);}}
+\DoxyCodeLine{00078 \textcolor{comment}{    d = e * (1.0 -\/ sr);*/}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{keywordtype}{double} R1 = (\mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}}) * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}};}
+\DoxyCodeLine{00081     \textcolor{keywordtype}{double} R2 = \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * std::sqrt(\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{comment}{//u = ::exp(R1 + R2);}}
+\DoxyCodeLine{00084     \textcolor{comment}{//d = ::exp(R1 -\/ R2);}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{comment}{// Cayley transform}}
+\DoxyCodeLine{00087     \textcolor{keywordtype}{double} z1 = (R1 + R2);}
+\DoxyCodeLine{00088     \textcolor{keywordtype}{double} z2 = (R1 -\/ R2);}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = (2.0 + z1) / (2.0 -\/ z1);}
+\DoxyCodeLine{00091     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = (2.0 + z2) / (2.0 -\/ z2);}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093     std::cout << \textcolor{stringliteral}{"UD "} << \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}};}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{keywordtype}{double} discounting = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/ \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}}*\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5;}
+\DoxyCodeLine{00098 \}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00100}\mbox{\hyperlink{classJRStrategy_a36c42ba9880af4425a68d7784bce5057}{00100}} \mbox{\hyperlink{classJRStrategy_a36c42ba9880af4425a68d7784bce5057}{JRStrategy::JRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta) }
+\DoxyCodeLine{00101         : \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00102 \{}
+\DoxyCodeLine{00103     \textcolor{keywordtype}{double} k2 = std::sqrt(\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00104     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(\mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * k2);}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = 1.0/\mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}};}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5 + ((\mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}}) * k2 * 0.5) / \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}};}
+\DoxyCodeLine{00109 \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00111}\mbox{\hyperlink{classPadeJRStrategy_a7b1e2cfc3aeff6ee644e305e6a63ea7e}{00111}} \mbox{\hyperlink{classPadeJRStrategy_a7b1e2cfc3aeff6ee644e305e6a63ea7e}{PadeJRStrategy::PadeJRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta) }
+\DoxyCodeLine{00112         : \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00113 \{}
+\DoxyCodeLine{00114     \textcolor{keywordtype}{double} k2 = std::sqrt(\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116     \textcolor{comment}{// Cayley transform}}
+\DoxyCodeLine{00117     \textcolor{keywordtype}{double} z = \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * std::sqrt(\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119     \textcolor{comment}{/* u = ::exp(s * k2);}}
+\DoxyCodeLine{00120 \textcolor{comment}{    d = 1.0/u; */}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122     \textcolor{comment}{//u = (2.0 + z) / (2.0 -\/ z);}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124     \textcolor{comment}{//d = (2.0 -\/ z) / (2.0 +z);}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126     \textcolor{keywordtype}{double} num = 12.0 -\/ (6.0*z) + (z*z);}
+\DoxyCodeLine{00127     \textcolor{keywordtype}{double} denom = 12.0 + (6.0*z) + (z*z);}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = num/denom;}
+\DoxyCodeLine{00130     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = denom/num;}
+\DoxyCodeLine{00131     }
+\DoxyCodeLine{00132     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5 + ((\mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}}) * k2 * 0.5) / \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}};}
+\DoxyCodeLine{00133 \}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00135}\mbox{\hyperlink{classEQPStrategy_a6fb4f5ab383d1cdf3a32e6689704bdeb}{00135}} \mbox{\hyperlink{classEQPStrategy_a6fb4f5ab383d1cdf3a32e6689704bdeb}{EQPStrategy::EQPStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta) }
+\DoxyCodeLine{00136         : \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00137 \{}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139     \mbox{\hyperlink{classBinomialLatticeStrategy_a2c17c2472572ea3ae463c7dd079c3035}{bType}} = \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c}{Additive}};}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141     \textcolor{comment}{// Needed for additive method: page 19 Clewlow/Strickland formula 2.17 }}
+\DoxyCodeLine{00142     \textcolor{comment}{// "v" is "nu" here, for "v" see  page 19 formula 2.14}}
+\DoxyCodeLine{00143     \textcolor{keywordtype}{double} nu = \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}};}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \textcolor{keywordtype}{double} a = nu * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}};}
+\DoxyCodeLine{00146     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = 0.5 * std::sqrt( (4.0 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}}) -\/ (3.0 * nu * nu * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}}) );}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148     \textcolor{comment}{// EQP parameters: page 19 formula 2.17}}
+\DoxyCodeLine{00149     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = 0.5 * a + \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00150     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = 1.5 * a -\/ \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5;}
+\DoxyCodeLine{00153 \}}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00155}\mbox{\hyperlink{classTRGStrategy_a48a3eac7077e04eba3c0a310330b72a7}{00155}} \mbox{\hyperlink{classTRGStrategy_a48a3eac7077e04eba3c0a310330b72a7}{TRGStrategy::TRGStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta) }
+\DoxyCodeLine{00156         : \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00157 \{}
+\DoxyCodeLine{00158     \mbox{\hyperlink{classBinomialLatticeStrategy_a2c17c2472572ea3ae463c7dd079c3035}{bType}} = \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c}{Additive}};}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160     \textcolor{comment}{// Needed for additive method: page 19 formula 2.19 }}
+\DoxyCodeLine{00161     \textcolor{comment}{// "v" is "nu" here, for "v" see  page 17 formula 2.14}}
+\DoxyCodeLine{00162     \textcolor{keywordtype}{double} nu = \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}};}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164     \textcolor{keywordtype}{double} nudt = nu * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}};}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     \textcolor{comment}{// TRG parameters: page 19 formula 2.19}}
+\DoxyCodeLine{00167     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = std::sqrt( \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}} + nudt * nudt );}
+\DoxyCodeLine{00168     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = -\/ \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}};}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5 * (1.0 + (nudt/\mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}}) );}
+\DoxyCodeLine{00171 \}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8cc_source_l00174}\mbox{\hyperlink{classModCRRStrategy_a6d9b5c5d8e7f78a3dc279c96b618791e}{00174}} \mbox{\hyperlink{classModCRRStrategy_a6d9b5c5d8e7f78a3dc279c96b618791e}{ModCRRStrategy::ModCRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta, \textcolor{keywordtype}{double} S, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}) }
+\DoxyCodeLine{00175         : \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00176 \{}
+\DoxyCodeLine{00177     \textcolor{comment}{// s == volatility, k = step size in time}}
+\DoxyCodeLine{00178     \textcolor{keywordtype}{double} KN = std::log(\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}/S) / double (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00179     \textcolor{keywordtype}{double} VN = \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * std::sqrt(\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{00181     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(KN + VN);}
+\DoxyCodeLine{00182     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(KN -\/ VN);}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = (\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(\mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}}) -\/ \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}}) / (\mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} -\/ \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}});}
+\DoxyCodeLine{00185 \}}
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

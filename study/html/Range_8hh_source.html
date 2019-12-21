@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: include/duffy/Range.hh Source File</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: include/duffy/Range.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +78,7 @@ $(function() {
 <div class="title">Range.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// range.hpp</span></div>
+<a href="Range_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// range.hpp</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// A class that represents a closed interval [low, high]. This is</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// needed in many applications, for example candlestick charts in </span></div>
@@ -90,7 +90,7 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef Range_HH</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define Range_HH</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Vector.hh&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Vector_8hh.html">Vector.hh</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classRange.html">   15</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt; <span class="keyword">class </span><a class="code" href="classRange.html">Range</a></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
@@ -102,40 +102,51 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Constructors</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classRange.html">Range</a>();                                    <span class="comment">// Default constructor</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classRange.html">Range</a>(<span class="keyword">const</span> Type&amp; low, <span class="keyword">const</span> Type&amp; high);   <span class="comment">// Low and high value</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classRange.html">Range</a>(<span class="keyword">const</span> <a class="code" href="classRange.html">Range&lt;Type&gt;</a>&amp; ran2);             <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classRange.html#a1ae29a7125bc7127c67ec67829d1e6fe">Range</a>();                                    <span class="comment">// Default constructor</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classRange.html#a1ae29a7125bc7127c67ec67829d1e6fe">Range</a>(<span class="keyword">const</span> Type&amp; <a class="code" href="classRange.html#adecc879cfe67dd9ee2212a008ab15f99">low</a>, <span class="keyword">const</span> Type&amp; <a class="code" href="classRange.html#a04c4f592efe2d03e17868d5268cedfb5">high</a>);   <span class="comment">// Low and high value</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classRange.html#a1ae29a7125bc7127c67ec67829d1e6fe">Range</a>(<span class="keyword">const</span> <a class="code" href="classRange.html">Range&lt;Type&gt;</a>&amp; ran2);             <span class="comment">// Copy constructor</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// Destructor</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classRange.html">Range</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classRange.html#ac3495950469e6c7ba652e99ac7e69df9">~Range</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Modifier functions</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> low(<span class="keyword">const</span> Type&amp; t1);                   <span class="comment">// Sets the low value of current range</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> high(<span class="keyword">const</span> Type&amp; t1);                  <span class="comment">// Sets the high value of current range</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRange.html#adecc879cfe67dd9ee2212a008ab15f99">low</a>(<span class="keyword">const</span> Type&amp; t1);                   <span class="comment">// Sets the low value of current range</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRange.html#a04c4f592efe2d03e17868d5268cedfb5">high</a>(<span class="keyword">const</span> Type&amp; t1);                  <span class="comment">// Sets the high value of current range</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//Accessing functions</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Type low() <span class="keyword">const</span>;                           <span class="comment">// Lowest value in range</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Type high() <span class="keyword">const</span>;                          <span class="comment">// Highest value in the range</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Type <a class="code" href="classRange.html#adecc879cfe67dd9ee2212a008ab15f99">low</a>() <span class="keyword">const</span>;                           <span class="comment">// Lowest value in range</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Type <a class="code" href="classRange.html#a04c4f592efe2d03e17868d5268cedfb5">high</a>() <span class="keyword">const</span>;                          <span class="comment">// Highest value in the range</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    Type spread() <span class="keyword">const</span>;                        <span class="comment">// High - Low value</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    Type <a class="code" href="classRange.html#a2cdcb2c3dbc38dcb923e302ad366f12c">spread</a>() <span class="keyword">const</span>;                        <span class="comment">// High - Low value</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Boolean functions</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> left(<span class="keyword">const</span> Type&amp; value) <span class="keyword">const</span>;         <span class="comment">// Is the value to the left of the range?</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> right(<span class="keyword">const</span> Type&amp; value) <span class="keyword">const</span>;        <span class="comment">// Is the value to the right of the range?</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> contains(<span class="keyword">const</span> Type&amp; value) <span class="keyword">const</span>;     <span class="comment">// Does range contain value?</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classRange.html#ab772b50dd178ffaeba1f6df900cef30b">left</a>(<span class="keyword">const</span> Type&amp; value) <span class="keyword">const</span>;         <span class="comment">// Is the value to the left of the range?</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classRange.html#aefe9e0df9c7555ec1235764389feea36">right</a>(<span class="keyword">const</span> Type&amp; value) <span class="keyword">const</span>;        <span class="comment">// Is the value to the right of the range?</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classRange.html#abca95dd7b50b7142fe6d40d58816dec5">contains</a>(<span class="keyword">const</span> Type&amp; value) <span class="keyword">const</span>;     <span class="comment">// Does range contain value?</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Utility functions</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classVector.html">Vector&lt;Type, long&gt;</a> mesh(<span class="keywordtype">long</span> nSteps) <span class="keyword">const</span>; <span class="comment">// Create a discrete mesh</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classVector.html">Vector&lt;Type, long&gt;</a> <a class="code" href="classRange.html#a9d6efa72341e127230d4aa86fcd3b489">mesh</a>(<span class="keywordtype">long</span> nSteps) <span class="keyword">const</span>; <span class="comment">// Create a discrete mesh</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Operator overloading</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classRange.html">Range&lt;Type&gt;</a>&amp; operator = (<span class="keyword">const</span> <a class="code" href="classRange.html">Range&lt;Type&gt;</a>&amp; ran2);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classRange.html">Range&lt;Type&gt;</a>&amp; <a class="code" href="classRange.html#afea02da4611e86fbbd710e64fead5a18">operator = </a>(<span class="keyword">const</span> <a class="code" href="classRange.html">Range&lt;Type&gt;</a>&amp; ran2);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;../../src/Range.cc&quot;</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassRange_html"><div class="ttname"><a href="classRange.html">Range</a></div><div class="ttdef"><b>Definition:</b> Range.hh:15</div></div>
-<div class="ttc" id="aclassVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdef"><b>Definition:</b> Vector.hh:14</div></div>
+<div class="ttc" id="aclassRange_html_adecc879cfe67dd9ee2212a008ab15f99"><div class="ttname"><a href="classRange.html#adecc879cfe67dd9ee2212a008ab15f99">Range::low</a></div><div class="ttdeci">Type low() const</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00087">Range.cc:87</a></div></div>
+<div class="ttc" id="aclassRange_html_a9d6efa72341e127230d4aa86fcd3b489"><div class="ttname"><a href="classRange.html#a9d6efa72341e127230d4aa86fcd3b489">Range::mesh</a></div><div class="ttdeci">Vector&lt; Type, long &gt; mesh(long nSteps) const</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00151">Range.cc:151</a></div></div>
+<div class="ttc" id="aclassRange_html_aefe9e0df9c7555ec1235764389feea36"><div class="ttname"><a href="classRange.html#aefe9e0df9c7555ec1235764389feea36">Range::right</a></div><div class="ttdeci">bool right(const Type &amp;value) const</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00119">Range.cc:119</a></div></div>
+<div class="ttc" id="aclassRange_html_ab772b50dd178ffaeba1f6df900cef30b"><div class="ttname"><a href="classRange.html#ab772b50dd178ffaeba1f6df900cef30b">Range::left</a></div><div class="ttdeci">bool left(const Type &amp;value) const</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00109">Range.cc:109</a></div></div>
+<div class="ttc" id="aclassRange_html_a1ae29a7125bc7127c67ec67829d1e6fe"><div class="ttname"><a href="classRange.html#a1ae29a7125bc7127c67ec67829d1e6fe">Range::Range</a></div><div class="ttdeci">Range()</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00030">Range.cc:30</a></div></div>
+<div class="ttc" id="aclassRange_html_abca95dd7b50b7142fe6d40d58816dec5"><div class="ttname"><a href="classRange.html#abca95dd7b50b7142fe6d40d58816dec5">Range::contains</a></div><div class="ttdeci">bool contains(const Type &amp;value) const</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00129">Range.cc:129</a></div></div>
+<div class="ttc" id="aclassRange_html_a2cdcb2c3dbc38dcb923e302ad366f12c"><div class="ttname"><a href="classRange.html#a2cdcb2c3dbc38dcb923e302ad366f12c">Range::spread</a></div><div class="ttdeci">Type spread() const</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00101">Range.cc:101</a></div></div>
+<div class="ttc" id="aclassRange_html_afea02da4611e86fbbd710e64fead5a18"><div class="ttname"><a href="classRange.html#afea02da4611e86fbbd710e64fead5a18">Range::operator=</a></div><div class="ttdeci">Range&lt; Type &gt; &amp; operator=(const Range&lt; Type &gt; &amp;ran2)</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00140">Range.cc:140</a></div></div>
+<div class="ttc" id="aclassRange_html_ac3495950469e6c7ba652e99ac7e69df9"><div class="ttname"><a href="classRange.html#ac3495950469e6c7ba652e99ac7e69df9">Range::~Range</a></div><div class="ttdeci">virtual ~Range()</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00064">Range.cc:64</a></div></div>
+<div class="ttc" id="aclassRange_html"><div class="ttname"><a href="classRange.html">Range</a></div><div class="ttdef"><b>Definition:</b> <a href="Range_8hh_source.html#l00015">Range.hh:15</a></div></div>
+<div class="ttc" id="aVector_8hh_html"><div class="ttname"><a href="Vector_8hh.html">Vector.hh</a></div></div>
+<div class="ttc" id="aclassVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hh_source.html#l00014">Vector.hh:14</a></div></div>
+<div class="ttc" id="aclassRange_html_a04c4f592efe2d03e17868d5268cedfb5"><div class="ttname"><a href="classRange.html#a04c4f592efe2d03e17868d5268cedfb5">Range::high</a></div><div class="ttdeci">Type high() const</div><div class="ttdef"><b>Definition:</b> <a href="Range_8cc_source.html#l00094">Range.cc:94</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

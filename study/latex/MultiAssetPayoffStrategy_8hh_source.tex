@@ -15,13 +15,13 @@
 \DoxyCodeLine{00012 \textcolor{preprocessor}{\#ifndef MultiAssetPayoffStrategy\_hh}}
 \DoxyCodeLine{00013 \textcolor{preprocessor}{\#define MultiAssetPayoffStrategy\_hh}}
 \DoxyCodeLine{00014 }
-\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "Inequalities.hh"}  \textcolor{comment}{// Chapter 2}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Inequalities_8hh}{Inequalities.hh}}"}   \textcolor{comment}{// Chapter 2}}
 \DoxyCodeLine{00016 }
 \DoxyCodeLine{00017 }
 \DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00018}\mbox{\hyperlink{classMultiAssetPayoffStrategy}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{classMultiAssetPayoffStrategy}{MultiAssetPayoffStrategy}}}
 \DoxyCodeLine{00019 \{}
 \DoxyCodeLine{00020 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00021         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2) \textcolor{keyword}{const} = 0;}
 \DoxyCodeLine{00022 \};}
 \DoxyCodeLine{00023 }
 \DoxyCodeLine{00024 }
@@ -30,10 +30,10 @@
 \DoxyCodeLine{00027 \textcolor{keyword}{private}:}
 \DoxyCodeLine{00028         \textcolor{comment}{// No member data}}
 \DoxyCodeLine{00029 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00030         \mbox{\hyperlink{classExchangeStrategy}{ExchangeStrategy}}() \{ \}}
-\DoxyCodeLine{00031         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00030}\mbox{\hyperlink{classExchangeStrategy_acf5dfb502ff1e1a3cd2d8e717be1b0cb}{00030}}         \mbox{\hyperlink{classExchangeStrategy_acf5dfb502ff1e1a3cd2d8e717be1b0cb}{ExchangeStrategy}}() \{ \}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00031}\mbox{\hyperlink{classExchangeStrategy_a5c96119a7eb988b67bfe3eba1aef1bd1}{00031}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classExchangeStrategy_a5c96119a7eb988b67bfe3eba1aef1bd1}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00032 \textcolor{keyword}{        }\{}
-\DoxyCodeLine{00033             \textcolor{keywordflow}{return} Max(S1-\/S2, 0.0);}
+\DoxyCodeLine{00033             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(S1-\/S2, 0.0);}
 \DoxyCodeLine{00034         \}}
 \DoxyCodeLine{00035 \};}
 \DoxyCodeLine{00036 }
@@ -44,14 +44,14 @@
 \DoxyCodeLine{00041         \textcolor{keywordtype}{double} w;   \textcolor{comment}{// +1 call, -\/1 put}}
 \DoxyCodeLine{00042         \textcolor{keywordtype}{int} type;   \textcolor{comment}{// DMax (1) or DMin (!1) of 2 assets}}
 \DoxyCodeLine{00043 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00044         \mbox{\hyperlink{classRainbowStrategy}{RainbowStrategy}}(\textcolor{keywordtype}{double} strike, \textcolor{keywordtype}{double} cp, \textcolor{keywordtype}{int} DMinDMax)}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00044}\mbox{\hyperlink{classRainbowStrategy_aef4fb1f52b01698f3074460a63634c76}{00044}}         \mbox{\hyperlink{classRainbowStrategy_aef4fb1f52b01698f3074460a63634c76}{RainbowStrategy}}(\textcolor{keywordtype}{double} strike, \textcolor{keywordtype}{double} cp, \textcolor{keywordtype}{int} DMinDMax)}
 \DoxyCodeLine{00045         \{ K = strike; w = cp; type = DMinDMax; \}}
-\DoxyCodeLine{00046         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00046}\mbox{\hyperlink{classRainbowStrategy_ab2ef5cfa977258e831b102521ddef28e}{00046}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classRainbowStrategy_ab2ef5cfa977258e831b102521ddef28e}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00047 \textcolor{keyword}{        }\{}
 \DoxyCodeLine{00048             \textcolor{keywordflow}{if} (type == 1)  \textcolor{comment}{// DMax}}
-\DoxyCodeLine{00049                 \textcolor{keywordflow}{return} Max ( w * Max(S1,S2) -\/ w*K, 0.0);}
+\DoxyCodeLine{00049                 \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} ( w * \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(S1,S2) -\/ w*K, 0.0);}
 \DoxyCodeLine{00050 }
-\DoxyCodeLine{00051             \textcolor{keywordflow}{return} Max( w * Min(S1,S2) -\/ w*K, 0.0);}
+\DoxyCodeLine{00051             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}( w * \mbox{\hyperlink{GenericInequalities_8hh_adb69bfcb34a8cdf14dcb3fc08f9687c0}{Min}}(S1,S2) -\/ w*K, 0.0);}
 \DoxyCodeLine{00052         \}}
 \DoxyCodeLine{00053 \};}
 \DoxyCodeLine{00054 }
@@ -64,19 +64,19 @@
 \DoxyCodeLine{00061         \textcolor{keywordtype}{double} w1, w2;  \textcolor{comment}{// w1 + w2 = 1}}
 \DoxyCodeLine{00062 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00063         \textcolor{comment}{// All classes need default constructor}}
-\DoxyCodeLine{00064         \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}()}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00064}\mbox{\hyperlink{classBasketStrategy_adacc028cabb72e5b0ffc09da09875093}{00064}}         \mbox{\hyperlink{classBasketStrategy_adacc028cabb72e5b0ffc09da09875093}{BasketStrategy}}()}
 \DoxyCodeLine{00065         \{ K = 95.0; w = +1; w1 = 0.5; w2 = 0.5;}
 \DoxyCodeLine{00066         \}}
 \DoxyCodeLine{00067 }
-\DoxyCodeLine{00068         \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}(\textcolor{keywordtype}{double} strike, \textcolor{keywordtype}{double} cp,\textcolor{keywordtype}{double} weight1, \textcolor{keywordtype}{double} weight2)}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00068}\mbox{\hyperlink{classBasketStrategy_a951cb02138da0e0b55980fcbb8a685b4}{00068}}         \mbox{\hyperlink{classBasketStrategy_a951cb02138da0e0b55980fcbb8a685b4}{BasketStrategy}}(\textcolor{keywordtype}{double} strike, \textcolor{keywordtype}{double} cp,\textcolor{keywordtype}{double} weight1, \textcolor{keywordtype}{double} weight2)}
 \DoxyCodeLine{00069         \{ K = strike; w = cp; w1 = weight1; w2 = weight2;}
 \DoxyCodeLine{00070         \}}
-\DoxyCodeLine{00071         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00071}\mbox{\hyperlink{classBasketStrategy_a00fe40f08a80a69ae62c0134b350e02f}{00071}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBasketStrategy_a00fe40f08a80a69ae62c0134b350e02f}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00072 \textcolor{keyword}{        }\{}
 \DoxyCodeLine{00073     }
-\DoxyCodeLine{00074             \textcolor{keywordtype}{double} sum = w1*S1 + w2*S2;}
+\DoxyCodeLine{00074             \textcolor{keywordtype}{double} \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} = w1*S1 + w2*S2;}
 \DoxyCodeLine{00075 }
-\DoxyCodeLine{00076             \textcolor{keywordflow}{return} Max(w* (sum -\/ K), 0.0);}
+\DoxyCodeLine{00076             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(w* (\mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} -\/ K), 0.0);}
 \DoxyCodeLine{00077         \}}
 \DoxyCodeLine{00078 \};}
 \DoxyCodeLine{00079 }
@@ -87,16 +87,16 @@
 \DoxyCodeLine{00084         \textcolor{keywordtype}{double} w;       \textcolor{comment}{// +1 Best, -\/1 Worst}}
 \DoxyCodeLine{00085         }
 \DoxyCodeLine{00086 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00087         \mbox{\hyperlink{classBestWorstStrategy}{BestWorstStrategy}}(\textcolor{keywordtype}{double} cash, \textcolor{keywordtype}{double} BestWorst)}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00087}\mbox{\hyperlink{classBestWorstStrategy_a7fccff78a19686708b54f34c3b089786}{00087}}         \mbox{\hyperlink{classBestWorstStrategy_a7fccff78a19686708b54f34c3b089786}{BestWorstStrategy}}(\textcolor{keywordtype}{double} cash, \textcolor{keywordtype}{double} BestWorst)}
 \DoxyCodeLine{00088         \{ K = cash; w = BestWorst;\}}
 \DoxyCodeLine{00089 }
-\DoxyCodeLine{00090         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00090}\mbox{\hyperlink{classBestWorstStrategy_a9f6f1a30e538d7c4ad18ea59bf808460}{00090}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBestWorstStrategy_a9f6f1a30e538d7c4ad18ea59bf808460}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00091 \textcolor{keyword}{        }\{}
 \DoxyCodeLine{00092     }
 \DoxyCodeLine{00093             \textcolor{keywordflow}{if} (w == 1) \textcolor{comment}{// Best}}
-\DoxyCodeLine{00094                 \textcolor{keywordflow}{return} Max (S1, S2, K);}
+\DoxyCodeLine{00094                 \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} (S1, S2, K);}
 \DoxyCodeLine{00095 }
-\DoxyCodeLine{00096             \textcolor{keywordflow}{return} Min (S1, S2, K);}
+\DoxyCodeLine{00096             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_adb69bfcb34a8cdf14dcb3fc08f9687c0}{Min}} (S1, S2, K);}
 \DoxyCodeLine{00097         \}}
 \DoxyCodeLine{00098 \};}
 \DoxyCodeLine{00099 }
@@ -107,11 +107,11 @@
 \DoxyCodeLine{00104         \textcolor{keywordtype}{double} w;   \textcolor{comment}{// +1 call, -\/1 put}}
 \DoxyCodeLine{00105         }
 \DoxyCodeLine{00106 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00107         \mbox{\hyperlink{classQuotientStrategy}{QuotientStrategy}}(\textcolor{keywordtype}{double} strike, \textcolor{keywordtype}{double} cp)}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00107}\mbox{\hyperlink{classQuotientStrategy_a75424ff1ffcab8ecefc083e8588a0a48}{00107}}         \mbox{\hyperlink{classQuotientStrategy_a75424ff1ffcab8ecefc083e8588a0a48}{QuotientStrategy}}(\textcolor{keywordtype}{double} strike, \textcolor{keywordtype}{double} cp)}
 \DoxyCodeLine{00108         \{ K = strike; w = cp; \}}
-\DoxyCodeLine{00109         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00109}\mbox{\hyperlink{classQuotientStrategy_a763e8600d4099546f0bd3e30eff53219}{00109}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classQuotientStrategy_a763e8600d4099546f0bd3e30eff53219}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00110 \textcolor{keyword}{        }\{}
-\DoxyCodeLine{00111             \textcolor{keywordflow}{return} Max ( w * (S1/S2) -\/ w*K, 0.0);}
+\DoxyCodeLine{00111             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} ( w * (S1/S2) -\/ w*K, 0.0);}
 \DoxyCodeLine{00112 }
 \DoxyCodeLine{00113         \}}
 \DoxyCodeLine{00114 \};}
@@ -124,12 +124,12 @@
 \DoxyCodeLine{00121         \textcolor{keywordtype}{double} w;   \textcolor{comment}{// +1 call, -\/1 put}}
 \DoxyCodeLine{00122         }
 \DoxyCodeLine{00123 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00124         \mbox{\hyperlink{classQuantoStrategy}{QuantoStrategy}}(\textcolor{keywordtype}{double} foreignStrike, \textcolor{keywordtype}{double} cp, \textcolor{keywordtype}{double} forExchangeRate)}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00124}\mbox{\hyperlink{classQuantoStrategy_ab918d8af11ed5b7e93568ebdd4125113}{00124}}         \mbox{\hyperlink{classQuantoStrategy_ab918d8af11ed5b7e93568ebdd4125113}{QuantoStrategy}}(\textcolor{keywordtype}{double} foreignStrike, \textcolor{keywordtype}{double} cp, \textcolor{keywordtype}{double} forExchangeRate)}
 \DoxyCodeLine{00125         \{ Kf = foreignStrike; w = cp; fer = forExchangeRate; \}}
 \DoxyCodeLine{00126 }
-\DoxyCodeLine{00127         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00127}\mbox{\hyperlink{classQuantoStrategy_a63d76c65a3c648b9ee08d74cde31fac1}{00127}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classQuantoStrategy_a63d76c65a3c648b9ee08d74cde31fac1}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00128 \textcolor{keyword}{        }\{}
-\DoxyCodeLine{00129             \textcolor{keywordflow}{return} fer * Max ( w * S1 -\/ w*Kf, 0.0);}
+\DoxyCodeLine{00129             \textcolor{keywordflow}{return} fer * \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} ( w * S1 -\/ w*Kf, 0.0);}
 \DoxyCodeLine{00130 }
 \DoxyCodeLine{00131         \}}
 \DoxyCodeLine{00132 \};}
@@ -141,14 +141,14 @@
 \DoxyCodeLine{00138         \textcolor{keywordtype}{double} w;       \textcolor{comment}{// +1 call, -\/1 put}}
 \DoxyCodeLine{00139         \textcolor{keywordtype}{double} a, b;    \textcolor{comment}{// a > 0, b < 0}}
 \DoxyCodeLine{00140 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00141         \mbox{\hyperlink{classSpreadStrategy}{SpreadStrategy}}(\textcolor{keywordtype}{double} cp, \textcolor{keywordtype}{double} strike = 0.0, \textcolor{keywordtype}{double} A = 1.0, \textcolor{keywordtype}{double} \mbox{\hyperlink{classB}{B}} = -\/1.0)}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00141}\mbox{\hyperlink{classSpreadStrategy_a61b425f4d974110b6ab6be492955b61f}{00141}}         \mbox{\hyperlink{classSpreadStrategy_a61b425f4d974110b6ab6be492955b61f}{SpreadStrategy}}(\textcolor{keywordtype}{double} cp, \textcolor{keywordtype}{double} strike = 0.0, \textcolor{keywordtype}{double} A = 1.0, \textcolor{keywordtype}{double} \mbox{\hyperlink{classB}{B}} = -\/1.0)}
 \DoxyCodeLine{00142         \{ K = strike; w = cp; a = A; b = \mbox{\hyperlink{classB}{B}};\}}
-\DoxyCodeLine{00143         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00143}\mbox{\hyperlink{classSpreadStrategy_a2aa6d1c5c04c165e790771b82d2cceea}{00143}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classSpreadStrategy_a2aa6d1c5c04c165e790771b82d2cceea}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00144 \textcolor{keyword}{        }\{}
 \DoxyCodeLine{00145     }
-\DoxyCodeLine{00146             \textcolor{keywordtype}{double} sum = a*S1 + b*S2;}
+\DoxyCodeLine{00146             \textcolor{keywordtype}{double} \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} = a*S1 + b*S2;}
 \DoxyCodeLine{00147 }
-\DoxyCodeLine{00148             \textcolor{keywordflow}{return} Max(w* (sum -\/ K), 0.0);}
+\DoxyCodeLine{00148             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(w* (\mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} -\/ K), 0.0);}
 \DoxyCodeLine{00149         \}}
 \DoxyCodeLine{00150 \};}
 \DoxyCodeLine{00151 }
@@ -158,15 +158,15 @@
 \DoxyCodeLine{00155         \textcolor{keywordtype}{double} K1, K2;}
 \DoxyCodeLine{00156         \textcolor{keywordtype}{double} w1, w2;}
 \DoxyCodeLine{00157 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00158         \mbox{\hyperlink{classDualStrikeStrategy}{DualStrikeStrategy}}(\textcolor{keywordtype}{double} strike1, \textcolor{keywordtype}{double} strike2, \textcolor{keywordtype}{double} cp1, \textcolor{keywordtype}{double} cp2)}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00158}\mbox{\hyperlink{classDualStrikeStrategy_acb137e0591a87d9dc7fdabc0bea33ac9}{00158}}         \mbox{\hyperlink{classDualStrikeStrategy_acb137e0591a87d9dc7fdabc0bea33ac9}{DualStrikeStrategy}}(\textcolor{keywordtype}{double} strike1, \textcolor{keywordtype}{double} strike2, \textcolor{keywordtype}{double} cp1, \textcolor{keywordtype}{double} cp2)}
 \DoxyCodeLine{00159         \{ K1 = strike1; K2 = strike2;}
 \DoxyCodeLine{00160           w1 = cp1; w2 = cp2;}
 \DoxyCodeLine{00161         \}}
 \DoxyCodeLine{00162 }
-\DoxyCodeLine{00163         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00163}\mbox{\hyperlink{classDualStrikeStrategy_a2b0c936589516174633636d12ea05e18}{00163}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classDualStrikeStrategy_a2b0c936589516174633636d12ea05e18}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00164 \textcolor{keyword}{        }\{}
 \DoxyCodeLine{00165 }
-\DoxyCodeLine{00166             \textcolor{keywordflow}{return} Max (w1*(S1-\/K1), w2*(S2-\/K2), 0.0);}
+\DoxyCodeLine{00166             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} (w1*(S1-\/K1), w2*(S2-\/K2), 0.0);}
 \DoxyCodeLine{00167 }
 \DoxyCodeLine{00168         \}}
 \DoxyCodeLine{00169 \};}
@@ -179,15 +179,15 @@
 \DoxyCodeLine{00176         \textcolor{keywordtype}{double} k;       \textcolor{comment}{// Strike rate of option}}
 \DoxyCodeLine{00177 }
 \DoxyCodeLine{00178 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00179         \mbox{\hyperlink{classOutPerformanceStrategy}{OutPerformanceStrategy}}(\textcolor{keywordtype}{double} currentRate1, \textcolor{keywordtype}{double} currentRate2, \textcolor{keywordtype}{double} cp,}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00179}\mbox{\hyperlink{classOutPerformanceStrategy_a1b2e246fd8a12e09cabfa5bd2e1d5929}{00179}}         \mbox{\hyperlink{classOutPerformanceStrategy_a1b2e246fd8a12e09cabfa5bd2e1d5929}{OutPerformanceStrategy}}(\textcolor{keywordtype}{double} currentRate1, \textcolor{keywordtype}{double} currentRate2, \textcolor{keywordtype}{double} cp,}
 \DoxyCodeLine{00180                                 \textcolor{keywordtype}{double} strikeRate)}
 \DoxyCodeLine{00181         \{ I1 = currentRate1; I2 = currentRate2;}
 \DoxyCodeLine{00182           w = cp; k = strikeRate;}
 \DoxyCodeLine{00183         \}}
 \DoxyCodeLine{00184 }
-\DoxyCodeLine{00185         \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoffStrategy_8hh_source_l00185}\mbox{\hyperlink{classOutPerformanceStrategy_ab7f1f4f9607b5acb710f0e1252c3b5c7}{00185}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classOutPerformanceStrategy_ab7f1f4f9607b5acb710f0e1252c3b5c7}{payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
 \DoxyCodeLine{00186 \textcolor{keyword}{        }\{}
-\DoxyCodeLine{00187             \textcolor{keywordflow}{return} Max (w*((I1/S1) -\/ (I2/S2)) -\/ w* k, 0.0);}
+\DoxyCodeLine{00187             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} (w*((I1/S1) -\/ (I2/S2)) -\/ w* k, 0.0);}
 \DoxyCodeLine{00188 }
 \DoxyCodeLine{00189         \}}
 \DoxyCodeLine{00190 \};}

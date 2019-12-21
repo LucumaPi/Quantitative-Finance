@@ -26,7 +26,7 @@
 \DoxyCodeLine{00022 \textcolor{preprocessor}{\#ifndef Lattice\_hpp}}
 \DoxyCodeLine{00023 \textcolor{preprocessor}{\#define Lattice\_hpp}}
 \DoxyCodeLine{00024 }
-\DoxyCodeLine{00025 \textcolor{preprocessor}{\#include "Vector.hh"}}
+\DoxyCodeLine{00025 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Vector_8hh}{Vector.hh}}"}}
 \DoxyCodeLine{00026 }
 \DoxyCodeLine{\Hypertarget{Lattice_8hh_source_l00027}\mbox{\hyperlink{classLattice}{00027}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \textcolor{keyword}{class }\mbox{\hyperlink{classLattice}{Lattice}}}
 \DoxyCodeLine{00028 \{ \textcolor{comment}{// Generic lattice class}}
@@ -38,25 +38,25 @@
 \DoxyCodeLine{00034     \textcolor{keywordtype}{int} typ;            \textcolor{comment}{// What kind of lattice (number of nodes)}}
 \DoxyCodeLine{00035 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00036     \textcolor{comment}{// Constructors \& destructor}}
-\DoxyCodeLine{00037     \mbox{\hyperlink{classLattice}{Lattice}}();                       \textcolor{comment}{// Default constructor}}
-\DoxyCodeLine{00038     \mbox{\hyperlink{classLattice}{Lattice}}(\textcolor{keyword}{const} I\& Nrows);     \textcolor{comment}{// Number of rows and branch factor}}
-\DoxyCodeLine{00039     \mbox{\hyperlink{classLattice}{Lattice}}(\textcolor{keyword}{const} I\& Nrows, \textcolor{keyword}{const} V\& val); \textcolor{comment}{// + value at nodes}}
-\DoxyCodeLine{00040     \mbox{\hyperlink{classLattice}{Lattice}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& source);     \textcolor{comment}{// Copy constructor}}
-\DoxyCodeLine{00041     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classLattice}{Lattice}}();                          \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{Lattice}}();                       \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00038     \mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{Lattice}}(\textcolor{keyword}{const} I\& Nrows);     \textcolor{comment}{// Number of rows and branch factor}}
+\DoxyCodeLine{00039     \mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{Lattice}}(\textcolor{keyword}{const} I\& Nrows, \textcolor{keyword}{const} V\& val); \textcolor{comment}{// + value at nodes}}
+\DoxyCodeLine{00040     \mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{Lattice}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& source);     \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00041     \textcolor{keyword}{virtual} \mbox{\hyperlink{classLattice_a9625188af2d5da9d88b2f747db907042}{~Lattice}}();                         \textcolor{comment}{// Destructor}}
 \DoxyCodeLine{00042     \textcolor{comment}{// Iterating in a Lattice; we need forward and backward versions}}
-\DoxyCodeLine{00043     I MinIndex() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the minimum row index}}
-\DoxyCodeLine{00044     I MaxIndex() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the maximum row index}}
-\DoxyCodeLine{00045     I Depth() \textcolor{keyword}{const};                                \textcolor{comment}{// The (depth) number of rows in the lattice}}
+\DoxyCodeLine{00043     I \mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the minimum row index}}
+\DoxyCodeLine{00044     I \mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the maximum row index}}
+\DoxyCodeLine{00045     I \mbox{\hyperlink{classLattice_a0911d29a485c5e8555b8f25e7589434a}{Depth}}() \textcolor{keyword}{const};                               \textcolor{comment}{// The (depth) number of rows in the lattice}}
 \DoxyCodeLine{00046     \textcolor{comment}{// Operators}}
-\DoxyCodeLine{00047     \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& source);}
-\DoxyCodeLine{00048     \mbox{\hyperlink{classVector}{Vector<V, I>}}\& operator [] (\textcolor{keyword}{const} I\& nLevel );               \textcolor{comment}{// Subscripting operator}}
-\DoxyCodeLine{00049     \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I>}}\& operator [] (\textcolor{keyword}{const} I\& nLevel ) \textcolor{keyword}{const};               \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00047     \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& \mbox{\hyperlink{classLattice_a135fdd0475ed6105b3367d507681a404}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& source);}
+\DoxyCodeLine{00048     \mbox{\hyperlink{classVector}{Vector<V, I>}}\& \mbox{\hyperlink{classLattice_ab444412f2030b7594d611c1f7429a953}{operator [] }}(\textcolor{keyword}{const} I\& nLevel );               \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00049     \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I>}}\& \mbox{\hyperlink{classLattice_ab444412f2030b7594d611c1f7429a953}{operator [] }}(\textcolor{keyword}{const} I\& nLevel ) \textcolor{keyword}{const};               \textcolor{comment}{// Subscripting operator}}
 \DoxyCodeLine{00050 }
 \DoxyCodeLine{00051     \textcolor{comment}{// We need the form of the lattice at the 'base' of the pyramid. This}}
 \DoxyCodeLine{00052     \textcolor{comment}{// will be needed when we use backward induction }}
-\DoxyCodeLine{00053     \mbox{\hyperlink{classVector}{Vector<V, I>}} BasePyramidVector() \textcolor{keyword}{const};}
-\DoxyCodeLine{00054     I BasePyramidSize() \textcolor{keyword}{const};                  \textcolor{comment}{// The number of discrete points at end}}
-\DoxyCodeLine{00055     I numberNodes() \textcolor{keyword}{const};                      \textcolor{comment}{// Total number of mesh points}}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{classLattice_a0454fa42ebad2e9fbb71e884f3befaf6}{BasePyramidVector}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{00054     I \mbox{\hyperlink{classLattice_a37afc93f46019f322291307c1bed2e11}{BasePyramidSize}}() \textcolor{keyword}{const};                   \textcolor{comment}{// The number of discrete points at end}}
+\DoxyCodeLine{00055     I \mbox{\hyperlink{classLattice_a114af77d5b77fa52ffd28c42f7f97b5f}{numberNodes}}() \textcolor{keyword}{const};                       \textcolor{comment}{// Total number of mesh points}}
 \DoxyCodeLine{00056 \};}
 \DoxyCodeLine{00057 \textcolor{preprocessor}{\#include "../../src/Lattice.cc"}}
 \DoxyCodeLine{00058 \textcolor{preprocessor}{\#endif}}

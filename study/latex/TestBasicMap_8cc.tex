@@ -1,0 +1,146 @@
+\hypertarget{TestBasicMap_8cc}{}\doxysection{tests/\+Test\+Basic\+Map.cc File Reference}
+\label{TestBasicMap_8cc}\index{tests/TestBasicMap.cc@{tests/TestBasicMap.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Test\+Basic\+Map.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{TestBasicMap_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TestBasicMap_8cc_ad1a0fe0527b35857412b04939cd902fc}{print}} (const std\+::map$<$ char, double $>$ \&my\+Map)
+\item 
+void \mbox{\hyperlink{TestBasicMap_8cc_a0723e714a96e2b21eba69f10f8960cf7}{modify}} (std\+::map$<$ char, double $>$ \&my\+Map, double scale\+Factor)
+\item 
+int \mbox{\hyperlink{TestBasicMap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestBasicMap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestBasicMap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestBasicMap.cc@{TestBasicMap.cc}!main@{main}}
+\index{main@{main}!TestBasicMap.cc@{TestBasicMap.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestBasicMap_8cc_source_l00047}{47}} of file \mbox{\hyperlink{TestBasicMap_8cc_source}{Test\+Basic\+Map.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     std::map<char, double> map1;}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{comment}{// Different ways of adding values}}
+\DoxyCodeLine{00053     \textcolor{comment}{// Using indexing}}
+\DoxyCodeLine{00054     map1[\textcolor{charliteral}{'A'}] = 1.0;}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{comment}{// Inserting an 'explicit' pair object}}
+\DoxyCodeLine{00057     std::pair<char, double> myPair(\textcolor{charliteral}{'B'}, 2.0);}
+\DoxyCodeLine{00058     map1.insert(myPair);}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     \textcolor{comment}{// Using make\_pair template function}}
+\DoxyCodeLine{00061     std::pair<char, double> tmp = std::make\_pair(\textcolor{charliteral}{'C'}, 4.0);}
+\DoxyCodeLine{00062     map1.insert(tmp);}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{comment}{// Using anonymous objects}}
+\DoxyCodeLine{00065     map1.insert(std::pair<char, double>(\textcolor{charliteral}{'F'}, 33.4));}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{comment}{// Try to add keys again; does not work}}
+\DoxyCodeLine{00068     map1[\textcolor{charliteral}{'A'}] = 199.0; \textcolor{comment}{// Value will be changed however}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     std::pair<char, double> tmp1 = std::make\_pair(\textcolor{charliteral}{'C'}, 55.0);}
+\DoxyCodeLine{00071     map1.insert(tmp1);}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{comment}{// Now print the map}}
+\DoxyCodeLine{00074     \mbox{\hyperlink{TestBasicMap_8cc_ad1a0fe0527b35857412b04939cd902fc}{print}}(map1);}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{comment}{// Change values}}
+\DoxyCodeLine{00077     \textcolor{keywordtype}{double} scaleF = 0.5;}
+\DoxyCodeLine{00078     \mbox{\hyperlink{TestBasicMap_8cc_a0723e714a96e2b21eba69f10f8960cf7}{modify}}(map1, scaleF);}
+\DoxyCodeLine{00079     \mbox{\hyperlink{TestBasicMap_8cc_ad1a0fe0527b35857412b04939cd902fc}{print}}(map1);}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{comment}{// Now erasing things}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{comment}{// Erase a key}}
+\DoxyCodeLine{00084     map1.erase(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{00085     \mbox{\hyperlink{TestBasicMap_8cc_ad1a0fe0527b35857412b04939cd902fc}{print}} (map1);}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{comment}{// Erase one iterator}}
+\DoxyCodeLine{00088     map1.erase(map1.begin());}
+\DoxyCodeLine{00089     \mbox{\hyperlink{TestBasicMap_8cc_ad1a0fe0527b35857412b04939cd902fc}{print}} (map1);}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{comment}{// Erase between 2 iterators; same as map1.clear()}}
+\DoxyCodeLine{00092     map1.erase(map1.begin(), map1.end());}
+\DoxyCodeLine{00093     \mbox{\hyperlink{TestBasicMap_8cc_ad1a0fe0527b35857412b04939cd902fc}{print}} (map1);}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     map1.clear();   \textcolor{comment}{// Delete an empty map has no effect}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00098 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestBasicMap_8cc_a0723e714a96e2b21eba69f10f8960cf7}\label{TestBasicMap_8cc_a0723e714a96e2b21eba69f10f8960cf7}} 
+\index{TestBasicMap.cc@{TestBasicMap.cc}!modify@{modify}}
+\index{modify@{modify}!TestBasicMap.cc@{TestBasicMap.cc}}
+\doxysubsubsection{\texorpdfstring{modify()}{modify()}}
+{\footnotesize\ttfamily void modify (\begin{DoxyParamCaption}\item[{std\+::map$<$ char, double $>$ \&}]{my\+Map,  }\item[{double}]{scale\+Factor }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestBasicMap_8cc_source_l00032}{32}} of file \mbox{\hyperlink{TestBasicMap_8cc_source}{Test\+Basic\+Map.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033 \{ \textcolor{comment}{// Multiply each value by a double}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{comment}{// Iterating in the map (non-\/const)}}
+\DoxyCodeLine{00036     std::map<char, double>::iterator i = myMap.begin();}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{keywordflow}{while} (i != myMap.end())}
+\DoxyCodeLine{00039     \{}
+\DoxyCodeLine{00040             ((*i).second) *= scaleFactor;}
+\DoxyCodeLine{00041             }
+\DoxyCodeLine{00042             i++;}
+\DoxyCodeLine{00043     \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestBasicMap_8cc_ad1a0fe0527b35857412b04939cd902fc}\label{TestBasicMap_8cc_ad1a0fe0527b35857412b04939cd902fc}} 
+\index{TestBasicMap.cc@{TestBasicMap.cc}!print@{print}}
+\index{print@{print}!TestBasicMap.cc@{TestBasicMap.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{const std\+::map$<$ char, double $>$ \&}]{my\+Map }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestBasicMap_8cc_source_l00014}{14}} of file \mbox{\hyperlink{TestBasicMap_8cc_source}{Test\+Basic\+Map.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     std::cout << \textcolor{stringliteral}{"Number of elements in map: "} << myMap.size() << std::endl;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \textcolor{comment}{// Iterating in the map}}
+\DoxyCodeLine{00020     std::map<char, double>::const\_iterator i = myMap.begin();}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{while} (i != myMap.end())}
+\DoxyCodeLine{00023     \{}
+\DoxyCodeLine{00024             std::cout << (*i).first << \textcolor{stringliteral}{", "} << ((*i).second) << std::endl;}
+\DoxyCodeLine{00025             }
+\DoxyCodeLine{00026             i++;}
+\DoxyCodeLine{00027     \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     std::cout << std::endl;}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}

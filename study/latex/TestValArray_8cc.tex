@@ -1,0 +1,102 @@
+\hypertarget{TestValArray_8cc}{}\doxysection{tests/\+Test\+Val\+Array.cc File Reference}
+\label{TestValArray_8cc}\index{tests/TestValArray.cc@{tests/TestValArray.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$valarray$>$}\newline
+Include dependency graph for Test\+Val\+Array.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{TestValArray_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::valarray$<$ double $>$ \mbox{\hyperlink{TestValArray_8cc_add6849942318af6b6fcebb983463fd5e}{Double\+Array}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::valarray$<$ T $>$ \mbox{\hyperlink{TestValArray_8cc_a8f09d30f410be3925decb30560301b1b}{multiply}} (const std\+::valarray$<$ T $>$ \&vec1, const T \&factor)
+\item 
+int \mbox{\hyperlink{TestValArray_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{TestValArray_8cc_add6849942318af6b6fcebb983463fd5e}\label{TestValArray_8cc_add6849942318af6b6fcebb983463fd5e}} 
+\index{TestValArray.cc@{TestValArray.cc}!DoubleArray@{DoubleArray}}
+\index{DoubleArray@{DoubleArray}!TestValArray.cc@{TestValArray.cc}}
+\doxysubsubsection{\texorpdfstring{DoubleArray}{DoubleArray}}
+{\footnotesize\ttfamily typedef std\+::valarray$<$double$>$ \mbox{\hyperlink{TestValArray_8cc_add6849942318af6b6fcebb983463fd5e}{Double\+Array}}}
+
+
+
+Definition at line \mbox{\hyperlink{TestValArray_8cc_source_l00024}{24}} of file \mbox{\hyperlink{TestValArray_8cc_source}{Test\+Val\+Array.\+cc}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestValArray_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestValArray_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestValArray.cc@{TestValArray.cc}!main@{main}}
+\index{main@{main}!TestValArray.cc@{TestValArray.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestValArray_8cc_source_l00026}{26}} of file \mbox{\hyperlink{TestValArray_8cc_source}{Test\+Val\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028     \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}};}
+\DoxyCodeLine{00029     std::cout << \textcolor{stringliteral}{"Give size: "};}
+\DoxyCodeLine{00030     std::cin >> \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}};}
+\DoxyCodeLine{00031     }
+\DoxyCodeLine{00032     \textcolor{keywordtype}{double} factor = 0.5;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \mbox{\hyperlink{TestValArray_8cc_add6849942318af6b6fcebb983463fd5e}{DoubleArray}} inputArray(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{comment}{// Initialisation of input array}}
+\DoxyCodeLine{00037     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < inputArray.size(); j++)}
+\DoxyCodeLine{00038     \{}
+\DoxyCodeLine{00039         inputArray[j] = double (j+1);       \textcolor{comment}{// Simple values}}
+\DoxyCodeLine{00040     \}}
+\DoxyCodeLine{00041     \mbox{\hyperlink{TestValArray_8cc_add6849942318af6b6fcebb983463fd5e}{DoubleArray}} outputArray = \mbox{\hyperlink{TestValArray_8cc_a8f09d30f410be3925decb30560301b1b}{multiply}}(inputArray, factor);}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < outputArray.size(); i++)}
+\DoxyCodeLine{00044     \{}
+\DoxyCodeLine{00045         std::cout << outputArray[i] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00049 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestValArray_8cc_a8f09d30f410be3925decb30560301b1b}\label{TestValArray_8cc_a8f09d30f410be3925decb30560301b1b}} 
+\index{TestValArray.cc@{TestValArray.cc}!multiply@{multiply}}
+\index{multiply@{multiply}!TestValArray.cc@{TestValArray.cc}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::valarray$<$T$>$ multiply (\begin{DoxyParamCaption}\item[{const std\+::valarray$<$ T $>$ \&}]{vec1,  }\item[{const T \&}]{factor }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestValArray_8cc_source_l00010}{10}} of file \mbox{\hyperlink{TestValArray_8cc_source}{Test\+Val\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011 \{ \textcolor{comment}{// Multiply a vector by a scalar factor}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     std::valarray<T> result (vec1.size()); \textcolor{comment}{// Same size}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < result.size(); j++)}
+\DoxyCodeLine{00016     \{}
+\DoxyCodeLine{00017         result[j] = vec1[j] * factor;}
+\DoxyCodeLine{00018     \}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00021 \}}
+
+\end{DoxyCode}

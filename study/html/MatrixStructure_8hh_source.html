@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: include/duffy/MatrixStructure.hh Source File</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: include/duffy/MatrixStructure.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +78,7 @@ $(function() {
 <div class="title">MatrixStructure.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// MatrixStructure.hpp</span></div>
+<a href="MatrixStructure_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// MatrixStructure.hpp</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Base class for matrix storage structure.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// A size_t is used for indexing. Indexing starts at 1.</span></div>
@@ -88,44 +88,57 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MatrixStructure_hh</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define MatrixStructure_hh</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;ArrayStructure.hh&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ArrayStructure_8hh.html">ArrayStructure.hh</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> TValue&gt;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classMatrixStructure.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMatrixStructure.html">MatrixStructure</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// Constructors &amp; destructor</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classMatrixStructure.html">MatrixStructure</a>();                                              <span class="comment">// Default constructor</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classMatrixStructure.html">MatrixStructure</a>(<span class="keyword">const</span> <a class="code" href="classMatrixStructure.html">MatrixStructure&lt;TValue&gt;</a>&amp; source);         <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classMatrixStructure.html">MatrixStructure</a>();                                     <span class="comment">// Destructor</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classMatrixStructure.html#ab9e6d544c166b894b28f7b83a2114afd">MatrixStructure</a>();                                              <span class="comment">// Default constructor</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classMatrixStructure.html#ab9e6d544c166b894b28f7b83a2114afd">MatrixStructure</a>(<span class="keyword">const</span> <a class="code" href="classMatrixStructure.html">MatrixStructure&lt;TValue&gt;</a>&amp; source);         <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classMatrixStructure.html#a63b1628587fc0e268b945f7e4b834624">~MatrixStructure</a>();                                     <span class="comment">// Destructor</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// Selectors</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> Rows() <span class="keyword">const</span>=0;                                  <span class="comment">// Number of rows</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> Columns() <span class="keyword">const</span>=0;                               <span class="comment">// Number of columns</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> TValue&amp; Element(<span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column) <span class="keyword">const</span>;         <span class="comment">// Get element at position</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code" href="classMatrixStructure.html#a1f9a91f713f03ceeda90e4dc3d17dcb3">Rows</a>() <span class="keyword">const</span>=0;                                  <span class="comment">// Number of rows</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code" href="classMatrixStructure.html#a33fe5393a149b31d428a1931f1e0e7e1">Columns</a>() <span class="keyword">const</span>=0;                               <span class="comment">// Number of columns</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> TValue&amp; <a class="code" href="classMatrixStructure.html#a30fd4009debf853fa0cf5eec196c1d76">Element</a>(<span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column) <span class="keyword">const</span>;         <span class="comment">// Get element at position</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">size_t</span> MinRowIndex() <span class="keyword">const</span>;                                     <span class="comment">// Return the minimum row index</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">size_t</span> MaxRowIndex() <span class="keyword">const</span>;                                     <span class="comment">// Return the maximum row index</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">size_t</span> MinColumnIndex() <span class="keyword">const</span>;                                  <span class="comment">// Return the minimum column index</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">size_t</span> MaxColumnIndex() <span class="keyword">const</span>;                                  <span class="comment">// Return the minimum column index</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classMatrixStructure.html#a5ea22c53b73b04e14ca1ab05e8b22be0">MinRowIndex</a>() <span class="keyword">const</span>;                                     <span class="comment">// Return the minimum row index</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classMatrixStructure.html#aeadfc044bf86c889685062365303cddf">MaxRowIndex</a>() <span class="keyword">const</span>;                                     <span class="comment">// Return the maximum row index</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classMatrixStructure.html#a71f5cf156f0d3efa33b2aefa639b26b7">MinColumnIndex</a>() <span class="keyword">const</span>;                                  <span class="comment">// Return the minimum column index</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classMatrixStructure.html#a983c911ffca688272199c4d5dd703931">MaxColumnIndex</a>() <span class="keyword">const</span>;                                  <span class="comment">// Return the minimum column index</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Modifiers</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> Element(<span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column, <span class="keyword">const</span> TValue&amp; val);     <span class="comment">// Change element at position</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMatrixStructure.html#a30fd4009debf853fa0cf5eec196c1d76">Element</a>(<span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column, <span class="keyword">const</span> TValue&amp; val);     <span class="comment">// Change element at position</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Operators</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classArrayStructure.html">ArrayStructure&lt;TValue&gt;</a>&amp; operator[] (<span class="keywordtype">size_t</span> index) = 0;                  <span class="comment">// Subscripting operator</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classArrayStructure.html">ArrayStructure&lt;TValue&gt;</a>&amp; operator[] (<span class="keywordtype">size_t</span> index) <span class="keyword">const</span> = 0;      <span class="comment">// Subscripting operator</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classArrayStructure.html">ArrayStructure&lt;TValue&gt;</a>&amp; <a class="code" href="classMatrixStructure.html#aac06c3e30a639e2888a0a5bc367e67f8">operator[] </a>(<span class="keywordtype">size_t</span> index) = 0;                  <span class="comment">// Subscripting operator</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classArrayStructure.html">ArrayStructure&lt;TValue&gt;</a>&amp; <a class="code" href="classMatrixStructure.html#aac06c3e30a639e2888a0a5bc367e67f8">operator[] </a>(<span class="keywordtype">size_t</span> index) <span class="keyword">const</span> = 0;      <span class="comment">// Subscripting operator</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> TValue&amp; operator () (<span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column) <span class="keyword">const</span>;    <span class="comment">// Get the element at position</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    TValue&amp; operator () (<span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column);                <span class="comment">// Get the element at position</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> TValue&amp; <a class="code" href="classMatrixStructure.html#a9bb17d896587d5810e745277975e5212">operator () </a>(<span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column) <span class="keyword">const</span>;    <span class="comment">// Get the element at position</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    TValue&amp; <a class="code" href="classMatrixStructure.html#a9bb17d896587d5810e745277975e5212">operator () </a>(<span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column);                <span class="comment">// Get the element at position</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classMatrixStructure.html">MatrixStructure&lt;TValue&gt;</a>&amp; operator = (<span class="keyword">const</span> <a class="code" href="classMatrixStructure.html">MatrixStructure&lt;TValue&gt;</a>&amp; source);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classMatrixStructure.html">MatrixStructure&lt;TValue&gt;</a>&amp; <a class="code" href="classMatrixStructure.html#a1d17ffed41cc515e70f90208b999191e">operator = </a>(<span class="keyword">const</span> <a class="code" href="classMatrixStructure.html">MatrixStructure&lt;TValue&gt;</a>&amp; source);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;../../src/MatrixStructure.cc&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif  // MatrixStructure_hh</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassArrayStructure_html"><div class="ttname"><a href="classArrayStructure.html">ArrayStructure</a></div><div class="ttdef"><b>Definition:</b> ArrayStructure.hh:14</div></div>
-<div class="ttc" id="aclassMatrixStructure_html"><div class="ttname"><a href="classMatrixStructure.html">MatrixStructure</a></div><div class="ttdef"><b>Definition:</b> MatrixStructure.hh:14</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_aeadfc044bf86c889685062365303cddf"><div class="ttname"><a href="classMatrixStructure.html#aeadfc044bf86c889685062365303cddf">MatrixStructure::MaxRowIndex</a></div><div class="ttdeci">size_t MaxRowIndex() const</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a5ea22c53b73b04e14ca1ab05e8b22be0"><div class="ttname"><a href="classMatrixStructure.html#a5ea22c53b73b04e14ca1ab05e8b22be0">MatrixStructure::MinRowIndex</a></div><div class="ttdeci">size_t MinRowIndex() const</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a1d17ffed41cc515e70f90208b999191e"><div class="ttname"><a href="classMatrixStructure.html#a1d17ffed41cc515e70f90208b999191e">MatrixStructure::operator=</a></div><div class="ttdeci">MatrixStructure&lt; TValue &gt; &amp; operator=(const MatrixStructure&lt; TValue &gt; &amp;source)</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a983c911ffca688272199c4d5dd703931"><div class="ttname"><a href="classMatrixStructure.html#a983c911ffca688272199c4d5dd703931">MatrixStructure::MaxColumnIndex</a></div><div class="ttdeci">size_t MaxColumnIndex() const</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_ab9e6d544c166b894b28f7b83a2114afd"><div class="ttname"><a href="classMatrixStructure.html#ab9e6d544c166b894b28f7b83a2114afd">MatrixStructure::MatrixStructure</a></div><div class="ttdeci">MatrixStructure()</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_aac06c3e30a639e2888a0a5bc367e67f8"><div class="ttname"><a href="classMatrixStructure.html#aac06c3e30a639e2888a0a5bc367e67f8">MatrixStructure::operator[]</a></div><div class="ttdeci">virtual ArrayStructure&lt; TValue &gt; &amp; operator[](size_t index)=0</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a30fd4009debf853fa0cf5eec196c1d76"><div class="ttname"><a href="classMatrixStructure.html#a30fd4009debf853fa0cf5eec196c1d76">MatrixStructure::Element</a></div><div class="ttdeci">const TValue &amp; Element(size_t row, size_t column) const</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a63b1628587fc0e268b945f7e4b834624"><div class="ttname"><a href="classMatrixStructure.html#a63b1628587fc0e268b945f7e4b834624">MatrixStructure::~MatrixStructure</a></div><div class="ttdeci">virtual ~MatrixStructure()</div></div>
+<div class="ttc" id="aArrayStructure_8hh_html"><div class="ttname"><a href="ArrayStructure_8hh.html">ArrayStructure.hh</a></div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a9bb17d896587d5810e745277975e5212"><div class="ttname"><a href="classMatrixStructure.html#a9bb17d896587d5810e745277975e5212">MatrixStructure::operator()</a></div><div class="ttdeci">const TValue &amp; operator()(size_t row, size_t column) const</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a1f9a91f713f03ceeda90e4dc3d17dcb3"><div class="ttname"><a href="classMatrixStructure.html#a1f9a91f713f03ceeda90e4dc3d17dcb3">MatrixStructure::Rows</a></div><div class="ttdeci">virtual size_t Rows() const =0</div></div>
+<div class="ttc" id="aclassArrayStructure_html"><div class="ttname"><a href="classArrayStructure.html">ArrayStructure</a></div><div class="ttdef"><b>Definition:</b> <a href="ArrayStructure_8hh_source.html#l00014">ArrayStructure.hh:14</a></div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a71f5cf156f0d3efa33b2aefa639b26b7"><div class="ttname"><a href="classMatrixStructure.html#a71f5cf156f0d3efa33b2aefa639b26b7">MatrixStructure::MinColumnIndex</a></div><div class="ttdeci">size_t MinColumnIndex() const</div></div>
+<div class="ttc" id="aclassMatrixStructure_html_a33fe5393a149b31d428a1931f1e0e7e1"><div class="ttname"><a href="classMatrixStructure.html#a33fe5393a149b31d428a1931f1e0e7e1">MatrixStructure::Columns</a></div><div class="ttdeci">virtual size_t Columns() const =0</div></div>
+<div class="ttc" id="aclassMatrixStructure_html"><div class="ttname"><a href="classMatrixStructure.html">MatrixStructure</a></div><div class="ttdef"><b>Definition:</b> <a href="MatrixStructure_8hh_source.html#l00014">MatrixStructure.hh:14</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

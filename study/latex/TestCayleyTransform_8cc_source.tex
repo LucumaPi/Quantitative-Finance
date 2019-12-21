@@ -1,0 +1,44 @@
+\hypertarget{TestCayleyTransform_8cc_source}{}\doxysection{Test\+Cayley\+Transform.\+cc}
+\label{TestCayleyTransform_8cc_source}\index{tests/TestCayleyTransform.cc@{tests/TestCayleyTransform.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestCayleyTransform.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{\Hypertarget{TestCayleyTransform_8cc_source_l00008}\mbox{\hyperlink{TestCayleyTransform_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00008}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestCayleyTransform_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010     \textcolor{keywordtype}{double} R1 = 2.0;}
+\DoxyCodeLine{00011     \textcolor{keywordtype}{double} R2 = 4.44;}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     \textcolor{keywordtype}{long} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = 1000000000;}
+\DoxyCodeLine{00014 \textcolor{comment}{/*}}
+\DoxyCodeLine{00015 \textcolor{comment}{    for (long j = 1; j <= N; j++)}}
+\DoxyCodeLine{00016 \textcolor{comment}{    \{}}
+\DoxyCodeLine{00017 \textcolor{comment}{        //cout << j << " ";}}
+\DoxyCodeLine{00018 \textcolor{comment}{        double u1 = ::exp(R1 + R2);}}
+\DoxyCodeLine{00019 \textcolor{comment}{        double d1 = ::exp(R1 -\/ R2);}}
+\DoxyCodeLine{00020 \textcolor{comment}{    \}}}
+\DoxyCodeLine{00021 \textcolor{comment}{*/}}
+\DoxyCodeLine{00022     std::cout << \textcolor{stringliteral}{"finished 1\(\backslash\)n"};}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{int} k; std::cin >> k;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{comment}{// Cayley transform}}
+\DoxyCodeLine{00026     \textcolor{keywordtype}{double} z1 = (R1 + R2);}
+\DoxyCodeLine{00027     \textcolor{keywordtype}{double} z2 = (R1 -\/ R2);}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = 1; i <= \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}; i++)}
+\DoxyCodeLine{00030     \{}
+\DoxyCodeLine{00031         \textcolor{keywordtype}{double} u2 = (2.0 + z1) / (2.0 -\/ z1);}
+\DoxyCodeLine{00032         \textcolor{keywordtype}{double} d2 = (2.0 + z2) / (2.0 -\/ z2);}
+\DoxyCodeLine{00033     \}}
+\DoxyCodeLine{00034     }
+\DoxyCodeLine{00035     std::cout << \textcolor{stringliteral}{"finished 2\(\backslash\)n"};}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00038 \}}
+
+\end{DoxyCode}

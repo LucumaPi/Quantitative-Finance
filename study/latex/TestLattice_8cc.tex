@@ -1,0 +1,187 @@
+\hypertarget{TestLattice_8cc}{}\doxysection{tests/\+Test\+Lattice.cc File Reference}
+\label{TestLattice_8cc}\index{tests/TestLattice.cc@{tests/TestLattice.cc}}
+{\ttfamily \#include $<$duffy/\+Lattice.\+hh$>$}\newline
+{\ttfamily \#include \char`\"{}../src/\+Test\+Lattice\+Namespace.\+cc\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Test\+Lattice.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestLattice_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \mbox{\hyperlink{TestLattice_8cc_afcc8086e4f916ae9b6445dc906071622}{Call\+Pay\+Off}} (const V \&K, const \mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&Stock\+Arr)
+\item 
+{\footnotesize template$<$class V , class I $>$ }\\\mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \mbox{\hyperlink{TestLattice_8cc_a30a47c60854db7b413b641236b4157d2}{Put\+Pay\+Off}} (const V \&K, const \mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&Stock\+Arr)
+\item 
+{\footnotesize template$<$class V , class I , int Number\+Nodes$>$ }\\void \mbox{\hyperlink{TestLattice_8cc_a4f588b04e89a733e6e27ba312ce437d3}{print}} (const \mbox{\hyperlink{classLattice}{Lattice}}$<$ V, I, Number\+Nodes $>$ \&source)
+\item 
+int \mbox{\hyperlink{TestLattice_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestLattice_8cc_afcc8086e4f916ae9b6445dc906071622}\label{TestLattice_8cc_afcc8086e4f916ae9b6445dc906071622}} 
+\index{TestLattice.cc@{TestLattice.cc}!CallPayOff@{CallPayOff}}
+\index{CallPayOff@{CallPayOff}!TestLattice.cc@{TestLattice.cc}}
+\doxysubsubsection{\texorpdfstring{CallPayOff()}{CallPayOff()}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+\mbox{\hyperlink{classVector}{Vector}}$<$V,I$>$ Call\+Pay\+Off (\begin{DoxyParamCaption}\item[{const V \&}]{K,  }\item[{const \mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{Stock\+Arr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLattice_8cc_source_l00020}{20}} of file \mbox{\hyperlink{TestLattice_8cc_source}{Test\+Lattice.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         V tmp;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \mbox{\hyperlink{classVector}{Vector<V,I>}} result (StockArr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}(), StockArr.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}());}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keywordflow}{for} (I i = StockArr.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= StockArr.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00028         \{}
+\DoxyCodeLine{00029             result[i] = 0.0;}
+\DoxyCodeLine{00030             tmp = StockArr[i] -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}};}
+\DoxyCodeLine{00031             \textcolor{keywordflow}{if} (tmp > 0.0)}
+\DoxyCodeLine{00032                 result[i] = tmp;}
+\DoxyCodeLine{00033         \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00036 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestLattice_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestLattice_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestLattice.cc@{TestLattice.cc}!main@{main}}
+\index{main@{main}!TestLattice.cc@{TestLattice.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLattice_8cc_source_l00076}{76}} of file \mbox{\hyperlink{TestLattice_8cc_source}{Test\+Lattice.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077 \{}
+\DoxyCodeLine{00078     std::cout << \textcolor{stringliteral}{"Forward sweep, Wilmott, Student Edition p. 193\(\backslash\)n"};}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{keywordtype}{int} depth;}
+\DoxyCodeLine{00081     std::cout << \textcolor{stringliteral}{"How many subdivisions? "};}
+\DoxyCodeLine{00082     std::cin >> depth;}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{comment}{// Create the binomal lattice data conainer}}
+\DoxyCodeLine{00085     \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 2;}
+\DoxyCodeLine{00086     \mbox{\hyperlink{classLattice}{Lattice<double, int, n>}} lattice1(depth);}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089     \textcolor{comment}{// Test data; change to suit your own needs}}
+\DoxyCodeLine{00090     \textcolor{keywordtype}{double} rootValue = 12.0;\textcolor{comment}{// Stock price now}}
+\DoxyCodeLine{00091     \textcolor{keywordtype}{double} D0 = 0.04;       \textcolor{comment}{// Dividend yield}}
+\DoxyCodeLine{00092     \textcolor{keywordtype}{double} vol = 0.3;       \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{00093     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.06;       \textcolor{comment}{// Interest}}
+\DoxyCodeLine{00094     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} = 1.0;                \textcolor{comment}{// Time to expiry}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     std::cout << \textcolor{stringliteral}{"Give value for expiry T: "};}
+\DoxyCodeLine{00097     std::cin >> \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}};}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099     \textcolor{comment}{// Create the 'special' parameters}}
+\DoxyCodeLine{00100     \textcolor{keywordtype}{double} k = \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} / double (depth);}
+\DoxyCodeLine{00101     \textcolor{keywordtype}{double} e = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}((\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}-\/D0)*k);}
+\DoxyCodeLine{00102     \textcolor{keywordtype}{double} sr = std::sqrt(\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(vol*vol*k) -\/ 1.0);}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{keywordtype}{double} up = e * (1.0 + sr);}
+\DoxyCodeLine{00105     \textcolor{keywordtype}{double} down = e * (1.0 -\/ sr);}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107     \textcolor{comment}{// Populate lattice: forward induction}}
+\DoxyCodeLine{00108     \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}} newLattice = }
+\DoxyCodeLine{00109             \mbox{\hyperlink{namespaceStandardLattice_a0ced6d331b2856d61096bdc9aaab15cd}{StandardLattice::createLattice}}(depth, rootValue, up, down);}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111     \textcolor{comment}{// Now work back from the payoff function; BACKWARD INDUCTION}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113     \textcolor{comment}{// First make the discrete payoff}}
+\DoxyCodeLine{00114     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = 10.0;}
+\DoxyCodeLine{00115     \mbox{\hyperlink{classVector}{Vector<double, int>}} RHS = \mbox{\hyperlink{TestLattice_8cc_afcc8086e4f916ae9b6445dc906071622}{CallPayOff}}(\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, newLattice[newLattice.MaxIndex()]);}
+\DoxyCodeLine{00116     \mbox{\hyperlink{classVector}{Vector<double, int>}} RHS2 = \mbox{\hyperlink{TestLattice_8cc_a30a47c60854db7b413b641236b4157d2}{PutPayOff}}(\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, lattice1[lattice1.MaxIndex()]);}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118     \textcolor{keywordtype}{double} p = 0.5;}
+\DoxyCodeLine{00119     \textcolor{keywordtype}{double} discounting = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/ \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}*k);}
+\DoxyCodeLine{00120     }
+\DoxyCodeLine{00121     \textcolor{keywordtype}{double} optionPrice = \mbox{\hyperlink{namespaceStandardLattice_a3e49a59024bcef068e558f70a756df05}{StandardLattice::traverse}}(newLattice, RHS, p, discounting);}
+\DoxyCodeLine{00122     \textcolor{keywordtype}{double} optionPrice2 = \mbox{\hyperlink{namespaceStandardLattice_a3e49a59024bcef068e558f70a756df05}{StandardLattice::traverse}}(newLattice, RHS2, p, discounting);}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124     std::cout << \textcolor{stringliteral}{"\(\backslash\)nOption price C "} << optionPrice << std::endl;}
+\DoxyCodeLine{00125     std::cout << \textcolor{stringliteral}{"\(\backslash\)nOption price P "} << optionPrice2 << std::endl;}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00128 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestLattice_8cc_a4f588b04e89a733e6e27ba312ce437d3}\label{TestLattice_8cc_a4f588b04e89a733e6e27ba312ce437d3}} 
+\index{TestLattice.cc@{TestLattice.cc}!print@{print}}
+\index{print@{print}!TestLattice.cc@{TestLattice.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class V , class I , int Number\+Nodes$>$ \\
+void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLattice}{Lattice}}$<$ V, I, Number\+Nodes $>$ \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLattice_8cc_source_l00057}{57}} of file \mbox{\hyperlink{TestLattice_8cc_source}{Test\+Lattice.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058 \{}
+\DoxyCodeLine{00059     }
+\DoxyCodeLine{00060     \textcolor{keywordflow}{for} (I j = source.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); j <= source.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00061     \{}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063         std::cout << \textcolor{stringliteral}{"\(\backslash\)nBranch Number "} << j << \textcolor{stringliteral}{": ["};}
+\DoxyCodeLine{00064         \textcolor{keywordflow}{for} (I i = source[j].MinIndex(); i <= source[j].\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00065         \{}
+\DoxyCodeLine{00066             std::cout << source[j][i] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00067     }
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00071             }
+\DoxyCodeLine{00072     \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestLattice_8cc_a30a47c60854db7b413b641236b4157d2}\label{TestLattice_8cc_a30a47c60854db7b413b641236b4157d2}} 
+\index{TestLattice.cc@{TestLattice.cc}!PutPayOff@{PutPayOff}}
+\index{PutPayOff@{PutPayOff}!TestLattice.cc@{TestLattice.cc}}
+\doxysubsubsection{\texorpdfstring{PutPayOff()}{PutPayOff()}}
+{\footnotesize\ttfamily template$<$class V , class I $>$ \\
+\mbox{\hyperlink{classVector}{Vector}}$<$V,I$>$ Put\+Pay\+Off (\begin{DoxyParamCaption}\item[{const V \&}]{K,  }\item[{const \mbox{\hyperlink{classVector}{Vector}}$<$ V, I $>$ \&}]{Stock\+Arr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLattice_8cc_source_l00038}{38}} of file \mbox{\hyperlink{TestLattice_8cc_source}{Test\+Lattice.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039 \{}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         V tmp;}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         \mbox{\hyperlink{classVector}{Vector<V,I>}} result (StockArr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}(), StockArr.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}());}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045         \textcolor{keywordflow}{for} (I i = StockArr.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= StockArr.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00046         \{}
+\DoxyCodeLine{00047             result[i] = 0.0;}
+\DoxyCodeLine{00048             tmp = \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} -\/ StockArr[i];}
+\DoxyCodeLine{00049             \textcolor{keywordflow}{if} (tmp > 0.0)}
+\DoxyCodeLine{00050                 result[i] = tmp;}
+\DoxyCodeLine{00051         \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00054 \}}
+
+\end{DoxyCode}

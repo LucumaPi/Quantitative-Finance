@@ -19,8 +19,8 @@
 \DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <list>}}
 \DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{00017 \textcolor{comment}{// Datasim container TEMPLATE classes, that's why include CPP!!!!}}
-\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "Vector.hh"}}
-\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include "NumericMatrix.hh"}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Vector_8hh}{Vector.hh}}"}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{NumericMatrix_8hh}{NumericMatrix.hh}}"}}
 \DoxyCodeLine{00020 }
 \DoxyCodeLine{00021 }
 \DoxyCodeLine{00022 \textcolor{comment}{// Excel driver class definition. Contains functionality to add charts }}
@@ -50,13 +50,13 @@
 \DoxyCodeLine{00046 }
 \DoxyCodeLine{00047 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00048     \textcolor{comment}{// Constructor. Starts Excel in invisible mode.}}
-\DoxyCodeLine{00049     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}();}
+\DoxyCodeLine{00049     \mbox{\hyperlink{classExcelDriver_a9dbf535e7ef5053210dd2cdbeaa9e76c}{ExcelDriver}}();}
 \DoxyCodeLine{00050 }
 \DoxyCodeLine{00051     \textcolor{comment}{// Destructor.}}
-\DoxyCodeLine{00052     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classExcelDriver}{ExcelDriver}}();}
+\DoxyCodeLine{00052     \textcolor{keyword}{virtual} \mbox{\hyperlink{classExcelDriver_a111f747fcefaa4b38d986c5c72e742b2}{~ExcelDriver}}();}
 \DoxyCodeLine{00053     }
 \DoxyCodeLine{00054     \textcolor{comment}{// Access to single, shared instance of ExcelDriver (singleton).}}
-\DoxyCodeLine{00055     \textcolor{keyword}{static} \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& Instance();}
+\DoxyCodeLine{00055     \textcolor{keyword}{static} \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{Instance}}();}
 \DoxyCodeLine{00056 }
 \DoxyCodeLine{00057     \textcolor{comment}{// Create chart with a number of functions. The arguments are:}}
 \DoxyCodeLine{00058     \textcolor{comment}{//  x:          vector with input values}}
@@ -65,7 +65,7 @@
 \DoxyCodeLine{00061     \textcolor{comment}{//  chartTitle: title of chart}}
 \DoxyCodeLine{00062     \textcolor{comment}{//  xTitle:     label of x axis}}
 \DoxyCodeLine{00063     \textcolor{comment}{//  yTitle:     label of y axis}}
-\DoxyCodeLine{00064     \textcolor{keywordtype}{void} CreateChart(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& x, \textcolor{keyword}{const} std::list<std::string> \& labels, }
+\DoxyCodeLine{00064     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{CreateChart}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& x, \textcolor{keyword}{const} std::list<std::string> \& labels, }
 \DoxyCodeLine{00065         \textcolor{keyword}{const} std::list<\mbox{\hyperlink{classVector}{Vector<double, long>}} > \& vectorList, \textcolor{keyword}{const} std::string\& chartTitle, }
 \DoxyCodeLine{00066         \textcolor{keyword}{const} std::string\& xTitle = \textcolor{stringliteral}{"X"}, \textcolor{keyword}{const} std::string\& yTitle = \textcolor{stringliteral}{"Y"});}
 \DoxyCodeLine{00067 }
@@ -75,26 +75,26 @@
 \DoxyCodeLine{00071     \textcolor{comment}{//  chartTitle: title of chart}}
 \DoxyCodeLine{00072     \textcolor{comment}{//  xTitle:     label of x axis}}
 \DoxyCodeLine{00073     \textcolor{comment}{//  yTitle:     label of y axis}}
-\DoxyCodeLine{00074     \textcolor{keywordtype}{void} CreateChart(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& y, \textcolor{keyword}{const} std::string\& chartTitle, }
+\DoxyCodeLine{00074     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{CreateChart}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& y, \textcolor{keyword}{const} std::string\& chartTitle, }
 \DoxyCodeLine{00075                  \textcolor{keyword}{const} std::string\& xTitle = \textcolor{stringliteral}{"X"}, \textcolor{keyword}{const} std::string\& yTitle = \textcolor{stringliteral}{"Y"});}
 \DoxyCodeLine{00076 }
 \DoxyCodeLine{00077 }
 \DoxyCodeLine{00078     \textcolor{comment}{// Add Matrix to the spreadsheet with row and column labels.}}
-\DoxyCodeLine{00079     \textcolor{keywordtype}{void} AddMatrix(\textcolor{keyword}{const} std::string\& sheetName, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix, }
+\DoxyCodeLine{00079     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_a63753818c5895ff1ed84dad214de4332}{AddMatrix}}(\textcolor{keyword}{const} std::string\& sheetName, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix, }
 \DoxyCodeLine{00080                \textcolor{keyword}{const} std::list<std::string>\& rowLabels, \textcolor{keyword}{const} std::list<std::string>\& columnLabels);}
 \DoxyCodeLine{00081 }
-\DoxyCodeLine{00082     \textcolor{keywordtype}{void} AddMatrix(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix,\textcolor{keyword}{const} std::string\& SheetName = \textcolor{stringliteral}{"Matrix"} );}
+\DoxyCodeLine{00082     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_a63753818c5895ff1ed84dad214de4332}{AddMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix,\textcolor{keyword}{const} std::string\& SheetName = \textcolor{stringliteral}{"Matrix"} );}
 \DoxyCodeLine{00083 }
-\DoxyCodeLine{00084     \textcolor{keywordtype}{void} MakeVisible( \textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{00084     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{MakeVisible}}( \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}});}
 \DoxyCodeLine{00085 }
 \DoxyCodeLine{00086     \textcolor{comment}{// For debugging, for example}}
-\DoxyCodeLine{00087     \textcolor{keywordtype}{void} printStringInExcel(\textcolor{keyword}{const} std::string\& s, \textcolor{keywordtype}{long} rowNumber, \textcolor{keywordtype}{long} colNumber, }
+\DoxyCodeLine{00087     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_afa7a45b8d3499de788e722c75627e284}{printStringInExcel}}(\textcolor{keyword}{const} std::string\& s, \textcolor{keywordtype}{long} rowNumber, \textcolor{keywordtype}{long} colNumber, }
 \DoxyCodeLine{00088                         \textcolor{keyword}{const} std::string\& sheetName);}
-\DoxyCodeLine{00089     \textcolor{keywordtype}{void} printStringInExcel(\textcolor{keyword}{const} std::list<std::string>\& s, \textcolor{keywordtype}{long} rowNumber, \textcolor{keywordtype}{long} colNumber, }
+\DoxyCodeLine{00089     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_afa7a45b8d3499de788e722c75627e284}{printStringInExcel}}(\textcolor{keyword}{const} std::list<std::string>\& s, \textcolor{keywordtype}{long} rowNumber, \textcolor{keywordtype}{long} colNumber, }
 \DoxyCodeLine{00090                         \textcolor{keyword}{const} std::string\& sheetName);}
 \DoxyCodeLine{00091 \};}
 \DoxyCodeLine{00092 \textcolor{comment}{// Help}}
-\DoxyCodeLine{00093 \mbox{\hyperlink{classVector}{Vector <double, long>}} createVector(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double,long>}}\& mat, \textcolor{keywordtype}{long} row);}
+\DoxyCodeLine{00093 \mbox{\hyperlink{classVector}{Vector <double, long>}} \mbox{\hyperlink{ExcelDriver_8hh_a1b724dd4e99548501ed8e37c192d9eca}{createVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double,long>}}\& mat, \textcolor{keywordtype}{long} row);}
 \DoxyCodeLine{00094 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

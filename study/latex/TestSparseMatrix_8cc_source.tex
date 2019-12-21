@@ -1,0 +1,89 @@
+\hypertarget{TestSparseMatrix_8cc_source}{}\doxysection{Test\+Sparse\+Matrix.\+cc}
+\label{TestSparseMatrix_8cc_source}\index{tests/TestSparseMatrix.cc@{tests/TestSparseMatrix.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testSparseMatrix.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testng properties of maps: creating sparse matrices}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 2006-\/3-\/27 DD Kick-\/off}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2006-\/3-\/28 DD Modified for a simple sparse matrix class}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (can be optimised!!)}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 2003-\/2006}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{comment}{// Specific data types, can be generalised}}
+\DoxyCodeLine{\Hypertarget{TestSparseMatrix_8cc_source_l00018}\mbox{\hyperlink{TestSparseMatrix_8cc_ab262a20bb4494b0d29df387aee938028}{00018}} \textcolor{keyword}{typedef} std::map<int, double> \mbox{\hyperlink{TestSparseMatrix_8cc_ab262a20bb4494b0d29df387aee938028}{SparseRow}};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{TestSparseMatrix_8cc_source_l00020}\mbox{\hyperlink{structSparseMatrix}{00020}} \textcolor{keyword}{template} <\textcolor{keywordtype}{int} N> \textcolor{keyword}{struct }\mbox{\hyperlink{structSparseMatrix}{SparseMatrix}}}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{\Hypertarget{TestSparseMatrix_8cc_source_l00022}\mbox{\hyperlink{structSparseMatrix_a84cb1ac886b0a129821d26e41eb52162}{00022}}     std::map<int, SparseRow> \mbox{\hyperlink{structSparseMatrix_a84cb1ac886b0a129821d26e41eb52162}{data}};}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \};}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{TestSparseMatrix_8cc_source_l00026}\mbox{\hyperlink{TestSparseMatrix_8cc_a237768fa154c8614d2556c9f1416c1fc}{00026}} \textcolor{keyword}{template} <\textcolor{keywordtype}{int} N> \textcolor{keywordtype}{void} \mbox{\hyperlink{TestSparseMatrix_8cc_a237768fa154c8614d2556c9f1416c1fc}{print}}(\mbox{\hyperlink{structSparseMatrix}{SparseMatrix<N>}}\& sm)}
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028     \mbox{\hyperlink{TestSparseMatrix_8cc_ab262a20bb4494b0d29df387aee938028}{SparseRow}} sr;}
+\DoxyCodeLine{00029     SparseRow::const\_iterator it;\textcolor{comment}{//maybe optional typename}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row = 0; row < \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}; row++)}
+\DoxyCodeLine{00032     \{}
+\DoxyCodeLine{00033         \mbox{\hyperlink{TestSparseMatrix_8cc_ab262a20bb4494b0d29df387aee938028}{SparseRow}} sr = sm.\mbox{\hyperlink{structSparseMatrix_a84cb1ac886b0a129821d26e41eb52162}{data}}[row];}
+\DoxyCodeLine{00034     }
+\DoxyCodeLine{00035         \textcolor{comment}{// Now iterate over row}}
+\DoxyCodeLine{00036         \textcolor{keywordflow}{for} (it = sm.\mbox{\hyperlink{structSparseMatrix_a84cb1ac886b0a129821d26e41eb52162}{data}}[row].begin(); it != sm.\mbox{\hyperlink{structSparseMatrix_a84cb1ac886b0a129821d26e41eb52162}{data}}[row].end(); it++)}
+\DoxyCodeLine{00037         \{}
+\DoxyCodeLine{00038             std::cout << (*it).second << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00039         \}}
+\DoxyCodeLine{00040         std::cout << std::endl;}
+\DoxyCodeLine{00041         }
+\DoxyCodeLine{00042     \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044 \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     }
+\DoxyCodeLine{\Hypertarget{TestSparseMatrix_8cc_source_l00047}\mbox{\hyperlink{TestSparseMatrix_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00047}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestSparseMatrix_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     \textcolor{comment}{// Initialise the each row}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = 5;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \mbox{\hyperlink{TestSparseMatrix_8cc_ab262a20bb4494b0d29df387aee938028}{SparseRow}} current;}
+\DoxyCodeLine{00055     current.insert(std::pair<int, double> (0, -\/2.0));}
+\DoxyCodeLine{00056     current.insert(std::pair<int, double> (1, 1.0));}
+\DoxyCodeLine{00057     \mbox{\hyperlink{structSparseMatrix}{SparseMatrix<N>}} sparseMat;}
+\DoxyCodeLine{00058     sparseMat.\mbox{\hyperlink{structSparseMatrix_a84cb1ac886b0a129821d26e41eb52162}{data}}[0] = current;}
+\DoxyCodeLine{00059     }
+\DoxyCodeLine{00060     \textcolor{keywordtype}{int} currentIndex = 0;}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row = 1; row < \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} -\/ 1; row++)}
+\DoxyCodeLine{00063     \{}
+\DoxyCodeLine{00064         \textcolor{comment}{//Insert 3 elements.}}
+\DoxyCodeLine{00065         current.clear();}
+\DoxyCodeLine{00066         current.insert(std::pair<int, double> (currentIndex, 1.0));}
+\DoxyCodeLine{00067         current.insert(std::pair<int, double> (currentIndex + 1, -\/2.0));}
+\DoxyCodeLine{00068         current.insert(std::pair<int, double> (currentIndex + 2, 1.0));}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         sparseMat.\mbox{\hyperlink{structSparseMatrix_a84cb1ac886b0a129821d26e41eb52162}{data}}[row] = current;}
+\DoxyCodeLine{00071     }
+\DoxyCodeLine{00072         currentIndex++;}
+\DoxyCodeLine{00073     \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     current.clear();}
+\DoxyCodeLine{00076     current.insert(std::pair<int, double> (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} -\/ 2, 1.0));}
+\DoxyCodeLine{00077     current.insert(std::pair<int, double> (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} -\/ 1, -\/2.0));}
+\DoxyCodeLine{00078     sparseMat.\mbox{\hyperlink{structSparseMatrix_a84cb1ac886b0a129821d26e41eb52162}{data}}[\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} -\/ 1] = current;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \mbox{\hyperlink{TestSparseMatrix_8cc_a237768fa154c8614d2556c9f1416c1fc}{print}}(sparseMat);}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00083 \}}
+
+\end{DoxyCode}

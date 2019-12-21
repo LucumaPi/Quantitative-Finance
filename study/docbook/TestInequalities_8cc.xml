@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestInequalities_8cc">
+<title>tests/TestInequalities.cc File Reference</title>
+<indexterm><primary>tests/TestInequalities.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;duffy/Inequalities.hh&gt;
+</programlisting>Include dependency graph for TestInequalities.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestInequalities_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestInequalities_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestInequalities_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestInequalities.cc</secondary></indexterm>
+<indexterm><primary>TestInequalities.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 13 of file TestInequalities.cc.</para>
+<programlisting>14 {
+15 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Prompt&#32;the&#32;user&#32;for&#32;input.&#32;Console&#32;output&#32;(cout)</emphasis>
+16 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;and&#32;input&#32;(cin)</emphasis>
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d1,&#32;d2;
+18 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;the&#32;first&#32;number:&#32;&quot;</emphasis>;
+19 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;d1;
+20 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;the&#32;second&#32;number:&#32;&quot;</emphasis>;
+21 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;d2;
+22 
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;c;&#32;<emphasis role="comment">//&#32;Character&#32;type</emphasis>
+24 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Which&#32;function&#32;a)&#32;Max()&#32;or&#32;b)&#32;Min()?&#32;&quot;</emphasis>;
+25 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;c;
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(c&#32;==&#32;<emphasis role="charliteral">&apos;a&apos;</emphasis>)
+27 &#32;&#32;&#32;&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Max&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>(d1,&#32;d2)&#32;&lt;&lt;&#32;std::endl;
+29 &#32;&#32;&#32;&#32;}
+30 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+31 &#32;&#32;&#32;&#32;{
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Min&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_GenericInequalities_8hh_1adb69bfcb34a8cdf14dcb3fc08f9687c0">Min</link>(d1,&#32;d2)&#32;&lt;&lt;&#32;std::endl;
+33 &#32;&#32;&#32;&#32;}
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dA&#32;=&#32;1.0;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dB&#32;=&#32;2.0;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dC&#32;=&#32;3.0;
+36 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n\nMax&#32;and&#32;min&#32;of&#32;three&#32;numbers:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+37 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Max&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>(dA,&#32;dB,&#32;dC)&#32;&lt;&lt;&#32;std::endl;
+38 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Min&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_GenericInequalities_8hh_1adb69bfcb34a8cdf14dcb3fc08f9687c0">Min</link>(dA,&#32;dB,&#32;dC)&#32;&lt;&lt;&#32;std::endl;
+39 
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+41 }
+</programlisting></section>
+</section>
+</section>

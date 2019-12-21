@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classIBVPFDM">
 <title>IBVPFDM Class Reference</title>
 <indexterm><primary>IBVPFDM</primary></indexterm>
+<para>
+<computeroutput>#include &lt;IBVPSolver.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for IBVPFDM:<para>
     <informalfigure>
         <mediaobject>
@@ -23,74 +26,328 @@ Collaboration diagram for IBVPFDM:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1aa371f76cfb9f2b95ba24d6bbf1291353"/><emphasis role="strong">IBVPFDM</emphasis> (<link linkend="_classIBVP">IBVP</link> &amp;source, long NSteps, long JSteps)</para>
+            <listitem><para><link linkend="_classIBVPFDM_1a5a131f0efb8cb71abea192b6afd26cd2">IBVPFDM</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1ab78e1e05532a2359e674a4a729314b9a"/><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; <emphasis role="strong">result</emphasis> ()</para>
+            <listitem><para><link linkend="_classIBVPFDM_1aa371f76cfb9f2b95ba24d6bbf1291353">IBVPFDM</link> (<link linkend="_classIBVP">IBVP</link> &amp;source, long NSteps, long JSteps)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a7172f8bc3eebc85940ece135065f96ba"/><link linkend="_classVector">Vector</link>&lt; double, long &gt; <emphasis role="strong">XValues</emphasis> () const</para>
+            <listitem><para>virtual <link linkend="_classIBVPFDM_1a08763948c0e366be4f87d4fc7173b1a2">~IBVPFDM</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a95e702453d0b896062b632498e40438c"/><link linkend="_classVector">Vector</link>&lt; double, long &gt; <emphasis role="strong">TValues</emphasis> () const</para>
+            <listitem><para><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; <link linkend="_classIBVPFDM_1ab78e1e05532a2359e674a4a729314b9a">result</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a42bd377e3c0b16ddb05d8a3dea7a873b"/>virtual void <emphasis role="strong">calculateBC</emphasis> ()=0</para>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, long &gt; <link linkend="_classIBVPFDM_1a7172f8bc3eebc85940ece135065f96ba">XValues</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a5b73954c7ae1987e856c02b985387872"/>virtual void <emphasis role="strong">calculate</emphasis> ()=0</para>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, long &gt; <link linkend="_classIBVPFDM_1a95e702453d0b896062b632498e40438c">TValues</link> () const</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classIBVPFDM_1a42bd377e3c0b16ddb05d8a3dea7a873b">calculateBC</link> ()=0</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classIBVPFDM_1a5b73954c7ae1987e856c02b985387872">calculate</link> ()=0</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Protected Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a7614c8116ab9c08f6ccfb97dc6c1ff61"/><emphasis role="strong">IBVPFDM</emphasis> (const <link linkend="_classIBVPFDM">IBVPFDM</link> &amp;source)</para>
+            <listitem><para><link linkend="_classIBVPFDM_1a7614c8116ab9c08f6ccfb97dc6c1ff61">IBVPFDM</link> (const <link linkend="_classIBVPFDM">IBVPFDM</link> &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a3102b8d994991d993193a35df3d6c5ee"/><link linkend="_classIBVPFDM">IBVPFDM</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classIBVPFDM">IBVPFDM</link> &amp;source)</para>
+            <listitem><para><link linkend="_classIBVPFDM">IBVPFDM</link> &amp; <link linkend="_classIBVPFDM_1a3102b8d994991d993193a35df3d6c5ee">operator=</link> (const <link linkend="_classIBVPFDM">IBVPFDM</link> &amp;source)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Protected Attributes    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b"/><link linkend="_classIBVP">IBVP</link> * <emphasis role="strong">ibvp</emphasis></para>
+            <listitem><para><link linkend="_classIBVP">IBVP</link> * <link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1aac47fc0313cfd94d1c76185636f01e09"/>long <emphasis role="strong">N</emphasis></para>
+            <listitem><para>long <link linkend="_classIBVPFDM_1aac47fc0313cfd94d1c76185636f01e09">N</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5"/>double <emphasis role="strong">k</emphasis></para>
+            <listitem><para>double <link linkend="_classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5">k</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4"/>long <emphasis role="strong">J</emphasis></para>
+            <listitem><para>long <link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a20ec2ca54a8768c22ae5579021bcbc21"/>double <emphasis role="strong">h</emphasis></para>
+            <listitem><para>double <link linkend="_classIBVPFDM_1a20ec2ca54a8768c22ae5579021bcbc21">h</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb"/>double <emphasis role="strong">h2</emphasis></para>
+            <listitem><para>double <link linkend="_classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb">h2</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a7dc9a42c9aa5e88a0ce91bb2381083ef"/>double <emphasis role="strong">DN</emphasis></para>
+            <listitem><para>double <link linkend="_classIBVPFDM_1a7dc9a42c9aa5e88a0ce91bb2381083ef">DN</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1aadd87ba406920f5c4441d26108568e7b"/>double <emphasis role="strong">DJ</emphasis></para>
+            <listitem><para>double <link linkend="_classIBVPFDM_1aadd87ba406920f5c4441d26108568e7b">DJ</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1aad9a3178a48c9a131dd577cea5490495"/>double <emphasis role="strong">DJJ</emphasis></para>
+            <listitem><para>double <link linkend="_classIBVPFDM_1aad9a3178a48c9a131dd577cea5490495">DJJ</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1adcbf3a3c0024261777514d461f5fa28c"/>double <emphasis role="strong">tprev</emphasis></para>
+            <listitem><para>double <link linkend="_classIBVPFDM_1adcbf3a3c0024261777514d461f5fa28c">tprev</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2"/>double <emphasis role="strong">tnow</emphasis></para>
+            <listitem><para>double <link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622"/>long <emphasis role="strong">currentIndex</emphasis></para>
+            <listitem><para>long <link linkend="_classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622">currentIndex</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a11c7f409e503aec453107f69460d4d5b"/>long <emphasis role="strong">maxIndex</emphasis></para>
+            <listitem><para>long <link linkend="_classIBVPFDM_1a11c7f409e503aec453107f69460d4d5b">maxIndex</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a8852681de171f76e8351a07c6bb3fe8c"/><link linkend="_classMesher">Mesher</link> <emphasis role="strong">m</emphasis></para>
+            <listitem><para><link linkend="_classMesher">Mesher</link> <link linkend="_classIBVPFDM_1a8852681de171f76e8351a07c6bb3fe8c">m</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1acde024de54dc2124db544dc6424365c7"/><link linkend="_classVector">Vector</link>&lt; double, long &gt; <emphasis role="strong">xarr</emphasis></para>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, long &gt; <link linkend="_classIBVPFDM_1acde024de54dc2124db544dc6424365c7">xarr</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1aecdb91332047c215ff4548e897f8e2d8"/><link linkend="_classVector">Vector</link>&lt; double, long &gt; <emphasis role="strong">tarr</emphasis></para>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, long &gt; <link linkend="_classIBVPFDM_1aecdb91332047c215ff4548e897f8e2d8">tarr</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1af4d88dae8cdfdc020b7ab0b296a7c8d5"/><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; <emphasis role="strong">res</emphasis></para>
+            <listitem><para><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; <link linkend="_classIBVPFDM_1af4d88dae8cdfdc020b7ab0b296a7c8d5">res</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1aa060a346aafe2c9d6f563e86211652f9"/>long <emphasis role="strong">n</emphasis></para>
+            <listitem><para>long <link linkend="_classIBVPFDM_1aa060a346aafe2c9d6f563e86211652f9">n</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1a9b5cf717e24fa77775650cbc2913785f"/><link linkend="_classVector">Vector</link>&lt; double, long &gt; <emphasis role="strong">vecOld</emphasis></para>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, long &gt; <link linkend="_classIBVPFDM_1a9b5cf717e24fa77775650cbc2913785f">vecOld</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c"/><link linkend="_classVector">Vector</link>&lt; double, long &gt; <emphasis role="strong">vecNew</emphasis></para>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, long &gt; <link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 27 of file IBVPSolver.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classIBVPFDM_1a7614c8116ab9c08f6ccfb97dc6c1ff61"/>    <section>
+    <title>IBVPFDM()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>IBVPFDM</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>IBVPFDM</secondary></indexterm>
+<para><computeroutput>IBVPFDM::IBVPFDM (const <link linkend="_classIBVPFDM">IBVPFDM</link> &amp; source)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 108 of file IBVPSolver.cc.</para>
+<programlisting>109 {
+110 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Not&#32;allowed</emphasis>
+111 }
+</programlisting>    </section><anchor xml:id="_classIBVPFDM_1a5a131f0efb8cb71abea192b6afd26cd2"/>    <section>
+    <title>IBVPFDM()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>IBVPFDM</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>IBVPFDM</secondary></indexterm>
+<para><computeroutput>IBVPFDM::IBVPFDM ( )</computeroutput></para><para>
+Definition at line 87 of file IBVPSolver.cc.</para>
+<programlisting>88 {
+89 &#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link>&#32;=&#32;0;
+90 
+91 &#32;&#32;&#32;&#32;initMesh(10,&#32;10);
+92 
+93 &#32;&#32;&#32;&#32;initIC();
+94 }
+</programlisting>    </section><anchor xml:id="_classIBVPFDM_1aa371f76cfb9f2b95ba24d6bbf1291353"/>    <section>
+    <title>IBVPFDM()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>IBVPFDM</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>IBVPFDM</secondary></indexterm>
+<para><computeroutput>IBVPFDM::IBVPFDM (<link linkend="_classIBVP">IBVP</link> &amp; source, long NSteps, long JSteps)</computeroutput></para><para>
+Definition at line 96 of file IBVPSolver.cc.</para>
+<programlisting>97 {
+98 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Decide&#32;which&#32;continuous&#32;problem&#32;to&#32;use</emphasis>
+99 &#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link>&#32;=&#32;&amp;source;
+100 
+101 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;mesh</emphasis>
+102 &#32;&#32;&#32;&#32;initMesh(NSteps,&#32;JSteps);
+103 
+104 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initiase&#32;from&#32;the&#32;payoff&#32;function</emphasis>
+105 &#32;&#32;&#32;&#32;initIC();
+106 }
+</programlisting>    </section><anchor xml:id="_classIBVPFDM_1a08763948c0e366be4f87d4fc7173b1a2"/>    <section>
+    <title>~IBVPFDM()</title>
+<indexterm><primary>~IBVPFDM</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>~IBVPFDM</secondary></indexterm>
+<para><computeroutput>IBVPFDM::~IBVPFDM ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 113 of file IBVPSolver.cc.</para>
+<programlisting>114 {
+115 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classIBVPFDM_1a5b73954c7ae1987e856c02b985387872"/>    <section>
+    <title>calculate()</title>
+<indexterm><primary>calculate</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>calculate</secondary></indexterm>
+<para><computeroutput>virtual void IBVPFDM::calculate ( )<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classImplicitEulerIBVP_1af71d063f8fb5df6a5a269c3c4f82fbc3">ImplicitEulerIBVP</link>, and <link linkend="_classExplicitEulerIBVP_1af7590356fa10c6c1a218634e2b0b52b4">ExplicitEulerIBVP</link>.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a42bd377e3c0b16ddb05d8a3dea7a873b"/>    <section>
+    <title>calculateBC()</title>
+<indexterm><primary>calculateBC</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>calculateBC</secondary></indexterm>
+<para><computeroutput>virtual void IBVPFDM::calculateBC ( )<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classImplicitEulerIBVP_1afc239aeb2cd0d045f4836dca607abaa6">ImplicitEulerIBVP</link>, and <link linkend="_classExplicitEulerIBVP_1a01074c892ad9625daa7885cba20afccc">ExplicitEulerIBVP</link>.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a3102b8d994991d993193a35df3d6c5ee"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classIBVPFDM">IBVPFDM</link> &amp; IBVPFDM::operator= (const <link linkend="_classIBVPFDM">IBVPFDM</link> &amp; source)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 117 of file IBVPSolver.cc.</para>
+<programlisting>118 {
+119 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Not&#32;allowed</emphasis>
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+121 }
+</programlisting>    </section><anchor xml:id="_classIBVPFDM_1ab78e1e05532a2359e674a4a729314b9a"/>    <section>
+    <title>result()</title>
+<indexterm><primary>result</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>result</secondary></indexterm>
+<para><computeroutput><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; IBVPFDM::result ( )</computeroutput></para><para>
+Definition at line 123 of file IBVPSolver.cc.</para>
+<programlisting>124 {&#32;<emphasis role="comment">//&#32;The&#32;result&#32;of&#32;the&#32;calculation</emphasis>
+125 L1:
+126 &#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link>&#32;=&#32;<link linkend="_classIBVPFDM_1adcbf3a3c0024261777514d461f5fa28c">tprev</link>&#32;+&#32;<link linkend="_classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5">k</link>;
+127 
+128 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Template&#32;Method&#32;pattern&#32;here</emphasis>
+129 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Variant&#32;part</emphasis>
+130 &#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1a42bd377e3c0b16ddb05d8a3dea7a873b">calculateBC</link>();&#32;<emphasis role="comment">//&#32;Calculate&#32;the&#32;BC&#32;at&#32;n+1</emphasis>
+131 
+132 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Variant&#32;part;&#32;pure&#32;virtual&#32;hook&#32;functions</emphasis>
+133 &#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1a5b73954c7ae1987e856c02b985387872">calculate</link>&#32;();&#32;<emphasis role="comment">//&#32;Calculate&#32;the&#32;solution&#32;at&#32;n+1</emphasis>
+134 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622">currentIndex</link>&#32;&lt;&#32;<link linkend="_classIBVPFDM_1a11c7f409e503aec453107f69460d4d5b">maxIndex</link>)
+135 &#32;&#32;&#32;&#32;{
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1adcbf3a3c0024261777514d461f5fa28c">tprev</link>&#32;=&#32;<link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link>;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622">currentIndex</link>++;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;postprocess</emphasis>
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1af4d88dae8cdfdc020b7ab0b296a7c8d5">res</link>.<link linkend="_classNumericMatrix_1acad49f4a4c23aaf06113266b26f1f0ac">Row</link>(<link linkend="_classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622">currentIndex</link>,&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>);
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1a9b5cf717e24fa77775650cbc2913785f">vecOld</link>&#32;=&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+142 &#32;&#32;&#32;&#32;}
+143 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classIBVPFDM_1af4d88dae8cdfdc020b7ab0b296a7c8d5">res</link>;
+144 }
+</programlisting>    </section><anchor xml:id="_classIBVPFDM_1a95e702453d0b896062b632498e40438c"/>    <section>
+    <title>TValues()</title>
+<indexterm><primary>TValues</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>TValues</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt; double, long &gt; IBVPFDM::TValues ( ) const</computeroutput></para><para>
+Definition at line 151 of file IBVPSolver.cc.</para>
+<programlisting>152 {&#32;<emphasis role="comment">//&#32;Array&#32;of&#32;time&#32;values</emphasis>
+153 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classIBVPFDM_1aecdb91332047c215ff4548e897f8e2d8">tarr</link>;
+154 }
+</programlisting>    </section><anchor xml:id="_classIBVPFDM_1a7172f8bc3eebc85940ece135065f96ba"/>    <section>
+    <title>XValues()</title>
+<indexterm><primary>XValues</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>XValues</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt; double, long &gt; IBVPFDM::XValues ( ) const</computeroutput></para><para>
+Definition at line 146 of file IBVPSolver.cc.</para>
+<programlisting>147 {&#32;<emphasis role="comment">//&#32;Array&#32;of&#32;x&#32;values</emphasis>
+148 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classIBVPFDM_1acde024de54dc2124db544dc6424365c7">xarr</link>;
+149 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classIBVPFDM_1aa0bbe9ffc911dccf04204793fe467622"/>    <section>
+    <title>currentIndex</title>
+<indexterm><primary>currentIndex</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>currentIndex</secondary></indexterm>
+<para><computeroutput>long IBVPFDM::currentIndex<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 50 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1aadd87ba406920f5c4441d26108568e7b"/>    <section>
+    <title>DJ</title>
+<indexterm><primary>DJ</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>DJ</secondary></indexterm>
+<para><computeroutput>double IBVPFDM::DJ<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 46 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1aad9a3178a48c9a131dd577cea5490495"/>    <section>
+    <title>DJJ</title>
+<indexterm><primary>DJJ</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>DJJ</secondary></indexterm>
+<para><computeroutput>double IBVPFDM::DJJ<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 47 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a7dc9a42c9aa5e88a0ce91bb2381083ef"/>    <section>
+    <title>DN</title>
+<indexterm><primary>DN</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>DN</secondary></indexterm>
+<para><computeroutput>double IBVPFDM::DN<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 45 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a20ec2ca54a8768c22ae5579021bcbc21"/>    <section>
+    <title>h</title>
+<indexterm><primary>h</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>h</secondary></indexterm>
+<para><computeroutput>double IBVPFDM::h<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 43 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb"/>    <section>
+    <title>h2</title>
+<indexterm><primary>h2</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>h2</secondary></indexterm>
+<para><computeroutput>double IBVPFDM::h2<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 43 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b"/>    <section>
+    <title>ibvp</title>
+<indexterm><primary>ibvp</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>ibvp</secondary></indexterm>
+<para><computeroutput><link linkend="_classIBVP">IBVP</link>* IBVPFDM::ibvp<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 37 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4"/>    <section>
+    <title>J</title>
+<indexterm><primary>J</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>J</secondary></indexterm>
+<para><computeroutput>long IBVPFDM::J<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 42 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5"/>    <section>
+    <title>k</title>
+<indexterm><primary>k</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>k</secondary></indexterm>
+<para><computeroutput>double IBVPFDM::k<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 40 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a8852681de171f76e8351a07c6bb3fe8c"/>    <section>
+    <title>m</title>
+<indexterm><primary>m</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>m</secondary></indexterm>
+<para><computeroutput><link linkend="_classMesher">Mesher</link> IBVPFDM::m<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 51 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a11c7f409e503aec453107f69460d4d5b"/>    <section>
+    <title>maxIndex</title>
+<indexterm><primary>maxIndex</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>maxIndex</secondary></indexterm>
+<para><computeroutput>long IBVPFDM::maxIndex<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 50 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1aac47fc0313cfd94d1c76185636f01e09"/>    <section>
+    <title>N</title>
+<indexterm><primary>N</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>N</secondary></indexterm>
+<para><computeroutput>long IBVPFDM::N<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 39 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1aa060a346aafe2c9d6f563e86211652f9"/>    <section>
+    <title>n</title>
+<indexterm><primary>n</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>n</secondary></indexterm>
+<para><computeroutput>long IBVPFDM::n<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 59 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1af4d88dae8cdfdc020b7ab0b296a7c8d5"/>    <section>
+    <title>res</title>
+<indexterm><primary>res</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>res</secondary></indexterm>
+<para><computeroutput><link linkend="_classNumericMatrix">NumericMatrix</link>&lt;double, long&gt; IBVPFDM::res<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 56 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1aecdb91332047c215ff4548e897f8e2d8"/>    <section>
+    <title>tarr</title>
+<indexterm><primary>tarr</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>tarr</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt;double, long&gt; IBVPFDM::tarr<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 53 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2"/>    <section>
+    <title>tnow</title>
+<indexterm><primary>tnow</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>tnow</secondary></indexterm>
+<para><computeroutput>double IBVPFDM::tnow<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 49 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1adcbf3a3c0024261777514d461f5fa28c"/>    <section>
+    <title>tprev</title>
+<indexterm><primary>tprev</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>tprev</secondary></indexterm>
+<para><computeroutput>double IBVPFDM::tprev<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 49 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c"/>    <section>
+    <title>vecNew</title>
+<indexterm><primary>vecNew</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>vecNew</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt;double, long&gt; IBVPFDM::vecNew<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 61 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1a9b5cf717e24fa77775650cbc2913785f"/>    <section>
+    <title>vecOld</title>
+<indexterm><primary>vecOld</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>vecOld</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt;double, long&gt; IBVPFDM::vecOld<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 60 of file IBVPSolver.hh.</para>
+    </section><anchor xml:id="_classIBVPFDM_1acde024de54dc2124db544dc6424365c7"/>    <section>
+    <title>xarr</title>
+<indexterm><primary>xarr</primary><secondary>IBVPFDM</secondary></indexterm>
+<indexterm><primary>IBVPFDM</primary><secondary>xarr</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt;double, long&gt; IBVPFDM::xarr<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line 52 of file IBVPSolver.hh.</para>
+</section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/IBVPSolver.hhsrc/IBVPSolver.cc</section>
+include/duffy/<link linkend="_IBVPSolver_8hh">IBVPSolver.hh</link>src/<link linkend="_IBVPSolver_8cc">IBVPSolver.cc</link></section>
+</section>

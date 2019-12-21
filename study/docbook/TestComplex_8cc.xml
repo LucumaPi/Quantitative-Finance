@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestComplex_8cc">
+<title>tests/TestComplex.cc File Reference</title>
+<indexterm><primary>tests/TestComplex.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Complex.hh&gt;
+</programlisting>Include dependency graph for TestComplex.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestComplex_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestComplex_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestComplex_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestComplex.cc</secondary></indexterm>
+<indexterm><primary>TestComplex.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 8 of file TestComplex.cc.</para>
+<programlisting>9 {
+10 
+11 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z1(-23.0,&#32;5.3);
+12 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z2(2.0,&#32;3.0);
+13 
+14 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z3&#32;=&#32;z1&#32;*&#32;z2;
+15 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z4&#32;=&#32;2.0&#32;*&#32;z4;
+16 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z5&#32;=&#32;-&#32;z3;
+17 
+18 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;z1;
+19 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;z3;
+20 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;z5;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;****\n&quot;</emphasis>;
+21 
+22 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z6&#32;=&#32;z2&#32;*&#32;2.0;
+23 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z7&#32;=&#32;2.0&#32;*&#32;z2;
+24 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z8&#32;=&#32;z2&#32;*&#32;2.0;
+25 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z9=&#32;z6*&#32;z7;
+26 
+27 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;z6;
+28 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;z7;
+29 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;z8;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;****\n&quot;</emphasis>;
+30 
+31 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z10&#32;=&#32;z1.<link linkend="_classComplex_1aa2cbbe9e937f49672084741932c6314c">add</link>(z2);
+32 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;z10;
+33 
+34 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z0(1.0,&#32;2.0);
+35 &#32;&#32;&#32;&#32;z4&#32;=&#32;z3&#32;=&#32;z1&#32;=&#32;z0;
+36 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Chain:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;z0&#32;&lt;&lt;&#32;z1&#32;&lt;&lt;&#32;z3&#32;&lt;&lt;&#32;z4;
+37 
+38 &#32;&#32;&#32;&#32;z4&#32;+=&#32;z1;&#32;&#32;&#32;<emphasis role="comment">//&#32;Multiply&#32;z4&#32;by&#32;z1&#32;and&#32;modify&#32;it</emphasis>
+39 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;z4;
+40 
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_Complex_8cc_1a5785a70cbc18f01a89cdf4235832d1ba">real</link>;
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;imaginary;
+43 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Creating&#32;a&#32;complex&#32;number&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+44 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;real&#32;part:&#32;&quot;</emphasis>;
+45 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;<link linkend="_Complex_8cc_1a5785a70cbc18f01a89cdf4235832d1ba">real</link>;
+46 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;imaginary&#32;part:&#32;&quot;</emphasis>;
+47 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;imaginary;
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;User-defined&#32;class&#32;and&#32;output&#32;for&#32;its&#32;objects</emphasis>
+50 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;c(<link linkend="_Complex_8cc_1a5785a70cbc18f01a89cdf4235832d1ba">real</link>,&#32;imaginary);
+51 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;c;
+52 
+53 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;First:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;z1&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Second:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;z2&#32;&lt;&lt;&#32;std::endl;
+54 &#32;&#32;&#32;&#32;
+55 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;za&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">exp</link>(<link linkend="_classComplex">Complex</link>(0.0,&#32;0.0));
+56 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;za;
+57 
+58 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;zs&#32;=&#32;<link linkend="_Complex_8cc_1aeaa6c0b46e054ab969bb0511f2bd74a8">sinh</link>(za);
+59 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;zc&#32;=&#32;<link linkend="_Complex_8cc_1ac205b42a2eec5378f97dfcc3d6428d93">cosh</link>(za);
+60 
+61 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;zs&#32;&lt;&lt;&#32;zc;
+62 
+63 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;c2(0.0,&#32;0.0);
+64 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_Complex_8cc_1aeaa6c0b46e054ab969bb0511f2bd74a8">sinh</link>(c2)&#32;&lt;&lt;&#32;<link linkend="_Complex_8cc_1ac205b42a2eec5378f97dfcc3d6428d93">cosh</link>(c2);
+65 
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+67 }
+</programlisting></section>
+</section>
+</section>

@@ -1,0 +1,113 @@
+\hypertarget{TestOtherExceptions_8cc}{}\doxysection{tests/\+Test\+Other\+Exceptions.cc File Reference}
+\label{TestOtherExceptions_8cc}\index{tests/TestOtherExceptions.cc@{tests/TestOtherExceptions.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Test\+Other\+Exceptions.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{TestOtherExceptions_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBoundsError}{Bounds\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TestOtherExceptions_8cc_a5d6745a4ce55928507e360ba8b8f54d2}{get\+Value}} (int j)  throw (int, std\+::string)
+\item 
+void \mbox{\hyperlink{TestOtherExceptions_8cc_a5538262279580eb18e3d9d430ac741a5}{get\+Value\+Version\+Two}} (int j)  throw (int, std\+::string)
+\item 
+int \mbox{\hyperlink{TestOtherExceptions_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestOtherExceptions_8cc_a5d6745a4ce55928507e360ba8b8f54d2}\label{TestOtherExceptions_8cc_a5d6745a4ce55928507e360ba8b8f54d2}} 
+\index{TestOtherExceptions.cc@{TestOtherExceptions.cc}!getValue@{getValue}}
+\index{getValue@{getValue}!TestOtherExceptions.cc@{TestOtherExceptions.cc}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily void get\+Value (\begin{DoxyParamCaption}\item[{int}]{j }\end{DoxyParamCaption}) throw ( int, std\+::string) }
+
+
+
+Definition at line \mbox{\hyperlink{TestOtherExceptions_8cc_source_l00019}{19}} of file \mbox{\hyperlink{TestOtherExceptions_8cc_source}{Test\+Other\+Exceptions.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{if} (j == 0) \textcolor{keywordflow}{throw} int(123);}
+\DoxyCodeLine{00022         \textcolor{keywordflow}{if} (j > 100) \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"out of bounds"});}
+\DoxyCodeLine{00023         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classBoundsError}{BoundsError}}(); \textcolor{comment}{// Throws unexpected if no catch(...)}}
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestOtherExceptions_8cc_a5538262279580eb18e3d9d430ac741a5}\label{TestOtherExceptions_8cc_a5538262279580eb18e3d9d430ac741a5}} 
+\index{TestOtherExceptions.cc@{TestOtherExceptions.cc}!getValueVersionTwo@{getValueVersionTwo}}
+\index{getValueVersionTwo@{getValueVersionTwo}!TestOtherExceptions.cc@{TestOtherExceptions.cc}}
+\doxysubsubsection{\texorpdfstring{getValueVersionTwo()}{getValueVersionTwo()}}
+{\footnotesize\ttfamily void get\+Value\+Version\+Two (\begin{DoxyParamCaption}\item[{int}]{j }\end{DoxyParamCaption}) throw ( int, std\+::string) }
+
+
+
+Definition at line \mbox{\hyperlink{TestOtherExceptions_8cc_source_l00026}{26}} of file \mbox{\hyperlink{TestOtherExceptions_8cc_source}{Test\+Other\+Exceptions.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028         \textcolor{keywordflow}{if} (j == 0) \textcolor{keywordflow}{throw} int(123);}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{if} (j > 100) \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"out of bounds"});}
+\DoxyCodeLine{00030         }
+\DoxyCodeLine{00031         \textcolor{comment}{// Re-\/throw}}
+\DoxyCodeLine{00032         \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{00033 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestOtherExceptions_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestOtherExceptions_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestOtherExceptions.cc@{TestOtherExceptions.cc}!main@{main}}
+\index{main@{main}!TestOtherExceptions.cc@{TestOtherExceptions.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestOtherExceptions_8cc_source_l00035}{35}} of file \mbox{\hyperlink{TestOtherExceptions_8cc_source}{Test\+Other\+Exceptions.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041         std::cout << \textcolor{stringliteral}{"Value: "};}
+\DoxyCodeLine{00042         \textcolor{keywordtype}{int} val; std::cin >> val;}
+\DoxyCodeLine{00043 \textcolor{comment}{//      getValue(val);}}
+\DoxyCodeLine{00044         \mbox{\hyperlink{TestOtherExceptions_8cc_a5538262279580eb18e3d9d430ac741a5}{getValueVersionTwo}}(val);}
+\DoxyCodeLine{00045     \}   }
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int}\& e)}
+\DoxyCodeLine{00048     \{}
+\DoxyCodeLine{00049         std::cout << \textcolor{stringliteral}{"integer "} << e << std::endl;}
+\DoxyCodeLine{00050         }
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{catch} (std::string\& e)}
+\DoxyCodeLine{00054     \{}
+\DoxyCodeLine{00055         std::cout << e << std::endl;}
+\DoxyCodeLine{00056         }
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{catch} (...)}
+\DoxyCodeLine{00059     \{}
+\DoxyCodeLine{00060         std::cout << \textcolor{stringliteral}{"No idea, really\(\backslash\)n:"};}
+\DoxyCodeLine{00061         }
+\DoxyCodeLine{00062     \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00065 \}}
+
+\end{DoxyCode}

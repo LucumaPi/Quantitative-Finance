@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestBoundsError_8cc">
+<title>tests/TestBoundsError.cc File Reference</title>
+<indexterm><primary>tests/TestBoundsError.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestBoundsError.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestBoundsError_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestBoundsError_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestBoundsError_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestBoundsError.cc</secondary></indexterm>
+<indexterm><primary>TestBoundsError.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 12 of file TestBoundsError.cc.</para>
+<programlisting>13 {
+14 
+15 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Define&#32;a&#32;scope</emphasis>
+16 
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;2;
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;std::endl;
+19 &#32;&#32;&#32;&#32;}
+20 
+21 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;cout&#32;&lt;&lt;&#32;j;&#32;j&#32;does&#32;not&#32;exist</emphasis>
+22 
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;myArr[10];
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initialise&#32;the&#32;array</emphasis>
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;10;&#32;j++)
+27 &#32;&#32;&#32;&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myArr[j]&#32;=&#32;j&#32;+&#32;1;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;myArr[j]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>;
+30 &#32;&#32;&#32;&#32;}
+31 
+32 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;myArr[-1];
+33 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;myArr[1000];
+34 
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+37 }
+</programlisting></section>
+</section>
+</section>

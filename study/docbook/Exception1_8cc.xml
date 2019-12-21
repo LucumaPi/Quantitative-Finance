@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_Exception1_8cc">
+<title>tests/Exception1.cc File Reference</title>
+<indexterm><primary>tests/Exception1.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for Exception1.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="Exception1_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V &gt; </para><para>void <link linkend="_Exception1_8cc_1a5505649500f56eb117210d7ffa7fa45b">print</link> (const std::vector&lt; V &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V &gt; </para><para>V <link linkend="_Exception1_8cc_1a37185c557354c7e617e677999957a52d">sumReciprocals</link> (const std::vector&lt; V &gt; &amp;array)</para>
+</listitem>
+            <listitem><para>int <link linkend="_Exception1_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_Exception1_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>Exception1.cc</secondary></indexterm>
+<indexterm><primary>Exception1.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 39 of file Exception1.cc.</para>
+<programlisting>40 {
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;size&#32;=&#32;10;
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;elementsValue&#32;=&#32;3.1415;
+43 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;myArray&#32;(size,&#32;elementsValue);
+44 &#32;&#32;&#32;&#32;myArray[5]&#32;=&#32;0.0;
+45 &#32;&#32;&#32;&#32;<link linkend="_Exception1_8cc_1a5505649500f56eb117210d7ffa7fa45b">print</link>(myArray);
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;answer&#32;=&#32;<link linkend="_Exception1_8cc_1a37185c557354c7e617e677999957a52d">sumReciprocals</link>(myArray);
+48 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Sum&#32;of&#32;reciprocals:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;answer&#32;&lt;&lt;&#32;std::endl;
+49 
+50 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Which&#32;index&#32;change&#32;value&#32;to&#32;new&#32;value?&#32;&quot;</emphasis>;
+51 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;index;
+52 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;index;
+53 &#32;&#32;&#32;&#32;myArray[index]&#32;=&#32;2.0;
+54 &#32;&#32;&#32;&#32;<link linkend="_Exception1_8cc_1a5505649500f56eb117210d7ffa7fa45b">print</link>(myArray);
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+57 
+58 }
+</programlisting>    </section><anchor xml:id="_Exception1_8cc_1a5505649500f56eb117210d7ffa7fa45b"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>Exception1.cc</secondary></indexterm>
+<indexterm><primary>Exception1.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>void print (const std::vector&lt; V &gt; &amp; v)</computeroutput></para><para>
+Definition at line 13 of file Exception1.cc.</para>
+<programlisting>14 {
+15 
+16 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nARR:[&quot;</emphasis>;
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;v.size();&#32;j++)
+18 &#32;&#32;&#32;&#32;{
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;v[j]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+20 &#32;&#32;&#32;&#32;
+21 &#32;&#32;&#32;&#32;}
+22 
+23 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>;
+24 }
+</programlisting>    </section><anchor xml:id="_Exception1_8cc_1a37185c557354c7e617e677999957a52d"/>    <section>
+    <title>sumReciprocals()</title>
+<indexterm><primary>sumReciprocals</primary><secondary>Exception1.cc</secondary></indexterm>
+<indexterm><primary>Exception1.cc</primary><secondary>sumReciprocals</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>V sumReciprocals (const std::vector&lt; V &gt; &amp; array)</computeroutput></para><para>
+Definition at line 27 of file Exception1.cc.</para>
+<programlisting>28 {&#32;<emphasis role="comment">//&#32;Sum&#32;of&#32;reciprocals&#32;</emphasis>
+29 &#32;&#32;&#32;&#32;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;array.size();&#32;j++)
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;1.0/array[j];
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+35 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+37 }&#32;
+</programlisting></section>
+</section>
+</section>

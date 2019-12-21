@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classLine">
 <title>Line Class Reference</title>
 <indexterm><primary>Line</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Line.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for Line:<para>
     <informalfigure>
         <mediaobject>
@@ -23,26 +26,159 @@ Collaboration diagram for Line:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classLine_1a1ae47824ad48165388e38aaad43d09f5"/><emphasis role="strong">Line</emphasis> (const <link linkend="_classPoint">Point</link> &amp;ps1, const <link linkend="_classPoint">Point</link> &amp;ps2)</para>
+            <listitem><para><link linkend="_classLine_1acc11b8a429d8cdd63ba6803dff5602b3">Line</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classLine_1a6c0606903a34f52c01708683fd274a91"/><emphasis role="strong">Line</emphasis> (const <link linkend="_classLine">Line</link> &amp;source)</para>
+            <listitem><para><link linkend="_classLine_1a1ae47824ad48165388e38aaad43d09f5">Line</link> (const <link linkend="_classPoint">Point</link> &amp;ps1, const <link linkend="_classPoint">Point</link> &amp;ps2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classLine_1ab057f21a08e21a7f293ad63d55f8e464"/><link linkend="_classPoint">Point</link> <emphasis role="strong">P1</emphasis> () const</para>
+            <listitem><para><link linkend="_classLine_1a6c0606903a34f52c01708683fd274a91">Line</link> (const <link linkend="_classLine">Line</link> &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classLine_1a8ac7e2f4468352e7c5ddfa91a4940bf4"/><link linkend="_classPoint">Point</link> <emphasis role="strong">P2</emphasis> () const</para>
+            <listitem><para>virtual <link linkend="_classLine_1aabe85f48d22d92b62257091f48174fac">~Line</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classLine_1ae3937c096b95a8f8865a714d98c71eba"/>double <emphasis role="strong">Length</emphasis> () const</para>
+            <listitem><para><link linkend="_classPoint">Point</link> <link linkend="_classLine_1ab057f21a08e21a7f293ad63d55f8e464">P1</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classLine_1aa5e8d11034af6b8065619bf00298a09d"/><link linkend="_classPoint">Point</link> <emphasis role="strong">MidPoint</emphasis> () const</para>
+            <listitem><para><link linkend="_classPoint">Point</link> <link linkend="_classLine_1a8ac7e2f4468352e7c5ddfa91a4940bf4">P2</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classLine_1ac2fb0254947216caad3237df8c9fd412"/>void <emphasis role="strong">P1</emphasis> (const <link linkend="_classPoint">Point</link> &amp;NewP1)</para>
+            <listitem><para>double <link linkend="_classLine_1ae3937c096b95a8f8865a714d98c71eba">Length</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classLine_1abb54ac4f52e335e6715fcf335d480ffd"/>void <emphasis role="strong">P2</emphasis> (const <link linkend="_classPoint">Point</link> &amp;NewP2)</para>
+            <listitem><para><link linkend="_classPoint">Point</link> <link linkend="_classLine_1aa5e8d11034af6b8065619bf00298a09d">MidPoint</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classLine_1a3ed026438ecc23607f23e59ec6a449a7"/><link linkend="_classLine">Line</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classLine">Line</link> &amp;source)</para>
+            <listitem><para>void <link linkend="_classLine_1ac2fb0254947216caad3237df8c9fd412">P1</link> (const <link linkend="_classPoint">Point</link> &amp;NewP1)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classLine_1abb54ac4f52e335e6715fcf335d480ffd">P2</link> (const <link linkend="_classPoint">Point</link> &amp;NewP2)</para>
+</listitem>
+            <listitem><para><link linkend="_classLine">Line</link> &amp; <link linkend="_classLine_1a3ed026438ecc23607f23e59ec6a449a7">operator=</link> (const <link linkend="_classLine">Line</link> &amp;source)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 13 of file Line.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classLine_1acc11b8a429d8cdd63ba6803dff5602b3"/>    <section>
+    <title>Line()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Line</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>Line</secondary></indexterm>
+<para><computeroutput>Line::Line ( )</computeroutput></para><para>
+Definition at line 20 of file Line.cc.</para>
+<programlisting>20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classShape_1aaa8d87171e65e0d8ba3c5459978992a7">Shape</link>()
+21 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+22 
+23 &#32;&#32;&#32;&#32;init(<link linkend="_classPoint">Point</link>(0.0,&#32;0.0),&#32;<link linkend="_classPoint">Point</link>(0.0,&#32;0.0));
+24 }
+</programlisting>    </section><anchor xml:id="_classLine_1a1ae47824ad48165388e38aaad43d09f5"/>    <section>
+    <title>Line()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Line</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>Line</secondary></indexterm>
+<para><computeroutput>Line::Line (const <link linkend="_classPoint">Point</link> &amp; ps1, const <link linkend="_classPoint">Point</link> &amp; ps2)</computeroutput></para><para>
+Definition at line 26 of file Line.cc.</para>
+<programlisting>26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classShape_1aaa8d87171e65e0d8ba3c5459978992a7">Shape</link>()&#32;&#32;&#32;&#32;&#32;
+27 {&#32;<emphasis role="comment">//&#32;Normal&#32;constructor,&#32;constructs&#32;line&#32;from&#32;two&#32;points</emphasis>
+28 
+29 &#32;&#32;&#32;&#32;init(ps1,&#32;ps2);
+30 }
+</programlisting>    </section><anchor xml:id="_classLine_1a6c0606903a34f52c01708683fd274a91"/>    <section>
+    <title>Line()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Line</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>Line</secondary></indexterm>
+<para><computeroutput>Line::Line (const <link linkend="_classLine">Line</link> &amp; source)</computeroutput></para><para>
+Definition at line 32 of file Line.cc.</para>
+<programlisting>32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classShape_1aaa8d87171e65e0d8ba3c5459978992a7">Shape</link>(source)
+33 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+34 
+35 &#32;&#32;&#32;&#32;init(source.p1,&#32;source.p2);
+36 }
+</programlisting>    </section><anchor xml:id="_classLine_1aabe85f48d22d92b62257091f48174fac"/>    <section>
+    <title>~Line()</title>
+<indexterm><primary>~Line</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>~Line</secondary></indexterm>
+<para><computeroutput>Line::~Line ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 38 of file Line.cc.</para>
+<programlisting>39 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+40 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classLine_1ae3937c096b95a8f8865a714d98c71eba"/>    <section>
+    <title>Length()</title>
+<indexterm><primary>Length</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>Length</secondary></indexterm>
+<para><computeroutput>double Line::Length ( ) const</computeroutput></para><para>
+Definition at line 53 of file Line.cc.</para>
+<programlisting>54 {&#32;<emphasis role="comment">//&#32;Calculate&#32;the&#32;distance&#32;between&#32;start-&#32;and&#32;endpoint</emphasis>
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;p1.<link linkend="_classPoint_1a157aafa697fc65028517c431b6c313a2">Distance</link>(p2);
+57 }
+</programlisting>    </section><anchor xml:id="_classLine_1aa5e8d11034af6b8065619bf00298a09d"/>    <section>
+    <title>MidPoint()</title>
+<indexterm><primary>MidPoint</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>MidPoint</secondary></indexterm>
+<para><computeroutput><link linkend="_classPoint">Point</link> Line::MidPoint ( ) const</computeroutput></para><para>
+Definition at line 59 of file Line.cc.</para>
+<programlisting>60 {&#32;<emphasis role="comment">//&#32;Calculate&#32;the&#32;point&#32;in&#32;the&#32;middle&#32;of&#32;the&#32;line</emphasis>
+61 
+62 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;p1.<link linkend="_classPoint_1a58fd5b2bb9af8cf2bf978dfdeb8794d9">MidPoint</link>(p2);
+63 }
+</programlisting>    </section><anchor xml:id="_classLine_1a3ed026438ecc23607f23e59ec6a449a7"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classLine">Line</link> &amp; Line::operator= (const <link linkend="_classLine">Line</link> &amp; source)</computeroutput></para><para>
+Definition at line 78 of file Line.cc.</para>
+<programlisting>79 {&#32;<emphasis role="comment">//&#32;Assignment&#32;</emphasis>
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exit&#32;if&#32;same&#32;object</emphasis>
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>==&amp;source)&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+83 
+84 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;base&#32;class&#32;assignment</emphasis>
+85 &#32;&#32;&#32;&#32;<link linkend="_classShape_1afcefeb5c8a6d3b2f7b6426d299eafe02">Shape::operator = </link>(source);
+86 
+87 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;state</emphasis>
+88 &#32;&#32;&#32;&#32;init(source.p1,&#32;source.p2);
+89 
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+91 }
+</programlisting>    </section><anchor xml:id="_classLine_1ab057f21a08e21a7f293ad63d55f8e464"/>    <section>
+    <title>P1()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>P1</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>P1</secondary></indexterm>
+<para><computeroutput><link linkend="_classPoint">Point</link> Line::P1 ( ) const</computeroutput></para><para>
+Definition at line 43 of file Line.cc.</para>
+<programlisting>44 {<emphasis role="comment">//&#32;Return&#32;p1</emphasis>
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;p1;
+46 }
+</programlisting>    </section><anchor xml:id="_classLine_1ac2fb0254947216caad3237df8c9fd412"/>    <section>
+    <title>P1()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>P1</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>P1</secondary></indexterm>
+<para><computeroutput>void Line::P1 (const <link linkend="_classPoint">Point</link> &amp; NewP1)</computeroutput></para><para>
+Definition at line 67 of file Line.cc.</para>
+<programlisting>68 {<emphasis role="comment">//&#32;Set&#32;p1</emphasis>
+69 &#32;&#32;&#32;&#32;p1&#32;=&#32;NewP1;
+70 }
+</programlisting>    </section><anchor xml:id="_classLine_1a8ac7e2f4468352e7c5ddfa91a4940bf4"/>    <section>
+    <title>P2()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>P2</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>P2</secondary></indexterm>
+<para><computeroutput><link linkend="_classPoint">Point</link> Line::P2 ( ) const</computeroutput></para><para>
+Definition at line 48 of file Line.cc.</para>
+<programlisting>49 {<emphasis role="comment">//&#32;Return&#32;p2</emphasis>
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;p2;
+51 }
+</programlisting>    </section><anchor xml:id="_classLine_1abb54ac4f52e335e6715fcf335d480ffd"/>    <section>
+    <title>P2()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>P2</primary><secondary>Line</secondary></indexterm>
+<indexterm><primary>Line</primary><secondary>P2</secondary></indexterm>
+<para><computeroutput>void Line::P2 (const <link linkend="_classPoint">Point</link> &amp; NewP2)</computeroutput></para><para>
+Definition at line 72 of file Line.cc.</para>
+<programlisting>73 {<emphasis role="comment">//&#32;Set&#32;p2</emphasis>
+74 &#32;&#32;&#32;&#32;p2&#32;=&#32;NewP2;
+75 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Line.hhsrc/Line.cc</section>
+include/duffy/<link linkend="_Line_8hh">Line.hh</link>src/<link linkend="_Line_8cc">Line.cc</link></section>
+</section>

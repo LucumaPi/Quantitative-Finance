@@ -1,0 +1,195 @@
+\hypertarget{Tensor_8cc_source}{}\doxysection{Tensor.\+cc}
+\label{Tensor_8cc_source}\index{src/Tensor.cc@{src/Tensor.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Tensor.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Tensor class. It uses an TensorStructure for the actual storage.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// This class acts like a kind of adapter class since it defines a common interface}}
+\DoxyCodeLine{00005 \textcolor{comment}{// for different Tensor structures like normal matrices and sparse matrices.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// The Tensor structure to use is given as template argument.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 1 februari 1999  RD  Started}}
+\DoxyCodeLine{00009 \textcolor{comment}{// 2002-\/4-\/9 DD small changes}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{// 2004-\/3-\/12 DD Metamorphosis, a matrix becomes a tensor}}
+\DoxyCodeLine{00012 \textcolor{comment}{// 2004-\/4-\/8 DD Code review, look for nasty little errors that make us so}}
+\DoxyCodeLine{00013 \textcolor{comment}{// unhappy}}
+\DoxyCodeLine{00014 \textcolor{comment}{//}}
+\DoxyCodeLine{00015 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2004}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#ifndef Tensor\_CC}}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00017}\mbox{\hyperlink{Tensor_8cc_ac92b145e0fe9536278dad8b8ad7c97a4}{00017}} \textcolor{preprocessor}{\#define Tensor\_CC}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Tensor_8hh}{duffy/Tensor.hh}}>}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00022 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00023}\mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{00023}} \mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{Tensor<V, I>::Tensor}}()}
+\DoxyCodeLine{00024 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     tensor = \mbox{\hyperlink{classArray}{Array<NumericMatrix <V, I>}}, I > (1, 1);  \textcolor{comment}{// Size 1, start index 1}}
+\DoxyCodeLine{00027     tensor[1] = \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I>}} (1, 1, 1, 1);    \textcolor{comment}{// EVERYTHING starts at 1}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     nr = nc = nt = 1;}
+\DoxyCodeLine{00031 \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00034}\mbox{\hyperlink{classTensor_a55918b65d0c1e8b14be649630230ee3b}{00034}} \mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{Tensor<V, I>::Tensor}}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column, \textcolor{keywordtype}{size\_t} nthird)}
+\DoxyCodeLine{00035 \{ \textcolor{comment}{// Constructor with size. Start index=1.}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     tensor = \mbox{\hyperlink{classArray}{Array<NumericMatrix <V, I>}}, I > (nthird, 1); \textcolor{comment}{// Size nthird, start index 1}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{for} (I k = tensor.MinIndex(); k <= tensor.MaxIndex(); k++)}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041         tensor[k] = \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I>}} (row, column, 1, 1); }
+\DoxyCodeLine{00042     \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     nr = row; nc = column; nt = nthird;}
+\DoxyCodeLine{00046 \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00049}\mbox{\hyperlink{classTensor_aba44541274ef10796054e73a4f1b2e46}{00049}} \mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{Tensor<V, I>::Tensor}}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column, \textcolor{keywordtype}{size\_t} nthird,}
+\DoxyCodeLine{00050                             I rowStart, I columnStart, I thirdStart)}
+\DoxyCodeLine{00051 \{ \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     tensor = \mbox{\hyperlink{classArray}{Array<NumericMatrix <V, I>}}, I > (nthird, thirdStart);    \textcolor{comment}{// Size nthird, start index }}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{for} (I k = tensor.MinIndex(); k <= tensor.MaxIndex(); k++)}
+\DoxyCodeLine{00056     \{}
+\DoxyCodeLine{00057         tensor[k] = \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I>}} (row, column, rowStart, columnStart);    }
+\DoxyCodeLine{00058     \}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     nr = row; nc = column; nt = nthird;}
+\DoxyCodeLine{00062 \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00065}\mbox{\hyperlink{classTensor_a960c8cf44f08a24ba752b85e2af218ee}{00065}} \mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{Tensor<V, I>::Tensor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& source)}
+\DoxyCodeLine{00066 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     tensor = source.tensor;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     nr = source.nr; nc = source.nc; nt = source.nt;}
+\DoxyCodeLine{00071 \}}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00074}\mbox{\hyperlink{classTensor_a63078f238b70b4aa496cca77f91640db}{00074}} \mbox{\hyperlink{classTensor_a63078f238b70b4aa496cca77f91640db}{Tensor<V, I>::~Tensor}}()}
+\DoxyCodeLine{00075 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00076 \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00079}\mbox{\hyperlink{classTensor_a586bb5ad5a239f5a1333ef516f8afac9}{00079}} \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_a586bb5ad5a239f5a1333ef516f8afac9}{Tensor<V, I>::MinFirstIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00080 \textcolor{keyword}{}\{ }
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{keywordflow}{return} tensor[tensor.MinIndex()].MinRowIndex();}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 \}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00087}\mbox{\hyperlink{classTensor_aef9f18eee21230b69a12c03ddf765abc}{00087}} \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_aef9f18eee21230b69a12c03ddf765abc}{Tensor<V, I>::MaxFirstIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00088 \textcolor{keyword}{}\{ }
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{keywordflow}{return} tensor[tensor.MinIndex()].MaxRowIndex();}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092 \}}
+\DoxyCodeLine{00093 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00094}\mbox{\hyperlink{classTensor_af86e5b56a856a79e70e18c22b604f1d0}{00094}} \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_af86e5b56a856a79e70e18c22b604f1d0}{Tensor<V, I>::MinSecondIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00095 \textcolor{keyword}{}\{ }
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     \textcolor{keywordflow}{return} tensor[tensor.MinIndex()].MinColumnIndex();}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099 \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00102}\mbox{\hyperlink{classTensor_aa7a13e524f1fbbfdf0bdf68192e034b4}{00102}} \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_aa7a13e524f1fbbfdf0bdf68192e034b4}{Tensor<V, I>::MaxSecondIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00103 \textcolor{keyword}{}\{ }
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105     \textcolor{keywordflow}{return} tensor[tensor.MinIndex()].MaxColumnIndex();}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107 \}}
+\DoxyCodeLine{00108 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00109}\mbox{\hyperlink{classTensor_aa95268c48800c8ca1dd6243b59a09543}{00109}} \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_aa95268c48800c8ca1dd6243b59a09543}{Tensor<V, I>::MinThirdIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00110 \textcolor{keyword}{}\{ \textcolor{comment}{// The number of rows}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     \textcolor{keywordflow}{return} tensor.MinIndex();}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114 \}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00117}\mbox{\hyperlink{classTensor_a6266f47513cc5b5924573ac58390b7cb}{00117}} \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_a6266f47513cc5b5924573ac58390b7cb}{Tensor<V, I>::MaxThirdIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00118 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the maximum index}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{keywordflow}{return} tensor.MaxIndex();}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122 \}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00125}\mbox{\hyperlink{classTensor_a1d19abc6ebc88dcd1e31a9035d4f42f1}{00125}} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classTensor_a1d19abc6ebc88dcd1e31a9035d4f42f1}{Tensor<V, I>::Rows}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00126 \textcolor{keyword}{}\{ \textcolor{comment}{// The number of rows}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128     \textcolor{keywordflow}{return} nr;}
+\DoxyCodeLine{00129 \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00132}\mbox{\hyperlink{classTensor_acb5f71b7416a3361164821b624933dd3}{00132}} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classTensor_acb5f71b7416a3361164821b624933dd3}{Tensor<V, I>::Columns}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00133 \textcolor{keyword}{}\{ \textcolor{comment}{// The number of columns}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135     \textcolor{keywordflow}{return} nc;}
+\DoxyCodeLine{00136 \}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00139}\mbox{\hyperlink{classTensor_a4e12d325ed245411efd1d65c13110368}{00139}} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classTensor_a4e12d325ed245411efd1d65c13110368}{Tensor<V, I>::sizeThird}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00140 \textcolor{keyword}{}\{ \textcolor{comment}{// The number of columns}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142     \textcolor{keywordflow}{return} nt;}
+\DoxyCodeLine{00143 \}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00146}\mbox{\hyperlink{classTensor_a99acb1545d29dcbaadf6e41482f7c477}{00146}} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& \mbox{\hyperlink{classTensor_a99acb1545d29dcbaadf6e41482f7c477}{Tensor<V, I>::operator [] }}(I k) }
+\DoxyCodeLine{00147 \{ \textcolor{comment}{// Get matrix at position k}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149     \textcolor{keywordflow}{return} tensor[k];}
+\DoxyCodeLine{00150 }
+\DoxyCodeLine{00151 \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00156}\mbox{\hyperlink{classTensor_a6c0bb2471bba76ae4b14b5ef08755ff4}{00156}} \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& \mbox{\hyperlink{classTensor_a99acb1545d29dcbaadf6e41482f7c477}{Tensor<V, I>::operator [] }}(I k)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00157 \textcolor{keyword}{}\{ \textcolor{comment}{// Get matrix at position k}}
+\DoxyCodeLine{00158 }
+\DoxyCodeLine{00159     \textcolor{keywordflow}{return} tensor[k];}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161 \}}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163 \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00166}\mbox{\hyperlink{classTensor_a80154f348587ad3c06b05e544f39c6ea}{00166}}     V\& \mbox{\hyperlink{classTensor_a80154f348587ad3c06b05e544f39c6ea}{Tensor<V, I>::operator () }}(I i, I j, I k) }
+\DoxyCodeLine{00167 \{ \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169     }
+\DoxyCodeLine{00170     \textcolor{keywordflow}{return} tensor[k] (i, j);}
+\DoxyCodeLine{00171 \}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
+\DoxyCodeLine{\Hypertarget{Tensor_8cc_source_l00176}\mbox{\hyperlink{classTensor_a1ca3f5f470b45a4fa6e08f1f5d15fa69}{00176}} \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& \mbox{\hyperlink{classTensor_a1ca3f5f470b45a4fa6e08f1f5d15fa69}{Tensor<V, I>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& source)}
+\DoxyCodeLine{00177 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00180     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182     tensor = source.tensor;}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184     nr = source.nr; nc = source.nc; nt = source.nt;}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00188 \}}
+\DoxyCodeLine{00189 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

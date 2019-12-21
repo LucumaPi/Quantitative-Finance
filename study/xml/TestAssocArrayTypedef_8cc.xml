@@ -6,38 +6,70 @@
     <includes refid="AssocArray_8hh" local="no">duffy/AssocArray.hh</includes>
     <includes local="no">string</includes>
     <incdepgraph>
-      <node id="11">
+      <node id="14">
         <label>list</label>
       </node>
-      <node id="9">
+      <node id="12">
         <label>Set.hh</label>
-        <link refid="Set_8hh_source"/>
-        <childnode refid="10" relation="include">
+        <link refid="Set_8hh"/>
+        <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
-        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="13">
+      <node id="18">
+        <label>../../src/AssocArray.cc</label>
+        <link refid="AssocArray_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Array.hh</label>
+        <link refid="Array_8hh"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
         <label>string</label>
       </node>
-      <node id="12">
+      <node id="17">
         <label>map</label>
       </node>
-      <node id="8">
+      <node id="10">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
         <label>vector</label>
       </node>
       <node id="2">
@@ -46,16 +78,27 @@
       <node id="6">
         <label>cstddef</label>
       </node>
-      <node id="7">
+      <node id="11">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="8" relation="include">
+        <link refid="FullArray_8hh"/>
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
       </node>
-      <node id="10">
+      <node id="13">
         <label>set</label>
+      </node>
+      <node id="16">
+        <label>algorithm</label>
       </node>
       <node id="1">
         <label>tests/TestAssocArrayTypedef.cc</label>
@@ -64,17 +107,19 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>duffy/AssocArray.hh</label>
-        <link refid="AssocArray_8hh_source"/>
+        <link refid="AssocArray_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -101,7 +146,7 @@
         <argsstring>(const AArray &amp;assArr)</argsstring>
         <name>print</name>
         <param>
-          <type>const <ref refid="classAssocArray" kindref="compound">AArray</ref> &amp;</type>
+          <type>const <ref refid="TestAssocArrayTypedef_8cc_1a6eb6772489e279ed41c4572b667ba89c" kindref="member">AArray</ref> &amp;</type>
           <declname>assArr</declname>
         </param>
         <briefdescription>
@@ -141,24 +186,24 @@
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/AssocArray.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AssocArray_8hh" kindref="compound">duffy/AssocArray.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;duffy/Array.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classAssocArray" kindref="compound">AssocArray&lt;double, std::string&gt;</ref><sp/><ref refid="classAssocArray" kindref="compound">AArray</ref>;</highlight></codeline>
+<codeline lineno="15" refid="TestAssocArrayTypedef_8cc_1a6eb6772489e279ed41c4572b667ba89c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classAssocArray" kindref="compound">AssocArray&lt;double, std::string&gt;</ref><sp/><ref refid="TestAssocArrayTypedef_8cc_1a6eb6772489e279ed41c4572b667ba89c" kindref="member">AArray</ref>;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17" refid="classDD" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDD" kindref="compound">DD</ref></highlight></codeline>
 <codeline lineno="18"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classArray" kindref="compound">Array&lt;double&gt;</ref><sp/><ref refid="classArray" kindref="compound">DArray</ref>;</highlight></codeline>
+<codeline lineno="20" refid="classDD_1a6bc9f39ffe66e7435cee91fdec13e244" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classArray" kindref="compound">Array&lt;double&gt;</ref><sp/><ref refid="classDD_1a6bc9f39ffe66e7435cee91fdec13e244" kindref="member">DArray</ref>;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>print<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classAssocArray" kindref="compound">AArray</ref>&amp;<sp/>assArr)</highlight></codeline>
+<codeline lineno="23" refid="TestAssocArrayTypedef_8cc_1a2bb34dd95eef1806366acea95f2977db" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TestAssocArrayTypedef_8cc_1a2bb34dd95eef1806366acea95f2977db" kindref="member">print</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classAssocArray" kindref="compound">AArray</ref>&amp;<sp/>assArr)</highlight></codeline>
 <codeline lineno="24"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Iterating<sp/>in<sp/>the<sp/>map</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>AArray::const_iterator<sp/>i<sp/>=<sp/>assArr.Begin();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62" kindref="member">AArray::const_iterator</ref><sp/>i<sp/>=<sp/>assArr.<ref refid="classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107" kindref="member">Begin</ref>();</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i<sp/>!=<sp/>assArr.End())</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i<sp/>!=<sp/>assArr.<ref refid="classAssocArray_1a600b9a0280c6f67380abc032dad1d755" kindref="member">End</ref>())</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Element<sp/>pair<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(*i).first<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(*i).second<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>assArr[(*i).first]<sp/>&lt;&lt;<sp/>&quot;,<sp/>&quot;<sp/>;</highlight><highlight class="normal"></highlight></codeline>
@@ -168,7 +213,7 @@
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="38" refid="TestAssocArrayTypedef_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestAssocArrayTypedef_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;std::string&gt;<sp/>names;</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>names.push_back(</highlight><highlight class="stringliteral">&quot;A1&quot;</highlight><highlight class="normal">);</highlight></codeline>

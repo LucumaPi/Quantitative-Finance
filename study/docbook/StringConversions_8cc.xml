@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_StringConversions_8cc">
+<title>src/StringConversions.cc File Reference</title>
+<indexterm><primary>src/StringConversions.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/StringConversions.hh&gt;
+</programlisting>Include dependency graph for StringConversions.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="StringConversions_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="StringConversions_8cc__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_StringConversions_8cc_1a6aa0f4645007684811803d0940b2afbe">StringConversions_CC</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_StringConversions_8cc_1a213a07386067dc8dfe4aa69843afd183">getString</link> (long j)</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_StringConversions_8cc_1a810c46cfdc6ee2dfcdc0636e91f7e4cc">getString</link> (int j)</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_StringConversions_8cc_1a731a146d02db1aedc883d3f9c80f0533">getString</link> (size_t j)</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_StringConversions_8cc_1ab129f8bd00bba0b764ed08ab97a71db2">getString</link> (double d)</para>
+</listitem>
+            <listitem><para>std::list&lt; std::string &gt; <link linkend="_StringConversions_8cc_1aa9803942566e177490d69f756e68a138">convertToString</link> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;arr)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_StringConversions_8cc_1a6aa0f4645007684811803d0940b2afbe"/>    <section>
+    <title>StringConversions_CC</title>
+<indexterm><primary>StringConversions_CC</primary><secondary>StringConversions.cc</secondary></indexterm>
+<indexterm><primary>StringConversions.cc</primary><secondary>StringConversions_CC</secondary></indexterm>
+<para><computeroutput>#define StringConversions_CC</computeroutput></para><para>
+Definition at line 11 of file StringConversions.cc.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_StringConversions_8cc_1aa9803942566e177490d69f756e68a138"/>    <section>
+    <title>convertToString()</title>
+<indexterm><primary>convertToString</primary><secondary>StringConversions.cc</secondary></indexterm>
+<indexterm><primary>StringConversions.cc</primary><secondary>convertToString</secondary></indexterm>
+<para><computeroutput>std::list&lt;std::string&gt; convertToString (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; arr)</computeroutput></para><para>
+Definition at line 48 of file StringConversions.cc.</para>
+<programlisting>49 {
+50 
+51 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;result;
+52 
+53 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;j&#32;=&#32;arr.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;arr.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+54 &#32;&#32;&#32;&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result.push_back(<link linkend="_StringConversions_8cc_1a213a07386067dc8dfe4aa69843afd183">getString</link>(arr[j]));
+56 &#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+58 }
+</programlisting>    </section><anchor xml:id="_StringConversions_8cc_1ab129f8bd00bba0b764ed08ab97a71db2"/>    <section>
+    <title>getString()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>getString</primary><secondary>StringConversions.cc</secondary></indexterm>
+<indexterm><primary>StringConversions.cc</primary><secondary>getString</secondary></indexterm>
+<para><computeroutput>std::string getString (double d)</computeroutput></para><para>
+Definition at line 40 of file StringConversions.cc.</para>
+<programlisting>41 {
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;str[200];
+43 &#32;&#32;&#32;&#32;sprintf(str,&#32;<emphasis role="stringliteral">&quot;%f&quot;</emphasis>,&#32;d);
+44 &#32;&#32;&#32;&#32;std::string&#32;result(str);
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+46 }
+</programlisting>    </section><anchor xml:id="_StringConversions_8cc_1a810c46cfdc6ee2dfcdc0636e91f7e4cc"/>    <section>
+    <title>getString()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>getString</primary><secondary>StringConversions.cc</secondary></indexterm>
+<indexterm><primary>StringConversions.cc</primary><secondary>getString</secondary></indexterm>
+<para><computeroutput>std::string getString (int j)</computeroutput></para><para>
+Definition at line 25 of file StringConversions.cc.</para>
+<programlisting>26 {
+27 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;str[200];
+28 &#32;&#32;&#32;&#32;sprintf(str,&#32;<emphasis role="stringliteral">&quot;%d&quot;</emphasis>,&#32;j);
+29 &#32;&#32;&#32;&#32;std::string&#32;result(str);
+30 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+31 }
+</programlisting>    </section><anchor xml:id="_StringConversions_8cc_1a213a07386067dc8dfe4aa69843afd183"/>    <section>
+    <title>getString()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>getString</primary><secondary>StringConversions.cc</secondary></indexterm>
+<indexterm><primary>StringConversions.cc</primary><secondary>getString</secondary></indexterm>
+<para><computeroutput>std::string getString (long j)</computeroutput></para><para>
+Definition at line 17 of file StringConversions.cc.</para>
+<programlisting>18 {
+19 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;str[200];
+20 &#32;&#32;&#32;&#32;sprintf(str,&#32;<emphasis role="stringliteral">&quot;%d&quot;</emphasis>,&#32;j);
+21 &#32;&#32;&#32;&#32;std::string&#32;result(str);
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+23 }
+</programlisting>    </section><anchor xml:id="_StringConversions_8cc_1a731a146d02db1aedc883d3f9c80f0533"/>    <section>
+    <title>getString()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>getString</primary><secondary>StringConversions.cc</secondary></indexterm>
+<indexterm><primary>StringConversions.cc</primary><secondary>getString</secondary></indexterm>
+<para><computeroutput>std::string getString (size_t j)</computeroutput></para><para>
+Definition at line 32 of file StringConversions.cc.</para>
+<programlisting>33 {
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;str[200];
+35 &#32;&#32;&#32;&#32;sprintf(str,&#32;<emphasis role="stringliteral">&quot;%d&quot;</emphasis>,&#32;j);
+36 &#32;&#32;&#32;&#32;std::string&#32;result(str);
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+38 }
+</programlisting></section>
+</section>
+</section>

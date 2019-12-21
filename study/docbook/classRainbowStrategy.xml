@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRainbowStrategy">
 <title>RainbowStrategy Class Reference</title>
 <indexterm><primary>RainbowStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MultiAssetPayoffStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for RainbowStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,46 @@ Collaboration diagram for RainbowStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classRainbowStrategy_1aef4fb1f52b01698f3074460a63634c76"/><emphasis role="strong">RainbowStrategy</emphasis> (double strike, double cp, int DMinDMax)</para>
+            <listitem><para><link linkend="_classRainbowStrategy_1aef4fb1f52b01698f3074460a63634c76">RainbowStrategy</link> (double strike, double cp, int DMinDMax)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRainbowStrategy_1ab2ef5cfa977258e831b102521ddef28e"/>double <emphasis role="strong">payoff</emphasis> (double S1, double S2) const</para>
+            <listitem><para>double <link linkend="_classRainbowStrategy_1ab2ef5cfa977258e831b102521ddef28e">payoff</link> (double S1, double S2) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 37 of file MultiAssetPayoffStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classRainbowStrategy_1aef4fb1f52b01698f3074460a63634c76"/>    <section>
+    <title>RainbowStrategy()</title>
+<indexterm><primary>RainbowStrategy</primary><secondary>RainbowStrategy</secondary></indexterm>
+<indexterm><primary>RainbowStrategy</primary><secondary>RainbowStrategy</secondary></indexterm>
+<para><computeroutput>RainbowStrategy::RainbowStrategy (double strike, double cp, int DMinDMax)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 44 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;strike;&#32;w&#32;=&#32;cp;&#32;<link linkend="_namespacePayoffNamespace_1a39ee14e55dbe34eb4f30330edd487f84">type</link>&#32;=&#32;DMinDMax;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classRainbowStrategy_1ab2ef5cfa977258e831b102521ddef28e"/>    <section>
+    <title>payoff()</title>
+<indexterm><primary>payoff</primary><secondary>RainbowStrategy</secondary></indexterm>
+<indexterm><primary>RainbowStrategy</primary><secondary>payoff</secondary></indexterm>
+<para><computeroutput>double RainbowStrategy::payoff (double S1, double S2) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">MultiAssetPayoffStrategy</link>.</para>
+<para>
+Definition at line 46 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_namespacePayoffNamespace_1a39ee14e55dbe34eb4f30330edd487f84">type</link>&#32;==&#32;1)&#32;&#32;<emphasis role="comment">//&#32;DMax</emphasis>
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>&#32;(&#32;w&#32;*&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>(S1,S2)&#32;-&#32;w*<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>,&#32;0.0);
+50 
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>(&#32;w&#32;*&#32;<link linkend="_GenericInequalities_8hh_1adb69bfcb34a8cdf14dcb3fc08f9687c0">Min</link>(S1,S2)&#32;-&#32;w*<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>,&#32;0.0);
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-MultiAssetPayoffStrategy.hh</section>
+<link linkend="_MultiAssetPayoffStrategy_8hh">MultiAssetPayoffStrategy.hh</link></section>
+</section>

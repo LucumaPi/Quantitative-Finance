@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPayoff">
 <title>Payoff Class Reference</title>
 <indexterm><primary>Payoff</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Payoff.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for Payoff:<para>
     <informalfigure>
         <mediaobject>
@@ -23,27 +26,127 @@ Collaboration diagram for Payoff:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classPayoff_1aed160eb3d239b007c0901c0cac6cfebf"/><emphasis role="strong">Payoff</emphasis> (const <link linkend="_classPayoff">Payoff</link> &amp;source)</para>
+            <listitem><para><link linkend="_classPayoff_1a0f46e76a129a9f3a98d957b083c30157">Payoff</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classPayoff_1ad2a5f6ec9c8336d4dc6ab00ecdd83393"/><link linkend="_classPayoff">Payoff</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classPayoff">Payoff</link> &amp;source)</para>
+            <listitem><para><link linkend="_classPayoff_1aed160eb3d239b007c0901c0cac6cfebf">Payoff</link> (const <link linkend="_classPayoff">Payoff</link> &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classPayoff_1a541081708c4999142c3db9d5a27b2313"/>virtual double <emphasis role="strong">payoff</emphasis> (double S) const =0</para>
+            <listitem><para>virtual <link linkend="_classPayoff_1a8503707f7af67b9f6b0cfdac6d277480">~Payoff</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classPayoff_1a7ebefaac65b94bb3a43f2984ebe9afc8"/><emphasis role="strong">Payoff</emphasis> (double strike)</para>
+            <listitem><para><link linkend="_classPayoff">Payoff</link> &amp; <link linkend="_classPayoff_1ad2a5f6ec9c8336d4dc6ab00ecdd83393">operator=</link> (const <link linkend="_classPayoff">Payoff</link> &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classPayoff_1a81ee255183b0babc5e6d9663196a83de"/>double <emphasis role="strong">Call</emphasis> (double S)</para>
+            <listitem><para>virtual double <link linkend="_classPayoff_1a541081708c4999142c3db9d5a27b2313">payoff</link> (double S) const =0</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classPayoff_1a5d0222f2d42995f5ab01820272761e21"/>double <emphasis role="strong">Put</emphasis> (double S)</para>
+            <listitem><para><link linkend="_classPayoff_1a0f46e76a129a9f3a98d957b083c30157">Payoff</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classPayoff_1a7ebefaac65b94bb3a43f2984ebe9afc8">Payoff</link> (double strike)</para>
+</listitem>
+            <listitem><para>double <link linkend="_classPayoff_1a81ee255183b0babc5e6d9663196a83de">Call</link> (double S)</para>
+</listitem>
+            <listitem><para>double <link linkend="_classPayoff_1a5d0222f2d42995f5ab01820272761e21">Put</link> (double S)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c"/>double <emphasis role="strong">K</emphasis></para>
+            <listitem><para>double <link linkend="_classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c">K</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 10 of file Payoff.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPayoff_1a0f46e76a129a9f3a98d957b083c30157"/>    <section>
+    <title>Payoff()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Payoff</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>Payoff</secondary></indexterm>
+<para><computeroutput>Payoff::Payoff ( )</computeroutput></para><para>
+Definition at line 13 of file Payoff.cc.</para>
+<programlisting>14 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+15 }
+</programlisting>    </section><anchor xml:id="_classPayoff_1aed160eb3d239b007c0901c0cac6cfebf"/>    <section>
+    <title>Payoff()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Payoff</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>Payoff</secondary></indexterm>
+<para><computeroutput>Payoff::Payoff (const <link linkend="_classPayoff">Payoff</link> &amp; source)</computeroutput></para><para>
+Definition at line 17 of file Payoff.cc.</para>
+<programlisting>18 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+19 }
+</programlisting>    </section><anchor xml:id="_classPayoff_1a8503707f7af67b9f6b0cfdac6d277480"/>    <section>
+    <title>~Payoff()</title>
+<indexterm><primary>~Payoff</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>~Payoff</secondary></indexterm>
+<para><computeroutput>Payoff::~Payoff ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 21 of file Payoff.cc.</para>
+<programlisting>22 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+23 }
+</programlisting>    </section><anchor xml:id="_classPayoff_1a0f46e76a129a9f3a98d957b083c30157"/>    <section>
+    <title>Payoff()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Payoff</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>Payoff</secondary></indexterm>
+<para><computeroutput>Payoff::Payoff ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 7 of file PayoffNew.cc.</para>
+<programlisting>7 {&#32;<link linkend="_classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c">K</link>&#32;=&#32;120.0;}
+</programlisting>    </section><anchor xml:id="_classPayoff_1a7ebefaac65b94bb3a43f2984ebe9afc8"/>    <section>
+    <title>Payoff()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Payoff</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>Payoff</secondary></indexterm>
+<para><computeroutput>Payoff::Payoff (double strike)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 8 of file PayoffNew.cc.</para>
+<programlisting>8 {&#32;<link linkend="_classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c">K</link>&#32;=&#32;strike;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPayoff_1a81ee255183b0babc5e6d9663196a83de"/>    <section>
+    <title>Call()</title>
+<indexterm><primary>Call</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>Call</secondary></indexterm>
+<para><computeroutput>double Payoff::Call (double S)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 10 of file PayoffNew.cc.</para>
+<programlisting>10 {<emphasis role="keywordflow">return</emphasis>&#32;S&#32;-&#32;<link linkend="_classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c">K</link>;}
+</programlisting>    </section><anchor xml:id="_classPayoff_1ad2a5f6ec9c8336d4dc6ab00ecdd83393"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classPayoff">Payoff</link> &amp; Payoff::operator= (const <link linkend="_classPayoff">Payoff</link> &amp; source)</computeroutput></para><para>
+Definition at line 26 of file Payoff.cc.</para>
+<programlisting>27 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+28 
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>&#32;==&#32;&amp;source)
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+31 
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+33 }
+</programlisting>    </section><anchor xml:id="_classPayoff_1a541081708c4999142c3db9d5a27b2313"/>    <section>
+    <title>payoff()</title>
+<indexterm><primary>payoff</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>payoff</secondary></indexterm>
+<para><computeroutput>virtual double Payoff::payoff (double S) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classBullSpreadPayoff_1a6c3f86354323a9a6149ba2cf88a74ba7">BullSpreadPayoff</link>, and <link linkend="_classCallPayoff_1a388ddb411d45108ab253f9c4dd50bcbb">CallPayoff</link>.</para>
+    </section><anchor xml:id="_classPayoff_1a5d0222f2d42995f5ab01820272761e21"/>    <section>
+    <title>Put()</title>
+<indexterm><primary>Put</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>Put</secondary></indexterm>
+<para><computeroutput>double Payoff::Put (double S)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 11 of file PayoffNew.cc.</para>
+<programlisting>11 {<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c">K</link>&#32;-&#32;S;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classPayoff_1a1b9f2890c88248aa3e2a0121ccbd974c"/>    <section>
+    <title>K</title>
+<indexterm><primary>K</primary><secondary>Payoff</secondary></indexterm>
+<indexterm><primary>Payoff</primary><secondary>K</secondary></indexterm>
+<para><computeroutput>double Payoff::K</computeroutput></para><para>
+Definition at line 5 of file PayoffNew.cc.</para>
+</section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Payoff.hhsrc/PayoffNew.ccsrc/Payoff.cc</section>
+include/duffy/<link linkend="_Payoff_8hh">Payoff.hh</link>src/<link linkend="_PayoffNew_8cc">PayoffNew.cc</link>src/<link linkend="_Payoff_8cc">Payoff.cc</link></section>
+</section>

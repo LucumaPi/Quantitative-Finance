@@ -1,0 +1,100 @@
+\hypertarget{MandelbrotSet_8cc}{}\doxysection{tests/\+Mandelbrot\+Set.cc File Reference}
+\label{MandelbrotSet_8cc}\index{tests/MandelbrotSet.cc@{tests/MandelbrotSet.cc}}
+{\ttfamily \#include $<$duffy/\+Complex.\+hh$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Mandelbrot\+Set.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{MandelbrotSet_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class V $>$ }\\void \mbox{\hyperlink{MandelbrotSet_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}} (const std\+::vector$<$ V $>$ \&v)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classComplex}{Complex}} $>$ \mbox{\hyperlink{MandelbrotSet_8cc_a7253ee5cc9114c9ed87d660ace96be5e}{Mandelbrot\+Set}} (const \mbox{\hyperlink{classComplex}{Complex}} \&c, int \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})
+\item 
+int \mbox{\hyperlink{MandelbrotSet_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{MandelbrotSet_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{MandelbrotSet_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{MandelbrotSet.cc@{MandelbrotSet.cc}!main@{main}}
+\index{main@{main}!MandelbrotSet.cc@{MandelbrotSet.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MandelbrotSet_8cc_source_l00066}{66}} of file \mbox{\hyperlink{MandelbrotSet_8cc_source}{Mandelbrot\+Set.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067 \{}
+\DoxyCodeLine{00068     \mbox{\hyperlink{classComplex}{Complex}} c(0.01, 0.01);}
+\DoxyCodeLine{00069     \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 200;}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     std::vector<Complex> answer = \mbox{\hyperlink{MandelbrotSet_8cc_a7253ee5cc9114c9ed87d660ace96be5e}{MandelbrotSet}}(c, \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}});}
+\DoxyCodeLine{00072     \mbox{\hyperlink{MandelbrotSet_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(answer);}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00075 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{MandelbrotSet_8cc_a7253ee5cc9114c9ed87d660ace96be5e}\label{MandelbrotSet_8cc_a7253ee5cc9114c9ed87d660ace96be5e}} 
+\index{MandelbrotSet.cc@{MandelbrotSet.cc}!MandelbrotSet@{MandelbrotSet}}
+\index{MandelbrotSet@{MandelbrotSet}!MandelbrotSet.cc@{MandelbrotSet.cc}}
+\doxysubsubsection{\texorpdfstring{MandelbrotSet()}{MandelbrotSet()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classComplex}{Complex}}$>$ Mandelbrot\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classComplex}{Complex}} \&}]{c,  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MandelbrotSet_8cc_source_l00049}{49}} of file \mbox{\hyperlink{MandelbrotSet_8cc_source}{Mandelbrot\+Set.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050 \{}
+\DoxyCodeLine{00051     std::vector<Complex> result(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}+1);}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     result[0] = \mbox{\hyperlink{classComplex}{Complex}} (0.0, 0.0);}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classComplex}{Complex}} tmp;}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 1; \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} < result.size(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++)}
+\DoxyCodeLine{00057     \{}
+\DoxyCodeLine{00058         tmp = result[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/1];}
+\DoxyCodeLine{00059         result[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}] = (tmp*tmp) + c;}
+\DoxyCodeLine{00060     \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00063 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{MandelbrotSet_8cc_a5505649500f56eb117210d7ffa7fa45b}\label{MandelbrotSet_8cc_a5505649500f56eb117210d7ffa7fa45b}} 
+\index{MandelbrotSet.cc@{MandelbrotSet.cc}!print@{print}}
+\index{print@{print}!MandelbrotSet.cc@{MandelbrotSet.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ V $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MandelbrotSet_8cc_source_l00034}{34}} of file \mbox{\hyperlink{MandelbrotSet_8cc_source}{Mandelbrot\+Set.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035 \{}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     std::cout << \textcolor{stringliteral}{"\(\backslash\)nARR:["};}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < v.size(); j++)}
+\DoxyCodeLine{00039     \{}
+\DoxyCodeLine{00040         std::cout << v[j] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00041     }
+\DoxyCodeLine{00042     \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00045 \}}
+
+\end{DoxyCode}

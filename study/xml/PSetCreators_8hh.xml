@@ -5,37 +5,13 @@
     <includes refid="SimplePropertySet_8hh" local="yes">SimplePropertySet.hh</includes>
     <includedby refid="TestPSetCreators_8cc" local="no">tests/TestPSetCreators.cc</includedby>
     <incdepgraph>
-      <node id="10">
+      <node id="12">
         <label>list</label>
       </node>
       <node id="3">
         <label>Property.hh</label>
-        <link refid="Property_8hh_source"/>
+        <link refid="Property_8hh"/>
         <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>Set.hh</label>
-        <link refid="Set_8hh_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>include/duffy/PSetCreators.hh</label>
-        <link refid="PSetCreators_8hh"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>SimplePropertySet.hh</label>
-        <link refid="SimplePropertySet_8hh_source"/>
-        <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -44,25 +20,98 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>string</label>
+      <node id="10">
+        <label>Set.hh</label>
+        <link refid="Set_8hh"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
-      <node id="7">
-        <label>map</label>
-      </node>
-      <node id="4">
-        <label>PropertyThing.hh</label>
-        <link refid="PropertyThing_8hh_source"/>
-        <childnode refid="5" relation="include">
+      <node id="1">
+        <label>include/duffy/PSetCreators.hh</label>
+        <link refid="PSetCreators_8hh"/>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="6">
-        <label>iostream</label>
+        <label>../../src/PropertyThing.cc</label>
+        <link refid="PropertyThing_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SimplePropertySet.hh</label>
+        <link refid="SimplePropertySet_8hh"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../../src/Property.cc</label>
+        <link refid="Property_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>string</label>
       </node>
       <node id="9">
+        <label>map</label>
+      </node>
+      <node id="15">
+        <label>../../src/SimplePropertySet.cc</label>
+        <link refid="SimplePropertySet_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>PropertyThing.hh</label>
+        <link refid="PropertyThing_8hh"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="11">
         <label>set</label>
       </node>
+      <node id="14">
+        <label>algorithm</label>
+      </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/duffy/PSetCreators.hh</label>
+        <link refid="PSetCreators_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tests/TestPSetCreators.cc</label>
+        <link refid="TestPSetCreators_8cc"/>
+      </node>
+    </invincdepgraph>
     <innerclass refid="classPSetFactory" prot="public">PSetFactory</innerclass>
     <innerclass refid="classConsolePSetFactory" prot="public">ConsolePSetFactory</innerclass>
       <sectiondef kind="typedef">
@@ -94,14 +143,14 @@
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PSETCREATORS_HPP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSETCREATORS_HPP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SimplePropertySet.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SimplePropertySet_8hh" kindref="compound">SimplePropertySet.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet&lt;std::string, double&gt;</ref><sp/><ref refid="classSimplePropertySet" kindref="compound">PSet</ref>;</highlight></codeline>
+<codeline lineno="12" refid="PSetCreators_8hh_1a8bf722177716a5b2cf455321bc20a560" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet&lt;std::string, double&gt;</ref><sp/><ref refid="PSetCreators_8hh_1a8bf722177716a5b2cf455321bc20a560" kindref="member">PSet</ref>;</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14" refid="classPSetFactory" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPSetFactory" kindref="compound">PSetFactory</ref></highlight></codeline>
 <codeline lineno="15"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classSimplePropertySet" kindref="compound">PSet</ref>*<sp/>CreatePSet()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classSimplePropertySet" kindref="compound">PSet</ref>*<sp/><ref refid="classPSetFactory_1abe4bdfbb13a8e4ac67ca59f7e3824589" kindref="member">CreatePSet</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
@@ -109,7 +158,7 @@
 <codeline lineno="22"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Create<sp/>properties<sp/>using<sp/>cout/cin</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSimplePropertySet" kindref="compound">PSet</ref>*<sp/>CreatePSet()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="25" refid="classConsolePSetFactory_1a6f76ed109fda348775bef6b2756dcf22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSimplePropertySet" kindref="compound">PSet</ref>*<sp/><ref refid="classConsolePSetFactory_1a6f76ed109fda348775bef6b2756dcf22" kindref="member">CreatePSet</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="26"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>key<sp/>value<sp/>pairs<sp/>until<sp/>finished</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
@@ -118,7 +167,7 @@
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Give<sp/>name<sp/>of<sp/>property<sp/>set:<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>k;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSimplePropertySet" kindref="compound">PSet</ref>*<sp/>result<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSimplePropertySet" kindref="compound">PSet</ref>(k);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSimplePropertySet" kindref="compound">PSet</ref>*<sp/>result<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="PSetCreators_8hh_1a8bf722177716a5b2cf455321bc20a560" kindref="member">PSet</ref>(k);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal">L1:</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Key<sp/>name<sp/>(EXIT):<sp/>&quot;</highlight><highlight class="normal">;<sp/>std::cin<sp/>&gt;&gt;<sp/>k;<sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
@@ -130,7 +179,7 @@
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Value:<sp/>&quot;</highlight><highlight class="normal">;<sp/>std::cin<sp/>&gt;&gt;<sp/>v;<sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result-&gt;add(k,<sp/>v);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result-&gt;<ref refid="classSimplePropertySet_1a8663619c5669177f23286672ad49ceca" kindref="member">add</ref>(k,<sp/>v);</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>L1;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>

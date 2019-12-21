@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPrototypeInstrumentFactory">
 <title>PrototypeInstrumentFactory Class Reference</title>
 <indexterm><primary>PrototypeInstrumentFactory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;InstrumentNew.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for PrototypeInstrumentFactory:<para>
     <informalfigure>
         <mediaobject>
@@ -23,10 +26,60 @@ Collaboration diagram for PrototypeInstrumentFactory:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classPrototypeInstrumentFactory_1a3d5d8d9d3b5d1684e8b45b0fb488a43a"/><link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link> * <emphasis role="strong">CreateOption</emphasis> () const</para>
+            <listitem><para><link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link> * <link linkend="_classPrototypeInstrumentFactory_1a3d5d8d9d3b5d1684e8b45b0fb488a43a">CreateOption</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 224 of file InstrumentNew.hh.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPrototypeInstrumentFactory_1a3d5d8d9d3b5d1684e8b45b0fb488a43a"/>    <section>
+    <title>CreateOption()</title>
+<indexterm><primary>CreateOption</primary><secondary>PrototypeInstrumentFactory</secondary></indexterm>
+<indexterm><primary>PrototypeInstrumentFactory</primary><secondary>CreateOption</secondary></indexterm>
+<para><computeroutput><link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link>* PrototypeInstrumentFactory::CreateOption ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classInstrumentFactory_1acc735ba0c9d3b8c36269d3553c1cb401">InstrumentFactory</link>.</para>
+<para>
+Definition at line 229 of file InstrumentNew.hh.</para>
+<programlisting>230 &#32;&#32;&#32;&#32;{
+231 
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link>*&#32;result&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link>;
+233 
+234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Results&#32;take&#32;from&#32;Topper&#32;2005</emphasis>
+235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a25052f44d08faa7a22a3c27fa2340272">r</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0.0;&#32;&#32;<emphasis role="comment">//&#32;Percentage</emphasis>
+236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a4b9b46a69bf26cc011046b29d1beec66">sig1</link>&#32;&#32;&#32;&#32;=&#32;0.2;
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a7f147d9543ea7775009b8c959ee33e6b">sig2</link>&#32;&#32;&#32;&#32;=&#32;0.2;
+238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a84b0c9fc08aca003ed163f35e6ddd8bc">rho</link>&#32;&#32;&#32;&#32;&#32;=&#32;-0.9;
+239 
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1afa527e63f712230bcd06dde13bf41a94">D1</link>&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0.0;
+241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1ae314dc85a263e11020ac4bfe69005333">D2</link>&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0.0;
+242 &#32;&#32;&#32;&#32;
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a1e4be0455ac266930ca0226726d98c24">K</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;4.0;
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a0541afde0972d35c6b6cb62fedcda914">T</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;2.5;
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//result-&gt;SMax1&#32;=&#32;result-&gt;K&#32;*&#32;2.0;</emphasis>
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//result-&gt;SMax2&#32;=&#32;result-&gt;K&#32;*&#32;2.0;</emphasis>
+247 
+248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a0acb7ed41b7e485ae6cc3f6ffc518616">SMax1</link>&#32;&#32;&#32;=&#32;40.0;
+249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a4368573d6a2f01f49c58d50d1a8ccf7d">SMax2</link>&#32;&#32;&#32;=&#32;40.0;
+250 
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a7c3239018650cc024d625cbf38d6b677">type</link>&#32;&#32;&#32;&#32;=&#32;-1;&#32;&#32;&#32;<emphasis role="comment">//&#32;Put,&#32;temp</emphasis>
+252 &#32;&#32;&#32;&#32;
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a09861cf6a9d6cf5815f2ffd278059ce0">w1</link>&#32;&#32;&#32;&#32;&#32;&#32;=&#32;1.0;&#32;<emphasis role="comment">//&#32;Topper</emphasis>
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a490f9fe97fe78fbc99af91fa8a8da86b">w2</link>&#32;&#32;&#32;&#32;&#32;&#32;=&#32;1.0;
+255 &#32;&#32;&#32;&#32;
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;assign&#32;the&#32;payoff&#32;function</emphasis>
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1ad373a006f81f791e0d87b7ce5352025f">pay</link>&#32;=&#32;<link linkend="_classBasketStrategy">BasketStrategy</link>(result-&gt;<link linkend="_classTwoFactorOptionData_1a1e4be0455ac266930ca0226726d98c24">K</link>,&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a7c3239018650cc024d625cbf38d6b677">type</link>,&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a09861cf6a9d6cf5815f2ffd278059ce0">w1</link>,&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a490f9fe97fe78fbc99af91fa8a8da86b">w2</link>);
+258 
+259 
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+261 
+262 &#32;&#32;&#32;&#32;}&#32;&#32;&#32;
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/InstrumentNew.hh</section>
+include/duffy/<link linkend="_InstrumentNew_8hh">InstrumentNew.hh</link></section>
+</section>

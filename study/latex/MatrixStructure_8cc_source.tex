@@ -1,0 +1,114 @@
+\hypertarget{MatrixStructure_8cc_source}{}\doxysection{Matrix\+Structure.\+cc}
+\label{MatrixStructure_8cc_source}\index{src/MatrixStructure.cc@{src/MatrixStructure.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// MatrixStructure.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Base class for matrix storage structure.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// A size\_t is used for indexing. Indexing starts at 1.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 1 february 1999  RD Started}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Component Technology 1999}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef MatrixStructure\_CC}}
+\DoxyCodeLine{\Hypertarget{MatrixStructure_8cc_source_l00011}\mbox{\hyperlink{MatrixStructure_8cc_afd77d4310bed3958e3fd96c4c03eeb1c}{00011}} \textcolor{preprocessor}{\#define MatrixStructure\_CC}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{MatrixStructure_8hh}{duffy/MatrixStructure.hh}}>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00017 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00018 \mbox{\hyperlink{classMatrixStructure_ab9e6d544c166b894b28f7b83a2114afd}{MatrixStructure<V>::MatrixStructure}}()}
+\DoxyCodeLine{00019 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00020 \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00023 \mbox{\hyperlink{classMatrixStructure_ab9e6d544c166b894b28f7b83a2114afd}{MatrixStructure<V>::MatrixStructure}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<V>}}\& source)}
+\DoxyCodeLine{00024 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00025 \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00028 \mbox{\hyperlink{classMatrixStructure_a63b1628587fc0e268b945f7e4b834624}{MatrixStructure<V>::~MatrixStructure}}()}
+\DoxyCodeLine{00029 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00030 \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00033 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00034 \textcolor{keyword}{inline} \textcolor{keyword}{const} V\& \mbox{\hyperlink{classMatrixStructure_a30fd4009debf853fa0cf5eec196c1d76}{MatrixStructure<V>::Element}}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00035 \textcolor{keyword}{}\{ \textcolor{comment}{// Get element at position}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{// Use the subscripting operator of derived class}}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{return} (*\textcolor{keyword}{this})[row][column];}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00042 \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_a5ea22c53b73b04e14ca1ab05e8b22be0}{MatrixStructure<V>::MinRowIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00043 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the minimum row index}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{comment}{// Always ONE}}
+\DoxyCodeLine{00046     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00047 \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00050 \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_aeadfc044bf86c889685062365303cddf}{MatrixStructure<V>::MaxRowIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00051 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the maximum row index}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{comment}{// Always row size . use the Rows() function of derived classes}}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{return} \mbox{\hyperlink{classMatrixStructure_a1f9a91f713f03ceeda90e4dc3d17dcb3}{Rows}}();}
+\DoxyCodeLine{00055 \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00058 \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_a71f5cf156f0d3efa33b2aefa639b26b7}{MatrixStructure<V>::MinColumnIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00059 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the minimum column index}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{comment}{// Always ONE}}
+\DoxyCodeLine{00062     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00063 \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00066 \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_a983c911ffca688272199c4d5dd703931}{MatrixStructure<V>::MaxColumnIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00067 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the maximum column index}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \textcolor{comment}{// Always column size. use the Columns() function of derived classes}}
+\DoxyCodeLine{00070     \textcolor{keywordflow}{return} \mbox{\hyperlink{classMatrixStructure_a33fe5393a149b31d428a1931f1e0e7e1}{Columns}}();}
+\DoxyCodeLine{00071 \}}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00074 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00075 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classMatrixStructure_a30fd4009debf853fa0cf5eec196c1d76}{MatrixStructure<V>::Element}}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column, \textcolor{keyword}{const} V\& val)}
+\DoxyCodeLine{00076 \{ \textcolor{comment}{// Change element at position}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     \textcolor{comment}{// Use the subscripting operator of derived class}}
+\DoxyCodeLine{00080     (*this)[row][column]=val;}
+\DoxyCodeLine{00081 \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083 \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00084 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00085 \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<V>}}\& \mbox{\hyperlink{classMatrixStructure_a1d17ffed41cc515e70f90208b999191e}{MatrixStructure<V>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<V>}}\& source)}
+\DoxyCodeLine{00086 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00089 \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00092 \textcolor{keyword}{inline} V\& \mbox{\hyperlink{classMatrixStructure_a9bb17d896587d5810e745277975e5212}{MatrixStructure<V>::operator () }}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column)}
+\DoxyCodeLine{00093 \{ \textcolor{comment}{// Get element at position}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     \textcolor{comment}{// Use the subscripting operator of derived class}}
+\DoxyCodeLine{00097     \textcolor{keywordflow}{return} (*\textcolor{keyword}{this})[row][column];}
+\DoxyCodeLine{00098 \}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00101 \textcolor{keyword}{inline} \textcolor{keyword}{const} V\& \mbox{\hyperlink{classMatrixStructure_a9bb17d896587d5810e745277975e5212}{MatrixStructure<V>::operator () }}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00102 \textcolor{keyword}{}\{ \textcolor{comment}{// Get element at position}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105     \textcolor{comment}{// Use the subscripting operator of derived class}}
+\DoxyCodeLine{00106     \textcolor{keywordflow}{return} (*\textcolor{keyword}{this})[row][column];}
+\DoxyCodeLine{00107 \}}
+\DoxyCodeLine{00108 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

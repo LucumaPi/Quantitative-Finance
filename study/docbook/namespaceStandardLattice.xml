@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceStandardLattice">
+<title>StandardLattice Namespace Reference</title>
+<indexterm><primary>StandardLattice</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; <link linkend="_namespaceStandardLattice_1a0ced6d331b2856d61096bdc9aaab15cd">createLattice</link> (int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>, double rootValue, double up, double down)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceStandardLattice_1a3e49a59024bcef068e558f70a756df05">traverse</link> (<link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp;lattice, <link linkend="_classVector">Vector</link>&lt; double, int &gt; &amp;<link linkend="_classPayoff">Payoff</link>, double p, double discounting)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceStandardLattice_1a0ced6d331b2856d61096bdc9aaab15cd"/>    <section>
+    <title>createLattice()</title>
+<indexterm><primary>createLattice</primary><secondary>StandardLattice</secondary></indexterm>
+<indexterm><primary>StandardLattice</primary><secondary>createLattice</secondary></indexterm>
+<para><computeroutput><link linkend="_classLattice">Lattice</link>&lt;double, int, 2&gt; StandardLattice::createLattice (int N, double rootValue, double up, double down)</computeroutput></para><para>
+Definition at line 17 of file TestLatticeNamespace.cc.</para>
+<programlisting>19 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Note&#32;that&#32;the&#32;above&#32;parameters&#32;are&#32;accessible&#32;in&#32;this&#32;function</emphasis>
+20 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;This&#32;is&#32;for&#32;the&#32;binomial&#32;method&#32;only!!!</emphasis>
+22 
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;double, int, 2&gt;</link>&#32;source(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;+&#32;1,&#32;0.0);
+24 
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;si&#32;=&#32;source.MinIndex();
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;source[si][source[si].MinIndex()]&#32;=&#32;rootValue;
+27 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;from&#32;the&#32;min&#32;index&#32;to&#32;the&#32;end&#32;index</emphasis>
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;source.MinIndex()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;source.MaxIndex();&#32;j++)
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;source[j].MinIndex();&#32;i&#32;&lt;&#32;source[j].MaxIndex();&#32;i++)
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;source[j][i]&#32;=&#32;down&#32;*&#32;source[j-1][i];
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;source[j][i+1]&#32;=&#32;up&#32;*&#32;source[j-1][i];
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;source;
+38 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_namespaceStandardLattice_1a3e49a59024bcef068e558f70a756df05"/>    <section>
+    <title>traverse()</title>
+<indexterm><primary>traverse</primary><secondary>StandardLattice</secondary></indexterm>
+<indexterm><primary>StandardLattice</primary><secondary>traverse</secondary></indexterm>
+<para><computeroutput>double StandardLattice::traverse (<link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp; lattice, <link linkend="_classVector">Vector</link>&lt; double, int &gt; &amp; Payoff, double p, double discounting)</computeroutput></para><para>
+Definition at line 41 of file TestLatticeNamespace.cc.</para>
+<programlisting>43 &#32;&#32;&#32;&#32;{
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;ei&#32;=&#32;lattice.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lattice[ei]&#32;=&#32;<link linkend="_classPayoff">Payoff</link>;
+46 
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;from&#32;the&#32;max&#32;index&#32;to&#32;the&#32;start&#32;(min)&#32;index</emphasis>
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;lattice.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>()&#32;-&#32;1;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&gt;=&#32;lattice.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>--)
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>].MinIndex();&#32;i&#32;&lt;=&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>].<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();&#32;i++)
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>][i]&#32;=&#32;discounting&#32;*&#32;(p&#32;*&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>+1][i+1]&#32;+&#32;(1.0-p)&#32;*&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>+1][i]);
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//lattice[n][i]&#32;=&#32;BackTrace(lattice[n+1][i+1],&#32;lattice[n+1][i]);</emphasis>
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;si&#32;=&#32;lattice.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;lattice[si][lattice[si].<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>()];&#32;&#32;&#32;&#32;&#32;
+59 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+</section>

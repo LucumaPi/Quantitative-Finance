@@ -1,0 +1,75 @@
+\hypertarget{ArrayStructure_8cc_source}{}\doxysection{Array\+Structure.\+cc}
+\label{ArrayStructure_8cc_source}\index{src/ArrayStructure.cc@{src/ArrayStructure.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ArrayStructure.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Base class for Array storage structure.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// A size\_t is used for indexing. Indexing starts at 0.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 28 january 1999  RD  Started}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2002-\/4-\/8 DD small changes}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Component Technology 1999}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifndef ArrayStructure\_CC}}
+\DoxyCodeLine{\Hypertarget{ArrayStructure_8cc_source_l00012}\mbox{\hyperlink{ArrayStructure_8cc_a11f01cfd11679419cc2e3740f987889f}{00012}} \textcolor{preprocessor}{\#define ArrayStructure\_CC}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ArrayStructure_8hh}{duffy/ArrayStructure.hh}}>}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00017 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{ArrayStructure_8cc_source_l00018}\mbox{\hyperlink{classArrayStructure_ae1faa0c106fbfe8cf7b448305cd60971}{00018}} \mbox{\hyperlink{classArrayStructure_ae1faa0c106fbfe8cf7b448305cd60971}{ArrayStructure<V>::ArrayStructure}}()}
+\DoxyCodeLine{00019 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00020 \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{ArrayStructure_8cc_source_l00023}\mbox{\hyperlink{classArrayStructure_a3132a3ed14728c10e895876e209b0fdd}{00023}} \mbox{\hyperlink{classArrayStructure_ae1faa0c106fbfe8cf7b448305cd60971}{ArrayStructure<V>::ArrayStructure}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<V>}}\& source)}
+\DoxyCodeLine{00024 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00025 \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{ArrayStructure_8cc_source_l00028}\mbox{\hyperlink{classArrayStructure_a432ff0d274a03c435763de0541c89bba}{00028}} \mbox{\hyperlink{classArrayStructure_a432ff0d274a03c435763de0541c89bba}{ArrayStructure<V>::~ArrayStructure}}()}
+\DoxyCodeLine{00029 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00030 \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00033 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{ArrayStructure_8cc_source_l00034}\mbox{\hyperlink{classArrayStructure_a78eeb9ade72d1ce8dc930758618c16fc}{00034}} \textcolor{keyword}{inline} \textcolor{keyword}{const} V\& \mbox{\hyperlink{classArrayStructure_a78eeb9ade72d1ce8dc930758618c16fc}{ArrayStructure<V>::Element}}(std::size\_t index)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00035 \textcolor{keyword}{}\{ \textcolor{comment}{// Get element at position}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{// Use the subscript operator in derived classes}}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{return} ((*\textcolor{keyword}{this})[index]);}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{ArrayStructure_8cc_source_l00042}\mbox{\hyperlink{classArrayStructure_a4d49f9d79bad81e175574b46515f1dac}{00042}} std::size\_t \mbox{\hyperlink{classArrayStructure_a4d49f9d79bad81e175574b46515f1dac}{ArrayStructure<V>::MinIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00043 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the minimum index}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{comment}{// Always ONE}}
+\DoxyCodeLine{00046     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00047 \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{ArrayStructure_8cc_source_l00050}\mbox{\hyperlink{classArrayStructure_a4cc63ad298846fec9ab00d6e1d4436d4}{00050}} std::size\_t \mbox{\hyperlink{classArrayStructure_a4cc63ad298846fec9ab00d6e1d4436d4}{ArrayStructure<V>::MaxIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00051 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the maximum index}}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{return} Size();}
+\DoxyCodeLine{00053 \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00056 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{00057 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classArrayStructure_a78eeb9ade72d1ce8dc930758618c16fc}{ArrayStructure<V>::Element}}(std::size\_t index, \textcolor{keyword}{const} V\& val)}
+\DoxyCodeLine{00058 \{ \textcolor{comment}{// Change element at position}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     \textcolor{comment}{// Use the subscript operator in derived classes}}
+\DoxyCodeLine{00061     (*this)[index]=val;}
+\DoxyCodeLine{00062 \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{ArrayStructure_8cc_source_l00065}\mbox{\hyperlink{classArrayStructure_aee8dc21d313bd8706f397a561332d654}{00065}} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<V>}}\& \mbox{\hyperlink{classArrayStructure_aee8dc21d313bd8706f397a561332d654}{ArrayStructure<V>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<V>}}\& source)}
+\DoxyCodeLine{00066 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

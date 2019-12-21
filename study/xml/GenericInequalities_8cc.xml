@@ -7,7 +7,9 @@
     <incdepgraph>
       <node id="2">
         <label>duffy/GenericInequalities.hh</label>
-        <link refid="GenericInequalities_8hh_source"/>
+        <link refid="GenericInequalities_8hh"/>
+        <childnode refid="1" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/GenericInequalities.cc</label>
@@ -19,13 +21,21 @@
     <invincdepgraph>
       <node id="2">
         <label>include/duffy/GenericInequalities.hh</label>
-        <link refid="GenericInequalities_8hh_source"/>
+        <link refid="GenericInequalities_8hh"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/GenericInequalities.cc</label>
         <link refid="GenericInequalities_8cc"/>
         <childnode refid="2" relation="include">
         </childnode>
+      </node>
+      <node id="3">
+        <label>tests/TestGenericInequalities.cc</label>
+        <link refid="TestGenericInequalities_8cc"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
@@ -172,14 +182,14 @@
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GenericInequalities_CC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GenericInequalities_CC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="GenericInequalities_8cc_1a58ce205338bf1c80a09edb5141a2ece4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GenericInequalities_CC</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/GenericInequalities.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="GenericInequalities_8hh" kindref="compound">duffy/GenericInequalities.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Max<sp/>and<sp/>Min<sp/>of<sp/>two<sp/>numbers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Numeric&gt;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal">Numeric<sp/>Max(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="22" refid="GenericInequalities_8cc_1a1b213e274e5aa76fd4c91940e44f4eb5" refkind="member"><highlight class="normal">Numeric<sp/><ref refid="GenericInequalities_8cc_1a1b213e274e5aa76fd4c91940e44f4eb5" kindref="member">Max</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="23"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x<sp/>&gt;<sp/>y)</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
@@ -188,7 +198,7 @@
 <codeline lineno="28"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Numeric&gt;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">Numeric<sp/>Min(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="31" refid="GenericInequalities_8cc_1adb69bfcb34a8cdf14dcb3fc08f9687c0" refkind="member"><highlight class="normal">Numeric<sp/><ref refid="GenericInequalities_8cc_1adb69bfcb34a8cdf14dcb3fc08f9687c0" kindref="member">Min</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>y)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/>y)</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
@@ -198,13 +208,13 @@
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Max<sp/>and<sp/>Min<sp/>of<sp/>three<sp/>numbers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Numeric&gt;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal">Numeric<sp/>Max(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>z)</highlight></codeline>
+<codeline lineno="41" refid="GenericInequalities_8cc_1ae11321548cc6361940452613ca59ebba" refkind="member"><highlight class="normal">Numeric<sp/><ref refid="GenericInequalities_8cc_1a1b213e274e5aa76fd4c91940e44f4eb5" kindref="member">Max</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>z)</highlight></codeline>
 <codeline lineno="42"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Max&lt;Numeric&gt;(Max&lt;Numeric&gt;(x,y),<sp/>z);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Numeric&gt;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">Numeric<sp/>Min(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>z)</highlight></codeline>
+<codeline lineno="47" refid="GenericInequalities_8cc_1a1cbb426c5b2fca977f1582103f5f6073" refkind="member"><highlight class="normal">Numeric<sp/><ref refid="GenericInequalities_8cc_1adb69bfcb34a8cdf14dcb3fc08f9687c0" kindref="member">Min</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Numeric&amp;<sp/>z)</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Min&lt;Numeric&gt;(Min&lt;Numeric&gt;(x,y),<sp/>z);</highlight></codeline>
 <codeline lineno="50"><highlight class="normal">}</highlight></codeline>

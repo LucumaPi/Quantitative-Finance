@@ -2,6 +2,10 @@
 \label{classOutPerformanceStrategy}\index{OutPerformanceStrategy@{OutPerformanceStrategy}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Out\+Performance\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,14 +25,64 @@ Collaboration diagram for Out\+Performance\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classOutPerformanceStrategy_a1b2e246fd8a12e09cabfa5bd2e1d5929}\label{classOutPerformanceStrategy_a1b2e246fd8a12e09cabfa5bd2e1d5929}} 
-{\bfseries Out\+Performance\+Strategy} (double current\+Rate1, double current\+Rate2, double cp, double strike\+Rate)
+\mbox{\hyperlink{classOutPerformanceStrategy_a1b2e246fd8a12e09cabfa5bd2e1d5929}{Out\+Performance\+Strategy}} (double current\+Rate1, double current\+Rate2, double cp, double strike\+Rate)
 \item 
-\mbox{\Hypertarget{classOutPerformanceStrategy_ab7f1f4f9607b5acb710f0e1252c3b5c7}\label{classOutPerformanceStrategy_ab7f1f4f9607b5acb710f0e1252c3b5c7}} 
-double {\bfseries payoff} (double S1, double S2) const
+double \mbox{\hyperlink{classOutPerformanceStrategy_ab7f1f4f9607b5acb710f0e1252c3b5c7}{payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00171}{171}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOutPerformanceStrategy_a1b2e246fd8a12e09cabfa5bd2e1d5929}\label{classOutPerformanceStrategy_a1b2e246fd8a12e09cabfa5bd2e1d5929}} 
+\index{OutPerformanceStrategy@{OutPerformanceStrategy}!OutPerformanceStrategy@{OutPerformanceStrategy}}
+\index{OutPerformanceStrategy@{OutPerformanceStrategy}!OutPerformanceStrategy@{OutPerformanceStrategy}}
+\doxysubsubsection{\texorpdfstring{OutPerformanceStrategy()}{OutPerformanceStrategy()}}
+{\footnotesize\ttfamily Out\+Performance\+Strategy\+::\+Out\+Performance\+Strategy (\begin{DoxyParamCaption}\item[{double}]{current\+Rate1,  }\item[{double}]{current\+Rate2,  }\item[{double}]{cp,  }\item[{double}]{strike\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00179}{179}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00181         \{ I1 = currentRate1; I2 = currentRate2;}
+\DoxyCodeLine{00182           w = cp; k = strikeRate;}
+\DoxyCodeLine{00183         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOutPerformanceStrategy_ab7f1f4f9607b5acb710f0e1252c3b5c7}\label{classOutPerformanceStrategy_ab7f1f4f9607b5acb710f0e1252c3b5c7}} 
+\index{OutPerformanceStrategy@{OutPerformanceStrategy}!payoff@{payoff}}
+\index{payoff@{payoff}!OutPerformanceStrategy@{OutPerformanceStrategy}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Out\+Performance\+Strategy\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{Multi\+Asset\+Payoff\+Strategy}}.
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00185}{185}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00186         \{}
+\DoxyCodeLine{00187             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} (w*((I1/S1) -\/ (I2/S2)) -\/ w* k, 0.0);}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff\+Strategy.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoffStrategy_8hh}{Multi\+Asset\+Payoff\+Strategy.\+hh}}\end{DoxyCompactItemize}

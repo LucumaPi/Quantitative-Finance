@@ -1,0 +1,57 @@
+\hypertarget{TestBoundsError_8cc}{}\doxysection{tests/\+Test\+Bounds\+Error.cc File Reference}
+\label{TestBoundsError_8cc}\index{tests/TestBoundsError.cc@{tests/TestBoundsError.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Test\+Bounds\+Error.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{TestBoundsError_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestBoundsError_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestBoundsError_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestBoundsError_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestBoundsError.cc@{TestBoundsError.cc}!main@{main}}
+\index{main@{main}!TestBoundsError.cc@{TestBoundsError.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestBoundsError_8cc_source_l00012}{12}} of file \mbox{\hyperlink{TestBoundsError_8cc_source}{Test\+Bounds\+Error.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \{ \textcolor{comment}{// Define a scope}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017         \textcolor{keywordtype}{int} j = 2;}
+\DoxyCodeLine{00018         std::cout << j << std::endl;}
+\DoxyCodeLine{00019     \}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// cout << j; j does not exist}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keywordtype}{int} myArr[10];}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{comment}{// Initialise the array}}
+\DoxyCodeLine{00026     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 10; j++)}
+\DoxyCodeLine{00027     \{}
+\DoxyCodeLine{00028         myArr[j] = j + 1;}
+\DoxyCodeLine{00029         std::cout << myArr[j] << \textcolor{stringliteral}{","};}
+\DoxyCodeLine{00030     \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     std::cout << std::endl << myArr[-\/1];}
+\DoxyCodeLine{00033     std::cout << std::endl << myArr[1000];}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00037 \}}
+
+\end{DoxyCode}

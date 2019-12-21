@@ -23,18 +23,90 @@ Collaboration diagram for MathErr:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classMathErr_1a2be93a878a77577c7c1ea9ec4f13e802"/><emphasis role="strong">MathErr</emphasis> (const std::string &amp;message, const std::string &amp;method)</para>
+            <listitem><para><link linkend="_classMathErr_1a92ae6f6640c3979720b743a62f106d95">MathErr</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMathErr_1a02dab9085b81ab4ad1e1dd6ce3179e74"/>std::string <emphasis role="strong">Message</emphasis> () const</para>
+            <listitem><para><link linkend="_classMathErr_1a2be93a878a77577c7c1ea9ec4f13e802">MathErr</link> (const std::string &amp;message, const std::string &amp;method)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMathErr_1a63e28b64f06194252a7723ef7d349148"/>std::string <emphasis role="strong">Method</emphasis> () const</para>
+            <listitem><para>std::string <link linkend="_classMathErr_1a02dab9085b81ab4ad1e1dd6ce3179e74">Message</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMathErr_1a420f29972f9a21d2a9d8d3a90d0c844a"/>virtual std::vector&lt; std::string &gt; <emphasis role="strong">MessageDump</emphasis> () const =0</para>
+            <listitem><para>std::string <link linkend="_classMathErr_1a63e28b64f06194252a7723ef7d349148">Method</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMathErr_1a08430e27bd7a6a09cfc5debdef3e8a65"/>virtual void <emphasis role="strong">print</emphasis> () const</para>
+            <listitem><para>virtual std::vector&lt; std::string &gt; <link linkend="_classMathErr_1a420f29972f9a21d2a9d8d3a90d0c844a">MessageDump</link> () const =0</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classMathErr_1a08430e27bd7a6a09cfc5debdef3e8a65">print</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 15 of file MathErr.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classMathErr_1a92ae6f6640c3979720b743a62f106d95"/>    <section>
+    <title>MathErr()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>MathErr</primary><secondary>MathErr</secondary></indexterm>
+<indexterm><primary>MathErr</primary><secondary>MathErr</secondary></indexterm>
+<para><computeroutput>MathErr::MathErr ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 21 of file MathErr.cc.</para>
+<programlisting>22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mess&#32;=&#32;meth&#32;=&#32;std::string();
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classMathErr_1a2be93a878a77577c7c1ea9ec4f13e802"/>    <section>
+    <title>MathErr()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>MathErr</primary><secondary>MathErr</secondary></indexterm>
+<indexterm><primary>MathErr</primary><secondary>MathErr</secondary></indexterm>
+<para><computeroutput>MathErr::MathErr (const std::string &amp; message, const std::string &amp; method)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 26 of file MathErr.cc.</para>
+<programlisting>27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mess&#32;=&#32;message;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;meth&#32;=&#32;method;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classMathErr_1a02dab9085b81ab4ad1e1dd6ce3179e74"/>    <section>
+    <title>Message()</title>
+<indexterm><primary>Message</primary><secondary>MathErr</secondary></indexterm>
+<indexterm><primary>MathErr</primary><secondary>Message</secondary></indexterm>
+<para><computeroutput>std::string MathErr::Message ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 32 of file MathErr.cc.</para>
+<programlisting>32 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;mess;&#32;}
+</programlisting>    </section><anchor xml:id="_classMathErr_1a420f29972f9a21d2a9d8d3a90d0c844a"/>    <section>
+    <title>MessageDump()</title>
+<indexterm><primary>MessageDump</primary><secondary>MathErr</secondary></indexterm>
+<indexterm><primary>MathErr</primary><secondary>MessageDump</secondary></indexterm>
+<para><computeroutput>virtual std::vector&lt;std::string&gt; MathErr::MessageDump ( ) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classOutOfBounds_1a7cf4254b246eb938886b6e9a549a5a00">OutOfBounds</link>, and <link linkend="_classZeroDivide_1a0281c677520a3f336cd811c13c4ab17c">ZeroDivide</link>.</para>
+    </section><anchor xml:id="_classMathErr_1a63e28b64f06194252a7723ef7d349148"/>    <section>
+    <title>Method()</title>
+<indexterm><primary>Method</primary><secondary>MathErr</secondary></indexterm>
+<indexterm><primary>MathErr</primary><secondary>Method</secondary></indexterm>
+<para><computeroutput>std::string MathErr::Method ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 33 of file MathErr.cc.</para>
+<programlisting>33 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;meth;&#32;}
+</programlisting>    </section><anchor xml:id="_classMathErr_1a08430e27bd7a6a09cfc5debdef3e8a65"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>MathErr</secondary></indexterm>
+<indexterm><primary>MathErr</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>virtual void MathErr::print ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 37 of file MathErr.cc.</para>
+<programlisting>38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;This&#32;uses&#32;a&#32;Template&#32;method&#32;pattern</emphasis>
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Variant&#32;part</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::string&gt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;<link linkend="_classMathErr_1a420f29972f9a21d2a9d8d3a90d0c844a">MessageDump</link>();
+43 
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Invariant&#32;part</emphasis>
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.size();&#32;j++)
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[j]&#32;&lt;&lt;&#32;std::endl;
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-src/MathErr.cc</section>
+src/<link linkend="_MathErr_8cc">MathErr.cc</link></section>
+</section>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestLatticeBasic_8cc">
+<title>tests/TestLatticeBasic.cc File Reference</title>
+<indexterm><primary>tests/TestLatticeBasic.cc</primary></indexterm>
+<programlisting>#include &quot;../src/LatticeMechanisms.cc&quot;
+</programlisting>Include dependency graph for TestLatticeBasic.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestLatticeBasic_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestLatticeBasic_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestLatticeBasic_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestLatticeBasic.cc</secondary></indexterm>
+<indexterm><primary>TestLatticeBasic.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 15 of file TestLatticeBasic.cc.</para>
+<programlisting>16 {
+17 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;typeB&#32;=&#32;2;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;BinomialLatticeType;</emphasis>
+18 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;typeT&#32;=&#32;3;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Trinomial&#32;Type</emphasis>
+19 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;typeP&#32;=&#32;5;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Pentagonal&#32;Type</emphasis>
+20 
+21 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;depth&#32;=&#32;4;
+22 
+23 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;objects&#32;of&#32;various&#32;</emphasis>
+24 &#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;double, int, typeB&gt;</link>&#32;lattice1(depth,&#32;3.14);
+25 &#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;double, long, typeT&gt;</link>&#32;lattice2(depth,&#32;4.6);
+26 &#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;double, long, typeP&gt;</link>&#32;lattice3(depth,&#32;2.0);
+27 
+28 &#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>(lattice1);&#32;
+29 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;std::endl;
+30 &#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>(lattice2);
+31 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;std::endl;
+32 &#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>(lattice3);
+33 
+34 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+35 
+36 &#32;&#32;&#32;&#32;depth&#32;=&#32;200;
+37 
+38 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Consistent&#32;trinomial&#32;tree&#32;for&#32;short&#32;rate\n&quot;</emphasis>;
+39 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;How&#32;many&#32;time&#32;divisions:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+40 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;depth;
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(depth&#32;&lt;=&#32;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+42 
+43 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Trinomial&#32;lattice&#32;with&#32;matrix&#32;entries</emphasis>
+44 &#32;&#32;&#32;&#32;<link linkend="_classMatrix">Matrix&lt;double, int&gt;</link>&#32;prototype(4,4,1,1);
+45 &#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;Matrix&lt;double, int&gt;</link>,&#32;int,&#32;3&gt;&#32;lattice4(depth,&#32;prototype);
+46 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;discrete&#32;points&#32;at&#32;end:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;lattice4.BasePyramidSize()&#32;&lt;&lt;&#32;std::endl;
+47 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Total&#32;number&#32;of&#32;nodes:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;lattice4.numberNodes()&#32;&lt;&lt;&#32;std::endl;
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;iterate&#32;over&#32;the&#32;lattice&#32;and&#32;print&#32;the&#32;matrix&#32;elements</emphasis>
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;lattice4.MinIndex();&#32;j&#32;&lt;=&#32;lattice4.MaxIndex();&#32;j++)
+51 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Each&#32;indexed&#32;j&#32;is&#32;a&#32;vector&#32;of&#32;matrices</emphasis>
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Start&#32;Level&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;std::endl;
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;lattice4[j].MinIndex();&#32;i&#32;&lt;=&#32;lattice4[j].MaxIndex();&#32;i++)
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>(lattice4[j][i]);&#32;&#32;<emphasis role="comment">//&#32;This&#32;is&#32;a&#32;matrix</emphasis>
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;End&#32;Level&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;std::endl;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+59 &#32;&#32;&#32;&#32;}
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+61 }
+</programlisting></section>
+</section>
+</section>

@@ -13,24 +13,24 @@
 \DoxyCodeLine{00009 \textcolor{preprocessor}{\#define DatasimDate\_HH}}
 \DoxyCodeLine{00010 }
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "TemporalType.hh"}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{TemporalType_8hh}{TemporalType.hh}}"}}
 \DoxyCodeLine{00013 }
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#define OR  ||}}
-\DoxyCodeLine{00015 \textcolor{preprocessor}{\#define AND \&\&}}
+\DoxyCodeLine{\Hypertarget{DatasimDate_8hh_source_l00014}\mbox{\hyperlink{DatasimDate_8hh_a3363ca4d6d3cc0230b2804280591c991}{00014}} \textcolor{preprocessor}{\#define OR  ||}}
+\DoxyCodeLine{\Hypertarget{DatasimDate_8hh_source_l00015}\mbox{\hyperlink{DatasimDate_8hh_acd1b97556dfbbac61063a63031d2f91d}{00015}} \textcolor{preprocessor}{\#define AND \&\&}}
 \DoxyCodeLine{00016  }
-\DoxyCodeLine{00017 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} julTy;}
-\DoxyCodeLine{00018 \textcolor{keyword}{static} \textcolor{keyword}{const} julTy century = 2000;}
+\DoxyCodeLine{\Hypertarget{DatasimDate_8hh_source_l00017}\mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{00017}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}};}
+\DoxyCodeLine{00018 \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} century = 2000;}
 \DoxyCodeLine{00019 }
 \DoxyCodeLine{\Hypertarget{DatasimDate_8hh_source_l00020}\mbox{\hyperlink{classDatasimDate}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classDatasimDate}{DatasimDate}} : \textcolor{keyword}{public} \mbox{\hyperlink{classTemporalType}{TemporalType}}}
 \DoxyCodeLine{00021 \{}
 \DoxyCodeLine{00022 \textcolor{keyword}{private}:}
 \DoxyCodeLine{00023 }
 \DoxyCodeLine{00024     \textcolor{comment}{// The real member data}}
-\DoxyCodeLine{00025     julTy Julian\_days;      \textcolor{comment}{// number of Julian days}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} Julian\_days;     \textcolor{comment}{// number of Julian days}}
 \DoxyCodeLine{00026 }
 \DoxyCodeLine{00027     \textcolor{comment}{// Private member functions}}
-\DoxyCodeLine{00028     \textcolor{keywordtype}{void} init(julTy days, julTy months, julTy years); \textcolor{comment}{// general init function}}
-\DoxyCodeLine{00029     julTy j\_days(julTy days, julTy months, julTy years) \textcolor{keyword}{const}; \textcolor{comment}{// calc \#Julian days}}
+\DoxyCodeLine{00028     \textcolor{keywordtype}{void} init(\mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} days, \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} months, \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} years); \textcolor{comment}{// general init function}}
+\DoxyCodeLine{00029     \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} j\_days(\mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} days, \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} months, \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} years) \textcolor{keyword}{const}; \textcolor{comment}{// calc \#Julian days}}
 \DoxyCodeLine{00030         \textcolor{comment}{// test functions}}
 \DoxyCodeLine{00031     \textcolor{keywordtype}{int} year\_test(\textcolor{keywordtype}{int} year) \textcolor{keyword}{const};  \textcolor{comment}{// return year (999<year<=9999), or 0}}
 \DoxyCodeLine{00032     \textcolor{keywordtype}{int} mm\_test(\textcolor{keywordtype}{int} month) \textcolor{keyword}{const};       \textcolor{comment}{// return month (1<=month<=12), or 0}}
@@ -38,56 +38,56 @@
 \DoxyCodeLine{00034  }
 \DoxyCodeLine{00035 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00036     \textcolor{comment}{// Constructors}}
-\DoxyCodeLine{00037     \mbox{\hyperlink{classDatasimDate}{DatasimDate}}();                               \textcolor{comment}{// default constructor = DatasimDate today}}
-\DoxyCodeLine{00038     \mbox{\hyperlink{classDatasimDate}{DatasimDate}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& d2);           \textcolor{comment}{// Copy constructor}}
-\DoxyCodeLine{00039     \mbox{\hyperlink{classDatasimDate}{DatasimDate}}(\textcolor{keyword}{const} julTy\& days);                  \textcolor{comment}{// construct DatasimDate from Julian days}}
-\DoxyCodeLine{00040     \mbox{\hyperlink{classDatasimDate}{DatasimDate}}(\textcolor{keywordtype}{int} days);                       \textcolor{comment}{// construct DatasimDate from Julian days}}
-\DoxyCodeLine{00041     \mbox{\hyperlink{classDatasimDate}{DatasimDate}}(\textcolor{keywordtype}{int} day, \textcolor{keywordtype}{int} month, \textcolor{keywordtype}{int} year);   \textcolor{comment}{// Day, month, year}}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classDatasimDate_a9412931fe7dffe68654eb3727e396984}{DatasimDate}}();                               \textcolor{comment}{// default constructor = DatasimDate today}}
+\DoxyCodeLine{00038     \mbox{\hyperlink{classDatasimDate_a9412931fe7dffe68654eb3727e396984}{DatasimDate}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& d2);           \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00039     \mbox{\hyperlink{classDatasimDate_a9412931fe7dffe68654eb3727e396984}{DatasimDate}}(\textcolor{keyword}{const} \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}}\& days);                 \textcolor{comment}{// construct DatasimDate from Julian days}}
+\DoxyCodeLine{00040     \mbox{\hyperlink{classDatasimDate_a9412931fe7dffe68654eb3727e396984}{DatasimDate}}(\textcolor{keywordtype}{int} days);                       \textcolor{comment}{// construct DatasimDate from Julian days}}
+\DoxyCodeLine{00041     \mbox{\hyperlink{classDatasimDate_a9412931fe7dffe68654eb3727e396984}{DatasimDate}}(\textcolor{keywordtype}{int} day, \textcolor{keywordtype}{int} month, \textcolor{keywordtype}{int} year);   \textcolor{comment}{// Day, month, year}}
 \DoxyCodeLine{00042 }
 \DoxyCodeLine{00043     \textcolor{comment}{// Selector functions}}
-\DoxyCodeLine{00044     \textcolor{keywordtype}{int} ret\_year() \textcolor{keyword}{const};                   \textcolor{comment}{// return year of this DatasimDate}}
-\DoxyCodeLine{00045     \textcolor{keywordtype}{int} ret\_month() \textcolor{keyword}{const};                  \textcolor{comment}{// return monthnumber (1..12) of this DatasimDate}}
-\DoxyCodeLine{00046     \textcolor{keywordtype}{int} ret\_day() \textcolor{keyword}{const};                    \textcolor{comment}{// return daynumber (1..31) of this DatasimDate}}
-\DoxyCodeLine{00047     \textcolor{keywordtype}{void} jul\_to\_greg(julTy\& d, julTy\& m, julTy\& y) \textcolor{keyword}{const};   \textcolor{comment}{// give Gregorian DatasimDate }}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{int} \mbox{\hyperlink{classDatasimDate_a08a1a444c86d72c9dbd102b84ce9f538}{ret\_year}}() \textcolor{keyword}{const};                   \textcolor{comment}{// return year of this DatasimDate}}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{int} \mbox{\hyperlink{classDatasimDate_a64d9bcbb8e0113497241b0e9498a9d93}{ret\_month}}() \textcolor{keyword}{const};                 \textcolor{comment}{// return monthnumber (1..12) of this DatasimDate}}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{int} \mbox{\hyperlink{classDatasimDate_a352a61dc42b5607b2d11c25b0d1bdd23}{ret\_day}}() \textcolor{keyword}{const};                 \textcolor{comment}{// return daynumber (1..31) of this DatasimDate}}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{void} \mbox{\hyperlink{classDatasimDate_a4ae786af9e5d429c3f62ea3bf4b41f57}{jul\_to\_greg}}(\mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}}\& d, \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}}\& m, \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}}\& y) \textcolor{keyword}{const}; \textcolor{comment}{// give Gregorian DatasimDate }}
 \DoxyCodeLine{00048 }
 \DoxyCodeLine{00049 }
 \DoxyCodeLine{00050     \textcolor{comment}{// Comparison functions}}
-\DoxyCodeLine{00051     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const}; \textcolor{comment}{// compare DatasimDates, TRUE if same days}}
-\DoxyCodeLine{00052     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const}; \textcolor{comment}{// compare DatasimDates, TRUE if not the same day}}
-\DoxyCodeLine{00053     \textcolor{keywordtype}{bool} operator>(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const};  \textcolor{comment}{// DatasimDate is later than DatasimDate\_2}}
-\DoxyCodeLine{00054     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const};  \textcolor{comment}{// DatasimDate is earlier than DatasimDate\_2}}
-\DoxyCodeLine{00055     \textcolor{keywordtype}{bool} operator>=(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const}; \textcolor{comment}{// DatasimDate is later than DatasimDate\_2}}
-\DoxyCodeLine{00056     \textcolor{keywordtype}{bool} operator<=(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const}; \textcolor{comment}{// DatasimDate is earlier than DatasimDate\_2}}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDate_af2124460d6e7514dcdeb6bbc140329fa}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const};   \textcolor{comment}{// compare DatasimDates, TRUE if same days}}
+\DoxyCodeLine{00052     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDate_a4f91ccf46ff50ba8e30cda1c0fbdb34c}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const};   \textcolor{comment}{// compare DatasimDates, TRUE if not the same day}}
+\DoxyCodeLine{00053     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDate_af8137030468be122ad7f219a2ca3a99d}{operator>}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const}; \textcolor{comment}{// DatasimDate is later than DatasimDate\_2}}
+\DoxyCodeLine{00054     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDate_a10497a3d5e8c03f05d43709cc7315e87}{operator<}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const}; \textcolor{comment}{// DatasimDate is earlier than DatasimDate\_2}}
+\DoxyCodeLine{00055     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDate_aae3820e70cadbd75c06fe5e147100013}{operator>=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const};   \textcolor{comment}{// DatasimDate is later than DatasimDate\_2}}
+\DoxyCodeLine{00056     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDate_a90aa0b8f7e9a40747f558b9df825e0d9}{operator<=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const};   \textcolor{comment}{// DatasimDate is earlier than DatasimDate\_2}}
 \DoxyCodeLine{00057     }
 \DoxyCodeLine{00058     \textcolor{comment}{// Arithmetic functions}}
-\DoxyCodeLine{00059     \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2); \textcolor{comment}{// copy}}
+\DoxyCodeLine{00059     \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& \mbox{\hyperlink{classDatasimDate_a038976e58f3023965fe99d4ea4e4a227}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2);    \textcolor{comment}{// copy}}
 \DoxyCodeLine{00060     \textcolor{comment}{//DatasimDate operator+(const DatasimDate\& d2);// add two values}}
 \DoxyCodeLine{00061 }
-\DoxyCodeLine{00062     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} operator+(\textcolor{keywordtype}{int} days) \textcolor{keyword}{const};   \textcolor{comment}{// Add days to DatasimDate}}
+\DoxyCodeLine{00062     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_ad8e1e82c6743c375ad39b168f0cad24b}{operator+}}(\textcolor{keywordtype}{int} days) \textcolor{keyword}{const};  \textcolor{comment}{// Add days to DatasimDate}}
 \DoxyCodeLine{00063     \textcolor{comment}{//DatasimDate operator+(const julTy\& days) const;   //        ''}}
-\DoxyCodeLine{00064     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} operator-\/(\textcolor{keywordtype}{int} days) \textcolor{keyword}{const};   \textcolor{comment}{// subtract days from DatasimDate}}
+\DoxyCodeLine{00064     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_ae8355e2cbc7e838e73273f7a238ecb15}{operator-\/}}(\textcolor{keywordtype}{int} days) \textcolor{keyword}{const};  \textcolor{comment}{// subtract days from DatasimDate}}
 \DoxyCodeLine{00065     \textcolor{comment}{//DatasimDate operator-\/(const julTy\& days) const;   //        ''}}
 \DoxyCodeLine{00066 }
-\DoxyCodeLine{00067     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} operator++();        \textcolor{comment}{// add 1 day to DatasimDate}}
-\DoxyCodeLine{00068     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} operator-\/-\/();        \textcolor{comment}{// subtract one day from DatasimDate}}
+\DoxyCodeLine{00067     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_ab236f76c33b857eeafa2cc5a593a462f}{operator++}}();      \textcolor{comment}{// add 1 day to DatasimDate}}
+\DoxyCodeLine{00068     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_ab03dff5107e481977651bdc7c6a05a7e}{operator-\/-\/}}();      \textcolor{comment}{// subtract one day from DatasimDate}}
 \DoxyCodeLine{00069     \textcolor{comment}{//DatasimDate operator+=(const julTy\& days);    // add days to this DatasimDate}}
-\DoxyCodeLine{00070     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} operator+=(\textcolor{keywordtype}{int} days);    \textcolor{comment}{// add days to this DatasimDate}}
+\DoxyCodeLine{00070     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_a3599ffe8fec2cf745a80c887fc699808}{operator+=}}(\textcolor{keywordtype}{int} days);  \textcolor{comment}{// add days to this DatasimDate}}
 \DoxyCodeLine{00071     \textcolor{comment}{//DatasimDate operator-\/=(const julTy\& days);    // subtract days from this DatasimDate}}
-\DoxyCodeLine{00072     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} operator-\/=(\textcolor{keywordtype}{int} days);    \textcolor{comment}{// subtract days from this DatasimDate}}
-\DoxyCodeLine{00073     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} add\_months(\textcolor{keywordtype}{long} months) \textcolor{keyword}{const};   \textcolor{comment}{// return this DatasimDate + \#months}}
-\DoxyCodeLine{00074     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} add\_quarter() \textcolor{keyword}{const};     \textcolor{comment}{// return this DatasimDate + 3 months ahead}}
-\DoxyCodeLine{00075     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} add\_halfyear() \textcolor{keyword}{const};        \textcolor{comment}{// return this DatasimDate + 6 months ahead}}
-\DoxyCodeLine{00076     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} add\_years(\textcolor{keywordtype}{long} years) \textcolor{keyword}{const}; \textcolor{comment}{// return this DatasimDate + \#years}}
-\DoxyCodeLine{00077     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} sub\_months(\textcolor{keywordtype}{long} months) \textcolor{keyword}{const};   \textcolor{comment}{// return this DatasimDate -\/ \#months}}
-\DoxyCodeLine{00078     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} sub\_quarter() \textcolor{keyword}{const};             \textcolor{comment}{// return this DatasimDate -\/ 3 months ahead}}
-\DoxyCodeLine{00079     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} sub\_halfyear() \textcolor{keyword}{const};                \textcolor{comment}{// return this DatasimDate -\/ 6 months ahead}}
-\DoxyCodeLine{00080     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} sub\_years(\textcolor{keywordtype}{long} years) \textcolor{keyword}{const}; \textcolor{comment}{// return this DatasimDate -\/ \#years}}
-\DoxyCodeLine{00081     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} add\_period(\textcolor{keyword}{const} julTy\& days, \textcolor{keyword}{const} julTy\& months = 0, \textcolor{keyword}{const} julTy \&years = 0) \textcolor{keyword}{const};            \textcolor{comment}{// return this DatasimDate plus a period of time}}
-\DoxyCodeLine{00082     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} sub\_period(julTy days, julTy months = 0, julTy years = 0) \textcolor{keyword}{const};         \textcolor{comment}{// return this DatasimDate minus a period of time}}
-\DoxyCodeLine{00083     \textcolor{keywordtype}{long} difference (\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const};    \textcolor{comment}{// give difference in days between DatasimDate's}}
-\DoxyCodeLine{00084     \textcolor{keywordtype}{long} operator -\/ (\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& d2) \textcolor{keyword}{const};}
+\DoxyCodeLine{00072     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_af0ad1dd97d2f54973091793eefecd1a8}{operator-\/=}}(\textcolor{keywordtype}{int} days);  \textcolor{comment}{// subtract days from this DatasimDate}}
+\DoxyCodeLine{00073     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_a778102034e0996acbd7b5691966b7aab}{add\_months}}(\textcolor{keywordtype}{long} months) \textcolor{keyword}{const}; \textcolor{comment}{// return this DatasimDate + \#months}}
+\DoxyCodeLine{00074     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_af205687d9c5f85d69d6c3f68c75050df}{add\_quarter}}() \textcolor{keyword}{const};      \textcolor{comment}{// return this DatasimDate + 3 months ahead}}
+\DoxyCodeLine{00075     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_adefb5ed1054f46821f7f3886445a7386}{add\_halfyear}}() \textcolor{keyword}{const};        \textcolor{comment}{// return this DatasimDate + 6 months ahead}}
+\DoxyCodeLine{00076     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_a4a66bc65f73f0257cad52ae6a86653ab}{add\_years}}(\textcolor{keywordtype}{long} years) \textcolor{keyword}{const};    \textcolor{comment}{// return this DatasimDate + \#years}}
+\DoxyCodeLine{00077     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_ae02dad4fd61b760ac4307e1bb63de654}{sub\_months}}(\textcolor{keywordtype}{long} months) \textcolor{keyword}{const}; \textcolor{comment}{// return this DatasimDate -\/ \#months}}
+\DoxyCodeLine{00078     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_a970503033187428b64491ddec799c699}{sub\_quarter}}() \textcolor{keyword}{const};              \textcolor{comment}{// return this DatasimDate -\/ 3 months ahead}}
+\DoxyCodeLine{00079     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_a7d2eae7c91ddc861ec6d2655d0bbc9bc}{sub\_halfyear}}() \textcolor{keyword}{const};                \textcolor{comment}{// return this DatasimDate -\/ 6 months ahead}}
+\DoxyCodeLine{00080     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_a3177c3d9596e617853fdea2bfbc345a1}{sub\_years}}(\textcolor{keywordtype}{long} years) \textcolor{keyword}{const};    \textcolor{comment}{// return this DatasimDate -\/ \#years}}
+\DoxyCodeLine{00081     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_a9a44080fb927fc824d9cf864e5b0f76a}{add\_period}}(\textcolor{keyword}{const} \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}}\& days, \textcolor{keyword}{const} \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}}\& months = 0, \textcolor{keyword}{const} \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} \&years = 0) \textcolor{keyword}{const};           \textcolor{comment}{// return this DatasimDate plus a period of time}}
+\DoxyCodeLine{00082     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} \mbox{\hyperlink{classDatasimDate_af0c7e266045bee895f1660ad14a4f978}{sub\_period}}(\mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} days, \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} months = 0, \mbox{\hyperlink{DatasimDate_8hh_aa9a232826470cac21be923b0358e7a50}{julTy}} years = 0) \textcolor{keyword}{const};            \textcolor{comment}{// return this DatasimDate minus a period of time}}
+\DoxyCodeLine{00083     \textcolor{keywordtype}{long} \mbox{\hyperlink{classDatasimDate_ae4357570b57261934c7a88fd323a879e}{difference}} (\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DatasimDate\_2) \textcolor{keyword}{const};  \textcolor{comment}{// give difference in days between DatasimDate's}}
+\DoxyCodeLine{00084     \textcolor{keywordtype}{long} \mbox{\hyperlink{classDatasimDate_ae8355e2cbc7e838e73273f7a238ecb15}{operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& d2) \textcolor{keyword}{const};}
 \DoxyCodeLine{00085 }
-\DoxyCodeLine{00086     \textcolor{keyword}{friend} std::ostream\& operator << (std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& dat);}
+\DoxyCodeLine{00086     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classDatasimDate_ab845047325251d52f8d1548f2c9993a1}{operator << }}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& dat);}
 \DoxyCodeLine{00087 \};}
 \DoxyCodeLine{00088 \textcolor{preprocessor}{\#endif}}
 

@@ -3,6 +3,18 @@
   <compounddef id="PayoffNamespace_8cc" kind="file" language="C++">
     <compoundname>PayoffNamespace.cc</compoundname>
     <includedby refid="TestBinomialMethod_8cc" local="yes">tests/TestBinomialMethod.cc</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/PayoffNamespace.cc</label>
+        <link refid="PayoffNamespace_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tests/TestBinomialMethod.cc</label>
+        <link refid="TestBinomialMethod_8cc"/>
+      </node>
+    </invincdepgraph>
     <innernamespace refid="namespacePayoffNamespace">PayoffNamespace</innernamespace>
     <innernamespace refid="namespacePayoffNamespace_1_1CallPayoff">PayoffNamespace::CallPayoff</innernamespace>
     <innernamespace refid="namespacePayoffNamespace_1_1PutPayoff">PayoffNamespace::PutPayoff</innernamespace>
@@ -31,20 +43,20 @@
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PayoffNamespace_CC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PayoffNamespace_CC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="PayoffNamespace_8cc_1a29e49e36d28aade9c5636bb9baea0212" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PayoffNamespace_CC</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">PayoffNamespace</highlight></codeline>
+<codeline lineno="11" refid="namespacePayoffNamespace" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacePayoffNamespace" kindref="compound">PayoffNamespace</ref></highlight></codeline>
 <codeline lineno="12"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type;</highlight></codeline>
+<codeline lineno="13" refid="namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb" kindref="member">K</ref>;</highlight></codeline>
+<codeline lineno="14" refid="namespacePayoffNamespace_1a39ee14e55dbe34eb4f30330edd487f84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacePayoffNamespace_1a39ee14e55dbe34eb4f30330edd487f84" kindref="member">type</ref>;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="classCallPayoff" kindref="compound">CallPayoff</ref></highlight></codeline>
+<codeline lineno="16" refid="namespacePayoffNamespace_1_1CallPayoff" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="classCallPayoff" kindref="compound">CallPayoff</ref></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>OptPayoff(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)</highlight></codeline>
+<codeline lineno="19" refid="namespacePayoffNamespace_1_1CallPayoff_1a10b9109397cc2cea2ac7cc9c6b224658" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacePayoffNamespace_1_1CallPayoff_1a10b9109397cc2cea2ac7cc9c6b224658" kindref="member">OptPayoff</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tmp<sp/>=<sp/>S<sp/>-<sp/>K;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tmp<sp/>=<sp/>S<sp/>-<sp/><ref refid="namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb" kindref="member">K</ref>;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmp<sp/>&gt;<sp/>0.0)</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
@@ -53,13 +65,13 @@
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">PutPayoff</highlight></codeline>
+<codeline lineno="31" refid="namespacePayoffNamespace_1_1PutPayoff" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">PutPayoff</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>OptPayoff(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)</highlight></codeline>
+<codeline lineno="34" refid="namespacePayoffNamespace_1_1PutPayoff_1ae3cbedc8d9a4a6d55f3eb0dd7c1cd747" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacePayoffNamespace_1_1PutPayoff_1ae3cbedc8d9a4a6d55f3eb0dd7c1cd747" kindref="member">OptPayoff</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tmp<sp/>=<sp/>K<sp/>-<sp/>S;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tmp<sp/>=<sp/><ref refid="namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb" kindref="member">K</ref><sp/>-<sp/>S;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmp<sp/>&gt;<sp/>0.0)</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>

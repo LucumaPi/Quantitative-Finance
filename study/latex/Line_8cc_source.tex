@@ -1,0 +1,97 @@
+\hypertarget{Line_8cc_source}{}\doxysection{Line.\+cc}
+\label{Line_8cc_source}\index{src/Line.cc@{src/Line.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Line.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Class for lines}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Modification dates:}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 5 june 1998  MB  Started}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 1998}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Line_8hh}{duffy/Line.hh}}>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keywordtype}{void} Line::init(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& ps1, \textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& ps2)}
+\DoxyCodeLine{00013 \{ \textcolor{comment}{// Initialize the line}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     p1 = ps1;}
+\DoxyCodeLine{00016     p2 = ps2;}
+\DoxyCodeLine{00017 \}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{comment}{// Constructors and destructor}}
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00020}\mbox{\hyperlink{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{00020}} \mbox{\hyperlink{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{Line::Line}}(): \mbox{\hyperlink{classShape}{Shape}}()}
+\DoxyCodeLine{00021 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     init(\mbox{\hyperlink{classPoint}{Point}}(0.0, 0.0), \mbox{\hyperlink{classPoint}{Point}}(0.0, 0.0));}
+\DoxyCodeLine{00024 \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00026}\mbox{\hyperlink{classLine_a1ae47824ad48165388e38aaad43d09f5}{00026}} \mbox{\hyperlink{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{Line::Line}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& ps1, \textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& ps2): \mbox{\hyperlink{classShape}{Shape}}()     }
+\DoxyCodeLine{00027 \{ \textcolor{comment}{// Normal constructor, constructs line from two points}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     init(ps1, ps2);}
+\DoxyCodeLine{00030 \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00032}\mbox{\hyperlink{classLine_a6c0606903a34f52c01708683fd274a91}{00032}} \mbox{\hyperlink{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{Line::Line}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLine}{Line}}\& source): \mbox{\hyperlink{classShape}{Shape}}(source)}
+\DoxyCodeLine{00033 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     init(source.p1, source.p2);}
+\DoxyCodeLine{00036 \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00038}\mbox{\hyperlink{classLine_aabe85f48d22d92b62257091f48174fac}{00038}} \mbox{\hyperlink{classLine_aabe85f48d22d92b62257091f48174fac}{Line::~Line}}()}
+\DoxyCodeLine{00039 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00040 \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00043}\mbox{\hyperlink{classLine_ab057f21a08e21a7f293ad63d55f8e464}{00043}} \mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classLine_ab057f21a08e21a7f293ad63d55f8e464}{Line::P1}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00044 \textcolor{keyword}{}\{\textcolor{comment}{// Return p1}}
+\DoxyCodeLine{00045     \textcolor{keywordflow}{return} p1;}
+\DoxyCodeLine{00046 \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00048}\mbox{\hyperlink{classLine_a8ac7e2f4468352e7c5ddfa91a4940bf4}{00048}} \mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classLine_a8ac7e2f4468352e7c5ddfa91a4940bf4}{Line::P2}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00049 \textcolor{keyword}{}\{\textcolor{comment}{// Return p2}}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} p2;}
+\DoxyCodeLine{00051 \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00053}\mbox{\hyperlink{classLine_ae3937c096b95a8f8865a714d98c71eba}{00053}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classLine_ae3937c096b95a8f8865a714d98c71eba}{Line::Length}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{00054 \textcolor{keyword}{}\{ \textcolor{comment}{// Calculate the distance between start-\/ and endpoint}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} p1.\mbox{\hyperlink{classPoint_a157aafa697fc65028517c431b6c313a2}{Distance}}(p2);}
+\DoxyCodeLine{00057 \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00059}\mbox{\hyperlink{classLine_aa5e8d11034af6b8065619bf00298a09d}{00059}} \mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classLine_aa5e8d11034af6b8065619bf00298a09d}{Line::MidPoint}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00060 \textcolor{keyword}{}\{ \textcolor{comment}{// Calculate the point in the middle of the line}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{keywordflow}{return} p1.\mbox{\hyperlink{classPoint_a58fd5b2bb9af8cf2bf978dfdeb8794d9}{MidPoint}}(p2);}
+\DoxyCodeLine{00063 \}}
+\DoxyCodeLine{00064     }
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00067}\mbox{\hyperlink{classLine_ac2fb0254947216caad3237df8c9fd412}{00067}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classLine_ab057f21a08e21a7f293ad63d55f8e464}{Line::P1}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& NewP1)}
+\DoxyCodeLine{00068 \{\textcolor{comment}{// Set p1}}
+\DoxyCodeLine{00069     p1 = NewP1;}
+\DoxyCodeLine{00070 \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00072}\mbox{\hyperlink{classLine_abb54ac4f52e335e6715fcf335d480ffd}{00072}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classLine_a8ac7e2f4468352e7c5ddfa91a4940bf4}{Line::P2}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point}}\& NewP2)}
+\DoxyCodeLine{00073 \{\textcolor{comment}{// Set p2}}
+\DoxyCodeLine{00074     p2 = NewP2;}
+\DoxyCodeLine{00075 \}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077 \textcolor{comment}{// Operator overloading }}
+\DoxyCodeLine{\Hypertarget{Line_8cc_source_l00078}\mbox{\hyperlink{classLine_a3ed026438ecc23607f23e59ec6a449a7}{00078}} \mbox{\hyperlink{classLine}{Line}}\& \mbox{\hyperlink{classLine_a3ed026438ecc23607f23e59ec6a449a7}{Line::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classLine}{Line}}\& source)        }
+\DoxyCodeLine{00079 \{ \textcolor{comment}{// Assignment }}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00082     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{comment}{// Call base class assignment}}
+\DoxyCodeLine{00085     \mbox{\hyperlink{classShape_afcefeb5c8a6d3b2f7b6426d299eafe02}{Shape::operator = }}(source);}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{comment}{// Copy state}}
+\DoxyCodeLine{00088     init(source.p1, source.p2);}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00091 \}}
+
+\end{DoxyCode}

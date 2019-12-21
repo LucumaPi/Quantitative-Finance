@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestNewLattice2_8cc">
+<title>tests/TestNewLattice2.cc File Reference</title>
+<indexterm><primary>tests/TestNewLattice2.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Lattice.hh&gt;
+#include &quot;../src/TestLatticeNamespace.cc&quot;
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+</programlisting>Include dependency graph for TestNewLattice2.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestNewLattice2_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I &gt; <link linkend="_TestNewLattice2_8cc_1afcc8086e4f916ae9b6445dc906071622">CallPayOff</link> (const V &amp;K, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;StockArr)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I &gt; <link linkend="_TestNewLattice2_8cc_1a30a47c60854db7b413b641236b4157d2">PutPayOff</link> (const V &amp;K, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;StockArr)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I , int NumberNodes&gt; </para><para>void <link linkend="_TestNewLattice2_8cc_1a4f588b04e89a733e6e27ba312ce437d3">print</link> (const <link linkend="_classLattice">Lattice</link>&lt; V, I, NumberNodes &gt; &amp;source)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestNewLattice2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestNewLattice2_8cc_1afcc8086e4f916ae9b6445dc906071622"/>    <section>
+    <title>CallPayOff()</title>
+<indexterm><primary>CallPayOff</primary><secondary>TestNewLattice2.cc</secondary></indexterm>
+<indexterm><primary>TestNewLattice2.cc</primary><secondary>CallPayOff</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V,I&gt; CallPayOff (const V &amp; K, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; StockArr)</computeroutput></para><para>
+Definition at line 21 of file TestNewLattice2.cc.</para>
+<programlisting>22 {
+23 
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;tmp;
+25 
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;result&#32;(StockArr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>(),&#32;StockArr.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>());
+27 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;StockArr.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;StockArr.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;0.0;
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;StockArr[i]&#32;-&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(tmp&#32;&gt;&#32;0.0)
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;tmp;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+35 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+37 }
+</programlisting>    </section><anchor xml:id="_TestNewLattice2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestNewLattice2.cc</secondary></indexterm>
+<indexterm><primary>TestNewLattice2.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 79 of file TestNewLattice2.cc.</para>
+<programlisting>80 {
+81 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Forward&#32;sweep,&#32;Wilmott,&#32;Student&#32;Edition&#32;p.&#32;193\n&quot;</emphasis>;
+82 
+83 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;depth;
+84 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;How&#32;many&#32;subdivisions?&#32;&quot;</emphasis>;
+85 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;depth;
+86 
+87 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;2;
+88 &#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;double, int, n&gt;</link>&#32;lattice1(depth);
+89 
+90 &#32;&#32;&#32;&#32;<link linkend="_TestNewLattice2_8cc_1a4f588b04e89a733e6e27ba312ce437d3">print</link>(lattice1);
+91 
+92 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespaceStandardLattice">StandardLattice</link>;
+93 
+94 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;rootValue&#32;=&#32;12.0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Stock&#32;price&#32;now</emphasis>
+95 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;D0&#32;=&#32;0.04;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Dividend&#32;yield</emphasis>
+96 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;vol&#32;=&#32;0.3;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Volatility</emphasis>
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.06;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Interest</emphasis>
+98 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;=&#32;1.0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Time&#32;to&#32;expiry</emphasis>
+99 
+100 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;k&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;/&#32;double&#32;(depth);
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;e&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>((<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>-D0)*k);
+102 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;sr&#32;=&#32;std::sqrt(<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">exp</link>(vol*vol*k)&#32;-&#32;1.0);
+103 
+104 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;up&#32;=&#32;e&#32;*&#32;(1.0&#32;+&#32;sr);
+105 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;down&#32;=&#32;e&#32;*&#32;(1.0&#32;-&#32;sr);
+106 
+107 &#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;double, int, 2&gt;</link>&#32;newLattice&#32;=&#32;<link linkend="_namespaceStandardLattice_1a0ced6d331b2856d61096bdc9aaab15cd">createLattice</link>(depth,&#32;rootValue,&#32;up,&#32;down);
+108 <emphasis role="comment">//&#32;&#32;print&#32;(newLattice);</emphasis>
+109 
+110 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nSize&#32;of&#32;base&#32;pyramid&#32;vector:&#32;&quot;</emphasis>&#32;
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;newLattice.BasePyramidVector().Size()&#32;&lt;&lt;&#32;std::endl;
+112 
+113 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;work&#32;back&#32;from&#32;the&#32;payoff&#32;function</emphasis>
+114 
+115 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;First&#32;make&#32;the&#32;discrete&#32;payoff</emphasis>
+116 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;10.0;
+117 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, int&gt;</link>&#32;RHS&#32;=&#32;<link linkend="_TestNewLattice2_8cc_1afcc8086e4f916ae9b6445dc906071622">CallPayOff</link>(<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>,&#32;newLattice[newLattice.MaxIndex()]);
+118 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, int&gt;</link>&#32;RHS2&#32;=&#32;<link linkend="_TestNewLattice2_8cc_1a30a47c60854db7b413b641236b4157d2">PutPayOff</link>(<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>,&#32;lattice1[lattice1.MaxIndex()]);
+119 
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;&#32;p&#32;=&#32;0.5;
+121 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;discounting&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(-&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>*k);
+122 &#32;&#32;&#32;&#32;
+123 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;optionPrice&#32;=&#32;<link linkend="_namespaceStandardLattice_1a3e49a59024bcef068e558f70a756df05">traverse</link>(newLattice,&#32;RHS,&#32;p,&#32;discounting);
+124 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;optionPrice2&#32;=&#32;<link linkend="_namespaceStandardLattice_1a3e49a59024bcef068e558f70a756df05">traverse</link>(newLattice,&#32;RHS2,&#32;p,&#32;discounting);
+125 
+126 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nOption&#32;price&#32;C&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;optionPrice&#32;&lt;&lt;&#32;std::endl;
+127 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nOption&#32;price&#32;P&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;optionPrice2&#32;&lt;&lt;&#32;std::endl;
+128 
+129 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+130 }
+</programlisting>    </section><anchor xml:id="_TestNewLattice2_8cc_1a4f588b04e89a733e6e27ba312ce437d3"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestNewLattice2.cc</secondary></indexterm>
+<indexterm><primary>TestNewLattice2.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , int NumberNodes&gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classLattice">Lattice</link>&lt; V, I, NumberNodes &gt; &amp; source)</computeroutput></para><para>
+Definition at line 58 of file TestNewLattice2.cc.</para>
+<programlisting>59 {
+60 &#32;&#32;&#32;&#32;
+61 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;source.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();&#32;j&#32;&lt;=&#32;source.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();&#32;j++)
+62 &#32;&#32;&#32;&#32;{
+63 
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nBranch&#32;Number&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;:&#32;[&quot;</emphasis>;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;source[j].MinIndex();&#32;i&#32;&lt;=&#32;source[j].<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();&#32;i++)
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;source[j][i]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+68 &#32;&#32;&#32;&#32;
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+70 
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>;
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+73 &#32;&#32;&#32;&#32;}
+74 
+75 }
+</programlisting>    </section><anchor xml:id="_TestNewLattice2_8cc_1a30a47c60854db7b413b641236b4157d2"/>    <section>
+    <title>PutPayOff()</title>
+<indexterm><primary>PutPayOff</primary><secondary>TestNewLattice2.cc</secondary></indexterm>
+<indexterm><primary>TestNewLattice2.cc</primary><secondary>PutPayOff</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V,I&gt; PutPayOff (const V &amp; K, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; StockArr)</computeroutput></para><para>
+Definition at line 39 of file TestNewLattice2.cc.</para>
+<programlisting>40 {
+41 
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;tmp;
+43 
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;result&#32;(StockArr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>(),&#32;StockArr.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>());
+45 
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;StockArr.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;StockArr.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;0.0;
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;-&#32;StockArr[i];
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(tmp&#32;&gt;&#32;0.0)
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;tmp;
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+55 }
+</programlisting></section>
+</section>
+</section>

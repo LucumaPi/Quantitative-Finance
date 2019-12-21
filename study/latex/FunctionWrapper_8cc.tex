@@ -1,0 +1,97 @@
+\hypertarget{FunctionWrapper_8cc}{}\doxysection{tests/\+Function\+Wrapper.cc File Reference}
+\label{FunctionWrapper_8cc}\index{tests/FunctionWrapper.cc@{tests/FunctionWrapper.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Function\+Wrapper.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{FunctionWrapper_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCommand}{Command$<$ Return\+Type, Arguments $>$}}
+\item 
+struct \mbox{\hyperlink{structTwoD}{Two\+D$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structThreeD}{Three\+D$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{FunctionWrapper_8cc_a10185f2b0ada9d247af3d199fe70d450}{fun1}} (double x)
+\item 
+double \mbox{\hyperlink{FunctionWrapper_8cc_a467328085f4286187878f9193bf9134b}{fun2}} (\mbox{\hyperlink{structTwoD}{TwoD}}$<$ double $>$ p)
+\item 
+int \mbox{\hyperlink{FunctionWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{FunctionWrapper_8cc_a10185f2b0ada9d247af3d199fe70d450}\label{FunctionWrapper_8cc_a10185f2b0ada9d247af3d199fe70d450}} 
+\index{FunctionWrapper.cc@{FunctionWrapper.cc}!fun1@{fun1}}
+\index{fun1@{fun1}!FunctionWrapper.cc@{FunctionWrapper.cc}}
+\doxysubsubsection{\texorpdfstring{fun1()}{fun1()}}
+{\footnotesize\ttfamily double fun1 (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FunctionWrapper_8cc_source_l00036}{36}} of file \mbox{\hyperlink{FunctionWrapper_8cc_source}{Function\+Wrapper.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{return} x*x;}
+\DoxyCodeLine{00039 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{FunctionWrapper_8cc_a467328085f4286187878f9193bf9134b}\label{FunctionWrapper_8cc_a467328085f4286187878f9193bf9134b}} 
+\index{FunctionWrapper.cc@{FunctionWrapper.cc}!fun2@{fun2}}
+\index{fun2@{fun2}!FunctionWrapper.cc@{FunctionWrapper.cc}}
+\doxysubsubsection{\texorpdfstring{fun2()}{fun2()}}
+{\footnotesize\ttfamily double fun2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTwoD}{TwoD}}$<$ double $>$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FunctionWrapper_8cc_source_l00041}{41}} of file \mbox{\hyperlink{FunctionWrapper_8cc_source}{Function\+Wrapper.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042 \{}
+\DoxyCodeLine{00043     \textcolor{keywordflow}{return} p.\mbox{\hyperlink{structTwoD_a5264a3d3cbf244d7bc1bcf2b4d2dd491}{x}} + p.\mbox{\hyperlink{structTwoD_ad5b896f64bf03e6cae5d14c816816bc9}{y}};}
+\DoxyCodeLine{00044 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{FunctionWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{FunctionWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{FunctionWrapper.cc@{FunctionWrapper.cc}!main@{main}}
+\index{main@{main}!FunctionWrapper.cc@{FunctionWrapper.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FunctionWrapper_8cc_source_l00046}{46}} of file \mbox{\hyperlink{FunctionWrapper_8cc_source}{Function\+Wrapper.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047 \{}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// Single input variable}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classCommand}{Command<double, double>}} cmd1;}
+\DoxyCodeLine{00051     cmd1.\mbox{\hyperlink{classCommand_a6c4e0f1ef5aa231a3cd311f040264b8f}{f}} = \mbox{\hyperlink{FunctionWrapper_8cc_a10185f2b0ada9d247af3d199fe70d450}{fun1}};}
+\DoxyCodeLine{00052     \textcolor{keywordtype}{double} ans = cmd1.\mbox{\hyperlink{classCommand_ab5e079d4b8d60b25d9c6890de074e871}{exec}}(2.9);    }
+\DoxyCodeLine{00053     std::cout << ans << std::endl;}
+\DoxyCodeLine{00054     }
+\DoxyCodeLine{00055     \textcolor{comment}{// Pair of arguments}}
+\DoxyCodeLine{00056     \mbox{\hyperlink{structTwoD}{TwoD<double>}} myP; myP.\mbox{\hyperlink{structTwoD_a5264a3d3cbf244d7bc1bcf2b4d2dd491}{x}} = 3; myP.\mbox{\hyperlink{structTwoD_ad5b896f64bf03e6cae5d14c816816bc9}{y}} = 4;}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \mbox{\hyperlink{classCommand}{Command<double, TwoD<double>}} > cmd2;}
+\DoxyCodeLine{00059     cmd2.\mbox{\hyperlink{classCommand_a6c4e0f1ef5aa231a3cd311f040264b8f}{f}} = \mbox{\hyperlink{FunctionWrapper_8cc_a467328085f4286187878f9193bf9134b}{fun2}};}
+\DoxyCodeLine{00060     \textcolor{keywordtype}{double} ans2 = cmd2.\mbox{\hyperlink{classCommand_ab5e079d4b8d60b25d9c6890de074e871}{exec}}(myP);   }
+\DoxyCodeLine{00061     std::cout << ans2 << std::endl;}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00064 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestGenericInequalities_8cc">
+<title>tests/TestGenericInequalities.cc File Reference</title>
+<indexterm><primary>tests/TestGenericInequalities.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;duffy/GenericInequalities.hh&gt;
+</programlisting>Include dependency graph for TestGenericInequalities.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestGenericInequalities_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestGenericInequalities_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestGenericInequalities_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestGenericInequalities.cc</secondary></indexterm>
+<indexterm><primary>TestGenericInequalities.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 12 of file TestGenericInequalities.cc.</para>
+<programlisting>13 {
+14 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Prompt&#32;the&#32;user&#32;for&#32;input.&#32;Console&#32;output&#32;(cout)</emphasis>
+15 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;and&#32;input&#32;(cin)</emphasis>
+16 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;d1,&#32;d2;
+17 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;the&#32;first&#32;number:&#32;&quot;</emphasis>;
+18 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;d1;
+19 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;the&#32;second&#32;number:&#32;&quot;</emphasis>;
+20 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;d2;
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;c;&#32;<emphasis role="comment">//&#32;Character&#32;type</emphasis>
+23 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Which&#32;function&#32;a)&#32;Max()&#32;or&#32;b)&#32;Min()?&#32;&quot;</emphasis>;
+24 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;c;
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(c&#32;==&#32;<emphasis role="charliteral">&apos;a&apos;</emphasis>)
+26 &#32;&#32;&#32;&#32;{
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Max&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;Max&lt;int&gt;(d1,&#32;d2)&#32;&lt;&lt;&#32;std::endl;
+28 &#32;&#32;&#32;&#32;}
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+30 &#32;&#32;&#32;&#32;{
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Min&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;Min&lt;int&gt;(d1,&#32;d2)&#32;&lt;&lt;&#32;std::endl;
+32 &#32;&#32;&#32;&#32;}
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;dA&#32;=&#32;12334;&#32;<emphasis role="keywordtype">long</emphasis>&#32;dB&#32;=&#32;2;&#32;<emphasis role="keywordtype">long</emphasis>&#32;dC&#32;=&#32;-3;
+35 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n\nMax&#32;and&#32;min&#32;of&#32;three&#32;numbers:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+36 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Max&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;Max&lt;long&gt;(dA,&#32;dB,&#32;dC)&#32;&lt;&lt;&#32;std::endl;
+37 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Min&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;Min&lt;long&gt;(dA,&#32;dB,&#32;dC)&#32;&lt;&lt;&#32;std::endl;
+38 
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+40 }
+</programlisting></section>
+</section>
+</section>

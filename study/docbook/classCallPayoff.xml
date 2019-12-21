@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCallPayoff">
 <title>CallPayoff Class Reference</title>
 <indexterm><primary>CallPayoff</primary></indexterm>
+<para>
+<computeroutput>#include &lt;CallPayoff.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for CallPayoff:<para>
     <informalfigure>
         <mediaobject>
@@ -23,22 +26,130 @@ Collaboration diagram for CallPayoff:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classCallPayoff_1a5febaab90dff1bf068a783b03a20fcda"/><emphasis role="strong">CallPayoff</emphasis> (double strike)</para>
+            <listitem><para><link linkend="_classCallPayoff_1a19ad977f668dc51f22d00274f18ffd18">CallPayoff</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classCallPayoff_1a0ab9fa574fecaa3e5b3e2b8ffbb87498"/><emphasis role="strong">CallPayoff</emphasis> (const <link linkend="_classCallPayoff">CallPayoff</link> &amp;source)</para>
+            <listitem><para><link linkend="_classCallPayoff_1a5febaab90dff1bf068a783b03a20fcda">CallPayoff</link> (double strike)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classCallPayoff_1a86bd90e9e848ad90532104c3192e06df"/>double <emphasis role="strong">Strike</emphasis> () const</para>
+            <listitem><para><link linkend="_classCallPayoff_1a0ab9fa574fecaa3e5b3e2b8ffbb87498">CallPayoff</link> (const <link linkend="_classCallPayoff">CallPayoff</link> &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classCallPayoff_1a7a8b83bcf8fece954fb1135458e2b28e"/>void <emphasis role="strong">Strike</emphasis> (double NewStrike)</para>
+            <listitem><para>virtual <link linkend="_classCallPayoff_1a9f3bb9bb9c481a2f77dae23adf207b88">~CallPayoff</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classCallPayoff_1aac88652e16d519402ccc0efa63f06749"/><link linkend="_classCallPayoff">CallPayoff</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classCallPayoff">CallPayoff</link> &amp;source)</para>
+            <listitem><para>double <link linkend="_classCallPayoff_1a86bd90e9e848ad90532104c3192e06df">Strike</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classCallPayoff_1a388ddb411d45108ab253f9c4dd50bcbb"/>double <emphasis role="strong">payoff</emphasis> (double S) const</para>
+            <listitem><para>void <link linkend="_classCallPayoff_1a7a8b83bcf8fece954fb1135458e2b28e">Strike</link> (double NewStrike)</para>
+</listitem>
+            <listitem><para><link linkend="_classCallPayoff">CallPayoff</link> &amp; <link linkend="_classCallPayoff_1aac88652e16d519402ccc0efa63f06749">operator=</link> (const <link linkend="_classCallPayoff">CallPayoff</link> &amp;source)</para>
+</listitem>
+            <listitem><para>double <link linkend="_classCallPayoff_1a388ddb411d45108ab253f9c4dd50bcbb">payoff</link> (double S) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 12 of file CallPayoff.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classCallPayoff_1a19ad977f668dc51f22d00274f18ffd18"/>    <section>
+    <title>CallPayoff()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>CallPayoff</primary><secondary>CallPayoff</secondary></indexterm>
+<indexterm><primary>CallPayoff</primary><secondary>CallPayoff</secondary></indexterm>
+<para><computeroutput>CallPayoff::CallPayoff ( )</computeroutput></para><para>
+Definition at line 13 of file CallPayoff.cc.</para>
+<programlisting>13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classPayoff_1a0f46e76a129a9f3a98d957b083c30157">Payoff</link>()
+14 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+15 &#32;&#32;&#32;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;100.0;&#32;<emphasis role="comment">//&#32;Prototype&#32;value</emphasis>
+16 }
+</programlisting>    </section><anchor xml:id="_classCallPayoff_1a5febaab90dff1bf068a783b03a20fcda"/>    <section>
+    <title>CallPayoff()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>CallPayoff</primary><secondary>CallPayoff</secondary></indexterm>
+<indexterm><primary>CallPayoff</primary><secondary>CallPayoff</secondary></indexterm>
+<para><computeroutput>CallPayoff::CallPayoff (double strike)</computeroutput></para><para>
+Definition at line 18 of file CallPayoff.cc.</para>
+<programlisting>18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classPayoff_1a0f46e76a129a9f3a98d957b083c30157">Payoff</link>()
+19 {&#32;<emphasis role="comment">//&#32;Normal&#32;constructor&#32;with&#32;coordinates</emphasis>
+20 &#32;&#32;&#32;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;strike;
+21 }
+</programlisting>    </section><anchor xml:id="_classCallPayoff_1a0ab9fa574fecaa3e5b3e2b8ffbb87498"/>    <section>
+    <title>CallPayoff()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>CallPayoff</primary><secondary>CallPayoff</secondary></indexterm>
+<indexterm><primary>CallPayoff</primary><secondary>CallPayoff</secondary></indexterm>
+<para><computeroutput>CallPayoff::CallPayoff (const <link linkend="_classCallPayoff">CallPayoff</link> &amp; source)</computeroutput></para><para>
+Definition at line 24 of file CallPayoff.cc.</para>
+<programlisting>24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classPayoff_1a0f46e76a129a9f3a98d957b083c30157">Payoff</link>(source)
+25 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+26 &#32;&#32;&#32;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;source.K;
+27 }
+</programlisting>    </section><anchor xml:id="_classCallPayoff_1a9f3bb9bb9c481a2f77dae23adf207b88"/>    <section>
+    <title>~CallPayoff()</title>
+<indexterm><primary>~CallPayoff</primary><secondary>CallPayoff</secondary></indexterm>
+<indexterm><primary>CallPayoff</primary><secondary>~CallPayoff</secondary></indexterm>
+<para><computeroutput>CallPayoff::~CallPayoff ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 29 of file CallPayoff.cc.</para>
+<programlisting>30 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+31 }&#32;
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classCallPayoff_1aac88652e16d519402ccc0efa63f06749"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>CallPayoff</secondary></indexterm>
+<indexterm><primary>CallPayoff</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classCallPayoff">CallPayoff</link> &amp; CallPayoff::operator= (const <link linkend="_classCallPayoff">CallPayoff</link> &amp; source)</computeroutput></para><para>
+Definition at line 46 of file CallPayoff.cc.</para>
+<programlisting>47 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exit&#32;if&#32;same&#32;object</emphasis>
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>==&amp;source)&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+51 
+52 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;base&#32;class&#32;assignment</emphasis>
+53 &#32;&#32;&#32;&#32;<link linkend="_classPayoff_1ad2a5f6ec9c8336d4dc6ab00ecdd83393">Payoff::operator = </link>(source);
+54 
+55 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;state</emphasis>
+56 &#32;&#32;&#32;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;source.K;&#32;&#32;
+57 
+58 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+59 }
+</programlisting>    </section><anchor xml:id="_classCallPayoff_1a388ddb411d45108ab253f9c4dd50bcbb"/>    <section>
+    <title>payoff()</title>
+<indexterm><primary>payoff</primary><secondary>CallPayoff</secondary></indexterm>
+<indexterm><primary>CallPayoff</primary><secondary>payoff</secondary></indexterm>
+<para><computeroutput>double CallPayoff::payoff (double S) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classPayoff_1a541081708c4999142c3db9d5a27b2313">Payoff</link>.</para>
+<para>
+Definition at line 62 of file CallPayoff.cc.</para>
+<programlisting>63 {&#32;<emphasis role="comment">//&#32;For&#32;a&#32;given&#32;spot&#32;price</emphasis>
+64 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(S&#32;&gt;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>)
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(S&#32;-&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>);
+66 
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;
+68 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;remark;&#32;possible&#32;to&#32;say&#32;max&#32;(S&#32;-&#32;K,&#32;0);&#32;I&#32;am&#32;a&#32;bit&#32;longwinded!</emphasis>
+69 }
+</programlisting>    </section><anchor xml:id="_classCallPayoff_1a86bd90e9e848ad90532104c3192e06df"/>    <section>
+    <title>Strike()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Strike</primary><secondary>CallPayoff</secondary></indexterm>
+<indexterm><primary>CallPayoff</primary><secondary>Strike</secondary></indexterm>
+<para><computeroutput>double CallPayoff::Strike ( ) const</computeroutput></para><para>
+Definition at line 34 of file CallPayoff.cc.</para>
+<programlisting>35 {<emphasis role="comment">//&#32;Return&#32;K</emphasis>
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>;
+37 }
+</programlisting>    </section><anchor xml:id="_classCallPayoff_1a7a8b83bcf8fece954fb1135458e2b28e"/>    <section>
+    <title>Strike()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Strike</primary><secondary>CallPayoff</secondary></indexterm>
+<indexterm><primary>CallPayoff</primary><secondary>Strike</secondary></indexterm>
+<para><computeroutput>void CallPayoff::Strike (double NewStrike)</computeroutput></para><para>
+Definition at line 41 of file CallPayoff.cc.</para>
+<programlisting>42 {<emphasis role="comment">//&#32;Set&#32;K</emphasis>
+43 &#32;&#32;&#32;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;NewStrike;
+44 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/CallPayoff.hhsrc/CallPayoff.cc</section>
+include/duffy/<link linkend="_CallPayoff_8hh">CallPayoff.hh</link>src/<link linkend="_CallPayoff_8cc">CallPayoff.cc</link></section>
+</section>

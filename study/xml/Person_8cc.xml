@@ -9,7 +9,7 @@
       </node>
       <node id="2">
         <label>duffy/Person.hh</label>
-        <link refid="Person_8hh_source"/>
+        <link refid="Person_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -20,7 +20,7 @@
       </node>
       <node id="3">
         <label>DatasimDate.hh</label>
-        <link refid="DatasimDate_8hh_source"/>
+        <link refid="DatasimDate_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -28,7 +28,7 @@
       </node>
       <node id="5">
         <label>TemporalType.hh</label>
-        <link refid="TemporalType_8hh_source"/>
+        <link refid="TemporalType_8hh"/>
       </node>
       <node id="1">
         <label>src/Person.cc</label>
@@ -53,29 +53,29 @@
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2005-2006</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;duffy/Person.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;<ref refid="Person_8hh" kindref="compound">duffy/Person.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal">Person::Person<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DateofBirth)</highlight></codeline>
+<codeline lineno="14" refid="classPerson_1a27cebd22009c2f3d495523832d4489bc" refkind="member"><highlight class="normal"><ref refid="classPerson_1a27cebd22009c2f3d495523832d4489bc" kindref="member">Person::Person</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>&amp;<sp/>DateofBirth)</highlight></codeline>
 <codeline lineno="15"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nam<sp/>=<sp/>name;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dob<sp/>=<sp/>DateofBirth;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>createdD<sp/>=<sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>();<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>default,<sp/>today<sp/>REALLY!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPerson_1ae6ee626f8471b70bef418998ab35623e" kindref="member">nam</ref><sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPerson_1abc4a5fbe6e5412b54fcbdf6446b4a29e" kindref="member">dob</ref><sp/>=<sp/>DateofBirth;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPerson_1aa4dfae60adf8adfe9e0da019e0993f04" kindref="member">createdD</ref><sp/>=<sp/><ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>();<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>default,<sp/>today<sp/>REALLY!</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Person::print()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="22" refid="classPerson_1aaf046d78d4c4dff5130fc25727932345" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPerson_1aaf046d78d4c4dff5130fc25727932345" kindref="member">Person::print</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="23"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Who<sp/>am<sp/>I?</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n**<sp/>Person<sp/>Data<sp/>**\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Name:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>nam<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>Date<sp/>of<sp/>birth:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>dob<sp/></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>Age:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>age()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Name:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classPerson_1ae6ee626f8471b70bef418998ab35623e" kindref="member">nam</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>Date<sp/>of<sp/>birth:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classPerson_1abc4a5fbe6e5412b54fcbdf6446b4a29e" kindref="member">dob</ref><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>Age:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classPerson_1aebd438308d431c5a20070a64288932d8" kindref="member">age</ref>()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Person::age()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="32" refid="classPerson_1aebd438308d431c5a20070a64288932d8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classPerson_1aebd438308d431c5a20070a64288932d8" kindref="member">Person::age</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="33"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>int(<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(<ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>()<sp/>-<sp/>dob)<sp/>/<sp/>365.0);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>int(<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(<ref refid="classDatasimDate" kindref="compound">DatasimDate</ref>()<sp/>-<sp/><ref refid="classPerson_1abc4a5fbe6e5412b54fcbdf6446b4a29e" kindref="member">dob</ref>)<sp/>/<sp/>365.0);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
     </programlisting>

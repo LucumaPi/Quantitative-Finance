@@ -2,6 +2,10 @@
 \label{classConsoleEuropeanOptionFactory}\index{ConsoleEuropeanOptionFactory@{ConsoleEuropeanOptionFactory}}
 
 
+{\ttfamily \#include $<$European\+Option\+Factory.\+hh$>$}
+
+
+
 Inheritance diagram for Console\+European\+Option\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,11 +25,60 @@ Collaboration diagram for Console\+European\+Option\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classConsoleEuropeanOptionFactory_a7784d6fda149854e5a8a61af96765e0e}\label{classConsoleEuropeanOptionFactory_a7784d6fda149854e5a8a61af96765e0e}} 
-\mbox{\hyperlink{classOption}{Option}} $\ast$ {\bfseries create} () const
+\mbox{\hyperlink{classOption}{Option}} $\ast$ \mbox{\hyperlink{classConsoleEuropeanOptionFactory_a7784d6fda149854e5a8a61af96765e0e}{create}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{EuropeanOptionFactory_8hh_source_l00020}{20}} of file \mbox{\hyperlink{EuropeanOptionFactory_8hh_source}{European\+Option\+Factory.\+hh}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConsoleEuropeanOptionFactory_a7784d6fda149854e5a8a61af96765e0e}\label{classConsoleEuropeanOptionFactory_a7784d6fda149854e5a8a61af96765e0e}} 
+\index{ConsoleEuropeanOptionFactory@{ConsoleEuropeanOptionFactory}!create@{create}}
+\index{create@{create}!ConsoleEuropeanOptionFactory@{ConsoleEuropeanOptionFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOption}{Option}}$\ast$ Console\+European\+Option\+Factory\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEuropeanOptionFactory_ac24fbbbcda256a8008afe989e32e9433}{European\+Option\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{EuropeanOptionFactory_8hh_source_l00024}{24}} of file \mbox{\hyperlink{EuropeanOptionFactory_8hh_source}{European\+Option\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025     \{}
+\DoxyCodeLine{00026         std::cout << \textcolor{stringliteral}{"\(\backslash\)n*** Parameters for option object ***\(\backslash\)n"};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \mbox{\hyperlink{classOption}{Option}}* opt = \textcolor{keyword}{new} \mbox{\hyperlink{classOption}{Option}};}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030         std::cout << \textcolor{stringliteral}{"Strike: "};}
+\DoxyCodeLine{00031         std::cin >> opt-\/>\mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}};}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         std::cout << \textcolor{stringliteral}{"Volatility: "};}
+\DoxyCodeLine{00034         std::cin >> opt-\/>\mbox{\hyperlink{classOption_a8b68f88d3e7a01dfea0b83e3e5a4f57e}{sig}};}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         std::cout << \textcolor{stringliteral}{"Interest rate: "};}
+\DoxyCodeLine{00037         std::cin >> opt-\/>\mbox{\hyperlink{classOption_abd44ab56edddcd59f80ca5c60c9b66f0}{r}};}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         std::cout << \textcolor{stringliteral}{"Expiry date: "};}
+\DoxyCodeLine{00040         std::cin >> opt-\/>\mbox{\hyperlink{classOption_ae583dd6d430a3b428014efa942605d54}{T}};}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         std::cout << \textcolor{stringliteral}{"1. Call, 2. Put: "};}
+\DoxyCodeLine{00043         std::cin >> opt-\/>\mbox{\hyperlink{classOption_a08dcf2742c8429087baaacf694089cbe}{type}};}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045         \textcolor{keywordflow}{return} opt;}
+\DoxyCodeLine{00046     \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/European\+Option\+Factory.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{EuropeanOptionFactory_8hh}{European\+Option\+Factory.\+hh}}\end{DoxyCompactItemize}

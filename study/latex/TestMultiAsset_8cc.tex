@@ -1,0 +1,52 @@
+\hypertarget{TestMultiAsset_8cc}{}\doxysection{Test\+Multi\+Asset.\+cc File Reference}
+\label{TestMultiAsset_8cc}\index{TestMultiAsset.cc@{TestMultiAsset.cc}}
+{\ttfamily \#include $<$duffy/\+Multi\+Asset\+Factory.\+hh$>$}\newline
+Include dependency graph for Test\+Multi\+Asset.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{TestMultiAsset_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestMultiAsset_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestMultiAsset_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestMultiAsset_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestMultiAsset.cc@{TestMultiAsset.cc}!main@{main}}
+\index{main@{main}!TestMultiAsset.cc@{TestMultiAsset.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestMultiAsset_8cc_source_l00005}{5}} of file \mbox{\hyperlink{TestMultiAsset_8cc_source}{Test\+Multi\+Asset.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008     \mbox{\hyperlink{classMultiAssetFactory}{MultiAssetFactory}} fac;}
+\DoxyCodeLine{00009     fac.\mbox{\hyperlink{classMultiAssetFactory_ac119d81cfec42e83368f632e261e59f1}{display}}();}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011     \mbox{\hyperlink{classMultiAssetPayoffStrategy}{MultiAssetPayoffStrategy}}* \mbox{\hyperlink{classPayoff}{Payoff}};}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     std::cout << \textcolor{stringliteral}{"Choice: "}; \textcolor{keywordtype}{int} choice; std::cin >> choice;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00016     \{}
+\DoxyCodeLine{00017         \mbox{\hyperlink{classPayoff}{Payoff}} = fac.\mbox{\hyperlink{classMultiAssetFactory_af557ef4e09d2fd13505bd932e1c17e78}{create}}(choice);}
+\DoxyCodeLine{00018     \}}
+\DoxyCodeLine{00019     \textcolor{keywordflow}{catch}(std::string\& error)}
+\DoxyCodeLine{00020     \{}
+\DoxyCodeLine{00021         std::cout << error << std::endl;}
+\DoxyCodeLine{00022     \}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00025 \}}
+
+\end{DoxyCode}

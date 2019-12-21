@@ -2,6 +2,10 @@
 \label{classExchangeStrategy}\index{ExchangeStrategy@{ExchangeStrategy}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Exchange\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,11 +25,61 @@ Collaboration diagram for Exchange\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classExchangeStrategy_a5c96119a7eb988b67bfe3eba1aef1bd1}\label{classExchangeStrategy_a5c96119a7eb988b67bfe3eba1aef1bd1}} 
-double {\bfseries payoff} (double S1, double S2) const
+\mbox{\hyperlink{classExchangeStrategy_acf5dfb502ff1e1a3cd2d8e717be1b0cb}{Exchange\+Strategy}} ()
+\item 
+double \mbox{\hyperlink{classExchangeStrategy_a5c96119a7eb988b67bfe3eba1aef1bd1}{payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00025}{25}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classExchangeStrategy_acf5dfb502ff1e1a3cd2d8e717be1b0cb}\label{classExchangeStrategy_acf5dfb502ff1e1a3cd2d8e717be1b0cb}} 
+\index{ExchangeStrategy@{ExchangeStrategy}!ExchangeStrategy@{ExchangeStrategy}}
+\index{ExchangeStrategy@{ExchangeStrategy}!ExchangeStrategy@{ExchangeStrategy}}
+\doxysubsubsection{\texorpdfstring{ExchangeStrategy()}{ExchangeStrategy()}}
+{\footnotesize\ttfamily Exchange\+Strategy\+::\+Exchange\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00030}{30}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030 \{ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classExchangeStrategy_a5c96119a7eb988b67bfe3eba1aef1bd1}\label{classExchangeStrategy_a5c96119a7eb988b67bfe3eba1aef1bd1}} 
+\index{ExchangeStrategy@{ExchangeStrategy}!payoff@{payoff}}
+\index{payoff@{payoff}!ExchangeStrategy@{ExchangeStrategy}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Exchange\+Strategy\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{Multi\+Asset\+Payoff\+Strategy}}.
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00031}{31}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032         \{}
+\DoxyCodeLine{00033             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(S1-\/S2, 0.0);}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff\+Strategy.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoffStrategy_8hh}{Multi\+Asset\+Payoff\+Strategy.\+hh}}\end{DoxyCompactItemize}

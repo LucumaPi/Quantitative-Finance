@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classTensor">
 <title>Tensor&lt; V, I &gt; Class Template Reference</title>
 <indexterm><primary>Tensor&lt; V, I &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Tensor.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for Tensor&lt; V, I &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -14,40 +17,277 @@ Collaboration diagram for Tensor&lt; V, I &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classTensor_1a55918b65d0c1e8b14be649630230ee3b"/><emphasis role="strong">Tensor</emphasis> (size_t rows, size_t columns, size_t third)</para>
+            <listitem><para><link linkend="_classTensor_1ad3b58a2f8c5badba797ef815d1c759a0">Tensor</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1aba44541274ef10796054e73a4f1b2e46"/><emphasis role="strong">Tensor</emphasis> (size_t rows, size_t columns, size_t third, I rowStart, I columnStart, I thirdStart)</para>
+            <listitem><para><link linkend="_classTensor_1a55918b65d0c1e8b14be649630230ee3b">Tensor</link> (size_t rows, size_t columns, size_t third)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a960c8cf44f08a24ba752b85e2af218ee"/><emphasis role="strong">Tensor</emphasis> (const <link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp;source)</para>
+            <listitem><para><link linkend="_classTensor_1aba44541274ef10796054e73a4f1b2e46">Tensor</link> (size_t rows, size_t columns, size_t third, I rowStart, I columnStart, I thirdStart)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a586bb5ad5a239f5a1333ef516f8afac9"/>long <emphasis role="strong">MinFirstIndex</emphasis> () const</para>
+            <listitem><para><link linkend="_classTensor_1a960c8cf44f08a24ba752b85e2af218ee">Tensor</link> (const <link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1aef9f18eee21230b69a12c03ddf765abc"/>long <emphasis role="strong">MaxFirstIndex</emphasis> () const</para>
+            <listitem><para>virtual <link linkend="_classTensor_1a63078f238b70b4aa496cca77f91640db">~Tensor</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1af86e5b56a856a79e70e18c22b604f1d0"/>long <emphasis role="strong">MinSecondIndex</emphasis> () const</para>
+            <listitem><para>long <link linkend="_classTensor_1a586bb5ad5a239f5a1333ef516f8afac9">MinFirstIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1aa7a13e524f1fbbfdf0bdf68192e034b4"/>long <emphasis role="strong">MaxSecondIndex</emphasis> () const</para>
+            <listitem><para>long <link linkend="_classTensor_1aef9f18eee21230b69a12c03ddf765abc">MaxFirstIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1aa95268c48800c8ca1dd6243b59a09543"/>long <emphasis role="strong">MinThirdIndex</emphasis> () const</para>
+            <listitem><para>long <link linkend="_classTensor_1af86e5b56a856a79e70e18c22b604f1d0">MinSecondIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a6266f47513cc5b5924573ac58390b7cb"/>long <emphasis role="strong">MaxThirdIndex</emphasis> () const</para>
+            <listitem><para>long <link linkend="_classTensor_1aa7a13e524f1fbbfdf0bdf68192e034b4">MaxSecondIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a1d19abc6ebc88dcd1e31a9035d4f42f1"/>size_t <emphasis role="strong">Rows</emphasis> () const</para>
+            <listitem><para>long <link linkend="_classTensor_1aa95268c48800c8ca1dd6243b59a09543">MinThirdIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1acb5f71b7416a3361164821b624933dd3"/>size_t <emphasis role="strong">Columns</emphasis> () const</para>
+            <listitem><para>long <link linkend="_classTensor_1a6266f47513cc5b5924573ac58390b7cb">MaxThirdIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a4e12d325ed245411efd1d65c13110368"/>size_t <emphasis role="strong">sizeThird</emphasis> () const</para>
+            <listitem><para>size_t <link linkend="_classTensor_1a1d19abc6ebc88dcd1e31a9035d4f42f1">Rows</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a99acb1545d29dcbaadf6e41482f7c477"/><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; <emphasis role="strong">operator[]</emphasis> (I k)</para>
+            <listitem><para>size_t <link linkend="_classTensor_1acb5f71b7416a3361164821b624933dd3">Columns</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a6c0bb2471bba76ae4b14b5ef08755ff4"/>const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; <emphasis role="strong">operator[]</emphasis> (I k) const</para>
+            <listitem><para>size_t <link linkend="_classTensor_1a4e12d325ed245411efd1d65c13110368">sizeThird</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a80154f348587ad3c06b05e544f39c6ea"/>V &amp; <emphasis role="strong">operator()</emphasis> (I i, I j, I k)</para>
+            <listitem><para><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; <link linkend="_classTensor_1a99acb1545d29dcbaadf6e41482f7c477">operator[]</link> (I k)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTensor_1a1ca3f5f470b45a4fa6e08f1f5d15fa69"/><link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp;source)</para>
+            <listitem><para>const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; <link linkend="_classTensor_1a6c0bb2471bba76ae4b14b5ef08755ff4">operator[]</link> (I k) const</para>
+</listitem>
+            <listitem><para>V &amp; <link linkend="_classTensor_1a80154f348587ad3c06b05e544f39c6ea">operator()</link> (I i, I j, I k)</para>
+</listitem>
+            <listitem><para><link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp; <link linkend="_classTensor_1a1ca3f5f470b45a4fa6e08f1f5d15fa69">operator=</link> (const <link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp;source)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class V, class I&gt;
+class Tensor&lt; V, I &gt;</title></simplesect>
+
+<para>
+Definition at line 19 of file Tensor.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classTensor_1ad3b58a2f8c5badba797ef815d1c759a0"/>    <section>
+    <title>Tensor()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Tensor</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>Tensor</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::<link linkend="_classTensor">Tensor</link> ( )</computeroutput></para><para>
+Definition at line 23 of file Tensor.cc.</para>
+<programlisting>24 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+25 
+26 &#32;&#32;&#32;&#32;tensor&#32;=&#32;<link linkend="_classArray">Array&lt;NumericMatrix &lt;V, I&gt;</link>,&#32;I&#32;&gt;&#32;(1,&#32;1);&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Size&#32;1,&#32;start&#32;index&#32;1</emphasis>
+27 &#32;&#32;&#32;&#32;tensor[1]&#32;=&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;V, I&gt;</link>&#32;(1,&#32;1,&#32;1,&#32;1);&#32;&#32;&#32;<emphasis role="comment">//&#32;EVERYTHING&#32;starts&#32;at&#32;1</emphasis>
+28 
+29 
+30 &#32;&#32;&#32;&#32;nr&#32;=&#32;nc&#32;=&#32;nt&#32;=&#32;1;
+31 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a55918b65d0c1e8b14be649630230ee3b"/>    <section>
+    <title>Tensor()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Tensor</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>Tensor</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::<link linkend="_classTensor">Tensor</link> (size_t rows, size_t columns, size_t third)</computeroutput></para><para>
+Definition at line 34 of file Tensor.cc.</para>
+<programlisting>35 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size.&#32;Start&#32;index=1.</emphasis>
+36 
+37 &#32;&#32;&#32;&#32;tensor&#32;=&#32;<link linkend="_classArray">Array&lt;NumericMatrix &lt;V, I&gt;</link>,&#32;I&#32;&gt;&#32;(nthird,&#32;1);&#32;&#32;&#32;<emphasis role="comment">//&#32;Size&#32;nthird,&#32;start&#32;index&#32;1</emphasis>
+38 
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;k&#32;=&#32;tensor.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;k&#32;&lt;=&#32;tensor.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;k++)
+40 &#32;&#32;&#32;&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tensor[k]&#32;=&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;V, I&gt;</link>&#32;(row,&#32;column,&#32;1,&#32;1);&#32;&#32;&#32;&#32;
+42 &#32;&#32;&#32;&#32;}
+43 
+44 
+45 &#32;&#32;&#32;&#32;nr&#32;=&#32;row;&#32;nc&#32;=&#32;column;&#32;nt&#32;=&#32;nthird;
+46 }
+</programlisting>    </section><anchor xml:id="_classTensor_1aba44541274ef10796054e73a4f1b2e46"/>    <section>
+    <title>Tensor()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Tensor</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>Tensor</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::<link linkend="_classTensor">Tensor</link> (size_t rows, size_t columns, size_t third, I rowStart, I columnStart, I thirdStart)</computeroutput></para><para>
+Definition at line 49 of file Tensor.cc.</para>
+<programlisting>51 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size&#32;&amp;&#32;start&#32;index</emphasis>
+52 
+53 &#32;&#32;&#32;&#32;tensor&#32;=&#32;<link linkend="_classArray">Array&lt;NumericMatrix &lt;V, I&gt;</link>,&#32;I&#32;&gt;&#32;(nthird,&#32;thirdStart);&#32;&#32;<emphasis role="comment">//&#32;Size&#32;nthird,&#32;start&#32;index&#32;</emphasis>
+54 
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;k&#32;=&#32;tensor.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;k&#32;&lt;=&#32;tensor.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;k++)
+56 &#32;&#32;&#32;&#32;{
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tensor[k]&#32;=&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;V, I&gt;</link>&#32;(row,&#32;column,&#32;rowStart,&#32;columnStart);&#32;&#32;&#32;
+58 &#32;&#32;&#32;&#32;}
+59 
+60 
+61 &#32;&#32;&#32;&#32;nr&#32;=&#32;row;&#32;nc&#32;=&#32;column;&#32;nt&#32;=&#32;nthird;
+62 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a960c8cf44f08a24ba752b85e2af218ee"/>    <section>
+    <title>Tensor()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Tensor</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>Tensor</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::<link linkend="_classTensor">Tensor</link> (const <link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp; source)</computeroutput></para><para>
+Definition at line 65 of file Tensor.cc.</para>
+<programlisting>66 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+67 
+68 &#32;&#32;&#32;&#32;tensor&#32;=&#32;source.tensor;
+69 
+70 &#32;&#32;&#32;&#32;nr&#32;=&#32;source.nr;&#32;nc&#32;=&#32;source.nc;&#32;nt&#32;=&#32;source.nt;
+71 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a63078f238b70b4aa496cca77f91640db"/>    <section>
+    <title>~Tensor()</title>
+<indexterm><primary>~Tensor</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>~Tensor</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::~<link linkend="_classTensor">Tensor</link> ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 74 of file Tensor.cc.</para>
+<programlisting>75 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+76 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classTensor_1acb5f71b7416a3361164821b624933dd3"/>    <section>
+    <title>Columns()</title>
+<indexterm><primary>Columns</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>Columns</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>size_t <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::Columns ( ) const</computeroutput></para><para>
+Definition at line 132 of file Tensor.cc.</para>
+<programlisting>133 {&#32;<emphasis role="comment">//&#32;The&#32;number&#32;of&#32;columns</emphasis>
+134 
+135 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nc;
+136 }
+</programlisting>    </section><anchor xml:id="_classTensor_1aef9f18eee21230b69a12c03ddf765abc"/>    <section>
+    <title>MaxFirstIndex()</title>
+<indexterm><primary>MaxFirstIndex</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>MaxFirstIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>long <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::MaxFirstIndex ( ) const</computeroutput></para><para>
+Definition at line 87 of file Tensor.cc.</para>
+<programlisting>88 {&#32;
+89 
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor[tensor.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()].MaxRowIndex();
+91 
+92 }
+</programlisting>    </section><anchor xml:id="_classTensor_1aa7a13e524f1fbbfdf0bdf68192e034b4"/>    <section>
+    <title>MaxSecondIndex()</title>
+<indexterm><primary>MaxSecondIndex</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>MaxSecondIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>long <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::MaxSecondIndex ( ) const</computeroutput></para><para>
+Definition at line 102 of file Tensor.cc.</para>
+<programlisting>103 {&#32;
+104 
+105 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor[tensor.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()].MaxColumnIndex();
+106 
+107 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a6266f47513cc5b5924573ac58390b7cb"/>    <section>
+    <title>MaxThirdIndex()</title>
+<indexterm><primary>MaxThirdIndex</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>MaxThirdIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>long <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::MaxThirdIndex ( ) const</computeroutput></para><para>
+Definition at line 117 of file Tensor.cc.</para>
+<programlisting>118 {&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;maximum&#32;index</emphasis>
+119 
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();
+121 
+122 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a586bb5ad5a239f5a1333ef516f8afac9"/>    <section>
+    <title>MinFirstIndex()</title>
+<indexterm><primary>MinFirstIndex</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>MinFirstIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>long <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::MinFirstIndex ( ) const</computeroutput></para><para>
+Definition at line 79 of file Tensor.cc.</para>
+<programlisting>80 {&#32;
+81 
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor[tensor.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()].MinRowIndex();
+83 
+84 }
+</programlisting>    </section><anchor xml:id="_classTensor_1af86e5b56a856a79e70e18c22b604f1d0"/>    <section>
+    <title>MinSecondIndex()</title>
+<indexterm><primary>MinSecondIndex</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>MinSecondIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>long <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::MinSecondIndex ( ) const</computeroutput></para><para>
+Definition at line 94 of file Tensor.cc.</para>
+<programlisting>95 {&#32;
+96 
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor[tensor.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()].MinColumnIndex();
+98 
+99 }
+</programlisting>    </section><anchor xml:id="_classTensor_1aa95268c48800c8ca1dd6243b59a09543"/>    <section>
+    <title>MinThirdIndex()</title>
+<indexterm><primary>MinThirdIndex</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>MinThirdIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>long <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::MinThirdIndex ( ) const</computeroutput></para><para>
+Definition at line 109 of file Tensor.cc.</para>
+<programlisting>110 {&#32;<emphasis role="comment">//&#32;The&#32;number&#32;of&#32;rows</emphasis>
+111 
+112 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();
+113 
+114 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a80154f348587ad3c06b05e544f39c6ea"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V &amp; <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::operator() (I i, I j, I k)</computeroutput></para><para>
+Definition at line 166 of file Tensor.cc.</para>
+<programlisting>167 {&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;element&#32;at&#32;position</emphasis>
+168 
+169 &#32;&#32;&#32;&#32;
+170 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor[k]&#32;(i,&#32;j);
+171 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a1ca3f5f470b45a4fa6e08f1f5d15fa69"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp; <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::operator= (const <link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp; source)</computeroutput></para><para>
+Definition at line 176 of file Tensor.cc.</para>
+<programlisting>177 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+178 
+179 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exit&#32;if&#32;same&#32;object</emphasis>
+180 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>==&amp;source)&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+181 
+182 &#32;&#32;&#32;&#32;tensor&#32;=&#32;source.tensor;
+183 
+184 &#32;&#32;&#32;&#32;nr&#32;=&#32;source.nr;&#32;nc&#32;=&#32;source.nc;&#32;nt&#32;=&#32;source.nt;
+185 
+186 
+187 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+188 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a99acb1545d29dcbaadf6e41482f7c477"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::operator[] (I k)</computeroutput></para><para>
+Definition at line 146 of file Tensor.cc.</para>
+<programlisting>147 {&#32;<emphasis role="comment">//&#32;Get&#32;matrix&#32;at&#32;position&#32;k</emphasis>
+148 
+149 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor[k];
+150 
+151 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a6c0bb2471bba76ae4b14b5ef08755ff4"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::operator[] (I k) const</computeroutput></para><para>
+Definition at line 156 of file Tensor.cc.</para>
+<programlisting>157 {&#32;<emphasis role="comment">//&#32;Get&#32;matrix&#32;at&#32;position&#32;k</emphasis>
+158 
+159 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tensor[k];
+160 
+161 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a1d19abc6ebc88dcd1e31a9035d4f42f1"/>    <section>
+    <title>Rows()</title>
+<indexterm><primary>Rows</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>Rows</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>size_t <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::Rows ( ) const</computeroutput></para><para>
+Definition at line 125 of file Tensor.cc.</para>
+<programlisting>126 {&#32;<emphasis role="comment">//&#32;The&#32;number&#32;of&#32;rows</emphasis>
+127 
+128 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nr;
+129 }
+</programlisting>    </section><anchor xml:id="_classTensor_1a4e12d325ed245411efd1d65c13110368"/>    <section>
+    <title>sizeThird()</title>
+<indexterm><primary>sizeThird</primary><secondary>Tensor&lt; V, I &gt;</secondary></indexterm>
+<indexterm><primary>Tensor&lt; V, I &gt;</primary><secondary>sizeThird</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>size_t <link linkend="_classTensor">Tensor</link>&lt; V, I &gt;::sizeThird ( ) const</computeroutput></para><para>
+Definition at line 139 of file Tensor.cc.</para>
+<programlisting>140 {&#32;<emphasis role="comment">//&#32;The&#32;number&#32;of&#32;columns</emphasis>
+141 
+142 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nt;
+143 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Tensor.hhsrc/Tensor.cc</section>
+include/duffy/<link linkend="_Tensor_8hh">Tensor.hh</link>src/<link linkend="_Tensor_8cc">Tensor.cc</link></section>
+</section>

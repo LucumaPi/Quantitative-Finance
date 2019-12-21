@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classImplicitEulerIBVP">
 <title>ImplicitEulerIBVP Class Reference</title>
 <indexterm><primary>ImplicitEulerIBVP</primary></indexterm>
+<para>
+<computeroutput>#include &lt;IEulerIBVPSolver.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for ImplicitEulerIBVP:<para>
     <informalfigure>
         <mediaobject>
@@ -23,16 +26,130 @@ Collaboration diagram for ImplicitEulerIBVP:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classImplicitEulerIBVP_1a2309820ab1e205587063b03d369c003d"/><emphasis role="strong">ImplicitEulerIBVP</emphasis> (<link linkend="_classIBVP">IBVP</link> &amp;source, long NSteps, long JSteps)</para>
+            <listitem><para><link linkend="_classImplicitEulerIBVP_1ac6c81a57b70da3275fcb4b74b5e30f1e">ImplicitEulerIBVP</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classImplicitEulerIBVP_1afc239aeb2cd0d045f4836dca607abaa6"/>void <emphasis role="strong">calculateBC</emphasis> ()</para>
+            <listitem><para><link linkend="_classImplicitEulerIBVP_1a2309820ab1e205587063b03d369c003d">ImplicitEulerIBVP</link> (<link linkend="_classIBVP">IBVP</link> &amp;source, long NSteps, long JSteps)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classImplicitEulerIBVP_1af71d063f8fb5df6a5a269c3c4f82fbc3"/>void <emphasis role="strong">calculate</emphasis> ()</para>
+            <listitem><para>void <link linkend="_classImplicitEulerIBVP_1afc239aeb2cd0d045f4836dca607abaa6">calculateBC</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classImplicitEulerIBVP_1af71d063f8fb5df6a5a269c3c4f82fbc3">calculate</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 16 of file IEulerIBVPSolver.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classImplicitEulerIBVP_1ac6c81a57b70da3275fcb4b74b5e30f1e"/>    <section>
+    <title>ImplicitEulerIBVP()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>ImplicitEulerIBVP</primary><secondary>ImplicitEulerIBVP</secondary></indexterm>
+<indexterm><primary>ImplicitEulerIBVP</primary><secondary>ImplicitEulerIBVP</secondary></indexterm>
+<para><computeroutput>ImplicitEulerIBVP::ImplicitEulerIBVP ( )</computeroutput></para><para>
+Definition at line 22 of file IEulerIBVPSolver.cc.</para>
+<programlisting>22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classIBVPFDM_1a5a131f0efb8cb71abea192b6afd26cd2">IBVPFDM</link>()
+23 {
+24 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;!!!&#32;number&#32;of&#32;unknowns&#32;is&#32;J&#32;-&#32;1&#32;(Dirichlet)</emphasis>
+25 &#32;&#32;&#32;&#32;A&#32;=&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;(<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1,&#32;1);
+26 &#32;&#32;&#32;&#32;<link linkend="_classB">B</link>&#32;=&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;(<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1,&#32;1);
+27 &#32;&#32;&#32;&#32;C&#32;=&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;(<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1,&#32;1);
+28 
+29 &#32;&#32;&#32;&#32;F&#32;=&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;(<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1,&#32;1);
+30 }
+</programlisting>    </section><anchor xml:id="_classImplicitEulerIBVP_1a2309820ab1e205587063b03d369c003d"/>    <section>
+    <title>ImplicitEulerIBVP()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>ImplicitEulerIBVP</primary><secondary>ImplicitEulerIBVP</secondary></indexterm>
+<indexterm><primary>ImplicitEulerIBVP</primary><secondary>ImplicitEulerIBVP</secondary></indexterm>
+<para><computeroutput>ImplicitEulerIBVP::ImplicitEulerIBVP (<link linkend="_classIBVP">IBVP</link> &amp; source, long NSteps, long JSteps)</computeroutput></para><para>
+Definition at line 32 of file IEulerIBVPSolver.cc.</para>
+<programlisting>33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classIBVPFDM_1a5a131f0efb8cb71abea192b6afd26cd2">IBVPFDM</link>(source,&#32;NSteps,&#32;JSteps)
+34 {
+35 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;!!!&#32;number&#32;of&#32;unknowns&#32;is&#32;J&#32;-&#32;1&#32;(Dirichlet)</emphasis>
+36 &#32;&#32;&#32;&#32;A&#32;=&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;(<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1,&#32;1);
+37 &#32;&#32;&#32;&#32;<link linkend="_classB">B</link>&#32;=&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;(<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1,&#32;1);
+38 &#32;&#32;&#32;&#32;C&#32;=&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;(<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1,&#32;1);
+39 
+40 &#32;&#32;&#32;&#32;F&#32;=&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;(<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1,&#32;1);
+41 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classImplicitEulerIBVP_1af71d063f8fb5df6a5a269c3c4f82fbc3"/>    <section>
+    <title>calculate()</title>
+<indexterm><primary>calculate</primary><secondary>ImplicitEulerIBVP</secondary></indexterm>
+<indexterm><primary>ImplicitEulerIBVP</primary><secondary>calculate</secondary></indexterm>
+<para><computeroutput>void ImplicitEulerIBVP::calculate ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPFDM_1a5b73954c7ae1987e856c02b985387872">IBVPFDM</link>.</para>
+<para>
+Definition at line 54 of file IEulerIBVPSolver.cc.</para>
+<programlisting>55 {&#32;<emphasis role="comment">//&#32;Tells&#32;how&#32;to&#32;calculate&#32;sol.&#32;at&#32;n+1</emphasis>
+56 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;In&#32;general&#32;we&#32;need&#32;to&#32;solve&#32;a&#32;tridiagonal&#32;system</emphasis>
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp1,&#32;tmp2;
+58 &#32;&#32;&#32;&#32;
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;i&#32;=&#32;F.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;F.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)
+60 &#32;&#32;&#32;&#32;{
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp1&#32;=&#32;(<link linkend="_classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5">k</link>*<link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link>-&gt;<link linkend="_classIBVP_1a59a82bedba3a8de65997ce6b64e612b5">diffusion</link>(<link linkend="_classIBVPFDM_1acde024de54dc2124db544dc6424365c7">xarr</link>[i+1],<link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link>&#32;));
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp2&#32;=&#32;(0.5&#32;*&#32;<link linkend="_classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5">k</link>&#32;*&#32;<link linkend="_classIBVPFDM_1a20ec2ca54a8768c22ae5579021bcbc21">h</link>*&#32;(<link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link>-&gt;<link linkend="_classIBVP_1a74f384836849c568e26b10bae327ace5">convection</link>(<link linkend="_classIBVPFDM_1acde024de54dc2124db544dc6424365c7">xarr</link>[i+1],&#32;<link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link>)));
+63 
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Coefficients&#32;of&#32;the&#32;U&#32;terms</emphasis>
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;A[i]&#32;=&#32;tmp1&#32;-&#32;tmp2;
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classB">B</link>[i]&#32;=&#32;-<link linkend="_classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb">h2</link>&#32;-&#32;(2.0*tmp1)&#32;+&#32;(<link linkend="_classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5">k</link>*<link linkend="_classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb">h2</link>*(<link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link>-&gt;<link linkend="_classIBVP_1adf8e3d7993a300e7dd5c727d935ad8aa">zeroterm</link>(<link linkend="_classIBVPFDM_1acde024de54dc2124db544dc6424365c7">xarr</link>[i+1],<link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link>)));
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;C[i]&#32;=&#32;tmp1&#32;+&#32;tmp2;
+68 
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;F[i]&#32;=&#32;<link linkend="_classIBVPFDM_1a57f9b055edffae6936be2cb12e1746cb">h2</link>*(<link linkend="_classIBVPFDM_1a823466697562114bcde6f8ae43eeb3f5">k</link>&#32;*&#32;(<link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link>&#32;-&gt;&#32;RHS(<link linkend="_classIBVPFDM_1acde024de54dc2124db544dc6424365c7">xarr</link>[i+1],&#32;<link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link>))&#32;-&#32;<link linkend="_classIBVPFDM_1a9b5cf717e24fa77775650cbc2913785f">vecOld</link>[i+1]);&#32;<emphasis role="comment">//?&amp;</emphasis>
+70 &#32;&#32;&#32;&#32;}
+71 
+72 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;Coeficients&quot;;</emphasis>
+73 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;print(A);&#32;print(B);&#32;print(C);&#32;print(F);</emphasis>
+74 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;int&#32;kl;&#32;std::cin&#32;&gt;&gt;&#32;kl;</emphasis>
+75 
+76 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Correction&#32;term&#32;for&#32;RHS</emphasis>
+77 &#32;&#32;&#32;&#32;F[1]&#32;&#32;&#32;&#32;-=&#32;A[1]&#32;*&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>[<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+78 &#32;&#32;&#32;&#32;F[<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1]&#32;&#32;-=&#32;C[<link linkend="_classIBVPFDM_1a6bb6f364bb5fb19ad47db62da69c04e4">J</link>-1]&#32;*&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>[<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>()]&#32;;
+79 
+80 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;solve&#32;the&#32;system&#32;of&#32;equations</emphasis>
+81 &#32;&#32;&#32;&#32;<link linkend="_classLUTridiagonalSolver">LUTridiagonalSolver&lt;double, long&gt;</link>&#32;mySolver(A,&#32;<link linkend="_classB">B</link>,&#32;C,&#32;F);
+82 
+83 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;matrix&#32;must&#32;be&#32;diagonally&#32;dominant;&#32;we&#32;call&#32;the</emphasis>
+84 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;assert&#32;macro&#32;and&#32;the&#32;programs&#32;stops</emphasis>
+85 
+86 &#32;&#32;&#32;&#32;assert&#32;(mySolver.diagonallyDominant()&#32;==&#32;<emphasis role="keyword">true</emphasis>);
+87 &#32;&#32;&#32;&#32;
+88 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector &lt;double, long&gt;</link>&#32;solution&#32;=&#32;mySolver.solve();
+89 
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;ii&#32;=&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()+1;&#32;ii&#32;&lt;=&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>()-1;&#32;ii++)
+91 &#32;&#32;&#32;&#32;{
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>[ii]&#32;=&#32;solution[ii-1];
+93 &#32;&#32;&#32;&#32;}
+94 
+95 &#32;&#32;&#32;&#32;<emphasis role="comment">//print(vecNew);</emphasis>
+96 &#32;&#32;&#32;&#32;<emphasis role="comment">//int&#32;k;&#32;std::cin&#32;&gt;&gt;&#32;k;</emphasis>
+97 }
+</programlisting>    </section><anchor xml:id="_classImplicitEulerIBVP_1afc239aeb2cd0d045f4836dca607abaa6"/>    <section>
+    <title>calculateBC()</title>
+<indexterm><primary>calculateBC</primary><secondary>ImplicitEulerIBVP</secondary></indexterm>
+<indexterm><primary>ImplicitEulerIBVP</primary><secondary>calculateBC</secondary></indexterm>
+<para><computeroutput>void ImplicitEulerIBVP::calculateBC ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPFDM_1a42bd377e3c0b16ddb05d8a3dea7a873b">IBVPFDM</link>.</para>
+<para>
+Definition at line 43 of file IEulerIBVPSolver.cc.</para>
+<programlisting>44 {&#32;<emphasis role="comment">//&#32;Tells&#32;how&#32;to&#32;calculate&#32;sol.&#32;at&#32;n+1</emphasis>
+45 &#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>[<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()]&#32;=&#32;<link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link>-&gt;<link linkend="_classIBVP_1a06a4841866f3ec0f7f62f67a7e800930">BCL</link>(<link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link>);
+46 &#32;&#32;&#32;&#32;<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>[<link linkend="_classIBVPFDM_1acdb610da30891ef45dba3af0ef080a2c">vecNew</link>.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>()]&#32;=&#32;<link linkend="_classIBVPFDM_1ac23f7379cd6d342fc9e640171ec2a43b">ibvp</link>-&gt;<link linkend="_classIBVP_1afd987bb4e41ff033ce8d0705818f4cef">BCR</link>(<link linkend="_classIBVPFDM_1ae4013b6a973f974279aa08d006b6d1a2">tnow</link>);
+47 
+48 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;IC&quot;;</emphasis>
+49 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;print(vecOld);</emphasis>
+50 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;int&#32;kk;</emphasis>
+51 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;kk;</emphasis>
+52 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/IEulerIBVPSolver.hhsrc/IEulerIBVPSolver.cc</section>
+include/duffy/<link linkend="_IEulerIBVPSolver_8hh">IEulerIBVPSolver.hh</link>src/<link linkend="_IEulerIBVPSolver_8cc">IEulerIBVPSolver.cc</link></section>
+</section>

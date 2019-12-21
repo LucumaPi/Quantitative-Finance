@@ -1,0 +1,53 @@
+\hypertarget{PayoffNamespace_8cc_source}{}\doxysection{Payoff\+Namespace.\+cc}
+\label{PayoffNamespace_8cc_source}\index{src/PayoffNamespace.cc@{src/PayoffNamespace.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// PayoffNamespace.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Source containing all payoff types}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef PayoffNamespace\_CC}}
+\DoxyCodeLine{\Hypertarget{PayoffNamespace_8cc_source_l00009}\mbox{\hyperlink{PayoffNamespace_8cc_a29e49e36d28aade9c5636bb9baea0212}{00009}} \textcolor{preprocessor}{\#define PayoffNamespace\_CC}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{\Hypertarget{PayoffNamespace_8cc_source_l00011}\mbox{\hyperlink{namespacePayoffNamespace}{00011}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacePayoffNamespace}{PayoffNamespace}}}
+\DoxyCodeLine{00012 \{}
+\DoxyCodeLine{\Hypertarget{PayoffNamespace_8cc_source_l00013}\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{00013}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}};}
+\DoxyCodeLine{\Hypertarget{PayoffNamespace_8cc_source_l00014}\mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{00014}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}};}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{PayoffNamespace_8cc_source_l00016}\mbox{\hyperlink{namespacePayoffNamespace_1_1CallPayoff}{00016}}     \textcolor{keyword}{namespace }\mbox{\hyperlink{classCallPayoff}{CallPayoff}}}
+\DoxyCodeLine{00017     \{}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{PayoffNamespace_8cc_source_l00019}\mbox{\hyperlink{namespacePayoffNamespace_1_1CallPayoff_a10b9109397cc2cea2ac7cc9c6b224658}{00019}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_1_1CallPayoff_a10b9109397cc2cea2ac7cc9c6b224658}{OptPayoff}}(\textcolor{keywordtype}{double} S)}
+\DoxyCodeLine{00020         \{}
+\DoxyCodeLine{00021         }
+\DoxyCodeLine{00022             \textcolor{keywordtype}{double} tmp = S -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}};}
+\DoxyCodeLine{00023             \textcolor{keywordflow}{if} (tmp > 0.0)}
+\DoxyCodeLine{00024                 \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026             \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00027         \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{PayoffNamespace_8cc_source_l00031}\mbox{\hyperlink{namespacePayoffNamespace_1_1PutPayoff}{00031}}     \textcolor{keyword}{namespace }PutPayoff}
+\DoxyCodeLine{00032     \{}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{\Hypertarget{PayoffNamespace_8cc_source_l00034}\mbox{\hyperlink{namespacePayoffNamespace_1_1PutPayoff_ae3cbedc8d9a4a6d55f3eb0dd7c1cd747}{00034}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_1_1PutPayoff_ae3cbedc8d9a4a6d55f3eb0dd7c1cd747}{OptPayoff}}(\textcolor{keywordtype}{double} S)}
+\DoxyCodeLine{00035         \{}
+\DoxyCodeLine{00036         }
+\DoxyCodeLine{00037             \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} -\/ S;}
+\DoxyCodeLine{00038             \textcolor{keywordflow}{if} (tmp > 0.0)}
+\DoxyCodeLine{00039                 \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041             \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00042         \}}
+\DoxyCodeLine{00043     \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+\hypertarget{TestMultiAsset_8cc_source}{}\doxysection{Test\+Multi\+Asset.\+cc}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestMultiAsset.cpp}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <duffy/MultiAssetFactory.hh>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{\Hypertarget{TestMultiAsset_8cc_source_l00005}\mbox{\hyperlink{TestMultiAsset_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00005}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestMultiAsset_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008     \mbox{\hyperlink{classMultiAssetFactory}{MultiAssetFactory}} fac;}
+\DoxyCodeLine{00009     fac.\mbox{\hyperlink{classMultiAssetFactory_ac119d81cfec42e83368f632e261e59f1}{display}}();}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011     \mbox{\hyperlink{classMultiAssetPayoffStrategy}{MultiAssetPayoffStrategy}}* \mbox{\hyperlink{classPayoff}{Payoff}};}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     std::cout << \textcolor{stringliteral}{"Choice: "}; \textcolor{keywordtype}{int} choice; std::cin >> choice;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00016     \{}
+\DoxyCodeLine{00017         \mbox{\hyperlink{classPayoff}{Payoff}} = fac.\mbox{\hyperlink{classMultiAssetFactory_af557ef4e09d2fd13505bd932e1c17e78}{create}}(choice);}
+\DoxyCodeLine{00018     \}}
+\DoxyCodeLine{00019     \textcolor{keywordflow}{catch}(std::string\& error)}
+\DoxyCodeLine{00020     \{}
+\DoxyCodeLine{00021         std::cout << error << std::endl;}
+\DoxyCodeLine{00022     \}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00025 \}}
+
+\end{DoxyCode}

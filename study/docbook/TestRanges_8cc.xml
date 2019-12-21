@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestRanges_8cc">
+<title>tests/TestRanges.cc File Reference</title>
+<indexterm><primary>tests/TestRanges.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/AssocMatrix.hh&gt;
+#include &lt;duffy/MatrixMechanisms.hh&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestRanges.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestRanges_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_TestRanges_8cc_1a85cac4262a409ae32a7e2e3bc243b66f">Modifier1</link> (double &amp;d)</para>
+</listitem>
+            <listitem><para>void <link linkend="_TestRanges_8cc_1ab9a9d29e13c188b4aed90d30a148f740">print</link> (const <link linkend="_classAssocArray">AssocArray</link>&lt; long, std::string &gt; &amp;assArr)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestRanges_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestRanges_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestRanges.cc</secondary></indexterm>
+<indexterm><primary>TestRanges.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 36 of file TestRanges.cc.</para>
+<programlisting>37 {
+38 
+39 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;std::string&gt;</link>&#32;columns;
+40 &#32;&#32;&#32;&#32;columns.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A&quot;</emphasis>);
+41 &#32;&#32;&#32;&#32;columns.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;B&quot;</emphasis>);
+42 &#32;&#32;&#32;&#32;columns.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;C&quot;</emphasis>);
+43 &#32;&#32;&#32;&#32;columns.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;D&quot;</emphasis>);
+44 
+45 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;long&gt;</link>&#32;rows;
+46 &#32;&#32;&#32;&#32;rows.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(1);
+47 &#32;&#32;&#32;&#32;rows.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(2);
+48 &#32;&#32;&#32;&#32;rows.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(3);
+49 &#32;&#32;&#32;&#32;rows.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(4);
+50 &#32;&#32;&#32;&#32;
+51 &#32;&#32;&#32;&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;double, long&gt;</link>&#32;mat1(rows.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>(),&#32;columns.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>());
+52 &#32;&#32;&#32;&#32;<link linkend="_classAssocMatrix">AssocMatrix&lt;double, long, std::string&gt;</link>&#32;myMat2(rows,&#32;columns,&#32;mat1);
+53 
+54 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;work&#32;with&#32;ranges&#32;in&#32;this&#32;associative&#32;matrix</emphasis>
+55 &#32;&#32;&#32;&#32;<link linkend="_structSpreadSheetVertex">SpreadSheetVertex&lt;long, std::string&gt;</link>&#32;ul;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Upper&#32;left</emphasis>
+56 &#32;&#32;&#32;&#32;ul.<link linkend="_structSpreadSheetVertex_1ab38191438cab228269626d8e6d25b39d">first</link>&#32;=&#32;1;
+57 &#32;&#32;&#32;&#32;ul.<link linkend="_structSpreadSheetVertex_1a56fba3e9639a4721b49bbbdb68f52ae9">second</link>&#32;=&#32;string(<emphasis role="stringliteral">&quot;B&quot;</emphasis>);
+58 
+59 &#32;&#32;&#32;&#32;<link linkend="_structSpreadSheetVertex">SpreadSheetVertex&lt;long, std::string&gt;</link>&#32;lr;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Lower&#32;right</emphasis>
+60 &#32;&#32;&#32;&#32;lr.<link linkend="_structSpreadSheetVertex_1ab38191438cab228269626d8e6d25b39d">first</link>&#32;=&#32;3;
+61 &#32;&#32;&#32;&#32;lr.<link linkend="_structSpreadSheetVertex_1a56fba3e9639a4721b49bbbdb68f52ae9">second</link>&#32;=&#32;string(<emphasis role="stringliteral">&quot;D&quot;</emphasis>);
+62 
+63 &#32;&#32;&#32;&#32;<link linkend="_structSpreadSheetRange">SpreadSheetRange&lt;long, std::string&gt;</link>&#32;myRange;
+64 &#32;&#32;&#32;&#32;myRange.<link linkend="_structSpreadSheetRange_1a162552eb32806cc172e1dc7e7c74da07">upperLeft</link>&#32;=&#32;ul;
+65 &#32;&#32;&#32;&#32;myRange.<link linkend="_structSpreadSheetRange_1a3d228f1713cd8d0189f7d2bd0a312512">lowerRight</link>&#32;=&#32;lr;
+66 
+67 &#32;&#32;&#32;&#32;myMat2.modify(myRange,&#32;<link linkend="_TestRanges_8cc_1a85cac4262a409ae32a7e2e3bc243b66f">Modifier1</link>);
+68 &#32;&#32;&#32;&#32;<link linkend="_TestRanges_8cc_1ab9a9d29e13c188b4aed90d30a148f740">print</link>&#32;(*(myMat2.Data()));
+69 
+70 &#32;&#32;&#32;&#32;<link linkend="_TestRanges_8cc_1ab9a9d29e13c188b4aed90d30a148f740">print</link>(myMat2.extract(myRange));
+71 
+72 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+73 }
+</programlisting>    </section><anchor xml:id="_TestRanges_8cc_1a85cac4262a409ae32a7e2e3bc243b66f"/>    <section>
+    <title>Modifier1()</title>
+<indexterm><primary>Modifier1</primary><secondary>TestRanges.cc</secondary></indexterm>
+<indexterm><primary>TestRanges.cc</primary><secondary>Modifier1</secondary></indexterm>
+<para><computeroutput>void Modifier1 (double &amp; d)</computeroutput></para><para>
+Definition at line 15 of file TestRanges.cc.</para>
+<programlisting>16 {
+17 &#32;&#32;&#32;&#32;d&#32;+=&#32;0.5;
+18 }
+</programlisting>    </section><anchor xml:id="_TestRanges_8cc_1ab9a9d29e13c188b4aed90d30a148f740"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestRanges.cc</secondary></indexterm>
+<indexterm><primary>TestRanges.cc</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void print (const <link linkend="_classAssocArray">AssocArray</link>&lt; long, std::string &gt; &amp; assArr)</computeroutput></para><para>
+Definition at line 20 of file TestRanges.cc.</para>
+<programlisting>21 {
+22 
+23 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterating&#32;in&#32;the&#32;map</emphasis>
+24 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62">AssocArray&lt;long, std::string&gt;::const_iterator</link>&#32;i&#32;=&#32;assArr.<link linkend="_classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107">Begin</link>();
+25 
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;assArr.<link linkend="_classAssocArray_1a600b9a0280c6f67380abc032dad1d755">End</link>())
+27 &#32;&#32;&#32;&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;((*i).second)&#32;&lt;&lt;&#32;std::endl;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+31 &#32;&#32;&#32;&#32;}
+32 
+33 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+34 }
+</programlisting></section>
+</section>
+</section>

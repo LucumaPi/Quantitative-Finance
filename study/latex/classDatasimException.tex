@@ -2,6 +2,10 @@
 \label{classDatasimException}\index{DatasimException@{DatasimException}}
 
 
+{\ttfamily \#include $<$Datasim\+Exception.\+hh$>$}
+
+
+
 Collaboration diagram for Datasim\+Exception\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,27 +16,174 @@ Collaboration diagram for Datasim\+Exception\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classDatasimException_af417c602595f481d651cf6fd8e51bb04}\label{classDatasimException_af417c602595f481d651cf6fd8e51bb04}} 
-{\bfseries Datasim\+Exception} (const std\+::string \&message, const std\+::string \&method, const std\+::string \&extra\+Info)
+\mbox{\hyperlink{classDatasimException_ad13fe05d37a7408a830de3b607bac935}{Datasim\+Exception}} ()
 \item 
-\mbox{\Hypertarget{classDatasimException_a0b66cf81fa140e4c79200ebeb4a77495}\label{classDatasimException_a0b66cf81fa140e4c79200ebeb4a77495}} 
-std\+::string {\bfseries Message} () const
+\mbox{\hyperlink{classDatasimException_af417c602595f481d651cf6fd8e51bb04}{Datasim\+Exception}} (const std\+::string \&message, const std\+::string \&method, const std\+::string \&extra\+Info)
 \item 
-\mbox{\Hypertarget{classDatasimException_a9d3c628a95ad8319412644c0bf4fc5db}\label{classDatasimException_a9d3c628a95ad8319412644c0bf4fc5db}} 
-std\+::string {\bfseries rationale} () const
+std\+::string \mbox{\hyperlink{classDatasimException_a0b66cf81fa140e4c79200ebeb4a77495}{Message}} () const
 \item 
-\mbox{\Hypertarget{classDatasimException_a2a24aa450eba7284cb9b8eb019f4b031}\label{classDatasimException_a2a24aa450eba7284cb9b8eb019f4b031}} 
-std\+::string {\bfseries Method} () const
+std\+::string \mbox{\hyperlink{classDatasimException_a9d3c628a95ad8319412644c0bf4fc5db}{rationale}} () const
 \item 
-\mbox{\Hypertarget{classDatasimException_a3f35187da2d3cb0d57ddc295a535a130}\label{classDatasimException_a3f35187da2d3cb0d57ddc295a535a130}} 
-std\+::vector$<$ std\+::string $>$ {\bfseries Message\+Dump} () const
+std\+::string \mbox{\hyperlink{classDatasimException_a2a24aa450eba7284cb9b8eb019f4b031}{Method}} () const
 \item 
-\mbox{\Hypertarget{classDatasimException_a1b21cfcf91a5e6d5c60b6ebffe0967cf}\label{classDatasimException_a1b21cfcf91a5e6d5c60b6ebffe0967cf}} 
-virtual void {\bfseries print} () const
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classDatasimException_a3f35187da2d3cb0d57ddc295a535a130}{Message\+Dump}} () const
+\item 
+virtual void \mbox{\hyperlink{classDatasimException_a1b21cfcf91a5e6d5c60b6ebffe0967cf}{print}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{DatasimException_8hh_source_l00014}{14}} of file \mbox{\hyperlink{DatasimException_8hh_source}{Datasim\+Exception.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDatasimException_ad13fe05d37a7408a830de3b607bac935}\label{classDatasimException_ad13fe05d37a7408a830de3b607bac935}} 
+\index{DatasimException@{DatasimException}!DatasimException@{DatasimException}}
+\index{DatasimException@{DatasimException}!DatasimException@{DatasimException}}
+\doxysubsubsection{\texorpdfstring{DatasimException()}{DatasimException()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Datasim\+Exception\+::\+Datasim\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DatasimException_8cc_source_l00013}{13}} of file \mbox{\hyperlink{DatasimException_8cc_source}{Datasim\+Exception.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015         mess = meth = why = std::string();}
+\DoxyCodeLine{00016         result = std::vector<std::string>(3);}
+\DoxyCodeLine{00017         result[0] = mess;}
+\DoxyCodeLine{00018         result[1] = meth;}
+\DoxyCodeLine{00019         result[2] = why;}
+\DoxyCodeLine{00020 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDatasimException_af417c602595f481d651cf6fd8e51bb04}\label{classDatasimException_af417c602595f481d651cf6fd8e51bb04}} 
+\index{DatasimException@{DatasimException}!DatasimException@{DatasimException}}
+\index{DatasimException@{DatasimException}!DatasimException@{DatasimException}}
+\doxysubsubsection{\texorpdfstring{DatasimException()}{DatasimException()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Datasim\+Exception\+::\+Datasim\+Exception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message,  }\item[{const std\+::string \&}]{method,  }\item[{const std\+::string \&}]{extra\+Info }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DatasimException_8cc_source_l00022}{22}} of file \mbox{\hyperlink{DatasimException_8cc_source}{Datasim\+Exception.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025         mess = message;}
+\DoxyCodeLine{00026         meth = method;}
+\DoxyCodeLine{00027         why = extraInfo;}
+\DoxyCodeLine{00028         result = std::vector<std::string>(3);}
+\DoxyCodeLine{00029         }
+\DoxyCodeLine{00030         result[0] = mess;}
+\DoxyCodeLine{00031         result[1] = meth;}
+\DoxyCodeLine{00032         result[2] = why;}
+\DoxyCodeLine{00033 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDatasimException_a0b66cf81fa140e4c79200ebeb4a77495}\label{classDatasimException_a0b66cf81fa140e4c79200ebeb4a77495}} 
+\index{DatasimException@{DatasimException}!Message@{Message}}
+\index{Message@{Message}!DatasimException@{DatasimException}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}}
+{\footnotesize\ttfamily std\+::string Datasim\+Exception\+::\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{DatasimException_8cc_source_l00035}{35}} of file \mbox{\hyperlink{DatasimException_8cc_source}{Datasim\+Exception.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036 \{ }
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} mess; }
+\DoxyCodeLine{00038 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDatasimException_a3f35187da2d3cb0d57ddc295a535a130}\label{classDatasimException_a3f35187da2d3cb0d57ddc295a535a130}} 
+\index{DatasimException@{DatasimException}!MessageDump@{MessageDump}}
+\index{MessageDump@{MessageDump}!DatasimException@{DatasimException}}
+\doxysubsubsection{\texorpdfstring{MessageDump()}{MessageDump()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Datasim\+Exception\+::\+Message\+Dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{DatasimException_8cc_source_l00050}{50}} of file \mbox{\hyperlink{DatasimException_8cc_source}{Datasim\+Exception.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051 \{ \textcolor{comment}{// Full message}}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00053 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDatasimException_a2a24aa450eba7284cb9b8eb019f4b031}\label{classDatasimException_a2a24aa450eba7284cb9b8eb019f4b031}} 
+\index{DatasimException@{DatasimException}!Method@{Method}}
+\index{Method@{Method}!DatasimException@{DatasimException}}
+\doxysubsubsection{\texorpdfstring{Method()}{Method()}}
+{\footnotesize\ttfamily std\+::string Datasim\+Exception\+::\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{DatasimException_8cc_source_l00045}{45}} of file \mbox{\hyperlink{DatasimException_8cc_source}{Datasim\+Exception.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046 \{ }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} meth; }
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDatasimException_a1b21cfcf91a5e6d5c60b6ebffe0967cf}\label{classDatasimException_a1b21cfcf91a5e6d5c60b6ebffe0967cf}} 
+\index{DatasimException@{DatasimException}!print@{print}}
+\index{print@{print}!DatasimException@{DatasimException}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Datasim\+Exception\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{DatasimException_8cc_source_l00055}{55}} of file \mbox{\hyperlink{DatasimException_8cc_source}{Datasim\+Exception.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056 \{}
+\DoxyCodeLine{00057     \textcolor{comment}{// Variant part}}
+\DoxyCodeLine{00058     std::vector<std::string> \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = \mbox{\hyperlink{classDatasimException_a3f35187da2d3cb0d57ddc295a535a130}{MessageDump}}();}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     std::cout << std::endl << \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[0] << std::endl;}
+\DoxyCodeLine{00061     \textcolor{comment}{// Invariant part}}
+\DoxyCodeLine{00062     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j < \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.size(); j++)}
+\DoxyCodeLine{00063     \{}
+\DoxyCodeLine{00064         std::cout << \textcolor{charliteral}{'\(\backslash\)t'} << \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[j] << std::endl;}
+\DoxyCodeLine{00065     \}}
+\DoxyCodeLine{00066 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDatasimException_a9d3c628a95ad8319412644c0bf4fc5db}\label{classDatasimException_a9d3c628a95ad8319412644c0bf4fc5db}} 
+\index{DatasimException@{DatasimException}!rationale@{rationale}}
+\index{rationale@{rationale}!DatasimException@{DatasimException}}
+\doxysubsubsection{\texorpdfstring{rationale()}{rationale()}}
+{\footnotesize\ttfamily std\+::string Datasim\+Exception\+::rationale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{DatasimException_8cc_source_l00040}{40}} of file \mbox{\hyperlink{DatasimException_8cc_source}{Datasim\+Exception.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041 \{ }
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} why; }
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Datasim\+Exception.\+hh\item 
-src/Datasim\+Exception.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{DatasimException_8hh}{Datasim\+Exception.\+hh}}\item 
+src/\mbox{\hyperlink{DatasimException_8cc}{Datasim\+Exception.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSTD_8cc">
+<title>tests/TestSTD.cc File Reference</title>
+<indexterm><primary>tests/TestSTD.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/IBVP.hh&gt;
+#include &lt;duffy/STDImp.hh&gt;
+#include &lt;duffy/IBVPSolver.hh&gt;
+#include &lt;duffy/EEulerIBVPSolver.hh&gt;
+#include &lt;duffy/IEulerIBVPSolver.hh&gt;
+#include &lt;duffy/ArrayMechanisms.hh&gt;
+#include &lt;duffy/MatrixMechanisms.hh&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestSTD.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSTD_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestSTD_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSTD_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSTD.cc</secondary></indexterm>
+<indexterm><primary>TestSTD.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 18 of file TestSTD.cc.</para>
+<programlisting>19 {
+20 
+21 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;A.&#32;The&#32;Continuous&#32;Problem</emphasis>
+22 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Derived&#32;implementation&#32;class</emphasis>
+23 &#32;&#32;&#32;&#32;<link linkend="_classSTDIBVPImp">STDIBVPImp</link>&#32;stdImp;
+24 &#32;&#32;&#32;&#32;
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;the&#32;client&#32;class&#32;IVP</emphasis>
+26 &#32;&#32;&#32;&#32;<link linkend="_classIBVPImp">IBVPImp</link>*&#32;myImp2&#32;=&#32;&amp;stdImp;
+27 
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;xmax&#32;=&#32;1.0;
+29 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;double&gt;</link>&#32;rangeX(0.0,&#32;xmax);
+30 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;double&gt;</link>&#32;rangeT(0.0,&#32;1.0);
+31 
+32 &#32;&#32;&#32;&#32;<link linkend="_classIBVP">IBVP</link>&#32;i2(*myImp2,&#32;rangeX,&#32;rangeT);
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;B.&#32;Finite&#32;Difference&#32;Schemes</emphasis>
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;J&#32;=&#32;10;
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;=&#32;302;
+37 
+38 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;space&#32;divisions:&#32;&quot;</emphasis>;
+39 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;J;
+40 
+41 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;time&#32;divisions:&#32;&quot;</emphasis>;
+42 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;
+43 
+44 
+45 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ExplicitEulerIBVP&#32;fdm(i2,&#32;N,&#32;J);</emphasis>
+46 <emphasis role="comment">//&#32;&#32;print(fdm.result());</emphasis>
+47 &#32;&#32;&#32;&#32;
+48 
+49 &#32;&#32;&#32;&#32;<link linkend="_classImplicitEulerIBVP">ImplicitEulerIBVP</link>&#32;fdm2(i2,&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>,&#32;J);
+50 <emphasis role="comment">//&#32;&#32;print(fdm2.result());</emphasis>
+51 
+52 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Display&#32;in&#32;Excel</emphasis>
+53 <emphasis role="comment">//&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;calling&#32;function&#32;&quot;&#32;&lt;&lt;&#32;std::endl;</emphasis>
+54 <emphasis role="comment">//&#32;&#32;print(fdm2.TValues());</emphasis>
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>
+56 &#32;&#32;&#32;&#32;{
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;...&quot;</emphasis>;
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//printMatrixInExcel(fdm2.result(),&#32;fdm2.TValues(),&#32;fdm2.XValues(),&#32;</emphasis>
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string(&quot;IEuler&quot;));</emphasis>
+60 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;printMatrixInExcel(fdm.result(),&#32;fdm.TValues(),&#32;fdm.XValues(),&#32;</emphasis>
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string(&quot;EEuler&quot;));</emphasis>
+62 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;printMatrixDifferenceInExcel(fdm.result(),&#32;fdm2.result(),&#32;fdm2.TValues(),&#32;fdm2.XValues(),</emphasis>
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string(&quot;Diff&quot;));</emphasis>
+64 
+65 &#32;&#32;&#32;&#32;}
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;errorString)
+67 &#32;&#32;&#32;&#32;{
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;errorString&#32;&lt;&lt;&#32;std::endl;
+69 &#32;&#32;&#32;&#32;}
+70 
+71 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;called&#32;function&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+72 
+73 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+74 }
+</programlisting></section>
+</section>
+</section>

@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classQuotientStrategy">
 <title>QuotientStrategy Class Reference</title>
 <indexterm><primary>QuotientStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MultiAssetPayoffStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for QuotientStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,44 @@ Collaboration diagram for QuotientStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classQuotientStrategy_1a75424ff1ffcab8ecefc083e8588a0a48"/><emphasis role="strong">QuotientStrategy</emphasis> (double strike, double cp)</para>
+            <listitem><para><link linkend="_classQuotientStrategy_1a75424ff1ffcab8ecefc083e8588a0a48">QuotientStrategy</link> (double strike, double cp)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classQuotientStrategy_1a763e8600d4099546f0bd3e30eff53219"/>double <emphasis role="strong">payoff</emphasis> (double S1, double S2) const</para>
+            <listitem><para>double <link linkend="_classQuotientStrategy_1a763e8600d4099546f0bd3e30eff53219">payoff</link> (double S1, double S2) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 100 of file MultiAssetPayoffStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classQuotientStrategy_1a75424ff1ffcab8ecefc083e8588a0a48"/>    <section>
+    <title>QuotientStrategy()</title>
+<indexterm><primary>QuotientStrategy</primary><secondary>QuotientStrategy</secondary></indexterm>
+<indexterm><primary>QuotientStrategy</primary><secondary>QuotientStrategy</secondary></indexterm>
+<para><computeroutput>QuotientStrategy::QuotientStrategy (double strike, double cp)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 107 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;strike;&#32;w&#32;=&#32;cp;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classQuotientStrategy_1a763e8600d4099546f0bd3e30eff53219"/>    <section>
+    <title>payoff()</title>
+<indexterm><primary>payoff</primary><secondary>QuotientStrategy</secondary></indexterm>
+<indexterm><primary>QuotientStrategy</primary><secondary>payoff</secondary></indexterm>
+<para><computeroutput>double QuotientStrategy::payoff (double S1, double S2) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">MultiAssetPayoffStrategy</link>.</para>
+<para>
+Definition at line 109 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>&#32;(&#32;w&#32;*&#32;(S1/S2)&#32;-&#32;w*<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>,&#32;0.0);
+112 
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-MultiAssetPayoffStrategy.hh</section>
+<link linkend="_MultiAssetPayoffStrategy_8hh">MultiAssetPayoffStrategy.hh</link></section>
+</section>

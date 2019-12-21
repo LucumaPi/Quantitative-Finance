@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestPointerToMemberFunction_8cc">
+<title>tests/TestPointerToMemberFunction.cc File Reference</title>
+<indexterm><primary>tests/TestPointerToMemberFunction.cc</primary></indexterm>
+<programlisting>#include &quot;../src/PayoffNew.cc&quot;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestPointerToMemberFunction.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestPointerToMemberFunction_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classOption">Option</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef double(Payoff::* <link linkend="_TestPointerToMemberFunction_8cc_1aa1af2de2b5c8c70946008001993327ac">PMember</link>) (double value)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestPointerToMemberFunction_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_TestPointerToMemberFunction_8cc_1aa1af2de2b5c8c70946008001993327ac"/>    <section>
+    <title>PMember</title>
+<indexterm><primary>PMember</primary><secondary>TestPointerToMemberFunction.cc</secondary></indexterm>
+<indexterm><primary>TestPointerToMemberFunction.cc</primary><secondary>PMember</secondary></indexterm>
+<para><computeroutput>typedef double(Payoff::*  PMember) (double value)</computeroutput></para><para>
+Definition at line 11 of file TestPointerToMemberFunction.cc.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestPointerToMemberFunction_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestPointerToMemberFunction.cc</secondary></indexterm>
+<indexterm><primary>TestPointerToMemberFunction.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 49 of file TestPointerToMemberFunction.cc.</para>
+<programlisting>50 {
+51 &#32;&#32;&#32;&#32;<link linkend="_classOption">Option</link>&#32;myOption;
+52 &#32;&#32;&#32;&#32;<link linkend="_classPayoff">Payoff</link>&#32;myPayoff(myOption.<link linkend="_classOption_1a40db81993d02b319a38e62b42a730d6a">K</link>);
+53 &#32;&#32;&#32;&#32;<link linkend="_TestPointerToMemberFunction_8cc_1aa1af2de2b5c8c70946008001993327ac">PMember</link>&#32;<link linkend="_TestComplexArray_8cc_1a96d33e68896cca70b2aaff9893026216">myFunc</link>&#32;=&#32;<link linkend="_classPayoff_1a81ee255183b0babc5e6d9663196a83de">Payoff::Call</link>;
+54 &#32;&#32;&#32;&#32;myOption.<link linkend="_classOption_1ad8226d961c2a9531f956d70e0de78136">pay</link>&#32;=&#32;myPayoff;
+55 &#32;&#32;&#32;&#32;myOption.<link linkend="_classOption_1aad4544d348ddee46df4181af45ff483c">pm</link>&#32;=&#32;<link linkend="_TestComplexArray_8cc_1a96d33e68896cca70b2aaff9893026216">myFunc</link>;
+56 
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d&#32;=&#32;myOption.<link linkend="_classOption_1a860218238db3dd970925771ebd27d53d">payoff</link>(23);
+58 &#32;&#32;&#32;&#32;
+59 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Call&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;d&#32;&lt;&lt;&#32;std::endl;
+60 
+61 &#32;&#32;&#32;&#32;<link linkend="_TestComplexArray_8cc_1a96d33e68896cca70b2aaff9893026216">myFunc</link>&#32;=&#32;<link linkend="_classPayoff_1a5d0222f2d42995f5ab01820272761e21">Payoff::Put</link>;
+62 &#32;&#32;&#32;&#32;myOption.<link linkend="_classOption_1aad4544d348ddee46df4181af45ff483c">pm</link>&#32;=&#32;<link linkend="_TestComplexArray_8cc_1a96d33e68896cca70b2aaff9893026216">myFunc</link>;
+63 &#32;&#32;&#32;&#32;d&#32;=&#32;myOption.<link linkend="_classOption_1a860218238db3dd970925771ebd27d53d">payoff</link>(23);
+64 
+65 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Put&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;d&#32;&lt;&lt;&#32;std::endl;
+66 
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+68 }
+</programlisting></section>
+</section>
+</section>

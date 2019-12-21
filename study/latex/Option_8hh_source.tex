@@ -15,27 +15,27 @@
 \DoxyCodeLine{00011 \{}
 \DoxyCodeLine{00012 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00013 }
-\DoxyCodeLine{00014     \textcolor{keywordtype}{double} r;       \textcolor{comment}{// Interest rate}}
-\DoxyCodeLine{00015     \textcolor{keywordtype}{double} sig;     \textcolor{comment}{// Volatility}}
-\DoxyCodeLine{00016     \textcolor{keywordtype}{double} K;       \textcolor{comment}{// Strike price}}
-\DoxyCodeLine{00017     \textcolor{keywordtype}{double} T;       \textcolor{comment}{// Expiry date}}
-\DoxyCodeLine{00018     \textcolor{keywordtype}{double} U;       \textcolor{comment}{// Current underlying price (e.g. stock, forward)}}
-\DoxyCodeLine{00019     \textcolor{keywordtype}{double} b;       \textcolor{comment}{// Cost of carry}}
-\DoxyCodeLine{00020     \textcolor{keywordtype}{int} type;       \textcolor{comment}{// 1 == Call, 2 == Put}}
+\DoxyCodeLine{00014     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_abd44ab56edddcd59f80ca5c60c9b66f0}{r}};      \textcolor{comment}{// Interest rate}}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_a8b68f88d3e7a01dfea0b83e3e5a4f57e}{sig}};      \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{00016     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}};      \textcolor{comment}{// Strike price}}
+\DoxyCodeLine{00017     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_ae583dd6d430a3b428014efa942605d54}{T}};      \textcolor{comment}{// Expiry date}}
+\DoxyCodeLine{\Hypertarget{Option_8hh_source_l00018}\mbox{\hyperlink{classOption_ae6d180511e6eef217242a68912673668}{00018}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_ae6d180511e6eef217242a68912673668}{U}};      \textcolor{comment}{// Current underlying price (e.g. stock, forward)}}
+\DoxyCodeLine{00019     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_aa3f69771cb6066c69d588fc7682fc1e8}{b}};      \textcolor{comment}{// Cost of carry}}
+\DoxyCodeLine{\Hypertarget{Option_8hh_source_l00020}\mbox{\hyperlink{classOption_a6cfb977fc319239971836988f5f665dc}{00020}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{classOption_a6cfb977fc319239971836988f5f665dc}{type}};       \textcolor{comment}{// 1 == Call, 2 == Put}}
 \DoxyCodeLine{00021 }
-\DoxyCodeLine{00022     \textcolor{keywordtype}{double} payoff(\textcolor{keywordtype}{double} S)\textcolor{keyword}{const}}
+\DoxyCodeLine{\Hypertarget{Option_8hh_source_l00022}\mbox{\hyperlink{classOption_a860218238db3dd970925771ebd27d53d}{00022}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_a860218238db3dd970925771ebd27d53d}{payoff}}(\textcolor{keywordtype}{double} S)\textcolor{keyword}{const}}
 \DoxyCodeLine{00023 \textcolor{keyword}{    }\{}
-\DoxyCodeLine{00024         \textcolor{keywordflow}{if} (type == 1)}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classOption_a08dcf2742c8429087baaacf694089cbe}{type}} == 1)}
 \DoxyCodeLine{00025         \{}
-\DoxyCodeLine{00026             \textcolor{keywordflow}{if} (S > K)}
-\DoxyCodeLine{00027                 \textcolor{keywordflow}{return} (S -\/ K);}
+\DoxyCodeLine{00026             \textcolor{keywordflow}{if} (S > \mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}})}
+\DoxyCodeLine{00027                 \textcolor{keywordflow}{return} (S -\/ \mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}});}
 \DoxyCodeLine{00028 }
 \DoxyCodeLine{00029             \textcolor{keywordflow}{return} 0.0;}
 \DoxyCodeLine{00030         \}}
 \DoxyCodeLine{00031         \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00032         \{}
-\DoxyCodeLine{00033             \textcolor{keywordflow}{if} (S < K)}
-\DoxyCodeLine{00034                 \textcolor{keywordflow}{return} -\/(S -\/ K);}
+\DoxyCodeLine{00033             \textcolor{keywordflow}{if} (S < \mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}})}
+\DoxyCodeLine{00034                 \textcolor{keywordflow}{return} -\/(S -\/ \mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}});}
 \DoxyCodeLine{00035 }
 \DoxyCodeLine{00036             \textcolor{keywordflow}{return} 0.0;}
 \DoxyCodeLine{00037         \}}

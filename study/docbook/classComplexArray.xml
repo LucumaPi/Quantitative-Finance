@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classComplexArray">
 <title>ComplexArray Class Reference</title>
 <indexterm><primary>ComplexArray</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ComplexArray.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for ComplexArray:<para>
     <informalfigure>
         <mediaobject>
@@ -14,24 +17,143 @@ Collaboration diagram for ComplexArray:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classComplexArray_1a86e1e6f77ebe1fec2da3e49c8a698f51"/><emphasis role="strong">ComplexArray</emphasis> (int size)</para>
+            <listitem><para><link linkend="_classComplexArray_1a86e1e6f77ebe1fec2da3e49c8a698f51">ComplexArray</link> (int size)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classComplexArray_1a41698990e7798098a8904393fef81f8b"/><emphasis role="strong">ComplexArray</emphasis> (const <link linkend="_classComplexArray">ComplexArray</link> &amp;source)</para>
+            <listitem><para><link linkend="_classComplexArray_1a41698990e7798098a8904393fef81f8b">ComplexArray</link> (const <link linkend="_classComplexArray">ComplexArray</link> &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classComplexArray_1a9b9f180503f0272aedeb0c6bf7a86c2b"/>int <emphasis role="strong">Size</emphasis> () const</para>
+            <listitem><para>virtual <link linkend="_classComplexArray_1ab43d4afa961ad46b074d93941ca2a97f">~ComplexArray</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classComplexArray_1ab9cefe61064be624d5237baf9f2b4507"/>int <emphasis role="strong">MinIndex</emphasis> () const</para>
+            <listitem><para>int <link linkend="_classComplexArray_1a9b9f180503f0272aedeb0c6bf7a86c2b">Size</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classComplexArray_1ab5237189531cc3d8e67810b0b1143e01"/>int <emphasis role="strong">MaxIndex</emphasis> () const</para>
+            <listitem><para>int <link linkend="_classComplexArray_1ab9cefe61064be624d5237baf9f2b4507">MinIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classComplexArray_1a8536da65b076aed2bfbb97c78679d245"/>const <link linkend="_classComplex">Complex</link> &amp; <emphasis role="strong">operator[]</emphasis> (int index) const</para>
+            <listitem><para>int <link linkend="_classComplexArray_1ab5237189531cc3d8e67810b0b1143e01">MaxIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classComplexArray_1a736eedc4dc6ad8629342ef8f2a7b3deb"/><link linkend="_classComplex">Complex</link> &amp; <emphasis role="strong">operator[]</emphasis> (int index)</para>
+            <listitem><para>const <link linkend="_classComplex">Complex</link> &amp; <link linkend="_classComplexArray_1a8536da65b076aed2bfbb97c78679d245">operator[]</link> (int index) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classComplexArray_1a5ffde5253af5abdab97ac58d6ff7e1f7"/><link linkend="_classComplexArray">ComplexArray</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classComplexArray">ComplexArray</link> &amp;source)</para>
+            <listitem><para><link linkend="_classComplex">Complex</link> &amp; <link linkend="_classComplexArray_1a736eedc4dc6ad8629342ef8f2a7b3deb">operator[]</link> (int index)</para>
+</listitem>
+            <listitem><para><link linkend="_classComplexArray">ComplexArray</link> &amp; <link linkend="_classComplexArray_1a5ffde5253af5abdab97ac58d6ff7e1f7">operator=</link> (const <link linkend="_classComplexArray">ComplexArray</link> &amp;source)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 12 of file ComplexArray.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classComplexArray_1a86e1e6f77ebe1fec2da3e49c8a698f51"/>    <section>
+    <title>ComplexArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>ComplexArray</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>ComplexArray</secondary></indexterm>
+<para><computeroutput>ComplexArray::ComplexArray (int size)</computeroutput></para><para>
+Definition at line 23 of file ComplexArray.cc.</para>
+<programlisting>24 {
+25 &#32;&#32;&#32;&#32;arr&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classComplex">Complex</link>[size];
+26 &#32;&#32;&#32;&#32;size&#32;=&#32;size;
+27 }
+</programlisting>    </section><anchor xml:id="_classComplexArray_1a41698990e7798098a8904393fef81f8b"/>    <section>
+    <title>ComplexArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>ComplexArray</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>ComplexArray</secondary></indexterm>
+<para><computeroutput>ComplexArray::ComplexArray (const <link linkend="_classComplexArray">ComplexArray</link> &amp; source)</computeroutput></para><para>
+Definition at line 30 of file ComplexArray.cc.</para>
+<programlisting>31 {
+32 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Deep&#32;copy&#32;source</emphasis>
+33 &#32;&#32;&#32;&#32;size&#32;=&#32;source.size;
+34 &#32;&#32;&#32;&#32;arr&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classComplex">Complex</link>[size];
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;size;&#32;i++)&#32;arr[i]&#32;=&#32;source.arr[i];
+36 }
+</programlisting>    </section><anchor xml:id="_classComplexArray_1ab43d4afa961ad46b074d93941ca2a97f"/>    <section>
+    <title>~ComplexArray()</title>
+<indexterm><primary>~ComplexArray</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>~ComplexArray</secondary></indexterm>
+<para><computeroutput>ComplexArray::~ComplexArray ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 39 of file ComplexArray.cc.</para>
+<programlisting>40 {
+41 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;arr;
+42 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classComplexArray_1ab5237189531cc3d8e67810b0b1143e01"/>    <section>
+    <title>MaxIndex()</title>
+<indexterm><primary>MaxIndex</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>MaxIndex</secondary></indexterm>
+<para><computeroutput>int ComplexArray::MaxIndex ( ) const</computeroutput></para><para>
+Definition at line 56 of file ComplexArray.cc.</para>
+<programlisting>57 {&#32;<emphasis role="comment">//&#32;Largest&#32;index&#32;in&#32;array</emphasis>
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;size&#32;-&#32;1;
+60 }
+</programlisting>    </section><anchor xml:id="_classComplexArray_1ab9cefe61064be624d5237baf9f2b4507"/>    <section>
+    <title>MinIndex()</title>
+<indexterm><primary>MinIndex</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>MinIndex</secondary></indexterm>
+<para><computeroutput>int ComplexArray::MinIndex ( ) const</computeroutput></para><para>
+Definition at line 50 of file ComplexArray.cc.</para>
+<programlisting>51 {&#32;<emphasis role="comment">//&#32;Smallest&#32;index&#32;in&#32;array</emphasis>
+52 &#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+54 }
+</programlisting>    </section><anchor xml:id="_classComplexArray_1a5ffde5253af5abdab97ac58d6ff7e1f7"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classComplexArray">ComplexArray</link> &amp; ComplexArray::operator= (const <link linkend="_classComplexArray">ComplexArray</link> &amp; source)</computeroutput></para><para>
+Definition at line 82 of file ComplexArray.cc.</para>
+<programlisting>83 {
+84 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exit&#32;if&#32;same&#32;object</emphasis>
+85 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>&#32;==&#32;&amp;source)&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+86 
+87 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Delete&#32;old&#32;memory</emphasis>
+88 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;arr;
+89 
+90 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Deep&#32;copy&#32;source</emphasis>
+91 &#32;&#32;&#32;&#32;size&#32;=&#32;source.size;
+92 &#32;&#32;&#32;&#32;arr&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classComplex">Complex</link>[size];
+93 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;size;&#32;i++)&#32;arr[i]&#32;=&#32;source.arr[i];
+94 
+95 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+96 }
+</programlisting>    </section><anchor xml:id="_classComplexArray_1a736eedc4dc6ad8629342ef8f2a7b3deb"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>operator[]</secondary></indexterm>
+<para><computeroutput><link linkend="_classComplex">Complex</link> &amp; ComplexArray::operator[] (int index)</computeroutput></para><para>
+Definition at line 73 of file ComplexArray.cc.</para>
+<programlisting>74 {
+75 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Simple&#32;bounds&#32;checking.&#32;Should&#32;throw&#32;an&#32;exception.</emphasis>
+76 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;if&#32;(index&lt;0&#32;||&#32;index&gt;=size)&#32;return&#32;arr[0];</emphasis>
+77 
+78 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;arr[index];
+79 }
+</programlisting>    </section><anchor xml:id="_classComplexArray_1a8536da65b076aed2bfbb97c78679d245"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>operator[]</secondary></indexterm>
+<para><computeroutput>const <link linkend="_classComplex">Complex</link> &amp; ComplexArray::operator[] (int index) const</computeroutput></para><para>
+Definition at line 64 of file ComplexArray.cc.</para>
+<programlisting>65 {
+66 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Simple&#32;bounds&#32;checking.&#32;Should&#32;throw&#32;an&#32;exception.</emphasis>
+67 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;if&#32;(index&lt;0&#32;||&#32;index&gt;=size)&#32;return&#32;arr[0];</emphasis>
+68 
+69 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;arr[index];
+70 }
+</programlisting>    </section><anchor xml:id="_classComplexArray_1a9b9f180503f0272aedeb0c6bf7a86c2b"/>    <section>
+    <title>Size()</title>
+<indexterm><primary>Size</primary><secondary>ComplexArray</secondary></indexterm>
+<indexterm><primary>ComplexArray</primary><secondary>Size</secondary></indexterm>
+<para><computeroutput>int ComplexArray::Size ( ) const</computeroutput></para><para>
+Definition at line 45 of file ComplexArray.cc.</para>
+<programlisting>46 {
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;size;
+48 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/ComplexArray.hhsrc/ComplexArray.cc</section>
+include/duffy/<link linkend="_ComplexArray_8hh">ComplexArray.hh</link>src/<link linkend="_ComplexArray_8cc">ComplexArray.cc</link></section>
+</section>

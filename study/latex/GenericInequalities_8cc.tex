@@ -1,0 +1,127 @@
+\hypertarget{GenericInequalities_8cc}{}\doxysection{src/\+Generic\+Inequalities.cc File Reference}
+\label{GenericInequalities_8cc}\index{src/GenericInequalities.cc@{src/GenericInequalities.cc}}
+{\ttfamily \#include $<$duffy/\+Generic\+Inequalities.\+hh$>$}\newline
+Include dependency graph for Generic\+Inequalities.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{GenericInequalities_8cc__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{GenericInequalities_8cc__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{GenericInequalities_8cc_a58ce205338bf1c80a09edb5141a2ece4}{Generic\+Inequalities\+\_\+\+CC}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Numeric $>$ }\\Numeric \mbox{\hyperlink{GenericInequalities_8cc_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} (const Numeric \&x, const Numeric \&y)
+\item 
+{\footnotesize template$<$class Numeric $>$ }\\Numeric \mbox{\hyperlink{GenericInequalities_8cc_adb69bfcb34a8cdf14dcb3fc08f9687c0}{Min}} (const Numeric \&x, const Numeric \&y)
+\item 
+{\footnotesize template$<$class Numeric $>$ }\\Numeric \mbox{\hyperlink{GenericInequalities_8cc_ae11321548cc6361940452613ca59ebba}{Max}} (const Numeric \&x, const Numeric \&y, const Numeric \&z)
+\item 
+{\footnotesize template$<$class Numeric $>$ }\\Numeric \mbox{\hyperlink{GenericInequalities_8cc_a1cbb426c5b2fca977f1582103f5f6073}{Min}} (const Numeric \&x, const Numeric \&y, const Numeric \&z)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{GenericInequalities_8cc_a58ce205338bf1c80a09edb5141a2ece4}\label{GenericInequalities_8cc_a58ce205338bf1c80a09edb5141a2ece4}} 
+\index{GenericInequalities.cc@{GenericInequalities.cc}!GenericInequalities\_CC@{GenericInequalities\_CC}}
+\index{GenericInequalities\_CC@{GenericInequalities\_CC}!GenericInequalities.cc@{GenericInequalities.cc}}
+\doxysubsubsection{\texorpdfstring{GenericInequalities\_CC}{GenericInequalities\_CC}}
+{\footnotesize\ttfamily \#define Generic\+Inequalities\+\_\+\+CC}
+
+
+
+Definition at line \mbox{\hyperlink{GenericInequalities_8cc_source_l00014}{14}} of file \mbox{\hyperlink{GenericInequalities_8cc_source}{Generic\+Inequalities.\+cc}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{GenericInequalities_8cc_a1b213e274e5aa76fd4c91940e44f4eb5}\label{GenericInequalities_8cc_a1b213e274e5aa76fd4c91940e44f4eb5}} 
+\index{GenericInequalities.cc@{GenericInequalities.cc}!Max@{Max}}
+\index{Max@{Max}!GenericInequalities.cc@{GenericInequalities.cc}}
+\doxysubsubsection{\texorpdfstring{Max()}{Max()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Numeric $>$ \\
+Numeric Max (\begin{DoxyParamCaption}\item[{const Numeric \&}]{x,  }\item[{const Numeric \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GenericInequalities_8cc_source_l00022}{22}} of file \mbox{\hyperlink{GenericInequalities_8cc_source}{Generic\+Inequalities.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{if} (x > y)}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} y;}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GenericInequalities_8cc_ae11321548cc6361940452613ca59ebba}\label{GenericInequalities_8cc_ae11321548cc6361940452613ca59ebba}} 
+\index{GenericInequalities.cc@{GenericInequalities.cc}!Max@{Max}}
+\index{Max@{Max}!GenericInequalities.cc@{GenericInequalities.cc}}
+\doxysubsubsection{\texorpdfstring{Max()}{Max()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Numeric $>$ \\
+Numeric Max (\begin{DoxyParamCaption}\item[{const Numeric \&}]{x,  }\item[{const Numeric \&}]{y,  }\item[{const Numeric \&}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GenericInequalities_8cc_source_l00041}{41}} of file \mbox{\hyperlink{GenericInequalities_8cc_source}{Generic\+Inequalities.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042 \{}
+\DoxyCodeLine{00043     \textcolor{keywordflow}{return} Max<Numeric>(Max<Numeric>(x,y), z);}
+\DoxyCodeLine{00044 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GenericInequalities_8cc_adb69bfcb34a8cdf14dcb3fc08f9687c0}\label{GenericInequalities_8cc_adb69bfcb34a8cdf14dcb3fc08f9687c0}} 
+\index{GenericInequalities.cc@{GenericInequalities.cc}!Min@{Min}}
+\index{Min@{Min}!GenericInequalities.cc@{GenericInequalities.cc}}
+\doxysubsubsection{\texorpdfstring{Min()}{Min()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Numeric $>$ \\
+Numeric Min (\begin{DoxyParamCaption}\item[{const Numeric \&}]{x,  }\item[{const Numeric \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GenericInequalities_8cc_source_l00031}{31}} of file \mbox{\hyperlink{GenericInequalities_8cc_source}{Generic\+Inequalities.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033     \textcolor{keywordflow}{if} (x < y)}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} y;}
+\DoxyCodeLine{00037 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GenericInequalities_8cc_a1cbb426c5b2fca977f1582103f5f6073}\label{GenericInequalities_8cc_a1cbb426c5b2fca977f1582103f5f6073}} 
+\index{GenericInequalities.cc@{GenericInequalities.cc}!Min@{Min}}
+\index{Min@{Min}!GenericInequalities.cc@{GenericInequalities.cc}}
+\doxysubsubsection{\texorpdfstring{Min()}{Min()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Numeric $>$ \\
+Numeric Min (\begin{DoxyParamCaption}\item[{const Numeric \&}]{x,  }\item[{const Numeric \&}]{y,  }\item[{const Numeric \&}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GenericInequalities_8cc_source_l00047}{47}} of file \mbox{\hyperlink{GenericInequalities_8cc_source}{Generic\+Inequalities.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} Min<Numeric>(Min<Numeric>(x,y), z);}
+\DoxyCodeLine{00050 \}}
+
+\end{DoxyCode}

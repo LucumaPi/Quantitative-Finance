@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestBasicMap_8cc">
+<title>tests/TestBasicMap.cc File Reference</title>
+<indexterm><primary>tests/TestBasicMap.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestBasicMap.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestBasicMap_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_TestBasicMap_8cc_1ad1a0fe0527b35857412b04939cd902fc">print</link> (const std::map&lt; char, double &gt; &amp;myMap)</para>
+</listitem>
+            <listitem><para>void <link linkend="_TestBasicMap_8cc_1a0723e714a96e2b21eba69f10f8960cf7">modify</link> (std::map&lt; char, double &gt; &amp;myMap, double scaleFactor)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestBasicMap_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestBasicMap_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestBasicMap.cc</secondary></indexterm>
+<indexterm><primary>TestBasicMap.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 47 of file TestBasicMap.cc.</para>
+<programlisting>48 {
+49 
+50 &#32;&#32;&#32;&#32;std::map&lt;char,&#32;double&gt;&#32;map1;
+51 
+52 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Different&#32;ways&#32;of&#32;adding&#32;values</emphasis>
+53 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Using&#32;indexing</emphasis>
+54 &#32;&#32;&#32;&#32;map1[<emphasis role="charliteral">&apos;A&apos;</emphasis>]&#32;=&#32;1.0;
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Inserting&#32;an&#32;&apos;explicit&apos;&#32;pair&#32;object</emphasis>
+57 &#32;&#32;&#32;&#32;std::pair&lt;char,&#32;double&gt;&#32;myPair(<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;2.0);
+58 &#32;&#32;&#32;&#32;map1.insert(myPair);
+59 
+60 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Using&#32;make_pair&#32;template&#32;function</emphasis>
+61 &#32;&#32;&#32;&#32;std::pair&lt;char,&#32;double&gt;&#32;tmp&#32;=&#32;std::make_pair(<emphasis role="charliteral">&apos;C&apos;</emphasis>,&#32;4.0);
+62 &#32;&#32;&#32;&#32;map1.insert(tmp);
+63 
+64 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Using&#32;anonymous&#32;objects</emphasis>
+65 &#32;&#32;&#32;&#32;map1.insert(std::pair&lt;char,&#32;double&gt;(<emphasis role="charliteral">&apos;F&apos;</emphasis>,&#32;33.4));
+66 
+67 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Try&#32;to&#32;add&#32;keys&#32;again;&#32;does&#32;not&#32;work</emphasis>
+68 &#32;&#32;&#32;&#32;map1[<emphasis role="charliteral">&apos;A&apos;</emphasis>]&#32;=&#32;199.0;&#32;<emphasis role="comment">//&#32;Value&#32;will&#32;be&#32;changed&#32;however</emphasis>
+69 
+70 &#32;&#32;&#32;&#32;std::pair&lt;char,&#32;double&gt;&#32;tmp1&#32;=&#32;std::make_pair(<emphasis role="charliteral">&apos;C&apos;</emphasis>,&#32;55.0);
+71 &#32;&#32;&#32;&#32;map1.insert(tmp1);
+72 
+73 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;print&#32;the&#32;map</emphasis>
+74 &#32;&#32;&#32;&#32;<link linkend="_TestBasicMap_8cc_1ad1a0fe0527b35857412b04939cd902fc">print</link>(map1);
+75 
+76 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Change&#32;values</emphasis>
+77 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;scaleF&#32;=&#32;0.5;
+78 &#32;&#32;&#32;&#32;<link linkend="_TestBasicMap_8cc_1a0723e714a96e2b21eba69f10f8960cf7">modify</link>(map1,&#32;scaleF);
+79 &#32;&#32;&#32;&#32;<link linkend="_TestBasicMap_8cc_1ad1a0fe0527b35857412b04939cd902fc">print</link>(map1);
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;erasing&#32;things</emphasis>
+82 
+83 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Erase&#32;a&#32;key</emphasis>
+84 &#32;&#32;&#32;&#32;map1.erase(<emphasis role="charliteral">&apos;B&apos;</emphasis>);
+85 &#32;&#32;&#32;&#32;<link linkend="_TestBasicMap_8cc_1ad1a0fe0527b35857412b04939cd902fc">print</link>&#32;(map1);
+86 
+87 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Erase&#32;one&#32;iterator</emphasis>
+88 &#32;&#32;&#32;&#32;map1.erase(map1.begin());
+89 &#32;&#32;&#32;&#32;<link linkend="_TestBasicMap_8cc_1ad1a0fe0527b35857412b04939cd902fc">print</link>&#32;(map1);
+90 
+91 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Erase&#32;between&#32;2&#32;iterators;&#32;same&#32;as&#32;map1.clear()</emphasis>
+92 &#32;&#32;&#32;&#32;map1.erase(map1.begin(),&#32;map1.end());
+93 &#32;&#32;&#32;&#32;<link linkend="_TestBasicMap_8cc_1ad1a0fe0527b35857412b04939cd902fc">print</link>&#32;(map1);
+94 
+95 &#32;&#32;&#32;&#32;map1.clear();&#32;&#32;&#32;<emphasis role="comment">//&#32;Delete&#32;an&#32;empty&#32;map&#32;has&#32;no&#32;effect</emphasis>
+96 
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+98 }
+</programlisting>    </section><anchor xml:id="_TestBasicMap_8cc_1a0723e714a96e2b21eba69f10f8960cf7"/>    <section>
+    <title>modify()</title>
+<indexterm><primary>modify</primary><secondary>TestBasicMap.cc</secondary></indexterm>
+<indexterm><primary>TestBasicMap.cc</primary><secondary>modify</secondary></indexterm>
+<para><computeroutput>void modify (std::map&lt; char, double &gt; &amp; myMap, double scaleFactor)</computeroutput></para><para>
+Definition at line 32 of file TestBasicMap.cc.</para>
+<programlisting>33 {&#32;<emphasis role="comment">//&#32;Multiply&#32;each&#32;value&#32;by&#32;a&#32;double</emphasis>
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterating&#32;in&#32;the&#32;map&#32;(non-const)</emphasis>
+36 &#32;&#32;&#32;&#32;std::map&lt;char,&#32;double&gt;::iterator&#32;i&#32;=&#32;myMap.begin();
+37 
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;myMap.end())
+39 &#32;&#32;&#32;&#32;{
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((*i).second)&#32;*=&#32;scaleFactor;
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+43 &#32;&#32;&#32;&#32;}
+44 
+45 }
+</programlisting>    </section><anchor xml:id="_TestBasicMap_8cc_1ad1a0fe0527b35857412b04939cd902fc"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestBasicMap.cc</secondary></indexterm>
+<indexterm><primary>TestBasicMap.cc</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void print (const std::map&lt; char, double &gt; &amp; myMap)</computeroutput></para><para>
+Definition at line 14 of file TestBasicMap.cc.</para>
+<programlisting>15 {
+16 
+17 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;elements&#32;in&#32;map:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;myMap.size()&#32;&lt;&lt;&#32;std::endl;
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterating&#32;in&#32;the&#32;map</emphasis>
+20 &#32;&#32;&#32;&#32;std::map&lt;char,&#32;double&gt;::const_iterator&#32;i&#32;=&#32;myMap.begin();
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;myMap.end())
+23 &#32;&#32;&#32;&#32;{
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;((*i).second)&#32;&lt;&lt;&#32;std::endl;
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+27 &#32;&#32;&#32;&#32;}
+28 
+29 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+30 }
+</programlisting></section>
+</section>
+</section>

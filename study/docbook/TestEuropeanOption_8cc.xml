@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestEuropeanOption_8cc">
+<title>tests/TestEuropeanOption.cc File Reference</title>
+<indexterm><primary>tests/TestEuropeanOption.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/EuropeanOption.hh&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestEuropeanOption.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestEuropeanOption_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestEuropeanOption_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestEuropeanOption_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestEuropeanOption.cc</secondary></indexterm>
+<indexterm><primary>TestEuropeanOption.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 12 of file TestEuropeanOption.cc.</para>
+<programlisting>13 {&#32;<emphasis role="comment">//&#32;All&#32;options&#32;are&#32;European</emphasis>
+14 
+15 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;option&#32;on&#32;a&#32;stock</emphasis>
+16 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;callOption;
+17 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Call&#32;option&#32;on&#32;a&#32;stock:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;callOption.<link linkend="_classEuropeanOption_1a7d28b7f6ec2c07a783a43411214b4623">Price</link>()&#32;&lt;&lt;&#32;std::endl;
+18 &#32;&#32;&#32;&#32;
+19 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Put&#32;option&#32;on&#32;a&#32;stock&#32;index</emphasis>
+20 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;indexOption;
+21 &#32;&#32;&#32;&#32;indexOption.<link linkend="_classEuropeanOption_1a20f87006303d3a68d75e8a0009474447">optType</link>&#32;=&#32;<emphasis role="stringliteral">&quot;P&quot;</emphasis>;
+22 &#32;&#32;&#32;&#32;indexOption.<link linkend="_classEuropeanOption_1ac548e7d587d5b57931498ffbc412ff31">U</link>&#32;=&#32;100.0;
+23 &#32;&#32;&#32;&#32;indexOption.<link linkend="_classEuropeanOption_1ac5a93ec015d6f962ff1f373087b9a504">K</link>&#32;=&#32;95.0;
+24 &#32;&#32;&#32;&#32;indexOption.<link linkend="_classEuropeanOption_1ac72914717c7810e83167497180818102">T</link>&#32;=&#32;0.5;
+25 &#32;&#32;&#32;&#32;indexOption.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;=&#32;0.10;
+26 &#32;&#32;&#32;&#32;indexOption.<link linkend="_classEuropeanOption_1a308f27729695ab5bd5226d4db5f2d3ce">sig</link>&#32;=&#32;0.20;
+27 
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;q&#32;=&#32;0.05;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Dividend&#32;yield</emphasis>
+29 &#32;&#32;&#32;&#32;indexOption.<link linkend="_classEuropeanOption_1a50730804c94de3202267590a45f34232">b</link>&#32;=&#32;indexOption.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;-&#32;q;
+30 
+31 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Put&#32;option&#32;on&#32;an&#32;index:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;indexOption.<link linkend="_classEuropeanOption_1a7d28b7f6ec2c07a783a43411214b4623">Price</link>()&#32;&lt;&lt;&#32;std::endl;
+32 
+33 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;and&#32;put&#32;options&#32;on&#32;a&#32;future</emphasis>
+34 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;futureOption;
+35 &#32;&#32;&#32;&#32;futureOption.<link linkend="_classEuropeanOption_1a20f87006303d3a68d75e8a0009474447">optType</link>&#32;=&#32;<emphasis role="stringliteral">&quot;P&quot;</emphasis>;
+36 &#32;&#32;&#32;&#32;futureOption.<link linkend="_classEuropeanOption_1ac548e7d587d5b57931498ffbc412ff31">U</link>&#32;=&#32;19.0;
+37 &#32;&#32;&#32;&#32;futureOption.<link linkend="_classEuropeanOption_1ac5a93ec015d6f962ff1f373087b9a504">K</link>&#32;=&#32;19.0;
+38 &#32;&#32;&#32;&#32;futureOption.<link linkend="_classEuropeanOption_1ac72914717c7810e83167497180818102">T</link>&#32;=&#32;0.75;
+39 &#32;&#32;&#32;&#32;futureOption.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;=&#32;0.10;
+40 &#32;&#32;&#32;&#32;futureOption.<link linkend="_classEuropeanOption_1a308f27729695ab5bd5226d4db5f2d3ce">sig</link>&#32;=&#32;0.28;
+41 
+42 &#32;&#32;&#32;&#32;futureOption.<link linkend="_classEuropeanOption_1a50730804c94de3202267590a45f34232">b</link>&#32;=&#32;0.0;
+43 
+44 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Put&#32;option&#32;on&#32;a&#32;future:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;futureOption.<link linkend="_classEuropeanOption_1a7d28b7f6ec2c07a783a43411214b4623">Price</link>()&#32;&lt;&lt;&#32;std::endl;
+45 
+46 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;change&#32;over&#32;to&#32;a&#32;call&#32;on&#32;the&#32;option</emphasis>
+47 &#32;&#32;&#32;&#32;futureOption.<link linkend="_classEuropeanOption_1afb493b377653c08f304da346b9e6cbe9">toggle</link>();
+48 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Call&#32;option&#32;on&#32;a&#32;future:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;futureOption.<link linkend="_classEuropeanOption_1a7d28b7f6ec2c07a783a43411214b4623">Price</link>()&#32;&lt;&lt;&#32;std::endl;
+49 
+50 
+51 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;option&#32;on&#32;currency</emphasis>
+52 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;currencyOption;
+53 &#32;&#32;&#32;&#32;currencyOption.<link linkend="_classEuropeanOption_1a20f87006303d3a68d75e8a0009474447">optType</link>&#32;=&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>;
+54 &#32;&#32;&#32;&#32;currencyOption.<link linkend="_classEuropeanOption_1ac548e7d587d5b57931498ffbc412ff31">U</link>&#32;=&#32;1.56;
+55 &#32;&#32;&#32;&#32;currencyOption.<link linkend="_classEuropeanOption_1ac5a93ec015d6f962ff1f373087b9a504">K</link>&#32;=&#32;1.60;
+56 &#32;&#32;&#32;&#32;currencyOption.<link linkend="_classEuropeanOption_1ac72914717c7810e83167497180818102">T</link>&#32;=&#32;0.5;
+57 &#32;&#32;&#32;&#32;currencyOption.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;=&#32;0.06;
+58 &#32;&#32;&#32;&#32;currencyOption.<link linkend="_classEuropeanOption_1a308f27729695ab5bd5226d4db5f2d3ce">sig</link>&#32;=&#32;0.12;
+59 
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;rf&#32;=&#32;0.08;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;risk-free&#32;rate&#32;of&#32;foreign&#32;currency</emphasis>
+61 &#32;&#32;&#32;&#32;currencyOption.<link linkend="_classEuropeanOption_1a50730804c94de3202267590a45f34232">b</link>&#32;=&#32;currencyOption.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;-&#32;rf;
+62 
+63 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**&#32;Other&#32;pricing&#32;examples&#32;**&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;std::endl;
+64 
+65 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Call&#32;option&#32;on&#32;a&#32;currency:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;currencyOption.<link linkend="_classEuropeanOption_1a7d28b7f6ec2c07a783a43411214b4623">Price</link>()&#32;&lt;&lt;&#32;std::endl;
+66 
+68 
+69 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;and&#32;put&#32;options&#32;on&#32;a&#32;future:&#32;Delta&#32;and&#32;Elasticity</emphasis>
+70 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;futureOption2;
+71 &#32;&#32;&#32;&#32;futureOption2.<link linkend="_classEuropeanOption_1a20f87006303d3a68d75e8a0009474447">optType</link>&#32;=&#32;<emphasis role="stringliteral">&quot;P&quot;</emphasis>;
+72 &#32;&#32;&#32;&#32;futureOption2.<link linkend="_classEuropeanOption_1ac548e7d587d5b57931498ffbc412ff31">U</link>&#32;=&#32;105.0;
+73 &#32;&#32;&#32;&#32;futureOption2.<link linkend="_classEuropeanOption_1ac5a93ec015d6f962ff1f373087b9a504">K</link>&#32;=&#32;100.0;
+74 &#32;&#32;&#32;&#32;futureOption2.<link linkend="_classEuropeanOption_1ac72914717c7810e83167497180818102">T</link>&#32;=&#32;0.5;
+75 &#32;&#32;&#32;&#32;futureOption2.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;=&#32;0.10;
+76 &#32;&#32;&#32;&#32;futureOption2.<link linkend="_classEuropeanOption_1a308f27729695ab5bd5226d4db5f2d3ce">sig</link>&#32;=&#32;0.36;
+77 
+78 &#32;&#32;&#32;&#32;futureOption2.<link linkend="_classEuropeanOption_1a50730804c94de3202267590a45f34232">b</link>&#32;=&#32;0.0;
+79 
+80 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Delta&#32;on&#32;a&#32;put&#32;future:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;futureOption2.<link linkend="_classEuropeanOption_1a4175705666df41879d3aa2dcbe399545">Delta</link>()&#32;&lt;&lt;&#32;std::endl;
+81 
+82 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;change&#32;over&#32;to&#32;a&#32;call&#32;on&#32;the&#32;option</emphasis>
+83 &#32;&#32;&#32;&#32;futureOption2.<link linkend="_classEuropeanOption_1afb493b377653c08f304da346b9e6cbe9">toggle</link>();
+84 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Delta&#32;on&#32;a&#32;call&#32;future:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;futureOption2.<link linkend="_classEuropeanOption_1a4175705666df41879d3aa2dcbe399545">Delta</link>()&#32;&lt;&lt;&#32;std::endl;
+85 
+86 &#32;&#32;&#32;&#32;
+87 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Stock&#32;Option:&#32;Gamma</emphasis>
+88 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;stockOption;
+89 &#32;&#32;&#32;&#32;stockOption.<link linkend="_classEuropeanOption_1a20f87006303d3a68d75e8a0009474447">optType</link>&#32;=&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>;
+90 &#32;&#32;&#32;&#32;stockOption.<link linkend="_classEuropeanOption_1ac548e7d587d5b57931498ffbc412ff31">U</link>&#32;=&#32;55.0;
+91 &#32;&#32;&#32;&#32;stockOption.<link linkend="_classEuropeanOption_1ac5a93ec015d6f962ff1f373087b9a504">K</link>&#32;=&#32;60.0;
+92 &#32;&#32;&#32;&#32;stockOption.<link linkend="_classEuropeanOption_1ac72914717c7810e83167497180818102">T</link>&#32;=&#32;0.75;
+93 &#32;&#32;&#32;&#32;stockOption.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;=&#32;0.10;
+94 &#32;&#32;&#32;&#32;stockOption.<link linkend="_classEuropeanOption_1a308f27729695ab5bd5226d4db5f2d3ce">sig</link>&#32;=&#32;0.30;
+95 
+96 &#32;&#32;&#32;&#32;stockOption.<link linkend="_classEuropeanOption_1a50730804c94de3202267590a45f34232">b</link>&#32;=&#32;stockOption.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>;
+97 
+98 
+99 &#32;&#32;&#32;&#32;stockOption.<link linkend="_classEuropeanOption_1afb493b377653c08f304da346b9e6cbe9">toggle</link>();
+100 
+101 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Calculating&#32;theta&#32;of&#32;a&#32;European&#32;stock&#32;index</emphasis>
+102 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;indexOption2;
+103 &#32;&#32;&#32;&#32;indexOption2.<link linkend="_classEuropeanOption_1a20f87006303d3a68d75e8a0009474447">optType</link>&#32;=&#32;<emphasis role="stringliteral">&quot;P&quot;</emphasis>;
+104 &#32;&#32;&#32;&#32;indexOption2.<link linkend="_classEuropeanOption_1ac548e7d587d5b57931498ffbc412ff31">U</link>&#32;=&#32;430.0;
+105 &#32;&#32;&#32;&#32;indexOption2.<link linkend="_classEuropeanOption_1ac5a93ec015d6f962ff1f373087b9a504">K</link>&#32;=&#32;405.0;
+106 &#32;&#32;&#32;&#32;indexOption2.<link linkend="_classEuropeanOption_1ac72914717c7810e83167497180818102">T</link>&#32;=&#32;0.0833;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;One&#32;month&#32;expiration</emphasis>
+107 &#32;&#32;&#32;&#32;indexOption2.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;=&#32;0.07;
+108 &#32;&#32;&#32;&#32;indexOption2.<link linkend="_classEuropeanOption_1a308f27729695ab5bd5226d4db5f2d3ce">sig</link>&#32;=&#32;0.20;
+109 
+110 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;divYield&#32;=&#32;0.05;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Dividend&#32;yield,&#32;5%&#32;per&#32;annum</emphasis>
+111 &#32;&#32;&#32;&#32;indexOption2.<link linkend="_classEuropeanOption_1a50730804c94de3202267590a45f34232">b</link>&#32;=&#32;indexOption2.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;-&#32;divYield;
+112 
+113 
+114 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Stock&#32;Option:&#32;Rho</emphasis>
+115 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;stockOption2;
+116 &#32;&#32;&#32;&#32;stockOption2.<link linkend="_classEuropeanOption_1a20f87006303d3a68d75e8a0009474447">optType</link>&#32;=&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>;
+117 &#32;&#32;&#32;&#32;stockOption2.<link linkend="_classEuropeanOption_1ac548e7d587d5b57931498ffbc412ff31">U</link>&#32;=&#32;72.0;
+118 &#32;&#32;&#32;&#32;stockOption2.<link linkend="_classEuropeanOption_1ac5a93ec015d6f962ff1f373087b9a504">K</link>&#32;=&#32;75.0;
+119 &#32;&#32;&#32;&#32;stockOption2.<link linkend="_classEuropeanOption_1ac72914717c7810e83167497180818102">T</link>&#32;=&#32;1.0;
+120 &#32;&#32;&#32;&#32;stockOption2.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;=&#32;0.09;
+121 &#32;&#32;&#32;&#32;stockOption2.<link linkend="_classEuropeanOption_1a308f27729695ab5bd5226d4db5f2d3ce">sig</link>&#32;=&#32;0.19;
+122 
+123 &#32;&#32;&#32;&#32;stockOption2.<link linkend="_classEuropeanOption_1a50730804c94de3202267590a45f34232">b</link>&#32;=&#32;stockOption2.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>;
+124 
+125 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Calculating&#32;Cost&#32;of&#32;Carry&#32;of&#32;a&#32;European&#32;stock&#32;index</emphasis>
+126 &#32;&#32;&#32;&#32;<link linkend="_classEuropeanOption">EuropeanOption</link>&#32;indexOption3;
+127 &#32;&#32;&#32;&#32;indexOption3.<link linkend="_classEuropeanOption_1a20f87006303d3a68d75e8a0009474447">optType</link>&#32;=&#32;<emphasis role="stringliteral">&quot;P&quot;</emphasis>;
+128 &#32;&#32;&#32;&#32;indexOption3.<link linkend="_classEuropeanOption_1ac548e7d587d5b57931498ffbc412ff31">U</link>&#32;=&#32;500.0;
+129 &#32;&#32;&#32;&#32;indexOption3.<link linkend="_classEuropeanOption_1ac5a93ec015d6f962ff1f373087b9a504">K</link>&#32;=&#32;490.0;
+130 &#32;&#32;&#32;&#32;indexOption3.<link linkend="_classEuropeanOption_1ac72914717c7810e83167497180818102">T</link>&#32;=&#32;0.222225;
+131 &#32;&#32;&#32;&#32;indexOption3.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;=&#32;0.08;
+132 &#32;&#32;&#32;&#32;indexOption3.<link linkend="_classEuropeanOption_1a308f27729695ab5bd5226d4db5f2d3ce">sig</link>&#32;=&#32;0.15;
+133 
+134 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;divYield3&#32;=&#32;0.05;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Dividend&#32;yield,&#32;5%&#32;per&#32;annum</emphasis>
+135 &#32;&#32;&#32;&#32;indexOption3.<link linkend="_classEuropeanOption_1a50730804c94de3202267590a45f34232">b</link>&#32;=&#32;indexOption3.<link linkend="_classEuropeanOption_1aa5c345e946f8f9caace7d7286ffd2d8b">r</link>&#32;-&#32;divYield3&#32;;
+136 
+137 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+138 }
+</programlisting></section>
+</section>
+</section>

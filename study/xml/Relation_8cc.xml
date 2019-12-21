@@ -10,10 +10,12 @@
       </node>
       <node id="3">
         <label>Set.hh</label>
-        <link refid="Set_8hh_source"/>
+        <link refid="Set_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -23,18 +25,31 @@
         </childnode>
       </node>
       <node id="6">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>map</label>
       </node>
       <node id="2">
         <label>duffy/Relation.hh</label>
-        <link refid="Relation_8hh_source"/>
+        <link refid="Relation_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>set</label>
+      </node>
+      <node id="7">
+        <label>algorithm</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -44,9 +59,17 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="3">
+        <label>tests/TestRelation.cc</label>
+        <link refid="TestRelation_8cc"/>
+      </node>
       <node id="2">
         <label>include/duffy/Relation.hh</label>
-        <link refid="Relation_8hh_source"/>
+        <link refid="Relation_8hh"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
@@ -88,9 +111,9 @@
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Relation_cpp</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Relation_cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="Relation_8cc_1ac4ec8a30c6e5fb00f70196664f808b8f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Relation_cpp</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Relation.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Relation_8hh" kindref="compound">duffy/Relation.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
 <codeline lineno="28"><highlight class="comment">//<sp/>Private<sp/>functions</highlight></codeline>
@@ -118,7 +141,7 @@
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Essential<sp/>members</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::Relation</ref>()<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53" refid="classRelation_1a36145dd40aa468c579ac6e531b0ac588" refkind="member"><highlight class="normal"><ref refid="classRelation_1a36145dd40aa468c579ac6e531b0ac588" kindref="member">Relation&lt;D,R&gt;::Relation</ref>()<sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="54"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>s1<sp/>=<sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>();</highlight></codeline>
@@ -129,7 +152,7 @@
 <codeline lineno="61"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::Relation</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>&amp;<sp/>domainSet,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref>&amp;<sp/>rangeSet)</highlight></codeline>
+<codeline lineno="64" refid="classRelation_1aae3172d175b898c286d82916f191174c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/><ref refid="classRelation_1a36145dd40aa468c579ac6e531b0ac588" kindref="member">Relation&lt;D,R&gt;::Relation</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>&amp;<sp/>domainSet,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref>&amp;<sp/>rangeSet)</highlight></codeline>
 <codeline lineno="65"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>s1<sp/>=<sp/>domainSet;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>s2<sp/>=<sp/>rangeSet;</highlight></codeline>
@@ -139,7 +162,7 @@
 <codeline lineno="71"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::Relation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation</ref>&amp;<sp/>r2)</highlight></codeline>
+<codeline lineno="74" refid="classRelation_1af344472b21613144a5db861d5d7f1437" refkind="member"><highlight class="normal"><ref refid="classRelation_1a36145dd40aa468c579ac6e531b0ac588" kindref="member">Relation&lt;D,R&gt;::Relation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation</ref>&amp;<sp/>r2)</highlight></codeline>
 <codeline lineno="75"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>s1<sp/>=<sp/>r2.s1;</highlight></codeline>
@@ -149,13 +172,13 @@
 <codeline lineno="81"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::~Relation</ref>()</highlight></codeline>
+<codeline lineno="84" refid="classRelation_1acc3976a5e2e72dd33d7d05bee2b286fe" refkind="member"><highlight class="normal"><ref refid="classRelation_1acc3976a5e2e72dd33d7d05bee2b286fe" kindref="member">Relation&lt;D,R&gt;::~Relation</ref>()</highlight></codeline>
 <codeline lineno="85"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
 <codeline lineno="87"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/>r2)</highlight></codeline>
+<codeline lineno="90" refid="classRelation_1ae4668d138c1cc9cfc607729a32b2772e" refkind="member"><highlight class="normal"><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/><ref refid="classRelation_1ae4668d138c1cc9cfc607729a32b2772e" kindref="member">Relation&lt;D,R&gt;::operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/>r2)</highlight></codeline>
 <codeline lineno="91"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>&amp;r2)</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
@@ -174,7 +197,7 @@
 <codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Building<sp/>and<sp/>breaking<sp/>the<sp/>Relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>set<sp/>element<sp/>in<sp/>the<sp/>relations</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="108"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::addDomainElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight></codeline>
+<codeline lineno="109" refid="classRelation_1a3850e9c9495624d27e7813cc6e0dc763" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a3850e9c9495624d27e7813cc6e0dc763" kindref="member">Relation&lt;D,R&gt;::addDomainElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight></codeline>
 <codeline lineno="110"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.Insert(d);</highlight></codeline>
@@ -182,15 +205,15 @@
 <codeline lineno="114"><highlight class="normal"></highlight></codeline>
 <codeline lineno="115"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::addRangeElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/>r)</highlight></codeline>
+<codeline lineno="117" refid="classRelation_1a8bbc53597b97db93008a82d5b7ff54cb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a8bbc53597b97db93008a82d5b7ff54cb" kindref="member">Relation&lt;D,R&gt;::addRangeElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)</highlight></codeline>
 <codeline lineno="118"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Insert(r);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Insert(<ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>);</highlight></codeline>
 <codeline lineno="121"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"></highlight></codeline>
 <codeline lineno="123"><highlight class="normal"></highlight></codeline>
 <codeline lineno="124"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::removeDomainElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight></codeline>
+<codeline lineno="125" refid="classRelation_1a30b7ecfff53dda24b5661215e63b3aeb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a30b7ecfff53dda24b5661215e63b3aeb" kindref="member">Relation&lt;D,R&gt;::removeDomainElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight></codeline>
 <codeline lineno="126"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>all<sp/>references<sp/>to<sp/>Domain<sp/>element<sp/>d<sp/>??</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>f.erase(d);</highlight></codeline>
@@ -225,10 +248,10 @@
 <codeline lineno="157"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight></codeline>
 <codeline lineno="159"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::removeRangeElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/>r)</highlight></codeline>
+<codeline lineno="160" refid="classRelation_1adf2bd0433cf8eb255e0b595d8502afad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1adf2bd0433cf8eb255e0b595d8502afad" kindref="member">Relation&lt;D,R&gt;::removeRangeElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)</highlight></codeline>
 <codeline lineno="161"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>all<sp/>references<sp/>to<sp/>Range<sp/>element<sp/>r</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>finv.erase(r);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>finv.erase(<ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>);</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>all<sp/>references<sp/>in<sp/>forward<sp/>map</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;D,R&gt;::iterator<sp/>it,<sp/>it2;</highlight></codeline>
@@ -237,7 +260,7 @@
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>it<sp/>=<sp/>it2;</highlight></codeline>
 <codeline lineno="170"><highlight class="normal">L1:</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*it).second<sp/>==<sp/>r)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*it).second<sp/>==<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it2<sp/>=<sp/>f.erase(it);<sp/><sp/></highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>it2;</highlight></codeline>
@@ -252,36 +275,36 @@
 <codeline lineno="184"><highlight class="normal"></highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Remove(r);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Remove(<ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>);</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"></highlight></codeline>
 <codeline lineno="189"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"></highlight></codeline>
 <codeline lineno="191"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>relationship<sp/>between<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::addRelation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/>r)</highlight></codeline>
+<codeline lineno="193" refid="classRelation_1a0d4bdc5ed486ffbef37ae2e489166834" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a0d4bdc5ed486ffbef37ae2e489166834" kindref="member">Relation&lt;D,R&gt;::addRelation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)</highlight></codeline>
 <codeline lineno="194"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prec:<sp/>d<sp/>and<sp/>r<sp/>must<sp/>be<sp/>in<sp/>the<sp/>sets</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s1.Contains(d)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s2.Contains(r)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s2.Contains(<ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>a<sp/>link<sp/>between<sp/>d<sp/>and<sp/>r</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;D,<sp/>R&gt;<sp/>p;</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>p.first<sp/>=<sp/>d;</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>p.second<sp/>=<sp/>r;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>p.second<sp/>=<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>f.insert(p);</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"></highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>a<sp/>link<sp/>between<sp/>r<sp/>and<sp/>d</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;R,<sp/>D&gt;<sp/>pinv;</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>pinv.first<sp/>=<sp/>r;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>pinv.first<sp/>=<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>pinv.second<sp/>=<sp/>d;</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>finv.insert(pinv);</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"></highlight></codeline>
 <codeline lineno="213"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="214"><highlight class="normal"></highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="216"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::removeRelation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight></codeline>
+<codeline lineno="216" refid="classRelation_1a6fe1980b85fd0a4d59ed6ca3dbb52a2a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a6fe1980b85fd0a4d59ed6ca3dbb52a2a" kindref="member">Relation&lt;D,R&gt;::removeRelation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight></codeline>
 <codeline lineno="217"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"></highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>link<sp/>between<sp/>d<sp/>and<sp/>ALL<sp/>r<sp/>??</highlight><highlight class="normal"></highlight></codeline>
@@ -290,7 +313,7 @@
 <codeline lineno="222"><highlight class="normal"></highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
 <codeline lineno="224"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="225"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::ClearAll</ref>()</highlight></codeline>
+<codeline lineno="225" refid="classRelation_1aac3d30ad0639de420ec0d496ca78696f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1aac3d30ad0639de420ec0d496ca78696f" kindref="member">Relation&lt;D,R&gt;::ClearAll</ref>()</highlight></codeline>
 <codeline lineno="226"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Break<sp/>all<sp/>links<sp/>and<sp/>set<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="227"><highlight class="normal"></highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>f.erase(f.begin(),<sp/>f.end());</highlight></codeline>
@@ -300,7 +323,7 @@
 <codeline lineno="232"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"></highlight></codeline>
 <codeline lineno="234"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="235"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::ClearLinks</ref>()</highlight></codeline>
+<codeline lineno="235" refid="classRelation_1a401a214a659d7005d830e1d5573075ed" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a401a214a659d7005d830e1d5573075ed" kindref="member">Relation&lt;D,R&gt;::ClearLinks</ref>()</highlight></codeline>
 <codeline lineno="236"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Break<sp/>all<sp/>links</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="237"><highlight class="normal"></highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>f.erase(f.begin(),<sp/>f.end());</highlight></codeline>
@@ -310,19 +333,19 @@
 <codeline lineno="242"><highlight class="normal"></highlight></codeline>
 <codeline lineno="243"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Selectors</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="244"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="245"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>&amp;<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::DomainSet</ref>()</highlight></codeline>
+<codeline lineno="245" refid="classRelation_1a6df4cdb10cd950968cf21fafdec4bb83" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>&amp;<sp/><ref refid="classRelation_1a6df4cdb10cd950968cf21fafdec4bb83" kindref="member">Relation&lt;D,R&gt;::DomainSet</ref>()</highlight></codeline>
 <codeline lineno="246"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s1;</highlight></codeline>
 <codeline lineno="248"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="249"><highlight class="normal"></highlight></codeline>
 <codeline lineno="250"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref>&amp;<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::RangeSet</ref>()</highlight></codeline>
+<codeline lineno="251" refid="classRelation_1ae7d89135038109b9ff7ef4c6590a112e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref>&amp;<sp/><ref refid="classRelation_1ae7d89135038109b9ff7ef4c6590a112e" kindref="member">Relation&lt;D,R&gt;::RangeSet</ref>()</highlight></codeline>
 <codeline lineno="252"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s2;</highlight></codeline>
 <codeline lineno="254"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight></codeline>
 <codeline lineno="256"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::range</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight></codeline>
+<codeline lineno="257" refid="classRelation_1ab946892376f95ed757414e3fadc36f6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref><sp/><ref refid="classRelation_1ab946892376f95ed757414e3fadc36f6d" kindref="member">Relation&lt;D,R&gt;::range</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight></codeline>
 <codeline lineno="258"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Set<sp/>of<sp/>r<sp/>for<sp/>a<sp/>d</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref><sp/>result;</highlight></codeline>
@@ -336,7 +359,7 @@
 <codeline lineno="268"><highlight class="normal"></highlight></codeline>
 <codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*it).first<sp/>==<sp/>d)</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.Insert((*it).second);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>((*it).second);</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"></highlight></codeline>
@@ -346,7 +369,7 @@
 <codeline lineno="278"><highlight class="normal"></highlight></codeline>
 <codeline lineno="279"><highlight class="normal"></highlight></codeline>
 <codeline lineno="280"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::domain</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/>r)</highlight></codeline>
+<codeline lineno="281" refid="classRelation_1a0ff46cfb436345dab2707b36b94a152a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref><sp/><ref refid="classRelation_1a0ff46cfb436345dab2707b36b94a152a" kindref="member">Relation&lt;D,R&gt;::domain</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)</highlight></codeline>
 <codeline lineno="282"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Set<sp/>of<sp/>d<sp/>for<sp/>an<sp/>r</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref><sp/>result;</highlight></codeline>
@@ -356,9 +379,9 @@
 <codeline lineno="288"><highlight class="normal"></highlight></codeline>
 <codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(it<sp/>=<sp/>finv.begin();<sp/>it<sp/>!=<sp/>finv.end();<sp/>it++)</highlight></codeline>
 <codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*it).first<sp/>==<sp/>r)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*it).first<sp/>==<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.Insert((*it).second);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>((*it).second);</highlight></codeline>
 <codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"></highlight></codeline>
@@ -366,31 +389,31 @@
 <codeline lineno="298"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="299"><highlight class="normal"></highlight></codeline>
 <codeline lineno="300"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="301"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::inDomain</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="301" refid="classRelation_1af7602723b04b55522372eae5d70fff52" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRelation_1af7602723b04b55522372eae5d70fff52" kindref="member">Relation&lt;D,R&gt;::inDomain</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="302"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Is<sp/>an<sp/>element<sp/>in<sp/>domain?</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="303"><highlight class="normal"></highlight></codeline>
 <codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s1.Contains(d);</highlight></codeline>
 <codeline lineno="305"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"></highlight></codeline>
 <codeline lineno="307"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight></codeline>
-<codeline lineno="308"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::inRange</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>r)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="308" refid="classRelation_1a8dd9f0681135740849f9dd20ae4ee13a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a8dd9f0681135740849f9dd20ae4ee13a" kindref="member">Relation&lt;D,R&gt;::inRange</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="309"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Is<sp/>an<sp/>element<sp/>in<sp/>range?</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="310"><highlight class="normal"></highlight></codeline>
-<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s2.Contains(r);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s2.Contains(<ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>);</highlight></codeline>
 <codeline lineno="312"><highlight class="normal"></highlight></codeline>
 <codeline lineno="313"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"></highlight></codeline>
 <codeline lineno="315"><highlight class="normal"></highlight></codeline>
 <codeline lineno="316"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Iterator<sp/>functions<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="317"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>Relation&lt;D,R&gt;::iterator<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::Begin</ref>()<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="318" refid="classRelation_1a97ba3b83f8b68901191248b72b4d2a14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1af68e62c9cf16d7e2dff81950298dc778" kindref="member">Relation&lt;D,R&gt;::iterator</ref><sp/><ref refid="classRelation_1a97ba3b83f8b68901191248b72b4d2a14" kindref="member">Relation&lt;D,R&gt;::Begin</ref>()<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="319"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="320"><highlight class="normal"></highlight></codeline>
 <codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f.begin();</highlight></codeline>
 <codeline lineno="322"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="323"><highlight class="normal"></highlight></codeline>
 <codeline lineno="324"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>Relation&lt;D,R&gt;::const_iterator<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::Begin</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/></highlight></codeline>
+<codeline lineno="325" refid="classRelation_1a8c1e8ca4826fced1256829a4779d9d8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a281fd0ec83966c0c8ba00e59364c3152" kindref="member">Relation&lt;D,R&gt;::const_iterator</ref><sp/><ref refid="classRelation_1a97ba3b83f8b68901191248b72b4d2a14" kindref="member">Relation&lt;D,R&gt;::Begin</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/></highlight></codeline>
 <codeline lineno="326"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="327"><highlight class="normal"></highlight></codeline>
 <codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f.begin();</highlight></codeline>
@@ -398,7 +421,7 @@
 <codeline lineno="330"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="331"><highlight class="normal"></highlight></codeline>
 <codeline lineno="332"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>Relation&lt;D,R&gt;::iterator<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::End</ref>()</highlight></codeline>
+<codeline lineno="333" refid="classRelation_1a068ca856b6e3b6bffd24117b405c01ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1af68e62c9cf16d7e2dff81950298dc778" kindref="member">Relation&lt;D,R&gt;::iterator</ref><sp/><ref refid="classRelation_1a068ca856b6e3b6bffd24117b405c01ae" kindref="member">Relation&lt;D,R&gt;::End</ref>()</highlight></codeline>
 <codeline lineno="334"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="335"><highlight class="normal"></highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f.end();</highlight></codeline>
@@ -406,7 +429,7 @@
 <codeline lineno="338"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="339"><highlight class="normal"></highlight></codeline>
 <codeline lineno="340"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>Relation&lt;D,R&gt;::const_iterator<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::End</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="341" refid="classRelation_1ab5fee537bbc5a9748881a6bbe25bbdd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a281fd0ec83966c0c8ba00e59364c3152" kindref="member">Relation&lt;D,R&gt;::const_iterator</ref><sp/><ref refid="classRelation_1a068ca856b6e3b6bffd24117b405c01ae" kindref="member">Relation&lt;D,R&gt;::End</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="342"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="343"><highlight class="normal"></highlight></codeline>
 <codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f.end();</highlight></codeline>
@@ -415,14 +438,14 @@
 <codeline lineno="347"><highlight class="normal"></highlight></codeline>
 <codeline lineno="348"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Iterator<sp/>functions(Inverse)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="349"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>Relation&lt;D,R&gt;::iteratorInv<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::BeginInv</ref>()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="350" refid="classRelation_1ae76135e50d636a11e65658f44ffa0551" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a3377b326df68d54e890873e4800ac522" kindref="member">Relation&lt;D,R&gt;::iteratorInv</ref><sp/><ref refid="classRelation_1ae76135e50d636a11e65658f44ffa0551" kindref="member">Relation&lt;D,R&gt;::BeginInv</ref>()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="351"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="352"><highlight class="normal"></highlight></codeline>
 <codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>finv.begin();</highlight></codeline>
 <codeline lineno="354"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="355"><highlight class="normal"></highlight></codeline>
 <codeline lineno="356"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>Relation&lt;D,R&gt;::const_iteratorInv<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::BeginInv</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="357" refid="classRelation_1ad8fc7581e55ca1f3ae7c174e928d0bd8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed" kindref="member">Relation&lt;D,R&gt;::const_iteratorInv</ref><sp/><ref refid="classRelation_1ae76135e50d636a11e65658f44ffa0551" kindref="member">Relation&lt;D,R&gt;::BeginInv</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="358"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="359"><highlight class="normal"></highlight></codeline>
 <codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>finv.begin();</highlight></codeline>
@@ -430,7 +453,7 @@
 <codeline lineno="362"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="363"><highlight class="normal"></highlight></codeline>
 <codeline lineno="364"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/>Relation&lt;D,R&gt;::iteratorInv<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::EndInv</ref>()</highlight></codeline>
+<codeline lineno="365" refid="classRelation_1a2f972862a46f4d4fdd8f5e607f67a449" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a3377b326df68d54e890873e4800ac522" kindref="member">Relation&lt;D,R&gt;::iteratorInv</ref><sp/><ref refid="classRelation_1a2f972862a46f4d4fdd8f5e607f67a449" kindref="member">Relation&lt;D,R&gt;::EndInv</ref>()</highlight></codeline>
 <codeline lineno="366"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="367"><highlight class="normal"></highlight></codeline>
 <codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>finv.end();</highlight></codeline>
@@ -438,7 +461,7 @@
 <codeline lineno="370"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="371"><highlight class="normal"></highlight></codeline>
 <codeline lineno="372"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/>Relation&lt;D,R&gt;::const_iteratorInv<sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;::EndInv</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="373" refid="classRelation_1ada45ef3553ea10f6ffeb01429d41112c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed" kindref="member">Relation&lt;D,R&gt;::const_iteratorInv</ref><sp/><ref refid="classRelation_1a2f972862a46f4d4fdd8f5e607f67a449" kindref="member">Relation&lt;D,R&gt;::EndInv</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="374"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="375"><highlight class="normal"></highlight></codeline>
 <codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>finv.end();</highlight></codeline>

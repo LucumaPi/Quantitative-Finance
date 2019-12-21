@@ -1,0 +1,120 @@
+\hypertarget{TestRanges_8cc}{}\doxysection{tests/\+Test\+Ranges.cc File Reference}
+\label{TestRanges_8cc}\index{tests/TestRanges.cc@{tests/TestRanges.cc}}
+{\ttfamily \#include $<$duffy/\+Assoc\+Matrix.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Matrix\+Mechanisms.\+hh$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Test\+Ranges.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestRanges_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TestRanges_8cc_a85cac4262a409ae32a7e2e3bc243b66f}{Modifier1}} (double \&d)
+\item 
+void \mbox{\hyperlink{TestRanges_8cc_ab9a9d29e13c188b4aed90d30a148f740}{print}} (const \mbox{\hyperlink{classAssocArray}{Assoc\+Array}}$<$ long, std\+::string $>$ \&ass\+Arr)
+\item 
+int \mbox{\hyperlink{TestRanges_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestRanges_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestRanges_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestRanges.cc@{TestRanges.cc}!main@{main}}
+\index{main@{main}!TestRanges.cc@{TestRanges.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestRanges_8cc_source_l00036}{36}} of file \mbox{\hyperlink{TestRanges_8cc_source}{Test\+Ranges.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \mbox{\hyperlink{classSet}{Set<std::string>}} columns;}
+\DoxyCodeLine{00040     columns.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{stringliteral}{"A"});}
+\DoxyCodeLine{00041     columns.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{stringliteral}{"B"});}
+\DoxyCodeLine{00042     columns.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{stringliteral}{"C"});}
+\DoxyCodeLine{00043     columns.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{stringliteral}{"D"});}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \mbox{\hyperlink{classSet}{Set<long>}} rows;}
+\DoxyCodeLine{00046     rows.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(1);}
+\DoxyCodeLine{00047     rows.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(2);}
+\DoxyCodeLine{00048     rows.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(3);}
+\DoxyCodeLine{00049     rows.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(4);}
+\DoxyCodeLine{00050     }
+\DoxyCodeLine{00051     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}} mat1(rows.\mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{Size}}(), columns.\mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{Size}}());}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<double, long, std::string>}} myMat2(rows, columns, mat1);}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{comment}{// Now work with ranges in this associative matrix}}
+\DoxyCodeLine{00055     \mbox{\hyperlink{structSpreadSheetVertex}{SpreadSheetVertex<long, std::string>}} ul;    \textcolor{comment}{// Upper left}}
+\DoxyCodeLine{00056     ul.\mbox{\hyperlink{structSpreadSheetVertex_ab38191438cab228269626d8e6d25b39d}{first}} = 1;}
+\DoxyCodeLine{00057     ul.\mbox{\hyperlink{structSpreadSheetVertex_a56fba3e9639a4721b49bbbdb68f52ae9}{second}} = string(\textcolor{stringliteral}{"B"});}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \mbox{\hyperlink{structSpreadSheetVertex}{SpreadSheetVertex<long, std::string>}} lr;    \textcolor{comment}{// Lower right}}
+\DoxyCodeLine{00060     lr.\mbox{\hyperlink{structSpreadSheetVertex_ab38191438cab228269626d8e6d25b39d}{first}} = 3;}
+\DoxyCodeLine{00061     lr.\mbox{\hyperlink{structSpreadSheetVertex_a56fba3e9639a4721b49bbbdb68f52ae9}{second}} = string(\textcolor{stringliteral}{"D"});}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \mbox{\hyperlink{structSpreadSheetRange}{SpreadSheetRange<long, std::string>}} myRange;}
+\DoxyCodeLine{00064     myRange.\mbox{\hyperlink{structSpreadSheetRange_a162552eb32806cc172e1dc7e7c74da07}{upperLeft}} = ul;}
+\DoxyCodeLine{00065     myRange.\mbox{\hyperlink{structSpreadSheetRange_a3d228f1713cd8d0189f7d2bd0a312512}{lowerRight}} = lr;}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     myMat2.modify(myRange, \mbox{\hyperlink{TestRanges_8cc_a85cac4262a409ae32a7e2e3bc243b66f}{Modifier1}});}
+\DoxyCodeLine{00068     \mbox{\hyperlink{TestRanges_8cc_ab9a9d29e13c188b4aed90d30a148f740}{print}} (*(myMat2.Data()));}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \mbox{\hyperlink{TestRanges_8cc_ab9a9d29e13c188b4aed90d30a148f740}{print}}(myMat2.extract(myRange));}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00073 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestRanges_8cc_a85cac4262a409ae32a7e2e3bc243b66f}\label{TestRanges_8cc_a85cac4262a409ae32a7e2e3bc243b66f}} 
+\index{TestRanges.cc@{TestRanges.cc}!Modifier1@{Modifier1}}
+\index{Modifier1@{Modifier1}!TestRanges.cc@{TestRanges.cc}}
+\doxysubsubsection{\texorpdfstring{Modifier1()}{Modifier1()}}
+{\footnotesize\ttfamily void Modifier1 (\begin{DoxyParamCaption}\item[{double \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestRanges_8cc_source_l00015}{15}} of file \mbox{\hyperlink{TestRanges_8cc_source}{Test\+Ranges.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     d += 0.5;}
+\DoxyCodeLine{00018 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestRanges_8cc_ab9a9d29e13c188b4aed90d30a148f740}\label{TestRanges_8cc_ab9a9d29e13c188b4aed90d30a148f740}} 
+\index{TestRanges.cc@{TestRanges.cc}!print@{print}}
+\index{print@{print}!TestRanges.cc@{TestRanges.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAssocArray}{Assoc\+Array}}$<$ long, std\+::string $>$ \&}]{ass\+Arr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestRanges_8cc_source_l00020}{20}} of file \mbox{\hyperlink{TestRanges_8cc_source}{Test\+Ranges.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{comment}{// Iterating in the map}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classAssocArray_adea91a1cf7a2abbfdfd4c9bc7c746c62}{AssocArray<long, std::string>::const\_iterator}} i = assArr.\mbox{\hyperlink{classAssocArray_a3fbe23088af5d36d97acd4b76bcb0107}{Begin}}();}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keywordflow}{while} (i != assArr.\mbox{\hyperlink{classAssocArray_a600b9a0280c6f67380abc032dad1d755}{End}}())}
+\DoxyCodeLine{00027     \{}
+\DoxyCodeLine{00028             std::cout << (*i).first << \textcolor{stringliteral}{", "} << ((*i).second) << std::endl;}
+\DoxyCodeLine{00029             }
+\DoxyCodeLine{00030             i++;}
+\DoxyCodeLine{00031     \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     std::cout << std::endl;}
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}

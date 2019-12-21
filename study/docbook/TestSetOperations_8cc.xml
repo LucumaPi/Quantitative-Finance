@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSetOperations_8cc">
+<title>tests/TestSetOperations.cc File Reference</title>
+<indexterm><primary>tests/TestSetOperations.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;set&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+</programlisting>Include dependency graph for TestSetOperations.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSetOperations_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link> (const std::set&lt; T &gt; &amp;l, const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>bool <link linkend="_TestSetOperations_8cc_1a58f6535f8198f8c942660b07a1dc1743">subset</link> (const std::set&lt; T &gt; &amp;super, const std::set&lt; T &gt; &amp;sub)</para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>bool <link linkend="_TestSetOperations_8cc_1a5dc29942d8e2fb8832d4527e1516110d">superset</link> (const std::set&lt; T &gt; &amp;super, const std::set&lt; T &gt; &amp;sub)</para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSetOperations_8cc_1a49ce21c7fb0f30867ca92edd6d951d1a">UnionSet</link> (const std::set&lt; T &gt; &amp;s1, const std::set&lt; T &gt; &amp;s2, std::set&lt; T &gt; &amp;myunion)</para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSetOperations_8cc_1a0c725f9d3727a797b2cbfe5ebe380ffe">DifferenceSet</link> (const std::set&lt; T &gt; &amp;s1, const std::set&lt; T &gt; &amp;s2, std::set&lt; T &gt; &amp;mydiff)</para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSetOperations_8cc_1ac0e5b69710d850f6e9d4555f964b60b9">IntersectionSet</link> (const std::set&lt; T &gt; &amp;s1, const std::set&lt; T &gt; &amp;s2, std::set&lt; T &gt; &amp;myintersect)</para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSetOperations_8cc_1ad047be612789ce938d427099378b4320">SymmetricDifferenceSet</link> (const std::set&lt; T &gt; &amp;s1, const std::set&lt; T &gt; &amp;s2, std::set&lt; T &gt; &amp;mysdiff)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestSetOperations_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSetOperations_8cc_1a0c725f9d3727a797b2cbfe5ebe380ffe"/>    <section>
+    <title>DifferenceSet()</title>
+<indexterm><primary>DifferenceSet</primary><secondary>TestSetOperations.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations.cc</primary><secondary>DifferenceSet</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void DifferenceSet (const std::set&lt; T &gt; &amp; s1, const std::set&lt; T &gt; &amp; s2, std::set&lt; T &gt; &amp; mydiff)</computeroutput></para><para>
+Definition at line 75 of file TestSetOperations.cc.</para>
+<programlisting>76 {&#32;<emphasis role="comment">//&#32;Difference&#32;of&#32;two&#32;sets</emphasis>
+77 
+78 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;T&gt;::iterator&#32;i&#32;=&#32;mydiff.begin();
+79 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;int&gt;&#32;&gt;&#32;insertiter(mydiff,&#32;i);
+80 &#32;&#32;&#32;&#32;set_difference(s1.begin(),&#32;s1.end(),&#32;s2.begin(),&#32;s2.end(),&#32;insertiter);
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+82 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations_8cc_1ac0e5b69710d850f6e9d4555f964b60b9"/>    <section>
+    <title>IntersectionSet()</title>
+<indexterm><primary>IntersectionSet</primary><secondary>TestSetOperations.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations.cc</primary><secondary>IntersectionSet</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void IntersectionSet (const std::set&lt; T &gt; &amp; s1, const std::set&lt; T &gt; &amp; s2, std::set&lt; T &gt; &amp; myintersect)</computeroutput></para><para>
+Definition at line 83 of file TestSetOperations.cc.</para>
+<programlisting>84 {&#32;<emphasis role="comment">//&#32;Intersection&#32;of&#32;two&#32;sets</emphasis>
+85 
+86 &#32;&#32;&#32;&#32;std::set&lt;int&gt;::iterator&#32;i&#32;=&#32;myintersect.begin();
+87 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;int&gt;&#32;&gt;&#32;insertiter(myintersect,&#32;i);
+88 &#32;&#32;&#32;&#32;set_intersection(s1.begin(),&#32;s1.end(),&#32;s2.begin(),&#32;s2.end(),&#32;insertiter);
+89 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSetOperations.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 99 of file TestSetOperations.cc.</para>
+<programlisting>100 {
+101 
+102 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+103 
+104 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Only&#32;unique&#32;(new&#32;elements)&#32;added</emphasis>
+105 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.insert(1);
+106 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.insert(2);
+107 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.insert(3);
+108 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>&#32;(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<emphasis role="stringliteral">&quot;First&#32;set&quot;</emphasis>);
+109 
+110 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>&#32;(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>);
+111 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;for&#32;subsethood&#32;(in&#32;other&#32;words,&#32;is&#32;second&#32;a&#32;subset&#32;of&#32;first?)</emphasis>
+112 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(includes(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.end(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.end()))
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;OK,&#32;second&#32;set&#32;is&#32;a&#32;subset&#32;of&#32;first&#32;set\n&quot;</emphasis>;
+114 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;BAAH&#32;Not&#32;a&#32;subset\n&quot;</emphasis>;
+116 
+117 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.erase(3);
+118 &#32;&#32;&#32;&#32;
+119 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Checking&#32;for&#32;subsethood&#32;in&#32;a&#32;more&#32;user-friendly&#32;way</emphasis>
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestSetOperations_8cc_1a58f6535f8198f8c942660b07a1dc1743">subset</link>&#32;(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Second&#32;set&#32;is&#32;a&#32;subset&#32;of&#32;first,&#32;OK\n&quot;</emphasis>;
+122 
+123 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestSetOperations_8cc_1a5dc29942d8e2fb8832d4527e1516110d">superset</link>(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;First&#32;set&#32;is&#32;a&#32;superset&#32;of&#32;second,&#32;OK\n&quot;</emphasis>;
+125 
+126 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestSetOperations_8cc_1a5dc29942d8e2fb8832d4527e1516110d">superset</link>&#32;(<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>)&#32;==&#32;<emphasis role="keyword">false</emphasis>)
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Second&#32;set&#32;is&#32;a&#32;NOT&#32;a&#32;superset&#32;of&#32;first,&#32;OK\n&quot;</emphasis>;
+128 
+129 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.insert(51);
+130 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.insert(52);
+131 
+132 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>(<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;<emphasis role="stringliteral">&quot;Second&#32;set&quot;</emphasis>);
+133 
+134 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;4&#32;set&#32;functions&#32;use&#32;an&#32;insert&#32;iterator.&#32;This&#32;has&#32;the&#32;effect&#32;of&#32;causing&#32;an&#32;</emphasis>
+135 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;insertion&#32;at&#32;a&#32;given&#32;position&#32;rather&#32;than&#32;the&#32;usual&#32;&apos;overwrite&apos;&#32;mode.</emphasis>
+136 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;union&#32;of&#32;two&#32;sets</emphasis>
+137 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;myunion;
+138 &#32;&#32;&#32;&#32;std::set&lt;int&gt;::iterator&#32;i&#32;=&#32;myunion.begin();
+139 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;int&gt;&#32;&gt;&#32;insertiter(myunion,&#32;i);
+140 
+141 &#32;&#32;&#32;&#32;set_union(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.end(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.end(),&#32;insertiter);
+142 
+143 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>(myunion,&#32;<emphasis role="stringliteral">&quot;Union&quot;</emphasis>);
+144 
+145 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;the&#32;union&#32;of&#32;two&#32;sets&#32;using&#32;Information&#32;Hiding</emphasis>
+146 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;myunion2;
+147 
+148 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a49ce21c7fb0f30867ca92edd6d951d1a">UnionSet</link>(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;myunion2);
+149 
+150 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>&#32;(myunion2,&#32;<emphasis role="stringliteral">&quot;Union,&#32;second&#32;variant&quot;</emphasis>);
+151 
+152 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Intersecton&#32;of&#32;two&#32;sets</emphasis>
+153 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;myintersect;
+154 &#32;&#32;&#32;&#32;i&#32;=&#32;myintersect.begin();
+155 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;int&gt;&#32;&gt;&#32;insertiter2(myintersect,&#32;i);
+156 
+157 &#32;&#32;&#32;&#32;set_intersection(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.end(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.end(),&#32;insertiter2);
+158 
+159 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>(myintersect,&#32;<emphasis role="stringliteral">&quot;Intersection&quot;</emphasis>);
+160 
+161 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Intersection&#32;using&#32;Information&#32;Hiding</emphasis>
+162 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;myintersect2;
+163 
+164 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1ac0e5b69710d850f6e9d4555f964b60b9">IntersectionSet</link>(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;myintersect2);
+165 
+166 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>&#32;(myintersect2,&#32;<emphasis role="stringliteral">&quot;Intersection,&#32;version&#32;2&quot;</emphasis>);
+167 
+168 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Difference&#32;of&#32;two&#32;sets</emphasis>
+169 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;mydifference;
+170 &#32;&#32;&#32;&#32;i&#32;=&#32;mydifference.begin();
+171 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;int&gt;&#32;&gt;&#32;insertiter3(mydifference,&#32;i);
+172 
+173 &#32;&#32;&#32;&#32;set_difference(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.end(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.end(),&#32;insertiter3);
+174 
+175 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>(mydifference,&#32;<emphasis role="stringliteral">&quot;Difference&quot;</emphasis>);
+176 &#32;&#32;&#32;&#32;
+177 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Difference&#32;using&#32;Information&#32;Hiding</emphasis>
+178 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;mydiff2;
+179 
+180 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a0c725f9d3727a797b2cbfe5ebe380ffe">DifferenceSet</link>(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;mydiff2);
+181 
+182 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>&#32;(mydiff2,&#32;<emphasis role="stringliteral">&quot;Difference,&#32;version&#32;2&quot;</emphasis>);
+183 
+184 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Symmetric&#32;difference&#32;of&#32;two&#32;sets</emphasis>
+185 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;mysymmdifference;
+186 &#32;&#32;&#32;&#32;i&#32;=&#32;mysymmdifference.begin();
+187 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;int&gt;&#32;&gt;&#32;insertiter4(mysymmdifference,&#32;i);
+188 
+189 &#32;&#32;&#32;&#32;set_symmetric_difference(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.end(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.begin(),&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.end(),&#32;insertiter4);
+190 
+191 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>(mysymmdifference,&#32;<emphasis role="stringliteral">&quot;Symmetric&#32;difference&quot;</emphasis>);
+192 &#32;&#32;&#32;&#32;
+193 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Symmetric&#32;Difference&#32;using&#32;Information&#32;Hiding</emphasis>
+194 &#32;&#32;&#32;&#32;std::set&lt;int&gt;&#32;mysdiff2;
+195 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1ad047be612789ce938d427099378b4320">SymmetricDifferenceSet</link>(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;mysdiff2);
+196 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122">print</link>&#32;(mysdiff2,&#32;<emphasis role="stringliteral">&quot;Symmetric&#32;Difference,&#32;version&#32;2&quot;</emphasis>);
+197 
+198 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+199 
+200 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations_8cc_1a37609edc4ee4244047729d8ce29ff122"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestSetOperations.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void print (const std::set&lt; T &gt; &amp; l, const std::string &amp; name)</computeroutput></para><para>
+Definition at line 29 of file TestSetOperations.cc.</para>
+<programlisting>30 {&#32;&#32;<emphasis role="comment">//&#32;Print&#32;the&#32;contents&#32;of&#32;a&#32;set.&#32;Notice&#32;the&#32;presence&#32;of&#32;a&#32;constant&#32;iterator.</emphasis>
+31 &#32;&#32;&#32;&#32;
+32 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;name&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;size&#32;of&#32;set&#32;is&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;l.size()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&#32;&quot;</emphasis>;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;T&gt;::const_iterator&#32;i;
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;l.begin();&#32;i&#32;!=&#32;l.end();&#32;++i)
+37 &#32;&#32;&#32;&#32;{
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;*i&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+39 
+40 &#32;&#32;&#32;&#32;}
+41 
+42 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+43 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations_8cc_1a58f6535f8198f8c942660b07a1dc1743"/>    <section>
+    <title>subset()</title>
+<indexterm><primary>subset</primary><secondary>TestSetOperations.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations.cc</primary><secondary>subset</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>bool subset (const std::set&lt; T &gt; &amp; super, const std::set&lt; T &gt; &amp; sub)</computeroutput></para><para>
+Definition at line 45 of file TestSetOperations.cc.</para>
+<programlisting>46 {&#32;<emphasis role="comment">//&#32;Is&#32;one&#32;set&#32;a&#32;subset&#32;of&#32;another&#32;set?</emphasis>
+47 
+48 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;sub&#32;is&#32;a&#32;subset&#32;of&#32;superset&#32;iff&#32;superset&#32;includes&#32;sub</emphasis>
+49 
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;includes(super.begin(),&#32;super.end(),&#32;sub.begin(),&#32;sub.end());
+51 
+52 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations_8cc_1a5dc29942d8e2fb8832d4527e1516110d"/>    <section>
+    <title>superset()</title>
+<indexterm><primary>superset</primary><secondary>TestSetOperations.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations.cc</primary><secondary>superset</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>bool superset (const std::set&lt; T &gt; &amp; super, const std::set&lt; T &gt; &amp; sub)</computeroutput></para><para>
+Definition at line 54 of file TestSetOperations.cc.</para>
+<programlisting>55 {&#32;<emphasis role="comment">//&#32;Is&#32;one&#32;set&#32;a&#32;superset&#32;of&#32;another&#32;set?</emphasis>
+56 
+57 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;superset&#32;contains&#32;sub&#32;iff&#32;sub&#32;is&#32;s&#32;subset&#32;of&#32;superset</emphasis>
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_TestSetOperations_8cc_1a58f6535f8198f8c942660b07a1dc1743">subset</link>(super,&#32;sub);
+60 
+61 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations_8cc_1ad047be612789ce938d427099378b4320"/>    <section>
+    <title>SymmetricDifferenceSet()</title>
+<indexterm><primary>SymmetricDifferenceSet</primary><secondary>TestSetOperations.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations.cc</primary><secondary>SymmetricDifferenceSet</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void SymmetricDifferenceSet (const std::set&lt; T &gt; &amp; s1, const std::set&lt; T &gt; &amp; s2, std::set&lt; T &gt; &amp; mysdiff)</computeroutput></para><para>
+Definition at line 90 of file TestSetOperations.cc.</para>
+<programlisting>91 {&#32;<emphasis role="comment">//&#32;Symmetric&#32;difference&#32;of&#32;two&#32;sets</emphasis>
+92 
+93 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;T&gt;::iterator&#32;i&#32;=&#32;mysdiff.begin();
+94 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;int&gt;&#32;&gt;&#32;insertiter(mysdiff,&#32;i);
+95 &#32;&#32;&#32;&#32;set_symmetric_difference(s1.begin(),&#32;s1.end(),&#32;s2.begin(),&#32;s2.end(),&#32;insertiter);
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+97 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations_8cc_1a49ce21c7fb0f30867ca92edd6d951d1a"/>    <section>
+    <title>UnionSet()</title>
+<indexterm><primary>UnionSet</primary><secondary>TestSetOperations.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations.cc</primary><secondary>UnionSet</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void UnionSet (const std::set&lt; T &gt; &amp; s1, const std::set&lt; T &gt; &amp; s2, std::set&lt; T &gt; &amp; myunion)</computeroutput></para><para>
+Definition at line 66 of file TestSetOperations.cc.</para>
+<programlisting>67 {&#32;<emphasis role="comment">//&#32;Union&#32;of&#32;two&#32;sets</emphasis>
+68 
+69 &#32;&#32;&#32;&#32;std::set&lt;int&gt;::iterator&#32;i&#32;=&#32;myunion.begin();
+70 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;int&gt;&#32;&gt;&#32;insertiter(myunion,&#32;i);
+71 &#32;&#32;&#32;&#32;set_union(s1.begin(),&#32;s1.end(),&#32;s2.begin(),&#32;s2.end(),&#32;insertiter);
+72 
+73 }
+</programlisting></section>
+</section>
+</section>

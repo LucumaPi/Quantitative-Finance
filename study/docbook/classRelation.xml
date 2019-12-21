@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRelation">
 <title>Relation&lt; D, R &gt; Class Template Reference</title>
 <indexterm><primary>Relation&lt; D, R &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Relation.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for Relation&lt; D, R &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -14,71 +17,515 @@ Collaboration diagram for Relation&lt; D, R &gt;:<para>
 <simplesect>
     <title>Public Types    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classRelation_1af68e62c9cf16d7e2dff81950298dc778"/>typedef std::multimap&lt; <link linkend="_classD">D</link>, R &gt;::iterator <emphasis role="strong">iterator</emphasis></para>
+            <listitem><para>typedef std::multimap&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link> <link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152"/>typedef std::multimap&lt; <link linkend="_classD">D</link>, R &gt;::const_iterator <emphasis role="strong">const_iterator</emphasis></para>
+            <listitem><para>typedef std::multimap&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link> <link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a3377b326df68d54e890873e4800ac522"/>typedef std::multimap&lt; R, <link linkend="_classD">D</link> &gt;::iterator <emphasis role="strong">iteratorInv</emphasis></para>
+            <listitem><para>typedef std::multimap&lt; R, <link linkend="_classD">D</link> &gt;::<link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link> <link linkend="_classRelation_1a3377b326df68d54e890873e4800ac522">iteratorInv</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed"/>typedef std::multimap&lt; R, <link linkend="_classD">D</link> &gt;::const_iterator <emphasis role="strong">const_iteratorInv</emphasis></para>
+            <listitem><para>typedef std::multimap&lt; R, <link linkend="_classD">D</link> &gt;::<link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link> <link linkend="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed">const_iteratorInv</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classRelation_1aae3172d175b898c286d82916f191174c"/><emphasis role="strong">Relation</emphasis> (const <link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; &amp;domainSet, const <link linkend="_classSet">Set</link>&lt; R &gt; &amp;rangeSet)</para>
+            <listitem><para><link linkend="_classRelation_1a36145dd40aa468c579ac6e531b0ac588">Relation</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1af344472b21613144a5db861d5d7f1437"/><emphasis role="strong">Relation</emphasis> (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp;r2)</para>
+            <listitem><para><link linkend="_classRelation_1aae3172d175b898c286d82916f191174c">Relation</link> (const <link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; &amp;domainSet, const <link linkend="_classSet">Set</link>&lt; R &gt; &amp;rangeSet)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a3850e9c9495624d27e7813cc6e0dc763"/>void <emphasis role="strong">addDomainElement</emphasis> (const <link linkend="_classD">D</link> &amp;d)</para>
+            <listitem><para><link linkend="_classRelation_1af344472b21613144a5db861d5d7f1437">Relation</link> (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp;r2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a8bbc53597b97db93008a82d5b7ff54cb"/>void <emphasis role="strong">addRangeElement</emphasis> (const R &amp;r)</para>
+            <listitem><para>void <link linkend="_classRelation_1a3850e9c9495624d27e7813cc6e0dc763">addDomainElement</link> (const <link linkend="_classD">D</link> &amp;d)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a30b7ecfff53dda24b5661215e63b3aeb"/>void <emphasis role="strong">removeDomainElement</emphasis> (const <link linkend="_classD">D</link> &amp;d)</para>
+            <listitem><para>void <link linkend="_classRelation_1a8bbc53597b97db93008a82d5b7ff54cb">addRangeElement</link> (const R &amp;r)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1adf2bd0433cf8eb255e0b595d8502afad"/>void <emphasis role="strong">removeRangeElement</emphasis> (const R &amp;r)</para>
+            <listitem><para>void <link linkend="_classRelation_1a30b7ecfff53dda24b5661215e63b3aeb">removeDomainElement</link> (const <link linkend="_classD">D</link> &amp;d)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a0d4bdc5ed486ffbef37ae2e489166834"/>void <emphasis role="strong">addRelation</emphasis> (const <link linkend="_classD">D</link> &amp;d, const R &amp;r)</para>
+            <listitem><para>void <link linkend="_classRelation_1adf2bd0433cf8eb255e0b595d8502afad">removeRangeElement</link> (const R &amp;r)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a6fe1980b85fd0a4d59ed6ca3dbb52a2a"/>void <emphasis role="strong">removeRelation</emphasis> (const <link linkend="_classD">D</link> &amp;d)</para>
+            <listitem><para>void <link linkend="_classRelation_1a0d4bdc5ed486ffbef37ae2e489166834">addRelation</link> (const <link linkend="_classD">D</link> &amp;d, const R &amp;r)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1aac3d30ad0639de420ec0d496ca78696f"/>void <emphasis role="strong">ClearAll</emphasis> ()</para>
+            <listitem><para>void <link linkend="_classRelation_1a6fe1980b85fd0a4d59ed6ca3dbb52a2a">removeRelation</link> (const <link linkend="_classD">D</link> &amp;d)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a401a214a659d7005d830e1d5573075ed"/>void <emphasis role="strong">ClearLinks</emphasis> ()</para>
+            <listitem><para>void <link linkend="_classRelation_1aac3d30ad0639de420ec0d496ca78696f">ClearAll</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a97ba3b83f8b68901191248b72b4d2a14"/>iterator <emphasis role="strong">Begin</emphasis> ()</para>
+            <listitem><para>void <link linkend="_classRelation_1a401a214a659d7005d830e1d5573075ed">ClearLinks</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a8c1e8ca4826fced1256829a4779d9d8c"/>const_iterator <emphasis role="strong">Begin</emphasis> () const</para>
+            <listitem><para><link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link> <link linkend="_classRelation_1a97ba3b83f8b68901191248b72b4d2a14">Begin</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a068ca856b6e3b6bffd24117b405c01ae"/>iterator <emphasis role="strong">End</emphasis> ()</para>
+            <listitem><para><link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link> <link linkend="_classRelation_1a8c1e8ca4826fced1256829a4779d9d8c">Begin</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1ab5fee537bbc5a9748881a6bbe25bbdd2"/>const_iterator <emphasis role="strong">End</emphasis> () const</para>
+            <listitem><para><link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link> <link linkend="_classRelation_1a068ca856b6e3b6bffd24117b405c01ae">End</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1ae76135e50d636a11e65658f44ffa0551"/>iteratorInv <emphasis role="strong">BeginInv</emphasis> ()</para>
+            <listitem><para><link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link> <link linkend="_classRelation_1ab5fee537bbc5a9748881a6bbe25bbdd2">End</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1ad8fc7581e55ca1f3ae7c174e928d0bd8"/>const_iteratorInv <emphasis role="strong">BeginInv</emphasis> () const</para>
+            <listitem><para><link linkend="_classRelation_1a3377b326df68d54e890873e4800ac522">iteratorInv</link> <link linkend="_classRelation_1ae76135e50d636a11e65658f44ffa0551">BeginInv</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a2f972862a46f4d4fdd8f5e607f67a449"/>iteratorInv <emphasis role="strong">EndInv</emphasis> ()</para>
+            <listitem><para><link linkend="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed">const_iteratorInv</link> <link linkend="_classRelation_1ad8fc7581e55ca1f3ae7c174e928d0bd8">BeginInv</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1ada45ef3553ea10f6ffeb01429d41112c"/>const_iteratorInv <emphasis role="strong">EndInv</emphasis> () const</para>
+            <listitem><para><link linkend="_classRelation_1a3377b326df68d54e890873e4800ac522">iteratorInv</link> <link linkend="_classRelation_1a2f972862a46f4d4fdd8f5e607f67a449">EndInv</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a6df4cdb10cd950968cf21fafdec4bb83"/>const <link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; &amp; <emphasis role="strong">DomainSet</emphasis> ()</para>
+            <listitem><para><link linkend="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed">const_iteratorInv</link> <link linkend="_classRelation_1ada45ef3553ea10f6ffeb01429d41112c">EndInv</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1ae7d89135038109b9ff7ef4c6590a112e"/>const <link linkend="_classSet">Set</link>&lt; R &gt; &amp; <emphasis role="strong">RangeSet</emphasis> ()</para>
+            <listitem><para>const <link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; &amp; <link linkend="_classRelation_1a6df4cdb10cd950968cf21fafdec4bb83">DomainSet</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1ab946892376f95ed757414e3fadc36f6d"/><link linkend="_classSet">Set</link>&lt; R &gt; <emphasis role="strong">range</emphasis> (const <link linkend="_classD">D</link> &amp;d)</para>
+            <listitem><para>const <link linkend="_classSet">Set</link>&lt; R &gt; &amp; <link linkend="_classRelation_1ae7d89135038109b9ff7ef4c6590a112e">RangeSet</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a0ff46cfb436345dab2707b36b94a152a"/><link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; <emphasis role="strong">domain</emphasis> (const R &amp;r)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; R &gt; <link linkend="_classRelation_1ab946892376f95ed757414e3fadc36f6d">range</link> (const <link linkend="_classD">D</link> &amp;d)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1af7602723b04b55522372eae5d70fff52"/>bool <emphasis role="strong">inDomain</emphasis> (const <link linkend="_classD">D</link> &amp;d) const</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; <link linkend="_classRelation_1a0ff46cfb436345dab2707b36b94a152a">domain</link> (const R &amp;r)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1a8dd9f0681135740849f9dd20ae4ee13a"/>bool <emphasis role="strong">inRange</emphasis> (const <link linkend="_classD">D</link> &amp;r) const</para>
+            <listitem><para>bool <link linkend="_classRelation_1af7602723b04b55522372eae5d70fff52">inDomain</link> (const <link linkend="_classD">D</link> &amp;d) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRelation_1ae4668d138c1cc9cfc607729a32b2772e"/><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp;r2)</para>
+            <listitem><para>bool <link linkend="_classRelation_1a8dd9f0681135740849f9dd20ae4ee13a">inRange</link> (const <link linkend="_classD">D</link> &amp;r) const</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classRelation_1acc3976a5e2e72dd33d7d05bee2b286fe">~Relation</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp; <link linkend="_classRelation_1ae4668d138c1cc9cfc607729a32b2772e">operator=</link> (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp;r2)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class D, class R&gt;
+class Relation&lt; D, R &gt;</title></simplesect>
+
+<para>
+Definition at line 39 of file Relation.hh.</para>
+</section>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152"/>    <section>
+    <title>const_iterator</title>
+<indexterm><primary>const_iterator</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>const_iterator</secondary></indexterm>
+<computeroutput>template&lt;class D, class R&gt; </computeroutput><para><computeroutput>typedef std::multimap&lt;<link linkend="_classD">D</link>, R&gt;::<link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link></computeroutput></para><para>
+Definition at line 77 of file Relation.hh.</para>
+    </section><anchor xml:id="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed"/>    <section>
+    <title>const_iteratorInv</title>
+<indexterm><primary>const_iteratorInv</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>const_iteratorInv</secondary></indexterm>
+<computeroutput>template&lt;class D, class R&gt; </computeroutput><para><computeroutput>typedef std::multimap&lt;R, <link linkend="_classD">D</link>&gt;::<link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed">const_iteratorInv</link></computeroutput></para><para>
+Definition at line 86 of file Relation.hh.</para>
+    </section><anchor xml:id="_classRelation_1af68e62c9cf16d7e2dff81950298dc778"/>    <section>
+    <title>iterator</title>
+<indexterm><primary>iterator</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>iterator</secondary></indexterm>
+<computeroutput>template&lt;class D, class R&gt; </computeroutput><para><computeroutput>typedef std::multimap&lt;<link linkend="_classD">D</link>, R&gt;::<link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link></computeroutput></para><para>
+Definition at line 76 of file Relation.hh.</para>
+    </section><anchor xml:id="_classRelation_1a3377b326df68d54e890873e4800ac522"/>    <section>
+    <title>iteratorInv</title>
+<indexterm><primary>iteratorInv</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>iteratorInv</secondary></indexterm>
+<computeroutput>template&lt;class D, class R&gt; </computeroutput><para><computeroutput>typedef std::multimap&lt;R, <link linkend="_classD">D</link>&gt;::<link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1a3377b326df68d54e890873e4800ac522">iteratorInv</link></computeroutput></para><para>
+Definition at line 85 of file Relation.hh.</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classRelation_1a36145dd40aa468c579ac6e531b0ac588"/>    <section>
+    <title>Relation()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Relation</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>Relation</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation">Relation</link> ( )</computeroutput></para><para>
+Definition at line 53 of file Relation.cc.</para>
+<programlisting>54 {
+55 
+56 &#32;&#32;&#32;&#32;s1&#32;=&#32;<link linkend="_classSet">Set&lt;D&gt;</link>();
+57 &#32;&#32;&#32;&#32;s2&#32;=&#32;<link linkend="_classSet">Set&lt;R&gt;</link>();
+58 &#32;&#32;&#32;&#32;f&#32;=&#32;std::multimap&lt;D,R&gt;();
+59 &#32;&#32;&#32;&#32;finv&#32;=&#32;std::multimap&lt;R,&#32;D&gt;();
+60 
+61 }
+</programlisting>    </section><anchor xml:id="_classRelation_1aae3172d175b898c286d82916f191174c"/>    <section>
+    <title>Relation()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Relation</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>Relation</secondary></indexterm>
+<computeroutput>template&lt;class D, class R&gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation">Relation</link> (const <link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; &amp; domainSet, const <link linkend="_classSet">Set</link>&lt; R &gt; &amp; rangeSet)</computeroutput></para><para>
+Definition at line 64 of file Relation.cc.</para>
+<programlisting>65 {
+66 &#32;&#32;&#32;&#32;s1&#32;=&#32;domainSet;
+67 &#32;&#32;&#32;&#32;s2&#32;=&#32;rangeSet;
+68 &#32;&#32;&#32;&#32;f&#32;=&#32;std::multimap&lt;D,R&gt;();
+69 &#32;&#32;&#32;&#32;finv&#32;=&#32;std::multimap&lt;R,&#32;D&gt;();
+70 
+71 }
+</programlisting>    </section><anchor xml:id="_classRelation_1af344472b21613144a5db861d5d7f1437"/>    <section>
+    <title>Relation()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Relation</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>Relation</secondary></indexterm>
+<computeroutput>template&lt;class D, class R&gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation">Relation</link> (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp; r2)</computeroutput></para><para>
+Definition at line 74 of file Relation.cc.</para>
+<programlisting>75 {
+76 
+77 &#32;&#32;&#32;&#32;s1&#32;=&#32;r2.s1;
+78 &#32;&#32;&#32;&#32;s2&#32;=&#32;r2.s2;
+79 &#32;&#32;&#32;&#32;f&#32;=&#32;r2.f;
+80 &#32;&#32;&#32;&#32;finv&#32;=&#32;r2.finv;
+81 }
+</programlisting>    </section><anchor xml:id="_classRelation_1acc3976a5e2e72dd33d7d05bee2b286fe"/>    <section>
+    <title>~Relation()</title>
+<indexterm><primary>~Relation</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>~Relation</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::~<link linkend="_classRelation">Relation</link> ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 84 of file Relation.cc.</para>
+<programlisting>85 {
+86 
+87 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classRelation_1a3850e9c9495624d27e7813cc6e0dc763"/>    <section>
+    <title>addDomainElement()</title>
+<indexterm><primary>addDomainElement</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>addDomainElement</secondary></indexterm>
+<computeroutput>template&lt;class D, class R &gt; </computeroutput><para><computeroutput>void <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::addDomainElement (const <link linkend="_classD">D</link> &amp; d)</computeroutput></para><para>
+Definition at line 109 of file Relation.cc.</para>
+<programlisting>110 {
+111 
+112 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(d);
+113 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a8bbc53597b97db93008a82d5b7ff54cb"/>    <section>
+    <title>addRangeElement()</title>
+<indexterm><primary>addRangeElement</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>addRangeElement</secondary></indexterm>
+<computeroutput>template&lt;class D , class R&gt; </computeroutput><para><computeroutput>void <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::addRangeElement (const R &amp; r)</computeroutput></para><para>
+Definition at line 117 of file Relation.cc.</para>
+<programlisting>118 {
+119 
+120 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+121 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a0d4bdc5ed486ffbef37ae2e489166834"/>    <section>
+    <title>addRelation()</title>
+<indexterm><primary>addRelation</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>addRelation</secondary></indexterm>
+<computeroutput>template&lt;class D, class R&gt; </computeroutput><para><computeroutput>void <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::addRelation (const <link linkend="_classD">D</link> &amp; d, const R &amp; r)</computeroutput></para><para>
+Definition at line 193 of file Relation.cc.</para>
+<programlisting>194 {
+195 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Prec:&#32;d&#32;and&#32;r&#32;must&#32;be&#32;in&#32;the&#32;sets</emphasis>
+196 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s1.<link linkend="_classSet_1a685c7dec3d054d0d9972457f13873568">Contains</link>(d)&#32;==&#32;<emphasis role="keyword">false</emphasis>)
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+198 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s2.<link linkend="_classSet_1a685c7dec3d054d0d9972457f13873568">Contains</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)&#32;==&#32;<emphasis role="keyword">false</emphasis>)
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+200 
+201 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;a&#32;link&#32;between&#32;d&#32;and&#32;r</emphasis>
+202 &#32;&#32;&#32;&#32;std::pair&lt;D,&#32;R&gt;&#32;p;
+203 &#32;&#32;&#32;&#32;p.first&#32;=&#32;d;
+204 &#32;&#32;&#32;&#32;p.second&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+205 &#32;&#32;&#32;&#32;f.insert(p);
+206 
+207 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;a&#32;link&#32;between&#32;r&#32;and&#32;d</emphasis>
+208 &#32;&#32;&#32;&#32;std::pair&lt;R,&#32;D&gt;&#32;pinv;
+209 &#32;&#32;&#32;&#32;pinv.first&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+210 &#32;&#32;&#32;&#32;pinv.second&#32;=&#32;d;
+211 &#32;&#32;&#32;&#32;finv.insert(pinv);
+212 
+213 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a97ba3b83f8b68901191248b72b4d2a14"/>    <section>
+    <title>Begin()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Begin</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>Begin</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::Begin ( )</computeroutput></para><para>
+Definition at line 318 of file Relation.cc.</para>
+<programlisting>319 {&#32;<emphasis role="comment">//&#32;Return&#32;iterator&#32;at&#32;begin&#32;of&#32;relation</emphasis>
+320 
+321 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;f.begin();
+322 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a8c1e8ca4826fced1256829a4779d9d8c"/>    <section>
+    <title>Begin()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Begin</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>Begin</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::Begin ( ) const</computeroutput></para><para>
+Definition at line 325 of file Relation.cc.</para>
+<programlisting>326 {&#32;<emphasis role="comment">//&#32;Return&#32;const&#32;iterator&#32;at&#32;begin&#32;of&#32;relation</emphasis>
+327 
+328 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;f.begin();
+329 
+330 }
+</programlisting>    </section><anchor xml:id="_classRelation_1ae76135e50d636a11e65658f44ffa0551"/>    <section>
+    <title>BeginInv()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>BeginInv</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>BeginInv</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1a3377b326df68d54e890873e4800ac522">iteratorInv</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::BeginInv ( )</computeroutput></para><para>
+Definition at line 350 of file Relation.cc.</para>
+<programlisting>351 {&#32;<emphasis role="comment">//&#32;Return&#32;iterator&#32;at&#32;begin&#32;of&#32;relation</emphasis>
+352 
+353 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;finv.begin();
+354 }
+</programlisting>    </section><anchor xml:id="_classRelation_1ad8fc7581e55ca1f3ae7c174e928d0bd8"/>    <section>
+    <title>BeginInv()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>BeginInv</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>BeginInv</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed">const_iteratorInv</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::BeginInv ( ) const</computeroutput></para><para>
+Definition at line 357 of file Relation.cc.</para>
+<programlisting>358 {&#32;<emphasis role="comment">//&#32;Return&#32;const&#32;iterator&#32;at&#32;begin&#32;of&#32;relation</emphasis>
+359 
+360 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;finv.begin();
+361 
+362 }
+</programlisting>    </section><anchor xml:id="_classRelation_1aac3d30ad0639de420ec0d496ca78696f"/>    <section>
+    <title>ClearAll()</title>
+<indexterm><primary>ClearAll</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>ClearAll</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput>void <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::ClearAll ( )</computeroutput></para><para>
+Definition at line 225 of file Relation.cc.</para>
+<programlisting>226 {&#32;<emphasis role="comment">//&#32;Break&#32;all&#32;links&#32;and&#32;set&#32;elements</emphasis>
+227 
+228 &#32;&#32;&#32;&#32;f.erase(f.begin(),&#32;f.end());
+229 &#32;&#32;&#32;&#32;finv.erase(finv.begin(),&#32;finv.end());
+230 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1af4c48c3aca006588ac6d572c7e1f984c">Clear</link>();
+231 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1af4c48c3aca006588ac6d572c7e1f984c">Clear</link>();
+232 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a401a214a659d7005d830e1d5573075ed"/>    <section>
+    <title>ClearLinks()</title>
+<indexterm><primary>ClearLinks</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>ClearLinks</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput>void <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::ClearLinks ( )</computeroutput></para><para>
+Definition at line 235 of file Relation.cc.</para>
+<programlisting>236 {&#32;<emphasis role="comment">//&#32;Break&#32;all&#32;links</emphasis>
+237 
+238 &#32;&#32;&#32;&#32;f.erase(f.begin(),&#32;f.end());
+239 &#32;&#32;&#32;&#32;finv.erase(finv.begin(),&#32;finv.end());
+240 
+241 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a0ff46cfb436345dab2707b36b94a152a"/>    <section>
+    <title>domain()</title>
+<indexterm><primary>domain</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>domain</secondary></indexterm>
+<computeroutput>template&lt;class D , class R&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::domain (const R &amp; r)</computeroutput></para><para>
+Definition at line 281 of file Relation.cc.</para>
+<programlisting>282 {&#32;<emphasis role="comment">//&#32;Set&#32;of&#32;d&#32;for&#32;an&#32;r</emphasis>
+283 
+284 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;D&gt;</link>&#32;result;
+285 
+286 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::multimap&lt;R,&#32;D&gt;::const_iterator&#32;it;
+287 
+288 
+289 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(it&#32;=&#32;finv.begin();&#32;it&#32;!=&#32;finv.end();&#32;it++)
+290 &#32;&#32;&#32;&#32;{
+291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((*it).first&#32;==&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)
+292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>((*it).second);
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+295 &#32;&#32;&#32;&#32;}
+296 
+297 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+298 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a6df4cdb10cd950968cf21fafdec4bb83"/>    <section>
+    <title>DomainSet()</title>
+<indexterm><primary>DomainSet</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>DomainSet</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput>const <link linkend="_classSet">Set</link>&lt; <link linkend="_classD">D</link> &gt; &amp; <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::DomainSet ( )</computeroutput></para><para>
+Definition at line 245 of file Relation.cc.</para>
+<programlisting>246 {
+247 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s1;
+248 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a068ca856b6e3b6bffd24117b405c01ae"/>    <section>
+    <title>End()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>End</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>End</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1af68e62c9cf16d7e2dff81950298dc778">iterator</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::End ( )</computeroutput></para><para>
+Definition at line 333 of file Relation.cc.</para>
+<programlisting>334 {&#32;<emphasis role="comment">//&#32;Return&#32;iterator&#32;after&#32;end&#32;of&#32;relation</emphasis>
+335 
+336 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;f.end();
+337 
+338 }
+</programlisting>    </section><anchor xml:id="_classRelation_1ab5fee537bbc5a9748881a6bbe25bbdd2"/>    <section>
+    <title>End()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>End</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>End</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">const_iterator</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::End ( ) const</computeroutput></para><para>
+Definition at line 341 of file Relation.cc.</para>
+<programlisting>342 {&#32;<emphasis role="comment">//&#32;Return&#32;const&#32;iterator&#32;after&#32;end&#32;of&#32;relation</emphasis>
+343 
+344 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;f.end();
+345 
+346 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a2f972862a46f4d4fdd8f5e607f67a449"/>    <section>
+    <title>EndInv()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>EndInv</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>EndInv</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1a3377b326df68d54e890873e4800ac522">iteratorInv</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::EndInv ( )</computeroutput></para><para>
+Definition at line 365 of file Relation.cc.</para>
+<programlisting>366 {&#32;<emphasis role="comment">//&#32;Return&#32;iterator&#32;after&#32;end&#32;of&#32;relation</emphasis>
+367 
+368 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;finv.end();
+369 
+370 }
+</programlisting>    </section><anchor xml:id="_classRelation_1ada45ef3553ea10f6ffeb01429d41112c"/>    <section>
+    <title>EndInv()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>EndInv</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>EndInv</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::<link linkend="_classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed">const_iteratorInv</link> <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::EndInv ( ) const</computeroutput></para><para>
+Definition at line 373 of file Relation.cc.</para>
+<programlisting>374 {&#32;<emphasis role="comment">//&#32;Return&#32;const&#32;iterator&#32;after&#32;end&#32;of&#32;relation</emphasis>
+375 
+376 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;finv.end();
+377 
+378 }
+</programlisting>    </section><anchor xml:id="_classRelation_1af7602723b04b55522372eae5d70fff52"/>    <section>
+    <title>inDomain()</title>
+<indexterm><primary>inDomain</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>inDomain</secondary></indexterm>
+<computeroutput>template&lt;class D, class R &gt; </computeroutput><para><computeroutput>bool <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::inDomain (const <link linkend="_classD">D</link> &amp; d) const</computeroutput></para><para>
+Definition at line 301 of file Relation.cc.</para>
+<programlisting>302 {&#32;<emphasis role="comment">//&#32;Is&#32;an&#32;element&#32;in&#32;domain?</emphasis>
+303 
+304 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s1.<link linkend="_classSet_1a685c7dec3d054d0d9972457f13873568">Contains</link>(d);
+305 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a8dd9f0681135740849f9dd20ae4ee13a"/>    <section>
+    <title>inRange()</title>
+<indexterm><primary>inRange</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>inRange</secondary></indexterm>
+<computeroutput>template&lt;class D, class R &gt; </computeroutput><para><computeroutput>bool <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::inRange (const <link linkend="_classD">D</link> &amp; r) const</computeroutput></para><para>
+Definition at line 308 of file Relation.cc.</para>
+<programlisting>309 {&#32;<emphasis role="comment">//&#32;Is&#32;an&#32;element&#32;in&#32;range?</emphasis>
+310 
+311 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s2.<link linkend="_classSet_1a685c7dec3d054d0d9972457f13873568">Contains</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+312 
+313 }
+</programlisting>    </section><anchor xml:id="_classRelation_1ae4668d138c1cc9cfc607729a32b2772e"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class D, class R&gt; </computeroutput><para><computeroutput><link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp; <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::operator= (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp; r2)</computeroutput></para><para>
+Definition at line 90 of file Relation.cc.</para>
+<programlisting>91 {
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>&#32;==&#32;&amp;r2)
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+94 
+95 &#32;&#32;&#32;&#32;s1&#32;=&#32;r2.s1;
+96 &#32;&#32;&#32;&#32;s2&#32;=&#32;r2.s2;
+97 &#32;&#32;&#32;&#32;f&#32;=&#32;r2.f;
+98 &#32;&#32;&#32;&#32;finv&#32;=&#32;r2.finv;
+99 
+100 
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+102 
+103 }
+</programlisting>    </section><anchor xml:id="_classRelation_1ab946892376f95ed757414e3fadc36f6d"/>    <section>
+    <title>range()</title>
+<indexterm><primary>range</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>range</secondary></indexterm>
+<computeroutput>template&lt;class D, class R &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; R &gt; <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::range (const <link linkend="_classD">D</link> &amp; d)</computeroutput></para><para>
+Definition at line 257 of file Relation.cc.</para>
+<programlisting>258 {&#32;<emphasis role="comment">//&#32;Set&#32;of&#32;r&#32;for&#32;a&#32;d</emphasis>
+259 
+260 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;R&gt;</link>&#32;result;
+261 
+262 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Simple&#32;but&#32;understandable&#32;solution</emphasis>
+263 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::multimap&lt;D,R&gt;::const_iterator&#32;it;
+264 
+265 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(it&#32;=&#32;f.begin();&#32;it&#32;!=&#32;f.end();&#32;it++)
+266 &#32;&#32;&#32;&#32;{
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;*&quot;</emphasis>&#32;&lt;&lt;&#32;(*it).first&#32;&lt;&lt;&#32;(*it).second;
+268 
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((*it).first&#32;==&#32;d)
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>((*it).second);
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+273 &#32;&#32;&#32;&#32;}
+274 
+275 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+276 }
+</programlisting>    </section><anchor xml:id="_classRelation_1ae7d89135038109b9ff7ef4c6590a112e"/>    <section>
+    <title>RangeSet()</title>
+<indexterm><primary>RangeSet</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>RangeSet</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput>const <link linkend="_classSet">Set</link>&lt; R &gt; &amp; <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::RangeSet ( )</computeroutput></para><para>
+Definition at line 251 of file Relation.cc.</para>
+<programlisting>252 {
+253 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s2;
+254 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a30b7ecfff53dda24b5661215e63b3aeb"/>    <section>
+    <title>removeDomainElement()</title>
+<indexterm><primary>removeDomainElement</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>removeDomainElement</secondary></indexterm>
+<computeroutput>template&lt;class D, class R &gt; </computeroutput><para><computeroutput>void <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::removeDomainElement (const <link linkend="_classD">D</link> &amp; d)</computeroutput></para><para>
+Definition at line 125 of file Relation.cc.</para>
+<programlisting>126 {
+127 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Remove&#32;all&#32;references&#32;to&#32;Domain&#32;element&#32;d&#32;??</emphasis>
+128 &#32;&#32;&#32;&#32;f.erase(d);
+129 
+130 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Remove&#32;all&#32;references&#32;in&#32;inverse&#32;map</emphasis>
+131 
+132 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::multimap&lt;R,&#32;D&gt;::iterator&#32;it,&#32;it2;
+133 
+134 &#32;&#32;&#32;&#32;it2&#32;=&#32;finv.begin();
+135 &#32;&#32;&#32;&#32;it&#32;=&#32;it2;
+136 
+137 L1:
+138 &#32;&#32;&#32;&#32;{
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((*it).second&#32;==&#32;d)
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it2&#32;=&#32;finv.erase(it);&#32;&#32;&#32;
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it&#32;=&#32;it2;
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it++;
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+148 
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(it&#32;!=&#32;finv.end())
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+151 
+152 &#32;&#32;&#32;&#32;}
+153 
+154 
+155 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a7c93429f1d8f232c421a6fde25cb982b">Remove</link>(d);
+156 
+157 }
+</programlisting>    </section><anchor xml:id="_classRelation_1adf2bd0433cf8eb255e0b595d8502afad"/>    <section>
+    <title>removeRangeElement()</title>
+<indexterm><primary>removeRangeElement</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>removeRangeElement</secondary></indexterm>
+<computeroutput>template&lt;class D , class R&gt; </computeroutput><para><computeroutput>void <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::removeRangeElement (const R &amp; r)</computeroutput></para><para>
+Definition at line 160 of file Relation.cc.</para>
+<programlisting>161 {
+162 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Remove&#32;all&#32;references&#32;to&#32;Range&#32;element&#32;r</emphasis>
+163 &#32;&#32;&#32;&#32;finv.erase(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+164 &#32;&#32;&#32;&#32;
+165 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Remove&#32;all&#32;references&#32;in&#32;forward&#32;map</emphasis>
+166 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::multimap&lt;D,R&gt;::iterator&#32;it,&#32;it2;
+167 
+168 &#32;&#32;&#32;&#32;it2&#32;=&#32;f.begin();
+169 &#32;&#32;&#32;&#32;it&#32;=&#32;it2;
+170 L1:
+171 &#32;&#32;&#32;&#32;{
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((*it).second&#32;==&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it2&#32;=&#32;f.erase(it);&#32;&#32;
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it&#32;=&#32;it2;
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it++;
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+181 
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(it&#32;!=&#32;f.end())
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+184 
+185 &#32;&#32;&#32;&#32;}
+186 
+187 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a7c93429f1d8f232c421a6fde25cb982b">Remove</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+188 
+189 }
+</programlisting>    </section><anchor xml:id="_classRelation_1a6fe1980b85fd0a4d59ed6ca3dbb52a2a"/>    <section>
+    <title>removeRelation()</title>
+<indexterm><primary>removeRelation</primary><secondary>Relation&lt; D, R &gt;</secondary></indexterm>
+<indexterm><primary>Relation&lt; D, R &gt;</primary><secondary>removeRelation</secondary></indexterm>
+<computeroutput>template&lt;class D, class R &gt; </computeroutput><para><computeroutput>void <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt;::removeRelation (const <link linkend="_classD">D</link> &amp; d)</computeroutput></para><para>
+Definition at line 216 of file Relation.cc.</para>
+<programlisting>217 {
+218 
+219 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Remove&#32;link&#32;between&#32;d&#32;and&#32;ALL&#32;r&#32;??</emphasis>
+220 &#32;&#32;&#32;&#32;f.erase(d);
+221 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Relation.hhsrc/Relation.cc</section>
+include/duffy/<link linkend="_Relation_8hh">Relation.hh</link>src/<link linkend="_Relation_8cc">Relation.cc</link></section>
+</section>

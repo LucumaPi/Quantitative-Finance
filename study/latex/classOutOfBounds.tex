@@ -21,17 +21,105 @@ Collaboration diagram for Out\+Of\+Bounds\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classOutOfBounds_a2f04ca8596a7b3feaf50749028dd3934}\label{classOutOfBounds_a2f04ca8596a7b3feaf50749028dd3934}} 
-{\bfseries Out\+Of\+Bounds} (const std\+::string \&message, const std\+::string \&method, int index)
+\mbox{\hyperlink{classOutOfBounds_ade339f779e69df8afe2449400062e4c4}{Out\+Of\+Bounds}} ()
 \item 
-\mbox{\Hypertarget{classOutOfBounds_ae7584b5f1d6061276372e1827859ecc3}\label{classOutOfBounds_ae7584b5f1d6061276372e1827859ecc3}} 
-int {\bfseries offending\+Index} () const
+\mbox{\hyperlink{classOutOfBounds_a2f04ca8596a7b3feaf50749028dd3934}{Out\+Of\+Bounds}} (const std\+::string \&message, const std\+::string \&method, int index)
 \item 
-\mbox{\Hypertarget{classOutOfBounds_a7cf4254b246eb938886b6e9a549a5a00}\label{classOutOfBounds_a7cf4254b246eb938886b6e9a549a5a00}} 
-std\+::vector$<$ std\+::string $>$ {\bfseries Message\+Dump} () const
+int \mbox{\hyperlink{classOutOfBounds_ae7584b5f1d6061276372e1827859ecc3}{offending\+Index}} () const
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classOutOfBounds_a7cf4254b246eb938886b6e9a549a5a00}{Message\+Dump}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00084}{84}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOutOfBounds_ade339f779e69df8afe2449400062e4c4}\label{classOutOfBounds_ade339f779e69df8afe2449400062e4c4}} 
+\index{OutOfBounds@{OutOfBounds}!OutOfBounds@{OutOfBounds}}
+\index{OutOfBounds@{OutOfBounds}!OutOfBounds@{OutOfBounds}}
+\doxysubsubsection{\texorpdfstring{OutOfBounds()}{OutOfBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Out\+Of\+Bounds\+::\+Out\+Of\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00089}{89}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089                       : \mbox{\hyperlink{classMathErr_a92ae6f6640c3979720b743a62f106d95}{MathErr}}()}
+\DoxyCodeLine{00090         \{}
+\DoxyCodeLine{00091         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOutOfBounds_a2f04ca8596a7b3feaf50749028dd3934}\label{classOutOfBounds_a2f04ca8596a7b3feaf50749028dd3934}} 
+\index{OutOfBounds@{OutOfBounds}!OutOfBounds@{OutOfBounds}}
+\index{OutOfBounds@{OutOfBounds}!OutOfBounds@{OutOfBounds}}
+\doxysubsubsection{\texorpdfstring{OutOfBounds()}{OutOfBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Out\+Of\+Bounds\+::\+Out\+Of\+Bounds (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message,  }\item[{const std\+::string \&}]{method,  }\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00093}{93}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094             : \mbox{\hyperlink{classMathErr_a92ae6f6640c3979720b743a62f106d95}{MathErr}} (message, method)}
+\DoxyCodeLine{00095         \{}
+\DoxyCodeLine{00096             ind = index;}
+\DoxyCodeLine{00097         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOutOfBounds_a7cf4254b246eb938886b6e9a549a5a00}\label{classOutOfBounds_a7cf4254b246eb938886b6e9a549a5a00}} 
+\index{OutOfBounds@{OutOfBounds}!MessageDump@{MessageDump}}
+\index{MessageDump@{MessageDump}!OutOfBounds@{OutOfBounds}}
+\doxysubsubsection{\texorpdfstring{MessageDump()}{MessageDump()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Out\+Of\+Bounds\+::\+Message\+Dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}{Math\+Err}}.
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00101}{101}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102         \{ \textcolor{comment}{// Full message}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104             std::vector<std::string> result(3);}
+\DoxyCodeLine{00105             result[0] = \mbox{\hyperlink{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}{Message}}();}
+\DoxyCodeLine{00106             result[1] = \mbox{\hyperlink{classMathErr_a63e28b64f06194252a7723ef7d349148}{Method}}();}
+\DoxyCodeLine{00107         \textcolor{comment}{//  result[2] = ind;}}
+\DoxyCodeLine{00108             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00109         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOutOfBounds_ae7584b5f1d6061276372e1827859ecc3}\label{classOutOfBounds_ae7584b5f1d6061276372e1827859ecc3}} 
+\index{OutOfBounds@{OutOfBounds}!offendingIndex@{offendingIndex}}
+\index{offendingIndex@{offendingIndex}!OutOfBounds@{OutOfBounds}}
+\doxysubsubsection{\texorpdfstring{offendingIndex()}{offendingIndex()}}
+{\footnotesize\ttfamily int Out\+Of\+Bounds\+::offending\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00099}{99}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099 \{ \textcolor{keywordflow}{return} ind;\}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/Math\+Err.\+cc\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{MathErr_8cc}{Math\+Err.\+cc}}\end{DoxyCompactItemize}

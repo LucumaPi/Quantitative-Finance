@@ -1,0 +1,113 @@
+\hypertarget{TestRangeSimple_8cc}{}\doxysection{tests/\+Test\+Range\+Simple.cc File Reference}
+\label{TestRangeSimple_8cc}\index{tests/TestRangeSimple.cc@{tests/TestRangeSimple.cc}}
+{\ttfamily \#include $<$duffy/\+Range.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Datasim\+Date.\+hh$>$}\newline
+Include dependency graph for Test\+Range\+Simple.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestRangeSimple_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Numeric $>$ }\\void \mbox{\hyperlink{TestRangeSimple_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}{print}} (const \mbox{\hyperlink{classRange}{Range}}$<$ Numeric $>$ \&range)
+\item 
+int \mbox{\hyperlink{TestRangeSimple_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestRangeSimple_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestRangeSimple_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestRangeSimple.cc@{TestRangeSimple.cc}!main@{main}}
+\index{main@{main}!TestRangeSimple.cc@{TestRangeSimple.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestRangeSimple_8cc_source_l00017}{17}} of file \mbox{\hyperlink{TestRangeSimple_8cc_source}{Test\+Range\+Simple.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019     \mbox{\hyperlink{classRange}{Range<int>}} range1 (0, 10);}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{keywordtype}{int} valL = -\/1;}
+\DoxyCodeLine{00022     \textcolor{keywordtype}{int} valM = 5;}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{int} valR = 20;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{keywordflow}{if} (range1.left(valL) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00026         std::cout << valL << \textcolor{stringliteral}{" to left, OK\(\backslash\)n"};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{if} (range1.contains(valM) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00029         std::cout << valM << \textcolor{stringliteral}{" in interval, OK\(\backslash\)n"};}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{keywordflow}{if} (range1.right(valR) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00032         std::cout << valR << \textcolor{stringliteral}{" to right, OK\(\backslash\)n"};}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{comment}{// Create interval between now and 1 year's time}}
+\DoxyCodeLine{00035     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} now;}
+\DoxyCodeLine{00036     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} nextYear = now.\mbox{\hyperlink{classDatasimDate_a4a66bc65f73f0257cad52ae6a86653ab}{add\_years}}(1);}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classRange}{Range<DatasimDate>}} dateSchedule(now, nextYear);}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} datL = now -\/ 1; \textcolor{comment}{// yesterday}}
+\DoxyCodeLine{00040     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} datM = now.\mbox{\hyperlink{classDatasimDate_adefb5ed1054f46821f7f3886445a7386}{add\_halfyear}}();}
+\DoxyCodeLine{00041     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} datR = nextYear + 1; \textcolor{comment}{// One year and a day from now}}
+\DoxyCodeLine{00042     }
+\DoxyCodeLine{00043     }
+\DoxyCodeLine{00044     \textcolor{keywordflow}{if} (dateSchedule.left(datL) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00045         std::cout << datL << \textcolor{stringliteral}{" to left, OK\(\backslash\)n"};}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{if} (dateSchedule.contains(datM) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00048         std::cout << datM << \textcolor{stringliteral}{" in interval, OK\(\backslash\)n"};}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     \textcolor{keywordflow}{if} (dateSchedule.right(datR) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00051         std::cout << datR << \textcolor{stringliteral}{" to right, OK\(\backslash\)n"};}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     std::cout << std::endl << now << std::endl;}
+\DoxyCodeLine{00054     std::cout << nextYear << std::endl;}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     std::cout << \textcolor{stringliteral}{"**\(\backslash\)n"};}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     std::cout << datL << std::endl;}
+\DoxyCodeLine{00059     std::cout << datM << std::endl;}
+\DoxyCodeLine{00060     std::cout << datR << std::endl;}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{comment}{// Default types and synonyms}}
+\DoxyCodeLine{00063     \mbox{\hyperlink{classRange}{Range<double>}} d(-\/1.0, 1.0);}
+\DoxyCodeLine{00064     \mbox{\hyperlink{TestRangeSimple_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}{print}} (d);}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keyword}{typedef} \mbox{\hyperlink{classRange}{Range<double>}} DoubleRange;}
+\DoxyCodeLine{00067     DoubleRange d1(-\/1.0, 1.0);}
+\DoxyCodeLine{00068     \mbox{\hyperlink{TestRangeSimple_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}{print}} (d1);}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keyword}{typedef} \mbox{\hyperlink{classRange}{Range<DatasimDate>}} DateRange;}
+\DoxyCodeLine{00071     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} today;}
+\DoxyCodeLine{00072     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} anotherDate = today + 365;}
+\DoxyCodeLine{00073     DateRange whatsAnotherYear(today, anotherDate);}
+\DoxyCodeLine{00074     \mbox{\hyperlink{TestRangeSimple_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}{print}}(whatsAnotherYear);}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00077 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestRangeSimple_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}\label{TestRangeSimple_8cc_a8b0ac6442ecc94172e4b2c11a2ebee2c}} 
+\index{TestRangeSimple.cc@{TestRangeSimple.cc}!print@{print}}
+\index{print@{print}!TestRangeSimple.cc@{TestRangeSimple.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class Numeric $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRange}{Range}}$<$ Numeric $>$ \&}]{range }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestRangeSimple_8cc_source_l00012}{12}} of file \mbox{\hyperlink{TestRangeSimple_8cc_source}{Test\+Range\+Simple.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014     std::cout << \textcolor{stringliteral}{"["} << range.\mbox{\hyperlink{classRange_a885e2f67531baf6df9359f95c3f8ebaa}{low}}() << \textcolor{stringliteral}{","} << range.\mbox{\hyperlink{classRange_aa0f159ae114a4053113ba035b1fc7b21}{high}}() << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00015 \}}
+
+\end{DoxyCode}

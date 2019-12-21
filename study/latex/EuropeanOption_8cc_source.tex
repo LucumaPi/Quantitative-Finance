@@ -1,0 +1,172 @@
+\hypertarget{EuropeanOption_8cc_source}{}\doxysection{European\+Option.\+cc}
+\label{EuropeanOption_8cc_source}\index{src/EuropeanOption.cc@{src/EuropeanOption.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// EurpeanOption.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{//  Author: Daniel Duffy}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Component Technology BV 2003}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef EuropeanOption\_CC}}
+\DoxyCodeLine{\Hypertarget{EuropeanOption_8cc_source_l00009}\mbox{\hyperlink{EuropeanOption_8cc_af4e5c723e4fe52d31344c7ee58461a1b}{00009}} \textcolor{preprocessor}{\#define EuropeanOption\_CC}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{EuropeanOption_8hh}{duffy/EuropeanOption.hh}}>}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{keywordtype}{double} \mbox{\hyperlink{classEuropeanOption_ae24941dd1b8987c851744946b1b0805d}{EuropeanOption::n}}(\textcolor{keywordtype}{double} x)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00016 \textcolor{keyword}{}\{ }
+\DoxyCodeLine{00017     \textcolor{keywordtype}{double} A = 1.0/std::sqrt(2.0 * 3.1415);}
+\DoxyCodeLine{00018     \textcolor{keywordflow}{return} A * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/x*x*0.5);}
+\DoxyCodeLine{00019 \}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{keywordtype}{double} \mbox{\hyperlink{classEuropeanOption_a50f30d22081c76d0285601a1d6b0d094}{EuropeanOption::N}}(\textcolor{keywordtype}{double} x)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00022 \textcolor{keyword}{}\{ \textcolor{comment}{// The approximation to the cumulative normal distribution}}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{double} a1 = 0.4361836;}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{double} a2 = -\/0.1201676;}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{double} a3 = 0.9372980;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{keywordtype}{double} k = 1.0/(1.0 + (0.33267 * x));}
+\DoxyCodeLine{00028     }
+\DoxyCodeLine{00029     \textcolor{keywordflow}{if} (x >= 0.0)}
+\DoxyCodeLine{00030     \{}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{return} 1.0 -\/ \mbox{\hyperlink{classEuropeanOption_ae24941dd1b8987c851744946b1b0805d}{n}}(x)* (a1*k + (a2*k*k) + (a3*k*k*k));}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00034     \{}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{return} 1.0 -\/ \mbox{\hyperlink{classEuropeanOption_a50f30d22081c76d0285601a1d6b0d094}{N}}(-\/x);}
+\DoxyCodeLine{00036     \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 \}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \textcolor{comment}{// Kernel Functions (Haug)}}
+\DoxyCodeLine{00042 \textcolor{keywordtype}{double} \mbox{\hyperlink{classEuropeanOption_ab514c9a48e7413f61b8ee996cb92c273}{EuropeanOption::CallPrice}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00043 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} * std::sqrt(\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}});}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{keywordtype}{double} d1 = ( std::log(\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}}/\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}}) + (\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}+ (\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}}*\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}})*0.5 ) * \mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} )/ tmp;}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{double} d2 = d1 -\/ tmp;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} (\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}((\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}-\/\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}})*\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}}) * \mbox{\hyperlink{classEuropeanOption_a50f30d22081c76d0285601a1d6b0d094}{N}}(d1)) -\/ (\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} * \mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}})* \mbox{\hyperlink{classEuropeanOption_a50f30d22081c76d0285601a1d6b0d094}{N}}(d2));}
+\DoxyCodeLine{00050 \}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052 \textcolor{keywordtype}{double} \mbox{\hyperlink{classEuropeanOption_a08bfd2961f557bcbafc1a7397f9dcf5b}{EuropeanOption::PutPrice}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00053 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00054     \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} * std::sqrt(\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}});}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordtype}{double} d1 = ( std::log(\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}}/\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}}) + (\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}+ (\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}}*\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}})*0.5 ) * \mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} )/ tmp;}
+\DoxyCodeLine{00057     \textcolor{keywordtype}{double} d2 = d1 -\/ tmp;}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} (\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} * \mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}})* \mbox{\hyperlink{classEuropeanOption_a50f30d22081c76d0285601a1d6b0d094}{N}}(-\/d2)) -\/ (\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}((\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}-\/\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}})*\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}}) * \mbox{\hyperlink{classEuropeanOption_a50f30d22081c76d0285601a1d6b0d094}{N}}(-\/d1));}
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 \textcolor{keywordtype}{double} \mbox{\hyperlink{classEuropeanOption_ad10aaa745578ba57ba2a8cbd8429ba87}{EuropeanOption::CallDelta}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00063 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00064     \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} * sqrt(\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}});}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordtype}{double} d1 = ( std::log(\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}}/\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}}) + (\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}+ (\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}}*\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}})*0.5 ) * \mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} )/ tmp;}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \textcolor{keywordflow}{return} \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}((\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}-\/\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}})*\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}}) * \mbox{\hyperlink{classEuropeanOption_a50f30d22081c76d0285601a1d6b0d094}{N}}(d1);}
+\DoxyCodeLine{00070 \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 \textcolor{keywordtype}{double} \mbox{\hyperlink{classEuropeanOption_a702d4788d70e9fef7c42a01513e60100}{EuropeanOption::PutDelta}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00073 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00074     \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} * std::sqrt(\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}});}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{keywordtype}{double} d1 = ( std::log(\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}}/\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}}) + (\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}+ (\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}}*\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}})*0.5 ) * \mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} )/ tmp;}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{keywordflow}{return} \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}((\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}-\/\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}})*\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}}) * (\mbox{\hyperlink{classEuropeanOption_a50f30d22081c76d0285601a1d6b0d094}{N}}(d1) -\/ 1.0);}
+\DoxyCodeLine{00079 \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081 \textcolor{keywordtype}{void} \mbox{\hyperlink{classEuropeanOption_ab173c81e6af1b361bf0ecb99e20fa8c7}{EuropeanOption::init}}()}
+\DoxyCodeLine{00082 \{   \textcolor{comment}{// Initialise all default values}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{comment}{// Default values}}
+\DoxyCodeLine{00085     \mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.08;}
+\DoxyCodeLine{00086     \mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}}= 0.30;}
+\DoxyCodeLine{00087     \mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 65.0;}
+\DoxyCodeLine{00088     \mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 0.25;}
+\DoxyCodeLine{00089     \mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 60.0;      \textcolor{comment}{// U == stock in this case}}
+\DoxyCodeLine{00090     \mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = \mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}};            \textcolor{comment}{// Black and Scholes stock option model (1973)}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     \mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"C"};       \textcolor{comment}{// European Call Option (this is the default type)}}
+\DoxyCodeLine{00093 \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095 \textcolor{keywordtype}{void} \mbox{\hyperlink{classEuropeanOption_a18a9625f6818c9bf4941ad7e6ff2343a}{EuropeanOption::copy}}(\textcolor{keyword}{const} \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}\& o2)}
+\DoxyCodeLine{00096 \{}
+\DoxyCodeLine{00097     \mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}}  = o2.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}};}
+\DoxyCodeLine{00098     \mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = o2.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}}; }
+\DoxyCodeLine{00099     \mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}}  = o2.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}};}
+\DoxyCodeLine{00100     \mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}}  = o2.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}};}
+\DoxyCodeLine{00101     \mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}}  = o2.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}};}
+\DoxyCodeLine{00102     \mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}}  = o2.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}};}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = o2.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}}; }
+\DoxyCodeLine{00105 \}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107 \mbox{\hyperlink{classEuropeanOption_adce594bdce452154063220a2f813b329}{EuropeanOption::EuropeanOption}}() }
+\DoxyCodeLine{00108 \{ \textcolor{comment}{// Default call option}}
+\DoxyCodeLine{00109     \mbox{\hyperlink{classEuropeanOption_ab173c81e6af1b361bf0ecb99e20fa8c7}{init}}();}
+\DoxyCodeLine{00110 \}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112 \mbox{\hyperlink{classEuropeanOption_adce594bdce452154063220a2f813b329}{EuropeanOption::EuropeanOption}}(\textcolor{keyword}{const} \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}\& o2)}
+\DoxyCodeLine{00113 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00114     \mbox{\hyperlink{classEuropeanOption_a18a9625f6818c9bf4941ad7e6ff2343a}{copy}}(o2);}
+\DoxyCodeLine{00115 \}}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117 \mbox{\hyperlink{classEuropeanOption_adce594bdce452154063220a2f813b329}{EuropeanOption::EuropeanOption}} (\textcolor{keyword}{const} std::string\& optionType)}
+\DoxyCodeLine{00118 \{   \textcolor{comment}{// Create option type}}
+\DoxyCodeLine{00119     \mbox{\hyperlink{classEuropeanOption_ab173c81e6af1b361bf0ecb99e20fa8c7}{init}}();}
+\DoxyCodeLine{00120     \mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = optionType;}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} == \textcolor{stringliteral}{"c"})}
+\DoxyCodeLine{00123         \mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"C"};}
+\DoxyCodeLine{00124 \}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126 \mbox{\hyperlink{classEuropeanOption_a0dcc284330ce6c3194d434a42682d3a8}{EuropeanOption::~EuropeanOption}}()}
+\DoxyCodeLine{00127 \{}
+\DoxyCodeLine{00128 \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130 \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}\& \mbox{\hyperlink{classEuropeanOption_a4ba8e6efa3de4df910aec828dbd32f64}{EuropeanOption::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}}\& option2)}
+\DoxyCodeLine{00131 \{}
+\DoxyCodeLine{00132     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&option2) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00133     \mbox{\hyperlink{classEuropeanOption_a18a9625f6818c9bf4941ad7e6ff2343a}{copy}} (option2);}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00136 \}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138 \textcolor{comment}{// Functions that calculate option price and sensitivities}}
+\DoxyCodeLine{00139 \textcolor{keywordtype}{double} \mbox{\hyperlink{classEuropeanOption_a7d28b7f6ec2c07a783a43411214b4623}{EuropeanOption::Price}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{00140 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00141     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} == \textcolor{stringliteral}{"C"})}
+\DoxyCodeLine{00142     \{}
+\DoxyCodeLine{00143         \textcolor{keywordflow}{return} \mbox{\hyperlink{classEuropeanOption_ab514c9a48e7413f61b8ee996cb92c273}{CallPrice}}();}
+\DoxyCodeLine{00144     \}}
+\DoxyCodeLine{00145     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00146         \textcolor{keywordflow}{return} \mbox{\hyperlink{classEuropeanOption_a08bfd2961f557bcbafc1a7397f9dcf5b}{PutPrice}}();}
+\DoxyCodeLine{00147 \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149 \textcolor{keywordtype}{double} \mbox{\hyperlink{classEuropeanOption_a4175705666df41879d3aa2dcbe399545}{EuropeanOption::Delta}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{00150 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00151     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} == \textcolor{stringliteral}{"C"})}
+\DoxyCodeLine{00152         \textcolor{keywordflow}{return} \mbox{\hyperlink{classEuropeanOption_ad10aaa745578ba57ba2a8cbd8429ba87}{CallDelta}}();}
+\DoxyCodeLine{00153     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00154         \textcolor{keywordflow}{return} \mbox{\hyperlink{classEuropeanOption_a702d4788d70e9fef7c42a01513e60100}{PutDelta}}();}
+\DoxyCodeLine{00155 \}}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157 \textcolor{comment}{// Modifier functions}}
+\DoxyCodeLine{00158 \textcolor{keywordtype}{void} \mbox{\hyperlink{classEuropeanOption_afb493b377653c08f304da346b9e6cbe9}{EuropeanOption::toggle}}()}
+\DoxyCodeLine{00159 \{ \textcolor{comment}{// Change option type (C/P, P/C)}}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} == \textcolor{stringliteral}{"C"})}
+\DoxyCodeLine{00162         \mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"P"};}
+\DoxyCodeLine{00163     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00164         \mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"C"};}
+\DoxyCodeLine{00165 \}}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

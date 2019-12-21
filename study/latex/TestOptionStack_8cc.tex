@@ -1,0 +1,96 @@
+\hypertarget{TestOptionStack_8cc}{}\doxysection{tests/\+Test\+Option\+Stack.cc File Reference}
+\label{TestOptionStack_8cc}\index{tests/TestOptionStack.cc@{tests/TestOptionStack.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Test\+Option\+Stack.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{TestOptionStack_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSimpleOption}{Simple\+Option}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestOptionStack_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestOptionStack_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestOptionStack_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestOptionStack.cc@{TestOptionStack.cc}!main@{main}}
+\index{main@{main}!TestOptionStack.cc@{TestOptionStack.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestOptionStack_8cc_source_l00036}{36}} of file \mbox{\hyperlink{TestOptionStack_8cc_source}{Test\+Option\+Stack.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038 \textcolor{comment}{/*}}
+\DoxyCodeLine{00039 \textcolor{comment}{    \{ // Define a scope}}
+\DoxyCodeLine{00040 \textcolor{comment}{}}
+\DoxyCodeLine{00041 \textcolor{comment}{        SimpleOption opt1;}}
+\DoxyCodeLine{00042 \textcolor{comment}{        opt1.print();}}
+\DoxyCodeLine{00043 \textcolor{comment}{    \}}}
+\DoxyCodeLine{00044 \textcolor{comment}{}}
+\DoxyCodeLine{00045 \textcolor{comment}{    //opt1.print(); opt1 does not exist}}
+\DoxyCodeLine{00046 \textcolor{comment}{}}
+\DoxyCodeLine{00047 \textcolor{comment}{    SimpleOption myPortfolio[10]; }}
+\DoxyCodeLine{00048 \textcolor{comment}{}}
+\DoxyCodeLine{00049 \textcolor{comment}{    // Initialise the array}}
+\DoxyCodeLine{00050 \textcolor{comment}{    for (int j = 0; j < 10; j++)}}
+\DoxyCodeLine{00051 \textcolor{comment}{    \{}}
+\DoxyCodeLine{00052 \textcolor{comment}{        myPortfolio[j].print();}}
+\DoxyCodeLine{00053 \textcolor{comment}{    \}}}
+\DoxyCodeLine{00054 \textcolor{comment}{}}
+\DoxyCodeLine{00055 \textcolor{comment}{//  myPortfolio[-\/1].print();}}
+\DoxyCodeLine{00056 \textcolor{comment}{//  myPortfolio[1000].print();}}
+\DoxyCodeLine{00057 \textcolor{comment}{*/}}
+\DoxyCodeLine{00058     std::cout << \textcolor{stringliteral}{"Heap based stuff \(\backslash\)n"};}
+\DoxyCodeLine{00059     \mbox{\hyperlink{classSimpleOption}{SimpleOption}}* opt;}
+\DoxyCodeLine{00060     \mbox{\hyperlink{classSimpleOption}{SimpleOption}}* opt2;}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{comment}{// Call default constructor}}
+\DoxyCodeLine{00063     opt = \textcolor{keyword}{new} \mbox{\hyperlink{classSimpleOption}{SimpleOption}};}
+\DoxyCodeLine{00064     opt -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00065     (*opt).print();}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{comment}{// Call constructor with 2 parameters}}
+\DoxyCodeLine{00068     opt2 = \textcolor{keyword}{new} \mbox{\hyperlink{classSimpleOption}{SimpleOption}}(0.25, 90.0);}
+\DoxyCodeLine{00069     opt2 -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{keyword}{delete} opt;}
+\DoxyCodeLine{00072     \textcolor{keyword}{delete} opt2;}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     opt = \textcolor{keyword}{new} \mbox{\hyperlink{classSimpleOption}{SimpleOption}};}
+\DoxyCodeLine{00075     (*opt).\mbox{\hyperlink{classSimpleOption_af441b963e40de95677f57a0082899a58}{print}}();}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{comment}{// Now create an array of options}}
+\DoxyCodeLine{00078     \mbox{\hyperlink{classSimpleOption}{SimpleOption}}* optArray;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = 10;}
+\DoxyCodeLine{00081     optArray = \textcolor{keyword}{new} \mbox{\hyperlink{classSimpleOption}{SimpleOption}}[\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}]; \textcolor{comment}{// Default constructor called}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}; j++)}
+\DoxyCodeLine{00084     \{ \textcolor{comment}{// Member data public for convenience only}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086         optArray[j].\mbox{\hyperlink{classSimpleOption_acf2fd9d59d2420b979db90b252cda6ec}{T}} = 1.0; \textcolor{comment}{// 1 year expiry}}
+\DoxyCodeLine{00087         optArray[j].\mbox{\hyperlink{classSimpleOption_a50fe3b82fafe7ade7bbe2a9da5406a84}{K}} = 100.0; \textcolor{comment}{// Strike price}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089         optArray[j].\mbox{\hyperlink{classSimpleOption_af441b963e40de95677f57a0082899a58}{print}}(); }
+\DoxyCodeLine{00090     \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     \textcolor{keyword}{delete} [] optArray;}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00095 \}}
+
+\end{DoxyCode}

@@ -21,14 +21,89 @@ Collaboration diagram for Zero\+Divide\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classZeroDivide_ab77784ee863d55e39c8391fdd657b3e2}\label{classZeroDivide_ab77784ee863d55e39c8391fdd657b3e2}} 
-{\bfseries Zero\+Divide} (const std\+::string \&message, const std\+::string \&method, const std\+::string \&annotation)
+\mbox{\hyperlink{classZeroDivide_a4ef0fccc373f2767c79febd8b2500c61}{Zero\+Divide}} ()
 \item 
-\mbox{\Hypertarget{classZeroDivide_a0281c677520a3f336cd811c13c4ab17c}\label{classZeroDivide_a0281c677520a3f336cd811c13c4ab17c}} 
-std\+::vector$<$ std\+::string $>$ {\bfseries Message\+Dump} () const
+\mbox{\hyperlink{classZeroDivide_ab77784ee863d55e39c8391fdd657b3e2}{Zero\+Divide}} (const std\+::string \&message, const std\+::string \&method, const std\+::string \&annotation)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classZeroDivide_a0281c677520a3f336cd811c13c4ab17c}{Message\+Dump}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00054}{54}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classZeroDivide_a4ef0fccc373f2767c79febd8b2500c61}\label{classZeroDivide_a4ef0fccc373f2767c79febd8b2500c61}} 
+\index{ZeroDivide@{ZeroDivide}!ZeroDivide@{ZeroDivide}}
+\index{ZeroDivide@{ZeroDivide}!ZeroDivide@{ZeroDivide}}
+\doxysubsubsection{\texorpdfstring{ZeroDivide()}{ZeroDivide()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Zero\+Divide\+::\+Zero\+Divide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00061}{61}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061                      : \mbox{\hyperlink{classMathErr_a92ae6f6640c3979720b743a62f106d95}{MathErr}}()}
+\DoxyCodeLine{00062         \{}
+\DoxyCodeLine{00063             mess = std::string();}
+\DoxyCodeLine{00064         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classZeroDivide_ab77784ee863d55e39c8391fdd657b3e2}\label{classZeroDivide_ab77784ee863d55e39c8391fdd657b3e2}} 
+\index{ZeroDivide@{ZeroDivide}!ZeroDivide@{ZeroDivide}}
+\index{ZeroDivide@{ZeroDivide}!ZeroDivide@{ZeroDivide}}
+\doxysubsubsection{\texorpdfstring{ZeroDivide()}{ZeroDivide()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Zero\+Divide\+::\+Zero\+Divide (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message,  }\item[{const std\+::string \&}]{method,  }\item[{const std\+::string \&}]{annotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00066}{66}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067             : \mbox{\hyperlink{classMathErr_a92ae6f6640c3979720b743a62f106d95}{MathErr}} (message, method)}
+\DoxyCodeLine{00068         \{}
+\DoxyCodeLine{00069             mess = annotation;}
+\DoxyCodeLine{00070         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classZeroDivide_a0281c677520a3f336cd811c13c4ab17c}\label{classZeroDivide_a0281c677520a3f336cd811c13c4ab17c}} 
+\index{ZeroDivide@{ZeroDivide}!MessageDump@{MessageDump}}
+\index{MessageDump@{MessageDump}!ZeroDivide@{ZeroDivide}}
+\doxysubsubsection{\texorpdfstring{MessageDump()}{MessageDump()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Zero\+Divide\+::\+Message\+Dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}{Math\+Err}}.
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00072}{72}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073         \{ \textcolor{comment}{// Full message}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075             std::vector<std::string> result(3);}
+\DoxyCodeLine{00076             result[0] = \mbox{\hyperlink{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}{Message}}();}
+\DoxyCodeLine{00077             result[1] = \mbox{\hyperlink{classMathErr_a63e28b64f06194252a7723ef7d349148}{Method}}();}
+\DoxyCodeLine{00078             result[2] = mess;}
+\DoxyCodeLine{00079             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00080         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/Math\+Err.\+cc\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{MathErr_8cc}{Math\+Err.\+cc}}\end{DoxyCompactItemize}

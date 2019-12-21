@@ -1,0 +1,90 @@
+\hypertarget{TestWrapper_8cc_source}{}\doxysection{Test\+Wrapper.\+cc}
+\label{TestWrapper_8cc_source}\index{tests/TestWrapper.cc@{tests/TestWrapper.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestWrapper.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing heterogeneous properties}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{DatasimDate_8hh}{duffy/DatasimDate.hh}}>} \textcolor{comment}{// Dates and other useful stuff}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{DatesimDateTime_8hh}{duffy/DatesimDateTime.hh}}>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <string>} \textcolor{comment}{// Standard string class in C++}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../src/Wrapper.cc"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{SimplePropertySet_8hh}{duffy/SimplePropertySet.hh}}>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{keyword}{class }\mbox{\hyperlink{classPerson}{Person}}}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017 \textcolor{keyword}{public}: \textcolor{comment}{// Everything public, for convenience only}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019         \textcolor{comment}{// Data}}
+\DoxyCodeLine{\Hypertarget{TestWrapper_8cc_source_l00020}\mbox{\hyperlink{classPerson_ac6d7e0d7d60ff303b4dfde117c4356ea}{00020}}         \mbox{\hyperlink{classWrapper}{Wrapper<std::string>}} \mbox{\hyperlink{classPerson_ac6d7e0d7d60ff303b4dfde117c4356ea}{nam}};                    \textcolor{comment}{// Name of person}}
+\DoxyCodeLine{\Hypertarget{TestWrapper_8cc_source_l00021}\mbox{\hyperlink{classPerson_a1bf771e74a8e1e3443394ef580e02de4}{00021}}         \mbox{\hyperlink{classWrapper}{Wrapper<DatasimDate>}} \mbox{\hyperlink{classPerson_a1bf771e74a8e1e3443394ef580e02de4}{dob}};                \textcolor{comment}{// Date of birth}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{TestWrapper_8cc_source_l00023}\mbox{\hyperlink{classPerson_a3c2f35bd4d69abc7ad29489ae58545e9}{00023}}         \mbox{\hyperlink{classWrapper}{Wrapper<DatasimDate>}} \mbox{\hyperlink{classPerson_a3c2f35bd4d69abc7ad29489ae58545e9}{createdD}};          \textcolor{comment}{// Internal, when object was created}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{TestWrapper_8cc_source_l00025}\mbox{\hyperlink{classPerson_a05d516e45631e8e7653e456d70b9d404}{00025}}         \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, AnyType*>}} \mbox{\hyperlink{classPerson_a05d516e45631e8e7653e456d70b9d404}{props}};}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TestWrapper_8cc_source_l00028}\mbox{\hyperlink{classPerson_a27cebd22009c2f3d495523832d4489bc}{00028}}         \mbox{\hyperlink{classPerson_a27cebd22009c2f3d495523832d4489bc}{Person}} (\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DateofBirth)}
+\DoxyCodeLine{00029         \{}
+\DoxyCodeLine{00030             \mbox{\hyperlink{classPerson_ae6ee626f8471b70bef418998ab35623e}{nam}} = name;}
+\DoxyCodeLine{00031             \mbox{\hyperlink{classPerson_abc4a5fbe6e5412b54fcbdf6446b4a29e}{dob}} = DateofBirth;}
+\DoxyCodeLine{00032             \mbox{\hyperlink{classPerson_aa4dfae60adf8adfe9e0da019e0993f04}{createdD}} = \mbox{\hyperlink{classDatasimDate}{DatasimDate}}();    \textcolor{comment}{// default, today REALLY!}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034             \textcolor{comment}{// Now add this stuff into the property set}}
+\DoxyCodeLine{00035             \mbox{\hyperlink{classPerson_a05d516e45631e8e7653e456d70b9d404}{props}} = \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, AnyType*>}}();}
+\DoxyCodeLine{00036             \mbox{\hyperlink{classPerson_a05d516e45631e8e7653e456d70b9d404}{props}}.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(std::string(\textcolor{stringliteral}{"Name"}), \&\mbox{\hyperlink{classPerson_ae6ee626f8471b70bef418998ab35623e}{nam}});}
+\DoxyCodeLine{00037             \mbox{\hyperlink{classPerson_a05d516e45631e8e7653e456d70b9d404}{props}}.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(std::string(\textcolor{stringliteral}{"DOB"}), \&\mbox{\hyperlink{classPerson_abc4a5fbe6e5412b54fcbdf6446b4a29e}{dob}});}
+\DoxyCodeLine{00038             \mbox{\hyperlink{classPerson_a05d516e45631e8e7653e456d70b9d404}{props}}.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(std::string(\textcolor{stringliteral}{"CreatedDate"}), \&\mbox{\hyperlink{classPerson_aa4dfae60adf8adfe9e0da019e0993f04}{createdD}});}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040         \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{\Hypertarget{TestWrapper_8cc_source_l00042}\mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{00042}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{print}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00043 \textcolor{keyword}{        }\{ \textcolor{comment}{// Who am I?}}
+\DoxyCodeLine{00044             std::cout << \textcolor{stringliteral}{"\(\backslash\)n** Person Data **\(\backslash\)n"};}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046             \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, AnyType*>::const\_iterator}} it;}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048             \textcolor{keywordflow}{for} (it = \mbox{\hyperlink{classPerson_a05d516e45631e8e7653e456d70b9d404}{props}}.\mbox{\hyperlink{classSimplePropertySet_af0c72b2e6a39f6d2d02ce443afa01de5}{Begin}}(); it != \mbox{\hyperlink{classPerson_a05d516e45631e8e7653e456d70b9d404}{props}}.\mbox{\hyperlink{classSimplePropertySet_a6d3c8a051b7c6846508898c8375a2cfd}{End}}(); it++)}
+\DoxyCodeLine{00049             \{}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051                 std::cout << \textcolor{stringliteral}{"Key "} << it -\/>first << std::endl;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053                 \textcolor{comment}{// No value printed because we lack polymorphism in }}
+\DoxyCodeLine{00054                 \textcolor{comment}{// general}}
+\DoxyCodeLine{00055             \}}
+\DoxyCodeLine{00056         \}}
+\DoxyCodeLine{00057 \};}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{\Hypertarget{TestWrapper_8cc_source_l00059}\mbox{\hyperlink{TestWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00059}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00060 \{}
+\DoxyCodeLine{00061     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} myBirthday(29, 8, 1952);}
+\DoxyCodeLine{00062     std::string myName (\textcolor{stringliteral}{"Daniel J. Duffy"});}
+\DoxyCodeLine{00063     \mbox{\hyperlink{classPerson}{Person}} dd(myName, myBirthday);}
+\DoxyCodeLine{00064     dd.\mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{print}}();}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} bBirthday(06, 8, 1994);}
+\DoxyCodeLine{00067     std::string bName (\textcolor{stringliteral}{"Brendan Duffy"});}
+\DoxyCodeLine{00068     \mbox{\hyperlink{classPerson}{Person}} bd(bName, bBirthday);}
+\DoxyCodeLine{00069     bd.\mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{print}}();}
+\DoxyCodeLine{00070     }
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \mbox{\hyperlink{classWrapper}{Wrapper<std::string>}} w1;}
+\DoxyCodeLine{00073     \mbox{\hyperlink{classWrapper}{Wrapper<std::string>}} w2;}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{if} (w1.\mbox{\hyperlink{classWrapper_a722618937323f1c2ae417b77021cf381}{sameType}}(w2) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00075     \{}
+\DoxyCodeLine{00076         std::cout << \textcolor{stringliteral}{"Same type\(\backslash\)n"};}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00079     \{}
+\DoxyCodeLine{00080         std::cout << \textcolor{stringliteral}{"Not Same type\(\backslash\)n"};}
+\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00084 \}}
+
+\end{DoxyCode}

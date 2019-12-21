@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMultiAssetPayoff">
 <title>MultiAssetPayoff Class Reference</title>
 <indexterm><primary>MultiAssetPayoff</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MultiAssetPayoff.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for MultiAssetPayoff:<para>
     <informalfigure>
         <mediaobject>
@@ -14,16 +17,84 @@ Collaboration diagram for MultiAssetPayoff:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classMultiAssetPayoff_1a57df16c0a7320254c71e902d7c4c2aeb"/><emphasis role="strong">MultiAssetPayoff</emphasis> (<link linkend="_classMultiAssetPayoffStrategy">MultiAssetPayoffStrategy</link> &amp;pstrat)</para>
+            <listitem><para><link linkend="_classMultiAssetPayoff_1a57df16c0a7320254c71e902d7c4c2aeb">MultiAssetPayoff</link> (<link linkend="_classMultiAssetPayoffStrategy">MultiAssetPayoffStrategy</link> &amp;pstrat)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMultiAssetPayoff_1a5bc9e443f16024a235224cf7a07fc5cf"/><emphasis role="strong">MultiAssetPayoff</emphasis> (const <link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp;source)</para>
+            <listitem><para><link linkend="_classMultiAssetPayoff_1a5bc9e443f16024a235224cf7a07fc5cf">MultiAssetPayoff</link> (const <link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMultiAssetPayoff_1a4b13a7823b6fd62247b8d4c6a7eccbf2"/><link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp;source)</para>
+            <listitem><para>virtual <link linkend="_classMultiAssetPayoff_1a4ceb8ca5e2e4c0bab356f461217ab2f2">~MultiAssetPayoff</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMultiAssetPayoff_1a5c152db2417d285484ef94ba0c5c0694"/>virtual double <emphasis role="strong">Payoff</emphasis> (double S1, double S2) const</para>
+            <listitem><para><link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp; <link linkend="_classMultiAssetPayoff_1a4b13a7823b6fd62247b8d4c6a7eccbf2">operator=</link> (const <link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp;source)</para>
+</listitem>
+            <listitem><para>virtual double <link linkend="_classMultiAssetPayoff_1a5c152db2417d285484ef94ba0c5c0694">Payoff</link> (double S1, double S2) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 15 of file MultiAssetPayoff.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classMultiAssetPayoff_1a57df16c0a7320254c71e902d7c4c2aeb"/>    <section>
+    <title>MultiAssetPayoff()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>MultiAssetPayoff</primary><secondary>MultiAssetPayoff</secondary></indexterm>
+<indexterm><primary>MultiAssetPayoff</primary><secondary>MultiAssetPayoff</secondary></indexterm>
+<para><computeroutput>MultiAssetPayoff::MultiAssetPayoff (<link linkend="_classMultiAssetPayoffStrategy">MultiAssetPayoffStrategy</link> &amp; pstrat)</computeroutput></para><para>
+Definition at line 14 of file MultiAssetPayoff.cc.</para>
+<programlisting>15 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+16 
+17 &#32;&#32;&#32;&#32;ps&#32;=&#32;&amp;pstrat;
+18 }
+</programlisting>    </section><anchor xml:id="_classMultiAssetPayoff_1a5bc9e443f16024a235224cf7a07fc5cf"/>    <section>
+    <title>MultiAssetPayoff()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>MultiAssetPayoff</primary><secondary>MultiAssetPayoff</secondary></indexterm>
+<indexterm><primary>MultiAssetPayoff</primary><secondary>MultiAssetPayoff</secondary></indexterm>
+<para><computeroutput>MultiAssetPayoff::MultiAssetPayoff (const <link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp; source)</computeroutput></para><para>
+Definition at line 20 of file MultiAssetPayoff.cc.</para>
+<programlisting>21 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+22 
+23 &#32;&#32;&#32;&#32;ps&#32;=&#32;source.ps;
+24 }
+</programlisting>    </section><anchor xml:id="_classMultiAssetPayoff_1a4ceb8ca5e2e4c0bab356f461217ab2f2"/>    <section>
+    <title>~MultiAssetPayoff()</title>
+<indexterm><primary>~MultiAssetPayoff</primary><secondary>MultiAssetPayoff</secondary></indexterm>
+<indexterm><primary>MultiAssetPayoff</primary><secondary>~MultiAssetPayoff</secondary></indexterm>
+<para><computeroutput>MultiAssetPayoff::~MultiAssetPayoff ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 26 of file MultiAssetPayoff.cc.</para>
+<programlisting>27 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+28 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classMultiAssetPayoff_1a4b13a7823b6fd62247b8d4c6a7eccbf2"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>MultiAssetPayoff</secondary></indexterm>
+<indexterm><primary>MultiAssetPayoff</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp; MultiAssetPayoff::operator= (const <link linkend="_classMultiAssetPayoff">MultiAssetPayoff</link> &amp; source)</computeroutput></para><para>
+Definition at line 31 of file MultiAssetPayoff.cc.</para>
+<programlisting>32 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>&#32;==&#32;&amp;source)
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+36 
+37 &#32;&#32;&#32;&#32;ps&#32;=&#32;source.ps;
+38 
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+40 }
+</programlisting>    </section><anchor xml:id="_classMultiAssetPayoff_1a5c152db2417d285484ef94ba0c5c0694"/>    <section>
+    <title>Payoff()</title>
+<indexterm><primary>Payoff</primary><secondary>MultiAssetPayoff</secondary></indexterm>
+<indexterm><primary>MultiAssetPayoff</primary><secondary>Payoff</secondary></indexterm>
+<para><computeroutput>double MultiAssetPayoff::Payoff (double S1, double S2) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 43 of file MultiAssetPayoff.cc.</para>
+<programlisting>44 {&#32;<emphasis role="comment">//&#32;For&#32;a&#32;given&#32;spot&#32;price</emphasis>
+45 &#32;&#32;&#32;&#32;
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ps-&gt;<link linkend="_classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">payoff</link>(S1,&#32;S2);&#32;&#32;<emphasis role="comment">//&#32;DELEGATE&#32;to&#32;strategy</emphasis>
+47 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-MultiAssetPayoff.hhMultiAssetPayoff.cc</section>
+<link linkend="_MultiAssetPayoff_8hh">MultiAssetPayoff.hh</link><link linkend="_MultiAssetPayoff_8cc">MultiAssetPayoff.cc</link></section>
+</section>

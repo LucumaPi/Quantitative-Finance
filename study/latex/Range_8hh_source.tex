@@ -14,7 +14,7 @@
 \DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef Range\_HH}}
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#define Range\_HH}}
 \DoxyCodeLine{00012 }
-\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "Vector.hh"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Vector_8hh}{Vector.hh}}"}}
 \DoxyCodeLine{00014 }
 \DoxyCodeLine{\Hypertarget{Range_8hh_source_l00015}\mbox{\hyperlink{classRange}{00015}} \textcolor{keyword}{template} <\textcolor{keyword}{class} Type> \textcolor{keyword}{class }\mbox{\hyperlink{classRange}{Range}}}
 \DoxyCodeLine{00016 \{}
@@ -26,33 +26,33 @@
 \DoxyCodeLine{00022 }
 \DoxyCodeLine{00023 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00024     \textcolor{comment}{// Constructors}}
-\DoxyCodeLine{00025     \mbox{\hyperlink{classRange}{Range}}();                                   \textcolor{comment}{// Default constructor}}
-\DoxyCodeLine{00026     \mbox{\hyperlink{classRange}{Range}}(\textcolor{keyword}{const} Type\& low, \textcolor{keyword}{const} Type\& high);  \textcolor{comment}{// Low and high value}}
-\DoxyCodeLine{00027     \mbox{\hyperlink{classRange}{Range}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<Type>}}\& ran2);             \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classRange_a1ae29a7125bc7127c67ec67829d1e6fe}{Range}}();                                   \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classRange_a1ae29a7125bc7127c67ec67829d1e6fe}{Range}}(\textcolor{keyword}{const} Type\& \mbox{\hyperlink{classRange_adecc879cfe67dd9ee2212a008ab15f99}{low}}, \textcolor{keyword}{const} Type\& \mbox{\hyperlink{classRange_a04c4f592efe2d03e17868d5268cedfb5}{high}});   \textcolor{comment}{// Low and high value}}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classRange_a1ae29a7125bc7127c67ec67829d1e6fe}{Range}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<Type>}}\& ran2);             \textcolor{comment}{// Copy constructor}}
 \DoxyCodeLine{00028 }
 \DoxyCodeLine{00029     \textcolor{comment}{// Destructor}}
-\DoxyCodeLine{00030     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classRange}{Range}}();}
+\DoxyCodeLine{00030     \textcolor{keyword}{virtual} \mbox{\hyperlink{classRange_ac3495950469e6c7ba652e99ac7e69df9}{~Range}}();}
 \DoxyCodeLine{00031 }
 \DoxyCodeLine{00032     \textcolor{comment}{// Modifier functions}}
-\DoxyCodeLine{00033     \textcolor{keywordtype}{void} low(\textcolor{keyword}{const} Type\& t1);                   \textcolor{comment}{// Sets the low value of current range}}
-\DoxyCodeLine{00034     \textcolor{keywordtype}{void} high(\textcolor{keyword}{const} Type\& t1);                  \textcolor{comment}{// Sets the high value of current range}}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRange_adecc879cfe67dd9ee2212a008ab15f99}{low}}(\textcolor{keyword}{const} Type\& t1);                    \textcolor{comment}{// Sets the low value of current range}}
+\DoxyCodeLine{00034     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRange_a04c4f592efe2d03e17868d5268cedfb5}{high}}(\textcolor{keyword}{const} Type\& t1);                  \textcolor{comment}{// Sets the high value of current range}}
 \DoxyCodeLine{00035 }
 \DoxyCodeLine{00036     \textcolor{comment}{//Accessing functions}}
-\DoxyCodeLine{00037     Type low() \textcolor{keyword}{const};                           \textcolor{comment}{// Lowest value in range}}
-\DoxyCodeLine{00038     Type high() \textcolor{keyword}{const};                          \textcolor{comment}{// Highest value in the range}}
+\DoxyCodeLine{00037     Type \mbox{\hyperlink{classRange_adecc879cfe67dd9ee2212a008ab15f99}{low}}() \textcolor{keyword}{const};                            \textcolor{comment}{// Lowest value in range}}
+\DoxyCodeLine{00038     Type \mbox{\hyperlink{classRange_a04c4f592efe2d03e17868d5268cedfb5}{high}}() \textcolor{keyword}{const};                          \textcolor{comment}{// Highest value in the range}}
 \DoxyCodeLine{00039 }
-\DoxyCodeLine{00040     Type spread() \textcolor{keyword}{const};                        \textcolor{comment}{// High -\/ Low value}}
+\DoxyCodeLine{00040     Type \mbox{\hyperlink{classRange_a2cdcb2c3dbc38dcb923e302ad366f12c}{spread}}() \textcolor{keyword}{const};                      \textcolor{comment}{// High -\/ Low value}}
 \DoxyCodeLine{00041 }
 \DoxyCodeLine{00042     \textcolor{comment}{// Boolean functions}}
-\DoxyCodeLine{00043     \textcolor{keywordtype}{bool} left(\textcolor{keyword}{const} Type\& value) \textcolor{keyword}{const};         \textcolor{comment}{// Is the value to the left of the range?}}
-\DoxyCodeLine{00044     \textcolor{keywordtype}{bool} right(\textcolor{keyword}{const} Type\& value) \textcolor{keyword}{const};        \textcolor{comment}{// Is the value to the right of the range?}}
-\DoxyCodeLine{00045     \textcolor{keywordtype}{bool} contains(\textcolor{keyword}{const} Type\& value) \textcolor{keyword}{const};     \textcolor{comment}{// Does range contain value?}}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classRange_ab772b50dd178ffaeba1f6df900cef30b}{left}}(\textcolor{keyword}{const} Type\& value) \textcolor{keyword}{const};         \textcolor{comment}{// Is the value to the left of the range?}}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classRange_aefe9e0df9c7555ec1235764389feea36}{right}}(\textcolor{keyword}{const} Type\& value) \textcolor{keyword}{const};       \textcolor{comment}{// Is the value to the right of the range?}}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classRange_abca95dd7b50b7142fe6d40d58816dec5}{contains}}(\textcolor{keyword}{const} Type\& value) \textcolor{keyword}{const};     \textcolor{comment}{// Does range contain value?}}
 \DoxyCodeLine{00046 }
 \DoxyCodeLine{00047     \textcolor{comment}{// Utility functions}}
-\DoxyCodeLine{00048     \mbox{\hyperlink{classVector}{Vector<Type, long>}} mesh(\textcolor{keywordtype}{long} nSteps) \textcolor{keyword}{const};   \textcolor{comment}{// Create a discrete mesh}}
+\DoxyCodeLine{00048     \mbox{\hyperlink{classVector}{Vector<Type, long>}} \mbox{\hyperlink{classRange_a9d6efa72341e127230d4aa86fcd3b489}{mesh}}(\textcolor{keywordtype}{long} nSteps) \textcolor{keyword}{const};   \textcolor{comment}{// Create a discrete mesh}}
 \DoxyCodeLine{00049 }
 \DoxyCodeLine{00050     \textcolor{comment}{// Operator overloading}}
-\DoxyCodeLine{00051     \mbox{\hyperlink{classRange}{Range<Type>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<Type>}}\& ran2);}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classRange}{Range<Type>}}\& \mbox{\hyperlink{classRange_afea02da4611e86fbbd710e64fead5a18}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<Type>}}\& ran2);}
 \DoxyCodeLine{00052 }
 \DoxyCodeLine{00053 \};}
 \DoxyCodeLine{00054 \textcolor{preprocessor}{\#include "../../src/Range.cc"}}

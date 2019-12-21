@@ -1,0 +1,188 @@
+\hypertarget{NumericMatrix_8cc_source}{}\doxysection{Numeric\+Matrix.\+cc}
+\label{NumericMatrix_8cc_source}\index{src/NumericMatrix.cc@{src/NumericMatrix.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// NumericMatrix.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Numeric matrix class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// This is a matrix class for numerical data. Derived from Matrix and }}
+\DoxyCodeLine{00005 \textcolor{comment}{// it adds mathematical functions.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2 february 1999  RD  Started}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 2002-\/4-\/9 DD removed functions that belong elsewhere}}
+\DoxyCodeLine{00009 \textcolor{comment}{// 2005-\/12-\/4 DD bug fix m1 + and -\/ m2}}
+\DoxyCodeLine{00010 \textcolor{comment}{// 2005-\/12-\/17 DD size\_t -\/> I}}
+\DoxyCodeLine{00011 \textcolor{comment}{// 2006-\/8-\/10 DD fix a bug mat*mat}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2006}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#ifndef NumericMatrix\_CC}}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00016}\mbox{\hyperlink{NumericMatrix_8cc_ae9fbe5d88453107ae8d74a7f1a7792be}{00016}} \textcolor{preprocessor}{\#define NumericMatrix\_CC}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{NumericMatrix_8hh}{duffy/NumericMatrix.hh}}>}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00021 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00022}\mbox{\hyperlink{classNumericMatrix_acaff2f3e39970e6203e91435b8c44ce6}{00022}} \mbox{\hyperlink{classNumericMatrix_acaff2f3e39970e6203e91435b8c44ce6}{NumericMatrix<V, I, S>::NumericMatrix}}(): \mbox{\hyperlink{classMatrix}{Matrix}}<V, I, S>()}
+\DoxyCodeLine{00023 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00024 \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00027}\mbox{\hyperlink{classNumericMatrix_a64725ef6f2b55b179194c2f62aa2cd8e}{00027}} \mbox{\hyperlink{classNumericMatrix_acaff2f3e39970e6203e91435b8c44ce6}{NumericMatrix<V, I, S>::NumericMatrix}}(I rows, I columns): \mbox{\hyperlink{classMatrix}{Matrix}}<V, I, S>(rows, columns)}
+\DoxyCodeLine{00028 \{ \textcolor{comment}{// Constructor with size. Start index=0.}}
+\DoxyCodeLine{00029 \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00032}\mbox{\hyperlink{classNumericMatrix_a4bdde6c901346fbd0b3c26741e85e3ed}{00032}} \mbox{\hyperlink{classNumericMatrix_acaff2f3e39970e6203e91435b8c44ce6}{NumericMatrix<V, I, S>::NumericMatrix}}(I rows, I columns, I rowStart, I columnStart): \mbox{\hyperlink{classMatrix}{Matrix}}<V, I, S>(rows, columns, rowStart, columnStart)}
+\DoxyCodeLine{00033 \{ \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00034 \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00037}\mbox{\hyperlink{classNumericMatrix_a18f0a755f5a322c4dbb0d172addc531f}{00037}} \mbox{\hyperlink{classNumericMatrix_acaff2f3e39970e6203e91435b8c44ce6}{NumericMatrix<V, I, S>::NumericMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& source): \mbox{\hyperlink{classMatrix}{Matrix}}<V, I, S>(source)}
+\DoxyCodeLine{00038 \{ \textcolor{comment}{// Constructor with matrix}}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00042}\mbox{\hyperlink{classNumericMatrix_a72ff7005e1c0c7935d444c2915fd2cbd}{00042}} \mbox{\hyperlink{classNumericMatrix_acaff2f3e39970e6203e91435b8c44ce6}{NumericMatrix<V, I, S>::NumericMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& source): \mbox{\hyperlink{classMatrix}{Matrix}}<V, I, S>(source)}
+\DoxyCodeLine{00043 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00044 \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00047}\mbox{\hyperlink{classNumericMatrix_ace217b6d2d00a50238cba1053404c4aa}{00047}} \mbox{\hyperlink{classNumericMatrix_ace217b6d2d00a50238cba1053404c4aa}{NumericMatrix<V, I, S>::~NumericMatrix}}()}
+\DoxyCodeLine{00048 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00049 \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00052 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00053}\mbox{\hyperlink{classNumericMatrix_acad49f4a4c23aaf06113266b26f1f0ac}{00053}} \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{classNumericMatrix_acad49f4a4c23aaf06113266b26f1f0ac}{NumericMatrix<V, I, S>::Row}}(I row)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00054 \textcolor{keyword}{}\{ \textcolor{comment}{// Return row. Overloads Matrix::Row() to return Vector instead of Array}}
+\DoxyCodeLine{00055     \textcolor{keywordflow}{return} \mbox{\hyperlink{classVector}{Vector<V, I>}}(\mbox{\hyperlink{classMatrix}{Matrix<V, I, S>::Row}}(row));}
+\DoxyCodeLine{00056 \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00059}\mbox{\hyperlink{classNumericMatrix_af8e382c23aadb529880b4428735b873c}{00059}} \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{classNumericMatrix_af8e382c23aadb529880b4428735b873c}{NumericMatrix<V, I, S>::Column}}(I column)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00060 \textcolor{keyword}{}\{ \textcolor{comment}{// Return Column. Overloads Matrix::Row() to return Vector instead of Array}}
+\DoxyCodeLine{00061     \textcolor{keywordflow}{return} \mbox{\hyperlink{classVector}{Vector<V, I>}}(\mbox{\hyperlink{classMatrix}{Matrix<V, I, S>::Column}}(column));}
+\DoxyCodeLine{00062 \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00065 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00066}\mbox{\hyperlink{classNumericMatrix_a3145ae8e979f9b2dbf9f140714dd27f1}{00066}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classNumericMatrix_acad49f4a4c23aaf06113266b26f1f0ac}{NumericMatrix<V, I, S>::Row}}(I row, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val)}
+\DoxyCodeLine{00067 \{ \textcolor{comment}{// Replace row. Overloaded because Row() selector is overloaded thus hiding Matrix::Row() modifier.}}
+\DoxyCodeLine{00068 \textcolor{comment}{//  Matrix<V, I, S>::Row(row, val);}}
+\DoxyCodeLine{00069     \textcolor{keywordflow}{for} (I c=this-\/>MinColumnIndex(); c<=this-\/>MaxColumnIndex(); c++) }
+\DoxyCodeLine{00070     \{}
+\DoxyCodeLine{00071         (*this)(row,c) = val[c];}
+\DoxyCodeLine{00072     \}}
+\DoxyCodeLine{00073 \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00076}\mbox{\hyperlink{classNumericMatrix_a756d85a3520832125fdbc61bf6a1f0e6}{00076}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classNumericMatrix_af8e382c23aadb529880b4428735b873c}{NumericMatrix<V, I, S>::Column}}(I column, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val)}
+\DoxyCodeLine{00077 \{ \textcolor{comment}{// Replace column. Overloaded because Column() selector is overloaded thus hiding Matrix::Column() modifier.}}
+\DoxyCodeLine{00078     \mbox{\hyperlink{classMatrix_a2278829f8202d2a9b75a38457ce97d6d}{Matrix<V, I, S>::Column}}(column, val);}
+\DoxyCodeLine{00079 \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081 \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00082 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00083}\mbox{\hyperlink{classNumericMatrix_ad7f5cac9fc7a2d398d96b2dc85a71542}{00083}} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& \mbox{\hyperlink{classNumericMatrix_ad7f5cac9fc7a2d398d96b2dc85a71542}{NumericMatrix<V, I, S>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& source)}
+\DoxyCodeLine{00084 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00085     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00086     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00087     \textcolor{comment}{// Call base class assignment}}
+\DoxyCodeLine{00088     \mbox{\hyperlink{classMatrix_a4634b560e429e05ae482cc66ae6e6e8a}{Matrix<V, I, S>::operator = }}(source);}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00091 \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00094}\mbox{\hyperlink{classNumericMatrix_ac885ad95ae4e3a2c8e101c818ff6395d}{00094}} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} \mbox{\hyperlink{classNumericMatrix_ac885ad95ae4e3a2c8e101c818ff6395d}{NumericMatrix<V, I, S>::operator -\/ }}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00095 \textcolor{keyword}{}\{ \textcolor{comment}{// Unary minus}}
+\DoxyCodeLine{00096     \textcolor{comment}{// Create new matrix with same size and same starting index}}
+\DoxyCodeLine{00097     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} result(this-\/>Rows(), this-\/>Columns(), this-\/>MinRowIndex(), this-\/>MinColumnIndex());}
+\DoxyCodeLine{00098     \textcolor{comment}{// Copy all elements negative}}
+\DoxyCodeLine{00099     \textcolor{keywordflow}{for} (I \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}=this-\/>MinRowIndex(); \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}<=this-\/>MaxRowIndex(); \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}++)}
+\DoxyCodeLine{00100     \{}
+\DoxyCodeLine{00101         \textcolor{keywordflow}{for} (I c=this-\/>MinColumnIndex(); c<=this-\/>MaxColumnIndex(); c++) }
+\DoxyCodeLine{00102         \{}
+\DoxyCodeLine{00103             result(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}},c) = -\/(*this)(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}},c);}
+\DoxyCodeLine{00104         \}}
+\DoxyCodeLine{00105     \}}
+\DoxyCodeLine{00106     \textcolor{comment}{// Return the result}}
+\DoxyCodeLine{00107     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00108 \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00111}\mbox{\hyperlink{classNumericMatrix_aee746c63c83adcc3c67377a2e9ea2c83}{00111}} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} \mbox{\hyperlink{classNumericMatrix_aee746c63c83adcc3c67377a2e9ea2c83}{NumericMatrix<V, I, S>::operator + }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& m)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00112 \textcolor{keyword}{}\{ \textcolor{comment}{// Add the elements}}
+\DoxyCodeLine{00113     \textcolor{comment}{// Create new matrix with same size and same starting index}}
+\DoxyCodeLine{00114     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} result(this-\/>Rows(), this-\/>Columns(), this-\/>MinRowIndex(), this-\/>MinColumnIndex());}
+\DoxyCodeLine{00115     \textcolor{comment}{// Add all elements}}
+\DoxyCodeLine{00116     \textcolor{keywordflow}{for} (I r1=this-\/>MinRowIndex(); r1<=this-\/>MaxRowIndex(); r1++)}
+\DoxyCodeLine{00117     \{}
+\DoxyCodeLine{00118         \textcolor{keywordflow}{for} (I c1=this-\/>MinColumnIndex(); c1<=this-\/>MaxColumnIndex(); c1++) }
+\DoxyCodeLine{00119             result(r1, c1) = (*this)(r1, c1) + m(r1, c1);}
+\DoxyCodeLine{00120     \}}
+\DoxyCodeLine{00121     \textcolor{comment}{// Return the result}}
+\DoxyCodeLine{00122     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00123 \}}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00126}\mbox{\hyperlink{classNumericMatrix_a8bb3a2366d27e14218efec794c221d70}{00126}} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} \mbox{\hyperlink{classNumericMatrix_ac885ad95ae4e3a2c8e101c818ff6395d}{NumericMatrix<V, I, S>::operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& m)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00127 \textcolor{keyword}{}\{ \textcolor{comment}{// Subtract the elements}}
+\DoxyCodeLine{00128     \textcolor{comment}{// Create new matrix with same size and same starting index}}
+\DoxyCodeLine{00129     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} result(this-\/>Rows(), this-\/>Columns(), this-\/>MinRowIndex(), this-\/>MinColumnIndex());}
+\DoxyCodeLine{00130     \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(result);}
+\DoxyCodeLine{00131     \textcolor{comment}{// Add all elements}}
+\DoxyCodeLine{00132     \textcolor{keywordflow}{for} (I r1 = this-\/>MinRowIndex(); r1<=this-\/>MaxRowIndex(); r1++)}
+\DoxyCodeLine{00133     \{}
+\DoxyCodeLine{00134         \textcolor{keywordflow}{for} (I c1=this-\/>MinColumnIndex(); c1<=this-\/>MaxColumnIndex(); c1++)}
+\DoxyCodeLine{00135             result(r1, c1) = (*this)(r1, c1) -\/ m(r1, c1);}
+\DoxyCodeLine{00136     \}}
+\DoxyCodeLine{00137     \textcolor{comment}{// Return the result}}
+\DoxyCodeLine{00138     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00139 \}}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00142}\mbox{\hyperlink{classNumericMatrix_a09726249995754fdaaf13ac48cd02083}{00142}} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} \mbox{\hyperlink{classNumericMatrix_a09726249995754fdaaf13ac48cd02083}{NumericMatrix<V, I, S>::operator * }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}}\& m)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00143 \textcolor{keyword}{}\{ \textcolor{comment}{// Multiply the matrix.}}
+\DoxyCodeLine{00144   \textcolor{comment}{// This function can be optimized by calculating the inner product ourselfs instead of }}
+\DoxyCodeLine{00145   \textcolor{comment}{// using the InnerProduct function of Vector. This saves a couple of row and column copies.}}
+\DoxyCodeLine{00146     \textcolor{comment}{// Create new matrix with same row size of first matrix and column size of second matrix and same starting index as first matrix}}
+\DoxyCodeLine{00147     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I, S>}} result(this-\/>Rows(), this-\/>Columns(), this-\/>MinRowIndex(), this-\/>MinColumnIndex());}
+\DoxyCodeLine{00148     I r1, c2, rr, cr;}
+\DoxyCodeLine{00149     \textcolor{comment}{// Element of resulting array is dot/inner product of corresponding row m1 and corresponding column m2}}
+\DoxyCodeLine{00150     \textcolor{keywordflow}{for} (I rr=result.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); rr<=result.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); rr++)}
+\DoxyCodeLine{00151     \{}
+\DoxyCodeLine{00152         \textcolor{keywordflow}{for} (I cr = result.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); cr <= result.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); cr++) }
+\DoxyCodeLine{00153         \{}
+\DoxyCodeLine{00154             result(rr, cr) = 0.0;}
+\DoxyCodeLine{00155             \textcolor{keywordflow}{for} (I k = (*this).MinColumnIndex(); k <= (*this).MinColumnIndex(); k++)}
+\DoxyCodeLine{00156             \{}
+\DoxyCodeLine{00157                 result(rr, cr) += (*this)(rr, k) * m(k,cr);}
+\DoxyCodeLine{00158             \}}
+\DoxyCodeLine{00159         \}       }
+\DoxyCodeLine{00160     \}}
+\DoxyCodeLine{00161     \textcolor{comment}{// Return the result}}
+\DoxyCodeLine{00162     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00163 \}}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{\Hypertarget{NumericMatrix_8cc_source_l00165}\mbox{\hyperlink{classNumericMatrix_a2c67323f846e47b2c4a22153e77980db}{00165}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S> \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{classNumericMatrix_a09726249995754fdaaf13ac48cd02083}{NumericMatrix<V, I, S>::operator * }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I>}}\& v)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00166 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00167     \textcolor{comment}{// Result has same number of rows as m and same start index as v}}
+\DoxyCodeLine{00168     \mbox{\hyperlink{classVector}{Vector<V, I>}} result(this-\/>Rows(), v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}());}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170     V \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}(0.0);  \textcolor{comment}{// sum of rows}}
+\DoxyCodeLine{00171     \textcolor{keywordflow}{for} (I i = this-\/>MinRowIndex(); i <= this-\/>MaxRowIndex(); i++)}
+\DoxyCodeLine{00172     \{}
+\DoxyCodeLine{00173         \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.0;}
+\DoxyCodeLine{00174         \textcolor{keywordflow}{for} (I j = this-\/>MinColumnIndex(); j<= this-\/>MaxColumnIndex(); j++)}
+\DoxyCodeLine{00175         \{}
+\DoxyCodeLine{00176                 \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} += (*this)(i,j) * v[j];}
+\DoxyCodeLine{00177         \}}
+\DoxyCodeLine{00178         result[i] = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00179     \}}
+\DoxyCodeLine{00180     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00181 \}}
+\DoxyCodeLine{00182 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classIBVPImp">
 <title>IBVPImp Class Reference</title>
 <indexterm><primary>IBVPImp</primary></indexterm>
+<para>
+<computeroutput>#include &lt;IBVPImp.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for IBVPImp:<para>
     <informalfigure>
         <mediaobject>
@@ -23,22 +26,73 @@ Collaboration diagram for IBVPImp:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classIBVPImp_1a6f66b0583fd3d65ad946650f1ff7ca1e"/>virtual double <emphasis role="strong">diffusion</emphasis> (double x, double t) const =0</para>
+            <listitem><para>virtual double <link linkend="_classIBVPImp_1a6f66b0583fd3d65ad946650f1ff7ca1e">diffusion</link> (double x, double t) const =0</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPImp_1a44d3dc1c2d3b351705d101943c42c880"/>virtual double <emphasis role="strong">convection</emphasis> (double x, double t) const =0</para>
+            <listitem><para>virtual double <link linkend="_classIBVPImp_1a44d3dc1c2d3b351705d101943c42c880">convection</link> (double x, double t) const =0</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPImp_1ac6bab43d37b55879c6b29eefa0dad63f"/>virtual double <emphasis role="strong">zeroterm</emphasis> (double x, double t) const =0</para>
+            <listitem><para>virtual double <link linkend="_classIBVPImp_1ac6bab43d37b55879c6b29eefa0dad63f">zeroterm</link> (double x, double t) const =0</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPImp_1ae2d0430ad38aa7b6055b1cb622051e67"/>virtual double <emphasis role="strong">RHS</emphasis> (double x, double t) const =0</para>
+            <listitem><para>virtual double <link linkend="_classIBVPImp_1ae2d0430ad38aa7b6055b1cb622051e67">RHS</link> (double x, double t) const =0</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPImp_1aeff635ae5363a1858efc57c833500300"/>virtual double <emphasis role="strong">BCL</emphasis> (double t) const =0</para>
+            <listitem><para>virtual double <link linkend="_classIBVPImp_1aeff635ae5363a1858efc57c833500300">BCL</link> (double t) const =0</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPImp_1a371a1b065ab843b926b1baf727be09af"/>virtual double <emphasis role="strong">BCR</emphasis> (double t) const =0</para>
+            <listitem><para>virtual double <link linkend="_classIBVPImp_1a371a1b065ab843b926b1baf727be09af">BCR</link> (double t) const =0</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVPImp_1ad9cfdc5edfadcf5f18cb4d3a6b64f740"/>virtual double <emphasis role="strong">IC</emphasis> (double x) const =0</para>
+            <listitem><para>virtual double <link linkend="_classIBVPImp_1ad9cfdc5edfadcf5f18cb4d3a6b64f740">IC</link> (double x) const =0</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 17 of file IBVPImp.hh.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classIBVPImp_1aeff635ae5363a1858efc57c833500300"/>    <section>
+    <title>BCL()</title>
+<indexterm><primary>BCL</primary><secondary>IBVPImp</secondary></indexterm>
+<indexterm><primary>IBVPImp</primary><secondary>BCL</secondary></indexterm>
+<para><computeroutput>virtual double IBVPImp::BCL (double t) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classBSIBVPImp_1ab2de01f340004202e7f2462bfde5fed0">BSIBVPImp</link>, and <link linkend="_classSTDIBVPImp_1a03df837513d3df573a4420873980d737">STDIBVPImp</link>.</para>
+    </section><anchor xml:id="_classIBVPImp_1a371a1b065ab843b926b1baf727be09af"/>    <section>
+    <title>BCR()</title>
+<indexterm><primary>BCR</primary><secondary>IBVPImp</secondary></indexterm>
+<indexterm><primary>IBVPImp</primary><secondary>BCR</secondary></indexterm>
+<para><computeroutput>virtual double IBVPImp::BCR (double t) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classBSIBVPImp_1a6f61eb5b6eaa9c29771fe7807707d13c">BSIBVPImp</link>, and <link linkend="_classSTDIBVPImp_1a74cf6a693b997c392ec725a6131d6045">STDIBVPImp</link>.</para>
+    </section><anchor xml:id="_classIBVPImp_1a44d3dc1c2d3b351705d101943c42c880"/>    <section>
+    <title>convection()</title>
+<indexterm><primary>convection</primary><secondary>IBVPImp</secondary></indexterm>
+<indexterm><primary>IBVPImp</primary><secondary>convection</secondary></indexterm>
+<para><computeroutput>virtual double IBVPImp::convection (double x, double t) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classBSIBVPImp_1a5d87cb6dc051a19fc79480de9a500584">BSIBVPImp</link>, and <link linkend="_classSTDIBVPImp_1af55e9f3ac1f8230ff2fbbfbf7e881783">STDIBVPImp</link>.</para>
+    </section><anchor xml:id="_classIBVPImp_1a6f66b0583fd3d65ad946650f1ff7ca1e"/>    <section>
+    <title>diffusion()</title>
+<indexterm><primary>diffusion</primary><secondary>IBVPImp</secondary></indexterm>
+<indexterm><primary>IBVPImp</primary><secondary>diffusion</secondary></indexterm>
+<para><computeroutput>virtual double IBVPImp::diffusion (double x, double t) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classBSIBVPImp_1a05000857b51162805c7e18eca965d0e2">BSIBVPImp</link>, and <link linkend="_classSTDIBVPImp_1a5eaac9d4b3382364f97381c044972856">STDIBVPImp</link>.</para>
+    </section><anchor xml:id="_classIBVPImp_1ad9cfdc5edfadcf5f18cb4d3a6b64f740"/>    <section>
+    <title>IC()</title>
+<indexterm><primary>IC</primary><secondary>IBVPImp</secondary></indexterm>
+<indexterm><primary>IBVPImp</primary><secondary>IC</secondary></indexterm>
+<para><computeroutput>virtual double IBVPImp::IC (double x) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classBSIBVPImp_1aa08d1b40f4ea2af9b19b75a7bdff2961">BSIBVPImp</link>, and <link linkend="_classSTDIBVPImp_1ab96293de5041f9544cf955997549f019">STDIBVPImp</link>.</para>
+    </section><anchor xml:id="_classIBVPImp_1ae2d0430ad38aa7b6055b1cb622051e67"/>    <section>
+    <title>RHS()</title>
+<indexterm><primary>RHS</primary><secondary>IBVPImp</secondary></indexterm>
+<indexterm><primary>IBVPImp</primary><secondary>RHS</secondary></indexterm>
+<para><computeroutput>virtual double IBVPImp::RHS (double x, double t) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classBSIBVPImp_1a3ea23ce43480c17b1a5ac901b18b44ad">BSIBVPImp</link>, and <link linkend="_classSTDIBVPImp_1aa622a9deb5bd33653363ed648bea75e5">STDIBVPImp</link>.</para>
+    </section><anchor xml:id="_classIBVPImp_1ac6bab43d37b55879c6b29eefa0dad63f"/>    <section>
+    <title>zeroterm()</title>
+<indexterm><primary>zeroterm</primary><secondary>IBVPImp</secondary></indexterm>
+<indexterm><primary>IBVPImp</primary><secondary>zeroterm</secondary></indexterm>
+<para><computeroutput>virtual double IBVPImp::zeroterm (double x, double t) const<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_classBSIBVPImp_1a09792b6764a4a2399bc1bd1706390cfb">BSIBVPImp</link>, and <link linkend="_classSTDIBVPImp_1ac03a68be2d80f1c0bc09c99f7d3e3e4a">STDIBVPImp</link>.</para>
+</section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/IBVPImp.hh</section>
+include/duffy/<link linkend="_IBVPImp_8hh">IBVPImp.hh</link></section>
+</section>

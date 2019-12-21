@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestImpliedVolatility_8cc">
+<title>tests/TestImpliedVolatility.cc File Reference</title>
+<indexterm><primary>tests/TestImpliedVolatility.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/NonlinearSolver.hh&gt;
+</programlisting>Include dependency graph for TestImpliedVolatility.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestImpliedVolatility_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_TestImpliedVolatility_8cc_1a9776a1257d07edf93111927ddecc81cc">CallPrice</link> (double sig)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestImpliedVolatility_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestImpliedVolatility_8cc_1a9776a1257d07edf93111927ddecc81cc"/>    <section>
+    <title>CallPrice()</title>
+<indexterm><primary>CallPrice</primary><secondary>TestImpliedVolatility.cc</secondary></indexterm>
+<indexterm><primary>TestImpliedVolatility.cc</primary><secondary>CallPrice</secondary></indexterm>
+<para><computeroutput>double CallPrice (double sig)</computeroutput></para><para>
+Definition at line 39 of file TestImpliedVolatility.cc.</para>
+<programlisting>40 {
+41 &#32;&#32;&#32;&#32;
+42 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Test&#32;case&#32;Haug&#32;p.&#32;172;&#32;student&#32;exercise&#32;to&#32;extend&#32;it</emphasis>
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;S&#32;=&#32;59.0;
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;60.0;
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.067;
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;marketPrice&#32;=&#32;2.82;&#32;<emphasis role="comment">//&#32;The&#32;call&#32;price</emphasis>
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;=&#32;0.25;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Three&#32;months</emphasis>
+49 &#32;&#32;&#32;&#32;
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>&#32;*&#32;sqrt(<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>);
+51 
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d1&#32;=&#32;(&#32;log(S/<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>)&#32;+&#32;(<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>+&#32;(<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>*<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>)*0.5&#32;)&#32;*&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;)/&#32;tmp;
+53 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d2&#32;=&#32;d1&#32;-&#32;tmp;
+54 
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;calculatedValue&#32;=&#32;(S&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">exp</link>((<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>-<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)*<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>)&#32;*&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>(d1))&#32;-&#32;(<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">exp</link>(-<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;*&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>)*&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>(d2));
+57 
+58 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Function&#32;in&#32;the&#32;form&#32;f(x)&#32;=&#32;0</emphasis>
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;marketPrice&#32;-&#32;calculatedValue;
+60 }
+</programlisting>    </section><anchor xml:id="_TestImpliedVolatility_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestImpliedVolatility.cc</secondary></indexterm>
+<indexterm><primary>TestImpliedVolatility.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 63 of file TestImpliedVolatility.cc.</para>
+<programlisting>64 {
+65 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Tell&#32;where&#32;to&#32;look&#32;for&#32;solvers,&#32;in&#32;a&#32;namespace</emphasis>
+66 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespaceNS__NonlinearSolver">NS_NonlinearSolver</link>;
+67 
+68 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;1.&#32;Bisection&#32;method</emphasis>
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initial&#32;interval&#32;(range&#32;for&#32;volatility)</emphasis>
+71 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a&#32;=&#32;0.1;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;10%</emphasis>
+72 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;0.25;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;25%</emphasis>
+73 
+74 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;In&#32;this&#32;version&#32;all&#32;data&#32;is&#32;public;&#32;in&#32;a&#32;later&#32;version</emphasis>
+75 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;make&#32;it&#32;private</emphasis>
+76 &#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver">BisectionSolver</link>&#32;bs;
+77 &#32;&#32;&#32;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>&#32;=&#32;<link linkend="_TestImpliedVolatility_8cc_1a9776a1257d07edf93111927ddecc81cc">CallPrice</link>;
+78 &#32;&#32;&#32;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25">a</link>&#32;=&#32;a;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa">b</link>&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>;
+79 &#32;&#32;&#32;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba">tol</link>&#32;=&#32;0.0001;
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;result&#32;=&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a92b3d483b030f4f4e7014f8097dfd3db">solve</link>();
+82 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bisection:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;result&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a8aa6679debb70886fdfaac7aae6d25aa">accuracy</link>()&#32;&lt;&lt;&#32;std::endl;
+83 
+84 &#32;&#32;&#32;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a1bd5e1ca8a817f8443cd4c510fcaf3af">printStatistics</link>();
+85 
+86 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;NO&#32;NEWTON&#32;BECAUSE&#32;WE&#32;DO&#32;NOT&#32;HAVE&#32;THE&#32;DERIVATIVE!</emphasis>
+87 <emphasis role="comment">&#32;&#32;&#32;&#32;//&#32;Newton&#32;Method</emphasis>
+88 <emphasis role="comment">&#32;&#32;&#32;&#32;double&#32;initialGuess&#32;=&#32;1.2;</emphasis>
+89 <emphasis role="comment">&#32;&#32;&#32;&#32;NewtonRaphsonSolver&#32;nr(initialGuess);</emphasis>
+90 <emphasis role="comment">&#32;&#32;&#32;&#32;nr.myF&#32;=&#32;CallPrice;</emphasis>
+91 <emphasis role="comment">&#32;&#32;&#32;&#32;//nr.derivative&#32;=&#32;DerivativeCallPrice;</emphasis>
+92 <emphasis role="comment">&#32;&#32;&#32;&#32;nr.tol&#32;=&#32;0.0001;</emphasis>
+93 <emphasis role="comment"></emphasis>
+94 <emphasis role="comment">&#32;&#32;&#32;&#32;double&#32;resultNR&#32;=&#32;nr.solve();</emphasis>
+95 <emphasis role="comment">&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;&quot;Newton&#32;Raphson:&#32;&quot;&#32;&lt;&lt;&#32;resultNR&#32;&lt;&lt;&#32;endl;</emphasis>
+96 <emphasis role="comment"></emphasis>
+97 <emphasis role="comment">&#32;&#32;&#32;&#32;nr.printStatistics();</emphasis>
+98 <emphasis role="comment">&#32;&#32;&#32;&#32;*/</emphasis>
+99 
+100 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Secant&#32;method</emphasis>
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;initialGuess0&#32;=&#32;1.2;
+102 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;initialGuess1&#32;=&#32;1.6;
+103 
+104 &#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1SecantMethodSolver">SecantMethodSolver</link>&#32;sm(initialGuess0,&#32;initialGuess1,&#32;<link linkend="_TestImpliedVolatility_8cc_1a9776a1257d07edf93111927ddecc81cc">CallPrice</link>);
+105 &#32;&#32;&#32;&#32;sm.tol&#32;=&#32;0.0001;
+106 
+107 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;resultSM=&#32;sm.solve();
+108 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Secant&#32;Method:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;resultSM&#32;&lt;&lt;&#32;std::endl;
+109 
+110 &#32;&#32;&#32;&#32;sm.printStatistics();
+111 
+112 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Steffensen&apos;s&#32;method\n&quot;</emphasis>;
+113 
+114 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Steffensen&apos;s&#32;method</emphasis>
+115 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;guess&#32;=&#32;0.2;
+116 
+117 &#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1SteffensensSolver">SteffensensSolver</link>&#32;steff(guess,&#32;<link linkend="_TestImpliedVolatility_8cc_1a9776a1257d07edf93111927ddecc81cc">CallPrice</link>);
+118 &#32;&#32;&#32;&#32;steff.tol&#32;=&#32;0.0001;
+119 
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;resultST=&#32;steff.solve();
+121 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Steffensen&apos;s&#32;Method:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;resultST&#32;&lt;&lt;&#32;std::endl;
+122 
+123 &#32;&#32;&#32;&#32;steff.printStatistics();
+124 
+125 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Finished\n&quot;</emphasis>;
+126 
+127 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+128 }
+</programlisting>    </section><anchor xml:id="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3"/>    <section>
+    <title>n()</title>
+<indexterm><primary>n</primary><secondary>TestImpliedVolatility.cc</secondary></indexterm>
+<indexterm><primary>TestImpliedVolatility.cc</primary><secondary>n</secondary></indexterm>
+<para><computeroutput>double n (double x)</computeroutput></para><para>
+Definition at line 10 of file TestImpliedVolatility.cc.</para>
+<programlisting>11 {&#32;
+12 
+13 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;A&#32;=&#32;1.0/std::sqrt(2.0&#32;*&#32;3.1415);
+14 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;A&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(-x*x*0.5);
+15 
+16 }
+</programlisting>    </section><anchor xml:id="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de"/>    <section>
+    <title>N()</title>
+<indexterm><primary>N</primary><secondary>TestImpliedVolatility.cc</secondary></indexterm>
+<indexterm><primary>TestImpliedVolatility.cc</primary><secondary>N</secondary></indexterm>
+<para><computeroutput>double N (double x)</computeroutput></para><para>
+Definition at line 18 of file TestImpliedVolatility.cc.</para>
+<programlisting>19 {&#32;<emphasis role="comment">//&#32;The&#32;approximation&#32;to&#32;the&#32;cumulative&#32;normal&#32;distribution</emphasis>
+20 
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a1&#32;=&#32;0.4361836;
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a2&#32;=&#32;-0.1201676;
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a3&#32;=&#32;0.9372980;
+25 
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;k&#32;=&#32;1.0/(1.0&#32;+&#32;(0.33267&#32;*&#32;x));
+27 &#32;&#32;&#32;&#32;
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x&#32;&gt;=&#32;0.0)
+29 &#32;&#32;&#32;&#32;{
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1.0&#32;-&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>(x)*&#32;(a1*k&#32;+&#32;(a2*k*k)&#32;+&#32;(a3*k*k*k));
+31 &#32;&#32;&#32;&#32;}
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+33 &#32;&#32;&#32;&#32;{
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1.0&#32;-&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>(-x);
+35 &#32;&#32;&#32;&#32;}
+36 
+37 }
+</programlisting></section>
+</section>
+</section>

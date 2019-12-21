@@ -1,0 +1,81 @@
+\hypertarget{MandelbrotSet_8cc_source}{}\doxysection{Mandelbrot\+Set.\+cc}
+\label{MandelbrotSet_8cc_source}\index{tests/MandelbrotSet.cc@{tests/MandelbrotSet.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// MandelbrotSet.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// C++ program fo the Mandelbrot set. We use }}
+\DoxyCodeLine{00004 \textcolor{comment}{// the class Complex in combination with the STL}}
+\DoxyCodeLine{00005 \textcolor{comment}{// vector container.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// We define a recursive process of the form}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{//      z -\/> z*z + c}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{// where z is a complex number and c is a given complex }}
+\DoxyCodeLine{00012 \textcolor{comment}{// number. We need an initial value for in order to start}}
+\DoxyCodeLine{00013 \textcolor{comment}{// the iterative process. }}
+\DoxyCodeLine{00014 \textcolor{comment}{//}}
+\DoxyCodeLine{00015 \textcolor{comment}{// Fatou studied this process in the field of complex analytic }}
+\DoxyCodeLine{00016 \textcolor{comment}{// dynamics. He showed that once a point moved to a distance }}
+\DoxyCodeLine{00017 \textcolor{comment}{// greater than 2 from the origin the orbit escapes to infinity.}}
+\DoxyCodeLine{00018 \textcolor{comment}{//}}
+\DoxyCodeLine{00019 \textcolor{comment}{// The sequence is:}}
+\DoxyCodeLine{00020 \textcolor{comment}{//}}
+\DoxyCodeLine{00021 \textcolor{comment}{//      z[0] = 0 // both coordinates}}
+\DoxyCodeLine{00022 \textcolor{comment}{//      z[n+1] = z[n]\string^2 + c}}
+\DoxyCodeLine{00023 \textcolor{comment}{//}}
+\DoxyCodeLine{00024 \textcolor{comment}{// STATUS: ALPHA, you might need to do some experoimentation}}
+\DoxyCodeLine{00025 \textcolor{comment}{//}}
+\DoxyCodeLine{00026 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00027 \textcolor{comment}{//}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Complex_8hh}{duffy/Complex.hh}}>} \textcolor{comment}{// My DJD complex class}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033 \textcolor{comment}{// Useful proceduare for printing vector on Console}}
+\DoxyCodeLine{\Hypertarget{MandelbrotSet_8cc_source_l00034}\mbox{\hyperlink{MandelbrotSet_8cc_a5505649500f56eb117210d7ffa7fa45b}{00034}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \textcolor{keywordtype}{void} \mbox{\hyperlink{MandelbrotSet_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(\textcolor{keyword}{const} std::vector<V>\& v)}
+\DoxyCodeLine{00035 \{}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     std::cout << \textcolor{stringliteral}{"\(\backslash\)nARR:["};}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < v.size(); j++)}
+\DoxyCodeLine{00039     \{}
+\DoxyCodeLine{00040         std::cout << v[j] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00041     }
+\DoxyCodeLine{00042     \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00045 \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{comment}{// The Mandelbrot set in C++}}
+\DoxyCodeLine{\Hypertarget{MandelbrotSet_8cc_source_l00049}\mbox{\hyperlink{MandelbrotSet_8cc_a7253ee5cc9114c9ed87d660ace96be5e}{00049}} std::vector<Complex> \mbox{\hyperlink{MandelbrotSet_8cc_a7253ee5cc9114c9ed87d660ace96be5e}{MandelbrotSet}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c, \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})}
+\DoxyCodeLine{00050 \{}
+\DoxyCodeLine{00051     std::vector<Complex> result(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}+1);}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     result[0] = \mbox{\hyperlink{classComplex}{Complex}} (0.0, 0.0);}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classComplex}{Complex}} tmp;}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 1; \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} < result.size(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++)}
+\DoxyCodeLine{00057     \{}
+\DoxyCodeLine{00058         tmp = result[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/1];}
+\DoxyCodeLine{00059         result[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}] = (tmp*tmp) + c;}
+\DoxyCodeLine{00060     \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00063 \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{\Hypertarget{MandelbrotSet_8cc_source_l00066}\mbox{\hyperlink{MandelbrotSet_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00066}} \textcolor{keywordtype}{int} \mbox{\hyperlink{MandelbrotSet_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00067 \{}
+\DoxyCodeLine{00068     \mbox{\hyperlink{classComplex}{Complex}} c(0.01, 0.01);}
+\DoxyCodeLine{00069     \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 200;}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     std::vector<Complex> answer = \mbox{\hyperlink{MandelbrotSet_8cc_a7253ee5cc9114c9ed87d660ace96be5e}{MandelbrotSet}}(c, \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}});}
+\DoxyCodeLine{00072     \mbox{\hyperlink{MandelbrotSet_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(answer);}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00075 \}}
+
+\end{DoxyCode}

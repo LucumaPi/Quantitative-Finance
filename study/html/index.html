@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: Main Page</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: Main Page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -69,12 +69,79 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Introduction to C++ for Financial Engineers Documentation</div>  </div>
+<div class="title">Introduction to C++ for Financial Engineers by Daniel J. Duffy. Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1><a class="anchor" id="welcome"></a>
+Welcome</h1>
+<p>Welcome to the official SFML documentation. Here you will find a detailed view of all the SFML <a href="./annotated.php">classes</a> and functions. <br  />
+ If you are looking for tutorials, you can visit the official website at <a href="https://www.sfml-dev.org/">www.sfml-dev.org</a>.</p>
+<div class="image">
+<img src="background.jpg" alt="" width="800px"/>
+</div>
+<h1><a class="anchor" id="example"></a>
+Short example</h1>
+<p>Here is a short example, to show you how simple it is to use SFML:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;SFML/Audio.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="CMakeCXXCompilerId_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>()</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Create the main window</span></div>
+<div class="line">    sf::RenderWindow window(sf::VideoMode(800, 600), <span class="stringliteral">&quot;SFML window&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Load a sprite to display</span></div>
+<div class="line">    sf::Texture texture;</div>
+<div class="line">    <span class="keywordflow">if</span> (!texture.loadFromFile(<span class="stringliteral">&quot;cute_image.jpg&quot;</span>))</div>
+<div class="line">        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line">    sf::Sprite sprite(texture);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create a graphical text to display</span></div>
+<div class="line">    sf::Font font;</div>
+<div class="line">    <span class="keywordflow">if</span> (!font.loadFromFile(<span class="stringliteral">&quot;arial.ttf&quot;</span>))</div>
+<div class="line">        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line">    sf::Text text(<span class="stringliteral">&quot;Hello SFML&quot;</span>, font, 50);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Load a music to play</span></div>
+<div class="line">    sf::Music music;</div>
+<div class="line">    <span class="keywordflow">if</span> (!music.openFromFile(<span class="stringliteral">&quot;nice_music.ogg&quot;</span>))</div>
+<div class="line">        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Play the music</span></div>
+<div class="line">    music.play();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Start the game loop</span></div>
+<div class="line">    <span class="keywordflow">while</span> (window.isOpen())</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Process events</span></div>
+<div class="line">        sf::Event event;</div>
+<div class="line">        <span class="keywordflow">while</span> (window.pollEvent(event))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// Close window: exit</span></div>
+<div class="line">            <span class="keywordflow">if</span> (event.type == sf::Event::Closed)</div>
+<div class="line">                window.close();</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Clear screen</span></div>
+<div class="line">        window.clear();</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Draw the sprite</span></div>
+<div class="line">        window.draw(sprite);</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Draw the string</span></div>
+<div class="line">        window.draw(text);</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Update the window</span></div>
+<div class="line">        window.display();</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
+<div class="ttc" id="aCMakeCXXCompilerId_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="CMakeCXXCompilerId_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="CMakeCXXCompilerId_8cpp_source.html#l00637">CMakeCXXCompilerId.cpp:637</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

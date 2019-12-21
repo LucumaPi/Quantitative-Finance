@@ -15,8 +15,8 @@
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifndef TENSOR\_HH}}
 \DoxyCodeLine{00012 \textcolor{preprocessor}{\#define TENSOR\_HH}}
 \DoxyCodeLine{00013 }
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "NumericMatrix.hh"}}
-\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "Array.hh"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{NumericMatrix_8hh}{NumericMatrix.hh}}"}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Array_8hh}{Array.hh}}"}}
 \DoxyCodeLine{00016 }
 \DoxyCodeLine{00017 \textcolor{comment}{// N.B. tensors always use Full Matrices}}
 \DoxyCodeLine{00018 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I>}
@@ -31,33 +31,33 @@
 \DoxyCodeLine{00027 }
 \DoxyCodeLine{00028 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00029     \textcolor{comment}{// Constructors \& destructor}}
-\DoxyCodeLine{00030     \mbox{\hyperlink{classTensor}{Tensor}}();                                             }
-\DoxyCodeLine{00031     \mbox{\hyperlink{classTensor}{Tensor}}(\textcolor{keywordtype}{size\_t} rows, \textcolor{keywordtype}{size\_t} columns, \textcolor{keywordtype}{size\_t} third);    \textcolor{comment}{// Constructor with size. Start index}}
-\DoxyCodeLine{00032     \mbox{\hyperlink{classTensor}{Tensor}}(\textcolor{keywordtype}{size\_t} rows, \textcolor{keywordtype}{size\_t} columns,\textcolor{keywordtype}{size\_t} third,}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{Tensor}}();                                             }
+\DoxyCodeLine{00031     \mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{Tensor}}(\textcolor{keywordtype}{size\_t} rows, \textcolor{keywordtype}{size\_t} columns, \textcolor{keywordtype}{size\_t} third);    \textcolor{comment}{// Constructor with size. Start index}}
+\DoxyCodeLine{00032     \mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{Tensor}}(\textcolor{keywordtype}{size\_t} rows, \textcolor{keywordtype}{size\_t} columns,\textcolor{keywordtype}{size\_t} third,}
 \DoxyCodeLine{00033         I rowStart, I columnStart, I thirdStart);       }
-\DoxyCodeLine{00034     \mbox{\hyperlink{classTensor}{Tensor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& source);                   \textcolor{comment}{// Copy constructor}}
-\DoxyCodeLine{00035     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classTensor}{Tensor}}();                                    \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00034     \mbox{\hyperlink{classTensor_ad3b58a2f8c5badba797ef815d1c759a0}{Tensor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& source);                   \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00035     \textcolor{keyword}{virtual} \mbox{\hyperlink{classTensor_a63078f238b70b4aa496cca77f91640db}{~Tensor}}();                                   \textcolor{comment}{// Destructor}}
 \DoxyCodeLine{00036 }
 \DoxyCodeLine{00037     \textcolor{comment}{// Selectors. Return type should really be I!}}
-\DoxyCodeLine{00038     \textcolor{keywordtype}{long} MinFirstIndex() \textcolor{keyword}{const};         \textcolor{comment}{// Return the minimum index}}
-\DoxyCodeLine{00039     \textcolor{keywordtype}{long} MaxFirstIndex() \textcolor{keyword}{const};         \textcolor{comment}{// Return the maximum index}}
-\DoxyCodeLine{00040     \textcolor{keywordtype}{long} MinSecondIndex() \textcolor{keyword}{const};            \textcolor{comment}{// Return the minimum index}}
-\DoxyCodeLine{00041     \textcolor{keywordtype}{long} MaxSecondIndex() \textcolor{keyword}{const};            \textcolor{comment}{// Return the maximum index}}
-\DoxyCodeLine{00042     \textcolor{keywordtype}{long} MinThirdIndex() \textcolor{keyword}{const};         \textcolor{comment}{// Return the minimum index}}
-\DoxyCodeLine{00043     \textcolor{keywordtype}{long} MaxThirdIndex() \textcolor{keyword}{const};         \textcolor{comment}{// Return the maximum index}}
+\DoxyCodeLine{00038     \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_a586bb5ad5a239f5a1333ef516f8afac9}{MinFirstIndex}}() \textcolor{keyword}{const};            \textcolor{comment}{// Return the minimum index}}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_aef9f18eee21230b69a12c03ddf765abc}{MaxFirstIndex}}() \textcolor{keyword}{const};            \textcolor{comment}{// Return the maximum index}}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_af86e5b56a856a79e70e18c22b604f1d0}{MinSecondIndex}}() \textcolor{keyword}{const};          \textcolor{comment}{// Return the minimum index}}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_aa7a13e524f1fbbfdf0bdf68192e034b4}{MaxSecondIndex}}() \textcolor{keyword}{const};          \textcolor{comment}{// Return the maximum index}}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_aa95268c48800c8ca1dd6243b59a09543}{MinThirdIndex}}() \textcolor{keyword}{const};            \textcolor{comment}{// Return the minimum index}}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{long} \mbox{\hyperlink{classTensor_a6266f47513cc5b5924573ac58390b7cb}{MaxThirdIndex}}() \textcolor{keyword}{const};            \textcolor{comment}{// Return the maximum index}}
 \DoxyCodeLine{00044 }
-\DoxyCodeLine{00045     \textcolor{keywordtype}{size\_t} Rows() \textcolor{keyword}{const};                \textcolor{comment}{// The number of rows}}
-\DoxyCodeLine{00046     \textcolor{keywordtype}{size\_t} Columns() \textcolor{keyword}{const};             \textcolor{comment}{// The number of columns}}
-\DoxyCodeLine{00047     \textcolor{keywordtype}{size\_t} sizeThird() \textcolor{keyword}{const};           \textcolor{comment}{// The number of element in 3rd dim}}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classTensor_a1d19abc6ebc88dcd1e31a9035d4f42f1}{Rows}}() \textcolor{keyword}{const};                \textcolor{comment}{// The number of rows}}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classTensor_acb5f71b7416a3361164821b624933dd3}{Columns}}() \textcolor{keyword}{const};              \textcolor{comment}{// The number of columns}}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classTensor_a4e12d325ed245411efd1d65c13110368}{sizeThird}}() \textcolor{keyword}{const};          \textcolor{comment}{// The number of element in 3rd dim}}
 \DoxyCodeLine{00048 }
 \DoxyCodeLine{00049 }
 \DoxyCodeLine{00050     \textcolor{comment}{// Operators}}
-\DoxyCodeLine{00051     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& operator [] (I k);        \textcolor{comment}{// Get matrix at position k}}
-\DoxyCodeLine{00052     \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& operator [] (I k) \textcolor{keyword}{const};        \textcolor{comment}{// Get matrix at position k}}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& \mbox{\hyperlink{classTensor_a99acb1545d29dcbaadf6e41482f7c477}{operator [] }}(I k);        \textcolor{comment}{// Get matrix at position k}}
+\DoxyCodeLine{00052     \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& \mbox{\hyperlink{classTensor_a99acb1545d29dcbaadf6e41482f7c477}{operator [] }}(I k) \textcolor{keyword}{const};        \textcolor{comment}{// Get matrix at position k}}
 \DoxyCodeLine{00053 }
-\DoxyCodeLine{00054     V\& operator () (I i, I j, I k);             \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00054     V\& \mbox{\hyperlink{classTensor_a80154f348587ad3c06b05e544f39c6ea}{operator () }}(I i, I j, I k);             \textcolor{comment}{// Get the element at position}}
 \DoxyCodeLine{00055 }
-\DoxyCodeLine{00056     \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& source);}
+\DoxyCodeLine{00056     \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& \mbox{\hyperlink{classTensor_a1ca3f5f470b45a4fa6e08f1f5d15fa69}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& source);}
 \DoxyCodeLine{00057 \};}
 \DoxyCodeLine{00058 \textcolor{preprocessor}{\#include "../../src/Tensor.cc"}}
 \DoxyCodeLine{00059 \textcolor{preprocessor}{\#endif  // TENSOR\_HH}}

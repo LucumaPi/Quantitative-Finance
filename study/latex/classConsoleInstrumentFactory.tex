@@ -2,6 +2,10 @@
 \label{classConsoleInstrumentFactory}\index{ConsoleInstrumentFactory@{ConsoleInstrumentFactory}}
 
 
+{\ttfamily \#include $<$Instrument.\+hh$>$}
+
+
+
 Inheritance diagram for Console\+Instrument\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,15 +25,195 @@ Collaboration diagram for Console\+Instrument\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classConsoleInstrumentFactory_a444f78bcb31b6ef6b6e0d469745904ca}\label{classConsoleInstrumentFactory_a444f78bcb31b6ef6b6e0d469745904ca}} 
-\mbox{\hyperlink{classOption}{Option}} $\ast$ {\bfseries Create\+Option} () const
+\mbox{\hyperlink{classOption}{Option}} $\ast$ \mbox{\hyperlink{classConsoleInstrumentFactory_a444f78bcb31b6ef6b6e0d469745904ca}{Create\+Option}} () const
 \item 
-\mbox{\Hypertarget{classConsoleInstrumentFactory_a189d2413f0b58fad4eba81d39f970fe6}\label{classConsoleInstrumentFactory_a189d2413f0b58fad4eba81d39f970fe6}} 
-\mbox{\hyperlink{classTwoFactorOptionData}{Two\+Factor\+Option\+Data}} $\ast$ {\bfseries Create\+Option} () const
+\mbox{\hyperlink{classTwoFactorOptionData}{Two\+Factor\+Option\+Data}} $\ast$ \mbox{\hyperlink{classConsoleInstrumentFactory_a189d2413f0b58fad4eba81d39f970fe6}{Create\+Option}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Instrument_8hh_source_l00057}{57}} of file \mbox{\hyperlink{Instrument_8hh_source}{Instrument.\+hh}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConsoleInstrumentFactory_a444f78bcb31b6ef6b6e0d469745904ca}\label{classConsoleInstrumentFactory_a444f78bcb31b6ef6b6e0d469745904ca}} 
+\index{ConsoleInstrumentFactory@{ConsoleInstrumentFactory}!CreateOption@{CreateOption}}
+\index{CreateOption@{CreateOption}!ConsoleInstrumentFactory@{ConsoleInstrumentFactory}}
+\doxysubsubsection{\texorpdfstring{CreateOption()}{CreateOption()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOption}{Option}}$\ast$ Console\+Instrument\+Factory\+::\+Create\+Option (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classInstrumentFactory_acc735ba0c9d3b8c36269d3553c1cb401}{Instrument\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{Instrument_8hh_source_l00061}{61}} of file \mbox{\hyperlink{Instrument_8hh_source}{Instrument.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062     \{}
+\DoxyCodeLine{00063         \textcolor{keywordtype}{double} dr;      \textcolor{comment}{// Interest rate}}
+\DoxyCodeLine{00064         \textcolor{keywordtype}{double} dsig;    \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{00065         \textcolor{keywordtype}{double} dK;      \textcolor{comment}{// Strike price}}
+\DoxyCodeLine{00066         \textcolor{keywordtype}{double} dT;      \textcolor{comment}{// Expiry date}}
+\DoxyCodeLine{00067         \textcolor{keywordtype}{double} db;      \textcolor{comment}{// Cost of carry    }}
+\DoxyCodeLine{00068         \textcolor{keywordtype}{double} dSMax;   \textcolor{comment}{// Far field boundary}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         std::cout << \textcolor{stringliteral}{"Interest rate: "};}
+\DoxyCodeLine{00071         std::cin >> dr;}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073         std::cout << \textcolor{stringliteral}{"Volatility: "};}
+\DoxyCodeLine{00074         std::cin >> dsig;}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         std::cout << \textcolor{stringliteral}{"Strike Price: "};}
+\DoxyCodeLine{00077         std::cin >> dK;}
+\DoxyCodeLine{00078         dSMax = 4.0 * dK;       \textcolor{comment}{// Magix Number !!!!}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080         std::cout << \textcolor{stringliteral}{"Expiry: "};}
+\DoxyCodeLine{00081         std::cin >> dT;}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         \textcolor{comment}{// Should ask what kind of option (as in Haug 1998)}}
+\DoxyCodeLine{00084         std::cout << \textcolor{stringliteral}{"Cost of carry: "};}
+\DoxyCodeLine{00085         std::cin >> db;}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087         \mbox{\hyperlink{classOption}{Option}}* result = \textcolor{keyword}{new} \mbox{\hyperlink{classOption}{Option}};}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089         std::cout << \textcolor{stringliteral}{"Payoff 1) Call, 2) Put: "};}
+\DoxyCodeLine{00090         \textcolor{keywordtype}{int} ans;}
+\DoxyCodeLine{00091         std::cin >> ans;}
+\DoxyCodeLine{00092         \textcolor{keywordflow}{if} (ans == 1)}
+\DoxyCodeLine{00093         \{}
+\DoxyCodeLine{00094             result-\/> \mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}} = \textcolor{charliteral}{'C'};}
+\DoxyCodeLine{00095             (*result).OptionPayoff = \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}(dK, \mbox{\hyperlink{OneFactorPayoff_8hh_a014348d679f2afcacf81af0e762ad426}{MyCallPayoffFN}});}
+\DoxyCodeLine{00096         \}}
+\DoxyCodeLine{00097         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00098         \{}
+\DoxyCodeLine{00099             result-\/> \mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}} = \textcolor{charliteral}{'P'};}
+\DoxyCodeLine{00100             (*result).OptionPayoff = \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}(dK, \mbox{\hyperlink{OneFactorPayoff_8hh_a941b079b8b777eac5fafaf713f67027a}{MyPutPayoffFN}});}
+\DoxyCodeLine{00101         \}}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103         result-\/>\mbox{\hyperlink{classOption_abd44ab56edddcd59f80ca5c60c9b66f0}{r}}  = dr;}
+\DoxyCodeLine{00104         result-\/>\mbox{\hyperlink{classOption_a8b68f88d3e7a01dfea0b83e3e5a4f57e}{sig}} = dsig;}
+\DoxyCodeLine{00105         result-\/>\mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}}  = dK;}
+\DoxyCodeLine{00106         result-\/>\mbox{\hyperlink{classOption_ae583dd6d430a3b428014efa942605d54}{T}}  = dT;}
+\DoxyCodeLine{00107         result-\/>\mbox{\hyperlink{classOption_aa3f69771cb6066c69d588fc7682fc1e8}{b}}  = db;}
+\DoxyCodeLine{00108         result-\/>\mbox{\hyperlink{classOption_aa774bcef53ade3c37aa45c2d83a51181}{SMax}} = dSMax;}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00111     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classConsoleInstrumentFactory_a189d2413f0b58fad4eba81d39f970fe6}\label{classConsoleInstrumentFactory_a189d2413f0b58fad4eba81d39f970fe6}} 
+\index{ConsoleInstrumentFactory@{ConsoleInstrumentFactory}!CreateOption@{CreateOption}}
+\index{CreateOption@{CreateOption}!ConsoleInstrumentFactory@{ConsoleInstrumentFactory}}
+\doxysubsubsection{\texorpdfstring{CreateOption()}{CreateOption()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTwoFactorOptionData}{Two\+Factor\+Option\+Data}}$\ast$ Console\+Instrument\+Factory\+::\+Create\+Option (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classInstrumentFactory_acc735ba0c9d3b8c36269d3553c1cb401}{Instrument\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{InstrumentNew_8hh_source_l00135}{135}} of file \mbox{\hyperlink{InstrumentNew_8hh_source}{Instrument\+New.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136     \{}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         \textcolor{keywordtype}{double} dr;      \textcolor{comment}{// Interest rate}}
+\DoxyCodeLine{00139         \textcolor{keywordtype}{double} dsig1, dsig2;    \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{00140         \textcolor{keywordtype}{double} div1, div2;  \textcolor{comment}{// Dividends}}
+\DoxyCodeLine{00141         \textcolor{keywordtype}{double} drho;}
+\DoxyCodeLine{00142         \textcolor{keywordtype}{double} dK;      \textcolor{comment}{// Strike price}}
+\DoxyCodeLine{00143         \textcolor{keywordtype}{double} dT;      \textcolor{comment}{// Expiry date}}
+\DoxyCodeLine{00144         \textcolor{keywordtype}{double} dSMax1, dSMax2;  \textcolor{comment}{// Far field boundary}}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146         \textcolor{keywordtype}{double} dw1, dw2;    \textcolor{comment}{// Weights of each asset}}
+\DoxyCodeLine{00147         \textcolor{keywordtype}{int} dtype;      \textcolor{comment}{// C +1, P -\/1}}
+\DoxyCodeLine{00148 L1:}
+\DoxyCodeLine{00149         std::cout << \textcolor{stringliteral}{"Type Call +1, Put -\/1: "};}
+\DoxyCodeLine{00150         std::cin >> dtype;}
+\DoxyCodeLine{00151         dtype = -\/1;     \textcolor{comment}{// !!! for the moment}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153         std::cout << \textcolor{stringliteral}{"Interest rate: "};}
+\DoxyCodeLine{00154         std::cin >> dr;}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156         std::cout << \textcolor{stringliteral}{"Strike: "};}
+\DoxyCodeLine{00157         std::cin >> dK;}
+\DoxyCodeLine{00158 }
+\DoxyCodeLine{00159         std::cout << \textcolor{stringliteral}{"Volatility 1: "};}
+\DoxyCodeLine{00160         std::cin >> dsig1;}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162         std::cout << \textcolor{stringliteral}{"Volatility 2: "};}
+\DoxyCodeLine{00163         std::cin >> dsig2;}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165         std::cout << \textcolor{stringliteral}{"Dividend 1: "};}
+\DoxyCodeLine{00166         std::cin >> div1;}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168         std::cout << \textcolor{stringliteral}{"Dividend 2: "};}
+\DoxyCodeLine{00169         std::cin >> div2;}
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171         std::cout << \textcolor{stringliteral}{"Correlation: "};}
+\DoxyCodeLine{00172         std::cin >> drho;}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174         std::cout << \textcolor{stringliteral}{"First Far Field: "};}
+\DoxyCodeLine{00175         std::cin >> dSMax1;}
+\DoxyCodeLine{00176         std::cout << \textcolor{stringliteral}{"Second Far Field: "};}
+\DoxyCodeLine{00177         std::cin >> dSMax2;}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179         std::cout << \textcolor{stringliteral}{"weight 1: "};}
+\DoxyCodeLine{00180         std::cin >> dw1;}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182         std::cout << \textcolor{stringliteral}{"Weight 2: "};}
+\DoxyCodeLine{00183         std::cin >> dw2;}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185         std::cout << \textcolor{stringliteral}{"Expiry: "};}
+\DoxyCodeLine{00186         std::cin >> dT;}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188         std::cout << \textcolor{stringliteral}{"Is this correct, carry on?"};}
+\DoxyCodeLine{00189         \textcolor{keywordtype}{char} c; std::cin >> c;}
+\DoxyCodeLine{00190         \textcolor{keywordflow}{if} (c != \textcolor{charliteral}{'y'} \&\& c != \textcolor{charliteral}{'Y'})}
+\DoxyCodeLine{00191         \{}
+\DoxyCodeLine{00192             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00193         \}}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195         \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}* result = \textcolor{keyword}{new} \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}};}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a25052f44d08faa7a22a3c27fa2340272}{r}}      = dr;}
+\DoxyCodeLine{00198         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a4b9b46a69bf26cc011046b29d1beec66}{sig1}}    = dsig1;}
+\DoxyCodeLine{00199         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a7f147d9543ea7775009b8c959ee33e6b}{sig2}}    = dsig2;}
+\DoxyCodeLine{00200         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a84b0c9fc08aca003ed163f35e6ddd8bc}{rho}}      = drho;}
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_afa527e63f712230bcd06dde13bf41a94}{D1}}        = div1;}
+\DoxyCodeLine{00203         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_ae314dc85a263e11020ac4bfe69005333}{D2}}        = div2;}
+\DoxyCodeLine{00204     }
+\DoxyCodeLine{00205         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a1e4be0455ac266930ca0226726d98c24}{K}}      = dK;}
+\DoxyCodeLine{00206         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a0541afde0972d35c6b6cb62fedcda914}{T}}      = dT;}
+\DoxyCodeLine{00207         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a0acb7ed41b7e485ae6cc3f6ffc518616}{SMax1}}  = dSMax1;}
+\DoxyCodeLine{00208         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a4368573d6a2f01f49c58d50d1a8ccf7d}{SMax2}}  = dSMax2;}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a7c3239018650cc024d625cbf38d6b677}{type}}    = dtype;}
+\DoxyCodeLine{00211     }
+\DoxyCodeLine{00212         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a09861cf6a9d6cf5815f2ffd278059ce0}{w1}}        = dw1;}
+\DoxyCodeLine{00213         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a490f9fe97fe78fbc99af91fa8a8da86b}{w2}}        = dw2;}
+\DoxyCodeLine{00214     }
+\DoxyCodeLine{00215         \textcolor{comment}{// Now assign the payoff function}}
+\DoxyCodeLine{00216         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_ad373a006f81f791e0d87b7ce5352025f}{pay}} = \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}(dK, dtype, dw1, dw2);}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221     \}   }
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Instrument.\+hh\item 
-include/duffy/Instrument\+New.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{Instrument_8hh}{Instrument.\+hh}}\item 
+include/duffy/\mbox{\hyperlink{InstrumentNew_8hh}{Instrument\+New.\+hh}}\end{DoxyCompactItemize}

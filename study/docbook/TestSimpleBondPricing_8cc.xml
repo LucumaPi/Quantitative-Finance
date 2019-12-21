@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSimpleBondPricing_8cc">
+<title>tests/TestSimpleBondPricing.cc File Reference</title>
+<indexterm><primary>tests/TestSimpleBondPricing.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/SimpleBondPricing.hh&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestSimpleBondPricing.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSimpleBondPricing_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestSimpleBondPricing_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSimpleBondPricing_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSimpleBondPricing.cc</secondary></indexterm>
+<indexterm><primary>TestSimpleBondPricing.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 9 of file TestSimpleBondPricing.cc.</para>
+<programlisting>10 {
+11 
+12 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Future&#32;value&#32;of&#32;a&#32;sum&#32;of&#32;money&#32;invested&#32;today</emphasis>
+13 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;nPeriods&#32;=&#32;6;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;6&#32;years</emphasis>
+14 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;P&#32;=&#32;10000000;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Amount&#32;invested&#32;now</emphasis>
+15 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.092;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;9.2%&#32;interest</emphasis>
+16 
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;fv&#32;=&#32;<link linkend="_namespaceChapter3CPPBook_1abe690d1487ddab992c08d7c68c53f3bc">Chapter3CPPBook::FutureValue</link>(P,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+18 
+19 &#32;&#32;&#32;&#32;std::cout.setf(std::ios_base::fixed,&#32;std::ios_base::floatfield);
+20 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Future&#32;Value:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;fv&#32;&lt;&lt;&#32;std::endl;
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;frequency&#32;=&#32;2;
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;fv2&#32;=&#32;<link linkend="_namespaceChapter3CPPBook_1abe690d1487ddab992c08d7c68c53f3bc">Chapter3CPPBook::FutureValue</link>(P,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>,&#32;frequency);
+24 <emphasis role="comment">//&#32;&#32;cout.setf(0,&#32;ios_base::floatfield);</emphasis>
+25 
+26 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Future&#32;Value,&#32;2&#32;periods:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;fv2&#32;&lt;&lt;&#32;std::endl;
+27 
+28 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Future&#32;value&#32;of&#32;a&#32;sum&#32;of&#32;money&#32;invested&#32;today,&#32;m&#32;periods&#32;</emphasis>
+29 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;per&#32;year.&#32;r&#32;is&#32;annual&#32;interest&#32;rate</emphasis>
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Using:&#32;means&#32;that&#32;we&#32;search&#32;in&#32;NS&#32;for&#32;the&#32;functions</emphasis>
+32 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespaceChapter3CPPBook">Chapter3CPPBook</link>;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;P0&#32;=&#32;10000000;&#32;<emphasis role="comment">//&#32;10&#32;million</emphasis>
+35 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.092;
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;m&#32;=&#32;2;&#32;<emphasis role="comment">//&#32;Twice&#32;per&#32;year</emphasis>
+37 &#32;&#32;&#32;&#32;nPeriods&#32;=&#32;6;
+38 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**Future&#32;with&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;m&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;periods:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceChapter3CPPBook_1abe690d1487ddab992c08d7c68c53f3bc">FutureValue</link>(P0,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>,&#32;m)&#32;&lt;&lt;&#32;std::endl;
+39 
+40 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Future&#32;value&#32;of&#32;an&#32;ordinary&#32;annuity</emphasis>
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;A&#32;=&#32;2000000;
+42 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.08;
+43 &#32;&#32;&#32;&#32;nPeriods&#32;=&#32;15;&#32;&#32;<emphasis role="comment">//&#32;15&#32;years</emphasis>
+44 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**Ordinary&#32;Annuity;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceChapter3CPPBook_1a80457755c62c5cc27b0c679524f04896">OrdinaryAnnuity</link>(A,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)&#32;&#32;&lt;&lt;&#32;std::endl;
+45 
+46 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Present&#32;Value</emphasis>
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Pn&#32;=&#32;5000000;
+48 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.10;
+49 &#32;&#32;&#32;&#32;nPeriods&#32;=&#32;7;
+50 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**Present&#32;value:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceChapter3CPPBook_1a18478ac60c06346fe86d2022fabefa07">PresentValue</link>(Pn,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)&#32;&lt;&lt;&#32;std::endl;
+51 
+52 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Present&#32;Value&#32;of&#32;a&#32;series&#32;of&#32;future&#32;values</emphasis>
+53 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector</link>&#32;futureValues(5);&#32;<emphasis role="comment">//&#32;For&#32;five&#32;years</emphasis>
+54 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;4;&#32;j++)
+55 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;The&#32;first&#32;4&#32;years</emphasis>
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;futureValues[j]&#32;=&#32;100.0;
+57 &#32;&#32;&#32;&#32;}
+58 &#32;&#32;&#32;&#32;futureValues[4]&#32;=&#32;1100.0;
+59 
+60 &#32;&#32;&#32;&#32;nPeriods&#32;=&#32;5;&#32;<emphasis role="comment">//&#32;Redundant&#32;in&#32;a&#32;sense&#32;since&#32;this&#32;is&#32;in&#32;the&#32;vector</emphasis>
+61 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.0625;
+62 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**Present&#32;value,&#32;series:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceChapter3CPPBook_1a18478ac60c06346fe86d2022fabefa07">PresentValue</link>(futureValues,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)&#32;&lt;&lt;&#32;std::endl;
+63 
+64 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Present&#32;Value&#32;of&#32;an&#32;ordinary&#32;annuity</emphasis>
+65 &#32;&#32;&#32;&#32;A&#32;=&#32;100.0;
+66 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.09;
+67 &#32;&#32;&#32;&#32;nPeriods&#32;=&#32;8;
+68 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**PV,&#32;ordinary&#32;annuity:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceChapter3CPPBook_1a73378b5ee752acf087d6005aca68cc4e">PresentValueOrdinaryAnnuity</link>(A,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)&#32;&lt;&lt;&#32;std::endl;
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;test&#32;periodic&#32;testing&#32;with&#32;continuous&#32;compounding</emphasis>
+71 &#32;&#32;&#32;&#32;P0&#32;=&#32;10000000;
+72 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.092;
+73 &#32;&#32;&#32;&#32;nPeriods&#32;=&#32;6;
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;mm&#32;=&#32;1;&#32;mm&#32;&lt;=&#32;10000000;&#32;mm&#32;*=12)
+75 &#32;&#32;&#32;&#32;{
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Periodic:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;mm&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceChapter3CPPBook_1abe690d1487ddab992c08d7c68c53f3bc">FutureValue</link>(P0,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>,&#32;mm)&#32;&lt;&lt;&#32;std::endl;
+77 
+78 &#32;&#32;&#32;&#32;}
+79 
+80 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Continuous&#32;Compounding:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceChapter3CPPBook_1a7a6cebaf5369ebd4c06b3747e9b5491f">FutureValueContinuous</link>(P0,&#32;nPeriods,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+81 
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+83 }
+</programlisting></section>
+</section>
+</section>

@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBestWorstStrategy">
 <title>BestWorstStrategy Class Reference</title>
 <indexterm><primary>BestWorstStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MultiAssetPayoffStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for BestWorstStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,47 @@ Collaboration diagram for BestWorstStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classBestWorstStrategy_1a7fccff78a19686708b54f34c3b089786"/><emphasis role="strong">BestWorstStrategy</emphasis> (double cash, double BestWorst)</para>
+            <listitem><para><link linkend="_classBestWorstStrategy_1a7fccff78a19686708b54f34c3b089786">BestWorstStrategy</link> (double cash, double BestWorst)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBestWorstStrategy_1a9f6f1a30e538d7c4ad18ea59bf808460"/>double <emphasis role="strong">payoff</emphasis> (double S1, double S2) const</para>
+            <listitem><para>double <link linkend="_classBestWorstStrategy_1a9f6f1a30e538d7c4ad18ea59bf808460">payoff</link> (double S1, double S2) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 80 of file MultiAssetPayoffStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classBestWorstStrategy_1a7fccff78a19686708b54f34c3b089786"/>    <section>
+    <title>BestWorstStrategy()</title>
+<indexterm><primary>BestWorstStrategy</primary><secondary>BestWorstStrategy</secondary></indexterm>
+<indexterm><primary>BestWorstStrategy</primary><secondary>BestWorstStrategy</secondary></indexterm>
+<para><computeroutput>BestWorstStrategy::BestWorstStrategy (double cash, double BestWorst)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 87 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;cash;&#32;w&#32;=&#32;BestWorst;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classBestWorstStrategy_1a9f6f1a30e538d7c4ad18ea59bf808460"/>    <section>
+    <title>payoff()</title>
+<indexterm><primary>payoff</primary><secondary>BestWorstStrategy</secondary></indexterm>
+<indexterm><primary>BestWorstStrategy</primary><secondary>payoff</secondary></indexterm>
+<para><computeroutput>double BestWorstStrategy::payoff (double S1, double S2) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">MultiAssetPayoffStrategy</link>.</para>
+<para>
+Definition at line 90 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+92 &#32;&#32;&#32;&#32;
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(w&#32;==&#32;1)&#32;<emphasis role="comment">//&#32;Best</emphasis>
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>&#32;(S1,&#32;S2,&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>);
+95 
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_GenericInequalities_8hh_1adb69bfcb34a8cdf14dcb3fc08f9687c0">Min</link>&#32;(S1,&#32;S2,&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>);
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-MultiAssetPayoffStrategy.hh</section>
+<link linkend="_MultiAssetPayoffStrategy_8hh">MultiAssetPayoffStrategy.hh</link></section>
+</section>

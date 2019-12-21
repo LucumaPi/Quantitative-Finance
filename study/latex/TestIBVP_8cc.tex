@@ -1,0 +1,112 @@
+\hypertarget{TestIBVP_8cc}{}\doxysection{tests/\+Test\+I\+B\+VP.cc File Reference}
+\label{TestIBVP_8cc}\index{tests/TestIBVP.cc@{tests/TestIBVP.cc}}
+{\ttfamily \#include $<$duffy/\+Instrument.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+E\+Euler\+I\+B\+V\+P\+Solver.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+B\+S\+I\+B\+V\+P\+Imp.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+S\+T\+D\+Imp.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Matrix\+Mechanisms.\+hh$>$}\newline
+Include dependency graph for Test\+I\+B\+V\+P.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestIBVP_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInstrumentFactory}{Instrument\+Factory}} $\ast$ \mbox{\hyperlink{TestIBVP_8cc_a944b59805882970c6620c319340c3d0d}{Get\+Instrument\+Factory}} ()
+\item 
+int \mbox{\hyperlink{TestIBVP_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestIBVP_8cc_a944b59805882970c6620c319340c3d0d}\label{TestIBVP_8cc_a944b59805882970c6620c319340c3d0d}} 
+\index{TestIBVP.cc@{TestIBVP.cc}!GetInstrumentFactory@{GetInstrumentFactory}}
+\index{GetInstrumentFactory@{GetInstrumentFactory}!TestIBVP.cc@{TestIBVP.cc}}
+\doxysubsubsection{\texorpdfstring{GetInstrumentFactory()}{GetInstrumentFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classInstrumentFactory}{Instrument\+Factory}}$\ast$ Get\+Instrument\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestIBVP_8cc_source_l00013}{13}} of file \mbox{\hyperlink{TestIBVP_8cc_source}{Test\+I\+B\+V\+P.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015     \textcolor{comment}{// Only 1 factory in this version, like model T}}
+\DoxyCodeLine{00016     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classConsoleInstrumentFactory}{ConsoleInstrumentFactory}};}
+\DoxyCodeLine{00017 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestIBVP_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestIBVP_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestIBVP.cc@{TestIBVP.cc}!main@{main}}
+\index{main@{main}!TestIBVP.cc@{TestIBVP.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestIBVP_8cc_source_l00019}{19}} of file \mbox{\hyperlink{TestIBVP_8cc_source}{Test\+I\+B\+V\+P.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021     \textcolor{comment}{// A. The Continuous Problem}}
+\DoxyCodeLine{00022     \textcolor{comment}{// Derived implementation class}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classSTDIBVPImp}{STDIBVPImp}} stdImp;}
+\DoxyCodeLine{00024     }
+\DoxyCodeLine{00025     \textcolor{comment}{// Now the client class IVP}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classIBVPImp}{IBVPImp}}* myImp2 = \&stdImp;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordtype}{double} Smax = 200.0;}
+\DoxyCodeLine{00029     \mbox{\hyperlink{classRange}{Range<double>}} rangeX(0.0, Smax);}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classRange}{Range<double>}} rangeT(0.0, 1.0);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \mbox{\hyperlink{classIBVP}{IBVP}} i2(*myImp2, rangeX, rangeT);}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{comment}{// B. Finite Difference Schemes}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{long} J = 5;}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{long} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = 50;}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classExplicitEulerIBVP}{ExplicitEulerIBVP}} fdm(i2, \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}, J);}
+\DoxyCodeLine{00038 \textcolor{comment}{//  print(fdm.result());}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{keywordtype}{int} kk;}
+\DoxyCodeLine{00041 \textcolor{comment}{//  cin >> kk;}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{comment}{// ImplicitIBVP fdm2(i2, N, J);}}
+\DoxyCodeLine{00044 \textcolor{comment}{//  print(fdm2.result());}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{comment}{// Display in Excel}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{comment}{// Mesher m(rangeX, rangeT);}}
+\DoxyCodeLine{00049     \textcolor{comment}{// Vector<double, long> XARR = m.xarr(6);}}
+\DoxyCodeLine{00050     \textcolor{comment}{// Vector<double, long> vec = fdm.result()[2];}}
+\DoxyCodeLine{00051     \textcolor{comment}{// printOneExcel(XARR, vec, std::string("explicit");}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \textcolor{comment}{//  Vector<double, long> vec2 = fdm2.result()[2];}}
+\DoxyCodeLine{00054 \textcolor{comment}{//  printOneExcel(XARR, vec2, std::string("implicit");}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{comment}{// Black Scholes example}}
+\DoxyCodeLine{00058     \mbox{\hyperlink{classInstrumentFactory}{InstrumentFactory}}* myFactory = \mbox{\hyperlink{TestIBVP_8cc_a944b59805882970c6620c319340c3d0d}{GetInstrumentFactory}}();}
+\DoxyCodeLine{00059     \mbox{\hyperlink{classOption}{Option}}* myOption = myFactory-\/>\mbox{\hyperlink{classInstrumentFactory_acc735ba0c9d3b8c36269d3553c1cb401}{CreateOption}}();}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{comment}{// Derived implementation class}}
+\DoxyCodeLine{00062     \mbox{\hyperlink{classBSIBVPImp}{BSIBVPImp}} bs (*myOption);}
+\DoxyCodeLine{00063     bs.opt = myOption;}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \textcolor{comment}{// Now the client class IBVP}}
+\DoxyCodeLine{00066     \textcolor{comment}{// IBVPImp* myImp3 = \&bs;}}
+\DoxyCodeLine{00067     \textcolor{comment}{// IBVP i3(*myImp3, rangeX, rangeT);}}
+\DoxyCodeLine{00068     \textcolor{comment}{// ExplicitEulerIBVP fdm3(i3, N, J);}}
+\DoxyCodeLine{00069     \textcolor{comment}{// print(fdm3.result());}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071 \textcolor{comment}{//  printHE001();}}
+\DoxyCodeLine{00072 \textcolor{comment}{//  printHE0012();}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00075 \}}
+
+\end{DoxyCode}

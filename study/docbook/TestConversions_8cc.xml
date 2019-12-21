@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestConversions_8cc">
+<title>tests/TestConversions.cc File Reference</title>
+<indexterm><primary>tests/TestConversions.cc</primary></indexterm>
+<programlisting>#include &lt;sstream&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestConversions.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestConversions_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T &gt; </para><para>std::string <link linkend="_TestConversions_8cc_1acec0ad850d2157510254d54466874544">getString</link> (const T &amp;value)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestConversions_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestConversions_8cc_1acec0ad850d2157510254d54466874544"/>    <section>
+    <title>getString()</title>
+<indexterm><primary>getString</primary><secondary>TestConversions.cc</secondary></indexterm>
+<indexterm><primary>TestConversions.cc</primary><secondary>getString</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>std::string getString (const T &amp; value)</computeroutput></para><para>
+Definition at line 14 of file TestConversions.cc.</para>
+<programlisting>15 {
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::stringstream&#32;s;
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s&#32;&lt;&lt;&#32;value;
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s.str();
+20 }
+</programlisting>    </section><anchor xml:id="_TestConversions_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestConversions.cc</secondary></indexterm>
+<indexterm><primary>TestConversions.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 22 of file TestConversions.cc.</para>
+<programlisting>23 {
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Hard-coded&#32;example&#32;for&#32;starters</emphasis>
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;myDouble&#32;=&#32;1.0;
+27 &#32;&#32;&#32;&#32;std::stringstream&#32;s;
+28 &#32;&#32;&#32;&#32;s&#32;&lt;&lt;&#32;myDouble;
+29 &#32;&#32;&#32;&#32;std::string&#32;result&#32;=&#32;s.str();
+30 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;String&#32;value&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;result&#32;&lt;&lt;&#32;std::endl;
+31 
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;10;
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;j&#32;=&#32;1234567890;
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;f&#32;=&#32;3.14f;
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d&#32;=&#32;2.712222222223;
+36 
+37 &#32;&#32;&#32;&#32;std::string&#32;myString&#32;=&#32;getString&lt;int&gt;(i);
+38 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;myString&#32;&lt;&lt;&#32;std::endl;
+39 
+40 &#32;&#32;&#32;&#32;myString&#32;=&#32;getString&lt;long&gt;(j);
+41 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;myString&#32;&lt;&lt;&#32;std::endl;
+42 
+43 &#32;&#32;&#32;&#32;myString&#32;=&#32;getString&lt;float&gt;(f);
+44 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;myString&#32;&lt;&lt;&#32;std::endl;
+45 
+46 &#32;&#32;&#32;&#32;myString&#32;=&#32;getString&lt;double&gt;(d);
+47 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;myString&#32;&lt;&lt;&#32;std::endl;
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+50 }
+</programlisting></section>
+</section>
+</section>

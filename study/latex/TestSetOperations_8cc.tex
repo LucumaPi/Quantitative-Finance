@@ -1,0 +1,310 @@
+\hypertarget{TestSetOperations_8cc}{}\doxysection{tests/\+Test\+Set\+Operations.cc File Reference}
+\label{TestSetOperations_8cc}\index{tests/TestSetOperations.cc@{tests/TestSetOperations.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for Test\+Set\+Operations.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{TestSetOperations_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}} (const std\+::set$<$ T $>$ \&l, const std\+::string \&name)
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{TestSetOperations_8cc_a58f6535f8198f8c942660b07a1dc1743}{subset}} (const std\+::set$<$ T $>$ \&super, const std\+::set$<$ T $>$ \&sub)
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{TestSetOperations_8cc_a5dc29942d8e2fb8832d4527e1516110d}{superset}} (const std\+::set$<$ T $>$ \&super, const std\+::set$<$ T $>$ \&sub)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSetOperations_8cc_a49ce21c7fb0f30867ca92edd6d951d1a}{Union\+Set}} (const std\+::set$<$ T $>$ \&s1, const std\+::set$<$ T $>$ \&s2, std\+::set$<$ T $>$ \&myunion)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSetOperations_8cc_a0c725f9d3727a797b2cbfe5ebe380ffe}{Difference\+Set}} (const std\+::set$<$ T $>$ \&s1, const std\+::set$<$ T $>$ \&s2, std\+::set$<$ T $>$ \&mydiff)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSetOperations_8cc_ac0e5b69710d850f6e9d4555f964b60b9}{Intersection\+Set}} (const std\+::set$<$ T $>$ \&s1, const std\+::set$<$ T $>$ \&s2, std\+::set$<$ T $>$ \&myintersect)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSetOperations_8cc_ad047be612789ce938d427099378b4320}{Symmetric\+Difference\+Set}} (const std\+::set$<$ T $>$ \&s1, const std\+::set$<$ T $>$ \&s2, std\+::set$<$ T $>$ \&mysdiff)
+\item 
+int \mbox{\hyperlink{TestSetOperations_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestSetOperations_8cc_a0c725f9d3727a797b2cbfe5ebe380ffe}\label{TestSetOperations_8cc_a0c725f9d3727a797b2cbfe5ebe380ffe}} 
+\index{TestSetOperations.cc@{TestSetOperations.cc}!DifferenceSet@{DifferenceSet}}
+\index{DifferenceSet@{DifferenceSet}!TestSetOperations.cc@{TestSetOperations.cc}}
+\doxysubsubsection{\texorpdfstring{DifferenceSet()}{DifferenceSet()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Difference\+Set (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{s1,  }\item[{const std\+::set$<$ T $>$ \&}]{s2,  }\item[{std\+::set$<$ T $>$ \&}]{mydiff }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations_8cc_source_l00075}{75}} of file \mbox{\hyperlink{TestSetOperations_8cc_source}{Test\+Set\+Operations.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076 \{ \textcolor{comment}{// Difference of two sets}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{keyword}{typename} std::set<T>::iterator i = mydiff.begin();}
+\DoxyCodeLine{00079     std::insert\_iterator<std::set<int> > insertiter(mydiff, i);}
+\DoxyCodeLine{00080     set\_difference(s1.begin(), s1.end(), s2.begin(), s2.end(), insertiter);}
+\DoxyCodeLine{00081         }
+\DoxyCodeLine{00082 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations_8cc_ac0e5b69710d850f6e9d4555f964b60b9}\label{TestSetOperations_8cc_ac0e5b69710d850f6e9d4555f964b60b9}} 
+\index{TestSetOperations.cc@{TestSetOperations.cc}!IntersectionSet@{IntersectionSet}}
+\index{IntersectionSet@{IntersectionSet}!TestSetOperations.cc@{TestSetOperations.cc}}
+\doxysubsubsection{\texorpdfstring{IntersectionSet()}{IntersectionSet()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Intersection\+Set (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{s1,  }\item[{const std\+::set$<$ T $>$ \&}]{s2,  }\item[{std\+::set$<$ T $>$ \&}]{myintersect }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations_8cc_source_l00083}{83}} of file \mbox{\hyperlink{TestSetOperations_8cc_source}{Test\+Set\+Operations.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084 \{ \textcolor{comment}{// Intersection of two sets}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     std::set<int>::iterator i = myintersect.begin();}
+\DoxyCodeLine{00087     std::insert\_iterator<std::set<int> > insertiter(myintersect, i);}
+\DoxyCodeLine{00088     set\_intersection(s1.begin(), s1.end(), s2.begin(), s2.end(), insertiter);}
+\DoxyCodeLine{00089 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestSetOperations_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestSetOperations.cc@{TestSetOperations.cc}!main@{main}}
+\index{main@{main}!TestSetOperations.cc@{TestSetOperations.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations_8cc_source_l00099}{99}} of file \mbox{\hyperlink{TestSetOperations_8cc_source}{Test\+Set\+Operations.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100 \{}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     std::set<int> \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}};               \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{comment}{// Only unique (new elements) added}}
+\DoxyCodeLine{00105     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.insert(1);}
+\DoxyCodeLine{00106     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.insert(2);}
+\DoxyCodeLine{00107     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.insert(3);}
+\DoxyCodeLine{00108     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}} (\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \textcolor{stringliteral}{"First set"});}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     std::set<int> \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}} (\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}});}
+\DoxyCodeLine{00111     \textcolor{comment}{// Check for subsethood (in other words, is second a subset of first?)}}
+\DoxyCodeLine{00112     \textcolor{keywordflow}{if} (includes(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.end(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.end()))}
+\DoxyCodeLine{00113         std::cout << \textcolor{stringliteral}{"OK, second set is a subset of first set\(\backslash\)n"};}
+\DoxyCodeLine{00114     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00115         std::cout << \textcolor{stringliteral}{"BAAH Not a subset\(\backslash\)n"};}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.erase(3);}
+\DoxyCodeLine{00118     }
+\DoxyCodeLine{00119     \textcolor{comment}{// Checking for subsethood in a more user-\/friendly way}}
+\DoxyCodeLine{00120     \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestSetOperations_8cc_a58f6535f8198f8c942660b07a1dc1743}{subset}} (\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00121         std::cout << \textcolor{stringliteral}{"Second set is a subset of first, OK\(\backslash\)n"};}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123     \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestSetOperations_8cc_a5dc29942d8e2fb8832d4527e1516110d}{superset}}(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00124         std::cout << \textcolor{stringliteral}{"First set is a superset of second, OK\(\backslash\)n"};}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126     \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestSetOperations_8cc_a5dc29942d8e2fb8832d4527e1516110d}{superset}} (\mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}) == \textcolor{keyword}{false})}
+\DoxyCodeLine{00127         std::cout << \textcolor{stringliteral}{"Second set is a NOT a superset of first, OK\(\backslash\)n"};}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.insert(51);}
+\DoxyCodeLine{00130     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.insert(52);}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}}(\mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, \textcolor{stringliteral}{"Second set"});}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134     \textcolor{comment}{// The 4 set functions use an insert iterator. This has the effect of causing an }}
+\DoxyCodeLine{00135     \textcolor{comment}{// insertion at a given position rather than the usual 'overwrite' mode.}}
+\DoxyCodeLine{00136     \textcolor{comment}{// The union of two sets}}
+\DoxyCodeLine{00137     std::set<int> myunion;}
+\DoxyCodeLine{00138     std::set<int>::iterator i = myunion.begin();}
+\DoxyCodeLine{00139     std::insert\_iterator<std::set<int> > insertiter(myunion, i);}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141     set\_union(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.end(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.end(), insertiter);}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}}(myunion, \textcolor{stringliteral}{"Union"});}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \textcolor{comment}{// Now the union of two sets using Information Hiding}}
+\DoxyCodeLine{00146     std::set<int> myunion2;}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148     \mbox{\hyperlink{TestSetOperations_8cc_a49ce21c7fb0f30867ca92edd6d951d1a}{UnionSet}}(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, myunion2);}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}} (myunion2, \textcolor{stringliteral}{"Union, second variant"});}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152     \textcolor{comment}{// Intersecton of two sets}}
+\DoxyCodeLine{00153     std::set<int> myintersect;}
+\DoxyCodeLine{00154     i = myintersect.begin();}
+\DoxyCodeLine{00155     std::insert\_iterator<std::set<int> > insertiter2(myintersect, i);}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157     set\_intersection(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.end(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.end(), insertiter2);}
+\DoxyCodeLine{00158 }
+\DoxyCodeLine{00159     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}}(myintersect, \textcolor{stringliteral}{"Intersection"});}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161     \textcolor{comment}{// Intersection using Information Hiding}}
+\DoxyCodeLine{00162     std::set<int> myintersect2;}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164     \mbox{\hyperlink{TestSetOperations_8cc_ac0e5b69710d850f6e9d4555f964b60b9}{IntersectionSet}}(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, myintersect2);}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}} (myintersect2, \textcolor{stringliteral}{"Intersection, version 2"});}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168     \textcolor{comment}{// Difference of two sets}}
+\DoxyCodeLine{00169     std::set<int> mydifference;}
+\DoxyCodeLine{00170     i = mydifference.begin();}
+\DoxyCodeLine{00171     std::insert\_iterator<std::set<int> > insertiter3(mydifference, i);}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173     set\_difference(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.end(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.end(), insertiter3);}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}}(mydifference, \textcolor{stringliteral}{"Difference"});}
+\DoxyCodeLine{00176     }
+\DoxyCodeLine{00177     \textcolor{comment}{// Difference using Information Hiding}}
+\DoxyCodeLine{00178     std::set<int> mydiff2;}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180     \mbox{\hyperlink{TestSetOperations_8cc_a0c725f9d3727a797b2cbfe5ebe380ffe}{DifferenceSet}}(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, mydiff2);}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}} (mydiff2, \textcolor{stringliteral}{"Difference, version 2"});}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184     \textcolor{comment}{// Symmetric difference of two sets}}
+\DoxyCodeLine{00185     std::set<int> mysymmdifference;}
+\DoxyCodeLine{00186     i = mysymmdifference.begin();}
+\DoxyCodeLine{00187     std::insert\_iterator<std::set<int> > insertiter4(mysymmdifference, i);}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189     set\_symmetric\_difference(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.end(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.begin(), \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.end(), insertiter4);}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}}(mysymmdifference, \textcolor{stringliteral}{"Symmetric difference"});}
+\DoxyCodeLine{00192     }
+\DoxyCodeLine{00193     \textcolor{comment}{// Symmetric Difference using Information Hiding}}
+\DoxyCodeLine{00194     std::set<int> mysdiff2;}
+\DoxyCodeLine{00195     \mbox{\hyperlink{TestSetOperations_8cc_ad047be612789ce938d427099378b4320}{SymmetricDifferenceSet}}(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, mysdiff2);}
+\DoxyCodeLine{00196     \mbox{\hyperlink{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}{print}} (mysdiff2, \textcolor{stringliteral}{"Symmetric Difference, version 2"});}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}\label{TestSetOperations_8cc_a37609edc4ee4244047729d8ce29ff122}} 
+\index{TestSetOperations.cc@{TestSetOperations.cc}!print@{print}}
+\index{print@{print}!TestSetOperations.cc@{TestSetOperations.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{l,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations_8cc_source_l00029}{29}} of file \mbox{\hyperlink{TestSetOperations_8cc_source}{Test\+Set\+Operations.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030 \{  \textcolor{comment}{// Print the contents of a set. Notice the presence of a constant iterator.}}
+\DoxyCodeLine{00031     }
+\DoxyCodeLine{00032     std::cout << std::endl << name << \textcolor{stringliteral}{", size of set is "} << l.size() << \textcolor{stringliteral}{"\(\backslash\)n[ "};}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keyword}{typename} std::set<T>::const\_iterator i;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{for} (i = l.begin(); i != l.end(); ++i)}
+\DoxyCodeLine{00037     \{}
+\DoxyCodeLine{00038             std::cout << *i << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     std::cout << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations_8cc_a58f6535f8198f8c942660b07a1dc1743}\label{TestSetOperations_8cc_a58f6535f8198f8c942660b07a1dc1743}} 
+\index{TestSetOperations.cc@{TestSetOperations.cc}!subset@{subset}}
+\index{subset@{subset}!TestSetOperations.cc@{TestSetOperations.cc}}
+\doxysubsubsection{\texorpdfstring{subset()}{subset()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool subset (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{super,  }\item[{const std\+::set$<$ T $>$ \&}]{sub }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations_8cc_source_l00045}{45}} of file \mbox{\hyperlink{TestSetOperations_8cc_source}{Test\+Set\+Operations.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046 \{ \textcolor{comment}{// Is one set a subset of another set?}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{comment}{// sub is a subset of superset iff superset includes sub}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} includes(super.begin(), super.end(), sub.begin(), sub.end());}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations_8cc_a5dc29942d8e2fb8832d4527e1516110d}\label{TestSetOperations_8cc_a5dc29942d8e2fb8832d4527e1516110d}} 
+\index{TestSetOperations.cc@{TestSetOperations.cc}!superset@{superset}}
+\index{superset@{superset}!TestSetOperations.cc@{TestSetOperations.cc}}
+\doxysubsubsection{\texorpdfstring{superset()}{superset()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool superset (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{super,  }\item[{const std\+::set$<$ T $>$ \&}]{sub }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations_8cc_source_l00054}{54}} of file \mbox{\hyperlink{TestSetOperations_8cc_source}{Test\+Set\+Operations.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055 \{ \textcolor{comment}{// Is one set a superset of another set?}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{comment}{// superset contains sub iff sub is s subset of superset}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} \mbox{\hyperlink{TestSetOperations_8cc_a58f6535f8198f8c942660b07a1dc1743}{subset}}(super, sub);}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations_8cc_ad047be612789ce938d427099378b4320}\label{TestSetOperations_8cc_ad047be612789ce938d427099378b4320}} 
+\index{TestSetOperations.cc@{TestSetOperations.cc}!SymmetricDifferenceSet@{SymmetricDifferenceSet}}
+\index{SymmetricDifferenceSet@{SymmetricDifferenceSet}!TestSetOperations.cc@{TestSetOperations.cc}}
+\doxysubsubsection{\texorpdfstring{SymmetricDifferenceSet()}{SymmetricDifferenceSet()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Symmetric\+Difference\+Set (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{s1,  }\item[{const std\+::set$<$ T $>$ \&}]{s2,  }\item[{std\+::set$<$ T $>$ \&}]{mysdiff }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations_8cc_source_l00090}{90}} of file \mbox{\hyperlink{TestSetOperations_8cc_source}{Test\+Set\+Operations.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091 \{ \textcolor{comment}{// Symmetric difference of two sets}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093     \textcolor{keyword}{typename} std::set<T>::iterator i = mysdiff.begin();}
+\DoxyCodeLine{00094     std::insert\_iterator<std::set<int> > insertiter(mysdiff, i);}
+\DoxyCodeLine{00095     set\_symmetric\_difference(s1.begin(), s1.end(), s2.begin(), s2.end(), insertiter);}
+\DoxyCodeLine{00096         }
+\DoxyCodeLine{00097 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations_8cc_a49ce21c7fb0f30867ca92edd6d951d1a}\label{TestSetOperations_8cc_a49ce21c7fb0f30867ca92edd6d951d1a}} 
+\index{TestSetOperations.cc@{TestSetOperations.cc}!UnionSet@{UnionSet}}
+\index{UnionSet@{UnionSet}!TestSetOperations.cc@{TestSetOperations.cc}}
+\doxysubsubsection{\texorpdfstring{UnionSet()}{UnionSet()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Union\+Set (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{s1,  }\item[{const std\+::set$<$ T $>$ \&}]{s2,  }\item[{std\+::set$<$ T $>$ \&}]{myunion }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations_8cc_source_l00066}{66}} of file \mbox{\hyperlink{TestSetOperations_8cc_source}{Test\+Set\+Operations.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067 \{ \textcolor{comment}{// Union of two sets}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     std::set<int>::iterator i = myunion.begin();}
+\DoxyCodeLine{00070     std::insert\_iterator<std::set<int> > insertiter(myunion, i);}
+\DoxyCodeLine{00071     set\_union(s1.begin(), s1.end(), s2.begin(), s2.end(), insertiter);}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073 \}}
+
+\end{DoxyCode}

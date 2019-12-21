@@ -1,0 +1,51 @@
+\hypertarget{Delegation_8cc}{}\doxysection{tests/\+Delegation.cc File Reference}
+\label{Delegation_8cc}\index{tests/Delegation.cc@{tests/Delegation.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Delegation.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{Delegation_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classB}{B}}
+\item 
+class \mbox{\hyperlink{classD}{D}}
+\item 
+class \mbox{\hyperlink{classClient}{Client}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{Delegation_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Delegation_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Delegation_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Delegation.cc@{Delegation.cc}!main@{main}}
+\index{main@{main}!Delegation.cc@{Delegation.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Delegation_8cc_source_l00057}{57}} of file \mbox{\hyperlink{Delegation_8cc_source}{Delegation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058 \{}
+\DoxyCodeLine{00059     \textcolor{keywordtype}{int} arraySize = 10;}
+\DoxyCodeLine{00060     \mbox{\hyperlink{classD}{D}} myDerived(arraySize);}
+\DoxyCodeLine{00061     }
+\DoxyCodeLine{00062     \mbox{\hyperlink{classClient}{Client}} myClient(myDerived);}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     std::cout << \textcolor{stringliteral}{"Client value: "} << myClient.clientValue() << std::endl;}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00067 \}}
+
+\end{DoxyCode}

@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBinomialMethod">
 <title>BinomialMethod Class Reference</title>
 <indexterm><primary>BinomialMethod</primary></indexterm>
+<para>
+<computeroutput>#include &lt;BinomialMethod.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for BinomialMethod:<para>
     <informalfigure>
         <mediaobject>
@@ -14,20 +17,128 @@ Collaboration diagram for BinomialMethod:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classBinomialMethod_1a6784aec62cfedac9ccfac10852c8143c"/><emphasis role="strong">BinomialMethod</emphasis> (double discounting, <link linkend="_classBinomialLatticeStrategy">BinomialLatticeStrategy</link> &amp;strategy, int N)</para>
+            <listitem><para><link linkend="_classBinomialMethod_1a98ef45a14e91d551785c1edfdbfd99a4">BinomialMethod</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBinomialMethod_1a31651b3bcaa64a57e7a6e26f9f00ef05"/>void <emphasis role="strong">buildLattice</emphasis> (int N)</para>
+            <listitem><para><link linkend="_classBinomialMethod_1a6784aec62cfedac9ccfac10852c8143c">BinomialMethod</link> (double discounting, <link linkend="_classBinomialLatticeStrategy">BinomialLatticeStrategy</link> &amp;strategy, int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBinomialMethod_1a232d7301afe8bab7df7ee5633ff841e6"/>void <emphasis role="strong">modifyLattice</emphasis> (double U)</para>
+            <listitem><para>void <link linkend="_classBinomialMethod_1a31651b3bcaa64a57e7a6e26f9f00ef05">buildLattice</link> (int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBinomialMethod_1a62b8aa2bf9779858bbb0f27825af9268"/>double <emphasis role="strong">getPrice</emphasis> (const <link linkend="_classVector">Vector</link>&lt; double, int &gt; &amp;RHS)</para>
+            <listitem><para>void <link linkend="_classBinomialMethod_1a232d7301afe8bab7df7ee5633ff841e6">modifyLattice</link> (double U)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBinomialMethod_1ab3b69b60ccd9242119c3c5f6befc3690"/><link linkend="_classVector">Vector</link>&lt; double, int &gt; <emphasis role="strong">BasePyramidVector</emphasis> () const</para>
+            <listitem><para>double <link linkend="_classBinomialMethod_1a62b8aa2bf9779858bbb0f27825af9268">getPrice</link> (const <link linkend="_classVector">Vector</link>&lt; double, int &gt; &amp;RHS)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBinomialMethod_1a45f662c73ae8b3d9cf3530a1c500f9ca"/>const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp; <emphasis role="strong">getLattice</emphasis> () const</para>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, int &gt; <link linkend="_classBinomialMethod_1ab3b69b60ccd9242119c3c5f6befc3690">BasePyramidVector</link> () const</para>
+</listitem>
+            <listitem><para>const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp; <link linkend="_classBinomialMethod_1a45f662c73ae8b3d9cf3530a1c500f9ca">getLattice</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 20 of file BinomialMethod.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classBinomialMethod_1a98ef45a14e91d551785c1edfdbfd99a4"/>    <section>
+    <title>BinomialMethod()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>BinomialMethod</primary><secondary>BinomialMethod</secondary></indexterm>
+<indexterm><primary>BinomialMethod</primary><secondary>BinomialMethod</secondary></indexterm>
+<para><computeroutput>BinomialMethod::BinomialMethod ( )</computeroutput></para>    </section><anchor xml:id="_classBinomialMethod_1a6784aec62cfedac9ccfac10852c8143c"/>    <section>
+    <title>BinomialMethod()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>BinomialMethod</primary><secondary>BinomialMethod</secondary></indexterm>
+<indexterm><primary>BinomialMethod</primary><secondary>BinomialMethod</secondary></indexterm>
+<para><computeroutput>BinomialMethod::BinomialMethod (double discounting, <link linkend="_classBinomialLatticeStrategy">BinomialLatticeStrategy</link> &amp; strategy, int N)</computeroutput></para><para>
+Definition at line 31 of file BinomialMethod.cc.</para>
+<programlisting>32 {
+33 &#32;&#32;&#32;&#32;disc&#32;=&#32;discounting;
+34 &#32;&#32;&#32;&#32;str&#32;=&#32;&amp;strategy;
+35 &#32;&#32;&#32;&#32;<link linkend="_classBinomialMethod_1a31651b3bcaa64a57e7a6e26f9f00ef05">buildLattice</link>(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>);
+36 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classBinomialMethod_1ab3b69b60ccd9242119c3c5f6befc3690"/>    <section>
+    <title>BasePyramidVector()</title>
+<indexterm><primary>BasePyramidVector</primary><secondary>BinomialMethod</secondary></indexterm>
+<indexterm><primary>BinomialMethod</primary><secondary>BasePyramidVector</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt; double, int &gt; BinomialMethod::BasePyramidVector ( ) const</computeroutput></para><para>
+Definition at line 85 of file BinomialMethod.cc.</para>
+<programlisting>86 {
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;lattice.<link linkend="_classLattice_1a0454fa42ebad2e9fbb71e884f3befaf6">BasePyramidVector</link>();
+88 }
+</programlisting>    </section><anchor xml:id="_classBinomialMethod_1a31651b3bcaa64a57e7a6e26f9f00ef05"/>    <section>
+    <title>buildLattice()</title>
+<indexterm><primary>buildLattice</primary><secondary>BinomialMethod</secondary></indexterm>
+<indexterm><primary>BinomialMethod</primary><secondary>buildLattice</secondary></indexterm>
+<para><computeroutput>void BinomialMethod::buildLattice (int N)</computeroutput></para><para>
+Definition at line 38 of file BinomialMethod.cc.</para>
+<programlisting>39 {
+40 &#32;&#32;&#32;&#32;lattice&#32;=&#32;<link linkend="_classLattice">Lattice&lt;double, int, 2&gt;</link>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>,&#32;0.0);
+41 }
+</programlisting>    </section><anchor xml:id="_classBinomialMethod_1a45f662c73ae8b3d9cf3530a1c500f9ca"/>    <section>
+    <title>getLattice()</title>
+<indexterm><primary>getLattice</primary><secondary>BinomialMethod</secondary></indexterm>
+<indexterm><primary>BinomialMethod</primary><secondary>getLattice</secondary></indexterm>
+<para><computeroutput>const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp; BinomialMethod::getLattice ( ) const</computeroutput></para><para>
+Definition at line 91 of file BinomialMethod.cc.</para>
+<programlisting>92 {
+93 
+94 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;lattice;
+95 }
+</programlisting>    </section><anchor xml:id="_classBinomialMethod_1a62b8aa2bf9779858bbb0f27825af9268"/>    <section>
+    <title>getPrice()</title>
+<indexterm><primary>getPrice</primary><secondary>BinomialMethod</secondary></indexterm>
+<indexterm><primary>BinomialMethod</primary><secondary>getPrice</secondary></indexterm>
+<para><computeroutput>double BinomialMethod::getPrice (const <link linkend="_classVector">Vector</link>&lt; double, int &gt; &amp; RHS)</computeroutput></para><para>
+Definition at line 63 of file BinomialMethod.cc.</para>
+<programlisting>64 {
+65 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;pr&#32;=&#32;str&#32;-&gt;&#32;probValue();
+66 &#32;&#32;&#32;&#32;<emphasis role="comment">//cout&#32;&lt;&lt;&#32;&quot;Prob&#32;value:&#32;&quot;&#32;&lt;&lt;&#32;pr&#32;&lt;&lt;&#32;endl;</emphasis>
+67 
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;ei&#32;=&#32;lattice.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();
+69 &#32;&#32;&#32;&#32;lattice[ei]&#32;=&#32;RHS;
+70 
+71 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;from&#32;the&#32;max&#32;index&#32;to&#32;the&#32;start&#32;(min)&#32;index</emphasis>
+72 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;lattice.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>()&#32;-&#32;1;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&gt;=&#32;lattice.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>--)
+73 &#32;&#32;&#32;&#32;{
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>].MinIndex();&#32;i&#32;&lt;=&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>].<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();&#32;i++)
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>][i]&#32;=&#32;disc&#32;*&#32;(pr&#32;*&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>+1][i+1]&#32;+&#32;(1.0-pr)&#32;*&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>+1][i]);
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;take&#32;early&#32;exercise&#32;into&#32;account</emphasis>
+79 &#32;&#32;&#32;&#32;}
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;si&#32;=&#32;lattice.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;lattice[si][lattice[si].<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>()];
+83 }
+</programlisting>    </section><anchor xml:id="_classBinomialMethod_1a232d7301afe8bab7df7ee5633ff841e6"/>    <section>
+    <title>modifyLattice()</title>
+<indexterm><primary>modifyLattice</primary><secondary>BinomialMethod</secondary></indexterm>
+<indexterm><primary>BinomialMethod</primary><secondary>modifyLattice</secondary></indexterm>
+<para><computeroutput>void BinomialMethod::modifyLattice (double U)</computeroutput></para><para>
+Definition at line 43 of file BinomialMethod.cc.</para>
+<programlisting>44 {
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;down&#32;=&#32;str&#32;-&gt;&#32;downValue();
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;up&#32;=&#32;str&#32;-&gt;&#32;upValue();
+47 
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;si&#32;=&#32;lattice.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();
+49 &#32;&#32;&#32;&#32;lattice[si][lattice[si].<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>()]&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a">U</link>;
+50 
+51 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;from&#32;the&#32;min&#32;index&#32;to&#32;the&#32;end&#32;index</emphasis>
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;lattice.MinIndex()&#32;+&#32;1;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&lt;=&#32;lattice.MaxIndex();&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>++)
+53 &#32;&#32;&#32;&#32;{
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>].MinIndex();&#32;i&#32;&lt;&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>].MaxIndex();&#32;i++)
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>][i]&#32;=&#32;down&#32;*&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>-1][i];
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>][i+1]&#32;=&#32;up&#32;*&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>-1][i];
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+59 &#32;&#32;&#32;&#32;}
+60 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Postcondition:&#32;we&#32;now&#32;have&#32;the&#32;complete&#32;lattice&#32;for&#32;the&#32;underlying&#32;asset</emphasis>
+61 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/BinomialMethod.hhsrc/BinomialMethod.cc</section>
+include/duffy/<link linkend="_BinomialMethod_8hh">BinomialMethod.hh</link>src/<link linkend="_BinomialMethod_8cc">BinomialMethod.cc</link></section>
+</section>

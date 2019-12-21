@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_MandelbrotSet_8cc">
+<title>tests/MandelbrotSet.cc File Reference</title>
+<indexterm><primary>tests/MandelbrotSet.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Complex.hh&gt;
+#include &lt;vector&gt;
+</programlisting>Include dependency graph for MandelbrotSet.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="MandelbrotSet_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V &gt; </para><para>void <link linkend="_MandelbrotSet_8cc_1a5505649500f56eb117210d7ffa7fa45b">print</link> (const std::vector&lt; V &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_classComplex">Complex</link> &gt; <link linkend="_MandelbrotSet_8cc_1a7253ee5cc9114c9ed87d660ace96be5e">MandelbrotSet</link> (const <link linkend="_classComplex">Complex</link> &amp;c, int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)</para>
+</listitem>
+            <listitem><para>int <link linkend="_MandelbrotSet_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_MandelbrotSet_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>MandelbrotSet.cc</secondary></indexterm>
+<indexterm><primary>MandelbrotSet.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 66 of file MandelbrotSet.cc.</para>
+<programlisting>67 {
+68 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;c(0.01,&#32;0.01);
+69 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;200;
+70 
+71 &#32;&#32;&#32;&#32;std::vector&lt;Complex&gt;&#32;answer&#32;=&#32;<link linkend="_MandelbrotSet_8cc_1a7253ee5cc9114c9ed87d660ace96be5e">MandelbrotSet</link>(c,&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>);
+72 &#32;&#32;&#32;&#32;<link linkend="_MandelbrotSet_8cc_1a5505649500f56eb117210d7ffa7fa45b">print</link>(answer);
+73 
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+75 }
+</programlisting>    </section><anchor xml:id="_MandelbrotSet_8cc_1a7253ee5cc9114c9ed87d660ace96be5e"/>    <section>
+    <title>MandelbrotSet()</title>
+<indexterm><primary>MandelbrotSet</primary><secondary>MandelbrotSet.cc</secondary></indexterm>
+<indexterm><primary>MandelbrotSet.cc</primary><secondary>MandelbrotSet</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_classComplex">Complex</link>&gt; MandelbrotSet (const <link linkend="_classComplex">Complex</link> &amp; c, int N)</computeroutput></para><para>
+Definition at line 49 of file MandelbrotSet.cc.</para>
+<programlisting>50 {
+51 &#32;&#32;&#32;&#32;std::vector&lt;Complex&gt;&#32;result(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>+1);
+52 
+53 &#32;&#32;&#32;&#32;result[0]&#32;=&#32;<link linkend="_classComplex">Complex</link>&#32;(0.0,&#32;0.0);
+54 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;tmp;
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;1;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&lt;&#32;result.size();&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>++)
+57 &#32;&#32;&#32;&#32;{
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;result[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>-1];
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>]&#32;=&#32;(tmp*tmp)&#32;+&#32;c;
+60 &#32;&#32;&#32;&#32;}
+61 
+62 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+63 }
+</programlisting>    </section><anchor xml:id="_MandelbrotSet_8cc_1a5505649500f56eb117210d7ffa7fa45b"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>MandelbrotSet.cc</secondary></indexterm>
+<indexterm><primary>MandelbrotSet.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>void print (const std::vector&lt; V &gt; &amp; v)</computeroutput></para><para>
+Definition at line 34 of file MandelbrotSet.cc.</para>
+<programlisting>35 {
+36 
+37 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nARR:[&quot;</emphasis>;
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;v.size();&#32;j++)
+39 &#32;&#32;&#32;&#32;{
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;v[j]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+41 &#32;&#32;&#32;&#32;
+42 &#32;&#32;&#32;&#32;}
+43 
+44 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>;
+45 }
+</programlisting></section>
+</section>
+</section>

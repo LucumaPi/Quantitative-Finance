@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classEQPStrategy">
 <title>EQPStrategy Class Reference</title>
 <indexterm><primary>EQPStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;BinomialLatticeStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for EQPStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,46 @@ Collaboration diagram for EQPStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classEQPStrategy_1a6fb4f5ab383d1cdf3a32e6689704bdeb"/><emphasis role="strong">EQPStrategy</emphasis> (double vol, double interest, double delta)</para>
+            <listitem><para><link linkend="_classEQPStrategy_1a6fb4f5ab383d1cdf3a32e6689704bdeb">EQPStrategy</link> (double vol, double interest, double delta)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 78 of file BinomialLatticeStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classEQPStrategy_1a6fb4f5ab383d1cdf3a32e6689704bdeb"/>    <section>
+    <title>EQPStrategy()</title>
+<indexterm><primary>EQPStrategy</primary><secondary>EQPStrategy</secondary></indexterm>
+<indexterm><primary>EQPStrategy</primary><secondary>EQPStrategy</secondary></indexterm>
+<para><computeroutput>EQPStrategy::EQPStrategy (double vol, double interest, double delta)</computeroutput></para><para>
+Definition at line 135 of file BinomialLatticeStrategy.cc.</para>
+<programlisting>136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classBinomialLatticeStrategy_1a30116db67055ec31490b298ad9fda14a">BinomialLatticeStrategy</link>(vol,&#32;interest,&#32;delta)
+137 {
+138 
+139 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1a2c17c2472572ea3ae463c7dd079c3035">bType</link>&#32;=&#32;<link linkend="_BinomialLatticeStrategy_8hh_1add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c">Additive</link>;
+140 
+141 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Needed&#32;for&#32;additive&#32;method:&#32;page&#32;19&#32;Clewlow/Strickland&#32;formula&#32;2.17&#32;</emphasis>
+142 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&quot;v&quot;&#32;is&#32;&quot;nu&quot;&#32;here,&#32;for&#32;&quot;v&quot;&#32;see&#32;&#32;page&#32;19&#32;formula&#32;2.14</emphasis>
+143 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;nu&#32;=&#32;<link linkend="_classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae">r</link>&#32;-&#32;0.5&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>;
+144 
+145 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a&#32;=&#32;nu&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0">k</link>;
+146 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;0.5&#32;*&#32;std::sqrt(&#32;(4.0&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0">k</link>)&#32;-&#32;(3.0&#32;*&#32;nu&#32;*&#32;nu&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0">k</link>&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0">k</link>)&#32;);
+147 
+148 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;EQP&#32;parameters:&#32;page&#32;19&#32;formula&#32;2.17</emphasis>
+149 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3">u</link>&#32;=&#32;0.5&#32;*&#32;a&#32;+&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>;
+150 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7">d</link>&#32;=&#32;1.5&#32;*&#32;a&#32;-&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>;
+151 
+152 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f">p</link>&#32;=&#32;0.5;
+153 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/BinomialLatticeStrategy.hhsrc/BinomialLatticeStrategy.cc</section>
+include/duffy/<link linkend="_BinomialLatticeStrategy_8hh">BinomialLatticeStrategy.hh</link>src/<link linkend="_BinomialLatticeStrategy_8cc">BinomialLatticeStrategy.cc</link></section>
+</section>

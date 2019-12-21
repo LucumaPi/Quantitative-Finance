@@ -1,0 +1,97 @@
+\hypertarget{TestComplexArray_8cc_source}{}\doxysection{Test\+Complex\+Array.\+cc}
+\label{TestComplexArray_8cc_source}\index{tests/TestComplexArray.cc@{tests/TestComplexArray.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestComplexArray.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing complex numbers. Focus is on arrays}}
+\DoxyCodeLine{00004 \textcolor{comment}{// and usage with functions with complex arguments.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Complex_8hh}{duffy/Complex.hh}}>}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{\Hypertarget{TestComplexArray_8cc_source_l00011}\mbox{\hyperlink{TestComplexArray_8cc_a96d33e68896cca70b2aaff9893026216}{00011}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{TestComplexArray_8cc_a96d33e68896cca70b2aaff9893026216}{myFunc}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00012 \{ \textcolor{comment}{// Single valued function of a complex variable}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \textcolor{keywordflow}{return} z * z;}
+\DoxyCodeLine{00015 \}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{TestComplexArray_8cc_source_l00017}\mbox{\hyperlink{TestComplexArray_8cc_a512e91b454133b24de427f45090f35ea}{00017}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{TestComplexArray_8cc_a512e91b454133b24de427f45090f35ea}{ComplexProduct}}(\mbox{\hyperlink{classComplex}{Complex}}* carr, \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}})}
+\DoxyCodeLine{00018 \{ \textcolor{comment}{// Complex function of several complex variables}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{ArrayMechanisms_8hh_a7383833d1a743d1cf913e8748e03e30d}{product}} = carr[0];}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j < \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}; j++)}
+\DoxyCodeLine{00023     \{}
+\DoxyCodeLine{00024         \mbox{\hyperlink{ArrayMechanisms_8hh_a7383833d1a743d1cf913e8748e03e30d}{product}} *= carr[j];}
+\DoxyCodeLine{00025     \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8hh_a7383833d1a743d1cf913e8748e03e30d}{product}};}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{TestComplexArray_8cc_source_l00031}\mbox{\hyperlink{TestComplexArray_8cc_a601dc619047e2281e12cdb1c75807df0}{00031}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{TestComplexArray_8cc_a601dc619047e2281e12cdb1c75807df0}{ComplexSum}}(\mbox{\hyperlink{classComplex}{Complex}}* carr, \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}})}
+\DoxyCodeLine{00032 \{ \textcolor{comment}{// Complex function of several complex variables}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} = carr[0];}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j < \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}; j++)}
+\DoxyCodeLine{00037     \{}
+\DoxyCodeLine{00038         \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} += carr[j];}
+\DoxyCodeLine{00039     \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}};}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043 \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{\Hypertarget{TestComplexArray_8cc_source_l00046}\mbox{\hyperlink{TestComplexArray_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00046}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestComplexArray_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00047 \{}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \mbox{\hyperlink{classComplex}{Complex}} z1(1.0, 1.0);}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classComplex}{Complex}} z2(2.0, 3.0);}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \mbox{\hyperlink{classComplex}{Complex}} z3 = z1 * z2;}
+\DoxyCodeLine{00053 \textcolor{comment}{//  Complex z4 = 2.0 * z4; ?? compiles}}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classComplex}{Complex}} z4 = 2.0 * z3;}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classComplex}{Complex}} z5 = -\/ z3;}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{comment}{// Create a dynamic list of Complex numbers}}
+\DoxyCodeLine{00058     \textcolor{keywordtype}{int} Size = 5;}
+\DoxyCodeLine{00059     \mbox{\hyperlink{classComplex}{Complex}}* cpArray = \textcolor{keyword}{new} \mbox{\hyperlink{classComplex}{Complex}}[Size];}
+\DoxyCodeLine{00060     cpArray[0] = z1;}
+\DoxyCodeLine{00061     cpArray[1] = z2;}
+\DoxyCodeLine{00062     cpArray[2] = z3;}
+\DoxyCodeLine{00063     cpArray[3] = z4;}
+\DoxyCodeLine{00064     cpArray[4] = z5;}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{comment}{// Now define an array on the stack}}
+\DoxyCodeLine{00067     \mbox{\hyperlink{classComplex}{Complex}} fixedArray[5]; \textcolor{comment}{// The constant '5' is mandatory}}
+\DoxyCodeLine{00068     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < Size; i++)}
+\DoxyCodeLine{00069     \{}
+\DoxyCodeLine{00070         fixedArray[i] = \mbox{\hyperlink{classComplex}{Complex}} ((\textcolor{keywordtype}{double}) i, 0.0);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{comment}{// Call function and print values for each z}}
+\DoxyCodeLine{00075     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < Size; j++)}
+\DoxyCodeLine{00076     \{}
+\DoxyCodeLine{00077         std::cout << \mbox{\hyperlink{TestComplexArray_8cc_a96d33e68896cca70b2aaff9893026216}{myFunc}}(cpArray[j]) << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{comment}{// Now work with functions of several complex variables}}
+\DoxyCodeLine{00082     \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{ArrayMechanisms_8hh_a7383833d1a743d1cf913e8748e03e30d}{product}} = \mbox{\hyperlink{TestComplexArray_8cc_a512e91b454133b24de427f45090f35ea}{ComplexProduct}}(fixedArray, Size);}
+\DoxyCodeLine{00083     std::cout << \textcolor{stringliteral}{"Product: "} << \mbox{\hyperlink{ArrayMechanisms_8hh_a7383833d1a743d1cf913e8748e03e30d}{product}} << std::endl;}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} = \mbox{\hyperlink{TestComplexArray_8cc_a601dc619047e2281e12cdb1c75807df0}{ComplexSum}}(fixedArray, Size);}
+\DoxyCodeLine{00086     std::cout << \textcolor{stringliteral}{"Sum: "} << \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} << std::endl;}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     \textcolor{keyword}{delete} [] cpArray;}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00091 \}}
+
+\end{DoxyCode}

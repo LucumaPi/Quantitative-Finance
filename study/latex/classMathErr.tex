@@ -21,23 +21,134 @@ Collaboration diagram for Math\+Err\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classMathErr_a2be93a878a77577c7c1ea9ec4f13e802}\label{classMathErr_a2be93a878a77577c7c1ea9ec4f13e802}} 
-{\bfseries Math\+Err} (const std\+::string \&message, const std\+::string \&method)
+\mbox{\hyperlink{classMathErr_a92ae6f6640c3979720b743a62f106d95}{Math\+Err}} ()
 \item 
-\mbox{\Hypertarget{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}\label{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}} 
-std\+::string {\bfseries Message} () const
+\mbox{\hyperlink{classMathErr_a2be93a878a77577c7c1ea9ec4f13e802}{Math\+Err}} (const std\+::string \&message, const std\+::string \&method)
 \item 
-\mbox{\Hypertarget{classMathErr_a63e28b64f06194252a7723ef7d349148}\label{classMathErr_a63e28b64f06194252a7723ef7d349148}} 
-std\+::string {\bfseries Method} () const
+std\+::string \mbox{\hyperlink{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}{Message}} () const
 \item 
-\mbox{\Hypertarget{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}\label{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}} 
-virtual std\+::vector$<$ std\+::string $>$ {\bfseries Message\+Dump} () const =0
+std\+::string \mbox{\hyperlink{classMathErr_a63e28b64f06194252a7723ef7d349148}{Method}} () const
 \item 
-\mbox{\Hypertarget{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}\label{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}} 
-virtual void {\bfseries print} () const
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}{Message\+Dump}} () const =0
+\item 
+virtual void \mbox{\hyperlink{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}{print}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00015}{15}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMathErr_a92ae6f6640c3979720b743a62f106d95}\label{classMathErr_a92ae6f6640c3979720b743a62f106d95}} 
+\index{MathErr@{MathErr}!MathErr@{MathErr}}
+\index{MathErr@{MathErr}!MathErr@{MathErr}}
+\doxysubsubsection{\texorpdfstring{MathErr()}{MathErr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Math\+Err\+::\+Math\+Err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00021}{21}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022         \{}
+\DoxyCodeLine{00023             mess = meth = std::string();}
+\DoxyCodeLine{00024         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMathErr_a2be93a878a77577c7c1ea9ec4f13e802}\label{classMathErr_a2be93a878a77577c7c1ea9ec4f13e802}} 
+\index{MathErr@{MathErr}!MathErr@{MathErr}}
+\index{MathErr@{MathErr}!MathErr@{MathErr}}
+\doxysubsubsection{\texorpdfstring{MathErr()}{MathErr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Math\+Err\+::\+Math\+Err (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message,  }\item[{const std\+::string \&}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00026}{26}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027         \{}
+\DoxyCodeLine{00028             mess = message;}
+\DoxyCodeLine{00029             meth = method;}
+\DoxyCodeLine{00030         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}\label{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}} 
+\index{MathErr@{MathErr}!Message@{Message}}
+\index{Message@{Message}!MathErr@{MathErr}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}}
+{\footnotesize\ttfamily std\+::string Math\+Err\+::\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00032}{32}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{ \textcolor{keywordflow}{return} mess; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}\label{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}} 
+\index{MathErr@{MathErr}!MessageDump@{MessageDump}}
+\index{MessageDump@{MessageDump}!MathErr@{MathErr}}
+\doxysubsubsection{\texorpdfstring{MessageDump()}{MessageDump()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$std\+::string$>$ Math\+Err\+::\+Message\+Dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classOutOfBounds_a7cf4254b246eb938886b6e9a549a5a00}{Out\+Of\+Bounds}}, and \mbox{\hyperlink{classZeroDivide_a0281c677520a3f336cd811c13c4ab17c}{Zero\+Divide}}.
+
+\mbox{\Hypertarget{classMathErr_a63e28b64f06194252a7723ef7d349148}\label{classMathErr_a63e28b64f06194252a7723ef7d349148}} 
+\index{MathErr@{MathErr}!Method@{Method}}
+\index{Method@{Method}!MathErr@{MathErr}}
+\doxysubsubsection{\texorpdfstring{Method()}{Method()}}
+{\footnotesize\ttfamily std\+::string Math\+Err\+::\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00033}{33}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033 \{ \textcolor{keywordflow}{return} meth; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}\label{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}} 
+\index{MathErr@{MathErr}!print@{print}}
+\index{print@{print}!MathErr@{MathErr}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual void Math\+Err\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{MathErr_8cc_source_l00037}{37}} of file \mbox{\hyperlink{MathErr_8cc_source}{Math\+Err.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038         \{ }
+\DoxyCodeLine{00039             \textcolor{comment}{// This uses a Template method pattern}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041             \textcolor{comment}{// Variant part}}
+\DoxyCodeLine{00042             std::vector<std::string> \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = \mbox{\hyperlink{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}{MessageDump}}();}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \textcolor{comment}{// Invariant part}}
+\DoxyCodeLine{00045             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.size(); j++)}
+\DoxyCodeLine{00046             \{}
+\DoxyCodeLine{00047                 std::cout << \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[j] << std::endl;}
+\DoxyCodeLine{00048             \}}
+\DoxyCodeLine{00049         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/Math\+Err.\+cc\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{MathErr_8cc}{Math\+Err.\+cc}}\end{DoxyCompactItemize}

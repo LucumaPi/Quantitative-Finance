@@ -1,0 +1,81 @@
+\hypertarget{TestLatticeBackwardInduction_8cc_source}{}\doxysection{Test\+Lattice\+Backward\+Induction.\+cc}
+\label{TestLatticeBackwardInduction_8cc_source}\index{tests/TestLatticeBackwardInduction.cc@{tests/TestLatticeBackwardInduction.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testLatticeBackwardInduction.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Using namespaces to create different a backward induction}}
+\DoxyCodeLine{00004 \textcolor{comment}{// algorithm for a binomial tree. The algorithm is similar to }}
+\DoxyCodeLine{00005 \textcolor{comment}{// template method pattern; we have two function with variant}}
+\DoxyCodeLine{00006 \textcolor{comment}{// behaviours and these must be initialised in a main program.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{//  2005-\/1-\/4 DD Kick-\/off code}}
+\DoxyCodeLine{00009 \textcolor{comment}{//  2005-\/1-\/5 DD might be OVERKILL}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Lattice_8hh}{duffy/Lattice.hh}}>}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Vector_8hh}{duffy/Vector.hh}}>}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{TestLatticeBackwardInduction_8cc_source_l00016}\mbox{\hyperlink{namespaceBackwardInduction}{00016}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceBackwardInduction}{BackwardInduction}}}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018          \textcolor{comment}{// Functions to be overridden}}
+\DoxyCodeLine{\Hypertarget{TestLatticeBackwardInduction_8cc_source_l00019}\mbox{\hyperlink{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}{00019}}         \mbox{\hyperlink{classVector}{Vector<double, int>}} (*\mbox{\hyperlink{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}{createTerminalVector}})(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& lattice);}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{comment}{// Calculate a node value from two upper ones}}
+\DoxyCodeLine{\Hypertarget{TestLatticeBackwardInduction_8cc_source_l00022}\mbox{\hyperlink{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}{00022}}         double (*\mbox{\hyperlink{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}{nodeValue}})(double, upper, \textcolor{keywordtype}{double} lower);}
+\DoxyCodeLine{00023         }
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{comment}{// Code here corresponds to backward induction}}
+\DoxyCodeLine{\Hypertarget{TestLatticeBackwardInduction_8cc_source_l00026}\mbox{\hyperlink{namespaceBackwardInduction_a2ee4a25bb369ca52d0d7fe553f4ae502}{00026}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceBackwardInduction_a2ee4a25bb369ca52d0d7fe553f4ae502}{taverse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& lattice)}
+\DoxyCodeLine{00027         \{}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029             \textcolor{keywordtype}{int} ei = lattice.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}();}
+\DoxyCodeLine{00030             lattice[ei] = \mbox{\hyperlink{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}{createTerminalVector}}(lattice);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032             \textcolor{comment}{// Loop from the max index to the start (min) index}}
+\DoxyCodeLine{00033             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = lattice.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}() -\/ 1; \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} >= lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/-\/)}
+\DoxyCodeLine{00034             \{}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = std::copy[j].MinIndex(); i <= std::copy[j].MaxIndex(); i++)}
+\DoxyCodeLine{00037                 \{}
+\DoxyCodeLine{00038             }
+\DoxyCodeLine{00039         \textcolor{comment}{//          copy[n][i] = discounting * (p * copy[n+1][i+1] + (1.0-\/p) * copy[n+1][i]);}}
+\DoxyCodeLine{00040                     lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}][i] = \mbox{\hyperlink{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}{nodeValue}}(std::copy[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}+1][i+1], std::copy[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}+1][i])}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042                 \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \}}
+\DoxyCodeLine{00045             \textcolor{keywordtype}{int} si = lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}();}
+\DoxyCodeLine{00046             \textcolor{keywordflow}{return} lattice[si][lattice[si].\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}()];}
+\DoxyCodeLine{00047         \}}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{\Hypertarget{TestLatticeBackwardInduction_8cc_source_l00050}\mbox{\hyperlink{TestLatticeBackwardInduction_8cc_a4550ecc74ce63528016936d22984f853}{00050}} \mbox{\hyperlink{classVector}{Vector<double, int>}} \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_a4550ecc74ce63528016936d22984f853}{mycreateTerminalVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& lattice)}
+\DoxyCodeLine{00051 \{}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{comment}{//}}
+\DoxyCodeLine{00054 \}}
+\DoxyCodeLine{00055     }
+\DoxyCodeLine{\Hypertarget{TestLatticeBackwardInduction_8cc_source_l00056}\mbox{\hyperlink{TestLatticeBackwardInduction_8cc_ab6a22f5d618d1f2aef45ab03a2aed1de}{00056}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_ab6a22f5d618d1f2aef45ab03a2aed1de}{mynodeValue}}(\textcolor{keywordtype}{double} upper, \textcolor{keywordtype}{double} lower)}
+\DoxyCodeLine{00057 \{}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{//}}
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{\Hypertarget{TestLatticeBackwardInduction_8cc_source_l00062}\mbox{\hyperlink{TestLatticeBackwardInduction_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00062}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00063 \{}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}} lattice;}
+\DoxyCodeLine{00066     \mbox{\hyperlink{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}{BackwardInduction::createTerminalVector}} = \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_a4550ecc74ce63528016936d22984f853}{mycreateTerminalVector}}(lattice);}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordtype}{double} upper = }
+\DoxyCodeLine{00069     \textcolor{keywordtype}{double} lower = }
+\DoxyCodeLine{00070     \mbox{\hyperlink{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}{BackwardInduction::nodeValue}} = \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_ab6a22f5d618d1f2aef45ab03a2aed1de}{mynodeValue}}(uppper, lower, lattice);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceBackwardInduction}{BackwardInduction}};}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{keywordtype}{double} result = \mbox{\hyperlink{namespaceBackwardInduction_a2ee4a25bb369ca52d0d7fe553f4ae502}{taverse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& lattice);}
+\DoxyCodeLine{00075 \}}
+
+\end{DoxyCode}

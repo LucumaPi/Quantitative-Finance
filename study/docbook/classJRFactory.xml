@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classJRFactory">
 <title>JRFactory Class Reference</title>
 <indexterm><primary>JRFactory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;LatticeFactory.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for JRFactory:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,38 @@ Collaboration diagram for JRFactory:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classJRFactory_1afe5130ea21461c9b33ee7056e4ae1ca8"/><emphasis role="strong">JRFactory</emphasis> (double s, double r, double k)</para>
+            <listitem><para><link linkend="_classJRFactory_1afe5130ea21461c9b33ee7056e4ae1ca8">JRFactory</link> (double <link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>, double <link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>, double <link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 83 of file LatticeFactory.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classJRFactory_1afe5130ea21461c9b33ee7056e4ae1ca8"/>    <section>
+    <title>JRFactory()</title>
+<indexterm><primary>JRFactory</primary><secondary>JRFactory</secondary></indexterm>
+<indexterm><primary>JRFactory</primary><secondary>JRFactory</secondary></indexterm>
+<para><computeroutput>JRFactory::JRFactory (double s, double r, double k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 86 of file LatticeFactory.hh.</para>
+<programlisting>87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classLatticeFactory_1aec3b521318bcaed891fd9d3acb269d7f">LatticeFactory</link>(<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>,&#32;<link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>,&#32;<link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>)
+88 &#32;&#32;&#32;&#32;{
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;k2&#32;=&#32;std::sqrt(<link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>);
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a7183c1217f75a45b5951dbcc1115782b">u</link>&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>&#32;*&#32;k2);
+91 
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a99e4419112358eac102e48d31090a79b">d</link>&#32;=&#32;1.0/<link linkend="_classLatticeFactory_1a7183c1217f75a45b5951dbcc1115782b">u</link>;
+93 
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a4552002d494824b82c182b6c3b145a8a">p</link>&#32;=&#32;0.5&#32;+&#32;((<link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>&#32;-&#32;0.5&#32;*&#32;<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>&#32;*&#32;<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>)&#32;*&#32;k2&#32;*&#32;0.5)&#32;/&#32;<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>;
+95 
+96 &#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/LatticeFactory.hh</section>
+include/duffy/<link linkend="_LatticeFactory_8hh">LatticeFactory.hh</link></section>
+</section>

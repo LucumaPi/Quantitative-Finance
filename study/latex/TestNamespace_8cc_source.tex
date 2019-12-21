@@ -1,0 +1,92 @@
+\hypertarget{TestNamespace_8cc_source}{}\doxysection{Test\+Namespace.\+cc}
+\label{TestNamespace_8cc_source}\index{tests/TestNamespace.cc@{tests/TestNamespace.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testNamespace.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Using C++ namespaces. In this way we wish to simulate}}
+\DoxyCodeLine{00004 \textcolor{comment}{// INTERFACE concept by grouping blocks of functions into}}
+\DoxyCodeLine{00005 \textcolor{comment}{// logical units.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// }}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Education BV 2004-\/2006}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{TestNamespace_8cc_source_l00012}\mbox{\hyperlink{namespaceMyFunctions}{00012}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceMyFunctions}{MyFunctions}}}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{TestNamespace_8cc_source_l00015}\mbox{\hyperlink{namespaceMyFunctions_a1b684107f5ed5ced07ccf572734af87e}{00015}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceMyFunctions_a1b684107f5ed5ced07ccf572734af87e}{diffusion}} (\textcolor{keywordtype}{double} x) \{ \textcolor{keywordflow}{return} x; \}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{TestNamespace_8cc_source_l00017}\mbox{\hyperlink{namespaceMyFunctions_a5b14012bf34d586124d09c00d9b75a35}{00017}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceMyFunctions_a5b14012bf34d586124d09c00d9b75a35}{convection}} (\textcolor{keywordtype}{double} x) \{ \textcolor{keywordflow}{return} x*x; \}}
+\DoxyCodeLine{00018 \}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{TestNamespace_8cc_source_l00020}\mbox{\hyperlink{namespaceYourFunctions}{00020}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceYourFunctions}{YourFunctions}}}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{TestNamespace_8cc_source_l00023}\mbox{\hyperlink{namespaceYourFunctions_acf4b67d567ced3a1632fc2de0de549d0}{00023}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceYourFunctions_acf4b67d567ced3a1632fc2de0de549d0}{diffusion}} (\textcolor{keywordtype}{double} x) \{ \textcolor{keywordflow}{return} 2.0; \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{TestNamespace_8cc_source_l00025}\mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{00025}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{convection}} (\textcolor{keywordtype}{double} x) \{ \textcolor{keywordflow}{return} 1.0; \}}
+\DoxyCodeLine{00026 \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{\Hypertarget{TestNamespace_8cc_source_l00030}\mbox{\hyperlink{TestNamespace_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00030}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestNamespace_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032     \{}
+\DoxyCodeLine{00033         \textcolor{keyword}{namespace }CurrentFunctions = \mbox{\hyperlink{namespaceMyFunctions}{MyFunctions}};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         std::cout << \mbox{\hyperlink{namespaceYourFunctions_acf4b67d567ced3a1632fc2de0de549d0}{CurrentFunctions::diffusion}}(3.0) << std::endl;}
+\DoxyCodeLine{00036     \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \{   \textcolor{comment}{// A redefinition of an alias must be in another block}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040         \textcolor{keyword}{namespace }CurrentFunctions = \mbox{\hyperlink{namespaceYourFunctions}{YourFunctions}};}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         std::cout << \mbox{\hyperlink{namespaceYourFunctions_acf4b67d567ced3a1632fc2de0de549d0}{CurrentFunctions::diffusion}}(3.0) << std::endl;}
+\DoxyCodeLine{00043     \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{comment}{// Choose from a hard-\/coded list of namespaces. Useful}}
+\DoxyCodeLine{00046     \textcolor{comment}{// for configuration because we often having typical}}
+\DoxyCodeLine{00047     \textcolor{comment}{// Prototypical functions in a logical grouping. Has}}
+\DoxyCodeLine{00048     \textcolor{comment}{// potential ...}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     std::cout << \textcolor{stringliteral}{"Choose: 1) My 2) You \(\backslash\)n"};}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{int} j; std::cin >> j;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{if} (j == 1)}
+\DoxyCodeLine{00054     \{}
+\DoxyCodeLine{00055         \textcolor{keyword}{namespace }CurrentFunctions = \mbox{\hyperlink{namespaceMyFunctions}{MyFunctions}};}
+\DoxyCodeLine{00056         std::cout << \mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{CurrentFunctions::convection}}(3.0) << std::endl;}
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00059     \{ \textcolor{comment}{// This kind of code in your is 'Function-\/independent'}}
+\DoxyCodeLine{00060         \textcolor{keyword}{namespace }CurrentFunctions = \mbox{\hyperlink{namespaceYourFunctions}{YourFunctions}};}
+\DoxyCodeLine{00061         \textcolor{keyword}{using namespace }CurrentFunctions;}
+\DoxyCodeLine{00062         std::cout << \mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{convection}}(1.0) << std::endl;}
+\DoxyCodeLine{00063     \}}
+\DoxyCodeLine{00064     }
+\DoxyCodeLine{00065 \textcolor{comment}{//  using namespace MyFunctions;}}
+\DoxyCodeLine{00066     std::cout << \textcolor{stringliteral}{"Me: Directive: \(\backslash\)n"};}
+\DoxyCodeLine{00067 \textcolor{comment}{//  cout << convection (10.0) << endl;}}
+\DoxyCodeLine{00068 \textcolor{comment}{//  cout << diffusion (2.0) << endl;}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceYourFunctions}{YourFunctions}};}
+\DoxyCodeLine{00071     std::cout << \textcolor{stringliteral}{"You: Directive: \(\backslash\)n"};}
+\DoxyCodeLine{00072     std::cout << \mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{convection}} (10.0) << std::endl;}
+\DoxyCodeLine{00073     std::cout << \mbox{\hyperlink{namespaceYourFunctions_acf4b67d567ced3a1632fc2de0de549d0}{diffusion}} (2.0) << std::endl;}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{keyword}{namespace }YourAlias = \mbox{\hyperlink{namespaceYourFunctions}{YourFunctions}}; \textcolor{comment}{// Define alias NS}}
+\DoxyCodeLine{00076     std::cout << \mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{YourAlias::convection}} (10.0) << std::endl;}
+\DoxyCodeLine{00077     std::cout << \mbox{\hyperlink{namespaceYourFunctions_acf4b67d567ced3a1632fc2de0de549d0}{YourAlias::diffusion}} (2.0) << std::endl;}
+\DoxyCodeLine{00078     }
+\DoxyCodeLine{00079     std::cout << \mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{YourFunctions::convection}} (10.0) << std::endl;}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{keyword}{using} \mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{YourFunctions::convection}};}
+\DoxyCodeLine{00082     std::cout << \mbox{\hyperlink{namespaceYourFunctions_aeaa28b7b7d32428165c00d350be7cc41}{convection}} (10.0) << std::endl;}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00085 \}}
+\DoxyCodeLine{00086 }
+
+\end{DoxyCode}

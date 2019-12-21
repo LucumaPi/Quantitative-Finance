@@ -1,0 +1,43 @@
+\hypertarget{TestRange_8cc_source}{}\doxysection{Test\+Range.\+cc}
+\label{TestRange_8cc_source}\index{tests/TestRange.cc@{tests/TestRange.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Range.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Program to test the Range class}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// The examples are aimed at financial engineering applications}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Education BV 2003-\/2006}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Range_8hh}{duffy/Range.hh}}>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{\Hypertarget{TestRange_8cc_source_l00013}\mbox{\hyperlink{TestRange_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00013}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestRange_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015     }
+\DoxyCodeLine{00016     \textcolor{comment}{// The default type is double}}
+\DoxyCodeLine{00017     \textcolor{keywordtype}{double} closingPrice (45.7);}
+\DoxyCodeLine{00018     \textcolor{keywordtype}{double} openingPrice (60.0);}
+\DoxyCodeLine{00019     \mbox{\hyperlink{classRange}{Range<double>}} bearish (closingPrice, openingPrice);}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// Looking at some prices}}
+\DoxyCodeLine{00022     \textcolor{keywordtype}{double} currentPrice = 50.0;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keywordtype}{bool} test1 = bearish.\mbox{\hyperlink{classRange_ab772b50dd178ffaeba1f6df900cef30b}{left}}(currentPrice);}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{bool} test2 = bearish.\mbox{\hyperlink{classRange_aefe9e0df9c7555ec1235764389feea36}{right}}(currentPrice);}
+\DoxyCodeLine{00026     \textcolor{keywordtype}{bool} test3 = bearish.\mbox{\hyperlink{classRange_abca95dd7b50b7142fe6d40d58816dec5}{contains}}(currentPrice);}
+\DoxyCodeLine{00027     }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{if} (test1 == \textcolor{keyword}{false} \&\& test2 == \textcolor{keyword}{false} \&\& test3 == \textcolor{keyword}{true})}
+\DoxyCodeLine{00029         std::cout << \textcolor{stringliteral}{"Everything OK\(\backslash\)n"};}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{comment}{// Create a range with float as underlying type}}
+\DoxyCodeLine{00032     \textcolor{keywordtype}{float} closingPriceII (90.0);}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{float} openingPriceII (60.0);}
+\DoxyCodeLine{00034     \mbox{\hyperlink{classRange}{Range<float>}} bulllish (closingPriceII, openingPriceII);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00037 \}}
+
+\end{DoxyCode}

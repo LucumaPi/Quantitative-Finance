@@ -7,9 +7,11 @@
     <incdepgraph>
       <node id="6">
         <label>IBVPImp.hh</label>
-        <link refid="IBVPImp_8hh_source"/>
+        <link refid="IBVPImp_8hh"/>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>cmath</label>
       </node>
       <node id="1">
@@ -22,24 +24,30 @@
       </node>
       <node id="3">
         <label>OneFactorPayoff.hh</label>
-        <link refid="OneFactorPayoff_8hh_source"/>
+        <link refid="OneFactorPayoff_8hh"/>
       </node>
       <node id="5">
         <label>duffy/BSIBVPImp.hh</label>
-        <link refid="BSIBVPImp_8hh_source"/>
+        <link refid="BSIBVPImp_8hh"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>iostream</label>
       </node>
+      <node id="7">
+        <label>../../src/IBVPImp.cc</label>
+        <link refid="IBVPImp_8cc"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>duffy/Instrument.hh</label>
-        <link refid="Instrument_8hh_source"/>
+        <link refid="Instrument_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -80,18 +88,18 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//<sp/>TestInstrument.cpp</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Instrument.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/BSIBVPImp.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Instrument_8hh" kindref="compound">duffy/Instrument.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="BSIBVPImp_8hh" kindref="compound">duffy/BSIBVPImp.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"><ref refid="classInstrumentFactory" kindref="compound">InstrumentFactory</ref>*<sp/>GetInstrumentFactory()</highlight></codeline>
+<codeline lineno="5" refid="TestInstrument_8cc_1a944b59805882970c6620c319340c3d0d" refkind="member"><highlight class="normal"><ref refid="classInstrumentFactory" kindref="compound">InstrumentFactory</ref>*<sp/><ref refid="TestInstrument_8cc_1a944b59805882970c6620c319340c3d0d" kindref="member">GetInstrumentFactory</ref>()</highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classConsoleInstrumentFactory" kindref="compound">ConsoleInstrumentFactory</ref>;</highlight></codeline>
 <codeline lineno="8"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="10" refid="TestInstrument_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestInstrument_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="11"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInstrumentFactory" kindref="compound">InstrumentFactory</ref>*<sp/>myFactory<sp/>=<sp/>GetInstrumentFactory();</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOption" kindref="compound">Option</ref>*<sp/>myOption<sp/>=<sp/>myFactory<sp/>-&gt;CreateOption();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInstrumentFactory" kindref="compound">InstrumentFactory</ref>*<sp/>myFactory<sp/>=<sp/><ref refid="TestInstrument_8cc_1a944b59805882970c6620c319340c3d0d" kindref="member">GetInstrumentFactory</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOption" kindref="compound">Option</ref>*<sp/>myOption<sp/>=<sp/>myFactory<sp/>-&gt;<ref refid="classInstrumentFactory_1acc735ba0c9d3b8c36269d3553c1cb401" kindref="member">CreateOption</ref>();</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>class<sp/>IBVPImp<sp/>{<sp/>};</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>class<sp/>BSImp<sp/>:<sp/>public<sp/>IBVPImp</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
@@ -101,7 +109,7 @@
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>};</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Derived<sp/>implementation<sp/>class</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBSIBVPImp" kindref="compound">BSIBVPImp</ref><sp/>bs<sp/>(*myOption);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>bs.opt<sp/>=<sp/>myOption;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>bs.<ref refid="classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c" kindref="member">opt</ref><sp/>=<sp/>myOption;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal">}</highlight></codeline>

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestBlackScholes_8cc">
+<title>tests/TestBlackScholes.cc File Reference</title>
+<indexterm><primary>tests/TestBlackScholes.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Instrument.hh&gt;
+#include &lt;duffy/DatasimException.hh&gt;
+</programlisting>Include dependency graph for TestBlackScholes.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestBlackScholes_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classInstrumentFactory">InstrumentFactory</link> * <link linkend="_TestBlackScholes_8cc_1a944b59805882970c6620c319340c3d0d">GetInstrumentFactory</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestBlackScholes_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestBlackScholes_8cc_1a944b59805882970c6620c319340c3d0d"/>    <section>
+    <title>GetInstrumentFactory()</title>
+<indexterm><primary>GetInstrumentFactory</primary><secondary>TestBlackScholes.cc</secondary></indexterm>
+<indexterm><primary>TestBlackScholes.cc</primary><secondary>GetInstrumentFactory</secondary></indexterm>
+<para><computeroutput><link linkend="_classInstrumentFactory">InstrumentFactory</link>* GetInstrumentFactory ( )</computeroutput></para><para>
+Definition at line 24 of file TestBlackScholes.cc.</para>
+<programlisting>25 {
+26 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Instrument&#32;Factory&#32;:&#32;1=Console&#32;&quot;</emphasis>;
+27 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;exStyle&#32;=&#32;1;&#32;std::cin&#32;&gt;&gt;&#32;exStyle;
+28 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Only&#32;1&#32;factory&#32;in&#32;this&#32;version,&#32;like&#32;model&#32;T</emphasis>
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(exStyle&#32;==&#32;1)
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classConsoleInstrumentFactory">ConsoleInstrumentFactory</link>;
+31 &#32;&#32;&#32;&#32;
+32 }
+</programlisting>    </section><anchor xml:id="_TestBlackScholes_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestBlackScholes.cc</secondary></indexterm>
+<indexterm><primary>TestBlackScholes.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 34 of file TestBlackScholes.cc.</para>
+<programlisting>35 {
+36 
+37 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;NOTE:&#32;We&#32;build&#32;up&#32;the&#32;object&#32;network&#32;based&#32;on&#32;the</emphasis>
+38 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;UML&#32;class&#32;diagram&#32;in&#32;figure&#32;(16.1)&#32;(see&#32;chapter&#32;16)</emphasis>
+39 
+40 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;A.&#32;The&#32;Continuous&#32;Problem</emphasis>
+41 
+42 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Black&#32;Scholes&#32;example</emphasis>
+43 &#32;&#32;&#32;&#32;<link linkend="_classInstrumentFactory">InstrumentFactory</link>*&#32;myFactory&#32;=&#32;<link linkend="_TestBlackScholes_8cc_1a944b59805882970c6620c319340c3d0d">GetInstrumentFactory</link>();
+44 &#32;&#32;&#32;&#32;<link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link>*&#32;myOption&#32;=&#32;myFactory-&gt;<link linkend="_classInstrumentFactory_1acc735ba0c9d3b8c36269d3553c1cb401">CreateOption</link>();
+45 &#32;&#32;&#32;&#32;myOption&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="comment">//cout&#32;&lt;&lt;&#32;&quot;1)&#32;European&#32;or&#32;2)&#32;American&#32;style:&#32;&quot;;</emphasis>
+48 &#32;&#32;&#32;&#32;<emphasis role="comment">//int&#32;exStyle&#32;=&#32;1;&#32;cin&#32;&gt;&gt;&#32;exStyle;</emphasis>
+49 
+50 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Derived&#32;implementation&#32;class</emphasis>
+51 &#32;&#32;&#32;&#32;<link linkend="_classBSIBVPImp">BSIBVPImp</link>&#32;bsImp(*myOption);&#32;<emphasis role="comment">//&#32;The&#32;BS&#32;PDE</emphasis>
+52 &#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;the&#32;client&#32;class&#32;IVP</emphasis>
+54 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;IBVPImp*&#32;myImp&#32;=&#32;&amp;bsImp;&#32;//&#32;Pointer&#32;to&#32;base&#32;class</emphasis>
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;///////////////////////&#32;Geometry&#32;//////////////////////////</emphasis>
+57 
+58 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;//&#32;Define&#32;region&#32;in&#32;(S,&#32;t)&#32;space</emphasis>
+59 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Range&lt;double&gt;&#32;rangeX(0.0,&#32;myOption-&gt;SMax1);</emphasis>
+60 
+61 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Range&lt;double&gt;&#32;rangeT(0.0,&#32;myOption&#32;-&gt;T);&#32;//&#32;Time&#32;horizon</emphasis>
+62 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;///////////////////////&#32;Geometry&#32;////////////////////////////</emphasis>
+63 
+64 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;IBVP&#32;currentImp(*myImp,&#32;rangeX,&#32;rangeT);</emphasis>
+65 
+66 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;//&#32;B.&#32;Finite&#32;Difference&#32;Schemes</emphasis>
+67 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;long&#32;J&#32;=&#32;5;</emphasis>
+68 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;long&#32;N&#32;=&#32;50;</emphasis>
+69 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;std::cout&#32;&lt;&lt;&#32;&quot;Number&#32;of&#32;space&#32;divisions:&#32;&quot;;</emphasis>
+70 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;std::cin&#32;&gt;&gt;&#32;J;</emphasis>
+71 
+72 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;std::cout&#32;&lt;&lt;&#32;&quot;Number&#32;of&#32;time&#32;divisions:&#32;&quot;;</emphasis>
+73 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;std::cin&#32;&gt;&gt;&#32;N;</emphasis>
+74 
+75 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;std::cout&#32;&lt;&lt;&#32;&quot;Scheme&#32;1)&#32;Explicit&#32;2)&#32;Implicit:&#32;&quot;;</emphasis>
+76 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;int&#32;ftype;&#32;std::cin&#32;&gt;&gt;&#32;ftype;</emphasis>
+77 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ExplicitEulerIBVP&#32;fdm(currentImp,&#32;N,&#32;J);</emphasis>
+78 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ImplicitEulerIBVP&#32;fdm2(currentImp,&#32;N,&#32;J);</emphasis>
+79 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;IBVPFDM*&#32;myFDM&#32;=&#32;&amp;fdm;</emphasis>
+80 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;if&#32;(ftype&#32;!=&#32;1)</emphasis>
+81 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;{&#32;</emphasis>
+82 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;Implicit&#32;Euler&#32;...\n&quot;;</emphasis>
+83 
+84 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;myFDM&#32;=&#32;&amp;fdm2;</emphasis>
+85 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;}</emphasis>
+86 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;else</emphasis>
+87 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;{</emphasis>
+88 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;myFDM&#32;=&#32;&amp;fdm;</emphasis>
+89 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;}</emphasis>
+90 
+91 
+92 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;//&#32;Display&#32;in&#32;Excel</emphasis>
+93 
+94 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;std::cout&#32;&lt;&lt;&#32;&quot;Output:&#32;1)&#32;Cell(matrix),&#32;2)&#32;list&#32;of&#32;line&#32;graphs:&#32;&quot;;</emphasis>
+95 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;int&#32;choice;&#32;std::cin&#32;&gt;&gt;&#32;choice;</emphasis>
+96 
+97 
+98 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;if&#32;(choice&#32;==&#32;1)</emphasis>
+99 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;{</emphasis>
+100 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;try</emphasis>
+101 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;{</emphasis>
+102 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;/*printMatrixInExcel(myFDM-&gt;result(),&#32;fdm.TValues(),&#32;fdm.XValues(),&#32;</emphasis>
+103 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;string(&quot;BSEulerE&quot;));*/</emphasis>
+104 
+105 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;//print(myFDM-&gt;result());</emphasis>
+106 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;}</emphasis>
+107 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;catch&#32;(DatasimException&amp;&#32;e)</emphasis>
+108 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;{</emphasis>
+109 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;e.print();</emphasis>
+110 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;return&#32;0;</emphasis>
+111 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;}</emphasis>
+112 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;}</emphasis>
+113 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;if&#32;(choice&#32;==&#32;2)</emphasis>
+114 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;{</emphasis>
+115 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;Frequency&#32;of&#32;output:&#32;&quot;;&#32;int&#32;f;&#32;std::cin&#32;&gt;&gt;&#32;f;</emphasis>
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+117 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;try&#32;</emphasis>
+118 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;{&#32;&#32;&#32;//&#32;Matrix&#32;is&#32;(N+1)X(J+1),&#32;TValues&#32;==&#32;N+1,&#32;XValues&#32;==&#32;J+1</emphasis>
+119 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;/*printMatrixChartsInExcel(f,&#32;myFDM-&gt;result(),&#32;fdm.TValues(),&#32;fdm.XValues(),</emphasis>
+120 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;string(&quot;BSEulerI&quot;));*/</emphasis>
+121 
+122 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;//&#32;&#32;print(myFDM-&gt;result());</emphasis>
+123 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;}</emphasis>
+124 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;catch&#32;(DatasimException&amp;&#32;e)</emphasis>
+125 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;{</emphasis>
+126 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;e.print();</emphasis>
+127 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;return&#32;0;</emphasis>
+128 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;}</emphasis>
+129 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;}</emphasis>
+130 
+131 
+132 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+133 }
+</programlisting></section>
+</section>
+</section>

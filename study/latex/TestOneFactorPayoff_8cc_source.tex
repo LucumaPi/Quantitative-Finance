@@ -1,0 +1,62 @@
+\hypertarget{TestOneFactorPayoff_8cc_source}{}\doxysection{Test\+One\+Factor\+Payoff.\+cc}
+\label{TestOneFactorPayoff_8cc_source}\index{tests/TestOneFactorPayoff.cc@{tests/TestOneFactorPayoff.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestOneFactorPayoff.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing the one-\/factor payoff classes. In }}
+\DoxyCodeLine{00004 \textcolor{comment}{// this case we are using strategies.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 1998 -\/ 2005}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{OneFactorPayoff_8hh}{duffy/OneFactorPayoff.hh}}>}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{comment}{// C procedural functions that play role of payoffs.}}
+\DoxyCodeLine{00014 \textcolor{comment}{// Advantage: no classes needed!}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{TestOneFactorPayoff_8cc_source_l00016}\mbox{\hyperlink{TestOneFactorPayoff_8cc_ab84c0aa14f70797b64f551782767424e}{00016}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestOneFactorPayoff_8cc_ab84c0aa14f70797b64f551782767424e}{CallPayoffFN}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, \textcolor{keywordtype}{double} S) }
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018         \textcolor{keywordflow}{if} (S > \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}})}
+\DoxyCodeLine{00019             \textcolor{keywordflow}{return} (S -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00020         }
+\DoxyCodeLine{00021         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{TestOneFactorPayoff_8cc_source_l00025}\mbox{\hyperlink{TestOneFactorPayoff_8cc_a3fddf5d8e03a6a02f4bdc6f46965ae8d}{00025}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestOneFactorPayoff_8cc_a3fddf5d8e03a6a02f4bdc6f46965ae8d}{PutPayoffFN}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, \textcolor{keywordtype}{double} S) }
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027         \textcolor{comment}{// max (K-\/S, 0)}}
+\DoxyCodeLine{00028         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} > S)}
+\DoxyCodeLine{00029             \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} -\/ S);}
+\DoxyCodeLine{00030         }
+\DoxyCodeLine{00031         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{\Hypertarget{TestOneFactorPayoff_8cc_source_l00035}\mbox{\hyperlink{TestOneFactorPayoff_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00035}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestOneFactorPayoff_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}} pay1(20.0, \mbox{\hyperlink{TestOneFactorPayoff_8cc_ab84c0aa14f70797b64f551782767424e}{CallPayoffFN}});}
+\DoxyCodeLine{00039     }
+\DoxyCodeLine{00040     std::cout << \textcolor{stringliteral}{"Give a stock price (plain Call): "};}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{double} S;}
+\DoxyCodeLine{00042     std::cin >> S;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     std::cout << \textcolor{stringliteral}{"Call Payoff is: "} << pay1.\mbox{\hyperlink{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}{payoff}}(S) << std::endl;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}} pay2(20.0, \mbox{\hyperlink{TestOneFactorPayoff_8cc_a3fddf5d8e03a6a02f4bdc6f46965ae8d}{PutPayoffFN}});}
+\DoxyCodeLine{00047     }
+\DoxyCodeLine{00048     std::cout << \textcolor{stringliteral}{"Give a stock price (plain Put): "};}
+\DoxyCodeLine{00049     std::cin >> S;}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     std::cout << \textcolor{stringliteral}{"Put Payoff is: "} << pay2.\mbox{\hyperlink{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}{payoff}}(S) << std::endl;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     }
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00056 \}}
+
+\end{DoxyCode}

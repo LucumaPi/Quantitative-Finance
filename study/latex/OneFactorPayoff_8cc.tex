@@ -1,0 +1,81 @@
+\hypertarget{OneFactorPayoff_8cc}{}\doxysection{src/\+One\+Factor\+Payoff.cc File Reference}
+\label{OneFactorPayoff_8cc}\index{src/OneFactorPayoff.cc@{src/OneFactorPayoff.cc}}
+{\ttfamily \#include $<$duffy/\+One\+Factor\+Payoff.\+hh$>$}\newline
+Include dependency graph for One\+Factor\+Payoff.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{OneFactorPayoff_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{OneFactorPayoff_8cc_a16b9e5d029ba4af16bfc30d57ff21e51}{One\+Factor\+Payoff\+\_\+\+C\+PP}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{OneFactorPayoff_8cc_a014348d679f2afcacf81af0e762ad426}{My\+Call\+Payoff\+FN}} (double K, double S)
+\item 
+double \mbox{\hyperlink{OneFactorPayoff_8cc_a941b079b8b777eac5fafaf713f67027a}{My\+Put\+Payoff\+FN}} (double K, double S)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{OneFactorPayoff_8cc_a16b9e5d029ba4af16bfc30d57ff21e51}\label{OneFactorPayoff_8cc_a16b9e5d029ba4af16bfc30d57ff21e51}} 
+\index{OneFactorPayoff.cc@{OneFactorPayoff.cc}!OneFactorPayoff\_CPP@{OneFactorPayoff\_CPP}}
+\index{OneFactorPayoff\_CPP@{OneFactorPayoff\_CPP}!OneFactorPayoff.cc@{OneFactorPayoff.cc}}
+\doxysubsubsection{\texorpdfstring{OneFactorPayoff\_CPP}{OneFactorPayoff\_CPP}}
+{\footnotesize\ttfamily \#define One\+Factor\+Payoff\+\_\+\+C\+PP}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00012}{12}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{OneFactorPayoff_8cc_a014348d679f2afcacf81af0e762ad426}\label{OneFactorPayoff_8cc_a014348d679f2afcacf81af0e762ad426}} 
+\index{OneFactorPayoff.cc@{OneFactorPayoff.cc}!MyCallPayoffFN@{MyCallPayoffFN}}
+\index{MyCallPayoffFN@{MyCallPayoffFN}!OneFactorPayoff.cc@{OneFactorPayoff.cc}}
+\doxysubsubsection{\texorpdfstring{MyCallPayoffFN()}{MyCallPayoffFN()}}
+{\footnotesize\ttfamily double My\+Call\+Payoff\+FN (\begin{DoxyParamCaption}\item[{double}]{K,  }\item[{double}]{S }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00017}{17}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{if} (S > \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}})}
+\DoxyCodeLine{00020             \textcolor{keywordflow}{return} (S -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00021         }
+\DoxyCodeLine{00022         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{OneFactorPayoff_8cc_a941b079b8b777eac5fafaf713f67027a}\label{OneFactorPayoff_8cc_a941b079b8b777eac5fafaf713f67027a}} 
+\index{OneFactorPayoff.cc@{OneFactorPayoff.cc}!MyPutPayoffFN@{MyPutPayoffFN}}
+\index{MyPutPayoffFN@{MyPutPayoffFN}!OneFactorPayoff.cc@{OneFactorPayoff.cc}}
+\doxysubsubsection{\texorpdfstring{MyPutPayoffFN()}{MyPutPayoffFN()}}
+{\footnotesize\ttfamily double My\+Put\+Payoff\+FN (\begin{DoxyParamCaption}\item[{double}]{K,  }\item[{double}]{S }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00026}{26}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028         \textcolor{comment}{// max (K-\/S, 0)}}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} > S)}
+\DoxyCodeLine{00030             \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} -\/ S);}
+\DoxyCodeLine{00031         }
+\DoxyCodeLine{00032         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,177 @@
+\hypertarget{Range_8cc_source}{}\doxysection{Range.\+cc}
+\label{Range_8cc_source}\index{src/Range.cc@{src/Range.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// range.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Range class}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Last modification dates.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// dm 24-\/5-\/1994 The main fumctions were tested and modified accordingly.}}
+\DoxyCodeLine{00008 \textcolor{comment}{// dm 25-\/5-\/1994 The functions to return the low and high values in ranges were added.}}
+\DoxyCodeLine{00009 \textcolor{comment}{// dm 7-\/6-\/1994 the void functions high and low are added.}}
+\DoxyCodeLine{00010 \textcolor{comment}{// dm 17-\/6-\/1994 the function cover was added    }}
+\DoxyCodeLine{00011 \textcolor{comment}{// AM 03-\/08-\/1994 Changed the name of range from DSGENRANGE to DSRange}}
+\DoxyCodeLine{00012 \textcolor{comment}{// AM 04-\/08-\/1994 Changed set\_low() and set\_high() to low() and high()}}
+\DoxyCodeLine{00013 \textcolor{comment}{// AM 08-\/08-\/1994 Changed code to use the min() and max() function again}}
+\DoxyCodeLine{00014 \textcolor{comment}{// dm 25-\/08-\/1994 Corrections made to code so all functions work}}
+\DoxyCodeLine{00015 \textcolor{comment}{// AM 25-\/03-\/1996 Created function contains}}
+\DoxyCodeLine{00016 \textcolor{comment}{// AM 25-\/03-\/1996 Changed subset, intersects modified to use contains}}
+\DoxyCodeLine{00017 \textcolor{comment}{// 2001-\/1-\/30 DD length() function}}
+\DoxyCodeLine{00018 \textcolor{comment}{// 20023-\/1-\/21 DD Lite version for book}}
+\DoxyCodeLine{00019 \textcolor{comment}{//}}
+\DoxyCodeLine{00020 \textcolor{comment}{// (C) Datasim Education BV 1994-\/2006}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#ifndef Range\_CC}}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00024}\mbox{\hyperlink{Range_8cc_a66323a442d1808a3bda112b1adc1915c}{00024}} \textcolor{preprocessor}{\#define Range\_CC}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Range_8hh}{duffy/Range.hh}}>}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \textcolor{comment}{// Constructors}}
+\DoxyCodeLine{00029 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00030}\mbox{\hyperlink{classRange_a1ae29a7125bc7127c67ec67829d1e6fe}{00030}} \mbox{\hyperlink{classRange_a1ae29a7125bc7127c67ec67829d1e6fe}{Range<Type>::Range}}()}
+\DoxyCodeLine{00031 \{ \textcolor{comment}{// Default constructor.}}
+\DoxyCodeLine{00032     }
+\DoxyCodeLine{00033     Type def(0); \textcolor{comment}{// Need this}}
+\DoxyCodeLine{00034     lo = def;}
+\DoxyCodeLine{00035     hi = def;}
+\DoxyCodeLine{00036 \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type> }
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00039}\mbox{\hyperlink{classRange_a7ce1e904703bd7e049db8c7aca16a0cb}{00039}} \mbox{\hyperlink{classRange_a1ae29a7125bc7127c67ec67829d1e6fe}{Range<Type>::Range}}(\textcolor{keyword}{const} Type\& l, \textcolor{keyword}{const} Type\& h)}
+\DoxyCodeLine{00040 \{ \textcolor{comment}{//}}
+\DoxyCodeLine{00041     \textcolor{keywordflow}{if}(l < h)}
+\DoxyCodeLine{00042     \{}
+\DoxyCodeLine{00043         lo = l;}
+\DoxyCodeLine{00044         hi = h;}
+\DoxyCodeLine{00045     \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00048     \{}
+\DoxyCodeLine{00049         hi = l;}
+\DoxyCodeLine{00050         lo = h;}
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052 \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00055}\mbox{\hyperlink{classRange_a4390939e24185ab8c083c125cf7c5625}{00055}} \mbox{\hyperlink{classRange_a1ae29a7125bc7127c67ec67829d1e6fe}{Range<Type>::Range}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<Type>}}\& r2)}
+\DoxyCodeLine{00056 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     lo = r2.lo;}
+\DoxyCodeLine{00059     hi = r2.hi;}
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00064}\mbox{\hyperlink{classRange_ac3495950469e6c7ba652e99ac7e69df9}{00064}} \mbox{\hyperlink{classRange_ac3495950469e6c7ba652e99ac7e69df9}{Range<Type>::~Range}}()}
+\DoxyCodeLine{00065 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067 \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00071}\mbox{\hyperlink{classRange_a885e2f67531baf6df9359f95c3f8ebaa}{00071}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classRange_adecc879cfe67dd9ee2212a008ab15f99}{Range<Type>::low}}(\textcolor{keyword}{const} Type\& t1)}
+\DoxyCodeLine{00072 \{\textcolor{comment}{// The low value of the range will be set with the value t1}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     lo = t1;}
+\DoxyCodeLine{00076 \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00079}\mbox{\hyperlink{classRange_aa0f159ae114a4053113ba035b1fc7b21}{00079}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classRange_a04c4f592efe2d03e17868d5268cedfb5}{Range<Type>::high}}(\textcolor{keyword}{const} Type\& t1)}
+\DoxyCodeLine{00080 \{\textcolor{comment}{// The high value of the range will be set with the value t1}}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     hi = t1;}
+\DoxyCodeLine{00084 \}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00087}\mbox{\hyperlink{classRange_adecc879cfe67dd9ee2212a008ab15f99}{00087}} Type \mbox{\hyperlink{classRange_adecc879cfe67dd9ee2212a008ab15f99}{Range<Type>::low}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00088 \textcolor{keyword}{}\{\textcolor{comment}{// Returns the lower bound of the range}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{keywordflow}{return} lo;}
+\DoxyCodeLine{00091 \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00094}\mbox{\hyperlink{classRange_a04c4f592efe2d03e17868d5268cedfb5}{00094}} Type \mbox{\hyperlink{classRange_a04c4f592efe2d03e17868d5268cedfb5}{Range<Type>::high}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00095 \textcolor{keyword}{}\{\textcolor{comment}{// Returns the higher bound of the range}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     \textcolor{keywordflow}{return} hi;}
+\DoxyCodeLine{00098 \}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00101}\mbox{\hyperlink{classRange_a2cdcb2c3dbc38dcb923e302ad366f12c}{00101}} Type \mbox{\hyperlink{classRange_a2cdcb2c3dbc38dcb923e302ad366f12c}{Range<Type>::spread}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00102 \textcolor{keyword}{}\{\textcolor{comment}{// Returns the higher bound of the range}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{keywordflow}{return} hi -\/ lo;}
+\DoxyCodeLine{00105 \}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00109}\mbox{\hyperlink{classRange_ab772b50dd178ffaeba1f6df900cef30b}{00109}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classRange_ab772b50dd178ffaeba1f6df900cef30b}{Range<Type>::left}}(\textcolor{keyword}{const} Type\& val)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00110 \textcolor{keyword}{}\{ \textcolor{comment}{// Check if current value is to the left of the range}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     \textcolor{keywordflow}{if}(val < lo)}
+\DoxyCodeLine{00113         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00116 \}}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00119}\mbox{\hyperlink{classRange_aefe9e0df9c7555ec1235764389feea36}{00119}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classRange_aefe9e0df9c7555ec1235764389feea36}{Range<Type>::right}}(\textcolor{keyword}{const} Type\& val)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00120 \textcolor{keyword}{}\{ \textcolor{comment}{// Check if current value is to the right of the range}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122     \textcolor{keywordflow}{if}(val > hi)}
+\DoxyCodeLine{00123         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00126 \}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00129}\mbox{\hyperlink{classRange_abca95dd7b50b7142fe6d40d58816dec5}{00129}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classRange_abca95dd7b50b7142fe6d40d58816dec5}{Range<Type>::contains}}(\textcolor{keyword}{const} Type\& t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00130 \textcolor{keyword}{}\{\textcolor{comment}{// Does range contain t}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132     \textcolor{keywordflow}{if}((lo <= t) \&\& (hi >= t))}
+\DoxyCodeLine{00133         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00136 \}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138 \textcolor{comment}{// Operator overloading}}
+\DoxyCodeLine{00139 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00140}\mbox{\hyperlink{classRange_afea02da4611e86fbbd710e64fead5a18}{00140}} \mbox{\hyperlink{classRange}{Range<Type>}}\& \mbox{\hyperlink{classRange_afea02da4611e86fbbd710e64fead5a18}{Range<Type>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<Type>}}\& r2)}
+\DoxyCodeLine{00141 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     hi = r2.hi;}
+\DoxyCodeLine{00144     lo = r2.lo;}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00147 \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149 \textcolor{comment}{// Utility functions}}
+\DoxyCodeLine{00150 \textcolor{keyword}{template} <\textcolor{keyword}{class} Type>}
+\DoxyCodeLine{\Hypertarget{Range_8cc_source_l00151}\mbox{\hyperlink{classRange_a9d6efa72341e127230d4aa86fcd3b489}{00151}} \mbox{\hyperlink{classVector}{Vector<Type, long>}} \mbox{\hyperlink{classRange_a9d6efa72341e127230d4aa86fcd3b489}{Range<Type>::mesh}}(\textcolor{keywordtype}{long} nSteps)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00152 \textcolor{keyword}{}\{ \textcolor{comment}{// Create a discrete mesh}}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154     Type h = (hi -\/ lo) / Type (nSteps);}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156     \mbox{\hyperlink{classVector}{Vector<Type, long>}} result(nSteps + 1, 1);}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158     Type val = lo;}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = 1; i <= nSteps + 1; i++)  }
+\DoxyCodeLine{00161     \{}
+\DoxyCodeLine{00162         result[i] = val;}
+\DoxyCodeLine{00163         val += h;}
+\DoxyCodeLine{00164     \}}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00167 \}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171 \textcolor{preprocessor}{\#endif  // Range\_CC}}
+
+\end{DoxyCode}

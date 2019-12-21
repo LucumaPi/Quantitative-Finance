@@ -7,20 +7,64 @@
     <includedby refid="OneFactorPayoff_8cc" local="no">src/OneFactorPayoff.cc</includedby>
     <includedby refid="TestOneFactorPayoff_8cc" local="no">tests/TestOneFactorPayoff.cc</includedby>
     <invincdepgraph>
+      <node id="8">
+        <label>src/OneFactorPayoff.cc</label>
+        <link refid="OneFactorPayoff_8cc"/>
+      </node>
+      <node id="6">
+        <label>tests/TestInstrument.cc</label>
+        <link refid="TestInstrument_8cc"/>
+      </node>
+      <node id="9">
+        <label>tests/TestOneFactorPayoff.cc</label>
+        <link refid="TestOneFactorPayoff_8cc"/>
+      </node>
       <node id="1">
         <label>include/duffy/OneFactorPayoff.hh</label>
         <link refid="OneFactorPayoff_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/BSIBVPImp.cc</label>
+        <link refid="BSIBVPImp_8cc"/>
+      </node>
+      <node id="7">
+        <label>tests/TestBlackScholes.cc</label>
+        <link refid="TestBlackScholes_8cc"/>
       </node>
       <node id="3">
         <label>include/duffy/BSIBVPImp.hh</label>
-        <link refid="BSIBVPImp_8hh_source"/>
+        <link refid="BSIBVPImp_8hh"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tests/TestIBVP.cc</label>
+        <link refid="TestIBVP_8cc"/>
       </node>
       <node id="2">
         <label>include/duffy/Instrument.hh</label>
-        <link refid="Instrument_8hh_source"/>
+        <link refid="Instrument_8hh"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -86,8 +130,8 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OneFactorPayoff_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Hard-coded,<sp/>handy<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MyCallPayoffFN(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MyPutPayoffFN(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)<sp/>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="OneFactorPayoff_8hh_1a014348d679f2afcacf81af0e762ad426" kindref="member">MyCallPayoffFN</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb" kindref="member">K</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="OneFactorPayoff_8hh_1a941b079b8b777eac5fafaf713f67027a" kindref="member">MyPutPayoffFN</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb" kindref="member">K</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)<sp/>;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16" refid="classOneFactorPayoff" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref></highlight></codeline>
 <codeline lineno="17"><highlight class="normal">{</highlight></codeline>
@@ -96,15 +140,15 @@
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>(*payoffFN)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructors<sp/>and<sp/>destructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>();</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>strike,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>(*pay)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S));<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOneFactorPayoff_1a44063d3104454a543537947dae324f3f" kindref="member">OneFactorPayoff</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOneFactorPayoff_1a44063d3104454a543537947dae324f3f" kindref="member">OneFactorPayoff</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>strike,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>(*pay)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S));<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOneFactorPayoff_1a44063d3104454a543537947dae324f3f" kindref="member">OneFactorPayoff</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classOneFactorPayoff_1af9f0c1e6b667a81d0ac6cba8c735fba3" kindref="member">~OneFactorPayoff</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Operator<sp/>overloading</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>&amp;<sp/><ref refid="classOneFactorPayoff_1a9258b40b9fa6772588e464ef3b5f4f16" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classOneFactorPayoff" kindref="compound">OneFactorPayoff</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>payoff(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>For<sp/>a<sp/>given<sp/>spot<sp/>price</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classOneFactorPayoff_1a5f74e477eb39f7d3cc01211e4c8944ac" kindref="member">payoff</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>For<sp/>a<sp/>given<sp/>spot<sp/>price</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>OneFactorPayoff_HH</highlight></codeline>

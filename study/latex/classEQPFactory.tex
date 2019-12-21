@@ -2,6 +2,10 @@
 \label{classEQPFactory}\index{EQPFactory@{EQPFactory}}
 
 
+{\ttfamily \#include $<$Lattice\+Factory.\+hh$>$}
+
+
+
 Inheritance diagram for E\+Q\+P\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,12 +25,56 @@ Collaboration diagram for E\+Q\+P\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classEQPFactory_af725d98da10178b6c86f5469336135f2}\label{classEQPFactory_af725d98da10178b6c86f5469336135f2}} 
-{\bfseries E\+Q\+P\+Factory} (double s, double r, double k)
+\mbox{\hyperlink{classEQPFactory_af725d98da10178b6c86f5469336135f2}{E\+Q\+P\+Factory}} (double \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}, double \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}, double \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00099}{99}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEQPFactory_af725d98da10178b6c86f5469336135f2}\label{classEQPFactory_af725d98da10178b6c86f5469336135f2}} 
+\index{EQPFactory@{EQPFactory}!EQPFactory@{EQPFactory}}
+\index{EQPFactory@{EQPFactory}!EQPFactory@{EQPFactory}}
+\doxysubsubsection{\texorpdfstring{EQPFactory()}{EQPFactory()}}
+{\footnotesize\ttfamily E\+Q\+P\+Factory\+::\+E\+Q\+P\+Factory (\begin{DoxyParamCaption}\item[{double}]{s,  }\item[{double}]{r,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00102}{102}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103         : \mbox{\hyperlink{classLatticeFactory_aec3b521318bcaed891fd9d3acb269d7f}{LatticeFactory}}(\mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}, \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}, \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}})}
+\DoxyCodeLine{00104     \{}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \mbox{\hyperlink{classLatticeFactory_a709bb1b3ae7c5976629720ac29a20087}{bType}} = \mbox{\hyperlink{classLatticeFactory_a0ec2e0cbbdc1928d5f75bea6f6593f14aa3552a46dd1f16a919583e05abc557da}{Additive}};}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108     \textcolor{comment}{// Needed for additive method: page 19 Clewlow/Strickland formula 2.17 }}
+\DoxyCodeLine{00109     \textcolor{comment}{// "v" is "nu" here, for "v" see  page 17 formula 2.14}}
+\DoxyCodeLine{00110     \textcolor{keywordtype}{double} nu = \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}} -\/ 0.5 * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}};}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     \textcolor{keywordtype}{double} a = nu * \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}};}
+\DoxyCodeLine{00113     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = 0.5 * std::sqrt( (4.0 * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}}) -\/ (3.0 * nu * nu * \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}} * \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}}) );}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{comment}{// EQP parameters: page 19 formula 2.17}}
+\DoxyCodeLine{00116     \mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}} = 0.5 * a + \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};                                                      }
+\DoxyCodeLine{00117     \mbox{\hyperlink{classLatticeFactory_a99e4419112358eac102e48d31090a79b}{d}} = 1.5 * a -\/ \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119     \mbox{\hyperlink{classLatticeFactory_a4552002d494824b82c182b6c3b145a8a}{p}} = 0.5;}
+\DoxyCodeLine{00120     }
+\DoxyCodeLine{00121     \textcolor{comment}{// pd = 0.5 = (1-\/p)}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123     \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Lattice\+Factory.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{LatticeFactory_8hh}{Lattice\+Factory.\+hh}}\end{DoxyCompactItemize}

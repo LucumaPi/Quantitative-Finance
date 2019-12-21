@@ -1,0 +1,156 @@
+\hypertarget{TestBlackScholes_8cc}{}\doxysection{tests/\+Test\+Black\+Scholes.cc File Reference}
+\label{TestBlackScholes_8cc}\index{tests/TestBlackScholes.cc@{tests/TestBlackScholes.cc}}
+{\ttfamily \#include $<$duffy/\+Instrument.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Datasim\+Exception.\+hh$>$}\newline
+Include dependency graph for Test\+Black\+Scholes.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestBlackScholes_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInstrumentFactory}{Instrument\+Factory}} $\ast$ \mbox{\hyperlink{TestBlackScholes_8cc_a944b59805882970c6620c319340c3d0d}{Get\+Instrument\+Factory}} ()
+\item 
+int \mbox{\hyperlink{TestBlackScholes_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestBlackScholes_8cc_a944b59805882970c6620c319340c3d0d}\label{TestBlackScholes_8cc_a944b59805882970c6620c319340c3d0d}} 
+\index{TestBlackScholes.cc@{TestBlackScholes.cc}!GetInstrumentFactory@{GetInstrumentFactory}}
+\index{GetInstrumentFactory@{GetInstrumentFactory}!TestBlackScholes.cc@{TestBlackScholes.cc}}
+\doxysubsubsection{\texorpdfstring{GetInstrumentFactory()}{GetInstrumentFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classInstrumentFactory}{Instrument\+Factory}}$\ast$ Get\+Instrument\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestBlackScholes_8cc_source_l00024}{24}} of file \mbox{\hyperlink{TestBlackScholes_8cc_source}{Test\+Black\+Scholes.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025 \{}
+\DoxyCodeLine{00026     std::cout << \textcolor{stringliteral}{"Instrument Factory : 1=Console "};}
+\DoxyCodeLine{00027     \textcolor{keywordtype}{int} exStyle = 1; std::cin >> exStyle;}
+\DoxyCodeLine{00028     \textcolor{comment}{// Only 1 factory in this version, like model T}}
+\DoxyCodeLine{00029     \textcolor{keywordflow}{if}(exStyle == 1)}
+\DoxyCodeLine{00030         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classConsoleInstrumentFactory}{ConsoleInstrumentFactory}};}
+\DoxyCodeLine{00031     }
+\DoxyCodeLine{00032 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestBlackScholes_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestBlackScholes_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestBlackScholes.cc@{TestBlackScholes.cc}!main@{main}}
+\index{main@{main}!TestBlackScholes.cc@{TestBlackScholes.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestBlackScholes_8cc_source_l00034}{34}} of file \mbox{\hyperlink{TestBlackScholes_8cc_source}{Test\+Black\+Scholes.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035 \{}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{// NOTE: We build up the object network based on the}}
+\DoxyCodeLine{00038     \textcolor{comment}{// UML class diagram in figure (16.1) (see chapter 16)}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{comment}{// A. The Continuous Problem}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{comment}{// Black Scholes example}}
+\DoxyCodeLine{00043     \mbox{\hyperlink{classInstrumentFactory}{InstrumentFactory}}* myFactory = \mbox{\hyperlink{TestBlackScholes_8cc_a944b59805882970c6620c319340c3d0d}{GetInstrumentFactory}}();}
+\DoxyCodeLine{00044     \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}* myOption = myFactory-\/>\mbox{\hyperlink{classInstrumentFactory_acc735ba0c9d3b8c36269d3553c1cb401}{CreateOption}}();}
+\DoxyCodeLine{00045     myOption -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{comment}{//cout << "1) European or 2) American style: ";}}
+\DoxyCodeLine{00048     \textcolor{comment}{//int exStyle = 1; cin >> exStyle;}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     \textcolor{comment}{// Derived implementation class}}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classBSIBVPImp}{BSIBVPImp}} bsImp(*myOption);    \textcolor{comment}{// The BS PDE}}
+\DoxyCodeLine{00052     }
+\DoxyCodeLine{00053     \textcolor{comment}{// Now the client class IVP}}
+\DoxyCodeLine{00054     \textcolor{comment}{// IBVPImp* myImp = \&bsImp; // Pointer to base class}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{comment}{// /////////////////////// Geometry //////////////////////////}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{comment}{// // Define region in (S, t) space}}
+\DoxyCodeLine{00059     \textcolor{comment}{// Range<double> rangeX(0.0, myOption-\/>SMax1);}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{comment}{// Range<double> rangeT(0.0, myOption -\/>T); // Time horizon}}
+\DoxyCodeLine{00062     \textcolor{comment}{// /////////////////////// Geometry ////////////////////////////}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{comment}{// IBVP currentImp(*myImp, rangeX, rangeT);}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{comment}{// // B. Finite Difference Schemes}}
+\DoxyCodeLine{00067     \textcolor{comment}{// long J = 5;}}
+\DoxyCodeLine{00068     \textcolor{comment}{// long N = 50;}}
+\DoxyCodeLine{00069     \textcolor{comment}{// std::cout << "Number of space divisions: ";}}
+\DoxyCodeLine{00070     \textcolor{comment}{// std::cin >> J;}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{comment}{// std::cout << "Number of time divisions: ";}}
+\DoxyCodeLine{00073     \textcolor{comment}{// std::cin >> N;}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{comment}{// std::cout << "Scheme 1) Explicit 2) Implicit: ";}}
+\DoxyCodeLine{00076     \textcolor{comment}{// int ftype; std::cin >> ftype;}}
+\DoxyCodeLine{00077     \textcolor{comment}{// ExplicitEulerIBVP fdm(currentImp, N, J);}}
+\DoxyCodeLine{00078     \textcolor{comment}{// ImplicitEulerIBVP fdm2(currentImp, N, J);}}
+\DoxyCodeLine{00079     \textcolor{comment}{// IBVPFDM* myFDM = \&fdm;}}
+\DoxyCodeLine{00080     \textcolor{comment}{// if (ftype != 1)}}
+\DoxyCodeLine{00081     \textcolor{comment}{// \{ }}
+\DoxyCodeLine{00082     \textcolor{comment}{//  std::cout << "Implicit Euler ...\(\backslash\)n";}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{comment}{//  myFDM = \&fdm2;}}
+\DoxyCodeLine{00085     \textcolor{comment}{// \}}}
+\DoxyCodeLine{00086     \textcolor{comment}{// else}}
+\DoxyCodeLine{00087     \textcolor{comment}{// \{}}
+\DoxyCodeLine{00088     \textcolor{comment}{//  myFDM = \&fdm;}}
+\DoxyCodeLine{00089     \textcolor{comment}{// \}}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     \textcolor{comment}{// // Display in Excel}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094     \textcolor{comment}{// std::cout << "Output: 1) Cell(matrix), 2) list of line graphs: ";}}
+\DoxyCodeLine{00095     \textcolor{comment}{// int choice; std::cin >> choice;}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     \textcolor{comment}{// if (choice == 1)}}
+\DoxyCodeLine{00099     \textcolor{comment}{// \{}}
+\DoxyCodeLine{00100     \textcolor{comment}{//  try}}
+\DoxyCodeLine{00101     \textcolor{comment}{//  \{}}
+\DoxyCodeLine{00102     \textcolor{comment}{//      /*printMatrixInExcel(myFDM-\/>result(), fdm.TValues(), fdm.XValues(), }}
+\DoxyCodeLine{00103     \textcolor{comment}{//                  string("BSEulerE"));*/}}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105     \textcolor{comment}{//      //print(myFDM-\/>result());}}
+\DoxyCodeLine{00106     \textcolor{comment}{//  \}}}
+\DoxyCodeLine{00107     \textcolor{comment}{//  catch (DatasimException\& e)}}
+\DoxyCodeLine{00108     \textcolor{comment}{//  \{}}
+\DoxyCodeLine{00109     \textcolor{comment}{//      e.print();}}
+\DoxyCodeLine{00110     \textcolor{comment}{//      return 0;}}
+\DoxyCodeLine{00111     \textcolor{comment}{//  \}}}
+\DoxyCodeLine{00112     \textcolor{comment}{// \}}}
+\DoxyCodeLine{00113     \textcolor{comment}{// if (choice == 2)}}
+\DoxyCodeLine{00114     \textcolor{comment}{// \{}}
+\DoxyCodeLine{00115     \textcolor{comment}{//  std::cout << "Frequency of output: "; int f; std::cin >> f;}}
+\DoxyCodeLine{00116         }
+\DoxyCodeLine{00117     \textcolor{comment}{//  try }}
+\DoxyCodeLine{00118     \textcolor{comment}{//  \{   // Matrix is (N+1)X(J+1), TValues == N+1, XValues == J+1}}
+\DoxyCodeLine{00119     \textcolor{comment}{//      /*printMatrixChartsInExcel(f, myFDM-\/>result(), fdm.TValues(), fdm.XValues(),}}
+\DoxyCodeLine{00120     \textcolor{comment}{//              string("BSEulerI"));*/}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122     \textcolor{comment}{//  //  print(myFDM-\/>result());}}
+\DoxyCodeLine{00123     \textcolor{comment}{//  \}}}
+\DoxyCodeLine{00124     \textcolor{comment}{//  catch (DatasimException\& e)}}
+\DoxyCodeLine{00125     \textcolor{comment}{//  \{}}
+\DoxyCodeLine{00126     \textcolor{comment}{//      e.print();}}
+\DoxyCodeLine{00127     \textcolor{comment}{//      return 0;}}
+\DoxyCodeLine{00128     \textcolor{comment}{//  \}}}
+\DoxyCodeLine{00129     \textcolor{comment}{// \}}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00133 \}}
+
+\end{DoxyCode}

@@ -14,21 +14,87 @@ Collaboration diagram for SimpleOption:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classSimpleOption_1aece5942fe40bd679f2c8c75d62684d6e"/><emphasis role="strong">SimpleOption</emphasis> (double expiry, double strike)</para>
+            <listitem><para><link linkend="_classSimpleOption_1a010045625696f4315b00e577b49fc14b">SimpleOption</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSimpleOption_1af441b963e40de95677f57a0082899a58"/>void <emphasis role="strong">print</emphasis> () const</para>
+            <listitem><para><link linkend="_classSimpleOption_1aece5942fe40bd679f2c8c75d62684d6e">SimpleOption</link> (double expiry, double strike)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classSimpleOption_1af441b963e40de95677f57a0082899a58">print</link> () const</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classSimpleOption_1a7f1c6971028f89b7deeb9ac1518fff25">~SimpleOption</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classSimpleOption_1acf2fd9d59d2420b979db90b252cda6ec"/>double <emphasis role="strong">T</emphasis></para>
+            <listitem><para>double <link linkend="_classSimpleOption_1acf2fd9d59d2420b979db90b252cda6ec">T</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSimpleOption_1a50fe3b82fafe7ade7bbe2a9da5406a84"/>double <emphasis role="strong">K</emphasis></para>
+            <listitem><para>double <link linkend="_classSimpleOption_1a50fe3b82fafe7ade7bbe2a9da5406a84">K</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 13 of file TestOptionStack.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classSimpleOption_1a010045625696f4315b00e577b49fc14b"/>    <section>
+    <title>SimpleOption()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>SimpleOption</primary><secondary>SimpleOption</secondary></indexterm>
+<indexterm><primary>SimpleOption</primary><secondary>SimpleOption</secondary></indexterm>
+<para><computeroutput>SimpleOption::SimpleOption ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 19 of file TestOptionStack.cc.</para>
+<programlisting>19 {&#32;<link linkend="_classSimpleOption_1acf2fd9d59d2420b979db90b252cda6ec">T</link>&#32;=&#32;1.0;&#32;<link linkend="_classSimpleOption_1a50fe3b82fafe7ade7bbe2a9da5406a84">K</link>&#32;=&#32;100.0;&#32;}
+</programlisting>    </section><anchor xml:id="_classSimpleOption_1aece5942fe40bd679f2c8c75d62684d6e"/>    <section>
+    <title>SimpleOption()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>SimpleOption</primary><secondary>SimpleOption</secondary></indexterm>
+<indexterm><primary>SimpleOption</primary><secondary>SimpleOption</secondary></indexterm>
+<para><computeroutput>SimpleOption::SimpleOption (double expiry, double strike)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 20 of file TestOptionStack.cc.</para>
+<programlisting>20 {&#32;<link linkend="_classSimpleOption_1acf2fd9d59d2420b979db90b252cda6ec">T</link>&#32;=&#32;expiry;&#32;<link linkend="_classSimpleOption_1a50fe3b82fafe7ade7bbe2a9da5406a84">K</link>&#32;=&#32;strike;&#32;}
+</programlisting>    </section><anchor xml:id="_classSimpleOption_1a7f1c6971028f89b7deeb9ac1518fff25"/>    <section>
+    <title>~SimpleOption()</title>
+<indexterm><primary>~SimpleOption</primary><secondary>SimpleOption</secondary></indexterm>
+<indexterm><primary>SimpleOption</primary><secondary>~SimpleOption</secondary></indexterm>
+<para><computeroutput>virtual SimpleOption::~SimpleOption ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 29 of file TestOptionStack.cc.</para>
+<programlisting>30 &#32;&#32;&#32;&#32;{
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bye&#32;bye&#32;object\n&quot;</emphasis>;
+32 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classSimpleOption_1af441b963e40de95677f57a0082899a58"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>SimpleOption</secondary></indexterm>
+<indexterm><primary>SimpleOption</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void SimpleOption::print ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 23 of file TestOptionStack.cc.</para>
+<programlisting>24 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Read&#32;contents&#32;of&#32;option</emphasis>
+25 
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Expiry:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_classSimpleOption_1acf2fd9d59d2420b979db90b252cda6ec">T</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Strike:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_classSimpleOption_1a50fe3b82fafe7ade7bbe2a9da5406a84">K</link>&#32;&lt;&lt;&#32;std::endl;
+27 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classSimpleOption_1a50fe3b82fafe7ade7bbe2a9da5406a84"/>    <section>
+    <title>K</title>
+<indexterm><primary>K</primary><secondary>SimpleOption</secondary></indexterm>
+<indexterm><primary>SimpleOption</primary><secondary>K</secondary></indexterm>
+<para><computeroutput>double SimpleOption::K</computeroutput></para><para>
+Definition at line 17 of file TestOptionStack.cc.</para>
+    </section><anchor xml:id="_classSimpleOption_1acf2fd9d59d2420b979db90b252cda6ec"/>    <section>
+    <title>T</title>
+<indexterm><primary>T</primary><secondary>SimpleOption</secondary></indexterm>
+<indexterm><primary>SimpleOption</primary><secondary>T</secondary></indexterm>
+<para><computeroutput>double SimpleOption::T</computeroutput></para><para>
+Definition at line 16 of file TestOptionStack.cc.</para>
+</section>
 <para>
 The documentation for this class was generated from the following file:</para>
-tests/TestOptionStack.cc</section>
+tests/<link linkend="_TestOptionStack_8cc">TestOptionStack.cc</link></section>
+</section>

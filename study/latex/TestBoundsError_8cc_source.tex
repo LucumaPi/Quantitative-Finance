@@ -1,0 +1,43 @@
+\hypertarget{TestBoundsError_8cc_source}{}\doxysection{Test\+Bounds\+Error.\+cc}
+\label{TestBoundsError_8cc_source}\index{tests/TestBoundsError.cc@{tests/TestBoundsError.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestBoundsError.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{//}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Built-\/in types}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{TestBoundsError_8cc_source_l00012}\mbox{\hyperlink{TestBoundsError_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00012}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestBoundsError_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \{ \textcolor{comment}{// Define a scope}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017         \textcolor{keywordtype}{int} j = 2;}
+\DoxyCodeLine{00018         std::cout << j << std::endl;}
+\DoxyCodeLine{00019     \}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// cout << j; j does not exist}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keywordtype}{int} myArr[10];}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{comment}{// Initialise the array}}
+\DoxyCodeLine{00026     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 10; j++)}
+\DoxyCodeLine{00027     \{}
+\DoxyCodeLine{00028         myArr[j] = j + 1;}
+\DoxyCodeLine{00029         std::cout << myArr[j] << \textcolor{stringliteral}{","};}
+\DoxyCodeLine{00030     \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     std::cout << std::endl << myArr[-\/1];}
+\DoxyCodeLine{00033     std::cout << std::endl << myArr[1000];}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00037 \}}
+
+\end{DoxyCode}

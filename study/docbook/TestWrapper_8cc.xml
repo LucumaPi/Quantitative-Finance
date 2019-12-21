@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestWrapper_8cc">
+<title>tests/TestWrapper.cc File Reference</title>
+<indexterm><primary>tests/TestWrapper.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/DatasimDate.hh&gt;
+#include &lt;duffy/DatesimDateTime.hh&gt;
+#include &lt;string&gt;
+#include &quot;../src/Wrapper.cc&quot;
+#include &lt;duffy/SimplePropertySet.hh&gt;
+</programlisting>Include dependency graph for TestWrapper.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestWrapper_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classPerson">Person</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestWrapper_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestWrapper_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestWrapper.cc</secondary></indexterm>
+<indexterm><primary>TestWrapper.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 59 of file TestWrapper.cc.</para>
+<programlisting>60 {
+61 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;myBirthday(29,&#32;8,&#32;1952);
+62 &#32;&#32;&#32;&#32;std::string&#32;myName&#32;(<emphasis role="stringliteral">&quot;Daniel&#32;J.&#32;Duffy&quot;</emphasis>);
+63 &#32;&#32;&#32;&#32;<link linkend="_classPerson">Person</link>&#32;dd(myName,&#32;myBirthday);
+64 &#32;&#32;&#32;&#32;dd.print();
+65 
+66 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;bBirthday(06,&#32;8,&#32;1994);
+67 &#32;&#32;&#32;&#32;std::string&#32;bName&#32;(<emphasis role="stringliteral">&quot;Brendan&#32;Duffy&quot;</emphasis>);
+68 &#32;&#32;&#32;&#32;<link linkend="_classPerson">Person</link>&#32;bd(bName,&#32;bBirthday);
+69 &#32;&#32;&#32;&#32;bd.print();
+70 &#32;&#32;&#32;&#32;
+71 
+72 &#32;&#32;&#32;&#32;<link linkend="_classWrapper">Wrapper&lt;std::string&gt;</link>&#32;w1;
+73 &#32;&#32;&#32;&#32;<link linkend="_classWrapper">Wrapper&lt;std::string&gt;</link>&#32;w2;
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(w1.<link linkend="_classWrapper_1a722618937323f1c2ae417b77021cf381">sameType</link>(w2)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+75 &#32;&#32;&#32;&#32;{
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Same&#32;type\n&quot;</emphasis>;
+77 &#32;&#32;&#32;&#32;}
+78 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+79 &#32;&#32;&#32;&#32;{
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Not&#32;Same&#32;type\n&quot;</emphasis>;
+81 &#32;&#32;&#32;&#32;}
+82 
+83 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+84 }
+</programlisting></section>
+</section>
+</section>

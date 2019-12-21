@@ -23,28 +23,28 @@
 \DoxyCodeLine{00019 }
 \DoxyCodeLine{00020 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00021     \textcolor{comment}{// Constructors \& destructor}}
-\DoxyCodeLine{00022     \mbox{\hyperlink{classPoint}{Point}}();                                           \textcolor{comment}{// Default constructor}}
-\DoxyCodeLine{00023     \mbox{\hyperlink{classPoint}{Point}}(TFirst first, TSecond second);               \textcolor{comment}{// Constructor with coordinates}}
-\DoxyCodeLine{00024     \mbox{\hyperlink{classPoint}{Point}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& source);     \textcolor{comment}{// Copy constructor}}
-\DoxyCodeLine{00025     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classPoint}{Point}}();                                  \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00022     \mbox{\hyperlink{classPoint_a57f56baef4e1d60e9acc406e9518a46f}{Point}}();                                           \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classPoint_a57f56baef4e1d60e9acc406e9518a46f}{Point}}(TFirst \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, TSecond \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}});                \textcolor{comment}{// Constructor with coordinates}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classPoint_a57f56baef4e1d60e9acc406e9518a46f}{Point}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& source);     \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00025     \textcolor{keyword}{virtual} \mbox{\hyperlink{classPoint_a5cd97348ecafa3c4e1b14ecc7b26e8fb}{~Point}}();                                 \textcolor{comment}{// Destructor}}
 \DoxyCodeLine{00026 }
 \DoxyCodeLine{00027     \textcolor{comment}{// Selectors}}
-\DoxyCodeLine{00028     TFirst First() \textcolor{keyword}{const};                               \textcolor{comment}{// Get first coordinates}}
-\DoxyCodeLine{00029     TSecond Second() \textcolor{keyword}{const};                             \textcolor{comment}{// Get second coordinate}}
+\DoxyCodeLine{00028     TFirst \mbox{\hyperlink{classPoint_aae25ce13a220b16b0d83ddbd8f3b6eb5}{First}}() \textcolor{keyword}{const};                              \textcolor{comment}{// Get first coordinates}}
+\DoxyCodeLine{00029     TSecond \mbox{\hyperlink{classPoint_ae1468ca451216c3341e2b74b5811f30b}{Second}}() \textcolor{keyword}{const};                               \textcolor{comment}{// Get second coordinate}}
 \DoxyCodeLine{00030 }
 \DoxyCodeLine{00031     \textcolor{comment}{// Modifiers}}
-\DoxyCodeLine{00032     \textcolor{keywordtype}{void} First(\textcolor{keyword}{const} TFirst\& val);                      \textcolor{comment}{// Set first coordinate}}
-\DoxyCodeLine{00033     \textcolor{keywordtype}{void} Second(\textcolor{keyword}{const} TSecond\& val);                    \textcolor{comment}{// Set second coordinates}}
+\DoxyCodeLine{00032     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPoint_aae25ce13a220b16b0d83ddbd8f3b6eb5}{First}}(\textcolor{keyword}{const} TFirst\& val);                     \textcolor{comment}{// Set first coordinate}}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPoint_ae1468ca451216c3341e2b74b5811f30b}{Second}}(\textcolor{keyword}{const} TSecond\& val);                  \textcolor{comment}{// Set second coordinates}}
 \DoxyCodeLine{00034 }
 \DoxyCodeLine{00035     \textcolor{comment}{// Functions}}
-\DoxyCodeLine{00036     \textcolor{keywordtype}{double} Distance(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& p) \textcolor{keyword}{const};   \textcolor{comment}{// Calculate distance}}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{double} \mbox{\hyperlink{classPoint_a157aafa697fc65028517c431b6c313a2}{Distance}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& p) \textcolor{keyword}{const};   \textcolor{comment}{// Calculate distance}}
 \DoxyCodeLine{00037 }
 \DoxyCodeLine{00038     \textcolor{comment}{// Assignment operator}}
-\DoxyCodeLine{00039     \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& source);}
+\DoxyCodeLine{00039     \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& \mbox{\hyperlink{classPoint_adc5027a0b925b795c504ac45be9806bb}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& source);}
 \DoxyCodeLine{00040 }
 \DoxyCodeLine{00041     \textcolor{comment}{// Print}}
 \DoxyCodeLine{00042     \textcolor{comment}{//template <class TFirst, class TSecond> }}
-\DoxyCodeLine{00043     \textcolor{keyword}{friend} std::ostream\& operator << (std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& p)}
+\DoxyCodeLine{\Hypertarget{PointTemplate_8hh_source_l00043}\mbox{\hyperlink{Point_8hh_aab55cf13db83c55c46a961b2b2441960}{00043}}     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classPoint_af7fcde453ce1606ffbd55663c2048573}{operator << }}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& p)}
 \DoxyCodeLine{00044     \{}
 \DoxyCodeLine{00045         os << \textcolor{stringliteral}{"("} << p.m\_first << \textcolor{stringliteral}{","} << p.m\_second << \textcolor{stringliteral}{")\(\backslash\)n"};}
 \DoxyCodeLine{00046         \textcolor{keywordflow}{return} os;}

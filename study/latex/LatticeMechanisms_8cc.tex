@@ -1,0 +1,73 @@
+\hypertarget{LatticeMechanisms_8cc}{}\doxysection{src/\+Lattice\+Mechanisms.cc File Reference}
+\label{LatticeMechanisms_8cc}\index{src/LatticeMechanisms.cc@{src/LatticeMechanisms.cc}}
+{\ttfamily \#include $<$duffy/\+Lattice.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Matrix.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Matrix\+Mechanisms.\+hh$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Lattice\+Mechanisms.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LatticeMechanisms_8cc__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LatticeMechanisms_8cc__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{LatticeMechanisms_8cc_ae4f004b555f8327266ad41c00c220545}{Lattice\+Mechanisms\+\_\+\+CC}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class V , class I , int Number\+Nodes$>$ }\\void \mbox{\hyperlink{LatticeMechanisms_8cc_a4f588b04e89a733e6e27ba312ce437d3}{print}} (const \mbox{\hyperlink{classLattice}{Lattice}}$<$ V, I, Number\+Nodes $>$ \&source)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{LatticeMechanisms_8cc_ae4f004b555f8327266ad41c00c220545}\label{LatticeMechanisms_8cc_ae4f004b555f8327266ad41c00c220545}} 
+\index{LatticeMechanisms.cc@{LatticeMechanisms.cc}!LatticeMechanisms\_CC@{LatticeMechanisms\_CC}}
+\index{LatticeMechanisms\_CC@{LatticeMechanisms\_CC}!LatticeMechanisms.cc@{LatticeMechanisms.cc}}
+\doxysubsubsection{\texorpdfstring{LatticeMechanisms\_CC}{LatticeMechanisms\_CC}}
+{\footnotesize\ttfamily \#define Lattice\+Mechanisms\+\_\+\+CC}
+
+
+
+Definition at line \mbox{\hyperlink{LatticeMechanisms_8cc_source_l00013}{13}} of file \mbox{\hyperlink{LatticeMechanisms_8cc_source}{Lattice\+Mechanisms.\+cc}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{LatticeMechanisms_8cc_a4f588b04e89a733e6e27ba312ce437d3}\label{LatticeMechanisms_8cc_a4f588b04e89a733e6e27ba312ce437d3}} 
+\index{LatticeMechanisms.cc@{LatticeMechanisms.cc}!print@{print}}
+\index{print@{print}!LatticeMechanisms.cc@{LatticeMechanisms.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class V , class I , int Number\+Nodes$>$ \\
+void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLattice}{Lattice}}$<$ V, I, Number\+Nodes $>$ \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{LatticeMechanisms_8cc_source_l00021}{21}} of file \mbox{\hyperlink{LatticeMechanisms_8cc_source}{Lattice\+Mechanisms.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023     \textcolor{keywordflow}{for} (I j = source.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); j <= source.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00024     \{}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026         std::cout << \textcolor{stringliteral}{"\(\backslash\)nBranch Number "} << j << \textcolor{stringliteral}{": ["};}
+\DoxyCodeLine{00027         \textcolor{keywordflow}{for} (I i = source[j].MinIndex(); i <= source[j].\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00028         \{}
+\DoxyCodeLine{00029             std::cout << source[j][i] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00030         \}}
+\DoxyCodeLine{00031         std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 \}}
+
+\end{DoxyCode}

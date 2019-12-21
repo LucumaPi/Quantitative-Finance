@@ -14,8 +14,8 @@
 \DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef Matrix\_hh}}
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#define Matrix\_hh}}
 \DoxyCodeLine{00012 }
-\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "FullMatrix.hh"}}
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "Array.hh"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{FullMatrix_8hh}{FullMatrix.hh}}"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Array_8hh}{Array.hh}}"}}
 \DoxyCodeLine{00015 }
 \DoxyCodeLine{00016 \textcolor{comment}{// Default structure is FullArray with default allocator. Default integral type is int.}}
 \DoxyCodeLine{00017 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I = \textcolor{keywordtype}{int}, \textcolor{keyword}{class} S = FullMatrix<V> >}
@@ -31,29 +31,29 @@
 \DoxyCodeLine{00027 }
 \DoxyCodeLine{00028 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00029     \textcolor{comment}{// Constructors \& destructor}}
-\DoxyCodeLine{00030     \mbox{\hyperlink{classMatrix}{Matrix}}();                                                                         \textcolor{comment}{// Default constructor}}
-\DoxyCodeLine{00031     \mbox{\hyperlink{classMatrix}{Matrix}}(I rows, I columns);                                                \textcolor{comment}{// Constructor with size. Start index=0.}}
-\DoxyCodeLine{00032     \mbox{\hyperlink{classMatrix}{Matrix}}(I rows, I columns, I rowStart, I columnStart);     \textcolor{comment}{// Constructor with size \& start index}}
-\DoxyCodeLine{00033     \mbox{\hyperlink{classMatrix}{Matrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& source);                     \textcolor{comment}{// Copy constructor}}
-\DoxyCodeLine{00034     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classMatrix}{Matrix}}();                                                                    \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classMatrix_a98af38996a2ce7d4491052d202ad2e77}{Matrix}}();                                                                         \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classMatrix_a98af38996a2ce7d4491052d202ad2e77}{Matrix}}(I rows, I columns);                                                \textcolor{comment}{// Constructor with size. Start index=0.}}
+\DoxyCodeLine{00032     \mbox{\hyperlink{classMatrix_a98af38996a2ce7d4491052d202ad2e77}{Matrix}}(I rows, I columns, I rowStart, I columnStart);     \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00033     \mbox{\hyperlink{classMatrix_a98af38996a2ce7d4491052d202ad2e77}{Matrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& source);                     \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00034     \textcolor{keyword}{virtual} \mbox{\hyperlink{classMatrix_a03485d6a3a841539855e599d772323ae}{~Matrix}}();                                                                   \textcolor{comment}{// Destructor}}
 \DoxyCodeLine{00035 }
 \DoxyCodeLine{00036     \textcolor{comment}{// Selectors}}
-\DoxyCodeLine{00037     I MinRowIndex() \textcolor{keyword}{const};              \textcolor{comment}{// Return the minimum row index}}
-\DoxyCodeLine{00038     I MaxRowIndex() \textcolor{keyword}{const};              \textcolor{comment}{// Return the maximum row index}}
-\DoxyCodeLine{00039     I MinColumnIndex() \textcolor{keyword}{const};           \textcolor{comment}{// Return the minimum column index}}
-\DoxyCodeLine{00040     I MaxColumnIndex() \textcolor{keyword}{const};           \textcolor{comment}{// Return the maximum column index}}
+\DoxyCodeLine{00037     I \mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}() \textcolor{keyword}{const};               \textcolor{comment}{// Return the minimum row index}}
+\DoxyCodeLine{00038     I \mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}() \textcolor{keyword}{const};               \textcolor{comment}{// Return the maximum row index}}
+\DoxyCodeLine{00039     I \mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}() \textcolor{keyword}{const};         \textcolor{comment}{// Return the minimum column index}}
+\DoxyCodeLine{00040     I \mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}() \textcolor{keyword}{const};         \textcolor{comment}{// Return the maximum column index}}
 \DoxyCodeLine{00041 }
-\DoxyCodeLine{00042     I Rows() \textcolor{keyword}{const};             \textcolor{comment}{// The number of rows}}
-\DoxyCodeLine{00043     I Columns() \textcolor{keyword}{const};              \textcolor{comment}{// The number of columns}}
+\DoxyCodeLine{00042     I \mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}() \textcolor{keyword}{const};             \textcolor{comment}{// The number of rows}}
+\DoxyCodeLine{00043     I \mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}() \textcolor{keyword}{const};               \textcolor{comment}{// The number of columns}}
 \DoxyCodeLine{00044 }
-\DoxyCodeLine{00045     \textcolor{keywordtype}{void} Row(I row, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val); \textcolor{comment}{// Replace row}}
-\DoxyCodeLine{00046     \textcolor{keywordtype}{void} Column(I column, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val);   \textcolor{comment}{// Replace column}}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMatrix_ae64e55e347c3288a357230d8d0d03bed}{Row}}(I row, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val);  \textcolor{comment}{// Replace row}}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMatrix_a2278829f8202d2a9b75a38457ce97d6d}{Column}}(I column, \textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I>}}\& val); \textcolor{comment}{// Replace column}}
 \DoxyCodeLine{00047 }
 \DoxyCodeLine{00048     \textcolor{comment}{// Operators}}
-\DoxyCodeLine{00049     \textcolor{keyword}{const} V\& operator () (I row, I column) \textcolor{keyword}{const};   \textcolor{comment}{// Get the element at position}}
-\DoxyCodeLine{00050     V\& operator () (I row, I column);               \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00049     \textcolor{keyword}{const} V\& \mbox{\hyperlink{classMatrix_a7cb4c21fc4931498a7c366d0b66e1887}{operator () }}(I row, I column) \textcolor{keyword}{const};   \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00050     V\& \mbox{\hyperlink{classMatrix_a7cb4c21fc4931498a7c366d0b66e1887}{operator () }}(I row, I column);               \textcolor{comment}{// Get the element at position}}
 \DoxyCodeLine{00051 }
-\DoxyCodeLine{00052     \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& source);}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& \mbox{\hyperlink{classMatrix_a4634b560e429e05ae482cc66ae6e6e8a}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V, I, S>}}\& source);}
 \DoxyCodeLine{00053 \};}
 \DoxyCodeLine{00054 \textcolor{preprocessor}{\#include "../../src/Matrix.cc"}}
 \DoxyCodeLine{00055 \textcolor{preprocessor}{\#endif  // Matrix\_HH}}

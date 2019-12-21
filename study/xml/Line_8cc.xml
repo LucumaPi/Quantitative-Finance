@@ -12,13 +12,13 @@
       </node>
       <node id="3">
         <label>Point.hh</label>
-        <link refid="Point_8hh_source"/>
+        <link refid="Point_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="2">
         <label>duffy/Line.hh</label>
-        <link refid="Line_8hh_source"/>
+        <link refid="Line_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -42,7 +42,7 @@
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>1998</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Line.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Line_8hh" kindref="compound">duffy/Line.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Line::init(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>ps1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>ps2)</highlight></codeline>
 <codeline lineno="13"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
@@ -52,72 +52,72 @@
 <codeline lineno="17"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constructors<sp/>and<sp/>destructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal">Line::Line():<sp/><ref refid="classShape" kindref="compound">Shape</ref>()</highlight></codeline>
+<codeline lineno="20" refid="classLine_1acc11b8a429d8cdd63ba6803dff5602b3" refkind="member"><highlight class="normal"><ref refid="classLine_1acc11b8a429d8cdd63ba6803dff5602b3" kindref="member">Line::Line</ref>():<sp/><ref refid="classShape" kindref="compound">Shape</ref>()</highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>init(<ref refid="classPoint" kindref="compound">Point</ref>(0.0,<sp/>0.0),<sp/><ref refid="classPoint" kindref="compound">Point</ref>(0.0,<sp/>0.0));</highlight></codeline>
 <codeline lineno="24"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal">Line::Line(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>ps1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>ps2):<sp/><ref refid="classShape" kindref="compound">Shape</ref>()<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26" refid="classLine_1a1ae47824ad48165388e38aaad43d09f5" refkind="member"><highlight class="normal"><ref refid="classLine_1acc11b8a429d8cdd63ba6803dff5602b3" kindref="member">Line::Line</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>ps1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>ps2):<sp/><ref refid="classShape" kindref="compound">Shape</ref>()<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="27"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Normal<sp/>constructor,<sp/>constructs<sp/>line<sp/>from<sp/>two<sp/>points</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>init(ps1,<sp/>ps2);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal">Line::Line(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLine" kindref="compound">Line</ref>&amp;<sp/>source):<sp/><ref refid="classShape" kindref="compound">Shape</ref>(source)</highlight></codeline>
+<codeline lineno="32" refid="classLine_1a6c0606903a34f52c01708683fd274a91" refkind="member"><highlight class="normal"><ref refid="classLine_1acc11b8a429d8cdd63ba6803dff5602b3" kindref="member">Line::Line</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLine" kindref="compound">Line</ref>&amp;<sp/>source):<sp/><ref refid="classShape" kindref="compound">Shape</ref>(source)</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>init(source.p1,<sp/>source.p2);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal">Line::~Line()</highlight></codeline>
+<codeline lineno="38" refid="classLine_1aabe85f48d22d92b62257091f48174fac" refkind="member"><highlight class="normal"><ref refid="classLine_1aabe85f48d22d92b62257091f48174fac" kindref="member">Line::~Line</ref>()</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Selectors</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/>Line::P1()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="43" refid="classLine_1ab057f21a08e21a7f293ad63d55f8e464" refkind="member"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/><ref refid="classLine_1ab057f21a08e21a7f293ad63d55f8e464" kindref="member">Line::P1</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="44"><highlight class="keyword"></highlight><highlight class="normal">{</highlight><highlight class="comment">//<sp/>Return<sp/>p1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p1;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/>Line::P2()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="48" refid="classLine_1a8ac7e2f4468352e7c5ddfa91a4940bf4" refkind="member"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/><ref refid="classLine_1a8ac7e2f4468352e7c5ddfa91a4940bf4" kindref="member">Line::P2</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="49"><highlight class="keyword"></highlight><highlight class="normal">{</highlight><highlight class="comment">//<sp/>Return<sp/>p2</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p2;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Line::Length()</highlight><highlight class="keyword"><sp/>const<sp/></highlight></codeline>
+<codeline lineno="53" refid="classLine_1ae3937c096b95a8f8865a714d98c71eba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classLine_1ae3937c096b95a8f8865a714d98c71eba" kindref="member">Line::Length</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight></codeline>
 <codeline lineno="54"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>the<sp/>distance<sp/>between<sp/>start-<sp/>and<sp/>endpoint</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p1.Distance(p2);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p1.<ref refid="classPoint_1a157aafa697fc65028517c431b6c313a2" kindref="member">Distance</ref>(p2);</highlight></codeline>
 <codeline lineno="57"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/>Line::MidPoint()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="59" refid="classLine_1aa5e8d11034af6b8065619bf00298a09d" refkind="member"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point</ref><sp/><ref refid="classLine_1aa5e8d11034af6b8065619bf00298a09d" kindref="member">Line::MidPoint</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="60"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>the<sp/>point<sp/>in<sp/>the<sp/>middle<sp/>of<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p1.MidPoint(p2);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p1.<ref refid="classPoint_1a58fd5b2bb9af8cf2bf978dfdeb8794d9" kindref="member">MidPoint</ref>(p2);</highlight></codeline>
 <codeline lineno="63"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Modifiers</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Line::P1(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>NewP1)</highlight></codeline>
+<codeline lineno="67" refid="classLine_1ac2fb0254947216caad3237df8c9fd412" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLine_1ab057f21a08e21a7f293ad63d55f8e464" kindref="member">Line::P1</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>NewP1)</highlight></codeline>
 <codeline lineno="68"><highlight class="normal">{</highlight><highlight class="comment">//<sp/>Set<sp/>p1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>p1<sp/>=<sp/>NewP1;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Line::P2(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>NewP2)</highlight></codeline>
+<codeline lineno="72" refid="classLine_1abb54ac4f52e335e6715fcf335d480ffd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLine_1a8ac7e2f4468352e7c5ddfa91a4940bf4" kindref="member">Line::P2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>&amp;<sp/>NewP2)</highlight></codeline>
 <codeline lineno="73"><highlight class="normal">{</highlight><highlight class="comment">//<sp/>Set<sp/>p2</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>p2<sp/>=<sp/>NewP2;</highlight></codeline>
 <codeline lineno="75"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Operator<sp/>overloading<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><ref refid="classLine" kindref="compound">Line</ref>&amp;<sp/>Line::operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLine" kindref="compound">Line</ref>&amp;<sp/>source)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78" refid="classLine_1a3ed026438ecc23607f23e59ec6a449a7" refkind="member"><highlight class="normal"><ref refid="classLine" kindref="compound">Line</ref>&amp;<sp/><ref refid="classLine_1a3ed026438ecc23607f23e59ec6a449a7" kindref="member">Line::operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLine" kindref="compound">Line</ref>&amp;<sp/>source)<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="79"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Exit<sp/>if<sp/>same<sp/>object</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">==&amp;source)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>base<sp/>class<sp/>assignment</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>Shape::operator<sp/>=<sp/>(source);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape_1afcefeb5c8a6d3b2f7b6426d299eafe02" kindref="member">Shape::operator = </ref>(source);</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>state</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>init(source.p1,<sp/>source.p2);</highlight></codeline>

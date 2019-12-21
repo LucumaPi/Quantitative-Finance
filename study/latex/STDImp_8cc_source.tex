@@ -1,0 +1,76 @@
+\hypertarget{STDImp_8cc_source}{}\doxysection{S\+T\+D\+Imp.\+cc}
+\label{STDImp_8cc_source}\index{src/STDImp.cc@{src/STDImp.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// STDImp.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Implementation class for one-\/factor initial boundary}}
+\DoxyCodeLine{00004 \textcolor{comment}{// value problems.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// Last Modification Dates:}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 2005-\/9-\/26 DD Kick off}}
+\DoxyCodeLine{00009 \textcolor{comment}{// 2005-\/11-\/26 DD Finish}}
+\DoxyCodeLine{00010 \textcolor{comment}{// 2005-\/11-\/27 DD New cpp structure}}
+\DoxyCodeLine{00011 \textcolor{comment}{// 2005-\/12-\/5 DD Seperate cpp files}}
+\DoxyCodeLine{00012 \textcolor{comment}{//}}
+\DoxyCodeLine{00013 \textcolor{comment}{// (C) Datasim Component Technology BV 2000-\/2006}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#ifndef STDIMP\_CPP}}
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00016}\mbox{\hyperlink{STDImp_8cc_a3cee675f88ccc3fe0b3959ffb08484b2}{00016}} \textcolor{preprocessor}{\#define STDIMP\_CPP}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{STDImp_8hh}{duffy/STDImp.hh}}>}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{comment}{// Selector functions}}
+\DoxyCodeLine{00021 \textcolor{comment}{// Coefficients of parabolic second order operator}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00023}\mbox{\hyperlink{classSTDIBVPImp_a219bad4e9f773f9a0fbbcbeb8a1efe27}{00023}} \mbox{\hyperlink{classSTDIBVPImp_a219bad4e9f773f9a0fbbcbeb8a1efe27}{STDIBVPImp::STDIBVPImp}}() \{\}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00025}\mbox{\hyperlink{classSTDIBVPImp_a5eaac9d4b3382364f97381c044972856}{00025}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classSTDIBVPImp_a5eaac9d4b3382364f97381c044972856}{STDIBVPImp::diffusion}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} \textcolor{comment}{// Coefficient of second derivative}}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} 1.0;}
+\DoxyCodeLine{00028 \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00030}\mbox{\hyperlink{classSTDIBVPImp_af55e9f3ac1f8230ff2fbbfbf7e881783}{00030}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classSTDIBVPImp_af55e9f3ac1f8230ff2fbbfbf7e881783}{STDIBVPImp::convection}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const}   \textcolor{comment}{// Coefficient of first derivative}}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00035}\mbox{\hyperlink{classSTDIBVPImp_ac03a68be2d80f1c0bc09c99f7d3e3e4a}{00035}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classSTDIBVPImp_ac03a68be2d80f1c0bc09c99f7d3e3e4a}{STDIBVPImp::zeroterm}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const}\textcolor{comment}{// Coefficient of zero derivative}}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00038 \}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00040}\mbox{\hyperlink{classSTDIBVPImp_aa622a9deb5bd33653363ed648bea75e5}{00040}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classSTDIBVPImp_aa622a9deb5bd33653363ed648bea75e5}{STDIBVPImp::RHS}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const}\textcolor{comment}{// Inhomogeneous forcing term}}
+\DoxyCodeLine{00041 \{}
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00043 \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{comment}{// Boundary and initial conditions}}
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00046}\mbox{\hyperlink{classSTDIBVPImp_a03df837513d3df573a4420873980d737}{00046}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classSTDIBVPImp_a03df837513d3df573a4420873980d737}{STDIBVPImp::BCL}}(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const}       \textcolor{comment}{// Left hand boundary condition}}
+\DoxyCodeLine{00047 \{}
+\DoxyCodeLine{00048     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00049 \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00051}\mbox{\hyperlink{classSTDIBVPImp_a74cf6a693b997c392ec725a6131d6045}{00051}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classSTDIBVPImp_a74cf6a693b997c392ec725a6131d6045}{STDIBVPImp::BCR}}(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const}       \textcolor{comment}{// Right hand boundary condition}}
+\DoxyCodeLine{00052 \{}
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00054 \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{\Hypertarget{STDImp_8cc_source_l00056}\mbox{\hyperlink{classSTDIBVPImp_ab96293de5041f9544cf955997549f019}{00056}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classSTDIBVPImp_ab96293de5041f9544cf955997549f019}{STDIBVPImp::IC}}(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const}     \textcolor{comment}{// Initial condition}}
+\DoxyCodeLine{00057 \{}
+\DoxyCodeLine{00058     \textcolor{comment}{//return 0.0;}}
+\DoxyCodeLine{00059     \textcolor{keywordflow}{if} (x >= 0.0 \&\& x <= 0.5)}
+\DoxyCodeLine{00060     \{}
+\DoxyCodeLine{00061         \textcolor{keywordflow}{return} 2.0 * x;}
+\DoxyCodeLine{00062     \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{keywordflow}{return} 2.0 * (1.0 -\/ x);}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 \textcolor{comment}{/*  if (x < 0.9)}}
+\DoxyCodeLine{00067 \textcolor{comment}{        return 0.0;}}
+\DoxyCodeLine{00068 \textcolor{comment}{    return 1.0; */}}
+\DoxyCodeLine{00069 \}}
+\DoxyCodeLine{00070 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

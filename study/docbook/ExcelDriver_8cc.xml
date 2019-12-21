@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ExcelDriver_8cc">
+<title>src/ExcelDriver.cc File Reference</title>
+<indexterm><primary>src/ExcelDriver.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/ExcelDriver.hh&gt;
+#include &lt;duffy/MatrixMechanisms.hh&gt;
+</programlisting>Include dependency graph for ExcelDriver.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ExcelDriver_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_ExcelDriver_8cc_1a47ae6379779323a65c3590559e78dcd1">ExcelDriver_CPP</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, long &gt; <link linkend="_ExcelDriver_8cc_1a1b724dd4e99548501ed8e37c192d9eca">createVector</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;mat, long row)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_ExcelDriver_8cc_1a47ae6379779323a65c3590559e78dcd1"/>    <section>
+    <title>ExcelDriver_CPP</title>
+<indexterm><primary>ExcelDriver_CPP</primary><secondary>ExcelDriver.cc</secondary></indexterm>
+<indexterm><primary>ExcelDriver.cc</primary><secondary>ExcelDriver_CPP</secondary></indexterm>
+<para><computeroutput>#define ExcelDriver_CPP</computeroutput></para><para>
+Definition at line 32 of file ExcelDriver.cc.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_ExcelDriver_8cc_1a1b724dd4e99548501ed8e37c192d9eca"/>    <section>
+    <title>createVector()</title>
+<indexterm><primary>createVector</primary><secondary>ExcelDriver.cc</secondary></indexterm>
+<indexterm><primary>ExcelDriver.cc</primary><secondary>createVector</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt;double, long&gt; createVector (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; mat, long row)</computeroutput></para><para>
+Definition at line 323 of file ExcelDriver.cc.</para>
+<programlisting>324 {
+325 
+326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;result&#32;(mat.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>(),&#32;mat.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>());
+327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;i&#32;=&#32;mat.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>();&#32;i&#32;&lt;=&#32;mat.<link linkend="_classMatrix_1af6cbab02648446701a31b7bce0110af7">MaxColumnIndex</link>();&#32;i++)
+328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;mat(row,&#32;i);
+330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+331 
+332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+333 }
+</programlisting></section>
+</section>
+</section>

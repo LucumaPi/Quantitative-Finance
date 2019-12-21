@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSet2_8cc">
+<title>tests/TestSet2.cc File Reference</title>
+<indexterm><primary>tests/TestSet2.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;duffy/Set.hh&gt;
+</programlisting>Include dependency graph for TestSet2.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSet2_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSet2_8cc_1afc656eda04a46b44b586d145450e773c">print</link> (const <link linkend="_classSet">Set</link>&lt; T &gt; &amp;l, const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>template&lt;class T , class T2 &gt; </para><para>void <link linkend="_TestSet2_8cc_1a5790587b3e2400403c7596d06f54dfd9">printSet</link> (const <link linkend="_classSet">Set</link>&lt; std::pair&lt; T, T2 &gt; &gt; &amp;l, const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestSet2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSet2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSet2.cc</secondary></indexterm>
+<indexterm><primary>TestSet2.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 45 of file TestSet2.cc.</para>
+<programlisting>46 {
+47 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;int&gt;</link>&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Only&#32;unique&#32;(new&#32;elements)&#32;added</emphasis>
+50 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(1);
+51 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(2);
+52 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(3);
+53 &#32;&#32;&#32;&#32;<link linkend="_TestSet2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>&#32;(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<emphasis role="stringliteral">&quot;First&#32;set&quot;</emphasis>);
+54 
+55 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;s1;
+56 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+57 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;B&apos;</emphasis>);
+58 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;C&apos;</emphasis>);
+59 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+60 &#32;&#32;&#32;&#32;<link linkend="_TestSet2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>&#32;(s1,&#32;<emphasis role="stringliteral">&quot;Set&#32;of&#32;char&quot;</emphasis>);
+61 
+62 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;std::pair &lt;int, char&gt;</link>&#32;&gt;&#32;S&#32;=&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.CartesianProduct(s1);
+63 &#32;&#32;&#32;&#32;<link linkend="_TestSet2_8cc_1a5790587b3e2400403c7596d06f54dfd9">printSet</link>(S,&#32;<emphasis role="stringliteral">&quot;Product1&quot;</emphasis>);
+64 
+65 &#32;&#32;&#32;&#32;S&#32;=&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>*s1;
+66 &#32;&#32;&#32;&#32;<link linkend="_TestSet2_8cc_1a5790587b3e2400403c7596d06f54dfd9">printSet</link>(S,&#32;<emphasis role="stringliteral">&quot;Product1&quot;</emphasis>);
+67 
+68 
+69 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;std::pair &lt;char, int&gt;</link>&#32;&gt;&#32;S2&#32;=&#32;s1.<link linkend="_classSet_1ae688c6cb7ec18e29b45eb020c444362f">CartesianProduct</link>(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>);
+70 &#32;&#32;&#32;&#32;<link linkend="_TestSet2_8cc_1a5790587b3e2400403c7596d06f54dfd9">printSet</link>(S2,&#32;<emphasis role="stringliteral">&quot;Product2&quot;</emphasis>);
+71 
+72 &#32;&#32;&#32;&#32;S2&#32;=&#32;s1*<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;
+73 &#32;&#32;&#32;&#32;<link linkend="_TestSet2_8cc_1a5790587b3e2400403c7596d06f54dfd9">printSet</link>(S2,&#32;<emphasis role="stringliteral">&quot;Product2&quot;</emphasis>);
+74 
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+76 }
+</programlisting>    </section><anchor xml:id="_TestSet2_8cc_1afc656eda04a46b44b586d145450e773c"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestSet2.cc</secondary></indexterm>
+<indexterm><primary>TestSet2.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classSet">Set</link>&lt; T &gt; &amp; l, const std::string &amp; name)</computeroutput></para><para>
+Definition at line 13 of file TestSet2.cc.</para>
+<programlisting>14 {&#32;&#32;<emphasis role="comment">//&#32;Print&#32;the&#32;contents&#32;of&#32;a&#32;Set.&#32;Notice&#32;the&#32;presence&#32;of&#32;a&#32;constant&#32;iterator.</emphasis>
+15 &#32;&#32;&#32;&#32;
+16 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;name&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;size&#32;of&#32;set&#32;is&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;l.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&#32;&quot;</emphasis>;
+17 
+18 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">Set&lt;T&gt;::const_iterator</link>&#32;i;
+19 
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;l.<link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link>();&#32;i&#32;!=&#32;l.<link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link>();&#32;++i)
+21 &#32;&#32;&#32;&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;*i&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+23 
+24 &#32;&#32;&#32;&#32;}
+25 
+26 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+27 }
+</programlisting>    </section><anchor xml:id="_TestSet2_8cc_1a5790587b3e2400403c7596d06f54dfd9"/>    <section>
+    <title>printSet()</title>
+<indexterm><primary>printSet</primary><secondary>TestSet2.cc</secondary></indexterm>
+<indexterm><primary>TestSet2.cc</primary><secondary>printSet</secondary></indexterm>
+<computeroutput>template&lt;class T , class T2 &gt; </computeroutput><para><computeroutput>void printSet (const <link linkend="_classSet">Set</link>&lt; std::pair&lt; T, T2 &gt; &gt; &amp; l, const std::string &amp; name)</computeroutput></para><para>
+Definition at line 29 of file TestSet2.cc.</para>
+<programlisting>30 {&#32;&#32;<emphasis role="comment">//&#32;Print&#32;the&#32;contents&#32;of&#32;a&#32;Set.&#32;Notice&#32;the&#32;presence&#32;of&#32;a&#32;constant&#32;iterator.</emphasis>
+31 &#32;&#32;&#32;&#32;
+32 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;name&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;size&#32;of&#32;set&#32;is&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;l.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&#32;&quot;</emphasis>;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;std::pair&lt;T,&#32;T2&gt;&#32;&gt;::const_iterator&#32;i;
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;l.<link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link>();&#32;i&#32;!=&#32;l.<link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link>();&#32;++i)
+37 &#32;&#32;&#32;&#32;{
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;(*i).second&#32;&lt;&lt;&#32;std::endl;
+39 
+40 &#32;&#32;&#32;&#32;}
+41 
+42 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+43 }
+</programlisting></section>
+</section>
+</section>

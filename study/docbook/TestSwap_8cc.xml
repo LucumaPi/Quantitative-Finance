@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSwap_8cc">
+<title>tests/TestSwap.cc File Reference</title>
+<indexterm><primary>tests/TestSwap.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Range.hh&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestSwap.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSwap_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class Numeric &gt; </para><para>void <link linkend="_TestSwap_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c">print</link> (const <link linkend="_classRange">Range</link>&lt; Numeric &gt; &amp;range)</para>
+</listitem>
+            <listitem><para>template&lt;class V &gt; </para><para>void <link linkend="_TestSwap_8cc_1a25424f68584552ee5e1a153c80f95201">mySwap</link> (V &amp;v1, V &amp;v2)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestSwap_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSwap_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSwap.cc</secondary></indexterm>
+<indexterm><primary>TestSwap.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 27 of file TestSwap.cc.</para>
+<programlisting>28 {
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;10;
+30 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;k&#32;=&#32;20;
+31 
+32 &#32;&#32;&#32;&#32;<link linkend="_TestSwap_8cc_1a25424f68584552ee5e1a153c80f95201">mySwap</link>(j,&#32;k);
+33 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;k&#32;&lt;&lt;&#32;std::endl;
+34 
+35 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;int&gt;</link>&#32;range1&#32;(0,&#32;10);
+36 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;int&gt;</link>&#32;range2&#32;(20,&#32;30);
+37 
+38 &#32;&#32;&#32;&#32;<link linkend="_TestSwap_8cc_1a25424f68584552ee5e1a153c80f95201">mySwap</link>&#32;(range1,&#32;range2);
+39 &#32;&#32;&#32;&#32;<link linkend="_TestSwap_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c">print</link>&#32;(range1);
+40 &#32;&#32;&#32;&#32;<link linkend="_TestSwap_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c">print</link>&#32;(range2);
+41 
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+43 }
+</programlisting>    </section><anchor xml:id="_TestSwap_8cc_1a25424f68584552ee5e1a153c80f95201"/>    <section>
+    <title>mySwap()</title>
+<indexterm><primary>mySwap</primary><secondary>TestSwap.cc</secondary></indexterm>
+<indexterm><primary>TestSwap.cc</primary><secondary>mySwap</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>void mySwap (V &amp; v1, V &amp; v2)</computeroutput></para><para>
+Definition at line 18 of file TestSwap.cc.</para>
+<programlisting>19 {
+20 
+21 &#32;&#32;&#32;&#32;V&#32;tmp&#32;=&#32;v2;
+22 &#32;&#32;&#32;&#32;v2&#32;=&#32;v1;
+23 
+24 &#32;&#32;&#32;&#32;v1&#32;=&#32;tmp;
+25 }
+</programlisting>    </section><anchor xml:id="_TestSwap_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestSwap.cc</secondary></indexterm>
+<indexterm><primary>TestSwap.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class Numeric &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classRange">Range</link>&lt; Numeric &gt; &amp; range)</computeroutput></para><para>
+Definition at line 13 of file TestSwap.cc.</para>
+<programlisting>14 {
+15 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;[&quot;</emphasis>&#32;&lt;&lt;&#32;range.<link linkend="_classRange_1a885e2f67531baf6df9359f95c3f8ebaa">low</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>&#32;&lt;&lt;&#32;range.<link linkend="_classRange_1aa0f159ae114a4053113ba035b1fc7b21">high</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+16 }
+</programlisting></section>
+</section>
+</section>

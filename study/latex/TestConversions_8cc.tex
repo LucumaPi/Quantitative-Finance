@@ -1,0 +1,85 @@
+\hypertarget{TestConversions_8cc}{}\doxysection{tests/\+Test\+Conversions.cc File Reference}
+\label{TestConversions_8cc}\index{tests/TestConversions.cc@{tests/TestConversions.cc}}
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Test\+Conversions.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{TestConversions_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{TestConversions_8cc_acec0ad850d2157510254d54466874544}{get\+String}} (const T \&value)
+\item 
+int \mbox{\hyperlink{TestConversions_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestConversions_8cc_acec0ad850d2157510254d54466874544}\label{TestConversions_8cc_acec0ad850d2157510254d54466874544}} 
+\index{TestConversions.cc@{TestConversions.cc}!getString@{getString}}
+\index{getString@{getString}!TestConversions.cc@{TestConversions.cc}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string get\+String (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestConversions_8cc_source_l00014}{14}} of file \mbox{\hyperlink{TestConversions_8cc_source}{Test\+Conversions.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016         std::stringstream s;}
+\DoxyCodeLine{00017         s << value;}
+\DoxyCodeLine{00018         }
+\DoxyCodeLine{00019         \textcolor{keywordflow}{return} s.str();}
+\DoxyCodeLine{00020 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestConversions_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestConversions_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestConversions.cc@{TestConversions.cc}!main@{main}}
+\index{main@{main}!TestConversions.cc@{TestConversions.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestConversions_8cc_source_l00022}{22}} of file \mbox{\hyperlink{TestConversions_8cc_source}{Test\+Conversions.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{comment}{// Hard-\/coded example for starters}}
+\DoxyCodeLine{00026     \textcolor{keywordtype}{double} myDouble = 1.0;}
+\DoxyCodeLine{00027     std::stringstream s;}
+\DoxyCodeLine{00028     s << myDouble;}
+\DoxyCodeLine{00029     std::string result = s.str();}
+\DoxyCodeLine{00030     std::cout << \textcolor{stringliteral}{"String value is: "} << result << std::endl;}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{keywordtype}{int} i = 10;}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{long} j = 1234567890;}
+\DoxyCodeLine{00034     \textcolor{keywordtype}{float} f = 3.14f;}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{double} d = 2.712222222223;}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     std::string myString = getString<int>(i);}
+\DoxyCodeLine{00038     std::cout << myString << std::endl;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     myString = getString<long>(j);}
+\DoxyCodeLine{00041     std::cout << myString << std::endl;}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     myString = getString<float>(f);}
+\DoxyCodeLine{00044     std::cout << myString << std::endl;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     myString = getString<double>(d);}
+\DoxyCodeLine{00047     std::cout << myString << std::endl;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00050 \}}
+
+\end{DoxyCode}

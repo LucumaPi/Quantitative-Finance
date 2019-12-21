@@ -1,0 +1,87 @@
+\hypertarget{GenericCreator_8cc}{}\doxysection{src/\+Generic\+Creator.cc File Reference}
+\label{GenericCreator_8cc}\index{src/GenericCreator.cc@{src/GenericCreator.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$duffy/\+Point.\+hh$>$}\newline
+Include dependency graph for Generic\+Creator.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{GenericCreator_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAbstractFactory}{Abstract\+Factory$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classHeapCreator}{Heap\+Creator$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classPrototypeCreator}{Prototype\+Creator$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{classAbstractFactory}{Abstract\+Factory}}$<$ T $>$ $\ast$ \mbox{\hyperlink{GenericCreator_8cc_af68ffa5b985c3dbcfcf6c3628bc92279}{Get\+Factory}} ()
+\item 
+int \mbox{\hyperlink{GenericCreator_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{GenericCreator_8cc_af68ffa5b985c3dbcfcf6c3628bc92279}\label{GenericCreator_8cc_af68ffa5b985c3dbcfcf6c3628bc92279}} 
+\index{GenericCreator.cc@{GenericCreator.cc}!GetFactory@{GetFactory}}
+\index{GetFactory@{GetFactory}!GenericCreator.cc@{GenericCreator.cc}}
+\doxysubsubsection{\texorpdfstring{GetFactory()}{GetFactory()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classAbstractFactory}{Abstract\+Factory}}$<$T$>$$\ast$ Get\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GenericCreator_8cc_source_l00047}{47}} of file \mbox{\hyperlink{GenericCreator_8cc_source}{Generic\+Creator.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049     \textcolor{keywordtype}{int} choice = 1;}
+\DoxyCodeLine{00050     std::cout << \textcolor{stringliteral}{"Factories: 1) Heap 2) Prototype "};}
+\DoxyCodeLine{00051     std::cin >> choice;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{if} (choice == 1)}
+\DoxyCodeLine{00054     \{}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classHeapCreator}{HeapCreator<T>}}();}
+\DoxyCodeLine{00056     \}}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00058     \{}
+\DoxyCodeLine{00059         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classPrototypeCreator}{PrototypeCreator<T>}}();}
+\DoxyCodeLine{00060     \}}
+\DoxyCodeLine{00061 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GenericCreator_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{GenericCreator_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{GenericCreator.cc@{GenericCreator.cc}!main@{main}}
+\index{main@{main}!GenericCreator.cc@{GenericCreator.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GenericCreator_8cc_source_l00063}{63}} of file \mbox{\hyperlink{GenericCreator_8cc_source}{Generic\+Creator.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064 \{}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \mbox{\hyperlink{classHeapCreator}{HeapCreator<int>}} hfac;}
+\DoxyCodeLine{00067     \textcolor{keywordtype}{int}* myInt = hfac.\mbox{\hyperlink{classHeapCreator_a44904c9903236de51ee2b8f64ac542bc}{Create}}();}
+\DoxyCodeLine{00068     std::cout << *myInt << std::endl;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \mbox{\hyperlink{classHeapCreator}{HeapCreator<Point>}} hfac2;}
+\DoxyCodeLine{00071     \mbox{\hyperlink{classPoint}{Point}}* myPt = hfac2.\mbox{\hyperlink{classHeapCreator_a44904c9903236de51ee2b8f64ac542bc}{Create}}();}
+\DoxyCodeLine{00072     std::cout << (*myPt).\mbox{\hyperlink{classPoint_ae86421f3b20ffcf813e2736002e68459}{X}}() << \textcolor{stringliteral}{", "} << (*myPt).Y() << std::endl;}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \mbox{\hyperlink{classAbstractFactory}{AbstractFactory<double>}}* fac = GetFactory<double>();}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00077 \}}
+
+\end{DoxyCode}

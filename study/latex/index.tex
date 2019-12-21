@@ -1,0 +1,66 @@
+\hypertarget{index_welcome}{}\doxysection{Welcome}\label{index_welcome}
+Welcome to the official S\+F\+ML documentation. Here you will find a detailed view of all the S\+F\+ML \href{./annotated.php}{\texttt{ classes}} and functions. ~\newline
+ If you are looking for tutorials, you can visit the official website at \href{https://www.sfml-dev.org/}{\texttt{ www.\+sfml-\/dev.\+org}}.
+
+\hypertarget{index_example}{}\doxysection{Short example}\label{index_example}
+Here is a short example, to show you how simple it is to use S\+F\+ML\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{CMakeCXXCompilerId_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// Create the main window}}
+\DoxyCodeLine{    sf::RenderWindow window(sf::VideoMode(800, 600), \textcolor{stringliteral}{"SFML window"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Load a sprite to display}}
+\DoxyCodeLine{    sf::Texture texture;}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (!texture.loadFromFile(\textcolor{stringliteral}{"cute\_image.jpg"}))}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{    sf::Sprite sprite(texture);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Create a graphical text to display}}
+\DoxyCodeLine{    sf::Font font;}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (!font.loadFromFile(\textcolor{stringliteral}{"arial.ttf"}))}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{    sf::Text text(\textcolor{stringliteral}{"Hello SFML"}, font, 50);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Load a music to play}}
+\DoxyCodeLine{    sf::Music music;}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (!music.openFromFile(\textcolor{stringliteral}{"nice\_music.ogg"}))}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Play the music}}
+\DoxyCodeLine{    music.play();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Start the game loop}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while} (window.isOpen())}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{comment}{// Process events}}
+\DoxyCodeLine{        sf::Event event;}
+\DoxyCodeLine{        \textcolor{keywordflow}{while} (window.pollEvent(event))}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{comment}{// Close window: exit}}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (event.type == sf::Event::Closed)}
+\DoxyCodeLine{                window.close();}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Clear screen}}
+\DoxyCodeLine{        window.clear();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Draw the sprite}}
+\DoxyCodeLine{        window.draw(sprite);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Draw the string}}
+\DoxyCodeLine{        window.draw(text);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Update the window}}
+\DoxyCodeLine{        window.display();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

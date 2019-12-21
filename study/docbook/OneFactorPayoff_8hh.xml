@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_OneFactorPayoff_8hh">
+<title>include/duffy/OneFactorPayoff.hh File Reference</title>
+<indexterm><primary>include/duffy/OneFactorPayoff.hh</primary></indexterm>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="OneFactorPayoff_8hh__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classOneFactorPayoff">OneFactorPayoff</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_OneFactorPayoff_8hh_1a014348d679f2afcacf81af0e762ad426">MyCallPayoffFN</link> (double K, double S)</para>
+</listitem>
+            <listitem><para>double <link linkend="_OneFactorPayoff_8hh_1a941b079b8b777eac5fafaf713f67027a">MyPutPayoffFN</link> (double K, double S)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_OneFactorPayoff_8hh_1a014348d679f2afcacf81af0e762ad426"/>    <section>
+    <title>MyCallPayoffFN()</title>
+<indexterm><primary>MyCallPayoffFN</primary><secondary>OneFactorPayoff.hh</secondary></indexterm>
+<indexterm><primary>OneFactorPayoff.hh</primary><secondary>MyCallPayoffFN</secondary></indexterm>
+<para><computeroutput>double MyCallPayoffFN (double K, double S)</computeroutput></para><para>
+Definition at line 12 of file SpecialPayoffFunctions.hh.</para>
+<programlisting>13 {
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(S&#32;&gt;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>)
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(S&#32;-&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>);
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;
+18 
+19 }
+</programlisting>    </section><anchor xml:id="_OneFactorPayoff_8hh_1a941b079b8b777eac5fafaf713f67027a"/>    <section>
+    <title>MyPutPayoffFN()</title>
+<indexterm><primary>MyPutPayoffFN</primary><secondary>OneFactorPayoff.hh</secondary></indexterm>
+<indexterm><primary>OneFactorPayoff.hh</primary><secondary>MyPutPayoffFN</secondary></indexterm>
+<para><computeroutput>double MyPutPayoffFN (double K, double S)</computeroutput></para><para>
+Definition at line 21 of file SpecialPayoffFunctions.hh.</para>
+<programlisting>22 {
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;max&#32;(K-S,&#32;0)</emphasis>
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;&gt;&#32;S)
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;-&#32;S);
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;
+28 }
+</programlisting></section>
+</section>
+</section>

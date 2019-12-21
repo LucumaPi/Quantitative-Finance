@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestLatticeFactory_8cc">
+<title>tests/TestLatticeFactory.cc File Reference</title>
+<indexterm><primary>tests/TestLatticeFactory.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/LatticeFactory.hh&gt;
+#include &lt;duffy/BinomialMethod.hh&gt;
+#include &lt;duffy/Option.hh&gt;
+</programlisting>Include dependency graph for TestLatticeFactory.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestLatticeFactory_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V , class I , int NumberNodes&gt; </para><para>void <link linkend="_TestLatticeFactory_8cc_1a4f588b04e89a733e6e27ba312ce437d3">print</link> (const <link linkend="_classLattice">Lattice</link>&lt; V, I, NumberNodes &gt; &amp;source)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestLatticeFactory_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestLatticeFactory_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestLatticeFactory.cc</secondary></indexterm>
+<indexterm><primary>TestLatticeFactory.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 27 of file TestLatticeFactory.cc.</para>
+<programlisting>28 {
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_classOption">Option</link>;
+30 
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classOption_1ae6d180511e6eef217242a68912673668">U</link>&#32;=&#32;105.0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Later&#32;use&#32;Property&#32;Sets&#32;in&#32;NS</emphasis>
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classOption_1a40db81993d02b319a38e62b42a730d6a">K</link>&#32;=&#32;100.0;
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classOption_1ae583dd6d430a3b428014efa942605d54">T</link>&#32;=&#32;0.5;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classOption_1abd44ab56edddcd59f80ca5c60c9b66f0">r</link>&#32;=&#32;0.10;
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classOption_1a8b68f88d3e7a01dfea0b83e3e5a4f57e">sig</link>&#32;=&#32;0.36;
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classOption_1aa3f69771cb6066c69d588fc7682fc1e8">b</link>&#32;=&#32;0.0;
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;=&#32;100;
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;k&#32;=&#32;<link linkend="_classOption_1ae583dd6d430a3b428014efa942605d54">T</link>&#32;/&#32;double(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>);
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//LatticeFactory*&#32;lf&#32;=&#32;new&#32;CRRFactory(sig,r,k,T);</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory">LatticeFactory</link>*&#32;lf&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classJRFactory">JRFactory</link>(<link linkend="_classOption_1a8b68f88d3e7a01dfea0b83e3e5a4f57e">sig</link>,<link linkend="_classOption_1abd44ab56edddcd59f80ca5c60c9b66f0">r</link>,k,<link linkend="_classOption_1ae583dd6d430a3b428014efa942605d54">T</link>);
+43 
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Forward&#32;Induction</emphasis>
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;S&#32;=&#32;10.0;
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;double, int, 2&gt;</link>&#32;lattice&#32;=&#32;lf&#32;-&gt;&#32;<link linkend="_namespaceStandardLattice_1a0ced6d331b2856d61096bdc9aaab15cd">createLattice</link>(S);
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classOption_1a0182606c4d172a6157a6d838b51a6686">print</link>(lattice);
+48 
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Backward&#32;Induction</emphasis>
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classBinomialMethod">BinomialMethod</link>&#32;bn&#32;(payoffCall);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bn.buildLattice();
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bn.modifyLattice();
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bn.calcRHS();
+55 
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&#32;**Price:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;bn.getPrice()&#32;&lt;&lt;&#32;std::endl;
+57 
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+59 }
+</programlisting>    </section><anchor xml:id="_TestLatticeFactory_8cc_1a4f588b04e89a733e6e27ba312ce437d3"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestLatticeFactory.cc</secondary></indexterm>
+<indexterm><primary>TestLatticeFactory.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , int NumberNodes&gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classLattice">Lattice</link>&lt; V, I, NumberNodes &gt; &amp; source)</computeroutput></para><para>
+Definition at line 8 of file TestLatticeFactory.cc.</para>
+<programlisting>9 {
+10 &#32;&#32;&#32;&#32;
+11 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;source.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();&#32;j&#32;&lt;=&#32;source.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();&#32;j++)
+12 &#32;&#32;&#32;&#32;{
+13 
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nBranch&#32;Number&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;:&#32;[&quot;</emphasis>;
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;source[j].MinIndex();&#32;i&#32;&lt;=&#32;source[j].<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();&#32;i++)
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;source[j][i]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+18 &#32;&#32;&#32;&#32;
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+20 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>;
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;}
+24 
+25 }
+</programlisting></section>
+</section>
+</section>

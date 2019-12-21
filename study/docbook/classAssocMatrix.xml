@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classAssocMatrix">
 <title>AssocMatrix&lt; V, AI1, AI2 &gt; Class Template Reference</title>
 <indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;AssocMatrix.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for AssocMatrix&lt; V, AI1, AI2 &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -14,28 +17,253 @@ Collaboration diagram for AssocMatrix&lt; V, AI1, AI2 &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1a1aa35d61f052ac3898ab15e5561084c7"/><emphasis role="strong">AssocMatrix</emphasis> (const <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp;arr2)</para>
+            <listitem><para><link linkend="_classAssocMatrix_1a804b8f1b6123e030823f18abfdd0efb4">AssocMatrix</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1a59922d6c221fc62abb54bc1bb91604ca"/><emphasis role="strong">AssocMatrix</emphasis> (const <link linkend="_classSet">Set</link>&lt; AI1 &gt; &amp;Rnames, const <link linkend="_classSet">Set</link>&lt; AI2 &gt; &amp;Cnames, <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, long &gt; &amp;matrix)</para>
+            <listitem><para><link linkend="_classAssocMatrix_1a1aa35d61f052ac3898ab15e5561084c7">AssocMatrix</link> (const <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp;arr2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1a584ec0fa44e926ef4e44d6a251dcf01a"/><link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp;ass2)</para>
+            <listitem><para><link linkend="_classAssocMatrix_1a59922d6c221fc62abb54bc1bb91604ca">AssocMatrix</link> (const <link linkend="_classSet">Set</link>&lt; AI1 &gt; &amp;Rnames, const <link linkend="_classSet">Set</link>&lt; AI2 &gt; &amp;Cnames, <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, long &gt; &amp;matrix)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1a0d1563baeba3a42f1b9abcd2d7877779"/>virtual V &amp; <emphasis role="strong">operator()</emphasis> (const AI1 &amp;index1, const AI2 &amp;index2)</para>
+            <listitem><para><link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp; <link linkend="_classAssocMatrix_1a584ec0fa44e926ef4e44d6a251dcf01a">operator=</link> (const <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp;ass2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1a326e6e4074d55872bc38d7968d2a3525"/>void <emphasis role="strong">modify</emphasis> (const <link linkend="_structSpreadSheetRange">SpreadSheetRange</link>&lt; AI1, AI2 &gt; &amp;range, void(*f)(V &amp;cellValue))</para>
+            <listitem><para>virtual V &amp; <link linkend="_classAssocMatrix_1a0d1563baeba3a42f1b9abcd2d7877779">operator()</link> (const AI1 &amp;index1, const AI2 &amp;index2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1a0bcc0fcd9e5ff08dc2af4dea25ddda41"/>long <emphasis role="strong">Size</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classAssocMatrix_1a326e6e4074d55872bc38d7968d2a3525">modify</link> (const <link linkend="_structSpreadSheetRange">SpreadSheetRange</link>&lt; AI1, AI2 &gt; &amp;range, void(*f)(V &amp;cellValue))</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1a74a3cfe29f843fd8e52ac0e24f6d62e8"/><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, long &gt; <emphasis role="strong">extract</emphasis> (const <link linkend="_structSpreadSheetRange">SpreadSheetRange</link>&lt; AI1, AI2 &gt; &amp;range)</para>
+            <listitem><para>long <link linkend="_classAssocMatrix_1a0bcc0fcd9e5ff08dc2af4dea25ddda41">Size</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1adce6a940baf8f9d7c5a7b258a447ab3a"/><link linkend="_classSet">Set</link>&lt; AI1 &gt; <emphasis role="strong">RowKeys</emphasis> () const</para>
+            <listitem><para><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, long &gt; <link linkend="_classAssocMatrix_1a74a3cfe29f843fd8e52ac0e24f6d62e8">extract</link> (const <link linkend="_structSpreadSheetRange">SpreadSheetRange</link>&lt; AI1, AI2 &gt; &amp;range)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1a3d10f575ea198ec26e22048ce30e45f1"/><link linkend="_classSet">Set</link>&lt; AI2 &gt; <emphasis role="strong">ColumnKeys</emphasis> () const</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; AI1 &gt; <link linkend="_classAssocMatrix_1adce6a940baf8f9d7c5a7b258a447ab3a">RowKeys</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classAssocMatrix_1ac7671399c8b31d220d42d03da7e11182"/><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, long &gt; * <emphasis role="strong">Data</emphasis> ()</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; AI2 &gt; <link linkend="_classAssocMatrix_1a3d10f575ea198ec26e22048ce30e45f1">ColumnKeys</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, long &gt; * <link linkend="_classAssocMatrix_1ac7671399c8b31d220d42d03da7e11182">Data</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class V, class AI1 = std::string, class AI2 = std::string&gt;
+class AssocMatrix&lt; V, AI1, AI2 &gt;</title></simplesect>
+
+<para>
+Definition at line 38 of file AssocMatrix.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classAssocMatrix_1a804b8f1b6123e030823f18abfdd0efb4"/>    <section>
+    <title>AssocMatrix()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>AssocMatrix</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>AssocMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class AI1 , class AI2 &gt; </computeroutput><para><computeroutput><link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::<link linkend="_classAssocMatrix">AssocMatrix</link> ( )</computeroutput></para><para>
+Definition at line 24 of file AssocMatrix.cc.</para>
+<programlisting>25 {
+26 
+27 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;init&quot;</emphasis>;
+28 
+29 &#32;&#32;&#32;&#32;mat&#32;=&#32;0;
+30 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;<link linkend="_classAssocArray">AssocArray&lt;long, AI1&gt;</link>&#32;();
+31 &#32;&#32;&#32;&#32;c&#32;=&#32;<link linkend="_classAssocArray">AssocArray&lt;long, AI2&gt;</link>&#32;();
+32 &#32;&#32;&#32;&#32;keysRows&#32;=&#32;<link linkend="_classSet">Set&lt;AI1&gt;</link>();
+33 &#32;&#32;&#32;&#32;keysColumns&#32;=&#32;<link linkend="_classSet">Set&lt;AI2&gt;</link>();
+34 }
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1a1aa35d61f052ac3898ab15e5561084c7"/>    <section>
+    <title>AssocMatrix()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>AssocMatrix</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>AssocMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class AI1 , class AI2 &gt; </computeroutput><para><computeroutput><link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::<link linkend="_classAssocMatrix">AssocMatrix</link> (const <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp; arr2)</computeroutput></para><para>
+Definition at line 37 of file AssocMatrix.cc.</para>
+<programlisting>38 {
+39 
+40 &#32;&#32;&#32;&#32;mat&#32;=&#32;mat2.mat;
+41 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;mat2.r;&#32;c&#32;=&#32;mat2.c;
+42 &#32;&#32;&#32;&#32;keysRows&#32;=&#32;mat2.keysRows;
+43 &#32;&#32;&#32;&#32;keysColumns&#32;=&#32;mat2.keysColumns;
+44 
+45 }
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1a59922d6c221fc62abb54bc1bb91604ca"/>    <section>
+    <title>AssocMatrix()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>AssocMatrix</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>AssocMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class AI1 , class AI2 &gt; </computeroutput><para><computeroutput><link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::<link linkend="_classAssocMatrix">AssocMatrix</link> (const <link linkend="_classSet">Set</link>&lt; AI1 &gt; &amp; Rnames, const <link linkend="_classSet">Set</link>&lt; AI2 &gt; &amp; Cnames, <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, long &gt; &amp; matrix)</computeroutput></para><para>
+Definition at line 53 of file AssocMatrix.cc.</para>
+<programlisting>55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;keysRows(Rnames),&#32;keysColumns(Cnames)
+56 {
+57 
+58 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Must&#32;build&#32;the&#32;associative&#32;arrays,&#32;they&#32;have&#32;the&#32;same&#32;values&#32;as&#32;the</emphasis>
+59 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;indices&#32;in&#32;the&#32;matrix</emphasis>
+60 
+61 &#32;&#32;&#32;&#32;mat&#32;=&#32;&amp;matrix;
+62 
+63 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Build&#32;rows</emphasis>
+64 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;start&#32;=&#32;mat-&gt;<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();
+65 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_classSet">Set&lt;AI1&gt;::const_iterator</link>&#32;it;&#32;<emphasis role="comment">//&#32;Size&#32;==&#32;size&#32;of&#32;matrix</emphasis>
+66 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;<link linkend="_classAssocArray">AssocArray&lt;long, AI1&gt;</link>&#32;(keysRows,start);
+67 
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(it&#32;=&#32;keysRows.<link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link>();&#32;it&#32;!=&#32;keysRows.<link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link>();&#32;it++)
+69 &#32;&#32;&#32;&#32;{
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;*it&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;start&#32;&lt;&lt;&#32;std::endl;
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[*it]&#32;=&#32;start;
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;start++;
+73 &#32;&#32;&#32;&#32;}
+74 
+75 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Build&#32;columns</emphasis>
+76 &#32;&#32;&#32;&#32;start&#32;=&#32;mat-&gt;<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>();
+77 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_classSet">Set&lt;AI2&gt;::const_iterator</link>&#32;itc;&#32;<emphasis role="comment">//&#32;Size&#32;==&#32;size&#32;of&#32;matrix</emphasis>
+78 &#32;&#32;&#32;&#32;c&#32;=&#32;<link linkend="_classAssocArray">AssocArray&lt;long, AI2&gt;</link>&#32;(keysColumns,start);
+79 
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(itc&#32;=&#32;keysColumns.<link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link>();&#32;itc&#32;!=&#32;keysColumns.<link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link>();&#32;itc++)
+81 &#32;&#32;&#32;&#32;{
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;c[*itc]&#32;=&#32;start;
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;start++;
+85 &#32;&#32;&#32;&#32;}
+86 
+87 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;NO&#32;EXCEPTION&#32;HANDLING&#32;AT&#32;THE&#32;MOMENT</emphasis>
+88 &#32;&#32;&#32;&#32;<emphasis role="comment">//print(c);</emphasis>
+89 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classAssocMatrix_1a3d10f575ea198ec26e22048ce30e45f1"/>    <section>
+    <title>ColumnKeys()</title>
+<indexterm><primary>ColumnKeys</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>ColumnKeys</secondary></indexterm>
+<computeroutput>template&lt;class V, class AI1 = std::string, class AI2 = std::string&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;AI2&gt; <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::ColumnKeys ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 76 of file AssocMatrix.hh.</para>
+<programlisting>76 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;keysColumns;&#32;}&#32;&#32;&#32;&#32;&#32;
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1ac7671399c8b31d220d42d03da7e11182"/>    <section>
+    <title>Data()</title>
+<indexterm><primary>Data</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>Data</secondary></indexterm>
+<computeroutput>template&lt;class V, class AI1 = std::string, class AI2 = std::string&gt; </computeroutput><para><computeroutput><link linkend="_classNumericMatrix">NumericMatrix</link>&lt;V, long&gt;* <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::Data ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 77 of file AssocMatrix.hh.</para>
+<programlisting>77 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;mat;&#32;}
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1a74a3cfe29f843fd8e52ac0e24f6d62e8"/>    <section>
+    <title>extract()</title>
+<indexterm><primary>extract</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>extract</secondary></indexterm>
+<computeroutput>template&lt;class V , class AI1 , class AI2 &gt; </computeroutput><para><computeroutput><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, long &gt; <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::extract (const <link linkend="_structSpreadSheetRange">SpreadSheetRange</link>&lt; AI1, AI2 &gt; &amp; range)</computeroutput></para><para>
+Definition at line 128 of file AssocMatrix.cc.</para>
+<programlisting>129 {
+130 
+131 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Slice&#32;a&#32;matrix</emphasis>
+132 &#32;&#32;&#32;&#32;AI1&#32;rmin&#32;=&#32;range.<link linkend="_structSpreadSheetRange_1a162552eb32806cc172e1dc7e7c74da07">upperLeft</link>.first;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AI2&#32;cmin&#32;=&#32;range.<link linkend="_structSpreadSheetRange_1a162552eb32806cc172e1dc7e7c74da07">upperLeft</link>.second;
+134 
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AI1&#32;rmax&#32;=&#32;range.<link linkend="_structSpreadSheetRange_1a3d228f1713cd8d0189f7d2bd0a312512">lowerRight</link>.first;
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AI2&#32;cmax&#32;=&#32;range.<link linkend="_structSpreadSheetRange_1a3d228f1713cd8d0189f7d2bd0a312512">lowerRight</link>.second;
+137 
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;rmin&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,r&#32;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;rmax&#32;&lt;&lt;&#32;std::endl;
+139 
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;Rmin&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[rmin];&#32;<emphasis role="keywordtype">long</emphasis>&#32;Rmax&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[rmax];
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;Cmin&#32;=&#32;c[cmin];&#32;<emphasis role="keywordtype">long</emphasis>&#32;Cmax&#32;=&#32;c[cmax];
+142 
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;Rmin&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;Rmax&#32;&lt;&lt;&#32;std::endl;
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;Cmin&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;Cmax&#32;&lt;&lt;&#32;std::endl;
+145 
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;d;
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;d;
+148 
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;must&#32;find&#32;the&#32;integer&#32;indices&#32;corresponding&#32;to&#32;these</emphasis>
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;V, long&gt;</link>&#32;result(Rmax-Rmin+1,&#32;Cmax-Cmin+1,&#32;Rmin,&#32;Cmin);
+151 
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;ri&#32;=&#32;Rmin;&#32;ri&#32;&lt;=&#32;Rmax;&#32;ri++)
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;ci&#32;=&#32;Cmin;&#32;ci&#32;&lt;=&#32;Cmax;&#32;ci++)
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result(ri,&#32;ci)&#32;=&#32;(*mat)(ri,&#32;ci);
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+159 
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+161 
+162 }
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1a326e6e4074d55872bc38d7968d2a3525"/>    <section>
+    <title>modify()</title>
+<indexterm><primary>modify</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>modify</secondary></indexterm>
+<computeroutput>template&lt;class V , class AI1 , class AI2 &gt; </computeroutput><para><computeroutput>void <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::modify (const <link linkend="_structSpreadSheetRange">SpreadSheetRange</link>&lt; AI1, AI2 &gt; &amp; range, void(*)(V &amp;cellValue) f)</computeroutput></para><para>
+Definition at line 93 of file AssocMatrix.cc.</para>
+<programlisting>94 {
+95 
+96 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Objective&#32;is&#32;to&#32;iterate&#32;in&#32;a&#32;range&#32;and&#32;apply&#32;a&#32;function&#32;to&#32;each&#32;</emphasis>
+97 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;element&#32;in&#32;thate&#32;range</emphasis>
+98 
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AI1&#32;rmin&#32;=&#32;range.<link linkend="_structSpreadSheetRange_1a162552eb32806cc172e1dc7e7c74da07">upperLeft</link>.first;
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AI2&#32;cmin&#32;=&#32;range.<link linkend="_structSpreadSheetRange_1a162552eb32806cc172e1dc7e7c74da07">upperLeft</link>.second;
+101 
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AI1&#32;rmax&#32;=&#32;range.<link linkend="_structSpreadSheetRange_1a3d228f1713cd8d0189f7d2bd0a312512">lowerRight</link>.first;
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AI2&#32;cmax&#32;=&#32;range.<link linkend="_structSpreadSheetRange_1a3d228f1713cd8d0189f7d2bd0a312512">lowerRight</link>.second;
+104 
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;rmin&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,r&#32;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;rmax&#32;&lt;&lt;&#32;std::endl;
+106 
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;Rmin&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[rmin];&#32;<emphasis role="keywordtype">long</emphasis>&#32;Rmax&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[rmax];
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;Cmin&#32;=&#32;c[cmin];&#32;<emphasis role="keywordtype">long</emphasis>&#32;Cmax&#32;=&#32;c[cmax];
+109 
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;Rmin&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;Rmax&#32;&lt;&lt;&#32;std::endl;
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;Cmin&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;Cmax&#32;&lt;&lt;&#32;std::endl;
+112 
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;must&#32;find&#32;the&#32;integer&#32;indices&#32;corresponding&#32;to&#32;these</emphasis>
+114 
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;ri&#32;=&#32;Rmin;&#32;ri&#32;&lt;=&#32;Rmax;&#32;ri++)
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;ci&#32;=&#32;Cmin;&#32;ci&#32;&lt;=&#32;Cmax;&#32;ci++)
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;ri&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;ci;
+120 
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f((*mat)(ri,ci));
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+124 
+125 }
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1a0d1563baeba3a42f1b9abcd2d7877779"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;class V , class AI1 , class AI2 &gt; </computeroutput><para><computeroutput>V &amp; <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::operator() (const AI1 &amp; index1, const AI2 &amp; index2)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 185 of file AssocMatrix.cc.</para>
+<programlisting>186 {
+187 
+188 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;rowIndex&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[index1];
+189 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;colIndex&#32;=&#32;c[index2];
+190 
+191 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(*mat)(rowIndex,&#32;colIndex);
+192 }
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1a584ec0fa44e926ef4e44d6a251dcf01a"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class V , class AI1 , class AI2 &gt; </computeroutput><para><computeroutput><link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp; <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::operator= (const <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt; &amp; ass2)</computeroutput></para><para>
+Definition at line 168 of file AssocMatrix.cc.</para>
+<programlisting>169 {
+170 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(&amp;mat&#32;==&#32;<emphasis role="keyword">this</emphasis>)
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+172 
+173 &#32;&#32;&#32;&#32;mat&#32;=&#32;mat2.mat;
+174 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;mat2.r;&#32;c&#32;=&#32;mat2.c;
+175 &#32;&#32;&#32;&#32;keysRows&#32;=&#32;mat2.keysRows;&#32;keysColumns&#32;=&#32;mat2.keysColumns;
+176 &#32;&#32;&#32;&#32;
+177 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+178 
+179 }
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1adce6a940baf8f9d7c5a7b258a447ab3a"/>    <section>
+    <title>RowKeys()</title>
+<indexterm><primary>RowKeys</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>RowKeys</secondary></indexterm>
+<computeroutput>template&lt;class V, class AI1 = std::string, class AI2 = std::string&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;AI1&gt; <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::RowKeys ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 75 of file AssocMatrix.hh.</para>
+<programlisting>75 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;keysRows;&#32;}&#32;&#32;&#32;&#32;
+</programlisting>    </section><anchor xml:id="_classAssocMatrix_1a0bcc0fcd9e5ff08dc2af4dea25ddda41"/>    <section>
+    <title>Size()</title>
+<indexterm><primary>Size</primary><secondary>AssocMatrix&lt; V, AI1, AI2 &gt;</secondary></indexterm>
+<indexterm><primary>AssocMatrix&lt; V, AI1, AI2 &gt;</primary><secondary>Size</secondary></indexterm>
+<computeroutput>template&lt;class V, class AI1 = std::string, class AI2 = std::string&gt; </computeroutput><para><computeroutput>long <link linkend="_classAssocMatrix">AssocMatrix</link>&lt; V, AI1, AI2 &gt;::Size ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 71 of file AssocMatrix.hh.</para>
+<programlisting>71 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;str.size();&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-AssocMatrix.hhAssocMatrix.cc</section>
+<link linkend="_AssocMatrix_8hh">AssocMatrix.hh</link><link linkend="_AssocMatrix_8cc">AssocMatrix.cc</link></section>
+</section>

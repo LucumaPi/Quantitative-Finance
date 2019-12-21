@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSet1_8cc">
+<title>tests/TestSet1.cc File Reference</title>
+<indexterm><primary>tests/TestSet1.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;set&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestSet1.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSet1_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSet1_8cc_1a1279cd779f5c62d5b1506dcb120f3019">print</link> (const std::set&lt; T &gt; &amp;mySet, const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestSet1_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSet1_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSet1.cc</secondary></indexterm>
+<indexterm><primary>TestSet1.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 32 of file TestSet1.cc.</para>
+<programlisting>33 {
+34 
+35 &#32;&#32;&#32;&#32;std::set&lt;std::string&gt;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+36 
+37 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Only&#32;unique&#32;(new&#32;elements)&#32;added</emphasis>
+38 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.insert(<emphasis role="stringliteral">&quot;r&quot;</emphasis>);
+39 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.insert(<emphasis role="stringliteral">&quot;T&quot;</emphasis>);
+40 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.insert(<emphasis role="stringliteral">&quot;sigma&quot;</emphasis>);
+41 
+42 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;First&#32;Size:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.size()&#32;&lt;&lt;&#32;std::endl;
+43 
+44 &#32;&#32;&#32;&#32;std::set&lt;std::string&gt;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>&#32;(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>);&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+45 
+46 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;extra&#32;elements&#32;to&#32;second&#32;set</emphasis>
+47 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.insert(<emphasis role="stringliteral">&quot;r&quot;</emphasis>);&#32;<emphasis role="comment">//&#32;&quot;Interest&#32;rate&quot;</emphasis>
+48 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.insert(<emphasis role="stringliteral">&quot;K&quot;</emphasis>);&#32;<emphasis role="comment">//&#32;&quot;Strike&#32;price&quot;</emphasis>
+49 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.insert(<emphasis role="stringliteral">&quot;S&quot;</emphasis>);&#32;<emphasis role="comment">//&#32;&quot;Current&#32;underlying&#32;price&quot;</emphasis>
+50 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.insert(<emphasis role="stringliteral">&quot;b&quot;</emphasis>);&#32;<emphasis role="comment">//&#32;&quot;Cost&#32;of&#32;carry&quot;</emphasis>
+51 
+52 &#32;&#32;&#32;&#32;<link linkend="_TestSet1_8cc_1a1279cd779f5c62d5b1506dcb120f3019">print</link>(<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;<emphasis role="stringliteral">&quot;Second&#32;set&quot;</emphasis>);&#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.erase(<emphasis role="stringliteral">&quot;K&quot;</emphasis>);
+54 &#32;&#32;&#32;&#32;<link linkend="_TestSet1_8cc_1a1279cd779f5c62d5b1506dcb120f3019">print</link>(<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;<emphasis role="stringliteral">&quot;Second&#32;set&quot;</emphasis>);
+55 
+56 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Second&#32;Size:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>.size()&#32;&lt;&lt;&#32;std::endl;
+57 
+58 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Are&#32;the&#32;sets&#32;the&#32;same?</emphasis>
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>&#32;==&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>)
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Sets&#32;have&#32;same&#32;elements\n&quot;</emphasis>;
+61 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Not&#32;same&#32;elements\n&quot;</emphasis>;
+63 
+64 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;A&#32;bit&#32;of&#32;swapping</emphasis>
+65 &#32;&#32;&#32;&#32;swap(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>);
+66 
+67 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Assignment</emphasis>
+68 &#32;&#32;&#32;&#32;std::set&lt;std::string&gt;&#32;third&#32;=&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;
+69 
+70 
+71 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;print&#32;the&#32;sets&#32;</emphasis>
+72 &#32;&#32;&#32;&#32;<link linkend="_TestSet1_8cc_1a1279cd779f5c62d5b1506dcb120f3019">print</link>(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<emphasis role="stringliteral">&quot;First&#32;set&quot;</emphasis>);
+73 &#32;&#32;&#32;&#32;<link linkend="_TestSet1_8cc_1a1279cd779f5c62d5b1506dcb120f3019">print</link>(<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">second</link>,&#32;<emphasis role="stringliteral">&quot;Second&#32;set&quot;</emphasis>);
+74 &#32;&#32;&#32;&#32;<link linkend="_TestSet1_8cc_1a1279cd779f5c62d5b1506dcb120f3019">print</link>(third,&#32;<emphasis role="stringliteral">&quot;Third&#32;set&quot;</emphasis>);
+75 
+76 
+77 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;creat&#32;a&#32;set&#32;representing&#32;Executive&#32;options</emphasis>
+78 &#32;&#32;&#32;&#32;std::set&lt;std::string&gt;&#32;execOption(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>);
+79 &#32;&#32;&#32;&#32;execOption.insert(<emphasis role="stringliteral">&quot;lambda&quot;</emphasis>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;jump&#32;rate,&#32;see&#32;Haug&#32;1998</emphasis>
+80 
+81 &#32;&#32;&#32;&#32;<link linkend="_TestSet1_8cc_1a1279cd779f5c62d5b1506dcb120f3019">print</link>(execOption,&#32;<emphasis role="stringliteral">&quot;An&#32;Executive&#32;Option&quot;</emphasis>);
+82 
+83 }
+</programlisting>    </section><anchor xml:id="_TestSet1_8cc_1a1279cd779f5c62d5b1506dcb120f3019"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestSet1.cc</secondary></indexterm>
+<indexterm><primary>TestSet1.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void print (const std::set&lt; T &gt; &amp; mySet, const std::string &amp; name)</computeroutput></para><para>
+Definition at line 16 of file TestSet1.cc.</para>
+<programlisting>17 {&#32;&#32;<emphasis role="comment">//&#32;Print&#32;the&#32;contents&#32;of&#32;a&#32;set.&#32;Notice&#32;the&#32;presence&#32;of&#32;a&#32;const&#32;iterator.</emphasis>
+18 &#32;&#32;&#32;&#32;
+19 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;name&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;size&#32;of&#32;set&#32;is&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;mySet.size()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&quot;</emphasis>;
+20 
+21 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;T&gt;::const_iterator&#32;i;
+22 
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;mySet.begin();&#32;i&#32;!=&#32;mySet.end();&#32;++i)
+24 &#32;&#32;&#32;&#32;{
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*i)&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>;
+26 
+27 &#32;&#32;&#32;&#32;}
+28 
+29 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+30 }
+</programlisting></section>
+</section>
+</section>

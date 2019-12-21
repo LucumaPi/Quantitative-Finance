@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestRange_8cc">
+<title>tests/TestRange.cc File Reference</title>
+<indexterm><primary>tests/TestRange.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Range.hh&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestRange.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestRange_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestRange_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestRange_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestRange.cc</secondary></indexterm>
+<indexterm><primary>TestRange.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 13 of file TestRange.cc.</para>
+<programlisting>14 {
+15 &#32;&#32;&#32;&#32;
+16 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;default&#32;type&#32;is&#32;double</emphasis>
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;closingPrice&#32;(45.7);
+18 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;openingPrice&#32;(60.0);
+19 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;double&gt;</link>&#32;bearish&#32;(closingPrice,&#32;openingPrice);
+20 
+21 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Looking&#32;at&#32;some&#32;prices</emphasis>
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;currentPrice&#32;=&#32;50.0;
+23 
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;test1&#32;=&#32;bearish.left(currentPrice);
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;test2&#32;=&#32;bearish.right(currentPrice);
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;test3&#32;=&#32;bearish.contains(currentPrice);
+27 &#32;&#32;&#32;&#32;
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(test1&#32;==&#32;<emphasis role="keyword">false</emphasis>&#32;&amp;&amp;&#32;test2&#32;==&#32;<emphasis role="keyword">false</emphasis>&#32;&amp;&amp;&#32;test3&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Everything&#32;OK\n&quot;</emphasis>;
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;range&#32;with&#32;float&#32;as&#32;underlying&#32;type</emphasis>
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;closingPriceII&#32;(90.0);
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;openingPriceII&#32;(60.0);
+34 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;float&gt;</link>&#32;bulllish&#32;(closingPriceII,&#32;openingPriceII);
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+37 }
+</programlisting></section>
+</section>
+</section>

@@ -1,0 +1,44 @@
+\hypertarget{TestHeteroProperty_8cc_source}{}\doxysection{Test\+Hetero\+Property.\+cc}
+\label{TestHeteroProperty_8cc_source}\index{tests/TestHeteroProperty.cc@{tests/TestHeteroProperty.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestHeteroProperty.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing heterogeneous properties}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <string>} \textcolor{comment}{// Standard string class in C++}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{InstrumentOld_8hh}{duffy/InstrumentOld.hh}}>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{SimplePropertySet_8hh}{duffy/SimplePropertySet.hh}}>}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{\Hypertarget{TestHeteroProperty_8cc_source_l00013}\mbox{\hyperlink{TestHeteroProperty_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00013}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestHeteroProperty_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, Instrument*>}} myPortfolio;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{comment}{// Create a number of specific instruments and add to portfolio}}
+\DoxyCodeLine{00018     \mbox{\hyperlink{classOption}{Option}} myOpt;}
+\DoxyCodeLine{00019     \mbox{\hyperlink{classBond}{Bond}} myBond;}
+\DoxyCodeLine{00020     \mbox{\hyperlink{classSwap}{Swap}} \mbox{\hyperlink{TestSwap_8cc_a25424f68584552ee5e1a153c80f95201}{mySwap}};}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{comment}{// Now add components to PSet}}
+\DoxyCodeLine{00023     myPortfolio.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(std::string(\textcolor{stringliteral}{"O"}), \&myOpt);}
+\DoxyCodeLine{00024     myPortfolio.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(std::string(\textcolor{stringliteral}{"B"}), \&myBond);}
+\DoxyCodeLine{00025     myPortfolio.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(std::string(\textcolor{stringliteral}{"S"}), \&\mbox{\hyperlink{TestSwap_8cc_a25424f68584552ee5e1a153c80f95201}{mySwap}});}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// Print out the PSet}}
+\DoxyCodeLine{00028     \mbox{\hyperlink{classSimplePropertySet_aab3d4fc3315979035be3d5c64c42d425}{SimplePropertySet<std::string, Instrument*>::const\_iterator}} it;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{keywordflow}{for} (it = myPortfolio.\mbox{\hyperlink{classSimplePropertySet_af0c72b2e6a39f6d2d02ce443afa01de5}{Begin}}(); it != myPortfolio.\mbox{\hyperlink{classSimplePropertySet_a6d3c8a051b7c6846508898c8375a2cfd}{End}}(); it++)}
+\DoxyCodeLine{00031     \{}
+\DoxyCodeLine{00032         std::string tmp = it-\/>first;}
+\DoxyCodeLine{00033         std::cout << tmp.c\_str() << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00034         (it-\/>second)-\/>\mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(); std::cout << std::endl;}
+\DoxyCodeLine{00035     \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00038 \}}
+
+\end{DoxyCode}

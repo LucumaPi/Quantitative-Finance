@@ -4,37 +4,59 @@
     <compoundname>IBVP.cc</compoundname>
     <includes refid="IBVP_8hh" local="no">duffy/IBVP.hh</includes>
     <incdepgraph>
-      <node id="10">
+      <node id="15">
         <label>IBVPImp.hh</label>
-        <link refid="IBVPImp_8hh_source"/>
+        <link refid="IBVPImp_8hh"/>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
       <node id="4">
         <label>Vector.hh</label>
-        <link refid="Vector_8hh_source"/>
+        <link refid="Vector_8hh"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
-        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>Range.hh</label>
-        <link refid="Range_8hh_source"/>
-        <childnode refid="4" relation="include">
+      <node id="5">
+        <label>Array.hh</label>
+        <link refid="Array_8hh"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="11">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Range.hh</label>
+        <link refid="Range_8hh"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
         <label>vector</label>
       </node>
       <node id="1">
@@ -45,21 +67,47 @@
       </node>
       <node id="2">
         <label>duffy/IBVP.hh</label>
-        <link refid="IBVP_8hh_source"/>
+        <link refid="IBVP_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>../../src/IBVPImp.cc</label>
+        <link refid="IBVPImp_8cc"/>
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
       <node id="7">
         <label>cstddef</label>
       </node>
-      <node id="8">
+      <node id="13">
+        <label>../../src/Vector.cc</label>
+        <link refid="Vector_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../../src/Range.cc</label>
+        <link refid="Range_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
         <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="9" relation="include">
+        <link refid="FullArray_8hh"/>
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -86,7 +134,7 @@
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Component<sp/>Technology<sp/>BV<sp/>2000-2006</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/IBVP.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="IBVP_8hh" kindref="compound">duffy/IBVP.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal">IBVP::IBVP()</highlight></codeline>
 <codeline lineno="22"><highlight class="normal">{</highlight></codeline>
@@ -95,60 +143,60 @@
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal">IBVP::IBVP<sp/>(<ref refid="classIBVPImp" kindref="compound">IBVPImp</ref>&amp;<sp/>executor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRange" kindref="compound">Range&lt;double&gt;</ref>&amp;<sp/>xrange,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRange" kindref="compound">Range&lt;double&gt;</ref>&amp;<sp/>trange)</highlight></codeline>
+<codeline lineno="28" refid="classIBVP_1a449355041ee520c752ab510137bd41a4" refkind="member"><highlight class="normal">IBVP::IBVP<sp/>(<ref refid="classIBVPImp" kindref="compound">IBVPImp</ref>&amp;<sp/>executor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRange" kindref="compound">Range&lt;double&gt;</ref>&amp;<sp/>xrange,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRange" kindref="compound">Range&lt;double&gt;</ref>&amp;<sp/>trange)</highlight></codeline>
 <codeline lineno="29"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>imp<sp/>=<sp/>&amp;executor;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>xaxis<sp/>=<sp/>xrange;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>xaxis<sp/>=<sp/><ref refid="classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1" kindref="member">xrange</ref>;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>taxis<sp/>=<sp/>trange;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>taxis<sp/>=<sp/><ref refid="classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b" kindref="member">trange</ref>;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>IBVP::diffusion(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="37" refid="classIBVP_1a59a82bedba3a8de65997ce6b64e612b5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classIBVP_1a59a82bedba3a8de65997ce6b64e612b5" kindref="member">IBVP::diffusion</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="38"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Coefficient<sp/>of<sp/>second<sp/>derivative</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;diffusion(x,t);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;<ref refid="classIBVPImp_1a6f66b0583fd3d65ad946650f1ff7ca1e" kindref="member">diffusion</ref>(x,t);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>IBVP::convection(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="42" refid="classIBVP_1a74f384836849c568e26b10bae327ace5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classIBVP_1a74f384836849c568e26b10bae327ace5" kindref="member">IBVP::convection</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="43"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Coefficient<sp/>of<sp/>first<sp/>derivative</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;convection(x,t);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;<ref refid="classIBVPImp_1a44d3dc1c2d3b351705d101943c42c880" kindref="member">convection</ref>(x,t);</highlight></codeline>
 <codeline lineno="45"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>IBVP::zeroterm(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="48" refid="classIBVP_1adf8e3d7993a300e7dd5c727d935ad8aa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classIBVP_1adf8e3d7993a300e7dd5c727d935ad8aa" kindref="member">IBVP::zeroterm</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="49"><highlight class="keyword"></highlight><highlight class="normal">{<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Coefficient<sp/>of<sp/>zero<sp/>derivative</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;zeroterm(x,t);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;<ref refid="classIBVPImp_1ac6bab43d37b55879c6b29eefa0dad63f" kindref="member">zeroterm</ref>(x,t);</highlight></codeline>
 <codeline lineno="51"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>IBVP::RHS(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="54" refid="classIBVP_1abba7e8fa377fb7cc5dbbd0da5922eca5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classIBVP_1abba7e8fa377fb7cc5dbbd0da5922eca5" kindref="member">IBVP::RHS</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="55"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Inhomogeneous<sp/>forcing<sp/>term</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;RHS(x,t);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;<ref refid="classIBVPImp_1ae2d0430ad38aa7b6055b1cb622051e67" kindref="member">RHS</ref>(x,t);</highlight></codeline>
 <codeline lineno="57"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Boundary<sp/>and<sp/>initial<sp/>conditions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>IBVP::BCL(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="60" refid="classIBVP_1a06a4841866f3ec0f7f62f67a7e800930" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classIBVP_1a06a4841866f3ec0f7f62f67a7e800930" kindref="member">IBVP::BCL</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="61"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Left<sp/>hand<sp/>boundary<sp/>condition</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;BCL(t);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;<ref refid="classIBVPImp_1aeff635ae5363a1858efc57c833500300" kindref="member">BCL</ref>(t);</highlight></codeline>
 <codeline lineno="63"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>IBVP::BCR(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="65" refid="classIBVP_1afd987bb4e41ff033ce8d0705818f4cef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classIBVP_1afd987bb4e41ff033ce8d0705818f4cef" kindref="member">IBVP::BCR</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="66"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Right<sp/>hand<sp/>boundary<sp/>condition</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;BCR(t);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;<ref refid="classIBVPImp_1a371a1b065ab843b926b1baf727be09af" kindref="member">BCR</ref>(t);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>IBVP::IC(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="70" refid="classIBVP_1a06c09ce3034e1e915ef7aba3cfd99832" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classIBVP_1a06c09ce3034e1e915ef7aba3cfd99832" kindref="member">IBVP::IC</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Initial<sp/>condition</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;IC(x);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imp-&gt;<ref refid="classIBVPImp_1ad9cfdc5edfadcf5f18cb4d3a6b64f740" kindref="member">IC</ref>(x);</highlight></codeline>
 <codeline lineno="73"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>domain<sp/>in<sp/>which<sp/>the<sp/>PDE<sp/>is<sp/>&apos;played&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><ref refid="classRange" kindref="compound">Range&lt;double&gt;</ref>&amp;<sp/>IBVP::xrange()<sp/></highlight></codeline>
+<codeline lineno="76" refid="classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1" refkind="member"><highlight class="normal"><ref refid="classRange" kindref="compound">Range&lt;double&gt;</ref>&amp;<sp/><ref refid="classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1" kindref="member">IBVP::xrange</ref>()<sp/></highlight></codeline>
 <codeline lineno="77"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>xaxis;</highlight></codeline>
 <codeline lineno="79"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><ref refid="classRange" kindref="compound">Range&lt;double&gt;</ref>&amp;<sp/>IBVP::trange()<sp/></highlight></codeline>
+<codeline lineno="81" refid="classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b" refkind="member"><highlight class="normal"><ref refid="classRange" kindref="compound">Range&lt;double&gt;</ref>&amp;<sp/><ref refid="classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b" kindref="member">IBVP::trange</ref>()<sp/></highlight></codeline>
 <codeline lineno="82"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>taxis;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal">}</highlight></codeline>

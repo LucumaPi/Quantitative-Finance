@@ -12,7 +12,7 @@
 \DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef INSTRUMENT\_HH}}
 \DoxyCodeLine{00009 \textcolor{preprocessor}{\#define INSTRUMENT\_HH}}
 \DoxyCodeLine{00010 }
-\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "OneFactorPayoff.hh"}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{OneFactorPayoff_8hh}{OneFactorPayoff.hh}}"}}
 \DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{00013 }
 \DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00014}\mbox{\hyperlink{classInstrument}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classInstrument}{Instrument}}}
@@ -24,37 +24,37 @@
 \DoxyCodeLine{00020 \{}
 \DoxyCodeLine{00021 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00022     \textcolor{comment}{// PUBLIC, PURE FOR PEDAGOGICAL REASONS}}
-\DoxyCodeLine{00023     \textcolor{keywordtype}{double} r;       \textcolor{comment}{// Interest rate}}
-\DoxyCodeLine{00024     \textcolor{keywordtype}{double} sig;     \textcolor{comment}{// Volatility}}
-\DoxyCodeLine{00025     \textcolor{keywordtype}{double} K;       \textcolor{comment}{// Strike price}}
-\DoxyCodeLine{00026     \textcolor{keywordtype}{double} T;       \textcolor{comment}{// Expiry date}}
-\DoxyCodeLine{00027     \textcolor{keywordtype}{double} b;       \textcolor{comment}{// Cost of carry    }}
-\DoxyCodeLine{00028     \textcolor{keywordtype}{double} SMax;    \textcolor{comment}{// Far field condition}}
-\DoxyCodeLine{00029     \textcolor{keywordtype}{char} type;      \textcolor{comment}{// Call or put}}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00023}\mbox{\hyperlink{classOption_abd44ab56edddcd59f80ca5c60c9b66f0}{00023}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_abd44ab56edddcd59f80ca5c60c9b66f0}{r}};      \textcolor{comment}{// Interest rate}}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00024}\mbox{\hyperlink{classOption_a8b68f88d3e7a01dfea0b83e3e5a4f57e}{00024}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_a8b68f88d3e7a01dfea0b83e3e5a4f57e}{sig}};      \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00025}\mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{00025}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}};      \textcolor{comment}{// Strike price}}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00026}\mbox{\hyperlink{classOption_ae583dd6d430a3b428014efa942605d54}{00026}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_ae583dd6d430a3b428014efa942605d54}{T}};      \textcolor{comment}{// Expiry date}}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00027}\mbox{\hyperlink{classOption_aa3f69771cb6066c69d588fc7682fc1e8}{00027}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_aa3f69771cb6066c69d588fc7682fc1e8}{b}};      \textcolor{comment}{// Cost of carry    }}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00028}\mbox{\hyperlink{classOption_aa774bcef53ade3c37aa45c2d83a51181}{00028}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classOption_aa774bcef53ade3c37aa45c2d83a51181}{SMax}};    \textcolor{comment}{// Far field condition}}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00029}\mbox{\hyperlink{classOption_a08dcf2742c8429087baaacf694089cbe}{00029}}     \textcolor{keywordtype}{char} \mbox{\hyperlink{classOption_a08dcf2742c8429087baaacf694089cbe}{type}};      \textcolor{comment}{// Call or put}}
 \DoxyCodeLine{00030 }
-\DoxyCodeLine{00031     \mbox{\hyperlink{classOption}{Option}}() \{\}}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00031}\mbox{\hyperlink{classOption_af517613005312013c576eb9099a50464}{00031}}     \mbox{\hyperlink{classOption_af517613005312013c576eb9099a50464}{Option}}() \{\}}
 \DoxyCodeLine{00032 }
-\DoxyCodeLine{00033     \textcolor{keywordtype}{void} print()}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00033}\mbox{\hyperlink{classOption_a0182606c4d172a6157a6d838b51a6686}{00033}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classOption_a0182606c4d172a6157a6d838b51a6686}{print}}()}
 \DoxyCodeLine{00034     \{}
 \DoxyCodeLine{00035 }
-\DoxyCodeLine{00036         std::cout << \textcolor{stringliteral}{"Interest: "} << r << std::endl;}
-\DoxyCodeLine{00037         std::cout << \textcolor{stringliteral}{"Vol: "} << sig << std::endl;}
-\DoxyCodeLine{00038         std::cout << \textcolor{stringliteral}{"Strike: "} << K << std::endl;}
-\DoxyCodeLine{00039         std::cout << \textcolor{stringliteral}{"Expiry: "} << T << std::endl;}
-\DoxyCodeLine{00040         std::cout << \textcolor{stringliteral}{"Cost of carry: "} << b << std::endl;}
-\DoxyCodeLine{00041         std::cout << \textcolor{stringliteral}{"Option type: "} << type << std::endl;}
-\DoxyCodeLine{00042         std::cout << \textcolor{stringliteral}{"Far field: "} << SMax << std::endl;}
+\DoxyCodeLine{00036         std::cout << \textcolor{stringliteral}{"Interest: "} << \mbox{\hyperlink{classOption_abd44ab56edddcd59f80ca5c60c9b66f0}{r}} << std::endl;}
+\DoxyCodeLine{00037         std::cout << \textcolor{stringliteral}{"Vol: "} << \mbox{\hyperlink{classOption_a8b68f88d3e7a01dfea0b83e3e5a4f57e}{sig}} << std::endl;}
+\DoxyCodeLine{00038         std::cout << \textcolor{stringliteral}{"Strike: "} << \mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}} << std::endl;}
+\DoxyCodeLine{00039         std::cout << \textcolor{stringliteral}{"Expiry: "} << \mbox{\hyperlink{classOption_ae583dd6d430a3b428014efa942605d54}{T}} << std::endl;}
+\DoxyCodeLine{00040         std::cout << \textcolor{stringliteral}{"Cost of carry: "} << \mbox{\hyperlink{classOption_aa3f69771cb6066c69d588fc7682fc1e8}{b}} << std::endl;}
+\DoxyCodeLine{00041         std::cout << \textcolor{stringliteral}{"Option type: "} << \mbox{\hyperlink{classOption_a08dcf2742c8429087baaacf694089cbe}{type}} << std::endl;}
+\DoxyCodeLine{00042         std::cout << \textcolor{stringliteral}{"Far field: "} << \mbox{\hyperlink{classOption_aa774bcef53ade3c37aa45c2d83a51181}{SMax}} << std::endl;}
 \DoxyCodeLine{00043     \}}
 \DoxyCodeLine{00044 }
 \DoxyCodeLine{00045     \textcolor{comment}{// An option uses a polymorphic payoff object}}
-\DoxyCodeLine{00046     \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}} OptionPayoff;}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00046}\mbox{\hyperlink{classOption_aa9ce0d365b64db5158a33a73f65f49b0}{00046}}     \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}} \mbox{\hyperlink{classOption_aa9ce0d365b64db5158a33a73f65f49b0}{OptionPayoff}};}
 \DoxyCodeLine{00047 \};}
 \DoxyCodeLine{00048 }
 \DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00049}\mbox{\hyperlink{classInstrumentFactory}{00049}} \textcolor{keyword}{class }\mbox{\hyperlink{classInstrumentFactory}{InstrumentFactory}}}
 \DoxyCodeLine{00050 \{}
 \DoxyCodeLine{00051 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00052 }
-\DoxyCodeLine{00053     \textcolor{keyword}{virtual} \mbox{\hyperlink{classOption}{Option}}* CreateOption() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00053     \textcolor{keyword}{virtual} \mbox{\hyperlink{classOption}{Option}}* \mbox{\hyperlink{classInstrumentFactory_acc735ba0c9d3b8c36269d3553c1cb401}{CreateOption}}() \textcolor{keyword}{const} = 0;}
 \DoxyCodeLine{00054 }
 \DoxyCodeLine{00055 \};}
 \DoxyCodeLine{00056 }
@@ -62,7 +62,7 @@
 \DoxyCodeLine{00058 \{}
 \DoxyCodeLine{00059 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00060 }
-\DoxyCodeLine{00061     \mbox{\hyperlink{classOption}{Option}}* CreateOption()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{Instrument_8hh_source_l00061}\mbox{\hyperlink{classConsoleInstrumentFactory_a444f78bcb31b6ef6b6e0d469745904ca}{00061}}     \mbox{\hyperlink{classOption}{Option}}* \mbox{\hyperlink{classConsoleInstrumentFactory_a444f78bcb31b6ef6b6e0d469745904ca}{CreateOption}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{00062 \textcolor{keyword}{    }\{}
 \DoxyCodeLine{00063         \textcolor{keywordtype}{double} dr;      \textcolor{comment}{// Interest rate}}
 \DoxyCodeLine{00064         \textcolor{keywordtype}{double} dsig;    \textcolor{comment}{// Volatility}}
@@ -95,21 +95,21 @@
 \DoxyCodeLine{00091         std::cin >> ans;}
 \DoxyCodeLine{00092         \textcolor{keywordflow}{if} (ans == 1)}
 \DoxyCodeLine{00093         \{}
-\DoxyCodeLine{00094             result-\/> type = \textcolor{charliteral}{'C'};}
-\DoxyCodeLine{00095             (*result).OptionPayoff = \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}(dK, MyCallPayoffFN);}
+\DoxyCodeLine{00094             result-\/> \mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}} = \textcolor{charliteral}{'C'};}
+\DoxyCodeLine{00095             (*result).OptionPayoff = \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}(dK, \mbox{\hyperlink{OneFactorPayoff_8hh_a014348d679f2afcacf81af0e762ad426}{MyCallPayoffFN}});}
 \DoxyCodeLine{00096         \}}
 \DoxyCodeLine{00097         \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00098         \{}
-\DoxyCodeLine{00099             result-\/> type = \textcolor{charliteral}{'P'};}
-\DoxyCodeLine{00100             (*result).OptionPayoff = \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}(dK, MyPutPayoffFN);}
+\DoxyCodeLine{00099             result-\/> \mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}} = \textcolor{charliteral}{'P'};}
+\DoxyCodeLine{00100             (*result).OptionPayoff = \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}(dK, \mbox{\hyperlink{OneFactorPayoff_8hh_a941b079b8b777eac5fafaf713f67027a}{MyPutPayoffFN}});}
 \DoxyCodeLine{00101         \}}
 \DoxyCodeLine{00102 }
-\DoxyCodeLine{00103         result-\/>r   = dr;}
-\DoxyCodeLine{00104         result-\/>sig = dsig;}
-\DoxyCodeLine{00105         result-\/>K   = dK;}
-\DoxyCodeLine{00106         result-\/>T   = dT;}
-\DoxyCodeLine{00107         result-\/>b   = db;}
-\DoxyCodeLine{00108         result-\/>SMax = dSMax;}
+\DoxyCodeLine{00103         result-\/>\mbox{\hyperlink{classOption_abd44ab56edddcd59f80ca5c60c9b66f0}{r}}  = dr;}
+\DoxyCodeLine{00104         result-\/>\mbox{\hyperlink{classOption_a8b68f88d3e7a01dfea0b83e3e5a4f57e}{sig}} = dsig;}
+\DoxyCodeLine{00105         result-\/>\mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}}  = dK;}
+\DoxyCodeLine{00106         result-\/>\mbox{\hyperlink{classOption_ae583dd6d430a3b428014efa942605d54}{T}}  = dT;}
+\DoxyCodeLine{00107         result-\/>\mbox{\hyperlink{classOption_aa3f69771cb6066c69d588fc7682fc1e8}{b}}  = db;}
+\DoxyCodeLine{00108         result-\/>\mbox{\hyperlink{classOption_aa774bcef53ade3c37aa45c2d83a51181}{SMax}} = dSMax;}
 \DoxyCodeLine{00109 }
 \DoxyCodeLine{00110         \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00111     \}}

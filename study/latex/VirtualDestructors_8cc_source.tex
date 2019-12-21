@@ -1,0 +1,44 @@
+\hypertarget{VirtualDestructors_8cc_source}{}\doxysection{Virtual\+Destructors.\+cc}
+\label{VirtualDestructors_8cc_source}\index{tests/VirtualDestructors.cc@{tests/VirtualDestructors.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// VirtualDestructors.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Showing use of virtual destructors.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{keyword}{class }\mbox{\hyperlink{classB}{B}}}
+\DoxyCodeLine{00010 \{ \textcolor{comment}{// Class with non-\/virtual destructor}}
+\DoxyCodeLine{00011 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012         \textcolor{keywordtype}{double}* d;}
+\DoxyCodeLine{00013 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{VirtualDestructors_8cc_source_l00014}\mbox{\hyperlink{classB_a9532a74021f7efb003dffbc9d4145e65}{00014}}     \mbox{\hyperlink{classB_a9532a74021f7efb003dffbc9d4145e65}{B}}() \{ d = \textcolor{keyword}{new} double (1.0); \}}
+\DoxyCodeLine{\Hypertarget{VirtualDestructors_8cc_source_l00015}\mbox{\hyperlink{classB_aae47aa88befb57e1a716e8463097cc6d}{00015}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{classB_aae47aa88befb57e1a716e8463097cc6d}{~B}}() \{ std::cout << \textcolor{stringliteral}{"Base destructor\(\backslash\)n"}; \textcolor{keyword}{delete} d; \}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \};}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{keyword}{class }\mbox{\hyperlink{classD}{D}} : \textcolor{keyword}{public} \mbox{\hyperlink{classB}{B}}}
+\DoxyCodeLine{00020 \{ \textcolor{comment}{// Derived class}}
+\DoxyCodeLine{00021 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022         \textcolor{keywordtype}{int}* iarr;}
+\DoxyCodeLine{00023 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{VirtualDestructors_8cc_source_l00024}\mbox{\hyperlink{classD_a6649b4477d56114c1077de910a8b82aa}{00024}}     \mbox{\hyperlink{classD_a6649b4477d56114c1077de910a8b82aa}{D}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}) : \mbox{\hyperlink{classB}{B}}() \{ iarr = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}]; \}}
+\DoxyCodeLine{\Hypertarget{VirtualDestructors_8cc_source_l00025}\mbox{\hyperlink{classD_adca443258ee35f72ee59a0f3b30f358d}{00025}}     \mbox{\hyperlink{classD_adca443258ee35f72ee59a0f3b30f358d}{~D}}() \{ std::cout << \textcolor{stringliteral}{"Derived destructor\(\backslash\)n"}; \textcolor{keyword}{delete} [] iarr; \}}
+\DoxyCodeLine{00026 \};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{\Hypertarget{VirtualDestructors_8cc_source_l00029}\mbox{\hyperlink{VirtualDestructors_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00029}} \textcolor{keywordtype}{int} \mbox{\hyperlink{VirtualDestructors_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00030 \{}
+\DoxyCodeLine{00031     \{}
+\DoxyCodeLine{00032         \mbox{\hyperlink{classB}{B}}* \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = \textcolor{keyword}{new} \mbox{\hyperlink{classD}{D}}(10);}
+\DoxyCodeLine{00033         \textcolor{keyword}{delete} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00034     \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     }
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00038 \}}
+
+\end{DoxyCode}

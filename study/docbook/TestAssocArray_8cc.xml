@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestAssocArray_8cc">
+<title>tests/TestAssocArray.cc File Reference</title>
+<indexterm><primary>tests/TestAssocArray.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/AssocArray.hh&gt;
+#include &lt;duffy/ArrayMechanisms.hh&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestAssocArray.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestAssocArray_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_TestAssocArray_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link> (const <link linkend="_classAssocArray">AssocArray</link>&lt; double, std::string &gt; &amp;assArr)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestAssocArray_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestAssocArray_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestAssocArray.cc</secondary></indexterm>
+<indexterm><primary>TestAssocArray.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 29 of file TestAssocArray.cc.</para>
+<programlisting>30 {
+31 
+32 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;std::string&gt;</link>&#32;names;
+33 &#32;&#32;&#32;&#32;names.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A1&quot;</emphasis>);
+34 &#32;&#32;&#32;&#32;names.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A2&quot;</emphasis>);
+35 &#32;&#32;&#32;&#32;names.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A3&quot;</emphasis>);
+36 &#32;&#32;&#32;&#32;names.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A4&quot;</emphasis>);
+37 
+38 
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;defaultValue(0.0);
+40 
+41 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray">AssocArray&lt;double, std::string&gt;</link>&#32;myAssocArray(names,&#32;defaultValue);
+42 &#32;&#32;&#32;&#32;<link linkend="_TestAssocArray_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link>(myAssocArray);
+43 &#32;&#32;&#32;&#32;myAssocArray[<emphasis role="stringliteral">&quot;A4&quot;</emphasis>]&#32;=&#32;99.99;
+44 &#32;&#32;&#32;&#32;<link linkend="_TestAssocArray_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link>(myAssocArray);
+45 
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Test&#32;other&#32;functions</emphasis>
+48 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray">AssocArray&lt;double, std::string&gt;</link>&#32;myAssocArray2(myAssocArray);
+49 &#32;&#32;&#32;&#32;<link linkend="_TestAssocArray_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link>(myAssocArray2);
+50 
+51 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray">AssocArray&lt;double, std::string&gt;</link>&#32;myAssocArray3&#32;=&#32;myAssocArray;
+52 &#32;&#32;&#32;&#32;<link linkend="_TestAssocArray_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link>(myAssocArray3);
+53 
+54 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray">AssocArray&lt;double, std::string&gt;</link>&#32;myAssocArray4(names,&#32;3.14);
+55 &#32;&#32;&#32;&#32;<link linkend="_TestAssocArray_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link>(myAssocArray4);
+56 
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+58 }
+</programlisting>    </section><anchor xml:id="_TestAssocArray_8cc_1a65fb09af05f940068b4a76bb46481ee0"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestAssocArray.cc</secondary></indexterm>
+<indexterm><primary>TestAssocArray.cc</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void print (const <link linkend="_classAssocArray">AssocArray</link>&lt; double, std::string &gt; &amp; assArr)</computeroutput></para><para>
+Definition at line 13 of file TestAssocArray.cc.</para>
+<programlisting>14 {
+15 
+16 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterating&#32;in&#32;the&#32;map</emphasis>
+17 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62">AssocArray&lt;double, std::string&gt;::const_iterator</link>&#32;i&#32;=&#32;assArr.<link linkend="_classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107">Begin</link>();
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;assArr.<link linkend="_classAssocArray_1a600b9a0280c6f67380abc032dad1d755">End</link>())
+20 &#32;&#32;&#32;&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;((*i).second)&#32;&lt;&lt;&#32;std::endl;
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+24 &#32;&#32;&#32;&#32;}
+25 
+26 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+27 }
+</programlisting></section>
+</section>
+</section>

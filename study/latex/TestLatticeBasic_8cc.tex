@@ -1,0 +1,78 @@
+\hypertarget{TestLatticeBasic_8cc}{}\doxysection{tests/\+Test\+Lattice\+Basic.cc File Reference}
+\label{TestLatticeBasic_8cc}\index{tests/TestLatticeBasic.cc@{tests/TestLatticeBasic.cc}}
+{\ttfamily \#include \char`\"{}../src/\+Lattice\+Mechanisms.\+cc\char`\"{}}\newline
+Include dependency graph for Test\+Lattice\+Basic.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestLatticeBasic_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestLatticeBasic_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestLatticeBasic_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestLatticeBasic_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestLatticeBasic.cc@{TestLatticeBasic.cc}!main@{main}}
+\index{main@{main}!TestLatticeBasic.cc@{TestLatticeBasic.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLatticeBasic_8cc_source_l00015}{15}} of file \mbox{\hyperlink{TestLatticeBasic_8cc_source}{Test\+Lattice\+Basic.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     \textcolor{keyword}{const} \textcolor{keywordtype}{int} typeB = 2;    \textcolor{comment}{// BinomialLatticeType;}}
+\DoxyCodeLine{00018     \textcolor{keyword}{const} \textcolor{keywordtype}{int} typeT = 3;    \textcolor{comment}{// Trinomial Type}}
+\DoxyCodeLine{00019     \textcolor{keyword}{const} \textcolor{keywordtype}{int} typeP = 5;    \textcolor{comment}{// Pentagonal Type}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{keywordtype}{int} depth = 4;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{comment}{// Create objects of various }}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classLattice}{Lattice<double, int, typeB>}} lattice1(depth, 3.14);}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classLattice}{Lattice<double, long, typeT>}} lattice2(depth, 4.6);}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classLattice}{Lattice<double, long, typeP>}} lattice3(depth, 2.0);}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(lattice1); }
+\DoxyCodeLine{00029     std::cout << std::endl << std::endl;}
+\DoxyCodeLine{00030     \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(lattice2);}
+\DoxyCodeLine{00031     std::cout << std::endl << std::endl;}
+\DoxyCodeLine{00032     \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(lattice3);}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     std::cout << std::endl;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     depth = 200;}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     std::cout << \textcolor{stringliteral}{"Consistent trinomial tree for short rate\(\backslash\)n"};}
+\DoxyCodeLine{00039     std::cout << \textcolor{stringliteral}{"How many time divisions: "} << std::endl;}
+\DoxyCodeLine{00040     std::cin >> depth;}
+\DoxyCodeLine{00041     \textcolor{keywordflow}{if} (depth <= 0) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{comment}{// Trinomial lattice with matrix entries}}
+\DoxyCodeLine{00044     \mbox{\hyperlink{classMatrix}{Matrix<double, int>}} prototype(4,4,1,1);}
+\DoxyCodeLine{00045     \mbox{\hyperlink{classLattice}{Lattice<Matrix<double, int>}}, int, 3> lattice4(depth, prototype);}
+\DoxyCodeLine{00046     std::cout << \textcolor{stringliteral}{"Number of discrete points at end: "} << lattice4.BasePyramidSize() << std::endl;}
+\DoxyCodeLine{00047     std::cout << \textcolor{stringliteral}{"Total number of nodes: "} << lattice4.numberNodes() << std::endl;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// Now iterate over the lattice and print the matrix elements}}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = lattice4.MinIndex(); j <= lattice4.MaxIndex(); j++)}
+\DoxyCodeLine{00051     \{ \textcolor{comment}{// Each indexed j is a vector of matrices}}
+\DoxyCodeLine{00052         std::cout << \textcolor{stringliteral}{"Start Level "} << j << std::endl;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = lattice4[j].MinIndex(); i <= lattice4[j].MaxIndex(); i++)}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(lattice4[j][i]); \textcolor{comment}{// This is a matrix}}
+\DoxyCodeLine{00057         \}}
+\DoxyCodeLine{00058         std::cout << \textcolor{stringliteral}{"End Level "} << j << std::endl;        }
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00061 \}}
+
+\end{DoxyCode}

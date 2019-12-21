@@ -23,14 +23,71 @@ Collaboration diagram for OutOfBounds:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classOutOfBounds_1a2f04ca8596a7b3feaf50749028dd3934"/><emphasis role="strong">OutOfBounds</emphasis> (const std::string &amp;message, const std::string &amp;method, int index)</para>
+            <listitem><para><link linkend="_classOutOfBounds_1ade339f779e69df8afe2449400062e4c4">OutOfBounds</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classOutOfBounds_1ae7584b5f1d6061276372e1827859ecc3"/>int <emphasis role="strong">offendingIndex</emphasis> () const</para>
+            <listitem><para><link linkend="_classOutOfBounds_1a2f04ca8596a7b3feaf50749028dd3934">OutOfBounds</link> (const std::string &amp;message, const std::string &amp;method, int index)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classOutOfBounds_1a7cf4254b246eb938886b6e9a549a5a00"/>std::vector&lt; std::string &gt; <emphasis role="strong">MessageDump</emphasis> () const</para>
+            <listitem><para>int <link linkend="_classOutOfBounds_1ae7584b5f1d6061276372e1827859ecc3">offendingIndex</link> () const</para>
+</listitem>
+            <listitem><para>std::vector&lt; std::string &gt; <link linkend="_classOutOfBounds_1a7cf4254b246eb938886b6e9a549a5a00">MessageDump</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 84 of file MathErr.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classOutOfBounds_1ade339f779e69df8afe2449400062e4c4"/>    <section>
+    <title>OutOfBounds()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>OutOfBounds</primary><secondary>OutOfBounds</secondary></indexterm>
+<indexterm><primary>OutOfBounds</primary><secondary>OutOfBounds</secondary></indexterm>
+<para><computeroutput>OutOfBounds::OutOfBounds ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 89 of file MathErr.cc.</para>
+<programlisting>89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classMathErr_1a92ae6f6640c3979720b743a62f106d95">MathErr</link>()
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classOutOfBounds_1a2f04ca8596a7b3feaf50749028dd3934"/>    <section>
+    <title>OutOfBounds()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>OutOfBounds</primary><secondary>OutOfBounds</secondary></indexterm>
+<indexterm><primary>OutOfBounds</primary><secondary>OutOfBounds</secondary></indexterm>
+<para><computeroutput>OutOfBounds::OutOfBounds (const std::string &amp; message, const std::string &amp; method, int index)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 93 of file MathErr.cc.</para>
+<programlisting>94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classMathErr_1a92ae6f6640c3979720b743a62f106d95">MathErr</link>&#32;(message,&#32;method)
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ind&#32;=&#32;index;
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classOutOfBounds_1a7cf4254b246eb938886b6e9a549a5a00"/>    <section>
+    <title>MessageDump()</title>
+<indexterm><primary>MessageDump</primary><secondary>OutOfBounds</secondary></indexterm>
+<indexterm><primary>OutOfBounds</primary><secondary>MessageDump</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::string&gt; OutOfBounds::MessageDump ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMathErr_1a420f29972f9a21d2a9d8d3a90d0c844a">MathErr</link>.</para>
+<para>
+Definition at line 101 of file MathErr.cc.</para>
+<programlisting>102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Full&#32;message</emphasis>
+103 
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::string&gt;&#32;result(3);
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[0]&#32;=&#32;<link linkend="_classMathErr_1a02dab9085b81ab4ad1e1dd6ce3179e74">Message</link>();
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[1]&#32;=&#32;<link linkend="_classMathErr_1a63e28b64f06194252a7723ef7d349148">Method</link>();
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;result[2]&#32;=&#32;ind;</emphasis>
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classOutOfBounds_1ae7584b5f1d6061276372e1827859ecc3"/>    <section>
+    <title>offendingIndex()</title>
+<indexterm><primary>offendingIndex</primary><secondary>OutOfBounds</secondary></indexterm>
+<indexterm><primary>OutOfBounds</primary><secondary>offendingIndex</secondary></indexterm>
+<para><computeroutput>int OutOfBounds::offendingIndex ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 99 of file MathErr.cc.</para>
+<programlisting>99 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;ind;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-src/MathErr.cc</section>
+src/<link linkend="_MathErr_8cc">MathErr.cc</link></section>
+</section>

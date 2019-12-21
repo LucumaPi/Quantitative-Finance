@@ -2,6 +2,10 @@
 \label{classDualStrikeStrategy}\index{DualStrikeStrategy@{DualStrikeStrategy}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Dual\+Strike\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,14 +25,65 @@ Collaboration diagram for Dual\+Strike\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classDualStrikeStrategy_acb137e0591a87d9dc7fdabc0bea33ac9}\label{classDualStrikeStrategy_acb137e0591a87d9dc7fdabc0bea33ac9}} 
-{\bfseries Dual\+Strike\+Strategy} (double strike1, double strike2, double cp1, double cp2)
+\mbox{\hyperlink{classDualStrikeStrategy_acb137e0591a87d9dc7fdabc0bea33ac9}{Dual\+Strike\+Strategy}} (double strike1, double strike2, double cp1, double cp2)
 \item 
-\mbox{\Hypertarget{classDualStrikeStrategy_a2b0c936589516174633636d12ea05e18}\label{classDualStrikeStrategy_a2b0c936589516174633636d12ea05e18}} 
-double {\bfseries payoff} (double S1, double S2) const
+double \mbox{\hyperlink{classDualStrikeStrategy_a2b0c936589516174633636d12ea05e18}{payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00152}{152}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDualStrikeStrategy_acb137e0591a87d9dc7fdabc0bea33ac9}\label{classDualStrikeStrategy_acb137e0591a87d9dc7fdabc0bea33ac9}} 
+\index{DualStrikeStrategy@{DualStrikeStrategy}!DualStrikeStrategy@{DualStrikeStrategy}}
+\index{DualStrikeStrategy@{DualStrikeStrategy}!DualStrikeStrategy@{DualStrikeStrategy}}
+\doxysubsubsection{\texorpdfstring{DualStrikeStrategy()}{DualStrikeStrategy()}}
+{\footnotesize\ttfamily Dual\+Strike\+Strategy\+::\+Dual\+Strike\+Strategy (\begin{DoxyParamCaption}\item[{double}]{strike1,  }\item[{double}]{strike2,  }\item[{double}]{cp1,  }\item[{double}]{cp2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00158}{158}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159         \{ K1 = strike1; K2 = strike2;}
+\DoxyCodeLine{00160           w1 = cp1; w2 = cp2;}
+\DoxyCodeLine{00161         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDualStrikeStrategy_a2b0c936589516174633636d12ea05e18}\label{classDualStrikeStrategy_a2b0c936589516174633636d12ea05e18}} 
+\index{DualStrikeStrategy@{DualStrikeStrategy}!payoff@{payoff}}
+\index{payoff@{payoff}!DualStrikeStrategy@{DualStrikeStrategy}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Dual\+Strike\+Strategy\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{Multi\+Asset\+Payoff\+Strategy}}.
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00163}{163}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164         \{}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} (w1*(S1-\/K1), w2*(S2-\/K2), 0.0);}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff\+Strategy.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoffStrategy_8hh}{Multi\+Asset\+Payoff\+Strategy.\+hh}}\end{DoxyCompactItemize}

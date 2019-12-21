@@ -1,0 +1,70 @@
+\hypertarget{FunctionWrapper_8cc_source}{}\doxysection{Function\+Wrapper.\+cc}
+\label{FunctionWrapper_8cc_source}\index{tests/FunctionWrapper.cc@{tests/FunctionWrapper.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// FunctionWrapper.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Class to test the of function wrappers, these}}
+\DoxyCodeLine{00004 \textcolor{comment}{// are actually commands.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2005-\/1-\/5 DD Kick-\/off code, POC, later support for void}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 2004}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{// }}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00014}\mbox{\hyperlink{classCommand}{00014}} \textcolor{keyword}{template} <\textcolor{keyword}{class} ReturnType, \textcolor{keyword}{class} Arguments> \textcolor{keyword}{class }\mbox{\hyperlink{classCommand}{Command}}}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00017}\mbox{\hyperlink{classCommand_a6c4e0f1ef5aa231a3cd311f040264b8f}{00017}}         ReturnType (*\mbox{\hyperlink{classCommand_a6c4e0f1ef5aa231a3cd311f040264b8f}{f}}) (Arguments args);}
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00018}\mbox{\hyperlink{classCommand_ab5e079d4b8d60b25d9c6890de074e871}{00018}}         ReturnType  \mbox{\hyperlink{classCommand_ab5e079d4b8d60b25d9c6890de074e871}{exec}}(Arguments args) \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCommand_a6c4e0f1ef5aa231a3cd311f040264b8f}{f}}(args); \}}
+\DoxyCodeLine{00019 \};}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00022}\mbox{\hyperlink{structTwoD}{00022}} \textcolor{keyword}{template} <\textcolor{keyword}{class} T> \textcolor{keyword}{struct }\mbox{\hyperlink{structTwoD}{TwoD}}}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00024}\mbox{\hyperlink{structTwoD_a5264a3d3cbf244d7bc1bcf2b4d2dd491}{00024}}     \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} \mbox{\hyperlink{structTwoD_a5264a3d3cbf244d7bc1bcf2b4d2dd491}{x}};}
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00025}\mbox{\hyperlink{structTwoD_ad5b896f64bf03e6cae5d14c816816bc9}{00025}}     \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} \mbox{\hyperlink{structTwoD_ad5b896f64bf03e6cae5d14c816816bc9}{y}};}
+\DoxyCodeLine{00026 \};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00028}\mbox{\hyperlink{structThreeD}{00028}} \textcolor{keyword}{template} <\textcolor{keyword}{class} T> \textcolor{keyword}{struct }\mbox{\hyperlink{structThreeD}{ThreeD}}}
+\DoxyCodeLine{00029 \{}
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00030}\mbox{\hyperlink{structThreeD_a2124218b9a80cf85323212655b49af3b}{00030}}     \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} \mbox{\hyperlink{structThreeD_a2124218b9a80cf85323212655b49af3b}{x}};}
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00031}\mbox{\hyperlink{structThreeD_a3b079c9ac3c80d8957fcb33fa0295a8e}{00031}}     \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} \mbox{\hyperlink{structThreeD_a3b079c9ac3c80d8957fcb33fa0295a8e}{y}};}
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00032}\mbox{\hyperlink{structThreeD_a0534e2a4b6362515b310e5510d1f63b5}{00032}}     \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} \mbox{\hyperlink{structThreeD_a0534e2a4b6362515b310e5510d1f63b5}{z}};}
+\DoxyCodeLine{00033 \};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00036}\mbox{\hyperlink{FunctionWrapper_8cc_a10185f2b0ada9d247af3d199fe70d450}{00036}} \textcolor{keywordtype}{double} \mbox{\hyperlink{FunctionWrapper_8cc_a10185f2b0ada9d247af3d199fe70d450}{fun1}}(\textcolor{keywordtype}{double} x)}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{return} x*x;}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00041}\mbox{\hyperlink{FunctionWrapper_8cc_a467328085f4286187878f9193bf9134b}{00041}} \textcolor{keywordtype}{double} \mbox{\hyperlink{FunctionWrapper_8cc_a467328085f4286187878f9193bf9134b}{fun2}}(\mbox{\hyperlink{structTwoD}{TwoD<double>}} p)}
+\DoxyCodeLine{00042 \{}
+\DoxyCodeLine{00043     \textcolor{keywordflow}{return} p.\mbox{\hyperlink{structTwoD_a5264a3d3cbf244d7bc1bcf2b4d2dd491}{x}} + p.\mbox{\hyperlink{structTwoD_ad5b896f64bf03e6cae5d14c816816bc9}{y}};}
+\DoxyCodeLine{00044 \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{\Hypertarget{FunctionWrapper_8cc_source_l00046}\mbox{\hyperlink{FunctionWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00046}} \textcolor{keywordtype}{int} \mbox{\hyperlink{FunctionWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00047 \{}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// Single input variable}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classCommand}{Command<double, double>}} cmd1;}
+\DoxyCodeLine{00051     cmd1.\mbox{\hyperlink{classCommand_a6c4e0f1ef5aa231a3cd311f040264b8f}{f}} = \mbox{\hyperlink{FunctionWrapper_8cc_a10185f2b0ada9d247af3d199fe70d450}{fun1}};}
+\DoxyCodeLine{00052     \textcolor{keywordtype}{double} ans = cmd1.\mbox{\hyperlink{classCommand_ab5e079d4b8d60b25d9c6890de074e871}{exec}}(2.9);    }
+\DoxyCodeLine{00053     std::cout << ans << std::endl;}
+\DoxyCodeLine{00054     }
+\DoxyCodeLine{00055     \textcolor{comment}{// Pair of arguments}}
+\DoxyCodeLine{00056     \mbox{\hyperlink{structTwoD}{TwoD<double>}} myP; myP.\mbox{\hyperlink{structTwoD_a5264a3d3cbf244d7bc1bcf2b4d2dd491}{x}} = 3; myP.\mbox{\hyperlink{structTwoD_ad5b896f64bf03e6cae5d14c816816bc9}{y}} = 4;}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \mbox{\hyperlink{classCommand}{Command<double, TwoD<double>}} > cmd2;}
+\DoxyCodeLine{00059     cmd2.\mbox{\hyperlink{classCommand_a6c4e0f1ef5aa231a3cd311f040264b8f}{f}} = \mbox{\hyperlink{FunctionWrapper_8cc_a467328085f4286187878f9193bf9134b}{fun2}};}
+\DoxyCodeLine{00060     \textcolor{keywordtype}{double} ans2 = cmd2.\mbox{\hyperlink{classCommand_ab5e079d4b8d60b25d9c6890de074e871}{exec}}(myP);   }
+\DoxyCodeLine{00061     std::cout << ans2 << std::endl;}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00064 \}}
+
+\end{DoxyCode}

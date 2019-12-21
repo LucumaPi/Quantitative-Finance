@@ -18,8 +18,8 @@
 \DoxyCodeLine{00014 \textcolor{preprocessor}{\#ifndef BinomialMethod\_HH}}
 \DoxyCodeLine{00015 \textcolor{preprocessor}{\#define BinomialMethod\_HH}}
 \DoxyCodeLine{00016 }
-\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "Lattice.hh"}}
-\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "BinomialLatticeStrategy.hh"}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Lattice_8hh}{Lattice.hh}}"}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{BinomialLatticeStrategy_8hh}{BinomialLatticeStrategy.hh}}"}}
 \DoxyCodeLine{00019 }
 \DoxyCodeLine{\Hypertarget{BinomialMethod_8hh_source_l00020}\mbox{\hyperlink{classBinomialMethod}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classBinomialMethod}{BinomialMethod}}}
 \DoxyCodeLine{00021 \{}
@@ -32,25 +32,25 @@
 \DoxyCodeLine{00028 }
 \DoxyCodeLine{00029 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00030     \textcolor{comment}{// Default constructor}}
-\DoxyCodeLine{00031     \mbox{\hyperlink{classBinomialMethod}{BinomialMethod}}();}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classBinomialMethod_a98ef45a14e91d551785c1edfdbfd99a4}{BinomialMethod}}();}
 \DoxyCodeLine{00032 }
 \DoxyCodeLine{00033     \textcolor{comment}{// Constructor taking discount factor, strategy (e.g. CRR) and number of steps}}
-\DoxyCodeLine{00034     \mbox{\hyperlink{classBinomialMethod}{BinomialMethod}} (\textcolor{keywordtype}{double} discounting, \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}\& strategy, \textcolor{keywordtype}{int} N);}
+\DoxyCodeLine{00034     \mbox{\hyperlink{classBinomialMethod_a98ef45a14e91d551785c1edfdbfd99a4}{BinomialMethod}} (\textcolor{keywordtype}{double} discounting, \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}\& strategy, \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
 \DoxyCodeLine{00035 }
 \DoxyCodeLine{00036     \textcolor{comment}{// Initialise lattice data structure}}
-\DoxyCodeLine{00037     \textcolor{keywordtype}{void} buildLattice(\textcolor{keywordtype}{int} N);}
+\DoxyCodeLine{00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{classBinomialMethod_a31651b3bcaa64a57e7a6e26f9f00ef05}{buildLattice}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
 \DoxyCodeLine{00038 }
 \DoxyCodeLine{00039     \textcolor{comment}{// Initialise lattice node values (Forward Induction)}}
-\DoxyCodeLine{00040     \textcolor{keywordtype}{void} modifyLattice(\textcolor{keywordtype}{double} U);   }
+\DoxyCodeLine{00040     \textcolor{keywordtype}{void} \mbox{\hyperlink{classBinomialMethod_a232d7301afe8bab7df7ee5633ff841e6}{modifyLattice}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}{U}}); }
 \DoxyCodeLine{00041 }
 \DoxyCodeLine{00042     \textcolor{comment}{// Calculate derivative price (Backward Induction)}}
-\DoxyCodeLine{00043     \textcolor{keywordtype}{double} getPrice(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, int>}}\& RHS);}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialMethod_a62b8aa2bf9779858bbb0f27825af9268}{getPrice}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, int>}}\& RHS);}
 \DoxyCodeLine{00044 }
 \DoxyCodeLine{00045     \textcolor{comment}{// Handy function to give us the size at expiry date}}
-\DoxyCodeLine{00046     \mbox{\hyperlink{classVector}{Vector<double, int>}} BasePyramidVector() \textcolor{keyword}{const};}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classVector}{Vector<double, int>}} \mbox{\hyperlink{classBinomialMethod_ab3b69b60ccd9242119c3c5f6befc3690}{BasePyramidVector}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{00047 }
 \DoxyCodeLine{00048     \textcolor{comment}{// Underlying lattice}}
-\DoxyCodeLine{00049     \textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& getLattice() \textcolor{keyword}{const};}
+\DoxyCodeLine{00049     \textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& \mbox{\hyperlink{classBinomialMethod_a45f662c73ae8b3d9cf3530a1c500f9ca}{getLattice}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{00050 \};}
 \DoxyCodeLine{00051 \textcolor{preprocessor}{\#include "../../src/BinomialMethod.cc"}}
 \DoxyCodeLine{00052 \textcolor{preprocessor}{\#endif}}

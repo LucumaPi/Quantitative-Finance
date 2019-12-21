@@ -1,0 +1,377 @@
+\hypertarget{ExcelDriver_8cc_source}{}\doxysection{Excel\+Driver.\+cc}
+\label{ExcelDriver_8cc_source}\index{src/ExcelDriver.cc@{src/ExcelDriver.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ExcelDriver.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Excel driver class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Datasim Education BV (c) 2003}}
+\DoxyCodeLine{00006 \textcolor{comment}{// }}
+\DoxyCodeLine{00007 \textcolor{comment}{// Modification dates:}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 23 July 2003 -\/ MB -\/ Started.}}
+\DoxyCodeLine{00009 \textcolor{comment}{// 29 July 2003 -\/ MB -\/ Added support for PropertySets.}}
+\DoxyCodeLine{00010 \textcolor{comment}{//                   -\/ Writing chart data in vertical direction.}}
+\DoxyCodeLine{00011 \textcolor{comment}{//                   -\/ Added Instance() method which returns an ExcelDriver singleton.}}
+\DoxyCodeLine{00012 \textcolor{comment}{// 2005-\/10-\/16 DD Now to be changed for Intro C++ book}}
+\DoxyCodeLine{00013 \textcolor{comment}{// 2005-\/12-\/1 DD hpp and cpp versions}}
+\DoxyCodeLine{00014 \textcolor{comment}{// 2005-\/12-\/9 DD creatVector here}}
+\DoxyCodeLine{00015 \textcolor{comment}{// 2005-\/12-\/10 DD MAJOR BUG FIXED, thanks to Martin Nisbit. Here is a }}
+\DoxyCodeLine{00016 \textcolor{comment}{// description of problem: }}
+\DoxyCodeLine{00017 \textcolor{comment}{// 2005-\/12-\/16 DD No exception at this level (AddMatrix)}}
+\DoxyCodeLine{00018 \textcolor{comment}{// }}
+\DoxyCodeLine{00019 \textcolor{comment}{/*}}
+\DoxyCodeLine{00020 \textcolor{comment}{    Getting the Excel Driver to work is not quite trivial, and is covered on its own page. If you compile it successfully under Office XP or Office 2003, but get a "type mismatch" runtime error instead of results when trying to run it, you need to use this version instead. As Martin Nisbit (who provided that version) discovered, one has to replace all occurrences of "something.Value" by "Something.Value2" for the driver to work under these versions of Office, so for example instead of }}
+\DoxyCodeLine{00021 \textcolor{comment}{    item-\/>Value = label.c\_str();}}
+\DoxyCodeLine{00022 \textcolor{comment}{    you have to use }}
+\DoxyCodeLine{00023 \textcolor{comment}{    item-\/>Value2 = label.c\_str();}}
+\DoxyCodeLine{00024 \textcolor{comment}{    Also, the Excel Driver, even when it runs successfully, tends to crash upon exit -\/ happened to me both when using Office 2000 and Office 2003, and Martin reports the same behavior under Office XP. When I will figure out what causes it, I'll write it here -\/ or if you know, please write me!}}
+\DoxyCodeLine{00025 \textcolor{comment}{}}
+\DoxyCodeLine{00026 \textcolor{comment}{*/}}
+\DoxyCodeLine{00027 \textcolor{comment}{//}}
+\DoxyCodeLine{00028 \textcolor{comment}{// (C) Datasim Education BV 2003 -\/ 2006}}
+\DoxyCodeLine{00029 \textcolor{comment}{//}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 \textcolor{preprocessor}{\#ifndef ExcelDriver\_CPP}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00032}\mbox{\hyperlink{ExcelDriver_8cc_a47ae6379779323a65c3590559e78dcd1}{00032}} \textcolor{preprocessor}{\#define ExcelDriver\_CPP}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ExcelDriver_8hh}{duffy/ExcelDriver.hh}}>}}
+\DoxyCodeLine{00035 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{MatrixMechanisms_8hh}{duffy/MatrixMechanisms.hh}}>} \textcolor{comment}{// template class}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 \textcolor{comment}{// Writes label and vector to cells in horizontal direction.}}
+\DoxyCodeLine{00039 \textcolor{keywordtype}{void} ExcelDriver::ToSheetHorizontal( Excel::\_WorksheetPtr sheet, }
+\DoxyCodeLine{00040                     \textcolor{keywordtype}{long} sheetRow, \textcolor{keywordtype}{long} sheetColumn,}
+\DoxyCodeLine{00041                     \textcolor{keyword}{const} std::string\& label, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& values )}
+\DoxyCodeLine{00042 \{}
+\DoxyCodeLine{00043         \textcolor{comment}{// Get cells.}}
+\DoxyCodeLine{00044         Excel::RangePtr pRange=sheet-\/>Cells;}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046         \textcolor{comment}{// First cell contains the label.}}
+\DoxyCodeLine{00047         Excel::RangePtr item = pRange-\/>Item[sheetRow][sheetColumn];}
+\DoxyCodeLine{00048     \textcolor{comment}{//  item-\/>Value = label.c\_str();}}
+\DoxyCodeLine{00049         item-\/>Value2 = label.c\_str();}
+\DoxyCodeLine{00050     }
+\DoxyCodeLine{00051         sheetColumn++;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \textcolor{comment}{// Next cells contain the values.}}
+\DoxyCodeLine{00054         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long} i=values.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= values.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             Excel::RangePtr item = pRange-\/>Item[sheetRow][sheetColumn];}
+\DoxyCodeLine{00057 \textcolor{comment}{//          item-\/>Value = values[i];            }}
+\DoxyCodeLine{00058             item-\/>Value2 = values[i];           }
+\DoxyCodeLine{00059     }
+\DoxyCodeLine{00060             sheetColumn++;}
+\DoxyCodeLine{00061         \}}
+\DoxyCodeLine{00062 \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064 \textcolor{comment}{// Writes label and vector to cells in vertical direction.}}
+\DoxyCodeLine{00065 \textcolor{keywordtype}{void} ExcelDriver::ToSheetVertical( Excel::\_WorksheetPtr sheet,}
+\DoxyCodeLine{00066                     \textcolor{keywordtype}{long} sheetRow, \textcolor{keywordtype}{long} sheetColumn,}
+\DoxyCodeLine{00067                     \textcolor{keyword}{const} std::string\& label, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& values )}
+\DoxyCodeLine{00068 \{}
+\DoxyCodeLine{00069         \textcolor{comment}{// Get cells.}}
+\DoxyCodeLine{00070         Excel::RangePtr pRange=sheet-\/>Cells;}
+\DoxyCodeLine{00071     }
+\DoxyCodeLine{00072         \textcolor{comment}{// First cell contains the label.}}
+\DoxyCodeLine{00073         Excel::RangePtr item = pRange-\/>Item[sheetRow][sheetColumn];}
+\DoxyCodeLine{00074         \textcolor{comment}{// item-\/>Value = label.c\_str();}}
+\DoxyCodeLine{00075         item-\/>Value2 = label.c\_str();}
+\DoxyCodeLine{00076     }
+\DoxyCodeLine{00077         sheetRow++;}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079         \textcolor{comment}{// Next cells contain the values.}}
+\DoxyCodeLine{00080         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=values.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= values.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00081         \{}
+\DoxyCodeLine{00082             Excel::RangePtr item = pRange-\/>Item[sheetRow][sheetColumn];}
+\DoxyCodeLine{00083             \textcolor{comment}{//item-\/>Value = values[i];          }}
+\DoxyCodeLine{00084             item-\/>Value2 = values[i];}
+\DoxyCodeLine{00085             sheetRow++;}
+\DoxyCodeLine{00086         \}}
+\DoxyCodeLine{00087 \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089 \textcolor{comment}{// Throw COM error as string.}}
+\DoxyCodeLine{00090 \textcolor{keywordtype}{void} ExcelDriver::ThrowAsString( \_com\_error \& error )}
+\DoxyCodeLine{00091 \{}
+\DoxyCodeLine{00092         bstr\_t description = error.Description();}
+\DoxyCodeLine{00093         \textcolor{keywordflow}{if}( !description )}
+\DoxyCodeLine{00094         \{}
+\DoxyCodeLine{00095             description = error.ErrorMessage();}
+\DoxyCodeLine{00096         \}}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098         \textcolor{keywordflow}{throw} std::string(description);}
+\DoxyCodeLine{00099 \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101 \textcolor{comment}{// Constructor. Starts Excel in invisible mode.}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00102}\mbox{\hyperlink{classExcelDriver_a9dbf535e7ef5053210dd2cdbeaa9e76c}{00102}} \mbox{\hyperlink{classExcelDriver_a9dbf535e7ef5053210dd2cdbeaa9e76c}{ExcelDriver::ExcelDriver}}()  : curDataColumn(1)}
+\DoxyCodeLine{00103 \{}
+\DoxyCodeLine{00104         \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00105         \{}
+\DoxyCodeLine{00106             \textcolor{comment}{// Initialize COM Runtime Libraries.}}
+\DoxyCodeLine{00107             CoInitialize(NULL);}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109             \textcolor{comment}{// Start excel application.}}
+\DoxyCodeLine{00110             xl.CreateInstance(L\textcolor{stringliteral}{"Excel.Application"});}
+\DoxyCodeLine{00111             xl-\/>Workbooks-\/>Add((\textcolor{keywordtype}{long}) Excel::xlWorksheet);}
+\DoxyCodeLine{00112           \textcolor{comment}{//  xl-\/>Workbooks-\/>OpenFile("D:\(\backslash\)Documents and Settings\(\backslash\)dduffy\(\backslash\)My Documents\(\backslash\)Testje.xls");}}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114             \textcolor{comment}{// Rename "Sheet1" to "Chart Data".}}
+\DoxyCodeLine{00115             Excel::\_WorkbookPtr pWorkbook = xl-\/>ActiveWorkbook;}
+\DoxyCodeLine{00116             Excel::\_WorksheetPtr pSheet = pWorkbook-\/>Worksheets-\/>GetItem(\textcolor{stringliteral}{"Sheet1"});}
+\DoxyCodeLine{00117             pSheet-\/>Name = \textcolor{stringliteral}{"Chart Data"};}
+\DoxyCodeLine{00118         \}}
+\DoxyCodeLine{00119         \textcolor{keywordflow}{catch}( \_com\_error \& error )}
+\DoxyCodeLine{00120         \{}
+\DoxyCodeLine{00121             ThrowAsString(error);}
+\DoxyCodeLine{00122         \}}
+\DoxyCodeLine{00123 \}}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125 \textcolor{comment}{// Destructor.}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00126}\mbox{\hyperlink{classExcelDriver_a111f747fcefaa4b38d986c5c72e742b2}{00126}} \mbox{\hyperlink{classExcelDriver_a111f747fcefaa4b38d986c5c72e742b2}{ExcelDriver::~ExcelDriver}}()}
+\DoxyCodeLine{00127 \{}
+\DoxyCodeLine{00128         \textcolor{comment}{// Undo initialization of COM Runtime Libraries.}}
+\DoxyCodeLine{00129         CoUninitialize();}
+\DoxyCodeLine{00130     \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132     \textcolor{comment}{// Access to single, shared instance of ExcelDriver (singleton).}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00133}\mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{00133}} \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{ExcelDriver::Instance}}()}
+\DoxyCodeLine{00134 \{}
+\DoxyCodeLine{00135         \textcolor{keyword}{static} \mbox{\hyperlink{classExcelDriver}{ExcelDriver}} singleton;}
+\DoxyCodeLine{00136         \textcolor{keywordflow}{return} singleton;}
+\DoxyCodeLine{00137 \}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139 \textcolor{comment}{// Create chart with a number of functions. The arguments are:}}
+\DoxyCodeLine{00140 \textcolor{comment}{//  x:          vector with input values}}
+\DoxyCodeLine{00141 \textcolor{comment}{//  labels:     labels for output values}}
+\DoxyCodeLine{00142 \textcolor{comment}{//  vectorList: list of vectors with output values.}}
+\DoxyCodeLine{00143 \textcolor{comment}{//  chartTitle: title of chart}}
+\DoxyCodeLine{00144 \textcolor{comment}{//  xTitle:     label of x axis}}
+\DoxyCodeLine{00145 \textcolor{comment}{//  yTitle:     label of y axis}}
+\DoxyCodeLine{00146 \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{ExcelDriver::CreateChart}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& x, \textcolor{keyword}{const} list<std::string> \& labels, \textcolor{keyword}{const} list<\mbox{\hyperlink{classVector}{Vector<double, long>}} > \& vectorList, }
+\DoxyCodeLine{00147                     \textcolor{keyword}{const} std::string\& chartTitle, \textcolor{keyword}{const} std::string\& xTitle, \textcolor{keyword}{const} std::string\& yTitle)}
+\DoxyCodeLine{00148 \{}
+\DoxyCodeLine{00149         \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00150         \{}
+\DoxyCodeLine{00151             \textcolor{comment}{// Check \# labels vs. \# vectors.}}
+\DoxyCodeLine{00152             \textcolor{keywordflow}{if}( labels.size() != vectorList.size() )}
+\DoxyCodeLine{00153             \{}
+\DoxyCodeLine{00154                 \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"Number of labels must equal number of vectors."};}
+\DoxyCodeLine{00155             \}}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157             \textcolor{comment}{// Activate sheet with numbers.}}
+\DoxyCodeLine{00158             Excel::\_WorkbookPtr pWorkbook = xl-\/>ActiveWorkbook;}
+\DoxyCodeLine{00159             Excel::\_WorksheetPtr pSheet = pWorkbook-\/>Worksheets-\/>GetItem(\textcolor{stringliteral}{"Chart Data"});}
+\DoxyCodeLine{00160             }
+\DoxyCodeLine{00161             \textcolor{comment}{// Calculate range with source data.}}
+\DoxyCodeLine{00162             \textcolor{comment}{// The first row contains the labels shown in the chart's legend.}}
+\DoxyCodeLine{00163             \textcolor{keywordtype}{long} beginRow = 1;}
+\DoxyCodeLine{00164             \textcolor{keywordtype}{long} beginColumn = curDataColumn;}
+\DoxyCodeLine{00165             \textcolor{keywordtype}{long} endRow = x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() + 1;                             \textcolor{comment}{// +1 to include labels.}}
+\DoxyCodeLine{00166             \textcolor{keywordtype}{long} endColumn = beginColumn + vectorList.size();       \textcolor{comment}{// 1st is input, rest is output.}}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168             \textcolor{comment}{// Write label + input values to cells in vertical direction.}}
+\DoxyCodeLine{00169             ToSheetVertical(pSheet, 1, curDataColumn, xTitle, x);       \textcolor{comment}{// X values.}}
+\DoxyCodeLine{00170             curDataColumn++;}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172             \textcolor{comment}{// Write label + output values to cells in vertical direction.}}
+\DoxyCodeLine{00173             list<Vector<double, long> >::const\_iterator vectorIt;}
+\DoxyCodeLine{00174             list<std::string>::const\_iterator labelIt = labels.begin();}
+\DoxyCodeLine{00175             \textcolor{keywordflow}{for}( vectorIt = vectorList.begin(); vectorIt != vectorList.end(); vectorIt++ )}
+\DoxyCodeLine{00176             \{}
+\DoxyCodeLine{00177                 \textcolor{comment}{// Get label and row index.}}
+\DoxyCodeLine{00178                 \textcolor{keywordtype}{string} label = *labelIt;}
+\DoxyCodeLine{00179                 }
+\DoxyCodeLine{00180                 \textcolor{comment}{// Add label + output values to Excel.}}
+\DoxyCodeLine{00181                 ToSheetVertical(pSheet, 1, curDataColumn, label, *vectorIt);}
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183                 \textcolor{comment}{// Advance row and label.}}
+\DoxyCodeLine{00184                 curDataColumn++;}
+\DoxyCodeLine{00185                 labelIt++;}
+\DoxyCodeLine{00186         \}           }
+\DoxyCodeLine{00187             }
+\DoxyCodeLine{00188             \textcolor{comment}{// Create range objects for source data.}}
+\DoxyCodeLine{00189             Excel::RangePtr pBeginRange = pSheet-\/>Cells-\/>Item[beginRow][beginColumn];}
+\DoxyCodeLine{00190             Excel::RangePtr pEndRange = pSheet-\/>Cells-\/>Item[endRow][endColumn];}
+\DoxyCodeLine{00191             Excel::RangePtr pTotalRange = pSheet-\/>Range[(Excel::Range*)pBeginRange][(Excel::Range*)pEndRange];}
+\DoxyCodeLine{00192             }
+\DoxyCodeLine{00193             \textcolor{comment}{// Create the chart and sets its type}}
+\DoxyCodeLine{00194             Excel::\_ChartPtr pChart=xl-\/>ActiveWorkbook-\/>Charts-\/>Add();}
+\DoxyCodeLine{00195             pChart-\/>ChartWizard((Excel::Range*)pTotalRange, (\textcolor{keywordtype}{long})Excel::xlXYScatter, 6L, (\textcolor{keywordtype}{long})Excel::xlColumns, 1L, 1L, \textcolor{keyword}{true}, chartTitle.c\_str(), xTitle.c\_str(), yTitle.c\_str());}
+\DoxyCodeLine{00196             pChart-\/>ApplyCustomType(Excel::xlXYScatterSmooth);}
+\DoxyCodeLine{00197             pChart-\/>Name = chartTitle.c\_str();}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199             \textcolor{comment}{// Make all titles visible again. They were erased by the ApplyCustomType method.}}
+\DoxyCodeLine{00200             pChart-\/>HasTitle=\textcolor{keyword}{true};}
+\DoxyCodeLine{00201             pChart-\/>ChartTitle-\/>Text=chartTitle.c\_str();}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203             Excel::AxisPtr pAxis = pChart-\/>Axes((\textcolor{keywordtype}{long})Excel::xlValue, Excel::xlPrimary);}
+\DoxyCodeLine{00204             pAxis-\/>HasTitle = \textcolor{keyword}{true};}
+\DoxyCodeLine{00205             pAxis-\/>AxisTitle-\/>Text = yTitle.c\_str();}
+\DoxyCodeLine{00206             }
+\DoxyCodeLine{00207             pAxis=pChart-\/>Axes((\textcolor{keywordtype}{long})Excel::xlCategory, Excel::xlPrimary);}
+\DoxyCodeLine{00208             pAxis-\/>HasTitle = \textcolor{keyword}{true};}
+\DoxyCodeLine{00209             pAxis-\/>AxisTitle-\/>Text = xTitle.c\_str();}
+\DoxyCodeLine{00210 }
+\DoxyCodeLine{00211             \textcolor{comment}{// Add extra row space to make sheet more readable.}}
+\DoxyCodeLine{00212             curDataColumn++;}
+\DoxyCodeLine{00213         \}}
+\DoxyCodeLine{00214         \textcolor{keywordflow}{catch}( \_com\_error \& error )}
+\DoxyCodeLine{00215         \{}
+\DoxyCodeLine{00216             ThrowAsString(error);}
+\DoxyCodeLine{00217         \}}
+\DoxyCodeLine{00218 \}}
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00220     \textcolor{comment}{// Create chart with a number of functions. The arguments are:}}
+\DoxyCodeLine{00221     \textcolor{comment}{//  x:          vector with input values}}
+\DoxyCodeLine{00222     \textcolor{comment}{//  y:          vector with output values.}}
+\DoxyCodeLine{00223     \textcolor{comment}{//  chartTitle: title of chart}}
+\DoxyCodeLine{00224     \textcolor{comment}{//  xTitle:     label of x axis}}
+\DoxyCodeLine{00225     \textcolor{comment}{//  yTitle:     label of y axis}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00226}\mbox{\hyperlink{classExcelDriver_afdeb32319d1437b249fc5727a5420fc7}{00226}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{ExcelDriver::CreateChart}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}} \& y, \textcolor{keyword}{const} std::string\& chartTitle, }
+\DoxyCodeLine{00227                               \textcolor{keyword}{const} std::string\& xTitle, \textcolor{keyword}{const} std::string\& yTitle)}
+\DoxyCodeLine{00228 \{ }
+\DoxyCodeLine{00229         \textcolor{comment}{// Create list with single function and single label.}}
+\DoxyCodeLine{00230         std::list<Vector<double, long> > functions;}
+\DoxyCodeLine{00231         std::list<std::string> labels;}
+\DoxyCodeLine{00232         functions.push\_back(y);}
+\DoxyCodeLine{00233         labels.push\_back(chartTitle);}
+\DoxyCodeLine{00234         \mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{CreateChart}}(x, labels, functions, chartTitle, xTitle, yTitle);}
+\DoxyCodeLine{00235     \}}
+\DoxyCodeLine{00236 }
+\DoxyCodeLine{00237     \textcolor{comment}{// Add Matrix to the spreadsheet with row and column labels.}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00238}\mbox{\hyperlink{classExcelDriver_a63753818c5895ff1ed84dad214de4332}{00238}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_a63753818c5895ff1ed84dad214de4332}{ExcelDriver::AddMatrix}}(\textcolor{keyword}{const} std::string\& name, }
+\DoxyCodeLine{00239         \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}} \& matrix, }
+\DoxyCodeLine{00240         \textcolor{keyword}{const} std::list<std::string> \& rowLabels, \textcolor{keyword}{const} std::list<std::string> \& columnLabels)}
+\DoxyCodeLine{00241     \{}
+\DoxyCodeLine{00242         }
+\DoxyCodeLine{00243         \textcolor{comment}{// Add sheet.}}
+\DoxyCodeLine{00244         Excel::\_WorkbookPtr pWorkbook = xl-\/>ActiveWorkbook;}
+\DoxyCodeLine{00245         Excel::\_WorksheetPtr pSheet = pWorkbook-\/>Worksheets-\/>Add();}
+\DoxyCodeLine{00246         pSheet-\/>Name = name.c\_str();}
+\DoxyCodeLine{00247 }
+\DoxyCodeLine{00248         \textcolor{comment}{// Current indeces in spreadsheet.}}
+\DoxyCodeLine{00249         \textcolor{keywordtype}{long} sheetRow = 1;}
+\DoxyCodeLine{00250         \textcolor{keywordtype}{long} sheetColumn = 1;}
+\DoxyCodeLine{00251                 }
+\DoxyCodeLine{00252         \textcolor{comment}{// Add column labels starting at column 2.}}
+\DoxyCodeLine{00253         sheetColumn = 2;}
+\DoxyCodeLine{00254         Excel::RangePtr pRange=pSheet-\/>Cells;}
+\DoxyCodeLine{00255         std::list<std::string>::const\_iterator columnLabelIt;}
+\DoxyCodeLine{00256         \textcolor{keywordflow}{for}(columnLabelIt = columnLabels.begin(); columnLabelIt != columnLabels.end(); }
+\DoxyCodeLine{00257                                                                         columnLabelIt++)}
+\DoxyCodeLine{00258         \{}
+\DoxyCodeLine{00259             Excel::RangePtr item = pRange-\/>Item[sheetRow][sheetColumn];}
+\DoxyCodeLine{00260         \textcolor{comment}{//  item-\/>Value = columnLabelIt-\/>c\_str();}}
+\DoxyCodeLine{00261             item-\/>Value2 = columnLabelIt-\/>c\_str();}
+\DoxyCodeLine{00262         }
+\DoxyCodeLine{00263             sheetColumn++;}
+\DoxyCodeLine{00264         \}}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00266         \textcolor{comment}{// Add row labels + values.}}
+\DoxyCodeLine{00267         sheetColumn = 1;}
+\DoxyCodeLine{00268         sheetRow = 2;}
+\DoxyCodeLine{00269         std::list<std::string>::const\_iterator rowLabelIt = rowLabels.begin();}
+\DoxyCodeLine{00270         \textcolor{keywordflow}{for}( \textcolor{keywordtype}{long} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}++ )}
+\DoxyCodeLine{00271         \{}
+\DoxyCodeLine{00272             \mbox{\hyperlink{classVector}{Vector<double, long>}}    row = \mbox{\hyperlink{ExcelDriver_8cc_a1b724dd4e99548501ed8e37c192d9eca}{createVector}}(matrix, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00273             ToSheetHorizontal(pSheet, sheetRow, sheetColumn, *rowLabelIt, row);}
+\DoxyCodeLine{00274             rowLabelIt++;}
+\DoxyCodeLine{00275             sheetRow++;}
+\DoxyCodeLine{00276         \}}
+\DoxyCodeLine{00277 \}}
+\DoxyCodeLine{00278 }
+\DoxyCodeLine{00279 \textcolor{comment}{// Simpler }}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00280}\mbox{\hyperlink{classExcelDriver_a3af0bbb50e01ade900e974ea6d2a15ff}{00280}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_a63753818c5895ff1ed84dad214de4332}{ExcelDriver::AddMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix, \textcolor{keyword}{const} std::string\& name)}
+\DoxyCodeLine{00281         }
+\DoxyCodeLine{00282     \{}
+\DoxyCodeLine{00283         }
+\DoxyCodeLine{00284         \textcolor{comment}{// Add sheet.}}
+\DoxyCodeLine{00285         Excel::\_WorkbookPtr pWorkbook = xl-\/>ActiveWorkbook;}
+\DoxyCodeLine{00286         Excel::\_WorksheetPtr pSheet = pWorkbook-\/>Worksheets-\/>Add();}
+\DoxyCodeLine{00287         pSheet-\/>Name = name.c\_str();}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289         \textcolor{comment}{// Current indeces in spreadsheet.}}
+\DoxyCodeLine{00290         \textcolor{keywordtype}{long} sheetRow = 1;}
+\DoxyCodeLine{00291         \textcolor{keywordtype}{long} sheetColumn = 1;}
+\DoxyCodeLine{00292                 }
+\DoxyCodeLine{00293         }
+\DoxyCodeLine{00294         \textcolor{comment}{// Make empty row labels. Can latr make it more general}}
+\DoxyCodeLine{00295         std::list<std::string> rowLabels;}
+\DoxyCodeLine{00296         \textcolor{keywordflow}{for}( \textcolor{keywordtype}{long} r2 = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); r2 <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); r2++ )}
+\DoxyCodeLine{00297         \{}
+\DoxyCodeLine{00298             rowLabels.push\_back(std::string(\textcolor{stringliteral}{" "}));}
+\DoxyCodeLine{00299         \}}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00301         \textcolor{comment}{// Add row labels + values.}}
+\DoxyCodeLine{00302         sheetColumn = 1;}
+\DoxyCodeLine{00303         sheetRow = 2;}
+\DoxyCodeLine{00304         std::list<std::string>::const\_iterator rowLabelIt = rowLabels.begin();}
+\DoxyCodeLine{00305         \textcolor{keywordflow}{for}( \textcolor{keywordtype}{long} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}++ )}
+\DoxyCodeLine{00306         \{}
+\DoxyCodeLine{00307             \mbox{\hyperlink{classVector}{Vector<double, long>}}    row = \mbox{\hyperlink{ExcelDriver_8cc_a1b724dd4e99548501ed8e37c192d9eca}{createVector}}(matrix, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00308             ToSheetHorizontal(pSheet, sheetRow, sheetColumn, *rowLabelIt, row);}
+\DoxyCodeLine{00309             rowLabelIt++;}
+\DoxyCodeLine{00310             sheetRow++;}
+\DoxyCodeLine{00311         \}}
+\DoxyCodeLine{00312 \}}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314 \textcolor{comment}{// Make Excel window visible.}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00315}\mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{00315}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{ExcelDriver::MakeVisible}}( \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}})}
+\DoxyCodeLine{00316 \{}
+\DoxyCodeLine{00317         \textcolor{comment}{// Make excel visible.}}
+\DoxyCodeLine{00318         xl-\/>Visible = \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} ? VARIANT\_TRUE : VARIANT\_FALSE;}
+\DoxyCodeLine{00319 \}}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{00321 \textcolor{comment}{// Help }}
+\DoxyCodeLine{00322 \textcolor{comment}{// Returns row from matrix as vector.}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00323}\mbox{\hyperlink{ExcelDriver_8cc_a1b724dd4e99548501ed8e37c192d9eca}{00323}} \mbox{\hyperlink{classVector}{Vector <double, long>}} \mbox{\hyperlink{ExcelDriver_8cc_a1b724dd4e99548501ed8e37c192d9eca}{createVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double,long>}}\& mat, \textcolor{keywordtype}{long} row)}
+\DoxyCodeLine{00324 \{}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326         \mbox{\hyperlink{classVector}{Vector<double, long>}} result (mat.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}(), mat.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}());}
+\DoxyCodeLine{00327         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = mat.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); i <= mat.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); i++)}
+\DoxyCodeLine{00328         \{}
+\DoxyCodeLine{00329             result[i] = mat(row, i);}
+\DoxyCodeLine{00330         \}}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00333 \}}
+\DoxyCodeLine{00334 \textcolor{comment}{// For debugging, for example}}
+\DoxyCodeLine{\Hypertarget{ExcelDriver_8cc_source_l00335}\mbox{\hyperlink{classExcelDriver_afa7a45b8d3499de788e722c75627e284}{00335}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_afa7a45b8d3499de788e722c75627e284}{ExcelDriver::printStringInExcel}}(\textcolor{keyword}{const} std::string\& s, \textcolor{keywordtype}{long} rowNumber, \textcolor{keywordtype}{long} colNumber,}
+\DoxyCodeLine{00336                     \textcolor{keyword}{const} std::string\& sheetName    )}
+\DoxyCodeLine{00337 \{ \textcolor{comment}{// Mainly for debugging}}
+\DoxyCodeLine{00338 }
+\DoxyCodeLine{00339         \textcolor{comment}{// Add sheet.}}
+\DoxyCodeLine{00340         Excel::\_WorkbookPtr pWorkbook = xl-\/>ActiveWorkbook;}
+\DoxyCodeLine{00341         Excel::\_WorksheetPtr pSheet = pWorkbook-\/>Worksheets-\/>Add();}
+\DoxyCodeLine{00342         pSheet-\/>Name = sheetName.c\_str();}
+\DoxyCodeLine{00343 }
+\DoxyCodeLine{00344         \textcolor{comment}{// Add properties to cells.}}
+\DoxyCodeLine{00345         Excel::RangePtr pRange = pSheet-\/>Cells;}
+\DoxyCodeLine{00346         pRange-\/>Item[rowNumber][colNumber] = s.c\_str();}
+\DoxyCodeLine{00347 \}}
+\DoxyCodeLine{00348 }
+\DoxyCodeLine{00349 \textcolor{keywordtype}{void} \mbox{\hyperlink{classExcelDriver_afa7a45b8d3499de788e722c75627e284}{ExcelDriver::printStringInExcel}}(\textcolor{keyword}{const} list<string>\& s, \textcolor{keywordtype}{long} startRow, \textcolor{keywordtype}{long} colNumber,}
+\DoxyCodeLine{00350                     \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& sheetName )}
+\DoxyCodeLine{00351 \{ \textcolor{comment}{// Mainly for debugging}}
+\DoxyCodeLine{00352 }
+\DoxyCodeLine{00353         \textcolor{comment}{// Add sheet.}}
+\DoxyCodeLine{00354         Excel::\_WorkbookPtr pWorkbook = xl-\/>ActiveWorkbook;}
+\DoxyCodeLine{00355         Excel::\_WorksheetPtr pSheet = pWorkbook-\/>Worksheets-\/>Add();}
+\DoxyCodeLine{00356 \textcolor{comment}{//      pSheet-\/>Name = sheetName.c\_str();}}
+\DoxyCodeLine{00357 }
+\DoxyCodeLine{00358         Excel::RangePtr pRange = pSheet-\/>Cells;}
+\DoxyCodeLine{00359     }
+\DoxyCodeLine{00360         std::list<std::string>::const\_iterator it;}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362         \textcolor{keywordflow}{for} (it = s.begin(); it != s.end(); it++)}
+\DoxyCodeLine{00363         \{}
+\DoxyCodeLine{00364                 }
+\DoxyCodeLine{00365             pRange-\/>Item[startRow][colNumber] = (*it).c\_str();}
+\DoxyCodeLine{00366             startRow++;}
+\DoxyCodeLine{00367         \}}
+\DoxyCodeLine{00368 }
+\DoxyCodeLine{00369 \}}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{00371 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

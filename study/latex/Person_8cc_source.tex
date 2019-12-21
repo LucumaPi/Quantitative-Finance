@@ -1,0 +1,42 @@
+\hypertarget{Person_8cc_source}{}\doxysection{Person.\+cc}
+\label{Person_8cc_source}\index{src/Person.cc@{src/Person.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Person.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// 'Hello World' class }}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Last Modification Dates}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2006-\/2-\/17 DD Kick-\/off}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include<\mbox{\hyperlink{Person_8hh}{duffy/Person.hh}}>}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{Person_8cc_source_l00014}\mbox{\hyperlink{classPerson_a27cebd22009c2f3d495523832d4489bc}{00014}} \mbox{\hyperlink{classPerson_a27cebd22009c2f3d495523832d4489bc}{Person::Person}} (\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDate}{DatasimDate}}\& DateofBirth)}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016             \mbox{\hyperlink{classPerson_ae6ee626f8471b70bef418998ab35623e}{nam}} = name;}
+\DoxyCodeLine{00017             \mbox{\hyperlink{classPerson_abc4a5fbe6e5412b54fcbdf6446b4a29e}{dob}} = DateofBirth;}
+\DoxyCodeLine{00018             \mbox{\hyperlink{classPerson_aa4dfae60adf8adfe9e0da019e0993f04}{createdD}} = \mbox{\hyperlink{classDatasimDate}{DatasimDate}}();    \textcolor{comment}{// default, today REALLY!}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{\Hypertarget{Person_8cc_source_l00022}\mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{00022}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{Person::print}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00023 \textcolor{keyword}{}\{ \textcolor{comment}{// Who am I?}}
+\DoxyCodeLine{00024             }
+\DoxyCodeLine{00025             std::cout << \textcolor{stringliteral}{"\(\backslash\)n** Person Data **\(\backslash\)n"};}
+\DoxyCodeLine{00026         }
+\DoxyCodeLine{00027             std::cout << \textcolor{stringliteral}{"Name: "} << \mbox{\hyperlink{classPerson_ae6ee626f8471b70bef418998ab35623e}{nam}} << \textcolor{stringliteral}{", Date of birth: "} << \mbox{\hyperlink{classPerson_abc4a5fbe6e5412b54fcbdf6446b4a29e}{dob}} }
+\DoxyCodeLine{00028                         << \textcolor{stringliteral}{", Age: "} << \mbox{\hyperlink{classPerson_aebd438308d431c5a20070a64288932d8}{age}}() << std::endl;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030 \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{Person_8cc_source_l00032}\mbox{\hyperlink{classPerson_aebd438308d431c5a20070a64288932d8}{00032}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classPerson_aebd438308d431c5a20070a64288932d8}{Person::age}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00033 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} int( \textcolor{keywordtype}{double}(\mbox{\hyperlink{classDatasimDate}{DatasimDate}}() -\/ \mbox{\hyperlink{classPerson_abc4a5fbe6e5412b54fcbdf6446b4a29e}{dob}}) / 365.0);}
+\DoxyCodeLine{00035 \}}
+\DoxyCodeLine{00036 }
+
+\end{DoxyCode}

@@ -13,13 +13,29 @@
       </node>
       <node id="2">
         <label>Set.hh</label>
-        <link refid="Set_8hh_source"/>
+        <link refid="Set_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../../src/Relation.cc</label>
+        <link refid="Relation_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
       </node>
       <node id="5">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
         <label>map</label>
       </node>
       <node id="1">
@@ -27,17 +43,52 @@
         <link refid="Relation_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>set</label>
       </node>
+      <node id="6">
+        <label>algorithm</label>
+      </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/Relation.cc</label>
+        <link refid="Relation_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tests/TestRelation.cc</label>
+        <link refid="TestRelation_8cc"/>
+      </node>
+      <node id="1">
+        <label>include/duffy/Relation.hh</label>
+        <link refid="Relation_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <innerclass refid="classRelation" prot="public">Relation</innerclass>
     <briefdescription>
+<para><ref refid="classRelation" kindref="compound">Relation</ref> class template. </para>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="author"><para>Daniel J. Duffy (<ulink url="mailto:dduffy@datasim.nl">dduffy@datasim.nl</ulink>) </para>
+</simplesect>
+<simplesect kind="version"><para>0.1 </para>
+</simplesect>
+<simplesect kind="date"><para>2019-12-21</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019 </para>
+</simplesect>
+</para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//<sp/>Relation.hpp</highlight><highlight class="normal"></highlight></codeline>
@@ -61,85 +112,83 @@
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2004</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Relation_HH</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Relation_HH</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Set.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Includes<sp/>both<sp/>map<sp/>and<sp/>multimap</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29" refid="classRelation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classRelation" kindref="compound">Relation</ref></highlight></codeline>
-<codeline lineno="30"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Classes<sp/>representing<sp/>mappings<sp/>from<sp/>D<sp/>to<sp/>R</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&apos;Control&apos;<sp/>information</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref><sp/>s1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Domain<sp/>Set</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref><sp/>s2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range<sp/>Set</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Information<sp/>about<sp/>the<sp/>mapping<sp/>itself.<sp/>These<sp/>two</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>multimaps<sp/>must<sp/>be<sp/>kept<sp/>consistent</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::multimap&lt;D,<sp/>R&gt;<sp/>f;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>mapping<sp/>itself</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::multimap&lt;R,<sp/>D&gt;<sp/>finv;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>inverse<sp/>mapping</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Private<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>template<sp/>&lt;class<sp/>X,<sp/>class<sp/>Y&gt;<sp/>void<sp/>removeElements(Relation&lt;X,Y&gt;&amp;<sp/>r,<sp/>const<sp/>Y&amp;<sp/>y);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Essential<sp/>members</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation" kindref="compound">Relation</ref>();<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation" kindref="compound">Relation</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>&amp;<sp/>domainSet,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref>&amp;<sp/>rangeSet);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation" kindref="compound">Relation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/>r2);</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor">#ifndef<sp/>Relation_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Relation_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Set_8hh" kindref="compound">Set.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Includes<sp/>both<sp/>map<sp/>and<sp/>multimap</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classRelation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>D,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>R&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classRelation" kindref="compound">Relation</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Classes<sp/>representing<sp/>mappings<sp/>from<sp/>D<sp/>to<sp/>R</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&apos;Control&apos;<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref><sp/>s1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Domain<sp/>Set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref><sp/>s2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range<sp/>Set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Information<sp/>about<sp/>the<sp/>mapping<sp/>itself.<sp/>These<sp/>two</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>multimaps<sp/>must<sp/>be<sp/>kept<sp/>consistent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>std::multimap&lt;D,<sp/>R&gt;<sp/>f;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>mapping<sp/>itself</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>std::multimap&lt;R,<sp/>D&gt;<sp/>finv;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>inverse<sp/>mapping</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Building<sp/>and<sp/>breaking<sp/>the<sp/>Relation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>set<sp/>element<sp/>in<sp/>the<sp/>relations</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addDomainElement(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d);<sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>d<sp/>to<sp/>Domain<sp/>Set<sp/>(no<sp/>link)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addRangeElement(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/>r);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>r<sp/>to<sp/>Range<sp/>Set<sp/>(no<sp/>link)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>removeDomainElement(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>d<sp/>and<sp/>all<sp/>links</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>removeRangeElement(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/>r);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>r<sp/>and<sp/>all<sp/>links</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>relationship<sp/>between<sp/>EXISTING<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addRelation(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/>r);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>removeRelation(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>between<sp/>d<sp/>and<sp/>ALL<sp/>r</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ClearAll();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Break<sp/>all<sp/>links<sp/>and<sp/>sets</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ClearLinks();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Break<sp/>links<sp/>only,<sp/>sets<sp/>remain</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Iterator<sp/>functions<sp/>(going<sp/>from<sp/>D<sp/>direction)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;D,<sp/>R&gt;::iterator<sp/>iterator;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;D,<sp/>R&gt;::const_iterator<sp/>const_iterator;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>iterator<sp/>Begin();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>const_iterator<sp/>Begin()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>iterator<sp/>End();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>const_iterator<sp/>End()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Private<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>template<sp/>&lt;class<sp/>X,<sp/>class<sp/>Y&gt;<sp/>void<sp/>removeElements(Relation&lt;X,Y&gt;&amp;<sp/>r,<sp/>const<sp/>Y&amp;<sp/>y);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Essential<sp/>members</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a36145dd40aa468c579ac6e531b0ac588" kindref="member">Relation</ref>();<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a36145dd40aa468c579ac6e531b0ac588" kindref="member">Relation</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>&amp;<sp/>domainSet,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref>&amp;<sp/>rangeSet);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a36145dd40aa468c579ac6e531b0ac588" kindref="member">Relation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/>r2);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Building<sp/>and<sp/>breaking<sp/>the<sp/>Relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>set<sp/>element<sp/>in<sp/>the<sp/>relations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a3850e9c9495624d27e7813cc6e0dc763" kindref="member">addDomainElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d);<sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>d<sp/>to<sp/>Domain<sp/>Set<sp/>(no<sp/>link)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a8bbc53597b97db93008a82d5b7ff54cb" kindref="member">addRangeElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>r<sp/>to<sp/>Range<sp/>Set<sp/>(no<sp/>link)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a30b7ecfff53dda24b5661215e63b3aeb" kindref="member">removeDomainElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>d<sp/>and<sp/>all<sp/>links</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1adf2bd0433cf8eb255e0b595d8502afad" kindref="member">removeRangeElement</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>r<sp/>and<sp/>all<sp/>links</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>relationship<sp/>between<sp/>EXISTING<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a0d4bdc5ed486ffbef37ae2e489166834" kindref="member">addRelation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a6fe1980b85fd0a4d59ed6ca3dbb52a2a" kindref="member">removeRelation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>between<sp/>d<sp/>and<sp/>ALL<sp/>r</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1aac3d30ad0639de420ec0d496ca78696f" kindref="member">ClearAll</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Break<sp/>all<sp/>links<sp/>and<sp/>sets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a401a214a659d7005d830e1d5573075ed" kindref="member">ClearLinks</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Break<sp/>links<sp/>only,<sp/>sets<sp/>remain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Iterator<sp/>functions<sp/>(going<sp/>from<sp/>R<sp/>direction)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;R,<sp/>D&gt;::iterator<sp/>iteratorInv;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;R,<sp/>D&gt;::const_iterator<sp/>const_iteratorInv;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Iterator<sp/>functions<sp/>(going<sp/>from<sp/>D<sp/>direction)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classRelation_1af68e62c9cf16d7e2dff81950298dc778" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;D,<sp/>R&gt;::iterator<sp/><ref refid="classRelation_1af68e62c9cf16d7e2dff81950298dc778" kindref="member">iterator</ref>;</highlight></codeline>
+<codeline lineno="77" refid="classRelation_1a281fd0ec83966c0c8ba00e59364c3152" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;D,<sp/>R&gt;::const_iterator<sp/><ref refid="classRelation_1a281fd0ec83966c0c8ba00e59364c3152" kindref="member">const_iterator</ref>;</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>iteratorInv<sp/>BeginInv();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>const_iteratorInv<sp/>BeginInv()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>iteratorInv<sp/>EndInv();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>const_iteratorInv<sp/>EndInv()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1af68e62c9cf16d7e2dff81950298dc778" kindref="member">iterator</ref><sp/><ref refid="classRelation_1a97ba3b83f8b68901191248b72b4d2a14" kindref="member">Begin</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a281fd0ec83966c0c8ba00e59364c3152" kindref="member">const_iterator</ref><sp/><ref refid="classRelation_1a97ba3b83f8b68901191248b72b4d2a14" kindref="member">Begin</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1af68e62c9cf16d7e2dff81950298dc778" kindref="member">iterator</ref><sp/><ref refid="classRelation_1a068ca856b6e3b6bffd24117b405c01ae" kindref="member">End</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a281fd0ec83966c0c8ba00e59364c3152" kindref="member">const_iterator</ref><sp/><ref refid="classRelation_1a068ca856b6e3b6bffd24117b405c01ae" kindref="member">End</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Selectors</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>&amp;<sp/>DomainSet();</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref>&amp;<sp/>RangeSet();</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref><sp/>range(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>of<sp/>r<sp/>for<sp/>a<sp/>d</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref><sp/>domain(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/>r);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>of<sp/>d<sp/>for<sp/>an<sp/>r</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inDomain(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Is<sp/>an<sp/>element<sp/>in<sp/>domain?</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inRange(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>r)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Is<sp/>an<sp/>element<sp/>in<sp/>range?</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classRelation" kindref="compound">Relation</ref>();</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/>r2);</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/Relation.cc&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Iterator<sp/>functions<sp/>(going<sp/>from<sp/>R<sp/>direction)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classRelation_1a3377b326df68d54e890873e4800ac522" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;R,<sp/>D&gt;::iterator<sp/><ref refid="classRelation_1a3377b326df68d54e890873e4800ac522" kindref="member">iteratorInv</ref>;</highlight></codeline>
+<codeline lineno="86" refid="classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::multimap&lt;R,<sp/>D&gt;::const_iterator<sp/><ref refid="classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed" kindref="member">const_iteratorInv</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a3377b326df68d54e890873e4800ac522" kindref="member">iteratorInv</ref><sp/><ref refid="classRelation_1ae76135e50d636a11e65658f44ffa0551" kindref="member">BeginInv</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed" kindref="member">const_iteratorInv</ref><sp/><ref refid="classRelation_1ae76135e50d636a11e65658f44ffa0551" kindref="member">BeginInv</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1a3377b326df68d54e890873e4800ac522" kindref="member">iteratorInv</ref><sp/><ref refid="classRelation_1a2f972862a46f4d4fdd8f5e607f67a449" kindref="member">EndInv</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation_1aecd60a1fa82a4b3dae9ec442dd1096ed" kindref="member">const_iteratorInv</ref><sp/><ref refid="classRelation_1a2f972862a46f4d4fdd8f5e607f67a449" kindref="member">EndInv</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>relation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Selectors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref>&amp;<sp/><ref refid="classRelation_1a6df4cdb10cd950968cf21fafdec4bb83" kindref="member">DomainSet</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref>&amp;<sp/><ref refid="classRelation_1ae7d89135038109b9ff7ef4c6590a112e" kindref="member">RangeSet</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;R&gt;</ref><sp/><ref refid="classRelation_1ab946892376f95ed757414e3fadc36f6d" kindref="member">range</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>of<sp/>r<sp/>for<sp/>a<sp/>d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;D&gt;</ref><sp/><ref refid="classRelation_1a0ff46cfb436345dab2707b36b94a152a" kindref="member">domain</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>of<sp/>d<sp/>for<sp/>an<sp/>r</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRelation_1af7602723b04b55522372eae5d70fff52" kindref="member">inDomain</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/>d)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Is<sp/>an<sp/>element<sp/>in<sp/>domain?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRelation_1a8dd9f0681135740849f9dd20ae4ee13a" kindref="member">inRange</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classD" kindref="compound">D</ref>&amp;<sp/><ref refid="namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723" kindref="member">r</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Is<sp/>an<sp/>element<sp/>in<sp/>range?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classRelation_1acc3976a5e2e72dd33d7d05bee2b286fe" kindref="member">~Relation</ref>();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/><ref refid="classRelation_1ae4668d138c1cc9cfc607729a32b2772e" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRelation" kindref="compound">Relation&lt;D,R&gt;</ref>&amp;<sp/>r2);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/Relation.cc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="include/duffy/Relation.hh"/>
   </compounddef>

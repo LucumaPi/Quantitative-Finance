@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: MultiAssetFactory Class Reference</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: MultiAssetFactory Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -77,6 +77,8 @@ $(function() {
 <div class="title">MultiAssetFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="MultiAssetFactory_8hh_source.html">MultiAssetFactory.hh</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for MultiAssetFactory:</div>
 <div class="dyncontent">
@@ -88,17 +90,145 @@ Collaboration diagram for MultiAssetFactory:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af557ef4e09d2fd13505bd932e1c17e78"><td class="memItemLeft" align="right" valign="top"><a id="af557ef4e09d2fd13505bd932e1c17e78"></a>
-virtual <a class="el" href="classMultiAssetPayoffStrategy.html">MultiAssetPayoffStrategy</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>create</b> (int N)</td></tr>
+<tr class="memitem:a2a3e41943a6d51f6c56ed746db443a86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiAssetFactory.html#a2a3e41943a6d51f6c56ed746db443a86">MultiAssetFactory</a> ()</td></tr>
+<tr class="separator:a2a3e41943a6d51f6c56ed746db443a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af557ef4e09d2fd13505bd932e1c17e78"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classMultiAssetPayoffStrategy.html">MultiAssetPayoffStrategy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiAssetFactory.html#af557ef4e09d2fd13505bd932e1c17e78">create</a> (int <a class="el" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a>)</td></tr>
 <tr class="separator:af557ef4e09d2fd13505bd932e1c17e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac119d81cfec42e83368f632e261e59f1"><td class="memItemLeft" align="right" valign="top"><a id="ac119d81cfec42e83368f632e261e59f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> ()</td></tr>
+<tr class="memitem:ac119d81cfec42e83368f632e261e59f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiAssetFactory.html#ac119d81cfec42e83368f632e261e59f1">display</a> ()</td></tr>
 <tr class="separator:ac119d81cfec42e83368f632e261e59f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="MultiAssetFactory_8hh_source.html#l00023">23</a> of file <a class="el" href="MultiAssetFactory_8hh_source.html">MultiAssetFactory.hh</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2a3e41943a6d51f6c56ed746db443a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a3e41943a6d51f6c56ed746db443a86">&#9670;&nbsp;</a></span>MultiAssetFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MultiAssetFactory::MultiAssetFactory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MultiAssetFactory_8hh_source.html#l00026">26</a> of file <a class="el" href="MultiAssetFactory_8hh_source.html">MultiAssetFactory.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            desc = std::map&lt;int, std::string&gt;();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(1, <span class="stringliteral">&quot;Exchange option\n&quot;</span>));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(2, <span class="stringliteral">&quot;Rainbow option\n&quot;</span>));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(3, <span class="stringliteral">&quot;Basket option\n&quot;</span>));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(4, <span class="stringliteral">&quot;BestWorst option\n&quot;</span>));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(5, <span class="stringliteral">&quot;Quotient option\n&quot;</span>));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(6, <span class="stringliteral">&quot;Quanto option\n&quot;</span>));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(7, <span class="stringliteral">&quot;SpreadStrategy option\n&quot;</span>));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(8, <span class="stringliteral">&quot;Dual Strike Strategy option\n&quot;</span>));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            desc.insert(std::pair&lt;int, std::string&gt;(9, <span class="stringliteral">&quot;Out Perfomance option\n&quot;</span>));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af557ef4e09d2fd13505bd932e1c17e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af557ef4e09d2fd13505bd932e1c17e78">&#9670;&nbsp;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classMultiAssetPayoffStrategy.html">MultiAssetPayoffStrategy</a>* MultiAssetFactory::create </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MultiAssetFactory_8hh_source.html#l00041">41</a> of file <a class="el" href="MultiAssetFactory_8hh_source.html">MultiAssetFactory.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 1) <span class="keywordflow">return</span> CreateExchangeStrategy();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 2) <span class="keywordflow">return</span> CreateRainbowStrategy();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 3) <span class="keywordflow">return</span> CreateBasketStrategy();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 4) <span class="keywordflow">return</span> CreateBestWorstStrategy();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 5) <span class="keywordflow">return</span> CreateQuotientStrategy();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 6) <span class="keywordflow">return</span> CreateQuantoStrategy();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 7) <span class="keywordflow">return</span> CreateSpreadStrategy();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 8) <span class="keywordflow">return</span> CreateDualStrikeStrategy();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> == 9) <span class="keywordflow">return</span> CreateOutPerformanceStrategy();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// Exception</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> &gt; 9 || <a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a> &lt; 1)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">throw</span> std::string(<span class="stringliteral">&quot;Outside range\n&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac119d81cfec42e83368f632e261e59f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac119d81cfec42e83368f632e261e59f1">&#9670;&nbsp;</a></span>display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MultiAssetFactory::display </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MultiAssetFactory_8hh_source.html#l00061">61</a> of file <a class="el" href="MultiAssetFactory_8hh_source.html">MultiAssetFactory.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        { <span class="comment">// Show options for a choice</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::map&lt;int, std::string&gt;:: const_iterator it;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">for</span> (it = desc.begin(); it != desc.end(); it++)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                std::cout &lt;&lt; (*it).first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; (*it).second &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="MultiAssetFactory_8hh_source.html">MultiAssetFactory.hh</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aTestImpliedVolatility_8cc_html_a6cbb82a21dec4c4f36c3f78340be64de"><div class="ttname"><a href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a></div><div class="ttdeci">double N(double x)</div><div class="ttdef"><b>Definition:</b> <a href="TestImpliedVolatility_8cc_source.html#l00018">TestImpliedVolatility.cc:18</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

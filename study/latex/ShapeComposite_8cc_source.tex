@@ -1,0 +1,107 @@
+\hypertarget{ShapeComposite_8cc_source}{}\doxysection{Shape\+Composite.\+cc}
+\label{ShapeComposite_8cc_source}\index{src/ShapeComposite.cc@{src/ShapeComposite.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ShapeComposite.hpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Simple shape composite class using the STL list class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// The composite stores shape pointers. It does it's own memory management.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 15 september 1998    RD  Started}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ShapeComposite_8hh}{duffy/ShapeComposite.hh}}>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00012}\mbox{\hyperlink{classShapeComposite_a0de01f9379b68e949ffd417de4223b99}{00012}} \mbox{\hyperlink{classShapeComposite_a0de01f9379b68e949ffd417de4223b99}{ShapeComposite::ShapeComposite}}(): \mbox{\hyperlink{classShape}{Shape}}()}
+\DoxyCodeLine{00013 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     sl=std::list<Shape*>();}
+\DoxyCodeLine{00016 \}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00019}\mbox{\hyperlink{classShapeComposite_a5b65cdc46a278eaf75c2f0ed5657c8a4}{00019}} \mbox{\hyperlink{classShapeComposite_a5b65cdc46a278eaf75c2f0ed5657c8a4}{ShapeComposite::~ShapeComposite}}()}
+\DoxyCodeLine{00020 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \mbox{\hyperlink{classShapeComposite_a096d9919195013f77b2da7fc0e4d1cc7}{RemoveAll}}();}
+\DoxyCodeLine{00023 \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025 \textcolor{comment}{// Iterator functions}}
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00026}\mbox{\hyperlink{classShapeComposite_a5b4dc15d4775525d77a589f530aa5de4}{00026}} \mbox{\hyperlink{classShapeComposite_af9e9c1a355281895a1a582ce45db998b}{ShapeComposite::iterator}} \mbox{\hyperlink{classShapeComposite_a5b4dc15d4775525d77a589f530aa5de4}{ShapeComposite::Begin}}()}
+\DoxyCodeLine{00027 \{ \textcolor{comment}{// Return iterator at begin of composite}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordflow}{return} sl.begin();}
+\DoxyCodeLine{00030 \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00032}\mbox{\hyperlink{classShapeComposite_a2d7175e34ebd7bec5710efaedb13ab0a}{00032}} \mbox{\hyperlink{classShapeComposite_ab1744d2a233353afdbc0020ac59d6088}{ShapeComposite::const\_iterator}} \mbox{\hyperlink{classShapeComposite_a5b4dc15d4775525d77a589f530aa5de4}{ShapeComposite::Begin}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00033 \textcolor{keyword}{}\{ \textcolor{comment}{// Return const iterator at begin of composite}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{return} sl.begin();}
+\DoxyCodeLine{00036 \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00038}\mbox{\hyperlink{classShapeComposite_a4522ae048cbccce7acb02aa63c895b34}{00038}} \mbox{\hyperlink{classShapeComposite_af9e9c1a355281895a1a582ce45db998b}{ShapeComposite::iterator}} \mbox{\hyperlink{classShapeComposite_a4522ae048cbccce7acb02aa63c895b34}{ShapeComposite::End}}()}
+\DoxyCodeLine{00039 \{ \textcolor{comment}{// Return iterator after end of composite}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keywordflow}{return} sl.end();}
+\DoxyCodeLine{00042 \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00044}\mbox{\hyperlink{classShapeComposite_abeda8b47f7ac18c50792df5f1b58e349}{00044}} \mbox{\hyperlink{classShapeComposite_ab1744d2a233353afdbc0020ac59d6088}{ShapeComposite::const\_iterator}} \mbox{\hyperlink{classShapeComposite_a4522ae048cbccce7acb02aa63c895b34}{ShapeComposite::End}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00045 \textcolor{keyword}{}\{ \textcolor{comment}{// Return const iterator after end of composite}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} sl.end();}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00051}\mbox{\hyperlink{classShapeComposite_a22e3f5dd0f6b0d8a46fe1939dc7e8b9c}{00051}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classShapeComposite_a22e3f5dd0f6b0d8a46fe1939dc7e8b9c}{ShapeComposite::Count}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00052 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the number of shapes in the composite}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{keywordflow}{return} sl.size();}
+\DoxyCodeLine{00055 \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057 \textcolor{comment}{// Add functions}}
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00058}\mbox{\hyperlink{classShapeComposite_aa3250855cf09f7fcac7aecad8896fb33}{00058}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classShapeComposite_aa3250855cf09f7fcac7aecad8896fb33}{ShapeComposite::AddFront}}(\mbox{\hyperlink{classShape}{Shape}}* s)}
+\DoxyCodeLine{00059 \{ \textcolor{comment}{// Add shape at the beginning of shapelist. No copy is made.}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     sl.push\_front(s);}
+\DoxyCodeLine{00062 \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00064}\mbox{\hyperlink{classShapeComposite_a93eca238803253a4656d3c2a5cbf6ee3}{00064}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classShapeComposite_a93eca238803253a4656d3c2a5cbf6ee3}{ShapeComposite::AddBack}}(\mbox{\hyperlink{classShape}{Shape}}* s)}
+\DoxyCodeLine{00065 \{ \textcolor{comment}{// Add shape at the end of shapelist. No copy is made.}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     sl.push\_back(s);}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 \textcolor{comment}{// Remove functions}}
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00071}\mbox{\hyperlink{classShapeComposite_a393a9ab6e55ffd9e7292548813bd2238}{00071}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classShapeComposite_a393a9ab6e55ffd9e7292548813bd2238}{ShapeComposite::RemoveLast}}()}
+\DoxyCodeLine{00072 \{ \textcolor{comment}{// Remove last shape}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{keyword}{delete} sl.back();       \textcolor{comment}{// Delete the shape}}
+\DoxyCodeLine{00075     sl.pop\_back();          \textcolor{comment}{// Remove shape pointer from list}}
+\DoxyCodeLine{00076 \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00078}\mbox{\hyperlink{classShapeComposite_a9eeb99254807e5ed0888f50acd9ac518}{00078}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classShapeComposite_a9eeb99254807e5ed0888f50acd9ac518}{ShapeComposite::RemoveFirst}}()}
+\DoxyCodeLine{00079 \{ \textcolor{comment}{// Remove first shape}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{keyword}{delete} sl.front();      \textcolor{comment}{// Delete the shape}}
+\DoxyCodeLine{00082     sl.pop\_front();         \textcolor{comment}{// Remove shape pointer from list}}
+\DoxyCodeLine{00083 \}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{\Hypertarget{ShapeComposite_8cc_source_l00085}\mbox{\hyperlink{classShapeComposite_a096d9919195013f77b2da7fc0e4d1cc7}{00085}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classShapeComposite_a096d9919195013f77b2da7fc0e4d1cc7}{ShapeComposite::RemoveAll}}()}
+\DoxyCodeLine{00086 \{ \textcolor{comment}{// Remove all shapes from the list}}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     \textcolor{comment}{// Create STL list iterator}}
+\DoxyCodeLine{00089     std::list<Shape*>::iterator it;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{keywordflow}{for} (it=sl.begin(); it!=sl.end(); it++)}
+\DoxyCodeLine{00092     \{ \textcolor{comment}{// Delete every shape in the list}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094         \textcolor{keyword}{delete} (*it);   \textcolor{comment}{// Delete shape}}
+\DoxyCodeLine{00095     \}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     \textcolor{comment}{// Remove the shape pointers from the list}}
+\DoxyCodeLine{00098     sl.clear();}
+\DoxyCodeLine{00099 \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101 \textcolor{comment}{// Operators}}
+
+\end{DoxyCode}

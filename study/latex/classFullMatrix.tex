@@ -2,6 +2,10 @@
 \label{classFullMatrix}\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
 
 
+{\ttfamily \#include $<$Full\+Matrix.\+hh$>$}
+
+
+
 Inheritance diagram for Full\+Matrix$<$ T\+Value, TA $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,30 +25,235 @@ Collaboration diagram for Full\+Matrix$<$ T\+Value, TA $>$\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classFullMatrix_accfbf4f02da561a51dc82fdddaca6b22}\label{classFullMatrix_accfbf4f02da561a51dc82fdddaca6b22}} 
-{\bfseries Full\+Matrix} (std\+::size\+\_\+t rows, std\+::size\+\_\+t columns)
+\mbox{\hyperlink{classFullMatrix_a752d914154ab281d1ae08b78408516a1}{Full\+Matrix}} ()
 \item 
-\mbox{\Hypertarget{classFullMatrix_a172dc8750fab16c65e0442f864193176}\label{classFullMatrix_a172dc8750fab16c65e0442f864193176}} 
-{\bfseries Full\+Matrix} (const \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ T\+Value, TA $>$ \&source)
+\mbox{\hyperlink{classFullMatrix_accfbf4f02da561a51dc82fdddaca6b22}{Full\+Matrix}} (std\+::size\+\_\+t rows, std\+::size\+\_\+t columns)
 \item 
-\mbox{\Hypertarget{classFullMatrix_a1fb7853dc531966114d01cf5720dd6aa}\label{classFullMatrix_a1fb7853dc531966114d01cf5720dd6aa}} 
-virtual std\+::size\+\_\+t {\bfseries Rows} () const
+\mbox{\hyperlink{classFullMatrix_a172dc8750fab16c65e0442f864193176}{Full\+Matrix}} (const \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ T\+Value, TA $>$ \&source)
 \item 
-\mbox{\Hypertarget{classFullMatrix_a6d02c0f09e188825938f9af6ae708614}\label{classFullMatrix_a6d02c0f09e188825938f9af6ae708614}} 
-virtual std\+::size\+\_\+t {\bfseries Columns} () const
+virtual \mbox{\hyperlink{classFullMatrix_a0cdc89fd0c146b85ab72234c10f6bde0}{$\sim$\+Full\+Matrix}} ()
 \item 
-\mbox{\Hypertarget{classFullMatrix_abd4a9ea33b2b38aef74bffb0a37f689b}\label{classFullMatrix_abd4a9ea33b2b38aef74bffb0a37f689b}} 
-virtual \mbox{\hyperlink{classArrayStructure}{Array\+Structure}}$<$ T\+Value $>$ \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (std\+::size\+\_\+t index)
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classFullMatrix_a1fb7853dc531966114d01cf5720dd6aa}{Rows}} () const
 \item 
-\mbox{\Hypertarget{classFullMatrix_a3a3450231c70f9cf1cac99b6abe242ea}\label{classFullMatrix_a3a3450231c70f9cf1cac99b6abe242ea}} 
-virtual const \mbox{\hyperlink{classArrayStructure}{Array\+Structure}}$<$ T\+Value $>$ \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (std\+::size\+\_\+t index) const
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classFullMatrix_a6d02c0f09e188825938f9af6ae708614}{Columns}} () const
 \item 
-\mbox{\Hypertarget{classFullMatrix_a27f85bb35d5ae4e346524707eb94674d}\label{classFullMatrix_a27f85bb35d5ae4e346524707eb94674d}} 
-\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ T\+Value, TA $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ T\+Value, TA $>$ \&source)
+virtual \mbox{\hyperlink{classArrayStructure}{Array\+Structure}}$<$ T\+Value $>$ \& \mbox{\hyperlink{classFullMatrix_abd4a9ea33b2b38aef74bffb0a37f689b}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t index)
+\item 
+virtual const \mbox{\hyperlink{classArrayStructure}{Array\+Structure}}$<$ T\+Value $>$ \& \mbox{\hyperlink{classFullMatrix_a3a3450231c70f9cf1cac99b6abe242ea}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t index) const
+\item 
+\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ T\+Value, TA $>$ \& \mbox{\hyperlink{classFullMatrix_a27f85bb35d5ae4e346524707eb94674d}{operator=}} (const \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ T\+Value, TA $>$ \&source)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T\+Value, class TA = std\+::allocator$<$\+T\+Value$>$$>$\newline
+class Full\+Matrix$<$ T\+Value, T\+A $>$}
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8hh_source_l00015}{15}} of file \mbox{\hyperlink{FullMatrix_8hh_source}{Full\+Matrix.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFullMatrix_a752d914154ab281d1ae08b78408516a1}\label{classFullMatrix_a752d914154ab281d1ae08b78408516a1}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!FullMatrix@{FullMatrix}}
+\index{FullMatrix@{FullMatrix}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{FullMatrix()}{FullMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00017}{17}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017                              : \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<V>}}()}
+\DoxyCodeLine{00018 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00019     m\_structure = \mbox{\hyperlink{classFullArray}{FullArray<FullArray<V, TA>}}, std::allocator<FullArray<V, TA> > >();}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     nr = nc = 1;}
+\DoxyCodeLine{00022 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullMatrix_accfbf4f02da561a51dc82fdddaca6b22}\label{classFullMatrix_accfbf4f02da561a51dc82fdddaca6b22}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!FullMatrix@{FullMatrix}}
+\index{FullMatrix@{FullMatrix}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{FullMatrix()}{FullMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{rows,  }\item[{std\+::size\+\_\+t}]{columns }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00025}{25}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025                                                               : \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<V>}}()}
+\DoxyCodeLine{00026 \{ \textcolor{comment}{// Constructor with size}}
+\DoxyCodeLine{00027     \textcolor{comment}{// Create the rows}}
+\DoxyCodeLine{00028     m\_structure = \mbox{\hyperlink{classFullArray}{FullArray<FullArray<V, TA>}}, std::allocator<FullArray<V, TA> > >(rows);}
+\DoxyCodeLine{00029     \textcolor{comment}{// Add the columns to the rows}}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{for} (std::size\_t i=1; i<=m\_structure.\mbox{\hyperlink{classFullArray_ae9a91c66741570e20758d54664676db8}{Size}}(); i++) m\_structure[i]=\mbox{\hyperlink{classFullArray}{FullArray<V, TA>}}(columns);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     nr = rows; nc = columns;}
+\DoxyCodeLine{00033 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullMatrix_a172dc8750fab16c65e0442f864193176}\label{classFullMatrix_a172dc8750fab16c65e0442f864193176}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!FullMatrix@{FullMatrix}}
+\index{FullMatrix@{FullMatrix}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{FullMatrix()}{FullMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class V, class TA$>$ \\
+\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$ \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00036}{36}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036                                                             : \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<V>}}(source)}
+\DoxyCodeLine{00037 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00038     m\_structure = source.m\_structure;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     nr = source.nr; nc = source.nc;}
+\DoxyCodeLine{00041 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullMatrix_a0cdc89fd0c146b85ab72234c10f6bde0}\label{classFullMatrix_a0cdc89fd0c146b85ab72234c10f6bde0}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!````~FullMatrix@{$\sim$FullMatrix}}
+\index{````~FullMatrix@{$\sim$FullMatrix}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$FullMatrix()}{~FullMatrix()}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::$\sim$\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00044}{44}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00046 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFullMatrix_a6d02c0f09e188825938f9af6ae708614}\label{classFullMatrix_a6d02c0f09e188825938f9af6ae708614}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!Columns@{Columns}}
+\index{Columns@{Columns}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{Columns()}{Columns()}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMatrixStructure_a33fe5393a149b31d428a1931f1e0e7e1}{Matrix\+Structure$<$ T\+Value $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00056}{56}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057 \{ \textcolor{comment}{// Number of columns}}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{return} nc;}
+\DoxyCodeLine{00059 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullMatrix_a27f85bb35d5ae4e346524707eb94674d}\label{classFullMatrix_a27f85bb35d5ae4e346524707eb94674d}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class V, class TA$>$ \\
+\mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$ \& \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$ \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00076}{76}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00080     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{comment}{// Call base class assignment}}
+\DoxyCodeLine{00083     \mbox{\hyperlink{classMatrixStructure_a1d17ffed41cc515e70f90208b999191e}{MatrixStructure<V>::operator = }}(source);}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     m\_structure = source.m\_structure;}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     nr = source.nr; nc = source.nc;}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00090 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullMatrix_abd4a9ea33b2b38aef74bffb0a37f689b}\label{classFullMatrix_abd4a9ea33b2b38aef74bffb0a37f689b}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+\mbox{\hyperlink{classArrayStructure}{Array\+Structure}}$<$ V $>$ \& \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00064}{64}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065 \{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00066     \textcolor{keywordflow}{return} m\_structure[row];}
+\DoxyCodeLine{00067 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullMatrix_a3a3450231c70f9cf1cac99b6abe242ea}\label{classFullMatrix_a3a3450231c70f9cf1cac99b6abe242ea}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+const \mbox{\hyperlink{classArrayStructure}{Array\+Structure}}$<$ V $>$ \& \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00070}{70}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071 \{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00072     \textcolor{keywordflow}{return} m\_structure[row];}
+\DoxyCodeLine{00073 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullMatrix_a1fb7853dc531966114d01cf5720dd6aa}\label{classFullMatrix_a1fb7853dc531966114d01cf5720dd6aa}} 
+\index{FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}!Rows@{Rows}}
+\index{Rows@{Rows}!FullMatrix$<$ TValue, TA $>$@{FullMatrix$<$ TValue, TA $>$}}
+\doxysubsubsection{\texorpdfstring{Rows()}{Rows()}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classFullMatrix}{Full\+Matrix}}$<$ V, TA $>$\+::Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMatrixStructure_a1f9a91f713f03ceeda90e4dc3d17dcb3}{Matrix\+Structure$<$ T\+Value $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{FullMatrix_8cc_source_l00050}{50}} of file \mbox{\hyperlink{FullMatrix_8cc_source}{Full\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051 \{ \textcolor{comment}{// Number of rows}}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{return} nr;}
+\DoxyCodeLine{00053 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Full\+Matrix.\+hh\item 
-src/Full\+Matrix.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{FullMatrix_8hh}{Full\+Matrix.\+hh}}\item 
+src/\mbox{\hyperlink{FullMatrix_8cc}{Full\+Matrix.\+cc}}\end{DoxyCompactItemize}

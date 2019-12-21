@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestPayoff_8cc">
+<title>tests/TestPayoff.cc File Reference</title>
+<indexterm><primary>tests/TestPayoff.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/CallPayoff.hh&gt;
+#include &lt;duffy/BullSpreadPayoff.hh&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestPayoff.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestPayoff_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestPayoff_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestPayoff_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestPayoff.cc</secondary></indexterm>
+<indexterm><primary>TestPayoff.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 12 of file TestPayoff.cc.</para>
+<programlisting>13 {
+14 &#32;&#32;&#32;&#32;
+15 &#32;&#32;&#32;&#32;<link linkend="_classCallPayoff">CallPayoff</link>&#32;call(20.0);
+16 &#32;&#32;&#32;&#32;
+17 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;a&#32;stock&#32;price&#32;(plain&#32;Call):&#32;&quot;</emphasis>;
+18 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;S;
+19 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;S;
+20 
+21 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Call&#32;Payoff&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;call.payoff(S)&#32;&lt;&lt;&#32;std::endl;
+22 &#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;K1&#32;=&#32;30.0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Strike&#32;price&#32;of&#32;bought&#32;call</emphasis>
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;K2&#32;=&#32;35.0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Strike&#32;price&#32;of&#32;sell&#32;call</emphasis>
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;costBuy&#32;=&#32;3.0;&#32;&#32;&#32;<emphasis role="comment">//&#32;Cost&#32;to&#32;buy&#32;a&#32;call</emphasis>
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;sellPrice&#32;=&#32;1.0;&#32;<emphasis role="comment">//&#32;Sell&#32;price&#32;for&#32;call</emphasis>
+27 &#32;&#32;&#32;&#32;<link linkend="_classBullSpreadPayoff">BullSpreadPayoff</link>&#32;bs(K1,&#32;K2,&#32;costBuy,&#32;sellPrice);&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Hull&#32;example</emphasis>
+28 
+29 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;a&#32;stock&#32;price&#32;(BullSpread):&#32;&quot;</emphasis>;
+30 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;S;
+31 
+32 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bull&#32;Spread&#32;Payoff&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;bs.payoff(S)&#32;&lt;&lt;&#32;std::endl;
+33 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bull&#32;Spread&#32;Profit&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;bs.profit(S)&#32;&lt;&lt;&#32;std::endl;
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+36 }
+</programlisting></section>
+</section>
+</section>

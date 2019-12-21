@@ -1,0 +1,234 @@
+\hypertarget{namespaceNSEuropeanOption}{}\doxysection{N\+S\+European\+Option Namespace Reference}
+\label{namespaceNSEuropeanOption}\index{NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_ab24ccb5397f0e20ed475c8c73f01b8b7}{n}} (double x)
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_a627ce352e7823346584f7085983f3ab1}{N}} (double x)
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_a75d44bc05f1445fb06b609489c943efa}{Call\+Price}} ()
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_a5b101bb9ef49adf1afec1e6f2522ac80}{Put\+Price}} ()
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_afb9ebcf17007c774b22e21e4ed9564c9}{Price}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}}
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_aabd913633d7343989fdef935b6d5740e}{K}}
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}{U}}
+\item 
+double \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}
+\item 
+std\+::string \mbox{\hyperlink{namespaceNSEuropeanOption_afc5ca727bf2d53aa85a9437cd5e44169}{otyp}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceNSEuropeanOption_a75d44bc05f1445fb06b609489c943efa}\label{namespaceNSEuropeanOption_a75d44bc05f1445fb06b609489c943efa}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!CallPrice@{CallPrice}}
+\index{CallPrice@{CallPrice}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{CallPrice()}{CallPrice()}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::\+Call\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00061}{61}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062 \{}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}} * sqrt(\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}});}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordtype}{double} d1 = ( std::log(\mbox{\hyperlink{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}{U}}/\mbox{\hyperlink{namespaceNSEuropeanOption_aabd913633d7343989fdef935b6d5740e}{K}}) + (\mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}+ (\mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}}*\mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}})*0.5 ) * \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} )/ tmp;}
+\DoxyCodeLine{00067     \textcolor{keywordtype}{double} d2 = d1 -\/ tmp;}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}{U}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}((\mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}-\/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})*\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}) * \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(d1)) -\/ (\mbox{\hyperlink{namespaceNSEuropeanOption_aabd913633d7343989fdef935b6d5740e}{K}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} * \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}})* \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(d2));}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNSEuropeanOption_ab24ccb5397f0e20ed475c8c73f01b8b7}\label{namespaceNSEuropeanOption_ab24ccb5397f0e20ed475c8c73f01b8b7}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!n@{n}}
+\index{n@{n}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{n()}{n()}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::n (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00030}{30}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031 \{ }
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{keywordtype}{double} A = 1.0/std::sqrt(2.0 * 3.1415);}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{return} A * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/x*x*0.5);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNSEuropeanOption_a627ce352e7823346584f7085983f3ab1}\label{namespaceNSEuropeanOption_a627ce352e7823346584f7085983f3ab1}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!N@{N}}
+\index{N@{N}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{N()}{N()}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::N (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00038}{38}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039 \{ \textcolor{comment}{// The approximation to the cumulative normal distribution}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordtype}{double} a1 = 0.4361836;}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{double} a2 = -\/0.1201676;}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{double} a3 = 0.9372980;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{keywordtype}{double} k = 1.0/(1.0 + (0.33267 * x));}
+\DoxyCodeLine{00047     }
+\DoxyCodeLine{00048     \textcolor{keywordflow}{if} (x >= 0.0)}
+\DoxyCodeLine{00049     \{}
+\DoxyCodeLine{00050         \textcolor{keywordflow}{return} 1.0 -\/ \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}(x)* (a1*k + (a2*k*k) + (a3*k*k*k));}
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00053     \{}
+\DoxyCodeLine{00054         \textcolor{keywordflow}{return} 1.0 -\/ \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(-\/x);}
+\DoxyCodeLine{00055     \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNSEuropeanOption_afb9ebcf17007c774b22e21e4ed9564c9}\label{namespaceNSEuropeanOption_afb9ebcf17007c774b22e21e4ed9564c9}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!Price@{Price}}
+\index{Price@{Price}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{Price()}{Price()}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00086}{86}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087 \{}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089     \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceNSEuropeanOption_afc5ca727bf2d53aa85a9437cd5e44169}{otyp}} == \textcolor{stringliteral}{"C"})}
+\DoxyCodeLine{00090     \{}
+\DoxyCodeLine{00091         \textcolor{keywordflow}{return} \mbox{\hyperlink{TestImpliedVolatility_8cc_a9776a1257d07edf93111927ddecc81cc}{CallPrice}}();}
+\DoxyCodeLine{00092     \}}
+\DoxyCodeLine{00093     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00094         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceNSEuropeanOption_a5b101bb9ef49adf1afec1e6f2522ac80}{PutPrice}}();}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNSEuropeanOption_a5b101bb9ef49adf1afec1e6f2522ac80}\label{namespaceNSEuropeanOption_a5b101bb9ef49adf1afec1e6f2522ac80}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!PutPrice@{PutPrice}}
+\index{PutPrice@{PutPrice}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{PutPrice()}{PutPrice()}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::\+Put\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00074}{74}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075 \{}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}} * std::sqrt(\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}});}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     \textcolor{keywordtype}{double} d1 = ( std::log(\mbox{\hyperlink{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}{U}}/\mbox{\hyperlink{namespaceNSEuropeanOption_aabd913633d7343989fdef935b6d5740e}{K}}) + (\mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}+ (\mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}}*\mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}})*0.5 ) * \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} )/ tmp;}
+\DoxyCodeLine{00080     \textcolor{keywordtype}{double} d2 = d1 -\/ tmp;}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespaceNSEuropeanOption_aabd913633d7343989fdef935b6d5740e}{K}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} * \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}})* \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(-\/d2)) -\/ (\mbox{\hyperlink{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}{U}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}((\mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}-\/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})*\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}) * \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(-\/d1));}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}\label{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!b@{b}}
+\index{b@{b}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::b}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00026}{26}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+\mbox{\Hypertarget{namespaceNSEuropeanOption_aabd913633d7343989fdef935b6d5740e}\label{namespaceNSEuropeanOption_aabd913633d7343989fdef935b6d5740e}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!K@{K}}
+\index{K@{K}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{K}{K}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::K}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00023}{23}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+\mbox{\Hypertarget{namespaceNSEuropeanOption_afc5ca727bf2d53aa85a9437cd5e44169}\label{namespaceNSEuropeanOption_afc5ca727bf2d53aa85a9437cd5e44169}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!otyp@{otyp}}
+\index{otyp@{otyp}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{otyp}{otyp}}
+{\footnotesize\ttfamily std\+::string N\+S\+European\+Option\+::otyp}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00028}{28}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+\mbox{\Hypertarget{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}\label{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!r@{r}}
+\index{r@{r}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::r}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00021}{21}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+\mbox{\Hypertarget{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}\label{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!sig@{sig}}
+\index{sig@{sig}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{sig}{sig}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::sig}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00022}{22}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+\mbox{\Hypertarget{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}\label{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!T@{T}}
+\index{T@{T}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::T}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00024}{24}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+
+\mbox{\Hypertarget{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}\label{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}} 
+\index{NSEuropeanOption@{NSEuropeanOption}!U@{U}}
+\index{U@{U}!NSEuropeanOption@{NSEuropeanOption}}
+\doxysubsubsection{\texorpdfstring{U}{U}}
+{\footnotesize\ttfamily double N\+S\+European\+Option\+::U}
+
+
+
+Definition at line \mbox{\hyperlink{TestNewNamespace_8cc_source_l00025}{25}} of file \mbox{\hyperlink{TestNewNamespace_8cc_source}{Test\+New\+Namespace.\+cc}}.
+

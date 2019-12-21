@@ -2,6 +2,10 @@
 \label{classMultiAssetPayoff}\index{MultiAssetPayoff@{MultiAssetPayoff}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff.\+hh$>$}
+
+
+
 Collaboration diagram for Multi\+Asset\+Payoff\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,21 +16,125 @@ Collaboration diagram for Multi\+Asset\+Payoff\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classMultiAssetPayoff_a57df16c0a7320254c71e902d7c4c2aeb}\label{classMultiAssetPayoff_a57df16c0a7320254c71e902d7c4c2aeb}} 
-{\bfseries Multi\+Asset\+Payoff} (\mbox{\hyperlink{classMultiAssetPayoffStrategy}{Multi\+Asset\+Payoff\+Strategy}} \&pstrat)
+\mbox{\hyperlink{classMultiAssetPayoff_a57df16c0a7320254c71e902d7c4c2aeb}{Multi\+Asset\+Payoff}} (\mbox{\hyperlink{classMultiAssetPayoffStrategy}{Multi\+Asset\+Payoff\+Strategy}} \&pstrat)
 \item 
-\mbox{\Hypertarget{classMultiAssetPayoff_a5bc9e443f16024a235224cf7a07fc5cf}\label{classMultiAssetPayoff_a5bc9e443f16024a235224cf7a07fc5cf}} 
-{\bfseries Multi\+Asset\+Payoff} (const \mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \&source)
+\mbox{\hyperlink{classMultiAssetPayoff_a5bc9e443f16024a235224cf7a07fc5cf}{Multi\+Asset\+Payoff}} (const \mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \&source)
 \item 
-\mbox{\Hypertarget{classMultiAssetPayoff_a4b13a7823b6fd62247b8d4c6a7eccbf2}\label{classMultiAssetPayoff_a4b13a7823b6fd62247b8d4c6a7eccbf2}} 
-\mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \& {\bfseries operator=} (const \mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \&source)
+virtual \mbox{\hyperlink{classMultiAssetPayoff_a4ceb8ca5e2e4c0bab356f461217ab2f2}{$\sim$\+Multi\+Asset\+Payoff}} ()
 \item 
-\mbox{\Hypertarget{classMultiAssetPayoff_a5c152db2417d285484ef94ba0c5c0694}\label{classMultiAssetPayoff_a5c152db2417d285484ef94ba0c5c0694}} 
-virtual double {\bfseries Payoff} (double S1, double S2) const
+\mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \& \mbox{\hyperlink{classMultiAssetPayoff_a4b13a7823b6fd62247b8d4c6a7eccbf2}{operator=}} (const \mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \&source)
+\item 
+virtual double \mbox{\hyperlink{classMultiAssetPayoff_a5c152db2417d285484ef94ba0c5c0694}{Payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoff_8hh_source_l00015}{15}} of file \mbox{\hyperlink{MultiAssetPayoff_8hh_source}{Multi\+Asset\+Payoff.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMultiAssetPayoff_a57df16c0a7320254c71e902d7c4c2aeb}\label{classMultiAssetPayoff_a57df16c0a7320254c71e902d7c4c2aeb}} 
+\index{MultiAssetPayoff@{MultiAssetPayoff}!MultiAssetPayoff@{MultiAssetPayoff}}
+\index{MultiAssetPayoff@{MultiAssetPayoff}!MultiAssetPayoff@{MultiAssetPayoff}}
+\doxysubsubsection{\texorpdfstring{MultiAssetPayoff()}{MultiAssetPayoff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Multi\+Asset\+Payoff\+::\+Multi\+Asset\+Payoff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMultiAssetPayoffStrategy}{Multi\+Asset\+Payoff\+Strategy}} \&}]{pstrat }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoff_8cc_source_l00014}{14}} of file \mbox{\hyperlink{MultiAssetPayoff_8cc_source}{Multi\+Asset\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     ps = \&pstrat;}
+\DoxyCodeLine{00018 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMultiAssetPayoff_a5bc9e443f16024a235224cf7a07fc5cf}\label{classMultiAssetPayoff_a5bc9e443f16024a235224cf7a07fc5cf}} 
+\index{MultiAssetPayoff@{MultiAssetPayoff}!MultiAssetPayoff@{MultiAssetPayoff}}
+\index{MultiAssetPayoff@{MultiAssetPayoff}!MultiAssetPayoff@{MultiAssetPayoff}}
+\doxysubsubsection{\texorpdfstring{MultiAssetPayoff()}{MultiAssetPayoff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Multi\+Asset\+Payoff\+::\+Multi\+Asset\+Payoff (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoff_8cc_source_l00020}{20}} of file \mbox{\hyperlink{MultiAssetPayoff_8cc_source}{Multi\+Asset\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     ps = source.ps;}
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMultiAssetPayoff_a4ceb8ca5e2e4c0bab356f461217ab2f2}\label{classMultiAssetPayoff_a4ceb8ca5e2e4c0bab356f461217ab2f2}} 
+\index{MultiAssetPayoff@{MultiAssetPayoff}!````~MultiAssetPayoff@{$\sim$MultiAssetPayoff}}
+\index{````~MultiAssetPayoff@{$\sim$MultiAssetPayoff}!MultiAssetPayoff@{MultiAssetPayoff}}
+\doxysubsubsection{\texorpdfstring{$\sim$MultiAssetPayoff()}{~MultiAssetPayoff()}}
+{\footnotesize\ttfamily Multi\+Asset\+Payoff\+::$\sim$\+Multi\+Asset\+Payoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoff_8cc_source_l00026}{26}} of file \mbox{\hyperlink{MultiAssetPayoff_8cc_source}{Multi\+Asset\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMultiAssetPayoff_a4b13a7823b6fd62247b8d4c6a7eccbf2}\label{classMultiAssetPayoff_a4b13a7823b6fd62247b8d4c6a7eccbf2}} 
+\index{MultiAssetPayoff@{MultiAssetPayoff}!operator=@{operator=}}
+\index{operator=@{operator=}!MultiAssetPayoff@{MultiAssetPayoff}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \& Multi\+Asset\+Payoff\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMultiAssetPayoff}{Multi\+Asset\+Payoff}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoff_8cc_source_l00031}{31}} of file \mbox{\hyperlink{MultiAssetPayoff_8cc_source}{Multi\+Asset\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source)}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     ps = source.ps;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00040 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMultiAssetPayoff_a5c152db2417d285484ef94ba0c5c0694}\label{classMultiAssetPayoff_a5c152db2417d285484ef94ba0c5c0694}} 
+\index{MultiAssetPayoff@{MultiAssetPayoff}!Payoff@{Payoff}}
+\index{Payoff@{Payoff}!MultiAssetPayoff@{MultiAssetPayoff}}
+\doxysubsubsection{\texorpdfstring{Payoff()}{Payoff()}}
+{\footnotesize\ttfamily double Multi\+Asset\+Payoff\+::\+Payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoff_8cc_source_l00043}{43}} of file \mbox{\hyperlink{MultiAssetPayoff_8cc_source}{Multi\+Asset\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044 \{ \textcolor{comment}{// For a given spot price}}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046     \textcolor{keywordflow}{return} ps-\/>\mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{payoff}}(S1, S2);    \textcolor{comment}{// DELEGATE to strategy}}
+\DoxyCodeLine{00047 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff.\+hh\item 
-Multi\+Asset\+Payoff.\+cc\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoff_8hh}{Multi\+Asset\+Payoff.\+hh}}\item 
+\mbox{\hyperlink{MultiAssetPayoff_8cc}{Multi\+Asset\+Payoff.\+cc}}\end{DoxyCompactItemize}

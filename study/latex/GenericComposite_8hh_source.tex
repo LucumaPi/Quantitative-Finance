@@ -12,54 +12,54 @@
 \DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef GenericComposite\_HH}}
 \DoxyCodeLine{00009 \textcolor{preprocessor}{\#define GenericComposite\_HH}}
 \DoxyCodeLine{00010 }
-\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "Shape.hh"}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Shape_8hh}{Shape.hh}}"}}
 \DoxyCodeLine{00012 }
 \DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <list>}}
 \DoxyCodeLine{00014 }
 \DoxyCodeLine{00015 \textcolor{keyword}{template} <\textcolor{keyword}{class} T> }
-\DoxyCodeLine{\Hypertarget{GenericComposite_8hh_source_l00016}\mbox{\hyperlink{classGenericComposite}{00016}}     \textcolor{keyword}{class }\mbox{\hyperlink{classGenericComposite}{GenericComposite}}: \textcolor{keyword}{public} T}
+\DoxyCodeLine{\Hypertarget{GenericComposite_8hh_source_l00016}\mbox{\hyperlink{classGenericComposite}{00016}}     \textcolor{keyword}{class }\mbox{\hyperlink{classGenericComposite}{GenericComposite}}: \textcolor{keyword}{public} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}}
 \DoxyCodeLine{00017 \{}
 \DoxyCodeLine{00018 \textcolor{keyword}{private}:}
 \DoxyCodeLine{00019     \textcolor{comment}{// The Genericlist using the STL list}}
 \DoxyCodeLine{00020     std::list<T*> sl;}
 \DoxyCodeLine{00021 }
-\DoxyCodeLine{00022     \mbox{\hyperlink{classGenericComposite}{GenericComposite}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGenericComposite}{GenericComposite}}\& source);   \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00022     \mbox{\hyperlink{classGenericComposite_a922adde12be57cf459383f75ecdb3e5b}{GenericComposite}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGenericComposite}{GenericComposite}}\& source);   \textcolor{comment}{// Copy constructor}}
 \DoxyCodeLine{00023     \textcolor{keywordtype}{void} Copy(\textcolor{keyword}{const} \mbox{\hyperlink{classGenericComposite}{GenericComposite<T>}}\& source);}
 \DoxyCodeLine{00024 }
 \DoxyCodeLine{00025 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00026     \textcolor{comment}{// User can use the STL iterator}}
-\DoxyCodeLine{00027     \textcolor{keyword}{typename} std::list<T*>::iterator iterator;}
-\DoxyCodeLine{00028     \textcolor{keyword}{typename} std::list<T*>::const\_iterator const\_iterator;}
+\DoxyCodeLine{\Hypertarget{GenericComposite_8hh_source_l00027}\mbox{\hyperlink{classGenericComposite_a3248889ddefb5618a0f86e8b3592af16}{00027}}     \textcolor{keyword}{typename} std::list<T*>::iterator \mbox{\hyperlink{classGenericComposite_a3248889ddefb5618a0f86e8b3592af16}{iterator}};}
+\DoxyCodeLine{\Hypertarget{GenericComposite_8hh_source_l00028}\mbox{\hyperlink{classGenericComposite_a494d5668212f0da3073a1affbe8923f6}{00028}}     \textcolor{keyword}{typename} std::list<T*>::const\_iterator \mbox{\hyperlink{classGenericComposite_a494d5668212f0da3073a1affbe8923f6}{const\_iterator}};}
 \DoxyCodeLine{00029 }
 \DoxyCodeLine{00030     \textcolor{comment}{// Constructors and destructor}}
-\DoxyCodeLine{00031     \mbox{\hyperlink{classGenericComposite}{GenericComposite}}();                             \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classGenericComposite_a922adde12be57cf459383f75ecdb3e5b}{GenericComposite}}();                             \textcolor{comment}{// Default constructor}}
 \DoxyCodeLine{00032 }
-\DoxyCodeLine{00033     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classGenericComposite}{GenericComposite}}();                        \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00033     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGenericComposite_af0bbd42fac7806031c5962ed1fbdf828}{~GenericComposite}}();                       \textcolor{comment}{// Destructor}}
 \DoxyCodeLine{00034 }
 \DoxyCodeLine{00035     \textcolor{comment}{// Iterator functions}}
-\DoxyCodeLine{00036     std::iterator Begin();                              \textcolor{comment}{// Return iterator at begin of composite}}
-\DoxyCodeLine{00037     const\_iterator Begin() \textcolor{keyword}{const};                   \textcolor{comment}{// Return const iterator at begin of composite}}
-\DoxyCodeLine{00038     std::iterator End();                                    \textcolor{comment}{// Return iterator after end of composite}}
-\DoxyCodeLine{00039     const\_iterator End() \textcolor{keyword}{const};                     \textcolor{comment}{// Return const iterator after end of composite}}
+\DoxyCodeLine{00036     std::iterator \mbox{\hyperlink{classGenericComposite_ac98912eb4aaca339cf023b30fa5c6cdf}{Begin}}();                             \textcolor{comment}{// Return iterator at begin of composite}}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classGenericComposite_a494d5668212f0da3073a1affbe8923f6}{const\_iterator}} \mbox{\hyperlink{classGenericComposite_ac98912eb4aaca339cf023b30fa5c6cdf}{Begin}}() \textcolor{keyword}{const};                    \textcolor{comment}{// Return const iterator at begin of composite}}
+\DoxyCodeLine{00038     std::iterator \mbox{\hyperlink{classGenericComposite_afaad3512b4bba5b4e4a691ec44ed7857}{End}}();                                 \textcolor{comment}{// Return iterator after end of composite}}
+\DoxyCodeLine{00039     \mbox{\hyperlink{classGenericComposite_a494d5668212f0da3073a1affbe8923f6}{const\_iterator}} \mbox{\hyperlink{classGenericComposite_afaad3512b4bba5b4e4a691ec44ed7857}{End}}() \textcolor{keyword}{const};                        \textcolor{comment}{// Return const iterator after end of composite}}
 \DoxyCodeLine{00040 }
 \DoxyCodeLine{00041     \textcolor{comment}{// Selectors}}
-\DoxyCodeLine{00042     \textcolor{keywordtype}{int} Count() \textcolor{keyword}{const};                              \textcolor{comment}{// The number of Generics in the list}}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGenericComposite_a0ffc53805f90516d303a8caa69f09d5b}{Count}}() \textcolor{keyword}{const};                             \textcolor{comment}{// The number of Generics in the list}}
 \DoxyCodeLine{00043 }
 \DoxyCodeLine{00044     \textcolor{comment}{// Add functions}}
-\DoxyCodeLine{00045     \textcolor{keywordtype}{void} AddFront(T\& s);                            \textcolor{comment}{// Add Generic at the beginning of Genericlist. No copy is made but composite takes care of deletion.}}
-\DoxyCodeLine{00046     \textcolor{keywordtype}{void} AddBack(T\& s);                         \textcolor{comment}{// Add Generic at the end of Genericlist. No copy is made but composite takes care of deletion.}}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGenericComposite_a6fce8da197eeb5543ccf2ab7a914d414}{AddFront}}(\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}\& s);                           \textcolor{comment}{// Add Generic at the beginning of Genericlist. No copy is made but composite takes care of deletion.}}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGenericComposite_a60c8ad8f14bb1977d6a7dd6e739a9ed3}{AddBack}}(\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}\& s);                         \textcolor{comment}{// Add Generic at the end of Genericlist. No copy is made but composite takes care of deletion.}}
 \DoxyCodeLine{00047 }
 \DoxyCodeLine{00048     \textcolor{comment}{// Remove functions}}
-\DoxyCodeLine{00049     \textcolor{keywordtype}{void} RemoveFirst();                             \textcolor{comment}{// Remove first Generic}}
-\DoxyCodeLine{00050     \textcolor{keywordtype}{void} RemoveLast();                              \textcolor{comment}{// Remove last Generic}}
-\DoxyCodeLine{00051     \textcolor{keywordtype}{void} RemoveAll();                               \textcolor{comment}{// Remove all Generics from the list}}
+\DoxyCodeLine{00049     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGenericComposite_ae292eef10daa2a454897b3d166298317}{RemoveFirst}}();                              \textcolor{comment}{// Remove first Generic}}
+\DoxyCodeLine{00050     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGenericComposite_a04c208f2363ead79d638fd590d7ebf24}{RemoveLast}}();                                \textcolor{comment}{// Remove last Generic}}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGenericComposite_adbefe400c6e574f2f3a7b4b02b8fee8e}{RemoveAll}}();                              \textcolor{comment}{// Remove all Generics from the list}}
 \DoxyCodeLine{00052 }
 \DoxyCodeLine{00053     \textcolor{comment}{// Operators}}
-\DoxyCodeLine{00054     \mbox{\hyperlink{classGenericComposite}{GenericComposite}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classGenericComposite}{GenericComposite}}\& source);}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classGenericComposite}{GenericComposite}}\& \mbox{\hyperlink{classGenericComposite_a949dfd2be8e03c7d01118958cf4891c0}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classGenericComposite}{GenericComposite}}\& source);}
 \DoxyCodeLine{00055 }
 \DoxyCodeLine{00056     \textcolor{comment}{// Generic Visitor pattern}}
 \DoxyCodeLine{00057     \textcolor{keyword}{template} <\textcolor{keyword}{class} S>}
-\DoxyCodeLine{00058         \textcolor{keywordtype}{void} accept(S\& v) \{v.visit(*\textcolor{keyword}{this});\}}
+\DoxyCodeLine{\Hypertarget{GenericComposite_8hh_source_l00058}\mbox{\hyperlink{classGenericComposite_af30c0539ccf8287db5bc4e93cd8b0688}{00058}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classGenericComposite_af30c0539ccf8287db5bc4e93cd8b0688}{accept}}(S\& v) \{v.visit(*\textcolor{keyword}{this});\}}
 \DoxyCodeLine{00059 }
 \DoxyCodeLine{00060 \};}
 \DoxyCodeLine{00061 \textcolor{preprocessor}{\#include "../../src/GenericComposite.cc"}}

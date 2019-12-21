@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_Vector_8cc">
+<title>src/Vector.cc File Reference</title>
+<indexterm><primary>src/Vector.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Vector.hh&gt;
+</programlisting>Include dependency graph for Vector.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="Vector_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="Vector_8cc__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_Vector_8cc_1a4fb5e0a78499e58c28cc4f735eb3f5c9">Vector_CC</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V , class I , class S &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I, S &gt; <link linkend="_Vector_8cc_1aa461f5203f9b4412609b67f69cb2a635">operator+</link> (const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp;v, const V &amp;a)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I , class S &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I, S &gt; <link linkend="_Vector_8cc_1a5b41ab3ceca804c717acf5fc86b772ec">operator+</link> (const V &amp;a, const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I , class S &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I, S &gt; <link linkend="_Vector_8cc_1a27bdc159143ca52ae07d1aa4b24ce743">operator*</link> (const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp;v, const V &amp;a)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I , class S &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I, S &gt; <link linkend="_Vector_8cc_1afb3ceb010380d3fe8b57ce4daf733a9c">operator*</link> (const V &amp;a, const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I , class S &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I, S &gt; <link linkend="_Vector_8cc_1ab5a7585120f4de1ffab2fe57e3343156">operator-</link> (const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp;v, const V &amp;a)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I , class S &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I, S &gt; <link linkend="_Vector_8cc_1a037a73bc502290929dd09a87cf74cf3c">operator-</link> (const V &amp;a, const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1a6553f392c54a87ee890ecddd59a26675">scale</link> (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v, const V &amp;a)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1a5f15071d730549f04efa382b61747ff9">scale</link> (const V &amp;a, <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1af8ed022403e1f5df6daa9094218a4c0d">add</link> (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v, const V &amp;a)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1a3cbb0860a42a282a26aa253ca68c6c17">add</link> (const V &amp;a, <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1aa26460af602b9e4373900eff4dddad44">scaleAndOffset</link> (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v, const V &amp;a, const V &amp;b)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1a54791aa42dc417c7354e496ead4f4f3d">subtract</link> (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v, const V &amp;a)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1a0f66592839cd574711bf87a26a5b2a89">subtract</link> (const V &amp;a, <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1ac65a469b31f9731cd9ad92430f432b71">divide</link> (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v, const V &amp;a)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1ac52a9d15dae2f25b50260dfbae3d724b">toggleSign</link> (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_Vector_8cc_1af8510e3d2131a57d037a03f3c8e4596c">assign</link> (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v, const V &amp;RHS)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_Vector_8cc_1a4fb5e0a78499e58c28cc4f735eb3f5c9"/>    <section>
+    <title>Vector_CC</title>
+<indexterm><primary>Vector_CC</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>Vector_CC</secondary></indexterm>
+<para><computeroutput>#define Vector_CC</computeroutput></para><para>
+Definition at line 34 of file Vector.cc.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_Vector_8cc_1a3cbb0860a42a282a26aa253ca68c6c17"/>    <section>
+    <title>add()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>add</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>add</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void add (const V &amp; a, <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v)</computeroutput></para><para>
+Definition at line 340 of file Vector.cc.</para>
+<programlisting>341 {&#32;<emphasis role="comment">//&#32;a&#32;+&#32;v</emphasis>
+342 
+343 &#32;&#32;&#32;&#32;<link linkend="_Vector_8cc_1af8ed022403e1f5df6daa9094218a4c0d">add</link>(v,&#32;a);
+344 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1af8ed022403e1f5df6daa9094218a4c0d"/>    <section>
+    <title>add()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>add</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>add</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void add (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v, const V &amp; a)</computeroutput></para><para>
+Definition at line 329 of file Vector.cc.</para>
+<programlisting>330 {&#32;<emphasis role="comment">//&#32;v&#32;+&#32;a</emphasis>
+331 
+332 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.&#32;MinIndex();&#32;i&#32;&lt;=&#32;v.&#32;MaxIndex();&#32;i++)
+333 &#32;&#32;&#32;&#32;{
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;+=&#32;a;
+335 &#32;&#32;&#32;&#32;}
+336 
+337 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1af8510e3d2131a57d037a03f3c8e4596c"/>    <section>
+    <title>assign()</title>
+<indexterm><primary>assign</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>assign</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void assign (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v, const V &amp; RHS)</computeroutput></para><para>
+Definition at line 400 of file Vector.cc.</para>
+<programlisting>401 {&#32;<emphasis role="comment">//&#32;All&#32;elements&#32;=&#32;RHS</emphasis>
+402 
+403 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.&#32;MinIndex();&#32;i&#32;&lt;=&#32;v.&#32;MaxIndex();&#32;i++)
+404 &#32;&#32;&#32;&#32;{
+405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;=&#32;RHS;
+406 &#32;&#32;&#32;&#32;}
+407 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1ac65a469b31f9731cd9ad92430f432b71"/>    <section>
+    <title>divide()</title>
+<indexterm><primary>divide</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>divide</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void divide (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v, const V &amp; a)</computeroutput></para><para>
+Definition at line 381 of file Vector.cc.</para>
+<programlisting>382 {&#32;<emphasis role="comment">//&#32;v&#32;/&#32;a</emphasis>
+383 
+384 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i=&#32;v.&#32;MinIndex();&#32;i&#32;&lt;=&#32;v.&#32;MaxIndex();&#32;i++)
+385 &#32;&#32;&#32;&#32;{
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;/=&#32;a;
+387 &#32;&#32;&#32;&#32;}
+388 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1afb3ceb010380d3fe8b57ce4daf733a9c"/>    <section>
+    <title>operator*()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator*</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, I, S&gt; operator* (const V &amp; a, const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp; v)</computeroutput></para><para>
+Definition at line 148 of file Vector.cc.</para>
+<programlisting>149 {
+150 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;v&#32;*&#32;a;
+151 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1a27bdc159143ca52ae07d1aa4b24ce743"/>    <section>
+    <title>operator*()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator*</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, I, S&gt; operator* (const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp; v, const V &amp; a)</computeroutput></para><para>
+Definition at line 133 of file Vector.cc.</para>
+<programlisting>134 {&#32;<emphasis role="comment">//&#32;Multiply&#32;to&#32;every&#32;element&#32;by&#32;a</emphasis>
+135 
+136 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;new&#32;vector&#32;of&#32;same&#32;size&#32;and&#32;same&#32;starting&#32;index</emphasis>
+137 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V, I, S&gt;</link>&#32;result(v.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>(),&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>());
+138 
+139 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;all&#32;elements&#32;+&#32;v</emphasis>
+140 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)&#32;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;v[i]&#32;*&#32;a;
+142 
+143 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;result</emphasis>
+144 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+145 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1a5b41ab3ceca804c717acf5fc86b772ec"/>    <section>
+    <title>operator+()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator+</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>operator+</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, I, S&gt; operator+ (const V &amp; a, const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp; v)</computeroutput></para><para>
+Definition at line 127 of file Vector.cc.</para>
+<programlisting>128 {
+129 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;v&#32;+&#32;a;
+130 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1aa461f5203f9b4412609b67f69cb2a635"/>    <section>
+    <title>operator+()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator+</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>operator+</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, I, S&gt; operator+ (const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp; v, const V &amp; a)</computeroutput></para><para>
+Definition at line 111 of file Vector.cc.</para>
+<programlisting>112 {&#32;<emphasis role="comment">//&#32;Add&#32;v&#32;to&#32;every&#32;element</emphasis>
+113 
+114 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;new&#32;vector&#32;of&#32;same&#32;size&#32;and&#32;same&#32;starting&#32;index</emphasis>
+115 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V, I, S&gt;</link>&#32;result(v.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>(),&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>());
+116 
+117 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;all&#32;elements&#32;+&#32;v</emphasis>
+118 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)&#32;
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;v[i]&#32;+&#32;a;
+120 
+121 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;result</emphasis>
+122 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+123 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1a037a73bc502290929dd09a87cf74cf3c"/>    <section>
+    <title>operator-()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator-</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>operator-</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, I, S&gt; operator- (const V &amp; a, const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp; v)</computeroutput></para><para>
+Definition at line 170 of file Vector.cc.</para>
+<programlisting>171 {
+172 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;new&#32;vector&#32;of&#32;same&#32;size&#32;and&#32;same&#32;starting&#32;index</emphasis>
+173 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V, I, S&gt;</link>&#32;result(v.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>(),&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>());
+174 
+175 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;all&#32;elements&#32;-&#32;v</emphasis>
+176 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)&#32;
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;a&#32;-&#32;v[i];
+178 
+179 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;result</emphasis>
+180 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+181 
+182 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1ab5a7585120f4de1ffab2fe57e3343156"/>    <section>
+    <title>operator-()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator-</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>operator-</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, I, S&gt; operator- (const <link linkend="_classVector">Vector</link>&lt; V, I, S &gt; &amp; v, const V &amp; a)</computeroutput></para><para>
+Definition at line 155 of file Vector.cc.</para>
+<programlisting>156 {&#32;<emphasis role="comment">//&#32;Subtract&#32;v&#32;from&#32;every&#32;element</emphasis>
+157 
+158 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;new&#32;vector&#32;of&#32;same&#32;size&#32;and&#32;same&#32;starting&#32;index</emphasis>
+159 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V, I, S&gt;</link>&#32;result(v.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>(),&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>());
+160 
+161 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;all&#32;elements&#32;-&#32;v</emphasis>
+162 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)&#32;
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;v[i]&#32;-&#32;a;
+164 
+165 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;result</emphasis>
+166 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+167 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1a5f15071d730549f04efa382b61747ff9"/>    <section>
+    <title>scale()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>scale</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>scale</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void scale (const V &amp; a, <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v)</computeroutput></para><para>
+Definition at line 322 of file Vector.cc.</para>
+<programlisting>323 {&#32;<emphasis role="comment">//&#32;a&#32;*&#32;v</emphasis>
+324 
+325 &#32;&#32;&#32;&#32;<link linkend="_Vector_8cc_1a6553f392c54a87ee890ecddd59a26675">scale</link>(v,&#32;a);
+326 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1a6553f392c54a87ee890ecddd59a26675"/>    <section>
+    <title>scale()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>scale</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>scale</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void scale (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v, const V &amp; a)</computeroutput></para><para>
+Definition at line 311 of file Vector.cc.</para>
+<programlisting>312 {&#32;<emphasis role="comment">//&#32;v&#32;*&#32;a</emphasis>
+313 
+314 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)
+315 &#32;&#32;&#32;&#32;{
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;*=&#32;a;
+317 &#32;&#32;&#32;&#32;}
+318 
+319 
+320 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1aa26460af602b9e4373900eff4dddad44"/>    <section>
+    <title>scaleAndOffset()</title>
+<indexterm><primary>scaleAndOffset</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>scaleAndOffset</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void scaleAndOffset (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v, const V &amp; a, const V &amp; b)</computeroutput></para><para>
+Definition at line 348 of file Vector.cc.</para>
+<programlisting>349 {&#32;<emphasis role="comment">//&#32;(a&#32;*&#32;v)&#32;+&#32;b&#32;&#32;&#32;&#32;</emphasis>
+350 
+351 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.&#32;MinIndex();&#32;i&#32;&lt;=&#32;v.&#32;MaxIndex();&#32;i++)
+352 &#32;&#32;&#32;&#32;{
+353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;*=&#32;a;
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;+=&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>;
+355 &#32;&#32;&#32;&#32;}
+356 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1a0f66592839cd574711bf87a26a5b2a89"/>    <section>
+    <title>subtract()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>subtract</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>subtract</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void subtract (const V &amp; a, <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v)</computeroutput></para><para>
+Definition at line 368 of file Vector.cc.</para>
+<programlisting>369 {&#32;<emphasis role="comment">//&#32;a&#32;-&#32;v</emphasis>
+370 
+371 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;This&#32;operation&#32;is&#32;not&#32;commutative,&#32;so&#32;redo&#32;the&#32;for&#32;loop</emphasis>
+372 
+373 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.&#32;MinIndex();&#32;i&#32;&lt;=&#32;v.&#32;MaxIndex();&#32;i++)
+374 &#32;&#32;&#32;&#32;{
+375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;=&#32;a&#32;-&#32;v[i];
+376 &#32;&#32;&#32;&#32;}
+377 &#32;&#32;&#32;&#32;
+378 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1a54791aa42dc417c7354e496ead4f4f3d"/>    <section>
+    <title>subtract()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>subtract</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>subtract</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void subtract (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v, const V &amp; a)</computeroutput></para><para>
+Definition at line 359 of file Vector.cc.</para>
+<programlisting>360 {&#32;<emphasis role="comment">//&#32;v&#32;-&#32;a</emphasis>
+361 
+362 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.&#32;MinIndex();&#32;i&#32;&lt;=&#32;v.&#32;MaxIndex();&#32;i++)
+363 &#32;&#32;&#32;&#32;{
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;-=&#32;a;
+365 &#32;&#32;&#32;&#32;}
+366 }
+</programlisting>    </section><anchor xml:id="_Vector_8cc_1ac52a9d15dae2f25b50260dfbae3d724b"/>    <section>
+    <title>toggleSign()</title>
+<indexterm><primary>toggleSign</primary><secondary>Vector.cc</secondary></indexterm>
+<indexterm><primary>Vector.cc</primary><secondary>toggleSign</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void toggleSign (<link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v)</computeroutput></para><para>
+Definition at line 391 of file Vector.cc.</para>
+<programlisting>392 {&#32;<emphasis role="comment">//&#32;-v&#32;(unary&#32;minus)</emphasis>
+393 
+394 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;v.&#32;MinIndex();&#32;i&#32;&lt;=&#32;v.&#32;MaxIndex();&#32;i++)
+395 &#32;&#32;&#32;&#32;{
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[i]&#32;=&#32;-v[i];
+397 &#32;&#32;&#32;&#32;}
+398 }
+</programlisting></section>
+</section>
+</section>

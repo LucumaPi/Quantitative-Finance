@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestAlias_8cc">
+<title>tests/TestAlias.cc File Reference</title>
+<indexterm><primary>tests/TestAlias.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestAlias.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestAlias_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classMyClass">MyClass</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespaceStandardInterface">StandardInterface</link></para>
+</listitem>
+            <listitem><para> <link linkend="_namespaceImplementation1">Implementation1</link></para>
+</listitem>
+            <listitem><para> <link linkend="_namespaceImplementation2">Implementation2</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceImplementation1_1ad559e3d656c53ac0faa602bc675bfe4e">Implementation1::F1</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceImplementation1_1a81345657302fb74643373ebf178181ff">Implementation1::F2</link> (double x, double y)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceImplementation2_1aa5a74d287b1e742f9c9745be852dc6b5">Implementation2::G1</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceImplementation2_1ad07ff5504a8c7b73bfb90514c95f2990">Implementation2::G2</link> (double x, double y)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestAlias_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>double(* <link linkend="_namespaceStandardInterface_1afa25862520da09e39fb616cc82d176fe">StandardInterface::func1</link> )(double x)</para>
+</listitem>
+            <listitem><para>double(* <link linkend="_namespaceStandardInterface_1ab6feec59bff99719ea737d10fd58561f">StandardInterface::func2</link> )(double x, double y)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestAlias_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestAlias.cc</secondary></indexterm>
+<indexterm><primary>TestAlias.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 46 of file TestAlias.cc.</para>
+<programlisting>47 {
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Assign&#32;the&#32;function&#32;pointers&#32;from&#32;NS</emphasis>
+50 &#32;&#32;&#32;&#32;<link linkend="_namespaceStandardInterface_1afa25862520da09e39fb616cc82d176fe">StandardInterface::func1</link>&#32;=&#32;<link linkend="_namespaceImplementation1_1ad559e3d656c53ac0faa602bc675bfe4e">Implementation1::F1</link>;
+51 &#32;&#32;&#32;&#32;<link linkend="_namespaceStandardInterface_1ab6feec59bff99719ea737d10fd58561f">StandardInterface::func2</link>&#32;=&#32;<link linkend="_namespaceImplementation1_1a81345657302fb74643373ebf178181ff">Implementation1::F2</link>;
+52 
+53 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespaceStandardInterface">StandardInterface</link>;
+54 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceStandardInterface_1afa25862520da09e39fb616cc82d176fe">func1</link>(2.0)&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceStandardInterface_1ab6feec59bff99719ea737d10fd58561f">func2</link>(3.0,&#32;-4.0)&#32;&lt;&lt;&#32;std::endl;
+55 
+56 &#32;&#32;&#32;&#32;<link linkend="_namespaceStandardInterface_1afa25862520da09e39fb616cc82d176fe">func1</link>&#32;=&#32;<link linkend="_namespaceImplementation2_1aa5a74d287b1e742f9c9745be852dc6b5">Implementation2::G1</link>;
+57 &#32;&#32;&#32;&#32;<link linkend="_namespaceStandardInterface_1ab6feec59bff99719ea737d10fd58561f">func2</link>&#32;=&#32;<link linkend="_namespaceImplementation2_1ad07ff5504a8c7b73bfb90514c95f2990">Implementation2::G2</link>;
+58 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceStandardInterface_1afa25862520da09e39fb616cc82d176fe">func1</link>(2.0)&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceStandardInterface_1ab6feec59bff99719ea737d10fd58561f">func2</link>(3.0,&#32;-4.0)&#32;&lt;&lt;&#32;std::endl;
+59 
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+61 }
+</programlisting></section>
+</section>
+</section>

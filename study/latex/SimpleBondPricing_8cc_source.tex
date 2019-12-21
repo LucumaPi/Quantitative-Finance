@@ -1,0 +1,118 @@
+\hypertarget{SimpleBondPricing_8cc_source}{}\doxysection{Simple\+Bond\+Pricing.\+cc}
+\label{SimpleBondPricing_8cc_source}\index{src/SimpleBondPricing.cc@{src/SimpleBondPricing.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// SimpleBondPricing.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Simple functions for interest rate calcuations.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Last Modfication dates:}}
+\DoxyCodeLine{00006 \textcolor{comment}{// }}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2006-\/2-\/21 DD Kick-\/off}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 2006-\/2-\/22 DD Small bug removed}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#ifndef SimpleBondPricing\_CPP}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00014}\mbox{\hyperlink{SimpleBondPricing_8cc_a05c342b2e9e825e2d2bff05d7c26d527}{00014}} \textcolor{preprocessor}{\#define SimpleBondPricing\_CPP}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{SimpleBondPricing_8hh}{duffy/SimpleBondPricing.hh}}>}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceChapter3CPPBook}{Chapter3CPPBook}} }
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// Recursive function to calculate power of a number. This }}
+\DoxyCodeLine{00022     \textcolor{comment}{// function calls itself, either directly or indirectly}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00023}\mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{00023}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(\textcolor{keywordtype}{double} d, \textcolor{keywordtype}{long} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}})}
+\DoxyCodeLine{00024     \{}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} == 0) \textcolor{keywordflow}{return} 1.0;}
+\DoxyCodeLine{00026         \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} == 1) \textcolor{keywordflow}{return} d;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \textcolor{keywordtype}{double} result = d;}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} j = 1; j < \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}; j++)}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             result *= d;}
+\DoxyCodeLine{00032         \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{comment}{// Future value of a sum of money invested today}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00039}\mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{00039}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{FutureValue}}(\textcolor{keywordtype}{double} P0, \textcolor{keywordtype}{long} nPeriods, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00043         \textcolor{keywordflow}{return} P0 * \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, nPeriods);}
+\DoxyCodeLine{00044     \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{comment}{// Future value of a sum of money invested today, m periods }}
+\DoxyCodeLine{00047     \textcolor{comment}{// per year. r is annual interest rate}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00048}\mbox{\hyperlink{namespaceChapter3CPPBook_ab73644db84be670d7c7aabdac2ca01b3}{00048}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{FutureValue}}(\textcolor{keywordtype}{double} P0, \textcolor{keywordtype}{long} nPeriods, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, \textcolor{keywordtype}{long} m)}
+\DoxyCodeLine{00049     \{}
+\DoxyCodeLine{00050         \textcolor{keywordtype}{double} R = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} / double(m);}
+\DoxyCodeLine{00051         \textcolor{keywordtype}{long} newPeriods = m * nPeriods;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{FutureValue}}(P0, newPeriods, R);}
+\DoxyCodeLine{00054     \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{comment}{// Continuous compounding}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00057}\mbox{\hyperlink{namespaceChapter3CPPBook_a7a6cebaf5369ebd4c06b3747e9b5491f}{00057}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceChapter3CPPBook_a7a6cebaf5369ebd4c06b3747e9b5491f}{FutureValueContinuous}}(\textcolor{keywordtype}{double} P0, \textcolor{keywordtype}{long} nPeriods, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00058     \{}
+\DoxyCodeLine{00059                     }
+\DoxyCodeLine{00060         \textcolor{keywordtype}{double} growthFactor = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} * \textcolor{keywordtype}{double}(nPeriods) );}
+\DoxyCodeLine{00061         }
+\DoxyCodeLine{00062         \textcolor{keywordflow}{return} P0 * growthFactor;}
+\DoxyCodeLine{00063     \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \textcolor{comment}{// Future value of an ordinary annuity}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00066}\mbox{\hyperlink{namespaceChapter3CPPBook_a80457755c62c5cc27b0c679524f04896}{00066}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceChapter3CPPBook_a80457755c62c5cc27b0c679524f04896}{OrdinaryAnnuity}}(\textcolor{keywordtype}{double} A, \textcolor{keywordtype}{long} nPeriods, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00067     \{}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00070         \textcolor{keywordflow}{return} A * ((\mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, nPeriods) -\/ 1.0)/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00071     \}}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{comment}{// Present Value}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00074}\mbox{\hyperlink{namespaceChapter3CPPBook_a18478ac60c06346fe86d2022fabefa07}{00074}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceChapter3CPPBook_a18478ac60c06346fe86d2022fabefa07}{PresentValue}}(\textcolor{keywordtype}{double} Pn, \textcolor{keywordtype}{long} nPeriods, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00075     \{}
+\DoxyCodeLine{00076         }
+\DoxyCodeLine{00077         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00078         \textcolor{keywordflow}{return} Pn * (1.0 / \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, nPeriods));}
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{comment}{// Present Value of a series of future values}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00082}\mbox{\hyperlink{namespaceChapter3CPPBook_a152c2df09775396d9d4252fcb0f58213}{00082}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceChapter3CPPBook_a18478ac60c06346fe86d2022fabefa07}{PresentValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector}}\& prices, \textcolor{keywordtype}{long} nPeriods, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00083     \{}
+\DoxyCodeLine{00084         \textcolor{comment}{// Number of periods MUST == size of the vector}}
+\DoxyCodeLine{00085         assert (nPeriods == prices.size());}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089         \textcolor{keywordtype}{double} PV = 0.0;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} t = 0; t < nPeriods; t++)}
+\DoxyCodeLine{00092         \{}
+\DoxyCodeLine{00093             PV += prices[t] / \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, t+1);}
+\DoxyCodeLine{00094         \}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096         \textcolor{keywordflow}{return} PV;}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     \}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{comment}{// Present Value of an ordinary annuity}}
+\DoxyCodeLine{\Hypertarget{SimpleBondPricing_8cc_source_l00102}\mbox{\hyperlink{namespaceChapter3CPPBook_a73378b5ee752acf087d6005aca68cc4e}{00102}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceChapter3CPPBook_a73378b5ee752acf087d6005aca68cc4e}{PresentValueOrdinaryAnnuity}}(\textcolor{keywordtype}{double} A, \textcolor{keywordtype}{long} nPeriods, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00103     \{}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00106         \textcolor{keywordtype}{double} numerator = 1.0 -\/ (1.0 / \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, nPeriods));}
+\DoxyCodeLine{00107         \textcolor{keywordflow}{return} (A * numerator ) / \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00108     \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110 \}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

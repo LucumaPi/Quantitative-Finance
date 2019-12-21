@@ -14,8 +14,8 @@
 \DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef Array\_HH}}
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#define Array\_HH}}
 \DoxyCodeLine{00012 }
-\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "ArrayStructure.hh"}}
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "FullArray.hh"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{ArrayStructure_8hh}{ArrayStructure.hh}}"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{FullArray_8hh}{FullArray.hh}}"}}
 \DoxyCodeLine{00015 \textcolor{comment}{// Default structure is FullArray with default allocator. Default integral type is int.}}
 \DoxyCodeLine{00016 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I=\textcolor{keywordtype}{int}, \textcolor{keyword}{class} S = FullArray<V> >}
 \DoxyCodeLine{\Hypertarget{Array_8hh_source_l00017}\mbox{\hyperlink{classArray}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classArray}{Array}}}
@@ -26,23 +26,23 @@
 \DoxyCodeLine{00022 }
 \DoxyCodeLine{00023 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00024     \textcolor{comment}{// Constructors \& destructor}}
-\DoxyCodeLine{00025     \mbox{\hyperlink{classArray}{Array}}();                           \textcolor{comment}{// Default constructor}}
-\DoxyCodeLine{00026     \mbox{\hyperlink{classArray}{Array}}(I size);                 \textcolor{comment}{// Constructor with size. Start index=1.}}
-\DoxyCodeLine{00027     \mbox{\hyperlink{classArray}{Array}}(I size, I start);        \textcolor{comment}{// Constructor with size \& start index}}
-\DoxyCodeLine{00028     \mbox{\hyperlink{classArray}{Array}}(I size, I start, \textcolor{keyword}{const} V\& value);    \textcolor{comment}{// Size, start and value}}
-\DoxyCodeLine{00029     \mbox{\hyperlink{classArray}{Array}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& source);     \textcolor{comment}{// Copy constructor}}
-\DoxyCodeLine{00030     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classArray}{Array}}();                  \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classArray_a825b1a1333fbf75a9a2d8812d02a58e4}{Array}}();                           \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classArray_a825b1a1333fbf75a9a2d8812d02a58e4}{Array}}(I size);                 \textcolor{comment}{// Constructor with size. Start index=1.}}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classArray_a825b1a1333fbf75a9a2d8812d02a58e4}{Array}}(I size, I start);        \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00028     \mbox{\hyperlink{classArray_a825b1a1333fbf75a9a2d8812d02a58e4}{Array}}(I size, I start, \textcolor{keyword}{const} V\& value);    \textcolor{comment}{// Size, start and value}}
+\DoxyCodeLine{00029     \mbox{\hyperlink{classArray_a825b1a1333fbf75a9a2d8812d02a58e4}{Array}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& source);     \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00030     \textcolor{keyword}{virtual} \mbox{\hyperlink{classArray_a1b1a13c1a2d5be706c18eda75f0941dd}{~Array}}();                 \textcolor{comment}{// Destructor}}
 \DoxyCodeLine{00031 }
 \DoxyCodeLine{00032     \textcolor{comment}{// Selectors}}
-\DoxyCodeLine{00033     I MinIndex() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the minimum index}}
-\DoxyCodeLine{00034     I MaxIndex() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the maximum index}}
-\DoxyCodeLine{00035     I Size() \textcolor{keyword}{const};                         \textcolor{comment}{// The size of the array}}
+\DoxyCodeLine{00033     I \mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the minimum index}}
+\DoxyCodeLine{00034     I \mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}() \textcolor{keyword}{const};                             \textcolor{comment}{// Return the maximum index}}
+\DoxyCodeLine{00035     I \mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() \textcolor{keyword}{const};                         \textcolor{comment}{// The size of the array}}
 \DoxyCodeLine{00036 }
 \DoxyCodeLine{00037     \textcolor{comment}{// Operators}}
-\DoxyCodeLine{00038     \textcolor{keyword}{virtual} V\& operator [] (I index);               \textcolor{comment}{// Subscripting operator}}
-\DoxyCodeLine{00039     \textcolor{keyword}{virtual} \textcolor{keyword}{const} V\& operator [] (I index) \textcolor{keyword}{const};   \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00038     \textcolor{keyword}{virtual} V\& \mbox{\hyperlink{classArray_a75935c222b8e83ce9e5918196d80a445}{operator [] }}(I index);               \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00039     \textcolor{keyword}{virtual} \textcolor{keyword}{const} V\& \mbox{\hyperlink{classArray_a75935c222b8e83ce9e5918196d80a445}{operator [] }}(I index) \textcolor{keyword}{const};   \textcolor{comment}{// Subscripting operator}}
 \DoxyCodeLine{00040 }
-\DoxyCodeLine{00041     \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& source);}
+\DoxyCodeLine{00041     \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& \mbox{\hyperlink{classArray_ac27f5b9655cda7daecc9d09298a454bf}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& source);}
 \DoxyCodeLine{00042 \};}
 \DoxyCodeLine{00043 \textcolor{preprocessor}{\#include "../../src/Array.cc"}}
 \DoxyCodeLine{00044 \textcolor{preprocessor}{\#endif  // Array\_HH}}

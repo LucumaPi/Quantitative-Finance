@@ -14,12 +14,44 @@ Collaboration diagram for Client:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classClient_1a8a529313d0b2a2b38afc062131ad8be2"/><emphasis role="strong">Client</emphasis> (<link linkend="_classB">B</link> &amp;delegate)</para>
+            <listitem><para><link linkend="_classClient_1a8a529313d0b2a2b38afc062131ad8be2">Client</link> (<link linkend="_classB">B</link> &amp;delegate)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classClient_1aefa39b4806f923f2a4a4fa0b7020007a"/>double <emphasis role="strong">clientValue</emphasis> () const</para>
+            <listitem><para>double <link linkend="_classClient_1aefa39b4806f923f2a4a4fa0b7020007a">clientValue</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 40 of file Delegation.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classClient_1a8a529313d0b2a2b38afc062131ad8be2"/>    <section>
+    <title>Client()</title>
+<indexterm><primary>Client</primary><secondary>Client</secondary></indexterm>
+<indexterm><primary>Client</primary><secondary>Client</secondary></indexterm>
+<para><computeroutput>Client::Client (<link linkend="_classB">B</link> &amp; delegate)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 45 of file Delegation.cc.</para>
+<programlisting>45 {&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;&amp;delegate;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classClient_1aefa39b4806f923f2a4a4fa0b7020007a"/>    <section>
+    <title>clientValue()</title>
+<indexterm><primary>clientValue</primary><secondary>Client</secondary></indexterm>
+<indexterm><primary>Client</primary><secondary>clientValue</secondary></indexterm>
+<para><computeroutput>double Client::clientValue ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 48 of file Delegation.cc.</para>
+<programlisting>49 &#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;-&gt;&#32;<link linkend="_TestOtherExceptions_8cc_1a5d6745a4ce55928507e360ba8b8f54d2">getValue</link>();
+51 
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Modify&#32;for&#32;current&#32;situation</emphasis>
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tmp&#32;*&#32;100.0;
+54 &#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-tests/Delegation.cc</section>
+tests/<link linkend="_Delegation_8cc">Delegation.cc</link></section>
+</section>

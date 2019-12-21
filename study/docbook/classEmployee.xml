@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classEmployee">
 <title>Employee Class Reference</title>
 <indexterm><primary>Employee</primary></indexterm>
+<para>
+<computeroutput>#include &lt;PersonAndEmployee.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for Employee:<para>
     <informalfigure>
         <mediaobject>
@@ -23,27 +26,114 @@ Collaboration diagram for Employee:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classEmployee_1a45d4e4b9d3c976979a8bf9b3e18ac7c4"/><emphasis role="strong">Employee</emphasis> (const std::string &amp;name, const <link linkend="_classDatasimDate">DatasimDate</link> &amp;DateofBirth, const std::string &amp;function, double salary, int Retires)</para>
+            <listitem><para><link linkend="_classEmployee_1a45d4e4b9d3c976979a8bf9b3e18ac7c4">Employee</link> (const std::string &amp;name, const <link linkend="_classDatasimDate">DatasimDate</link> &amp;DateofBirth, const std::string &amp;function, double salary, int Retires)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classEmployee_1aa2c5fe7f5ba6cbef162ddf12f8a20852"/>void <emphasis role="strong">print</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classEmployee_1aa2c5fe7f5ba6cbef162ddf12f8a20852">print</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classEmployee_1a36e7052e1f34d639a6bc84693b78889a"/>void <emphasis role="strong">DeepPrint</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classEmployee_1a36e7052e1f34d639a6bc84693b78889a">DeepPrint</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classEmployee_1a1fe9ed9880a95f60cd1d02310099a4d0"/>int <emphasis role="strong">YearsToRetirement</emphasis> () const</para>
+            <listitem><para>int <link linkend="_classEmployee_1a1fe9ed9880a95f60cd1d02310099a4d0">YearsToRetirement</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classEmployee_1aee8a50b7b29bb1c959aeaf33b05d5c83"/>std::string <emphasis role="strong">fun</emphasis></para>
+            <listitem><para>std::string <link linkend="_classEmployee_1aee8a50b7b29bb1c959aeaf33b05d5c83">fun</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classEmployee_1a79944f815cb2fb441f2d458084c3706b"/>double <emphasis role="strong">sal</emphasis></para>
+            <listitem><para>double <link linkend="_classEmployee_1a79944f815cb2fb441f2d458084c3706b">sal</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classEmployee_1a447b3da66846974ead06d74ff50643da"/>int <emphasis role="strong">rAge</emphasis></para>
+            <listitem><para>int <link linkend="_classEmployee_1a447b3da66846974ead06d74ff50643da">rAge</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 57 of file PersonAndEmployee.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classEmployee_1a45d4e4b9d3c976979a8bf9b3e18ac7c4"/>    <section>
+    <title>Employee()</title>
+<indexterm><primary>Employee</primary><secondary>Employee</secondary></indexterm>
+<indexterm><primary>Employee</primary><secondary>Employee</secondary></indexterm>
+<para><computeroutput>Employee::Employee (const std::string &amp; name, const <link linkend="_classDatasimDate">DatasimDate</link> &amp; DateofBirth, const std::string &amp; function, double salary, int Retires)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 65 of file PersonAndEmployee.hh.</para>
+<programlisting>66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classPerson_1a27cebd22009c2f3d495523832d4489bc">Person</link>(name,&#32;DateofBirth)
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classEmployee_1aee8a50b7b29bb1c959aeaf33b05d5c83">fun</link>&#32;=&#32;<emphasis role="keyword">function</emphasis>;
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classEmployee_1a79944f815cb2fb441f2d458084c3706b">sal</link>&#32;=&#32;salary;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classEmployee_1a447b3da66846974ead06d74ff50643da">rAge</link>&#32;=&#32;Retires;
+71 
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classEmployee_1a36e7052e1f34d639a6bc84693b78889a"/>    <section>
+    <title>DeepPrint()</title>
+<indexterm><primary>DeepPrint</primary><secondary>Employee</secondary></indexterm>
+<indexterm><primary>Employee</primary><secondary>DeepPrint</secondary></indexterm>
+<para><computeroutput>void Employee::DeepPrint ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_classPerson_1a9415b8b11b532c063f00737430a7694f">Person</link>.</para>
+<para>
+Definition at line 88 of file PersonAndEmployee.hh.</para>
+<programlisting>89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classEmployee_1aa2c5fe7f5ba6cbef162ddf12f8a20852">print</link>();&#32;<emphasis role="comment">//&#32;Calls&#32;Employee::print()</emphasis>
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classEmployee_1aa2c5fe7f5ba6cbef162ddf12f8a20852"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>Employee</secondary></indexterm>
+<indexterm><primary>Employee</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void Employee::print ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 74 of file PersonAndEmployee.hh.</para>
+<programlisting>75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Who&#32;am&#32;I&#32;and&#32;what&#32;do&#32;I&#32;do?</emphasis>
+76 
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Print&#32;Base&#32;class&#32;data</emphasis>
+78 
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n**&#32;Employee&#32;Data&#32;**\n&quot;</emphasis>;
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classPerson_1aaf046d78d4c4dff5130fc25727932345">Person::print</link>();
+81 
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;print&#32;data&#32;from&#32;current&#32;derived&#32;class</emphasis>
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nFunction:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_classEmployee_1aee8a50b7b29bb1c959aeaf33b05d5c83">fun</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;Salary:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_classEmployee_1a79944f815cb2fb441f2d458084c3706b">sal</link>
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;Retires&#32;at:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_classEmployee_1a447b3da66846974ead06d74ff50643da">rAge</link>&#32;&lt;&lt;&#32;std::endl
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;<link linkend="_classEmployee_1a1fe9ed9880a95f60cd1d02310099a4d0">YearsToRetirement</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;years&#32;to&#32;retirement.\n&quot;</emphasis>;
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classEmployee_1a1fe9ed9880a95f60cd1d02310099a4d0"/>    <section>
+    <title>YearsToRetirement()</title>
+<indexterm><primary>YearsToRetirement</primary><secondary>Employee</secondary></indexterm>
+<indexterm><primary>Employee</primary><secondary>YearsToRetirement</secondary></indexterm>
+<para><computeroutput>int Employee::YearsToRetirement ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 93 of file PersonAndEmployee.hh.</para>
+<programlisting>94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;How&#32;many&#32;more&#32;years&#32;slogging&#32;away&#32;at&#32;C++?</emphasis>
+95 
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classEmployee_1a447b3da66846974ead06d74ff50643da">rAge</link>&#32;-&#32;<link linkend="_classPerson_1aebd438308d431c5a20070a64288932d8">age</link>();
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classEmployee_1aee8a50b7b29bb1c959aeaf33b05d5c83"/>    <section>
+    <title>fun</title>
+<indexterm><primary>fun</primary><secondary>Employee</secondary></indexterm>
+<indexterm><primary>Employee</primary><secondary>fun</secondary></indexterm>
+<para><computeroutput>std::string Employee::fun</computeroutput></para><para>
+Definition at line 60 of file PersonAndEmployee.hh.</para>
+    </section><anchor xml:id="_classEmployee_1a447b3da66846974ead06d74ff50643da"/>    <section>
+    <title>rAge</title>
+<indexterm><primary>rAge</primary><secondary>Employee</secondary></indexterm>
+<indexterm><primary>Employee</primary><secondary>rAge</secondary></indexterm>
+<para><computeroutput>int Employee::rAge</computeroutput></para><para>
+Definition at line 62 of file PersonAndEmployee.hh.</para>
+    </section><anchor xml:id="_classEmployee_1a79944f815cb2fb441f2d458084c3706b"/>    <section>
+    <title>sal</title>
+<indexterm><primary>sal</primary><secondary>Employee</secondary></indexterm>
+<indexterm><primary>Employee</primary><secondary>sal</secondary></indexterm>
+<para><computeroutput>double Employee::sal</computeroutput></para><para>
+Definition at line 61 of file PersonAndEmployee.hh.</para>
+</section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/PersonAndEmployee.hh</section>
+include/duffy/<link linkend="_PersonAndEmployee_8hh">PersonAndEmployee.hh</link></section>
+</section>

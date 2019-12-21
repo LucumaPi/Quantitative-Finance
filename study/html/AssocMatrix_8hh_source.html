@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: AssocMatrix.hh Source File</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: AssocMatrix.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -74,7 +74,7 @@ $(function() {
 <div class="title">AssocMatrix.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// AssocMatrix.hpp</span></div>
+<a href="AssocMatrix_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// AssocMatrix.hpp</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Associative matrix class. In this case we access elements by </span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// using non-integral indices. This is potentially a very useful class</span></div>
@@ -88,24 +88,24 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef AssocMatrix_HH</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define AssocMatrix_HH</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;AssocArray.hh&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;NumericMatrix.hh&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AssocArray_8hh.html">AssocArray.hh</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NumericMatrix_8hh.html">NumericMatrix.hh</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//#include &quot;Set.hh&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Spreadsheet-like stuff</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> AI1, <span class="keyword">class</span> AI2&gt; </div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structSpreadSheetVertex.html">   21</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structSpreadSheetVertex.html">SpreadSheetVertex</a></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        AI1 first;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        AI2 second;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structSpreadSheetVertex.html#ab38191438cab228269626d8e6d25b39d">   23</a></span>&#160;        AI1 <a class="code" href="structSpreadSheetVertex.html#ab38191438cab228269626d8e6d25b39d">first</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structSpreadSheetVertex.html#a56fba3e9639a4721b49bbbdb68f52ae9">   24</a></span>&#160;        AI2 <a class="code" href="structSpreadSheetVertex.html#a56fba3e9639a4721b49bbbdb68f52ae9">second</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};      </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> AI1, <span class="keyword">class</span> AI2&gt;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structSpreadSheetRange.html">   28</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structSpreadSheetRange.html">SpreadSheetRange</a></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="structSpreadSheetVertex.html">SpreadSheetVertex&lt;AI1, AI2&gt;</a> upperLeft;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="structSpreadSheetVertex.html">SpreadSheetVertex&lt;AI1, AI2&gt;</a> lowerRight;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structSpreadSheetRange.html#a162552eb32806cc172e1dc7e7c74da07">   31</a></span>&#160;        <a class="code" href="structSpreadSheetVertex.html">SpreadSheetVertex&lt;AI1, AI2&gt;</a> <a class="code" href="structSpreadSheetRange.html#a162552eb32806cc172e1dc7e7c74da07">upperLeft</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structSpreadSheetRange.html#a3d228f1713cd8d0189f7d2bd0a312512">   32</a></span>&#160;        <a class="code" href="structSpreadSheetVertex.html">SpreadSheetVertex&lt;AI1, AI2&gt;</a> <a class="code" href="structSpreadSheetRange.html#a3d228f1713cd8d0189f7d2bd0a312512">lowerRight</a>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
@@ -128,40 +128,55 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Constructors &amp; destructor</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classAssocMatrix.html">AssocMatrix</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classAssocMatrix.html">AssocMatrix</a>(<span class="keyword">const</span> <a class="code" href="classAssocMatrix.html">AssocMatrix&lt;V, AI1, AI2&gt;</a>&amp; arr2);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classAssocMatrix.html#a804b8f1b6123e030823f18abfdd0efb4">AssocMatrix</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classAssocMatrix.html#a804b8f1b6123e030823f18abfdd0efb4">AssocMatrix</a>(<span class="keyword">const</span> <a class="code" href="classAssocMatrix.html">AssocMatrix&lt;V, AI1, AI2&gt;</a>&amp; arr2);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Construct the map from a list of names and values</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classAssocMatrix.html">AssocMatrix</a>(<span class="keyword">const</span> <a class="code" href="classSet.html">Set&lt;AI1&gt;</a>&amp; Rnames, <span class="keyword">const</span> <a class="code" href="classSet.html">Set&lt;AI2&gt;</a>&amp; Cnames, </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classAssocMatrix.html#a804b8f1b6123e030823f18abfdd0efb4">AssocMatrix</a>(<span class="keyword">const</span> <a class="code" href="classSet.html">Set&lt;AI1&gt;</a>&amp; Rnames, <span class="keyword">const</span> <a class="code" href="classSet.html">Set&lt;AI2&gt;</a>&amp; Cnames, </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                     <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;V, long&gt;</a>&amp; matrix);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classAssocMatrix.html">AssocMatrix&lt;V, AI1, AI2&gt;</a>&amp; operator = (<span class="keyword">const</span> <a class="code" href="classAssocMatrix.html">AssocMatrix&lt;V, AI1, AI2&gt;</a>&amp; ass2);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classAssocMatrix.html">AssocMatrix&lt;V, AI1, AI2&gt;</a>&amp; <a class="code" href="classAssocMatrix.html#a584ec0fa44e926ef4e44d6a251dcf01a">operator = </a>(<span class="keyword">const</span> <a class="code" href="classAssocMatrix.html">AssocMatrix&lt;V, AI1, AI2&gt;</a>&amp; ass2);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// New overloaded indexing operator</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> V&amp; operator () (<span class="keyword">const</span> AI1&amp; index1, <span class="keyword">const</span> AI2&amp; index2);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> V&amp; <a class="code" href="classAssocMatrix.html#a0d1563baeba3a42f1b9abcd2d7877779">operator () </a>(<span class="keyword">const</span> AI1&amp; index1, <span class="keyword">const</span> AI2&amp; index2);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Modifiers</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Change values in some range</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> modify(<span class="keyword">const</span> <a class="code" href="structSpreadSheetRange.html">SpreadSheetRange&lt;AI1, AI2&gt;</a>&amp; range, <span class="keywordtype">void</span> (*f)(V&amp; cellValue));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAssocMatrix.html#a326e6e4074d55872bc38d7968d2a3525">modify</a>(<span class="keyword">const</span> <a class="code" href="structSpreadSheetRange.html">SpreadSheetRange&lt;AI1, AI2&gt;</a>&amp; range, <span class="keywordtype">void</span> (*f)(V&amp; cellValue));</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Selectors; inline for convenience and readability</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">long</span> Size()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> str.size(); }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;V, long&gt;</a> extract(<span class="keyword">const</span> <a class="code" href="structSpreadSheetRange.html">SpreadSheetRange&lt;AI1, AI2&gt;</a>&amp; range);</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classAssocMatrix.html#a0bcc0fcd9e5ff08dc2af4dea25ddda41">   71</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classAssocMatrix.html#a0bcc0fcd9e5ff08dc2af4dea25ddda41">Size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> str.size(); }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;V, long&gt;</a> <a class="code" href="classAssocMatrix.html#a74a3cfe29f843fd8e52ac0e24f6d62e8">extract</a>(<span class="keyword">const</span> <a class="code" href="structSpreadSheetRange.html">SpreadSheetRange&lt;AI1, AI2&gt;</a>&amp; range);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Return copies of keys</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classSet.html">Set&lt;AI1&gt;</a> RowKeys()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> keysRows; }   </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classSet.html">Set&lt;AI2&gt;</a> ColumnKeys()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> keysColumns; }     </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;V, long&gt;</a>* Data() { <span class="keywordflow">return</span> mat; }</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classAssocMatrix.html#adce6a940baf8f9d7c5a7b258a447ab3a">   75</a></span>&#160;    <a class="code" href="classSet.html">Set&lt;AI1&gt;</a> <a class="code" href="classAssocMatrix.html#adce6a940baf8f9d7c5a7b258a447ab3a">RowKeys</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> keysRows; }   </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classAssocMatrix.html#a3d10f575ea198ec26e22048ce30e45f1">   76</a></span>&#160;    <a class="code" href="classSet.html">Set&lt;AI2&gt;</a> <a class="code" href="classAssocMatrix.html#a3d10f575ea198ec26e22048ce30e45f1">ColumnKeys</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> keysColumns; }     </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classAssocMatrix.html#ac7671399c8b31d220d42d03da7e11182">   77</a></span>&#160;    <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;V, long&gt;</a>* <a class="code" href="classAssocMatrix.html#ac7671399c8b31d220d42d03da7e11182">Data</a>() { <span class="keywordflow">return</span> mat; }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#include &quot;../../src/AssocMatrix.cc&quot;</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif  // AssocMatrix_HH</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructSpreadSheetVertex_html_a56fba3e9639a4721b49bbbdb68f52ae9"><div class="ttname"><a href="structSpreadSheetVertex.html#a56fba3e9639a4721b49bbbdb68f52ae9">SpreadSheetVertex::second</a></div><div class="ttdeci">AI2 second</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00024">AssocMatrix.hh:24</a></div></div>
 <div class="ttc" id="aclassSet_html"><div class="ttname"><a href="classSet.html">Set&lt; AI1 &gt;</a></div></div>
-<div class="ttc" id="astructSpreadSheetVertex_html"><div class="ttname"><a href="structSpreadSheetVertex.html">SpreadSheetVertex</a></div><div class="ttdef"><b>Definition:</b> AssocMatrix.hh:21</div></div>
+<div class="ttc" id="aclassAssocMatrix_html_a0bcc0fcd9e5ff08dc2af4dea25ddda41"><div class="ttname"><a href="classAssocMatrix.html#a0bcc0fcd9e5ff08dc2af4dea25ddda41">AssocMatrix::Size</a></div><div class="ttdeci">long Size() const</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00071">AssocMatrix.hh:71</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html_ac7671399c8b31d220d42d03da7e11182"><div class="ttname"><a href="classAssocMatrix.html#ac7671399c8b31d220d42d03da7e11182">AssocMatrix::Data</a></div><div class="ttdeci">NumericMatrix&lt; V, long &gt; * Data()</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00077">AssocMatrix.hh:77</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html_a0d1563baeba3a42f1b9abcd2d7877779"><div class="ttname"><a href="classAssocMatrix.html#a0d1563baeba3a42f1b9abcd2d7877779">AssocMatrix::operator()</a></div><div class="ttdeci">virtual V &amp; operator()(const AI1 &amp;index1, const AI2 &amp;index2)</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8cc_source.html#l00185">AssocMatrix.cc:185</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html_a804b8f1b6123e030823f18abfdd0efb4"><div class="ttname"><a href="classAssocMatrix.html#a804b8f1b6123e030823f18abfdd0efb4">AssocMatrix::AssocMatrix</a></div><div class="ttdeci">AssocMatrix()</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8cc_source.html#l00024">AssocMatrix.cc:24</a></div></div>
+<div class="ttc" id="astructSpreadSheetVertex_html"><div class="ttname"><a href="structSpreadSheetVertex.html">SpreadSheetVertex</a></div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00021">AssocMatrix.hh:21</a></div></div>
+<div class="ttc" id="aAssocArray_8hh_html"><div class="ttname"><a href="AssocArray_8hh.html">AssocArray.hh</a></div></div>
 <div class="ttc" id="aclassNumericMatrix_html"><div class="ttname"><a href="classNumericMatrix.html">NumericMatrix&lt; V, long &gt;</a></div></div>
-<div class="ttc" id="aclassAssocMatrix_html"><div class="ttname"><a href="classAssocMatrix.html">AssocMatrix</a></div><div class="ttdef"><b>Definition:</b> AssocMatrix.hh:38</div></div>
-<div class="ttc" id="astructSpreadSheetRange_html"><div class="ttname"><a href="structSpreadSheetRange.html">SpreadSheetRange</a></div><div class="ttdef"><b>Definition:</b> AssocMatrix.hh:28</div></div>
+<div class="ttc" id="aNumericMatrix_8hh_html"><div class="ttname"><a href="NumericMatrix_8hh.html">NumericMatrix.hh</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html"><div class="ttname"><a href="classAssocMatrix.html">AssocMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00038">AssocMatrix.hh:38</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html_a584ec0fa44e926ef4e44d6a251dcf01a"><div class="ttname"><a href="classAssocMatrix.html#a584ec0fa44e926ef4e44d6a251dcf01a">AssocMatrix::operator=</a></div><div class="ttdeci">AssocMatrix&lt; V, AI1, AI2 &gt; &amp; operator=(const AssocMatrix&lt; V, AI1, AI2 &gt; &amp;ass2)</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8cc_source.html#l00168">AssocMatrix.cc:168</a></div></div>
+<div class="ttc" id="astructSpreadSheetRange_html"><div class="ttname"><a href="structSpreadSheetRange.html">SpreadSheetRange</a></div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00028">AssocMatrix.hh:28</a></div></div>
 <div class="ttc" id="aclassAssocArray_html"><div class="ttname"><a href="classAssocArray.html">AssocArray&lt; long, AI1 &gt;</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html_a74a3cfe29f843fd8e52ac0e24f6d62e8"><div class="ttname"><a href="classAssocMatrix.html#a74a3cfe29f843fd8e52ac0e24f6d62e8">AssocMatrix::extract</a></div><div class="ttdeci">NumericMatrix&lt; V, long &gt; extract(const SpreadSheetRange&lt; AI1, AI2 &gt; &amp;range)</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8cc_source.html#l00128">AssocMatrix.cc:128</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html_a3d10f575ea198ec26e22048ce30e45f1"><div class="ttname"><a href="classAssocMatrix.html#a3d10f575ea198ec26e22048ce30e45f1">AssocMatrix::ColumnKeys</a></div><div class="ttdeci">Set&lt; AI2 &gt; ColumnKeys() const</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00076">AssocMatrix.hh:76</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html_adce6a940baf8f9d7c5a7b258a447ab3a"><div class="ttname"><a href="classAssocMatrix.html#adce6a940baf8f9d7c5a7b258a447ab3a">AssocMatrix::RowKeys</a></div><div class="ttdeci">Set&lt; AI1 &gt; RowKeys() const</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00075">AssocMatrix.hh:75</a></div></div>
+<div class="ttc" id="aclassAssocMatrix_html_a326e6e4074d55872bc38d7968d2a3525"><div class="ttname"><a href="classAssocMatrix.html#a326e6e4074d55872bc38d7968d2a3525">AssocMatrix::modify</a></div><div class="ttdeci">void modify(const SpreadSheetRange&lt; AI1, AI2 &gt; &amp;range, void(*f)(V &amp;cellValue))</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8cc_source.html#l00093">AssocMatrix.cc:93</a></div></div>
+<div class="ttc" id="astructSpreadSheetRange_html_a162552eb32806cc172e1dc7e7c74da07"><div class="ttname"><a href="structSpreadSheetRange.html#a162552eb32806cc172e1dc7e7c74da07">SpreadSheetRange::upperLeft</a></div><div class="ttdeci">SpreadSheetVertex&lt; AI1, AI2 &gt; upperLeft</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00031">AssocMatrix.hh:31</a></div></div>
+<div class="ttc" id="astructSpreadSheetRange_html_a3d228f1713cd8d0189f7d2bd0a312512"><div class="ttname"><a href="structSpreadSheetRange.html#a3d228f1713cd8d0189f7d2bd0a312512">SpreadSheetRange::lowerRight</a></div><div class="ttdeci">SpreadSheetVertex&lt; AI1, AI2 &gt; lowerRight</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00032">AssocMatrix.hh:32</a></div></div>
+<div class="ttc" id="astructSpreadSheetVertex_html_ab38191438cab228269626d8e6d25b39d"><div class="ttname"><a href="structSpreadSheetVertex.html#ab38191438cab228269626d8e6d25b39d">SpreadSheetVertex::first</a></div><div class="ttdeci">AI1 first</div><div class="ttdef"><b>Definition:</b> <a href="AssocMatrix_8hh_source.html#l00023">AssocMatrix.hh:23</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

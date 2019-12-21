@@ -6,20 +6,46 @@
     <includedby refid="CallPayoff_8hh" local="yes">include/duffy/CallPayoff.hh</includedby>
     <includedby refid="Payoff_8cc" local="no">src/Payoff.cc</includedby>
     <invincdepgraph>
-      <node id="3">
+      <node id="7">
+        <label>src/Payoff.cc</label>
+        <link refid="Payoff_8cc"/>
+      </node>
+      <node id="6">
+        <label>src/CallPayoff.cc</label>
+        <link refid="CallPayoff_8cc"/>
+      </node>
+      <node id="5">
         <label>include/duffy/CallPayoff.hh</label>
-        <link refid="CallPayoff_8hh_source"/>
+        <link refid="CallPayoff_8hh"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tests/TestPayoff.cc</label>
+        <link refid="TestPayoff_8cc"/>
       </node>
       <node id="2">
         <label>include/duffy/BullSpreadPayoff.hh</label>
-        <link refid="BullSpreadPayoff_8hh_source"/>
+        <link refid="BullSpreadPayoff_8hh"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/BullSpreadPayoff.cc</label>
+        <link refid="BullSpreadPayoff_8cc"/>
       </node>
       <node id="1">
         <label>include/duffy/Payoff.hh</label>
         <link refid="Payoff_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -42,15 +68,15 @@
 <codeline lineno="11"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructors<sp/>and<sp/>destructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPayoff" kindref="compound">Payoff</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPayoff" kindref="compound">Payoff</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPayoff" kindref="compound">Payoff</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classPayoff" kindref="compound">Payoff</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPayoff_1a0f46e76a129a9f3a98d957b083c30157" kindref="member">Payoff</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPayoff_1a0f46e76a129a9f3a98d957b083c30157" kindref="member">Payoff</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPayoff" kindref="compound">Payoff</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classPayoff_1a8503707f7af67b9f6b0cfdac6d277480" kindref="member">~Payoff</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Operator<sp/>overloading</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPayoff" kindref="compound">Payoff</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPayoff" kindref="compound">Payoff</ref>&amp;<sp/>source);<sp/><sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPayoff" kindref="compound">Payoff</ref>&amp;<sp/><ref refid="classPayoff_1ad2a5f6ec9c8336d4dc6ab00ecdd83393" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPayoff" kindref="compound">Payoff</ref>&amp;<sp/>source);<sp/><sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Pure<sp/>virtual<sp/>payoff<sp/>function</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>payoff(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>For<sp/>a<sp/>given<sp/>spot<sp/>price</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classPayoff_1a541081708c4999142c3db9d5a27b2313" kindref="member">payoff</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>For<sp/>a<sp/>given<sp/>spot<sp/>price</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>Payoff_HH</highlight></codeline>

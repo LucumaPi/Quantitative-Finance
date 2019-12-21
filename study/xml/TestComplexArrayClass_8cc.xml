@@ -6,7 +6,7 @@
     <incdepgraph>
       <node id="2">
         <label>duffy/ComplexArray.hh</label>
-        <link refid="ComplexArray_8hh_source"/>
+        <link refid="ComplexArray_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
@@ -15,7 +15,7 @@
       </node>
       <node id="3">
         <label>Complex.hh</label>
-        <link refid="Complex_8hh_source"/>
+        <link refid="Complex_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -120,43 +120,43 @@
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2005-2006</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/ComplexArray.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="ComplexArray_8hh" kindref="compound">duffy/ComplexArray.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><ref refid="classComplex" kindref="compound">Complex</ref><sp/>myFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classComplex" kindref="compound">Complex</ref>&amp;<sp/>z)</highlight></codeline>
+<codeline lineno="13" refid="TestComplexArrayClass_8cc_1a96d33e68896cca70b2aaff9893026216" refkind="member"><highlight class="normal"><ref refid="classComplex" kindref="compound">Complex</ref><sp/><ref refid="TestComplexArrayClass_8cc_1a96d33e68896cca70b2aaff9893026216" kindref="member">myFunc</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classComplex" kindref="compound">Complex</ref>&amp;<sp/>z)</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Single<sp/>valued<sp/>function<sp/>of<sp/>a<sp/>complex<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>z<sp/>*<sp/>z;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><ref refid="classComplex" kindref="compound">Complex</ref><sp/>ComplexProduct(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classComplexArray" kindref="compound">ComplexArray</ref>&amp;<sp/>carr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)</highlight></codeline>
+<codeline lineno="19" refid="TestComplexArrayClass_8cc_1a4eaa2da4881cac0cb7b3ab2341dff4aa" refkind="member"><highlight class="normal"><ref refid="classComplex" kindref="compound">Complex</ref><sp/><ref refid="TestComplexArrayClass_8cc_1a4eaa2da4881cac0cb7b3ab2341dff4aa" kindref="member">ComplexProduct</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classComplexArray" kindref="compound">ComplexArray</ref>&amp;<sp/>carr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>)</highlight></codeline>
 <codeline lineno="20"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Complex<sp/>function<sp/>of<sp/>several<sp/>complex<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/>product<sp/>=<sp/>carr[carr.MinIndex()];</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/><ref refid="ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d" kindref="member">product</ref><sp/>=<sp/>carr[carr.<ref refid="classComplexArray_1ab9cefe61064be624d5237baf9f2b4507" kindref="member">MinIndex</ref>()];</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>carr.MinIndex()<sp/>+<sp/>1;<sp/>j<sp/>&lt;=<sp/>carr.MaxIndex();<sp/>j++)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>carr.<ref refid="classComplexArray_1ab9cefe61064be624d5237baf9f2b4507" kindref="member">MinIndex</ref>()<sp/>+<sp/>1;<sp/>j<sp/>&lt;=<sp/>carr.<ref refid="classComplexArray_1ab5237189531cc3d8e67810b0b1143e01" kindref="member">MaxIndex</ref>();<sp/>j++)</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>product<sp/>*=<sp/>carr[j];</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d" kindref="member">product</ref><sp/>*=<sp/>carr[j];</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>product;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d" kindref="member">product</ref>;</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><ref refid="classComplex" kindref="compound">Complex</ref><sp/>ComplexSum(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classComplexArray" kindref="compound">ComplexArray</ref>&amp;<sp/>carr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)</highlight></codeline>
+<codeline lineno="33" refid="TestComplexArrayClass_8cc_1ab08250104ed32f11ccf42f0008efbe09" refkind="member"><highlight class="normal"><ref refid="classComplex" kindref="compound">Complex</ref><sp/><ref refid="TestComplexArrayClass_8cc_1ab08250104ed32f11ccf42f0008efbe09" kindref="member">ComplexSum</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classComplexArray" kindref="compound">ComplexArray</ref>&amp;<sp/>carr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>)</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Complex<sp/>function<sp/>of<sp/>several<sp/>complex<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/>sum<sp/>=<sp/>carr[carr.MinIndex()];</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/><ref refid="ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0" kindref="member">sum</ref><sp/>=<sp/>carr[carr.<ref refid="classComplexArray_1ab9cefe61064be624d5237baf9f2b4507" kindref="member">MinIndex</ref>()];</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>carr.MinIndex()<sp/>+<sp/>1;<sp/>j<sp/>&lt;=<sp/>carr.MaxIndex();<sp/>j++)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>carr.<ref refid="classComplexArray_1ab9cefe61064be624d5237baf9f2b4507" kindref="member">MinIndex</ref>()<sp/>+<sp/>1;<sp/>j<sp/>&lt;=<sp/>carr.<ref refid="classComplexArray_1ab5237189531cc3d8e67810b0b1143e01" kindref="member">MaxIndex</ref>();<sp/>j++)</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum<sp/>+=<sp/>carr[j];</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0" kindref="member">sum</ref><sp/>+=<sp/>carr[j];</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sum;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0" kindref="member">sum</ref>;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="47" refid="TestComplexArrayClass_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestComplexArrayClass_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/>z1(1.0,<sp/>1.0);</highlight></codeline>
@@ -177,7 +177,7 @@
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Another<sp/>complex<sp/>array</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplexArray" kindref="compound">ComplexArray</ref><sp/>fixedArray(5);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>fixedArray.MinIndex();<sp/>i<sp/>&lt;=<sp/>fixedArray.MaxIndex();<sp/>i++)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>fixedArray.<ref refid="classComplexArray_1ab9cefe61064be624d5237baf9f2b4507" kindref="member">MinIndex</ref>();<sp/>i<sp/>&lt;=<sp/>fixedArray.<ref refid="classComplexArray_1ab5237189531cc3d8e67810b0b1143e01" kindref="member">MaxIndex</ref>();<sp/>i++)</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fixedArray[i]<sp/>=<sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/>((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>i,<sp/>0.0);</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
@@ -186,16 +186,16 @@
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>function<sp/>and<sp/>print<sp/>values<sp/>for<sp/>each<sp/>z</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>Size;<sp/>j++)</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>myFunc(cpArray[j])<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/><ref refid="TestComplexArrayClass_8cc_1a96d33e68896cca70b2aaff9893026216" kindref="member">myFunc</ref>(cpArray[j])<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>work<sp/>with<sp/>functions<sp/>of<sp/>several<sp/>complex<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/>product<sp/>=<sp/>ComplexProduct(fixedArray,<sp/>Size);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Product:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>product<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/><ref refid="ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d" kindref="member">product</ref><sp/>=<sp/><ref refid="TestComplexArrayClass_8cc_1a4eaa2da4881cac0cb7b3ab2341dff4aa" kindref="member">ComplexProduct</ref>(fixedArray,<sp/>Size);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Product:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d" kindref="member">product</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/>sum<sp/>=<sp/>ComplexSum(fixedArray,<sp/>Size);</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Sum:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sum<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classComplex" kindref="compound">Complex</ref><sp/><ref refid="ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0" kindref="member">sum</ref><sp/>=<sp/><ref refid="TestComplexArrayClass_8cc_1ab08250104ed32f11ccf42f0008efbe09" kindref="member">ComplexSum</ref>(fixedArray,<sp/>Size);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Sum:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0" kindref="member">sum</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal">}</highlight></codeline>

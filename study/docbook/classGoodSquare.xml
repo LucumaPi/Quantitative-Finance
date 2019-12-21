@@ -23,14 +23,72 @@ Collaboration diagram for GoodSquare:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classGoodSquare_1a347dbfd768d18c3f81c0d372dae1ccdb"/><emphasis role="strong">GoodSquare</emphasis> (const <link linkend="_classPoint">Point</link> &amp;basePoint, double size)</para>
+            <listitem><para><link linkend="_classGoodSquare_1a9cbd56bd2be63f31b6cccba4b216d4ce">GoodSquare</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classGoodSquare_1a06b56adcb5f00340eaa871e39031c3eb"/>void <emphasis role="strong">setSize</emphasis> (double newSize)</para>
+            <listitem><para><link linkend="_classGoodSquare_1a347dbfd768d18c3f81c0d372dae1ccdb">GoodSquare</link> (const <link linkend="_classPoint">Point</link> &amp;basePoint, double size)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classGoodSquare_1aeb44d1887bb768f563a9ddc0f73ff415"/>void <emphasis role="strong">print</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classGoodSquare_1a06b56adcb5f00340eaa871e39031c3eb">setSize</link> (double newSize)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classGoodSquare_1aeb44d1887bb768f563a9ddc0f73ff415">print</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 84 of file Rectangle.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classGoodSquare_1a9cbd56bd2be63f31b6cccba4b216d4ce"/>    <section>
+    <title>GoodSquare()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>GoodSquare</primary><secondary>GoodSquare</secondary></indexterm>
+<indexterm><primary>GoodSquare</primary><secondary>GoodSquare</secondary></indexterm>
+<para><computeroutput>GoodSquare::GoodSquare ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 89 of file Rectangle.cc.</para>
+<programlisting>90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;size&#32;=&#32;1.0;
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;<link linkend="_classRectangle">Rectangle</link>&#32;(<link linkend="_classPoint">Point</link>(),&#32;size,&#32;size);&#32;<emphasis role="comment">//&#32;Unit&#32;square</emphasis>
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classGoodSquare_1a347dbfd768d18c3f81c0d372dae1ccdb"/>    <section>
+    <title>GoodSquare()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>GoodSquare</primary><secondary>GoodSquare</secondary></indexterm>
+<indexterm><primary>GoodSquare</primary><secondary>GoodSquare</secondary></indexterm>
+<para><computeroutput>GoodSquare::GoodSquare (const <link linkend="_classPoint">Point</link> &amp; basePoint, double size)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 96 of file Rectangle.cc.</para>
+<programlisting>97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;<link linkend="_classRectangle">Rectangle</link>&#32;(basePoint,&#32;size,&#32;size);
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classGoodSquare_1aeb44d1887bb768f563a9ddc0f73ff415"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>GoodSquare</secondary></indexterm>
+<indexterm><primary>GoodSquare</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void GoodSquare::print ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 111 of file Rectangle.cc.</para>
+<programlisting>112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Delegate&#32;to&#32;the&#32;embedded&#32;rectangle&apos;s&#32;output&#32;mechanism</emphasis>
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.print();
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classGoodSquare_1a06b56adcb5f00340eaa871e39031c3eb"/>    <section>
+    <title>setSize()</title>
+<indexterm><primary>setSize</primary><secondary>GoodSquare</secondary></indexterm>
+<indexterm><primary>GoodSquare</primary><secondary>setSize</secondary></indexterm>
+<para><computeroutput>void GoodSquare::setSize (double newSize)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 102 of file Rectangle.cc.</para>
+<programlisting>103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;An&#32;adpator&#32;function,&#32;this&#32;ensures&#32;that&#32;constraints</emphasis>
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;on&#32;the&#32;square&#32;are&#32;always&#32;satisfied</emphasis>
+105 
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.setHeight(newSize);
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.setWidth(newSize);
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-src/Rectangle.cc</section>
+src/<link linkend="_Rectangle_8cc">Rectangle.cc</link></section>
+</section>

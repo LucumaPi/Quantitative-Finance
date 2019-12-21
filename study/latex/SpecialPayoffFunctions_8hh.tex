@@ -1,0 +1,54 @@
+\hypertarget{SpecialPayoffFunctions_8hh}{}\doxysection{include/duffy/\+Special\+Payoff\+Functions.hh File Reference}
+\label{SpecialPayoffFunctions_8hh}\index{include/duffy/SpecialPayoffFunctions.hh@{include/duffy/SpecialPayoffFunctions.hh}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{SpecialPayoffFunctions_8hh_a014348d679f2afcacf81af0e762ad426}{My\+Call\+Payoff\+FN}} (double K, double S)
+\item 
+double \mbox{\hyperlink{SpecialPayoffFunctions_8hh_a941b079b8b777eac5fafaf713f67027a}{My\+Put\+Payoff\+FN}} (double K, double S)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{SpecialPayoffFunctions_8hh_a014348d679f2afcacf81af0e762ad426}\label{SpecialPayoffFunctions_8hh_a014348d679f2afcacf81af0e762ad426}} 
+\index{SpecialPayoffFunctions.hh@{SpecialPayoffFunctions.hh}!MyCallPayoffFN@{MyCallPayoffFN}}
+\index{MyCallPayoffFN@{MyCallPayoffFN}!SpecialPayoffFunctions.hh@{SpecialPayoffFunctions.hh}}
+\doxysubsubsection{\texorpdfstring{MyCallPayoffFN()}{MyCallPayoffFN()}}
+{\footnotesize\ttfamily double My\+Call\+Payoff\+FN (\begin{DoxyParamCaption}\item[{double}]{K,  }\item[{double}]{S }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpecialPayoffFunctions_8hh_source_l00012}{12}} of file \mbox{\hyperlink{SpecialPayoffFunctions_8hh_source}{Special\+Payoff\+Functions.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014         \textcolor{keywordflow}{if} (S > \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}})}
+\DoxyCodeLine{00015             \textcolor{keywordflow}{return} (S -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00016         }
+\DoxyCodeLine{00017         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{SpecialPayoffFunctions_8hh_a941b079b8b777eac5fafaf713f67027a}\label{SpecialPayoffFunctions_8hh_a941b079b8b777eac5fafaf713f67027a}} 
+\index{SpecialPayoffFunctions.hh@{SpecialPayoffFunctions.hh}!MyPutPayoffFN@{MyPutPayoffFN}}
+\index{MyPutPayoffFN@{MyPutPayoffFN}!SpecialPayoffFunctions.hh@{SpecialPayoffFunctions.hh}}
+\doxysubsubsection{\texorpdfstring{MyPutPayoffFN()}{MyPutPayoffFN()}}
+{\footnotesize\ttfamily double My\+Put\+Payoff\+FN (\begin{DoxyParamCaption}\item[{double}]{K,  }\item[{double}]{S }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SpecialPayoffFunctions_8hh_source_l00021}{21}} of file \mbox{\hyperlink{SpecialPayoffFunctions_8hh_source}{Special\+Payoff\+Functions.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023         \textcolor{comment}{// max (K-\/S, 0)}}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} > S)}
+\DoxyCodeLine{00025             \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} -\/ S);}
+\DoxyCodeLine{00026         }
+\DoxyCodeLine{00027         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}

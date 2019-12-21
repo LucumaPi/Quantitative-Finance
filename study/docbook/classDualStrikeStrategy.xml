@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classDualStrikeStrategy">
 <title>DualStrikeStrategy Class Reference</title>
 <indexterm><primary>DualStrikeStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MultiAssetPayoffStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for DualStrikeStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,47 @@ Collaboration diagram for DualStrikeStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classDualStrikeStrategy_1acb137e0591a87d9dc7fdabc0bea33ac9"/><emphasis role="strong">DualStrikeStrategy</emphasis> (double strike1, double strike2, double cp1, double cp2)</para>
+            <listitem><para><link linkend="_classDualStrikeStrategy_1acb137e0591a87d9dc7fdabc0bea33ac9">DualStrikeStrategy</link> (double strike1, double strike2, double cp1, double cp2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classDualStrikeStrategy_1a2b0c936589516174633636d12ea05e18"/>double <emphasis role="strong">payoff</emphasis> (double S1, double S2) const</para>
+            <listitem><para>double <link linkend="_classDualStrikeStrategy_1a2b0c936589516174633636d12ea05e18">payoff</link> (double S1, double S2) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 152 of file MultiAssetPayoffStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classDualStrikeStrategy_1acb137e0591a87d9dc7fdabc0bea33ac9"/>    <section>
+    <title>DualStrikeStrategy()</title>
+<indexterm><primary>DualStrikeStrategy</primary><secondary>DualStrikeStrategy</secondary></indexterm>
+<indexterm><primary>DualStrikeStrategy</primary><secondary>DualStrikeStrategy</secondary></indexterm>
+<para><computeroutput>DualStrikeStrategy::DualStrikeStrategy (double strike1, double strike2, double cp1, double cp2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 158 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;K1&#32;=&#32;strike1;&#32;K2&#32;=&#32;strike2;
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;w1&#32;=&#32;cp1;&#32;w2&#32;=&#32;cp2;
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classDualStrikeStrategy_1a2b0c936589516174633636d12ea05e18"/>    <section>
+    <title>payoff()</title>
+<indexterm><primary>payoff</primary><secondary>DualStrikeStrategy</secondary></indexterm>
+<indexterm><primary>DualStrikeStrategy</primary><secondary>payoff</secondary></indexterm>
+<para><computeroutput>double DualStrikeStrategy::payoff (double S1, double S2) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">MultiAssetPayoffStrategy</link>.</para>
+<para>
+Definition at line 163 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+165 
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>&#32;(w1*(S1-K1),&#32;w2*(S2-K2),&#32;0.0);
+167 
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-MultiAssetPayoffStrategy.hh</section>
+<link linkend="_MultiAssetPayoffStrategy_8hh">MultiAssetPayoffStrategy.hh</link></section>
+</section>

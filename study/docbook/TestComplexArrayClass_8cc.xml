@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestComplexArrayClass_8cc">
+<title>tests/TestComplexArrayClass.cc File Reference</title>
+<indexterm><primary>tests/TestComplexArrayClass.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/ComplexArray.hh&gt;
+</programlisting>Include dependency graph for TestComplexArrayClass.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestComplexArrayClass_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classComplex">Complex</link> <link linkend="_TestComplexArrayClass_8cc_1a96d33e68896cca70b2aaff9893026216">myFunc</link> (const <link linkend="_classComplex">Complex</link> &amp;z)</para>
+</listitem>
+            <listitem><para><link linkend="_classComplex">Complex</link> <link linkend="_TestComplexArrayClass_8cc_1a4eaa2da4881cac0cb7b3ab2341dff4aa">ComplexProduct</link> (const <link linkend="_classComplexArray">ComplexArray</link> &amp;carr, int <link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classComplex">Complex</link> <link linkend="_TestComplexArrayClass_8cc_1ab08250104ed32f11ccf42f0008efbe09">ComplexSum</link> (const <link linkend="_classComplexArray">ComplexArray</link> &amp;carr, int <link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestComplexArrayClass_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestComplexArrayClass_8cc_1a4eaa2da4881cac0cb7b3ab2341dff4aa"/>    <section>
+    <title>ComplexProduct()</title>
+<indexterm><primary>ComplexProduct</primary><secondary>TestComplexArrayClass.cc</secondary></indexterm>
+<indexterm><primary>TestComplexArrayClass.cc</primary><secondary>ComplexProduct</secondary></indexterm>
+<para><computeroutput><link linkend="_classComplex">Complex</link> ComplexProduct (const <link linkend="_classComplexArray">ComplexArray</link> &amp; carr, int n)</computeroutput></para><para>
+Definition at line 19 of file TestComplexArrayClass.cc.</para>
+<programlisting>20 {&#32;<emphasis role="comment">//&#32;Complex&#32;function&#32;of&#32;several&#32;complex&#32;variables</emphasis>
+21 
+22 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;<link linkend="_ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d">product</link>&#32;=&#32;carr[carr.<link linkend="_classComplexArray_1ab9cefe61064be624d5237baf9f2b4507">MinIndex</link>()];
+23 
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;carr.<link linkend="_classComplexArray_1ab9cefe61064be624d5237baf9f2b4507">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;carr.<link linkend="_classComplexArray_1ab5237189531cc3d8e67810b0b1143e01">MaxIndex</link>();&#32;j++)
+25 &#32;&#32;&#32;&#32;{
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d">product</link>&#32;*=&#32;carr[j];
+27 &#32;&#32;&#32;&#32;}
+28 
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d">product</link>;
+30 
+31 }
+</programlisting>    </section><anchor xml:id="_TestComplexArrayClass_8cc_1ab08250104ed32f11ccf42f0008efbe09"/>    <section>
+    <title>ComplexSum()</title>
+<indexterm><primary>ComplexSum</primary><secondary>TestComplexArrayClass.cc</secondary></indexterm>
+<indexterm><primary>TestComplexArrayClass.cc</primary><secondary>ComplexSum</secondary></indexterm>
+<para><computeroutput><link linkend="_classComplex">Complex</link> ComplexSum (const <link linkend="_classComplexArray">ComplexArray</link> &amp; carr, int n)</computeroutput></para><para>
+Definition at line 33 of file TestComplexArrayClass.cc.</para>
+<programlisting>34 {&#32;<emphasis role="comment">//&#32;Complex&#32;function&#32;of&#32;several&#32;complex&#32;variables</emphasis>
+35 
+36 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;<link linkend="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0">sum</link>&#32;=&#32;carr[carr.<link linkend="_classComplexArray_1ab9cefe61064be624d5237baf9f2b4507">MinIndex</link>()];
+37 
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;carr.<link linkend="_classComplexArray_1ab9cefe61064be624d5237baf9f2b4507">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;carr.<link linkend="_classComplexArray_1ab5237189531cc3d8e67810b0b1143e01">MaxIndex</link>();&#32;j++)
+39 &#32;&#32;&#32;&#32;{
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0">sum</link>&#32;+=&#32;carr[j];
+41 &#32;&#32;&#32;&#32;}
+42 
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0">sum</link>;
+44 
+45 }
+</programlisting>    </section><anchor xml:id="_TestComplexArrayClass_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestComplexArrayClass.cc</secondary></indexterm>
+<indexterm><primary>TestComplexArrayClass.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 47 of file TestComplexArrayClass.cc.</para>
+<programlisting>48 {
+49 
+50 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z1(1.0,&#32;1.0);
+51 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z2(2.0,&#32;3.0);
+52 
+53 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z3&#32;=&#32;z1&#32;*&#32;z2;
+54 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z4&#32;=&#32;2.0&#32;*&#32;z3;
+55 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;z5&#32;=&#32;-&#32;z3;
+56 
+57 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;dynamic&#32;list&#32;of&#32;Complex&#32;numbers</emphasis>
+58 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;Size&#32;=&#32;5;
+59 &#32;&#32;&#32;&#32;<link linkend="_classComplexArray">ComplexArray</link>&#32;cpArray&#32;(Size);
+60 &#32;&#32;&#32;&#32;cpArray[0]&#32;=&#32;z1;
+61 &#32;&#32;&#32;&#32;cpArray[1]&#32;=&#32;z2;
+62 &#32;&#32;&#32;&#32;cpArray[2]&#32;=&#32;z3;
+63 &#32;&#32;&#32;&#32;cpArray[3]&#32;=&#32;z4;
+64 &#32;&#32;&#32;&#32;cpArray[4]&#32;=&#32;z5;
+65 
+66 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Another&#32;complex&#32;array</emphasis>
+67 &#32;&#32;&#32;&#32;<link linkend="_classComplexArray">ComplexArray</link>&#32;fixedArray(5);
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;fixedArray.MinIndex();&#32;i&#32;&lt;=&#32;fixedArray.MaxIndex();&#32;i++)
+69 &#32;&#32;&#32;&#32;{
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fixedArray[i]&#32;=&#32;<link linkend="_classComplex">Complex</link>&#32;((<emphasis role="keywordtype">double</emphasis>)&#32;i,&#32;0.0);
+71 
+72 &#32;&#32;&#32;&#32;}
+73 
+74 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;function&#32;and&#32;print&#32;values&#32;for&#32;each&#32;z</emphasis>
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;Size;&#32;j++)
+76 &#32;&#32;&#32;&#32;{
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_TestComplexArrayClass_8cc_1a96d33e68896cca70b2aaff9893026216">myFunc</link>(cpArray[j])&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+78 
+79 &#32;&#32;&#32;&#32;}
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;work&#32;with&#32;functions&#32;of&#32;several&#32;complex&#32;variables</emphasis>
+82 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;<link linkend="_ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d">product</link>&#32;=&#32;<link linkend="_TestComplexArrayClass_8cc_1a4eaa2da4881cac0cb7b3ab2341dff4aa">ComplexProduct</link>(fixedArray,&#32;Size);
+83 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Product:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d">product</link>&#32;&lt;&lt;&#32;std::endl;
+84 
+85 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;<link linkend="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0">sum</link>&#32;=&#32;<link linkend="_TestComplexArrayClass_8cc_1ab08250104ed32f11ccf42f0008efbe09">ComplexSum</link>(fixedArray,&#32;Size);
+86 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Sum:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0">sum</link>&#32;&lt;&lt;&#32;std::endl;
+87 
+88 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+89 }
+</programlisting>    </section><anchor xml:id="_TestComplexArrayClass_8cc_1a96d33e68896cca70b2aaff9893026216"/>    <section>
+    <title>myFunc()</title>
+<indexterm><primary>myFunc</primary><secondary>TestComplexArrayClass.cc</secondary></indexterm>
+<indexterm><primary>TestComplexArrayClass.cc</primary><secondary>myFunc</secondary></indexterm>
+<para><computeroutput><link linkend="_classComplex">Complex</link> myFunc (const <link linkend="_classComplex">Complex</link> &amp; z)</computeroutput></para><para>
+Definition at line 13 of file TestComplexArrayClass.cc.</para>
+<programlisting>14 {&#32;<emphasis role="comment">//&#32;Single&#32;valued&#32;function&#32;of&#32;a&#32;complex&#32;variable</emphasis>
+15 
+16 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;z&#32;*&#32;z;
+17 }
+</programlisting></section>
+</section>
+</section>

@@ -2,6 +2,10 @@
 \label{classIBVPFDM}\index{IBVPFDM@{IBVPFDM}}
 
 
+{\ttfamily \#include $<$I\+B\+V\+P\+Solver.\+hh$>$}
+
+
+
 Inheritance diagram for I\+B\+V\+P\+F\+DM\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,99 +25,476 @@ Collaboration diagram for I\+B\+V\+P\+F\+DM\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_aa371f76cfb9f2b95ba24d6bbf1291353}\label{classIBVPFDM_aa371f76cfb9f2b95ba24d6bbf1291353}} 
-{\bfseries I\+B\+V\+P\+F\+DM} (\mbox{\hyperlink{classIBVP}{I\+B\+VP}} \&source, long N\+Steps, long J\+Steps)
+\mbox{\hyperlink{classIBVPFDM_a5a131f0efb8cb71abea192b6afd26cd2}{I\+B\+V\+P\+F\+DM}} ()
 \item 
-\mbox{\Hypertarget{classIBVPFDM_ab78e1e05532a2359e674a4a729314b9a}\label{classIBVPFDM_ab78e1e05532a2359e674a4a729314b9a}} 
-\mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \& {\bfseries result} ()
+\mbox{\hyperlink{classIBVPFDM_aa371f76cfb9f2b95ba24d6bbf1291353}{I\+B\+V\+P\+F\+DM}} (\mbox{\hyperlink{classIBVP}{I\+B\+VP}} \&source, long N\+Steps, long J\+Steps)
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a7172f8bc3eebc85940ece135065f96ba}\label{classIBVPFDM_a7172f8bc3eebc85940ece135065f96ba}} 
-\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries X\+Values} () const
+virtual \mbox{\hyperlink{classIBVPFDM_a08763948c0e366be4f87d4fc7173b1a2}{$\sim$\+I\+B\+V\+P\+F\+DM}} ()
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a95e702453d0b896062b632498e40438c}\label{classIBVPFDM_a95e702453d0b896062b632498e40438c}} 
-\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries T\+Values} () const
+\mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \& \mbox{\hyperlink{classIBVPFDM_ab78e1e05532a2359e674a4a729314b9a}{result}} ()
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}\label{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}} 
-virtual void {\bfseries calculate\+BC} ()=0
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{classIBVPFDM_a7172f8bc3eebc85940ece135065f96ba}{X\+Values}} () const
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}\label{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}} 
-virtual void {\bfseries calculate} ()=0
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{classIBVPFDM_a95e702453d0b896062b632498e40438c}{T\+Values}} () const
+\item 
+virtual void \mbox{\hyperlink{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}{calculate\+BC}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}{calculate}} ()=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a7614c8116ab9c08f6ccfb97dc6c1ff61}\label{classIBVPFDM_a7614c8116ab9c08f6ccfb97dc6c1ff61}} 
-{\bfseries I\+B\+V\+P\+F\+DM} (const \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \&source)
+\mbox{\hyperlink{classIBVPFDM_a7614c8116ab9c08f6ccfb97dc6c1ff61}{I\+B\+V\+P\+F\+DM}} (const \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \&source)
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a3102b8d994991d993193a35df3d6c5ee}\label{classIBVPFDM_a3102b8d994991d993193a35df3d6c5ee}} 
-\mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \& {\bfseries operator=} (const \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \&source)
+\mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \& \mbox{\hyperlink{classIBVPFDM_a3102b8d994991d993193a35df3d6c5ee}{operator=}} (const \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \&source)
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}\label{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}} 
-\mbox{\hyperlink{classIBVP}{I\+B\+VP}} $\ast$ {\bfseries ibvp}
+\mbox{\hyperlink{classIBVP}{I\+B\+VP}} $\ast$ \mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_aac47fc0313cfd94d1c76185636f01e09}\label{classIBVPFDM_aac47fc0313cfd94d1c76185636f01e09}} 
-long {\bfseries N}
+long \mbox{\hyperlink{classIBVPFDM_aac47fc0313cfd94d1c76185636f01e09}{N}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}\label{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}} 
-double {\bfseries k}
+double \mbox{\hyperlink{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}{k}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}\label{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}} 
-long {\bfseries J}
+long \mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a20ec2ca54a8768c22ae5579021bcbc21}\label{classIBVPFDM_a20ec2ca54a8768c22ae5579021bcbc21}} 
-double {\bfseries h}
+double \mbox{\hyperlink{classIBVPFDM_a20ec2ca54a8768c22ae5579021bcbc21}{h}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}\label{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}} 
-double {\bfseries h2}
+double \mbox{\hyperlink{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}{h2}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a7dc9a42c9aa5e88a0ce91bb2381083ef}\label{classIBVPFDM_a7dc9a42c9aa5e88a0ce91bb2381083ef}} 
-double {\bfseries DN}
+double \mbox{\hyperlink{classIBVPFDM_a7dc9a42c9aa5e88a0ce91bb2381083ef}{DN}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_aadd87ba406920f5c4441d26108568e7b}\label{classIBVPFDM_aadd87ba406920f5c4441d26108568e7b}} 
-double {\bfseries DJ}
+double \mbox{\hyperlink{classIBVPFDM_aadd87ba406920f5c4441d26108568e7b}{DJ}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_aad9a3178a48c9a131dd577cea5490495}\label{classIBVPFDM_aad9a3178a48c9a131dd577cea5490495}} 
-double {\bfseries D\+JJ}
+double \mbox{\hyperlink{classIBVPFDM_aad9a3178a48c9a131dd577cea5490495}{D\+JJ}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}\label{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}} 
-double {\bfseries tprev}
+double \mbox{\hyperlink{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}{tprev}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}\label{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}} 
-double {\bfseries tnow}
+double \mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}\label{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}} 
-long {\bfseries current\+Index}
+long \mbox{\hyperlink{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}{current\+Index}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a11c7f409e503aec453107f69460d4d5b}\label{classIBVPFDM_a11c7f409e503aec453107f69460d4d5b}} 
-long {\bfseries max\+Index}
+long \mbox{\hyperlink{classIBVPFDM_a11c7f409e503aec453107f69460d4d5b}{max\+Index}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a8852681de171f76e8351a07c6bb3fe8c}\label{classIBVPFDM_a8852681de171f76e8351a07c6bb3fe8c}} 
-\mbox{\hyperlink{classMesher}{Mesher}} {\bfseries m}
+\mbox{\hyperlink{classMesher}{Mesher}} \mbox{\hyperlink{classIBVPFDM_a8852681de171f76e8351a07c6bb3fe8c}{m}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_acde024de54dc2124db544dc6424365c7}\label{classIBVPFDM_acde024de54dc2124db544dc6424365c7}} 
-\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries xarr}
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{classIBVPFDM_acde024de54dc2124db544dc6424365c7}{xarr}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_aecdb91332047c215ff4548e897f8e2d8}\label{classIBVPFDM_aecdb91332047c215ff4548e897f8e2d8}} 
-\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries tarr}
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{classIBVPFDM_aecdb91332047c215ff4548e897f8e2d8}{tarr}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}\label{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}} 
-\mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ {\bfseries res}
+\mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \mbox{\hyperlink{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}{res}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_aa060a346aafe2c9d6f563e86211652f9}\label{classIBVPFDM_aa060a346aafe2c9d6f563e86211652f9}} 
-long {\bfseries n}
+long \mbox{\hyperlink{classIBVPFDM_aa060a346aafe2c9d6f563e86211652f9}{n}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}\label{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}} 
-\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries vec\+Old}
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}{vec\+Old}}
 \item 
-\mbox{\Hypertarget{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}\label{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}} 
-\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ {\bfseries vec\+New}
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vec\+New}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00027}{27}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIBVPFDM_a7614c8116ab9c08f6ccfb97dc6c1ff61}\label{classIBVPFDM_a7614c8116ab9c08f6ccfb97dc6c1ff61}} 
+\index{IBVPFDM@{IBVPFDM}!IBVPFDM@{IBVPFDM}}
+\index{IBVPFDM@{IBVPFDM}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{IBVPFDM()}{IBVPFDM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily I\+B\+V\+P\+F\+D\+M\+::\+I\+B\+V\+P\+F\+DM (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \&}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8cc_source_l00108}{108}} of file \mbox{\hyperlink{IBVPSolver_8cc_source}{I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109 \{}
+\DoxyCodeLine{00110     \textcolor{comment}{// Not allowed}}
+\DoxyCodeLine{00111 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIBVPFDM_a5a131f0efb8cb71abea192b6afd26cd2}\label{classIBVPFDM_a5a131f0efb8cb71abea192b6afd26cd2}} 
+\index{IBVPFDM@{IBVPFDM}!IBVPFDM@{IBVPFDM}}
+\index{IBVPFDM@{IBVPFDM}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{IBVPFDM()}{IBVPFDM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily I\+B\+V\+P\+F\+D\+M\+::\+I\+B\+V\+P\+F\+DM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8cc_source_l00087}{87}} of file \mbox{\hyperlink{IBVPSolver_8cc_source}{I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088 \{}
+\DoxyCodeLine{00089     \mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}} = 0;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     initMesh(10, 10);}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093     initIC();}
+\DoxyCodeLine{00094 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIBVPFDM_aa371f76cfb9f2b95ba24d6bbf1291353}\label{classIBVPFDM_aa371f76cfb9f2b95ba24d6bbf1291353}} 
+\index{IBVPFDM@{IBVPFDM}!IBVPFDM@{IBVPFDM}}
+\index{IBVPFDM@{IBVPFDM}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{IBVPFDM()}{IBVPFDM()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily I\+B\+V\+P\+F\+D\+M\+::\+I\+B\+V\+P\+F\+DM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIBVP}{I\+B\+VP}} \&}]{source,  }\item[{long}]{N\+Steps,  }\item[{long}]{J\+Steps }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8cc_source_l00096}{96}} of file \mbox{\hyperlink{IBVPSolver_8cc_source}{I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097 \{}
+\DoxyCodeLine{00098     \textcolor{comment}{// Decide which continuous problem to use}}
+\DoxyCodeLine{00099     \mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}} = \&source;}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{comment}{// Create a mesh}}
+\DoxyCodeLine{00102     initMesh(NSteps, JSteps);}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{comment}{// Initiase from the payoff function}}
+\DoxyCodeLine{00105     initIC();}
+\DoxyCodeLine{00106 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIBVPFDM_a08763948c0e366be4f87d4fc7173b1a2}\label{classIBVPFDM_a08763948c0e366be4f87d4fc7173b1a2}} 
+\index{IBVPFDM@{IBVPFDM}!````~IBVPFDM@{$\sim$IBVPFDM}}
+\index{````~IBVPFDM@{$\sim$IBVPFDM}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{$\sim$IBVPFDM()}{~IBVPFDM()}}
+{\footnotesize\ttfamily I\+B\+V\+P\+F\+D\+M\+::$\sim$\+I\+B\+V\+P\+F\+DM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8cc_source_l00113}{113}} of file \mbox{\hyperlink{IBVPSolver_8cc_source}{I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114 \{}
+\DoxyCodeLine{00115 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}\label{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}} 
+\index{IBVPFDM@{IBVPFDM}!calculate@{calculate}}
+\index{calculate@{calculate}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily virtual void I\+B\+V\+P\+F\+D\+M\+::calculate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classImplicitEulerIBVP_af71d063f8fb5df6a5a269c3c4f82fbc3}{Implicit\+Euler\+I\+B\+VP}}, and \mbox{\hyperlink{classExplicitEulerIBVP_af7590356fa10c6c1a218634e2b0b52b4}{Explicit\+Euler\+I\+B\+VP}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}\label{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}} 
+\index{IBVPFDM@{IBVPFDM}!calculateBC@{calculateBC}}
+\index{calculateBC@{calculateBC}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{calculateBC()}{calculateBC()}}
+{\footnotesize\ttfamily virtual void I\+B\+V\+P\+F\+D\+M\+::calculate\+BC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classImplicitEulerIBVP_afc239aeb2cd0d045f4836dca607abaa6}{Implicit\+Euler\+I\+B\+VP}}, and \mbox{\hyperlink{classExplicitEulerIBVP_a01074c892ad9625daa7885cba20afccc}{Explicit\+Euler\+I\+B\+VP}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a3102b8d994991d993193a35df3d6c5ee}\label{classIBVPFDM_a3102b8d994991d993193a35df3d6c5ee}} 
+\index{IBVPFDM@{IBVPFDM}!operator=@{operator=}}
+\index{operator=@{operator=}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \& I\+B\+V\+P\+F\+D\+M\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIBVPFDM}{I\+B\+V\+P\+F\+DM}} \&}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8cc_source_l00117}{117}} of file \mbox{\hyperlink{IBVPSolver_8cc_source}{I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118 \{}
+\DoxyCodeLine{00119     \textcolor{comment}{// Not allowed}}
+\DoxyCodeLine{00120     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00121 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIBVPFDM_ab78e1e05532a2359e674a4a729314b9a}\label{classIBVPFDM_ab78e1e05532a2359e674a4a729314b9a}} 
+\index{IBVPFDM@{IBVPFDM}!result@{result}}
+\index{result@{result}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{result()}{result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \& I\+B\+V\+P\+F\+D\+M\+::result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8cc_source_l00123}{123}} of file \mbox{\hyperlink{IBVPSolver_8cc_source}{I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124 \{ \textcolor{comment}{// The result of the calculation}}
+\DoxyCodeLine{00125 L1:}
+\DoxyCodeLine{00126     \mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}} = \mbox{\hyperlink{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}{tprev}} + \mbox{\hyperlink{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}{k}};}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128     \textcolor{comment}{// Template Method pattern here}}
+\DoxyCodeLine{00129     \textcolor{comment}{// Variant part}}
+\DoxyCodeLine{00130     \mbox{\hyperlink{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}{calculateBC}}(); \textcolor{comment}{// Calculate the BC at n+1}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132     \textcolor{comment}{// Variant part; pure virtual hook functions}}
+\DoxyCodeLine{00133     \mbox{\hyperlink{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}{calculate}} (); \textcolor{comment}{// Calculate the solution at n+1}}
+\DoxyCodeLine{00134     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}{currentIndex}} < \mbox{\hyperlink{classIBVPFDM_a11c7f409e503aec453107f69460d4d5b}{maxIndex}})}
+\DoxyCodeLine{00135     \{}
+\DoxyCodeLine{00136         \mbox{\hyperlink{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}{tprev}} = \mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}};}
+\DoxyCodeLine{00137         \mbox{\hyperlink{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}{currentIndex}}++;}
+\DoxyCodeLine{00138         \textcolor{comment}{// Now postprocess}}
+\DoxyCodeLine{00139         \mbox{\hyperlink{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}{res}}.\mbox{\hyperlink{classNumericMatrix_acad49f4a4c23aaf06113266b26f1f0ac}{Row}}(\mbox{\hyperlink{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}{currentIndex}}, \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}});}
+\DoxyCodeLine{00140         \mbox{\hyperlink{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}{vecOld}} = \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}};}
+\DoxyCodeLine{00141         \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00142     \}}
+\DoxyCodeLine{00143     \textcolor{keywordflow}{return} \mbox{\hyperlink{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}{res}};}
+\DoxyCodeLine{00144 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIBVPFDM_a95e702453d0b896062b632498e40438c}\label{classIBVPFDM_a95e702453d0b896062b632498e40438c}} 
+\index{IBVPFDM@{IBVPFDM}!TValues@{TValues}}
+\index{TValues@{TValues}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{TValues()}{TValues()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ I\+B\+V\+P\+F\+D\+M\+::\+T\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8cc_source_l00151}{151}} of file \mbox{\hyperlink{IBVPSolver_8cc_source}{I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00152 \{ \textcolor{comment}{// Array of time values}}
+\DoxyCodeLine{00153     \textcolor{keywordflow}{return} \mbox{\hyperlink{classIBVPFDM_aecdb91332047c215ff4548e897f8e2d8}{tarr}};}
+\DoxyCodeLine{00154 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIBVPFDM_a7172f8bc3eebc85940ece135065f96ba}\label{classIBVPFDM_a7172f8bc3eebc85940ece135065f96ba}} 
+\index{IBVPFDM@{IBVPFDM}!XValues@{XValues}}
+\index{XValues@{XValues}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{XValues()}{XValues()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ I\+B\+V\+P\+F\+D\+M\+::\+X\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8cc_source_l00146}{146}} of file \mbox{\hyperlink{IBVPSolver_8cc_source}{I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147 \{ \textcolor{comment}{// Array of x values}}
+\DoxyCodeLine{00148     \textcolor{keywordflow}{return} \mbox{\hyperlink{classIBVPFDM_acde024de54dc2124db544dc6424365c7}{xarr}};}
+\DoxyCodeLine{00149 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}\label{classIBVPFDM_aa0bbe9ffc911dccf04204793fe467622}} 
+\index{IBVPFDM@{IBVPFDM}!currentIndex@{currentIndex}}
+\index{currentIndex@{currentIndex}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{currentIndex}{currentIndex}}
+{\footnotesize\ttfamily long I\+B\+V\+P\+F\+D\+M\+::current\+Index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00050}{50}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_aadd87ba406920f5c4441d26108568e7b}\label{classIBVPFDM_aadd87ba406920f5c4441d26108568e7b}} 
+\index{IBVPFDM@{IBVPFDM}!DJ@{DJ}}
+\index{DJ@{DJ}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{DJ}{DJ}}
+{\footnotesize\ttfamily double I\+B\+V\+P\+F\+D\+M\+::\+DJ\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00046}{46}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_aad9a3178a48c9a131dd577cea5490495}\label{classIBVPFDM_aad9a3178a48c9a131dd577cea5490495}} 
+\index{IBVPFDM@{IBVPFDM}!DJJ@{DJJ}}
+\index{DJJ@{DJJ}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{DJJ}{DJJ}}
+{\footnotesize\ttfamily double I\+B\+V\+P\+F\+D\+M\+::\+D\+JJ\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00047}{47}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a7dc9a42c9aa5e88a0ce91bb2381083ef}\label{classIBVPFDM_a7dc9a42c9aa5e88a0ce91bb2381083ef}} 
+\index{IBVPFDM@{IBVPFDM}!DN@{DN}}
+\index{DN@{DN}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{DN}{DN}}
+{\footnotesize\ttfamily double I\+B\+V\+P\+F\+D\+M\+::\+DN\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00045}{45}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a20ec2ca54a8768c22ae5579021bcbc21}\label{classIBVPFDM_a20ec2ca54a8768c22ae5579021bcbc21}} 
+\index{IBVPFDM@{IBVPFDM}!h@{h}}
+\index{h@{h}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily double I\+B\+V\+P\+F\+D\+M\+::h\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00043}{43}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}\label{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}} 
+\index{IBVPFDM@{IBVPFDM}!h2@{h2}}
+\index{h2@{h2}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{h2}{h2}}
+{\footnotesize\ttfamily double I\+B\+V\+P\+F\+D\+M\+::h2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00043}{43}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}\label{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}} 
+\index{IBVPFDM@{IBVPFDM}!ibvp@{ibvp}}
+\index{ibvp@{ibvp}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{ibvp}{ibvp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIBVP}{I\+B\+VP}}$\ast$ I\+B\+V\+P\+F\+D\+M\+::ibvp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00037}{37}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}\label{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}} 
+\index{IBVPFDM@{IBVPFDM}!J@{J}}
+\index{J@{J}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{J}{J}}
+{\footnotesize\ttfamily long I\+B\+V\+P\+F\+D\+M\+::J\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00042}{42}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}\label{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}} 
+\index{IBVPFDM@{IBVPFDM}!k@{k}}
+\index{k@{k}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily double I\+B\+V\+P\+F\+D\+M\+::k\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00040}{40}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a8852681de171f76e8351a07c6bb3fe8c}\label{classIBVPFDM_a8852681de171f76e8351a07c6bb3fe8c}} 
+\index{IBVPFDM@{IBVPFDM}!m@{m}}
+\index{m@{m}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMesher}{Mesher}} I\+B\+V\+P\+F\+D\+M\+::m\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00051}{51}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a11c7f409e503aec453107f69460d4d5b}\label{classIBVPFDM_a11c7f409e503aec453107f69460d4d5b}} 
+\index{IBVPFDM@{IBVPFDM}!maxIndex@{maxIndex}}
+\index{maxIndex@{maxIndex}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{maxIndex}{maxIndex}}
+{\footnotesize\ttfamily long I\+B\+V\+P\+F\+D\+M\+::max\+Index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00050}{50}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_aac47fc0313cfd94d1c76185636f01e09}\label{classIBVPFDM_aac47fc0313cfd94d1c76185636f01e09}} 
+\index{IBVPFDM@{IBVPFDM}!N@{N}}
+\index{N@{N}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily long I\+B\+V\+P\+F\+D\+M\+::N\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00039}{39}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_aa060a346aafe2c9d6f563e86211652f9}\label{classIBVPFDM_aa060a346aafe2c9d6f563e86211652f9}} 
+\index{IBVPFDM@{IBVPFDM}!n@{n}}
+\index{n@{n}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily long I\+B\+V\+P\+F\+D\+M\+::n\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00059}{59}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}\label{classIBVPFDM_af4d88dae8cdfdc020b7ab0b296a7c8d5}} 
+\index{IBVPFDM@{IBVPFDM}!res@{res}}
+\index{res@{res}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{res}{res}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$double, long$>$ I\+B\+V\+P\+F\+D\+M\+::res\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00056}{56}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_aecdb91332047c215ff4548e897f8e2d8}\label{classIBVPFDM_aecdb91332047c215ff4548e897f8e2d8}} 
+\index{IBVPFDM@{IBVPFDM}!tarr@{tarr}}
+\index{tarr@{tarr}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{tarr}{tarr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$double, long$>$ I\+B\+V\+P\+F\+D\+M\+::tarr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00053}{53}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}\label{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}} 
+\index{IBVPFDM@{IBVPFDM}!tnow@{tnow}}
+\index{tnow@{tnow}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{tnow}{tnow}}
+{\footnotesize\ttfamily double I\+B\+V\+P\+F\+D\+M\+::tnow\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00049}{49}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}\label{classIBVPFDM_adcbf3a3c0024261777514d461f5fa28c}} 
+\index{IBVPFDM@{IBVPFDM}!tprev@{tprev}}
+\index{tprev@{tprev}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{tprev}{tprev}}
+{\footnotesize\ttfamily double I\+B\+V\+P\+F\+D\+M\+::tprev\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00049}{49}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}\label{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}} 
+\index{IBVPFDM@{IBVPFDM}!vecNew@{vecNew}}
+\index{vecNew@{vecNew}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{vecNew}{vecNew}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$double, long$>$ I\+B\+V\+P\+F\+D\+M\+::vec\+New\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00061}{61}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}\label{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}} 
+\index{IBVPFDM@{IBVPFDM}!vecOld@{vecOld}}
+\index{vecOld@{vecOld}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{vecOld}{vecOld}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$double, long$>$ I\+B\+V\+P\+F\+D\+M\+::vec\+Old\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00060}{60}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
+\mbox{\Hypertarget{classIBVPFDM_acde024de54dc2124db544dc6424365c7}\label{classIBVPFDM_acde024de54dc2124db544dc6424365c7}} 
+\index{IBVPFDM@{IBVPFDM}!xarr@{xarr}}
+\index{xarr@{xarr}!IBVPFDM@{IBVPFDM}}
+\doxysubsubsection{\texorpdfstring{xarr}{xarr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$double, long$>$ I\+B\+V\+P\+F\+D\+M\+::xarr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{IBVPSolver_8hh_source_l00052}{52}} of file \mbox{\hyperlink{IBVPSolver_8hh_source}{I\+B\+V\+P\+Solver.\+hh}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/I\+B\+V\+P\+Solver.\+hh\item 
-src/I\+B\+V\+P\+Solver.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{IBVPSolver_8hh}{I\+B\+V\+P\+Solver.\+hh}}\item 
+src/\mbox{\hyperlink{IBVPSolver_8cc}{I\+B\+V\+P\+Solver.\+cc}}\end{DoxyCompactItemize}

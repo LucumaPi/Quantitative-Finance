@@ -1,0 +1,90 @@
+\hypertarget{BSIBVPImp_8cc_source}{}\doxysection{B\+S\+I\+B\+V\+P\+Imp.\+cc}
+\label{BSIBVPImp_8cc_source}\index{src/BSIBVPImp.cc@{src/BSIBVPImp.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// BSImp.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Implementation class for one-\/factor initial boundary}}
+\DoxyCodeLine{00004 \textcolor{comment}{// value problems.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// In this case, Black Scholes equation.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// Class for the Black Scholes Parabolic IBVP. You can customise }}
+\DoxyCodeLine{00009 \textcolor{comment}{// it to suit your needs. e.g. time and asset dependent volatility.}}
+\DoxyCodeLine{00010 \textcolor{comment}{// Notice that the functions in the IBVP uses constant Properties }}
+\DoxyCodeLine{00011 \textcolor{comment}{// from an Option object.}}
+\DoxyCodeLine{00012 \textcolor{comment}{//}}
+\DoxyCodeLine{00013 \textcolor{comment}{// Note: in BCL() and BCR() you comment out code depending on whether}}
+\DoxyCodeLine{00014 \textcolor{comment}{// you use Call or Put. Diriclet boundary conditions only.}}
+\DoxyCodeLine{00015 \textcolor{comment}{//}}
+\DoxyCodeLine{00016 \textcolor{comment}{// Last Modification Dates:}}
+\DoxyCodeLine{00017 \textcolor{comment}{//}}
+\DoxyCodeLine{00018 \textcolor{comment}{// 2005-\/9-\/26 DD Kick off}}
+\DoxyCodeLine{00019 \textcolor{comment}{// 2005-\/11-\/26 DD Finish}}
+\DoxyCodeLine{00020 \textcolor{comment}{// 2005-\/11-\/27 DD New cpp structure}}
+\DoxyCodeLine{00021 \textcolor{comment}{//}}
+\DoxyCodeLine{00022 \textcolor{comment}{// (C) Datasim Component Technology BV 2000-\/2006}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{BSIBVPImp_8hh}{duffy/BSIBVPImp.hh}}>}}
+\DoxyCodeLine{00025 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{OneFactorPayoff_8hh}{duffy/OneFactorPayoff.hh}}>}     \textcolor{comment}{// Payoff function hierarchy}}
+\DoxyCodeLine{00026 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Instrument_8hh}{duffy/Instrument.hh}}>}           \textcolor{comment}{// Basic Option hierarchy}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8cc_source_l00028}\mbox{\hyperlink{classBSIBVPImp_a53b1215fe69f27963fd50efdff016c37}{00028}} \mbox{\hyperlink{classBSIBVPImp_a53b1215fe69f27963fd50efdff016c37}{BSIBVPImp::BSIBVPImp}}(\mbox{\hyperlink{classOption}{Option}}\& option) }
+\DoxyCodeLine{00029 \{}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classBSIBVPImp_a1385dc1b264a9f515a4658eb1819f40c}{opt}} = \&option;}
+\DoxyCodeLine{00031 \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8cc_source_l00033}\mbox{\hyperlink{classBSIBVPImp_a05000857b51162805c7e18eca965d0e2}{00033}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBSIBVPImp_a05000857b51162805c7e18eca965d0e2}{BSIBVPImp::diffusion}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00034 \textcolor{keyword}{}\{ \textcolor{comment}{// simulates diffusion}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{double} v = (\mbox{\hyperlink{classBSIBVPImp_a1385dc1b264a9f515a4658eb1819f40c}{opt}} -\/> \mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}}); \textcolor{comment}{// volatility}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} 0.5 * v * v * x * x;}
+\DoxyCodeLine{00038 \}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8cc_source_l00040}\mbox{\hyperlink{classBSIBVPImp_a5d87cb6dc051a19fc79480de9a500584}{00040}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBSIBVPImp_a5d87cb6dc051a19fc79480de9a500584}{BSIBVPImp::convection}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00041 \textcolor{keyword}{}\{ \textcolor{comment}{// simulates drift}}
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} (\mbox{\hyperlink{classBSIBVPImp_a1385dc1b264a9f515a4658eb1819f40c}{opt}} -\/> \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}) * x; \textcolor{comment}{// r == interest rate}}
+\DoxyCodeLine{00043 \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8cc_source_l00045}\mbox{\hyperlink{classBSIBVPImp_a09792b6764a4a2399bc1bd1706390cfb}{00045}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBSIBVPImp_a09792b6764a4a2399bc1bd1706390cfb}{BSIBVPImp::zeroterm}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} \textcolor{comment}{// Coefficient of zero derivative}}
+\DoxyCodeLine{00046 \{}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} -\/ (opt -\/> \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});   }
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8cc_source_l00050}\mbox{\hyperlink{classBSIBVPImp_a3ea23ce43480c17b1a5ac901b18b44ad}{00050}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBSIBVPImp_a3ea23ce43480c17b1a5ac901b18b44ad}{BSIBVPImp::RHS}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const}       \textcolor{comment}{// Inhomogeneous forcing term}}
+\DoxyCodeLine{00051 \{}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00053 \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 \textcolor{comment}{// Boundary and initial conditions}}
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8cc_source_l00056}\mbox{\hyperlink{classBSIBVPImp_ab2de01f340004202e7f2462bfde5fed0}{00056}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBSIBVPImp_ab2de01f340004202e7f2462bfde5fed0}{BSIBVPImp::BCL}}(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const}                 \textcolor{comment}{// Left hand boundary condition}}
+\DoxyCodeLine{00057 \{}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{if} (opt-\/>type == \textcolor{charliteral}{'C'})}
+\DoxyCodeLine{00060     \{}
+\DoxyCodeLine{00061         \textcolor{keywordflow}{return} 0.0; \textcolor{comment}{//C}}
+\DoxyCodeLine{00062     \}}
+\DoxyCodeLine{00063     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00064     \{}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{return} (opt-\/>K) * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/ (opt-\/>r) * ((opt-\/>T) -\/ t)); \textcolor{comment}{// P}}
+\DoxyCodeLine{00066     \}}
+\DoxyCodeLine{00067 \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8cc_source_l00069}\mbox{\hyperlink{classBSIBVPImp_a6f61eb5b6eaa9c29771fe7807707d13c}{00069}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBSIBVPImp_a6f61eb5b6eaa9c29771fe7807707d13c}{BSIBVPImp::BCR}}(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const}                 \textcolor{comment}{// Right hand boundary condition}}
+\DoxyCodeLine{00070 \{}
+\DoxyCodeLine{00071     \textcolor{keywordflow}{if} (opt-\/>type == \textcolor{charliteral}{'C'})}
+\DoxyCodeLine{00072     \{}
+\DoxyCodeLine{00073         \textcolor{keywordflow}{return} opt-\/>SMax; \textcolor{comment}{// Magic number}}
+\DoxyCodeLine{00074     \}}
+\DoxyCodeLine{00075     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00076     \{}
+\DoxyCodeLine{00077         \textcolor{keywordflow}{return} 0.0; \textcolor{comment}{//P}}
+\DoxyCodeLine{00078     \}}
+\DoxyCodeLine{00079 \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{\Hypertarget{BSIBVPImp_8cc_source_l00081}\mbox{\hyperlink{classBSIBVPImp_aa08d1b40f4ea2af9b19b75a7bdff2961}{00081}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBSIBVPImp_aa08d1b40f4ea2af9b19b75a7bdff2961}{BSIBVPImp::IC}}(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const}                   \textcolor{comment}{// Initial condition}}
+\DoxyCodeLine{00082 \{}
+\DoxyCodeLine{00083     \textcolor{keywordflow}{return} (*opt).OptionPayoff.payoff(x);}
+\DoxyCodeLine{00084 \}}
+
+\end{DoxyCode}

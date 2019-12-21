@@ -2,6 +2,10 @@
 \label{classLine}\index{Line@{Line}}
 
 
+{\ttfamily \#include $<$Line.\+hh$>$}
+
+
+
 Inheritance diagram for Line\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,36 +25,248 @@ Collaboration diagram for Line\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classLine_a1ae47824ad48165388e38aaad43d09f5}\label{classLine_a1ae47824ad48165388e38aaad43d09f5}} 
-{\bfseries Line} (const \mbox{\hyperlink{classPoint}{Point}} \&ps1, const \mbox{\hyperlink{classPoint}{Point}} \&ps2)
+\mbox{\hyperlink{classLine_acc11b8a429d8cdd63ba6803dff5602b3}{Line}} ()
 \item 
-\mbox{\Hypertarget{classLine_a6c0606903a34f52c01708683fd274a91}\label{classLine_a6c0606903a34f52c01708683fd274a91}} 
-{\bfseries Line} (const \mbox{\hyperlink{classLine}{Line}} \&source)
+\mbox{\hyperlink{classLine_a1ae47824ad48165388e38aaad43d09f5}{Line}} (const \mbox{\hyperlink{classPoint}{Point}} \&ps1, const \mbox{\hyperlink{classPoint}{Point}} \&ps2)
 \item 
-\mbox{\Hypertarget{classLine_ab057f21a08e21a7f293ad63d55f8e464}\label{classLine_ab057f21a08e21a7f293ad63d55f8e464}} 
-\mbox{\hyperlink{classPoint}{Point}} {\bfseries P1} () const
+\mbox{\hyperlink{classLine_a6c0606903a34f52c01708683fd274a91}{Line}} (const \mbox{\hyperlink{classLine}{Line}} \&source)
 \item 
-\mbox{\Hypertarget{classLine_a8ac7e2f4468352e7c5ddfa91a4940bf4}\label{classLine_a8ac7e2f4468352e7c5ddfa91a4940bf4}} 
-\mbox{\hyperlink{classPoint}{Point}} {\bfseries P2} () const
+virtual \mbox{\hyperlink{classLine_aabe85f48d22d92b62257091f48174fac}{$\sim$\+Line}} ()
 \item 
-\mbox{\Hypertarget{classLine_ae3937c096b95a8f8865a714d98c71eba}\label{classLine_ae3937c096b95a8f8865a714d98c71eba}} 
-double {\bfseries Length} () const
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classLine_ab057f21a08e21a7f293ad63d55f8e464}{P1}} () const
 \item 
-\mbox{\Hypertarget{classLine_aa5e8d11034af6b8065619bf00298a09d}\label{classLine_aa5e8d11034af6b8065619bf00298a09d}} 
-\mbox{\hyperlink{classPoint}{Point}} {\bfseries Mid\+Point} () const
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classLine_a8ac7e2f4468352e7c5ddfa91a4940bf4}{P2}} () const
 \item 
-\mbox{\Hypertarget{classLine_ac2fb0254947216caad3237df8c9fd412}\label{classLine_ac2fb0254947216caad3237df8c9fd412}} 
-void {\bfseries P1} (const \mbox{\hyperlink{classPoint}{Point}} \&New\+P1)
+double \mbox{\hyperlink{classLine_ae3937c096b95a8f8865a714d98c71eba}{Length}} () const
 \item 
-\mbox{\Hypertarget{classLine_abb54ac4f52e335e6715fcf335d480ffd}\label{classLine_abb54ac4f52e335e6715fcf335d480ffd}} 
-void {\bfseries P2} (const \mbox{\hyperlink{classPoint}{Point}} \&New\+P2)
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classLine_aa5e8d11034af6b8065619bf00298a09d}{Mid\+Point}} () const
 \item 
-\mbox{\Hypertarget{classLine_a3ed026438ecc23607f23e59ec6a449a7}\label{classLine_a3ed026438ecc23607f23e59ec6a449a7}} 
-\mbox{\hyperlink{classLine}{Line}} \& {\bfseries operator=} (const \mbox{\hyperlink{classLine}{Line}} \&source)
+void \mbox{\hyperlink{classLine_ac2fb0254947216caad3237df8c9fd412}{P1}} (const \mbox{\hyperlink{classPoint}{Point}} \&New\+P1)
+\item 
+void \mbox{\hyperlink{classLine_abb54ac4f52e335e6715fcf335d480ffd}{P2}} (const \mbox{\hyperlink{classPoint}{Point}} \&New\+P2)
+\item 
+\mbox{\hyperlink{classLine}{Line}} \& \mbox{\hyperlink{classLine_a3ed026438ecc23607f23e59ec6a449a7}{operator=}} (const \mbox{\hyperlink{classLine}{Line}} \&source)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Line_8hh_source_l00013}{13}} of file \mbox{\hyperlink{Line_8hh_source}{Line.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLine_acc11b8a429d8cdd63ba6803dff5602b3}\label{classLine_acc11b8a429d8cdd63ba6803dff5602b3}} 
+\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{Line()}{Line()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Line\+::\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00020}{20}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020           : \mbox{\hyperlink{classShape_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}}()}
+\DoxyCodeLine{00021 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     init(\mbox{\hyperlink{classPoint}{Point}}(0.0, 0.0), \mbox{\hyperlink{classPoint}{Point}}(0.0, 0.0));}
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_a1ae47824ad48165388e38aaad43d09f5}\label{classLine_a1ae47824ad48165388e38aaad43d09f5}} 
+\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{Line()}{Line()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Line\+::\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{ps1,  }\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{ps2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00026}{26}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026                                             : \mbox{\hyperlink{classShape_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}}()     }
+\DoxyCodeLine{00027 \{ \textcolor{comment}{// Normal constructor, constructs line from two points}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     init(ps1, ps2);}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_a6c0606903a34f52c01708683fd274a91}\label{classLine_a6c0606903a34f52c01708683fd274a91}} 
+\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{Line()}{Line()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Line\+::\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLine}{Line}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00032}{32}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032                             : \mbox{\hyperlink{classShape_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}}(source)}
+\DoxyCodeLine{00033 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     init(source.p1, source.p2);}
+\DoxyCodeLine{00036 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_aabe85f48d22d92b62257091f48174fac}\label{classLine_aabe85f48d22d92b62257091f48174fac}} 
+\index{Line@{Line}!````~Line@{$\sim$Line}}
+\index{````~Line@{$\sim$Line}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{$\sim$Line()}{~Line()}}
+{\footnotesize\ttfamily Line\+::$\sim$\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00038}{38}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00040 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLine_ae3937c096b95a8f8865a714d98c71eba}\label{classLine_ae3937c096b95a8f8865a714d98c71eba}} 
+\index{Line@{Line}!Length@{Length}}
+\index{Length@{Length}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{Length()}{Length()}}
+{\footnotesize\ttfamily double Line\+::\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00053}{53}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054 \{ \textcolor{comment}{// Calculate the distance between start-\/ and endpoint}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} p1.\mbox{\hyperlink{classPoint_a157aafa697fc65028517c431b6c313a2}{Distance}}(p2);}
+\DoxyCodeLine{00057 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_aa5e8d11034af6b8065619bf00298a09d}\label{classLine_aa5e8d11034af6b8065619bf00298a09d}} 
+\index{Line@{Line}!MidPoint@{MidPoint}}
+\index{MidPoint@{MidPoint}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{MidPoint()}{MidPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Line\+::\+Mid\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00059}{59}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060 \{ \textcolor{comment}{// Calculate the point in the middle of the line}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{keywordflow}{return} p1.\mbox{\hyperlink{classPoint_a58fd5b2bb9af8cf2bf978dfdeb8794d9}{MidPoint}}(p2);}
+\DoxyCodeLine{00063 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_a3ed026438ecc23607f23e59ec6a449a7}\label{classLine_a3ed026438ecc23607f23e59ec6a449a7}} 
+\index{Line@{Line}!operator=@{operator=}}
+\index{operator=@{operator=}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLine}{Line}} \& Line\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLine}{Line}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00078}{78}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079 \{ \textcolor{comment}{// Assignment }}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00082     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{comment}{// Call base class assignment}}
+\DoxyCodeLine{00085     \mbox{\hyperlink{classShape_afcefeb5c8a6d3b2f7b6426d299eafe02}{Shape::operator = }}(source);}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{comment}{// Copy state}}
+\DoxyCodeLine{00088     init(source.p1, source.p2);}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00091 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_ab057f21a08e21a7f293ad63d55f8e464}\label{classLine_ab057f21a08e21a7f293ad63d55f8e464}} 
+\index{Line@{Line}!P1@{P1}}
+\index{P1@{P1}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{P1()}{P1()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Line\+::\+P1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00043}{43}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044 \{\textcolor{comment}{// Return p1}}
+\DoxyCodeLine{00045     \textcolor{keywordflow}{return} p1;}
+\DoxyCodeLine{00046 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_ac2fb0254947216caad3237df8c9fd412}\label{classLine_ac2fb0254947216caad3237df8c9fd412}} 
+\index{Line@{Line}!P1@{P1}}
+\index{P1@{P1}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{P1()}{P1()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Line\+::\+P1 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{New\+P1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00067}{67}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068 \{\textcolor{comment}{// Set p1}}
+\DoxyCodeLine{00069     p1 = NewP1;}
+\DoxyCodeLine{00070 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_a8ac7e2f4468352e7c5ddfa91a4940bf4}\label{classLine_a8ac7e2f4468352e7c5ddfa91a4940bf4}} 
+\index{Line@{Line}!P2@{P2}}
+\index{P2@{P2}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{P2()}{P2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Line\+::\+P2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00048}{48}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049 \{\textcolor{comment}{// Return p2}}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} p2;}
+\DoxyCodeLine{00051 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLine_abb54ac4f52e335e6715fcf335d480ffd}\label{classLine_abb54ac4f52e335e6715fcf335d480ffd}} 
+\index{Line@{Line}!P2@{P2}}
+\index{P2@{P2}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{P2()}{P2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Line\+::\+P2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{New\+P2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Line_8cc_source_l00072}{72}} of file \mbox{\hyperlink{Line_8cc_source}{Line.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073 \{\textcolor{comment}{// Set p2}}
+\DoxyCodeLine{00074     p2 = NewP2;}
+\DoxyCodeLine{00075 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Line.\+hh\item 
-src/Line.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{Line_8hh}{Line.\+hh}}\item 
+src/\mbox{\hyperlink{Line_8cc}{Line.\+cc}}\end{DoxyCompactItemize}

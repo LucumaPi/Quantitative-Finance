@@ -1,0 +1,101 @@
+\hypertarget{TestAssocArrayTypedef_8cc_source}{}\doxysection{Test\+Assoc\+Array\+Typedef.\+cc}
+\label{TestAssocArrayTypedef_8cc_source}\index{tests/TestAssocArrayTypedef.cc@{tests/TestAssocArrayTypedef.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testAssocArraytypedef.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing associative arrays. In this case the new keyword}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{//      typename}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Education BV 2003}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{AssocArray_8hh}{duffy/AssocArray.hh}}>}}
+\DoxyCodeLine{00012 \textcolor{comment}{//\#include <duffy/Array.hh>}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{TestAssocArrayTypedef_8cc_source_l00015}\mbox{\hyperlink{TestAssocArrayTypedef_8cc_a6eb6772489e279ed41c4572b667ba89c}{00015}} \textcolor{keyword}{typedef} \mbox{\hyperlink{classAssocArray}{AssocArray<double, std::string>}} \mbox{\hyperlink{TestAssocArrayTypedef_8cc_a6eb6772489e279ed41c4572b667ba89c}{AArray}};}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{TestAssocArrayTypedef_8cc_source_l00017}\mbox{\hyperlink{classDD}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classDD}{DD}}}
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TestAssocArrayTypedef_8cc_source_l00020}\mbox{\hyperlink{classDD_a6bc9f39ffe66e7435cee91fdec13e244}{00020}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{classArray}{Array<double>}} \mbox{\hyperlink{classDD_a6bc9f39ffe66e7435cee91fdec13e244}{DArray}};}
+\DoxyCodeLine{00021 \};}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{TestAssocArrayTypedef_8cc_source_l00023}\mbox{\hyperlink{TestAssocArrayTypedef_8cc_a2bb34dd95eef1806366acea95f2977db}{00023}} \textcolor{keywordtype}{void} \mbox{\hyperlink{TestAssocArrayTypedef_8cc_a2bb34dd95eef1806366acea95f2977db}{print}} (\textcolor{keyword}{const} \mbox{\hyperlink{classAssocArray}{AArray}}\& assArr)}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025     \textcolor{comment}{// Iterating in the map}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classAssocArray_adea91a1cf7a2abbfdfd4c9bc7c746c62}{AArray::const\_iterator}} i = assArr.\mbox{\hyperlink{classAssocArray_a3fbe23088af5d36d97acd4b76bcb0107}{Begin}}();}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{while} (i != assArr.\mbox{\hyperlink{classAssocArray_a600b9a0280c6f67380abc032dad1d755}{End}}())}
+\DoxyCodeLine{00029     \{}
+\DoxyCodeLine{00030         std::cout << \textcolor{stringliteral}{"Element pair ["} << (*i).first << \textcolor{stringliteral}{","} << (*i).second << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00031 \textcolor{comment}{//      std::cout << assArr[(*i).first] << ", " ;}}
+\DoxyCodeLine{00032             i++;}
+\DoxyCodeLine{00033     \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     std::cout << std::endl;}
+\DoxyCodeLine{00036 \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{\Hypertarget{TestAssocArrayTypedef_8cc_source_l00038}\mbox{\hyperlink{TestAssocArrayTypedef_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00038}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestAssocArrayTypedef_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00039 \{}
+\DoxyCodeLine{00040     std::list<std::string> names;}
+\DoxyCodeLine{00041     names.push\_back(\textcolor{stringliteral}{"A1"});}
+\DoxyCodeLine{00042     names.push\_back(\textcolor{stringliteral}{"A2"});}
+\DoxyCodeLine{00043     names.push\_back(\textcolor{stringliteral}{"A3"});}
+\DoxyCodeLine{00044     names.push\_back(\textcolor{stringliteral}{"A4"});}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \mbox{\hyperlink{classArray}{Array<double>}} myArr(4);}
+\DoxyCodeLine{00048     myArr[1] = 2.0;}
+\DoxyCodeLine{00049     myArr[2] = 3.0;}
+\DoxyCodeLine{00050     myArr[3] = 4.0;}
+\DoxyCodeLine{00051     myArr[4] = 5.0;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \mbox{\hyperlink{classAssocArray}{AArray}} myAssocArray(names, myArr);}
+\DoxyCodeLine{00054 \textcolor{comment}{/*}}
+\DoxyCodeLine{00055 \textcolor{comment}{    // Iterating in the map}}
+\DoxyCodeLine{00056 \textcolor{comment}{    print(myAssocArray);}}
+\DoxyCodeLine{00057 \textcolor{comment}{}}
+\DoxyCodeLine{00058 \textcolor{comment}{    }}
+\DoxyCodeLine{00059 \textcolor{comment}{    myAssocArray["A4"] = 99.99;}}
+\DoxyCodeLine{00060 \textcolor{comment}{}}
+\DoxyCodeLine{00061 \textcolor{comment}{    print(myAssocArray);}}
+\DoxyCodeLine{00062 \textcolor{comment}{}}
+\DoxyCodeLine{00063 \textcolor{comment}{    AssocArray<double, std::string> myAssocArray2(names, 3.14);}}
+\DoxyCodeLine{00064 \textcolor{comment}{    print(myAssocArray2);}}
+\DoxyCodeLine{00065 \textcolor{comment}{}}
+\DoxyCodeLine{00066 \textcolor{comment}{}}
+\DoxyCodeLine{00067 \textcolor{comment}{    Array<std::string> mystrArray(4, 1);}}
+\DoxyCodeLine{00068 \textcolor{comment}{    mystrArray[1] = "A";}}
+\DoxyCodeLine{00069 \textcolor{comment}{    mystrArray[2] = "B";}}
+\DoxyCodeLine{00070 \textcolor{comment}{    mystrArray[3] = "C";}}
+\DoxyCodeLine{00071 \textcolor{comment}{    mystrArray[4] = "D";}}
+\DoxyCodeLine{00072 \textcolor{comment}{}}
+\DoxyCodeLine{00073 \textcolor{comment}{    Array<double> myArr3(4);}}
+\DoxyCodeLine{00074 \textcolor{comment}{    myArr3[1] = -\/2.0;}}
+\DoxyCodeLine{00075 \textcolor{comment}{    myArr3[2] = 3.0;}}
+\DoxyCodeLine{00076 \textcolor{comment}{    myArr3[3] = 4.0;}}
+\DoxyCodeLine{00077 \textcolor{comment}{    myArr3[4] = -\/5.0;}}
+\DoxyCodeLine{00078 \textcolor{comment}{}}
+\DoxyCodeLine{00079 \textcolor{comment}{    AArray myAssocArray3(mystrArray, myArr3);}}
+\DoxyCodeLine{00080 \textcolor{comment}{    std::cout << "Last one\(\backslash\)n";}}
+\DoxyCodeLine{00081 \textcolor{comment}{    print(myAssocArray3);}}
+\DoxyCodeLine{00082 \textcolor{comment}{}}
+\DoxyCodeLine{00083 \textcolor{comment}{    // Iterating}}
+\DoxyCodeLine{00084 \textcolor{comment}{    std::cout << "Iterating\(\backslash\)n";}}
+\DoxyCodeLine{00085 \textcolor{comment}{    AArray::const\_iterator i;}}
+\DoxyCodeLine{00086 \textcolor{comment}{    }}
+\DoxyCodeLine{00087 \textcolor{comment}{    // Print every character in the vector}}
+\DoxyCodeLine{00088 \textcolor{comment}{    for (i=myAssocArray3.Begin(); i!=myAssocArray3.End(); i++)}}
+\DoxyCodeLine{00089 \textcolor{comment}{    \{}}
+\DoxyCodeLine{00090 \textcolor{comment}{        std::cout<< "\{" << (*i).first << ", " << (*i).second << "\}\(\backslash\)n";}}
+\DoxyCodeLine{00091 \textcolor{comment}{    \}}}
+\DoxyCodeLine{00092 \textcolor{comment}{}}
+\DoxyCodeLine{00093 \textcolor{comment}{*/}}
+\DoxyCodeLine{00094     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00095 \}}
+
+\end{DoxyCode}

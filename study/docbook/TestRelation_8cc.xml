@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestRelation_8cc">
+<title>tests/TestRelation.cc File Reference</title>
+<indexterm><primary>tests/TestRelation.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;duffy/Relation.hh&gt;
+</programlisting>Include dependency graph for TestRelation.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestRelation_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class D , class R &gt; </para><para>void <link linkend="_TestRelation_8cc_1ac20cd1a14c9b4b66d0ed20bba2a45b69">print</link> (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp;r)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestRelation_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestRelation_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestRelation.cc</secondary></indexterm>
+<indexterm><primary>TestRelation.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 25 of file TestRelation.cc.</para>
+<programlisting>26 {
+27 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;s1;
+28 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+29 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;B&apos;</emphasis>);
+30 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;C&apos;</emphasis>);
+31 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+32 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;F&apos;</emphasis>);
+33 &#32;&#32;&#32;&#32;
+34 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;s2;
+35 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;X&apos;</emphasis>);
+36 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;Y&apos;</emphasis>);
+37 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;Z&apos;</emphasis>);
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+39 &#32;&#32;&#32;&#32;<link linkend="_classRelation">Relation&lt;char, char&gt;</link>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>(s1,&#32;s2);
+40 
+41 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;A&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>);
+42 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;A&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;D&apos;</emphasis>);&#32;<emphasis role="comment">//&#32;will&#32;not&#32;be&#32;inserted</emphasis>
+43 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;A&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+44 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;A&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;Y&apos;</emphasis>);
+45 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>);
+46 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>);
+47 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>);
+48 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>);
+49 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>);&#32;<emphasis role="comment">//&#32;Does&#32;not&#32;delete</emphasis>
+50 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;C&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;Y&apos;</emphasis>);
+51 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;Z&apos;</emphasis>);
+52 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.addRelation(<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>);
+53 
+54 &#32;&#32;&#32;&#32;<link linkend="_TestRelation_8cc_1ac20cd1a14c9b4b66d0ed20bba2a45b69">print</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+55 
+56 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Delete&#32;X\n&quot;</emphasis>;
+57 
+58 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.removeRangeElement(<emphasis role="charliteral">&apos;X&apos;</emphasis>);
+59 &#32;&#32;&#32;&#32;<link linkend="_TestRelation_8cc_1ac20cd1a14c9b4b66d0ed20bba2a45b69">print</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+60 
+61 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Delete&#32;B\n&quot;</emphasis>;
+62 
+63 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.removeDomainElement(<emphasis role="charliteral">&apos;B&apos;</emphasis>);
+64 &#32;&#32;&#32;&#32;<link linkend="_TestRelation_8cc_1ac20cd1a14c9b4b66d0ed20bba2a45b69">print</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+65 
+66 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Delete&#32;A\n&quot;</emphasis>;
+67 
+68 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.removeDomainElement(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+69 &#32;&#32;&#32;&#32;<link linkend="_TestRelation_8cc_1ac20cd1a14c9b4b66d0ed20bba2a45b69">print</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+70 
+71 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+72 }
+</programlisting>    </section><anchor xml:id="_TestRelation_8cc_1ac20cd1a14c9b4b66d0ed20bba2a45b69"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestRelation.cc</secondary></indexterm>
+<indexterm><primary>TestRelation.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class D , class R &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classRelation">Relation</link>&lt; <link linkend="_classD">D</link>, R &gt; &amp; r)</computeroutput></para><para>
+Definition at line 13 of file TestRelation.cc.</para>
+<programlisting>14 {
+15 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_classRelation_1a281fd0ec83966c0c8ba00e59364c3152">Relation&lt;D,R&gt;::const_iterator</link>&#32;i&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.Begin();
+16 
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.End())
+18 &#32;&#32;&#32;&#32;{&#32;
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;[&quot;</emphasis>&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>&#32;&lt;&lt;&#32;(*i).second&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;],&#32;&quot;</emphasis>;
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+21 &#32;&#32;&#32;&#32;}
+22 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+23 }
+</programlisting></section>
+</section>
+</section>

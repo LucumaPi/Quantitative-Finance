@@ -15,7 +15,7 @@
       </node>
       <node id="3">
         <label>duffy/Point.hh</label>
-        <link refid="Point_8hh_source"/>
+        <link refid="Point_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
@@ -75,21 +75,21 @@
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Point.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Point_8hh" kindref="compound">duffy/Point.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14" refid="classAbstractFactory" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classAbstractFactory" kindref="compound">AbstractFactory</ref></highlight></codeline>
 <codeline lineno="15"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>T*<sp/>Create()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref>*<sp/><ref refid="classAbstractFactory_1a6c6ad72b50ce9e534f54145cd8ba4f47" kindref="member">Create</ref>()<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21" refid="classHeapCreator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classHeapCreator" kindref="compound">HeapCreator</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classAbstractFactory" kindref="compound">AbstractFactory</ref>&lt;T&gt;</highlight></codeline>
 <codeline lineno="22"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>T*<sp/>Create()</highlight></codeline>
+<codeline lineno="24" refid="classHeapCreator_1a44904c9903236de51ee2b8f64ac542bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref>*<sp/><ref refid="classHeapCreator_1a44904c9903236de51ee2b8f64ac542bc" kindref="member">Create</ref>()</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>T();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref>();</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal">};</highlight></codeline>
@@ -97,20 +97,20 @@
 <codeline lineno="31" refid="classPrototypeCreator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPrototypeCreator" kindref="compound">PrototypeCreator</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classAbstractFactory" kindref="compound">AbstractFactory</ref>&lt;T&gt;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T*<sp/>proto;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref>*<sp/>proto;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPrototypeCreator" kindref="compound">PrototypeCreator</ref><sp/>()<sp/>{proto<sp/>=<sp/>0;}</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPrototypeCreator" kindref="compound">PrototypeCreator</ref><sp/>(T*<sp/>prototype)<sp/>{<sp/>proto<sp/>=<sp/>prototype;<sp/>}</highlight></codeline>
+<codeline lineno="36" refid="classPrototypeCreator_1af11e1a6eff1e0d0a879ecc0ed632ae5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPrototypeCreator_1af11e1a6eff1e0d0a879ecc0ed632ae5f" kindref="member">PrototypeCreator</ref><sp/>()<sp/>{proto<sp/>=<sp/>0;}</highlight></codeline>
+<codeline lineno="37" refid="classPrototypeCreator_1ad0d32c2d51be57184e61a4016783e5f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPrototypeCreator_1ad0d32c2d51be57184e61a4016783e5f0" kindref="member">PrototypeCreator</ref><sp/>(<ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref>*<sp/>prototype)<sp/>{<sp/>proto<sp/>=<sp/>prototype;<sp/>}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>T*<sp/>Create()</highlight></codeline>
+<codeline lineno="39" refid="classPrototypeCreator_1abd7061e565987226d957855f98fb6bc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref>*<sp/><ref refid="classPrototypeCreator_1abd7061e565987226d957855f98fb6bc2" kindref="member">Create</ref>()</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>T(*proto);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref>(*proto);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAbstractFactory" kindref="compound">AbstractFactory&lt;T&gt;</ref>*<sp/>GetFactory()</highlight></codeline>
+<codeline lineno="47" refid="GenericCreator_8cc_1af68ffa5b985c3dbcfcf6c3628bc92279" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAbstractFactory" kindref="compound">AbstractFactory&lt;T&gt;</ref>*<sp/><ref refid="GenericCreator_8cc_1af68ffa5b985c3dbcfcf6c3628bc92279" kindref="member">GetFactory</ref>()</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>choice<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Factories:<sp/>1)<sp/>Heap<sp/>2)<sp/>Prototype<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -126,16 +126,16 @@
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="61"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="63" refid="GenericCreator_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="GenericCreator_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="64"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHeapCreator" kindref="compound">HeapCreator&lt;int&gt;</ref><sp/>hfac;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>myInt<sp/>=<sp/>hfac.Create();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>myInt<sp/>=<sp/>hfac.<ref refid="classHeapCreator_1a44904c9903236de51ee2b8f64ac542bc" kindref="member">Create</ref>();</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>*myInt<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHeapCreator" kindref="compound">HeapCreator&lt;Point&gt;</ref><sp/>hfac2;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPoint" kindref="compound">Point</ref>*<sp/>myPt<sp/>=<sp/>hfac2.Create();</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>(*myPt).X()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(*myPt).Y()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPoint" kindref="compound">Point</ref>*<sp/>myPt<sp/>=<sp/>hfac2.<ref refid="classHeapCreator_1a44904c9903236de51ee2b8f64ac542bc" kindref="member">Create</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>(*myPt).<ref refid="classPoint_1ae86421f3b20ffcf813e2736002e68459" kindref="member">X</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(*myPt).Y()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAbstractFactory" kindref="compound">AbstractFactory&lt;double&gt;</ref>*<sp/>fac<sp/>=<sp/>GetFactory&lt;double&gt;();</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>

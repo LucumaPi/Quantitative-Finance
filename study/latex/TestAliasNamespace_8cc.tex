@@ -1,0 +1,84 @@
+\hypertarget{TestAliasNamespace_8cc}{}\doxysection{tests/\+Test\+Alias\+Namespace.cc File Reference}
+\label{TestAliasNamespace_8cc}\index{tests/TestAliasNamespace.cc@{tests/TestAliasNamespace.cc}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Test\+Alias\+Namespace.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{TestAliasNamespace_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceDatasimFunctions}{Datasim\+Functions}}
+\item 
+ \mbox{\hyperlink{namespacemyFunctions}{my\+Functions}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{TestAliasNamespace_8cc_a1446b168038e850e8a9ed771998ae16d}{algorithm}} ()
+\item 
+double \mbox{\hyperlink{namespacemyFunctions_a043870b92253dd0fc566168f21eca13f}{my\+Functions\+::first}} ()
+\item 
+double \mbox{\hyperlink{namespacemyFunctions_a03fb4c33a9d547e52ca6be71c95029d5}{my\+Functions\+::second}} ()
+\item 
+int \mbox{\hyperlink{TestAliasNamespace_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double($\ast$ \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{Datasim\+Functions\+::first}} )()
+\item 
+double($\ast$ \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{Datasim\+Functions\+::second}} )()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestAliasNamespace_8cc_a1446b168038e850e8a9ed771998ae16d}\label{TestAliasNamespace_8cc_a1446b168038e850e8a9ed771998ae16d}} 
+\index{TestAliasNamespace.cc@{TestAliasNamespace.cc}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!TestAliasNamespace.cc@{TestAliasNamespace.cc}}
+\doxysubsubsection{\texorpdfstring{algorithm()}{algorithm()}}
+{\footnotesize\ttfamily double algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestAliasNamespace_8cc_source_l00025}{25}} of file \mbox{\hyperlink{TestAliasNamespace_8cc_source}{Test\+Alias\+Namespace.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027     }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{DatasimFunctions::first}}() + \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{DatasimFunctions::second}}();}
+\DoxyCodeLine{00029 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestAliasNamespace_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestAliasNamespace_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestAliasNamespace.cc@{TestAliasNamespace.cc}!main@{main}}
+\index{main@{main}!TestAliasNamespace.cc@{TestAliasNamespace.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestAliasNamespace_8cc_source_l00040}{40}} of file \mbox{\hyperlink{TestAliasNamespace_8cc_source}{Test\+Alias\+Namespace.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041 \{}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{keyword}{namespace }DS = \mbox{\hyperlink{namespaceDatasimFunctions}{DatasimFunctions}};    \textcolor{comment}{// Shorthand, alias}}
+\DoxyCodeLine{00044     \textcolor{keyword}{namespace }MF = \mbox{\hyperlink{namespacemyFunctions}{myFunctions}};          \textcolor{comment}{// Shorthand, alias}}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046     \mbox{\hyperlink{namespacemyFunctions_a043870b92253dd0fc566168f21eca13f}{DS::first}}= \mbox{\hyperlink{namespacemyFunctions_a043870b92253dd0fc566168f21eca13f}{MF::first}};}
+\DoxyCodeLine{00047     \mbox{\hyperlink{namespacemyFunctions_a03fb4c33a9d547e52ca6be71c95029d5}{DS::second}}= \mbox{\hyperlink{namespacemyFunctions_a03fb4c33a9d547e52ca6be71c95029d5}{MF::second}};}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{keywordtype}{double} d = \mbox{\hyperlink{TestAliasNamespace_8cc_a1446b168038e850e8a9ed771998ae16d}{algorithm}}();}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     std::cout << d << std::endl;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \}}
+
+\end{DoxyCode}

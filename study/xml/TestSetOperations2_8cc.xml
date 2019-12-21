@@ -11,10 +11,20 @@
       </node>
       <node id="4">
         <label>duffy/Set.hh</label>
-        <link refid="Set_8hh_source"/>
+        <link refid="Set_8hh"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -35,6 +45,9 @@
       </node>
       <node id="5">
         <label>set</label>
+      </node>
+      <node id="8">
+        <label>algorithm</label>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -119,16 +132,16 @@
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Set.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Set_8hh" kindref="compound">duffy/Set.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>print(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;T&gt;</ref>&amp;<sp/>l,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight></codeline>
+<codeline lineno="13" refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;T&gt;</ref>&amp;<sp/>l,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">{<sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>the<sp/>contents<sp/>of<sp/>a<sp/>Set.<sp/>Notice<sp/>the<sp/>presence<sp/>of<sp/>a<sp/>constant<sp/>iterator.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>size<sp/>of<sp/>set<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>l.Size()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n[<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>size<sp/>of<sp/>set<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>l.<ref refid="classSet_1aec2bedbb313cfc25c7100c6984760dd3" kindref="member">Size</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n[<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::set&lt;T&gt;::const_iterator<sp/>i;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>l.Begin();<sp/>i<sp/>!=<sp/>l.End();<sp/>++i)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>l.<ref refid="classSet_1a3ca47221f02ee54c6b627ff73a9b5b98" kindref="member">Begin</ref>();<sp/>i<sp/>!=<sp/>l.<ref refid="classSet_1aeb4a4b2026eb040a24e9b251e0c49dec" kindref="member">End</ref>();<sp/>++i)</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>*i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
@@ -137,7 +150,7 @@
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printSet(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set</ref>&lt;std::pair&lt;T,<sp/>T&gt;<sp/>&gt;&amp;<sp/>l,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight></codeline>
+<codeline lineno="29" refid="TestSetOperations2_8cc_1a4eba85fda2aa12e5b5dfa8278196c94d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TestSetOperations2_8cc_1a4eba85fda2aa12e5b5dfa8278196c94d" kindref="member">printSet</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set</ref>&lt;std::pair&lt;T,<sp/>T&gt;<sp/>&gt;&amp;<sp/>l,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">{<sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>the<sp/>contents<sp/>of<sp/>a<sp/>Set.<sp/>Notice<sp/>the<sp/>presence<sp/>of<sp/>a<sp/>constant<sp/>iterator.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>size<sp/>of<sp/>set<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>l.Size()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n[<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -153,64 +166,64 @@
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="45" refid="TestSetOperations2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestSetOperations2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="46"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;int&gt;</ref><sp/>first;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;int&gt;</ref><sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>unique<sp/>(new<sp/>elements)<sp/>added</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>first.Insert(1);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>first.Insert(2);</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>first.Insert(3);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>(first,<sp/></highlight><highlight class="stringliteral">&quot;First<sp/>set&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>.Insert(1);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>.Insert(2);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>.Insert(3);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref><sp/>(<ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>,<sp/></highlight><highlight class="stringliteral">&quot;First<sp/>set&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;char&gt;</ref><sp/>s1;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.Insert(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.Insert(</highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.Insert(</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.Insert(</highlight><highlight class="charliteral">&apos;D&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.Insert(</highlight><highlight class="charliteral">&apos;F&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>(s1,<sp/></highlight><highlight class="stringliteral">&quot;s1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;D&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>s1.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;F&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref><sp/>(s1,<sp/></highlight><highlight class="stringliteral">&quot;s1&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;char&gt;</ref><sp/>s2;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Insert(</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Insert(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Insert(</highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Insert(</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Insert(</highlight><highlight class="charliteral">&apos;D&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;D&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//s2.Insert(&apos;E&apos;);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>s2+</highlight><highlight class="charliteral">&apos;E&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Insert(</highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Replace(</highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;G&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>(s2,<sp/></highlight><highlight class="stringliteral">&quot;s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.Remove(</highlight><highlight class="charliteral">&apos;G&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>(s2,<sp/></highlight><highlight class="stringliteral">&quot;s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.<ref refid="classSet_1a1feb21675fad80514ee3b41fb67f8c20" kindref="member">Replace</ref>(</highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;G&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref><sp/>(s2,<sp/></highlight><highlight class="stringliteral">&quot;s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>s2.<ref refid="classSet_1a7c93429f1d8f232c421a6fde25cb982b" kindref="member">Remove</ref>(</highlight><highlight class="charliteral">&apos;G&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref><sp/>(s2,<sp/></highlight><highlight class="stringliteral">&quot;s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;char&gt;</ref><sp/>ws;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Work<sp/>space</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>ws<sp/>=<sp/>s1<sp/>+<sp/>s2;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>print(ws,<sp/></highlight><highlight class="stringliteral">&quot;Union&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>(ws,<sp/></highlight><highlight class="stringliteral">&quot;Union&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>ws<sp/>=<sp/>s1<sp/>^<sp/>s2;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>print(ws,<sp/></highlight><highlight class="stringliteral">&quot;Intersection&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>(ws,<sp/></highlight><highlight class="stringliteral">&quot;Intersection&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>ws<sp/>=<sp/>s1<sp/>-<sp/>s2;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>print(ws,<sp/></highlight><highlight class="stringliteral">&quot;Difference<sp/>s1<sp/>-<sp/>s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>(ws,<sp/></highlight><highlight class="stringliteral">&quot;Difference<sp/>s1<sp/>-<sp/>s2&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>ws<sp/>=<sp/>s2<sp/>-<sp/>s1;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>print(ws,<sp/></highlight><highlight class="stringliteral">&quot;Difference<sp/>s2<sp/>-<sp/>s1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>(ws,<sp/></highlight><highlight class="stringliteral">&quot;Difference<sp/>s2<sp/>-<sp/>s1&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>ws<sp/>=<sp/>s1<sp/>%<sp/>s2;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>print(ws,<sp/></highlight><highlight class="stringliteral">&quot;Symmetric<sp/>Difference&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>(ws,<sp/></highlight><highlight class="stringliteral">&quot;Symmetric<sp/>Difference&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Subset/superset<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;char&gt;</ref><sp/>s3;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>s3.Insert(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>s3.Insert(</highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>s3.Insert(</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>s3.Insert(</highlight><highlight class="charliteral">&apos;D&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>s3.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>s3.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>s3.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>s3.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;D&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s3.Subset(s1)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s3.<ref refid="classSet_1ac7bb2705235f0d44e4793262510e1dc6" kindref="member">Subset</ref>(s1)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Yes,<sp/>is<sp/>subset<sp/>OK\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Bah1\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -231,7 +244,7 @@
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Bah1\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>s4.Insert(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>s4.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s1.Intersects(s4)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Yes,<sp/>we<sp/>have<sp/>intersection<sp/>OK\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
@@ -255,33 +268,33 @@
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>myList.push_back(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"></highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;char&gt;</ref><sp/>s5(myList);</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>print(s5,<sp/></highlight><highlight class="stringliteral">&quot;Filtered<sp/>set&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c" kindref="member">print</ref>(s5,<sp/></highlight><highlight class="stringliteral">&quot;Filtered<sp/>set&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"></highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s5.Contains(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s5.<ref refid="classSet_1a685c7dec3d054d0d9972457f13873568" kindref="member">Contains</ref>(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;OK,<sp/>contains<sp/>A\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Bah\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s5.Contains(</highlight><highlight class="charliteral">&apos;Z&apos;</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s5.<ref refid="classSet_1a685c7dec3d054d0d9972457f13873568" kindref="member">Contains</ref>(</highlight><highlight class="charliteral">&apos;Z&apos;</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;OK,<sp/>contains<sp/>NOT<sp/>Z\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Bah\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"></highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cartesian<sp/>product</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;int&gt;</ref><sp/>s11;</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>s11.Insert(2);</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>s11.Insert(3);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>s11.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(2);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>s11.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(3);</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;int&gt;</ref><sp/>s12;</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>s12.Insert(8);</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>s12.Insert(9);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>s12.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(8);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>s12.<ref refid="classSet_1a25791eed3b7ef4be9af5059cf09767f2" kindref="member">Insert</ref>(9);</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;std::pair &lt;int, int&gt;</ref><sp/>&gt;<sp/>S<sp/>=<sp/>s11.CartesianProduct(s12);</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>printSet(S,<sp/></highlight><highlight class="stringliteral">&quot;Pr&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;std::pair &lt;int, int&gt;</ref><sp/>&gt;<sp/>S<sp/>=<sp/>s11.<ref refid="classSet_1ae688c6cb7ec18e29b45eb020c444362f" kindref="member">CartesianProduct</ref>(s12);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1a4eba85fda2aa12e5b5dfa8278196c94d" kindref="member">printSet</ref>(S,<sp/></highlight><highlight class="stringliteral">&quot;Pr&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;std::pair &lt;int, int&gt;</ref><sp/>&gt;<sp/>S2<sp/>=<sp/>s12.CartesianProduct(s11);</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>printSet(S2,<sp/></highlight><highlight class="stringliteral">&quot;Pr&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;std::pair &lt;int, int&gt;</ref><sp/>&gt;<sp/>S2<sp/>=<sp/>s12.<ref refid="classSet_1ae688c6cb7ec18e29b45eb020c444362f" kindref="member">CartesianProduct</ref>(s11);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TestSetOperations2_8cc_1a4eba85fda2aa12e5b5dfa8278196c94d" kindref="member">printSet</ref>(S2,<sp/></highlight><highlight class="stringliteral">&quot;Pr&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"></highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="176"><highlight class="normal">}</highlight></codeline>

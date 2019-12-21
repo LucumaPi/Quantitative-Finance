@@ -1,0 +1,57 @@
+\hypertarget{GenericInequalities_8cc_source}{}\doxysection{Generic\+Inequalities.\+cc}
+\label{GenericInequalities_8cc_source}\index{src/GenericInequalities.cc@{src/GenericInequalities.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Generic\& valueInequalities.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Code file containing bodies of functions}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Last Modific\& valuation Dates:}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{//  2006-\/2-\/17 DD kic\& valuek-\/off code}}
+\DoxyCodeLine{00008 \textcolor{comment}{//  2006-\/2-\/17 DD Copied from non-\/generic\& value structure}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#ifndef GenericInequalities\_CC}}
+\DoxyCodeLine{\Hypertarget{GenericInequalities_8cc_source_l00014}\mbox{\hyperlink{GenericInequalities_8cc_a58ce205338bf1c80a09edb5141a2ece4}{00014}} \textcolor{preprocessor}{\#define GenericInequalities\_CC}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{GenericInequalities_8hh}{duffy/GenericInequalities.hh}}>}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{comment}{// Max and Min of two numbers}}
+\DoxyCodeLine{00021 \textcolor{keyword}{template} <\textcolor{keyword}{class} Numeric>}
+\DoxyCodeLine{\Hypertarget{GenericInequalities_8cc_source_l00022}\mbox{\hyperlink{GenericInequalities_8cc_a1b213e274e5aa76fd4c91940e44f4eb5}{00022}} Numeric \mbox{\hyperlink{GenericInequalities_8cc_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(\textcolor{keyword}{const} Numeric\& x, \textcolor{keyword}{const} Numeric\& y)}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{if} (x > y)}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} y;}
+\DoxyCodeLine{00028 \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030 \textcolor{keyword}{template} <\textcolor{keyword}{class} Numeric>}
+\DoxyCodeLine{\Hypertarget{GenericInequalities_8cc_source_l00031}\mbox{\hyperlink{GenericInequalities_8cc_adb69bfcb34a8cdf14dcb3fc08f9687c0}{00031}} Numeric \mbox{\hyperlink{GenericInequalities_8cc_adb69bfcb34a8cdf14dcb3fc08f9687c0}{Min}}(\textcolor{keyword}{const} Numeric\& x, \textcolor{keyword}{const} Numeric\& y)}
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033     \textcolor{keywordflow}{if} (x < y)}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} y;}
+\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 \textcolor{comment}{// Max and Min of three numbers}}
+\DoxyCodeLine{00040 \textcolor{keyword}{template} <\textcolor{keyword}{class} Numeric>}
+\DoxyCodeLine{\Hypertarget{GenericInequalities_8cc_source_l00041}\mbox{\hyperlink{GenericInequalities_8cc_ae11321548cc6361940452613ca59ebba}{00041}} Numeric \mbox{\hyperlink{GenericInequalities_8cc_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(\textcolor{keyword}{const} Numeric\& x, \textcolor{keyword}{const} Numeric\& y, \textcolor{keyword}{const} Numeric\& z)}
+\DoxyCodeLine{00042 \{}
+\DoxyCodeLine{00043     \textcolor{keywordflow}{return} Max<Numeric>(Max<Numeric>(x,y), z);}
+\DoxyCodeLine{00044 \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 \textcolor{keyword}{template} <\textcolor{keyword}{class} Numeric>}
+\DoxyCodeLine{\Hypertarget{GenericInequalities_8cc_source_l00047}\mbox{\hyperlink{GenericInequalities_8cc_a1cbb426c5b2fca977f1582103f5f6073}{00047}} Numeric \mbox{\hyperlink{GenericInequalities_8cc_adb69bfcb34a8cdf14dcb3fc08f9687c0}{Min}}(\textcolor{keyword}{const} Numeric\& x, \textcolor{keyword}{const} Numeric\& y, \textcolor{keyword}{const} Numeric\& z)}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} Min<Numeric>(Min<Numeric>(x,y), z);}
+\DoxyCodeLine{00050 \}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

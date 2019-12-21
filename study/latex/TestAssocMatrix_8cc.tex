@@ -1,0 +1,96 @@
+\hypertarget{TestAssocMatrix_8cc}{}\doxysection{tests/\+Test\+Assoc\+Matrix.cc File Reference}
+\label{TestAssocMatrix_8cc}\index{tests/TestAssocMatrix.cc@{tests/TestAssocMatrix.cc}}
+{\ttfamily \#include $<$duffy/\+Assoc\+Array.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Assoc\+Matrix.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Array.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Array\+Mechanisms.\+hh$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Test\+Assoc\+Matrix.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestAssocMatrix_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TestAssocMatrix_8cc_a65fb09af05f940068b4a76bb46481ee0}{print}} (const \mbox{\hyperlink{classAssocArray}{Assoc\+Array}}$<$ double, std\+::string $>$ \&ass\+Arr)
+\item 
+int \mbox{\hyperlink{TestAssocMatrix_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestAssocMatrix_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestAssocMatrix_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestAssocMatrix.cc@{TestAssocMatrix.cc}!main@{main}}
+\index{main@{main}!TestAssocMatrix.cc@{TestAssocMatrix.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestAssocMatrix_8cc_source_l00030}{30}} of file \mbox{\hyperlink{TestAssocMatrix_8cc_source}{Test\+Assoc\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \mbox{\hyperlink{classSet}{Set<std::string>}} names;}
+\DoxyCodeLine{00034     names.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{stringliteral}{"A1"});}
+\DoxyCodeLine{00035     names.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{stringliteral}{"A2"});}
+\DoxyCodeLine{00036     names.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{stringliteral}{"A3"});}
+\DoxyCodeLine{00037     names.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{stringliteral}{"A4"});}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{keywordtype}{double} defaultValue(0.0);}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \mbox{\hyperlink{classAssocArray}{AssocArray<double, std::string>}} myAssocArray(names, defaultValue);}
+\DoxyCodeLine{00043     \mbox{\hyperlink{TestAssocMatrix_8cc_a65fb09af05f940068b4a76bb46481ee0}{print}}(myAssocArray);}
+\DoxyCodeLine{00044     myAssocArray[\textcolor{stringliteral}{"A4"}] = 99.99;}
+\DoxyCodeLine{00045     \mbox{\hyperlink{TestAssocMatrix_8cc_a65fb09af05f940068b4a76bb46481ee0}{print}}(myAssocArray);}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{comment}{// Test other functions}}
+\DoxyCodeLine{00049     \mbox{\hyperlink{classAssocArray}{AssocArray<double, std::string>}} myAssocArray2(myAssocArray);}
+\DoxyCodeLine{00050     \mbox{\hyperlink{TestAssocMatrix_8cc_a65fb09af05f940068b4a76bb46481ee0}{print}}(myAssocArray2);}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<double, std::string, std::string>}} myMat;}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<double, std::string, std::string>}} myMatcopy = myMat;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}} mat1(names.\mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{Size}}(), names.\mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{Size}}());}
+\DoxyCodeLine{00056     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<double, std::string, std::string>}} myMat2(names, names, mat1);}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00060 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestAssocMatrix_8cc_a65fb09af05f940068b4a76bb46481ee0}\label{TestAssocMatrix_8cc_a65fb09af05f940068b4a76bb46481ee0}} 
+\index{TestAssocMatrix.cc@{TestAssocMatrix.cc}!print@{print}}
+\index{print@{print}!TestAssocMatrix.cc@{TestAssocMatrix.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAssocArray}{Assoc\+Array}}$<$ double, std\+::string $>$ \&}]{ass\+Arr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestAssocMatrix_8cc_source_l00014}{14}} of file \mbox{\hyperlink{TestAssocMatrix_8cc_source}{Test\+Assoc\+Matrix.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{comment}{// Iterating in the map}}
+\DoxyCodeLine{00018     \mbox{\hyperlink{classAssocArray_adea91a1cf7a2abbfdfd4c9bc7c746c62}{AssocArray<double, std::string>::const\_iterator}} i = assArr.\mbox{\hyperlink{classAssocArray_a3fbe23088af5d36d97acd4b76bcb0107}{Begin}}();}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \textcolor{keywordflow}{while} (i != assArr.\mbox{\hyperlink{classAssocArray_a600b9a0280c6f67380abc032dad1d755}{End}}())}
+\DoxyCodeLine{00021     \{}
+\DoxyCodeLine{00022             std::cout << (*i).first << \textcolor{stringliteral}{", "} << ((*i).second) << std::endl;}
+\DoxyCodeLine{00023             }
+\DoxyCodeLine{00024             i++;}
+\DoxyCodeLine{00025     \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     std::cout << std::endl;}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}

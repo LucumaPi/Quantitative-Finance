@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestPoint_8cc">
+<title>tests/TestPoint.cc File Reference</title>
+<indexterm><primary>tests/TestPoint.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Point.hh&gt;
+</programlisting>Include dependency graph for TestPoint.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestPoint_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestPoint_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestPoint_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestPoint.cc</secondary></indexterm>
+<indexterm><primary>TestPoint.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 9 of file TestPoint.cc.</para>
+<programlisting>10 {
+11 
+12 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;point</emphasis>
+13 &#32;&#32;&#32;&#32;<link linkend="_classPoint">Point</link>&#32;p1;
+14 
+15 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Modify&#32;it&#32;cordinates</emphasis>
+16 &#32;&#32;&#32;&#32;p1.<link linkend="_classPoint_1ae86421f3b20ffcf813e2736002e68459">X</link>(2.0);
+17 &#32;&#32;&#32;&#32;p1.<link linkend="_classPoint_1acf30b6ce56dedcb14c62a6dd9a3aa1a3">Y</link>(3.0);
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Print&#32;it</emphasis>
+20 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;[&quot;</emphasis>&#32;&lt;&lt;&#32;p1.<link linkend="_classPoint_1ae86421f3b20ffcf813e2736002e68459">X</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>&#32;&lt;&lt;&#32;p1.<link linkend="_classPoint_1acf30b6ce56dedcb14c62a6dd9a3aa1a3">Y</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Midpoint</emphasis>
+23 &#32;&#32;&#32;&#32;<link linkend="_classPoint">Point</link>&#32;pL(0.0,&#32;0.0);
+24 &#32;&#32;&#32;&#32;<link linkend="_classPoint">Point</link>&#32;pR(1.0,&#32;1.0);
+25 
+26 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;pL;&#32;std::cout&#32;&lt;&lt;&#32;pR;
+27 
+28 &#32;&#32;&#32;&#32;<link linkend="_classPoint">Point</link>&#32;PM&#32;=&#32;pL.<link linkend="_classPoint_1a58fd5b2bb9af8cf2bf978dfdeb8794d9">MidPoint</link>(pR);
+29 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Midpoint&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;PM&#32;&lt;&lt;&#32;std::endl;
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+32 }
+</programlisting></section>
+</section>
+</section>

@@ -2,6 +2,10 @@
 \label{classPadeCRRStrategy}\index{PadeCRRStrategy@{PadeCRRStrategy}}
 
 
+{\ttfamily \#include $<$Binomial\+Lattice\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Pade\+C\+R\+R\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,13 +25,62 @@ Collaboration diagram for Pade\+C\+R\+R\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPadeCRRStrategy_aa07d959ab5ca27e4a60e105e56a3fedc}\label{classPadeCRRStrategy_aa07d959ab5ca27e4a60e105e56a3fedc}} 
-{\bfseries Pade\+C\+R\+R\+Strategy} (double vol, double interest, double delta)
+\mbox{\hyperlink{classPadeCRRStrategy_aa07d959ab5ca27e4a60e105e56a3fedc}{Pade\+C\+R\+R\+Strategy}} (double vol, double interest, double delta)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{BinomialLatticeStrategy_8hh_source_l00058}{58}} of file \mbox{\hyperlink{BinomialLatticeStrategy_8hh_source}{Binomial\+Lattice\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPadeCRRStrategy_aa07d959ab5ca27e4a60e105e56a3fedc}\label{classPadeCRRStrategy_aa07d959ab5ca27e4a60e105e56a3fedc}} 
+\index{PadeCRRStrategy@{PadeCRRStrategy}!PadeCRRStrategy@{PadeCRRStrategy}}
+\index{PadeCRRStrategy@{PadeCRRStrategy}!PadeCRRStrategy@{PadeCRRStrategy}}
+\doxysubsubsection{\texorpdfstring{PadeCRRStrategy()}{PadeCRRStrategy()}}
+{\footnotesize\ttfamily Pade\+C\+R\+R\+Strategy\+::\+Pade\+C\+R\+R\+Strategy (\begin{DoxyParamCaption}\item[{double}]{vol,  }\item[{double}]{interest,  }\item[{double}]{delta }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{BinomialLatticeStrategy_8cc_source_l00072}{72}} of file \mbox{\hyperlink{BinomialLatticeStrategy_8cc_source}{Binomial\+Lattice\+Strategy.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073         : \mbox{\hyperlink{classBinomialLatticeStrategy_a30116db67055ec31490b298ad9fda14a}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00074 \{}
+\DoxyCodeLine{00075     \textcolor{comment}{/* double e = ::exp((r)*k);}}
+\DoxyCodeLine{00076 \textcolor{comment}{    double sr = ::sqrt(exp(vol*vol*k) -\/ 1.0);}}
+\DoxyCodeLine{00077 \textcolor{comment}{    u = e * (1.0 + sr);}}
+\DoxyCodeLine{00078 \textcolor{comment}{    d = e * (1.0 -\/ sr);*/}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{keywordtype}{double} R1 = (\mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}}) * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}};}
+\DoxyCodeLine{00081     \textcolor{keywordtype}{double} R2 = \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * std::sqrt(\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{comment}{//u = ::exp(R1 + R2);}}
+\DoxyCodeLine{00084     \textcolor{comment}{//d = ::exp(R1 -\/ R2);}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{comment}{// Cayley transform}}
+\DoxyCodeLine{00087     \textcolor{keywordtype}{double} z1 = (R1 + R2);}
+\DoxyCodeLine{00088     \textcolor{keywordtype}{double} z2 = (R1 -\/ R2);}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = (2.0 + z1) / (2.0 -\/ z1);}
+\DoxyCodeLine{00091     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = (2.0 + z2) / (2.0 -\/ z2);}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093     std::cout << \textcolor{stringliteral}{"UD "} << \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}};}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{keywordtype}{double} discounting = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/ \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}}*\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}});}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5;}
+\DoxyCodeLine{00098 \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Binomial\+Lattice\+Strategy.\+hh\item 
-src/Binomial\+Lattice\+Strategy.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{BinomialLatticeStrategy_8hh}{Binomial\+Lattice\+Strategy.\+hh}}\item 
+src/\mbox{\hyperlink{BinomialLatticeStrategy_8cc}{Binomial\+Lattice\+Strategy.\+cc}}\end{DoxyCompactItemize}

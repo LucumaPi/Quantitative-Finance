@@ -14,22 +14,34 @@
     <incdepgraph>
       <node id="2">
         <label>Vector.hh</label>
-        <link refid="Vector_8hh_source"/>
+        <link refid="Vector_8hh"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
+        <link refid="Array_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -37,70 +49,266 @@
         <link refid="Range_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
-      <node id="7">
+      <node id="6">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>vector</label>
       </node>
       <node id="5">
         <label>cstddef</label>
       </node>
-      <node id="6">
+      <node id="11">
+        <label>../../src/Vector.cc</label>
+        <link refid="Vector_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../../src/Range.cc</label>
+        <link refid="Range_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
         <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="7" relation="include">
+        <link refid="FullArray_8hh"/>
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
+      <node id="8">
+        <label>src/LatticeMechanisms.cc</label>
+        <link refid="LatticeMechanisms_8cc"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>tests/TestSwap.cc</label>
+        <link refid="TestSwap_8cc"/>
+      </node>
+      <node id="26">
+        <label>src/IBVPSolver.cc</label>
+        <link refid="IBVPSolver_8cc"/>
+      </node>
+      <node id="4">
         <label>include/duffy/MatrixMechanisms.hh</label>
-        <link refid="MatrixMechanisms_8hh_source"/>
+        <link refid="MatrixMechanisms_8hh"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/ExcelDriver.cc</label>
+        <link refid="ExcelDriver_8cc"/>
+      </node>
+      <node id="12">
+        <label>tests/TestNewLatticeBasic.cc</label>
+        <link refid="TestNewLatticeBasic_8cc"/>
+      </node>
+      <node id="11">
+        <label>tests/TestNewLattice.cc</label>
+        <link refid="TestNewLattice_8cc"/>
       </node>
       <node id="2">
         <label>include/duffy/ArrayMechanisms.hh</label>
-        <link refid="ArrayMechanisms_8hh_source"/>
+        <link refid="ArrayMechanisms_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/ExcelMechanisms.cc</label>
+        <link refid="ExcelMechanisms_8cc"/>
+      </node>
+      <node id="15">
+        <label>tests/TestSTD.cc</label>
+        <link refid="TestSTD_8cc"/>
       </node>
       <node id="1">
         <label>include/duffy/Range.hh</label>
         <link refid="Range_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="10">
+        <label>tests/TestLatticeBasic.cc</label>
+        <link refid="TestLatticeBasic_8cc"/>
+      </node>
+      <node id="24">
+        <label>src/EEulerIBVPSolver.cc</label>
+        <link refid="EEulerIBVPSolver_8cc"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>tests/director.cc</label>
+        <link refid="director_8cc"/>
+      </node>
+      <node id="25">
         <label>include/duffy/IEulerIBVPSolver.hh</label>
-        <link refid="IEulerIBVPSolver_8hh_source"/>
-      </node>
-      <node id="8">
-        <label>include/duffy/Mesher.hh</label>
-        <link refid="Mesher_8hh_source"/>
-        <childnode refid="5" relation="include">
+        <link refid="IEulerIBVPSolver_8hh"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>include/duffy/IBVP.hh</label>
-        <link refid="IBVP_8hh_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
+      <node id="29">
+        <label>src/Mesher.cc</label>
+        <link refid="Mesher_8cc"/>
       </node>
-      <node id="6">
-        <label>include/duffy/EEulerIBVPSolver.hh</label>
-        <link refid="EEulerIBVPSolver_8hh_source"/>
+      <node id="16">
+        <label>src/IEulerIBVPSolver.cc</label>
+        <link refid="IEulerIBVPSolver_8cc"/>
       </node>
       <node id="5">
+        <label>src/MatrixMechanisms.cc</label>
+        <link refid="MatrixMechanisms_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/ArrayMechanisms.cc</label>
+        <link refid="ArrayMechanisms_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>src/IBVP.cc</label>
+        <link refid="IBVP_8cc"/>
+      </node>
+      <node id="28">
+        <label>include/duffy/Mesher.hh</label>
+        <link refid="Mesher_8hh"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>include/duffy/IBVP.hh</label>
+        <link refid="IBVP_8hh"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>src/Range.cc</label>
+        <link refid="Range_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>tests/TestRanges.cc</label>
+        <link refid="TestRanges_8cc"/>
+      </node>
+      <node id="31">
+        <label>tests/TestRangeSimple.cc</label>
+        <link refid="TestRangeSimple_8cc"/>
+      </node>
+      <node id="13">
+        <label>tests/TestIBVP.cc</label>
+        <link refid="TestIBVP_8cc"/>
+      </node>
+      <node id="30">
+        <label>tests/TestRange.cc</label>
+        <link refid="TestRange_8cc"/>
+      </node>
+      <node id="23">
+        <label>include/duffy/EEulerIBVPSolver.hh</label>
+        <link refid="EEulerIBVPSolver_8hh"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>tests/testBSPDE1.cc</label>
+        <link refid="testBSPDE1_8cc"/>
+      </node>
+      <node id="18">
+        <label>tests/TestAssocMatrix.cc</label>
+        <link refid="TestAssocMatrix_8cc"/>
+      </node>
+      <node id="22">
         <label>include/duffy/IBVPSolver.hh</label>
-        <link refid="IBVPSolver_8hh_source"/>
-        <childnode refid="6" relation="include">
+        <link refid="IBVPSolver_8hh"/>
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>tests/TestAssocArray.cc</label>
+        <link refid="TestAssocArray_8cc"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classRange" prot="public">Range</innerclass>
@@ -121,7 +329,7 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Range_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Range_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector_8hh" kindref="compound">Vector.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15" refid="classRange" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Type&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classRange" kindref="compound">Range</ref></highlight></codeline>
 <codeline lineno="16"><highlight class="normal">{</highlight></codeline>
@@ -133,33 +341,33 @@
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructors</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRange" kindref="compound">Range</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRange" kindref="compound">Range</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>low,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>high);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Low<sp/>and<sp/>high<sp/>value</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRange" kindref="compound">Range</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRange" kindref="compound">Range&lt;Type&gt;</ref>&amp;<sp/>ran2);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRange_1a1ae29a7125bc7127c67ec67829d1e6fe" kindref="member">Range</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRange_1a1ae29a7125bc7127c67ec67829d1e6fe" kindref="member">Range</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/><ref refid="classRange_1adecc879cfe67dd9ee2212a008ab15f99" kindref="member">low</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/><ref refid="classRange_1a04c4f592efe2d03e17868d5268cedfb5" kindref="member">high</ref>);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Low<sp/>and<sp/>high<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRange_1a1ae29a7125bc7127c67ec67829d1e6fe" kindref="member">Range</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRange" kindref="compound">Range&lt;Type&gt;</ref>&amp;<sp/>ran2);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classRange" kindref="compound">Range</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classRange_1ac3495950469e6c7ba652e99ac7e69df9" kindref="member">~Range</ref>();</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Modifier<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>low(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>t1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sets<sp/>the<sp/>low<sp/>value<sp/>of<sp/>current<sp/>range</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>high(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>t1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sets<sp/>the<sp/>high<sp/>value<sp/>of<sp/>current<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRange_1adecc879cfe67dd9ee2212a008ab15f99" kindref="member">low</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>t1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sets<sp/>the<sp/>low<sp/>value<sp/>of<sp/>current<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRange_1a04c4f592efe2d03e17868d5268cedfb5" kindref="member">high</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>t1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sets<sp/>the<sp/>high<sp/>value<sp/>of<sp/>current<sp/>range</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Accessing<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Type<sp/>low()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Lowest<sp/>value<sp/>in<sp/>range</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>Type<sp/>high()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Highest<sp/>value<sp/>in<sp/>the<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Type<sp/><ref refid="classRange_1adecc879cfe67dd9ee2212a008ab15f99" kindref="member">low</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Lowest<sp/>value<sp/>in<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>Type<sp/><ref refid="classRange_1a04c4f592efe2d03e17868d5268cedfb5" kindref="member">high</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Highest<sp/>value<sp/>in<sp/>the<sp/>range</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>Type<sp/>spread()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>High<sp/>-<sp/>Low<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>Type<sp/><ref refid="classRange_1a2cdcb2c3dbc38dcb923e302ad366f12c" kindref="member">spread</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>High<sp/>-<sp/>Low<sp/>value</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Boolean<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>left(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>value)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Is<sp/>the<sp/>value<sp/>to<sp/>the<sp/>left<sp/>of<sp/>the<sp/>range?</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>right(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>value)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Is<sp/>the<sp/>value<sp/>to<sp/>the<sp/>right<sp/>of<sp/>the<sp/>range?</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>contains(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>value)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Does<sp/>range<sp/>contain<sp/>value?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRange_1ab772b50dd178ffaeba1f6df900cef30b" kindref="member">left</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>value)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Is<sp/>the<sp/>value<sp/>to<sp/>the<sp/>left<sp/>of<sp/>the<sp/>range?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRange_1aefe9e0df9c7555ec1235764389feea36" kindref="member">right</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>value)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Is<sp/>the<sp/>value<sp/>to<sp/>the<sp/>right<sp/>of<sp/>the<sp/>range?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classRange_1abca95dd7b50b7142fe6d40d58816dec5" kindref="member">contains</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/>value)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Does<sp/>range<sp/>contain<sp/>value?</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Utility<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;Type, long&gt;</ref><sp/>mesh(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nSteps)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>discrete<sp/>mesh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;Type, long&gt;</ref><sp/><ref refid="classRange_1a9d6efa72341e127230d4aa86fcd3b489" kindref="member">mesh</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nSteps)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>discrete<sp/>mesh</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Operator<sp/>overloading</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRange" kindref="compound">Range&lt;Type&gt;</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRange" kindref="compound">Range&lt;Type&gt;</ref>&amp;<sp/>ran2);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRange" kindref="compound">Range&lt;Type&gt;</ref>&amp;<sp/><ref refid="classRange_1afea02da4611e86fbbd710e64fead5a18" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classRange" kindref="compound">Range&lt;Type&gt;</ref>&amp;<sp/>ran2);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/Range.cc&quot;</highlight><highlight class="normal"></highlight></codeline>

@@ -1,0 +1,66 @@
+\hypertarget{TestLatticeNamespace_8cc_source}{}\doxysection{Test\+Lattice\+Namespace.\+cc}
+\label{TestLatticeNamespace_8cc_source}\index{src/TestLatticeNamespace.cc@{src/TestLatticeNamespace.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testLatticeNamespace.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Using namespaces to create different kinds of }}
+\DoxyCodeLine{00004 \textcolor{comment}{// BINOMIAL lattices.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{//  2005-\/1-\/4 DD Kick-\/off code}}
+\DoxyCodeLine{00007 \textcolor{comment}{//  2006-\/3-\/10 DD simplified (no global data, just functions)}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Lattice_8hh}{duffy/Lattice.hh}}>}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{TestLatticeNamespace_8cc_source_l00014}\mbox{\hyperlink{namespaceStandardLattice}{00014}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceStandardLattice}{StandardLattice}}}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016     \textcolor{comment}{// Code here corresponds to forward induction}}
+\DoxyCodeLine{\Hypertarget{TestLatticeNamespace_8cc_source_l00017}\mbox{\hyperlink{namespaceStandardLattice_a0ced6d331b2856d61096bdc9aaab15cd}{00017}}     \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}} \mbox{\hyperlink{namespaceStandardLattice_a0ced6d331b2856d61096bdc9aaab15cd}{createLattice}} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}, \textcolor{keywordtype}{double} rootValue, \textcolor{keywordtype}{double} up, }
+\DoxyCodeLine{00018                                     \textcolor{keywordtype}{double} down)}
+\DoxyCodeLine{00019     \{ \textcolor{comment}{// Note that the above parameters are accessible in this function}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{comment}{// This is for the binomial method only!!!}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}} source(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} + 1, 0.0);}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keywordtype}{int} si = source.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}();}
+\DoxyCodeLine{00026         source[si][source[si].\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}()] = rootValue;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \textcolor{comment}{// Loop from the min index to the end index}}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = source.MinIndex() + 1; j <= source.MaxIndex(); j++)}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = source[j].MinIndex(); i < source[j].MaxIndex(); i++)}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 source[j][i] = down * source[j-\/1][i];}
+\DoxyCodeLine{00034                 source[j][i+1] = up * source[j-\/1][i];}
+\DoxyCodeLine{00035             \}}
+\DoxyCodeLine{00036         \}}
+\DoxyCodeLine{00037         \textcolor{keywordflow}{return} source;}
+\DoxyCodeLine{00038     \}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{comment}{// Code here corresponds to backward induction}}
+\DoxyCodeLine{\Hypertarget{TestLatticeNamespace_8cc_source_l00041}\mbox{\hyperlink{namespaceStandardLattice_a3e49a59024bcef068e558f70a756df05}{00041}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceStandardLattice_a3e49a59024bcef068e558f70a756df05}{traverse}}(\mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& lattice, }
+\DoxyCodeLine{00042                     \mbox{\hyperlink{classVector}{Vector<double, int>}}\& \mbox{\hyperlink{classPayoff}{Payoff}}, \textcolor{keywordtype}{double} p,\textcolor{keywordtype}{double} discounting)}
+\DoxyCodeLine{00043     \{}
+\DoxyCodeLine{00044             \textcolor{keywordtype}{int} ei = lattice.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}();}
+\DoxyCodeLine{00045             lattice[ei] = \mbox{\hyperlink{classPayoff}{Payoff}};}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047             \textcolor{comment}{// Loop from the max index to the start (min) index}}
+\DoxyCodeLine{00048             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = lattice.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}() -\/ 1; \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} >= lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/-\/)}
+\DoxyCodeLine{00049             \{}
+\DoxyCodeLine{00050                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}].MinIndex(); i <= lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}].\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00051                 \{}
+\DoxyCodeLine{00052         }
+\DoxyCodeLine{00053                     lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}][i] = discounting * (p * lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}+1][i+1] + (1.0-\/p) * lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}+1][i]);}
+\DoxyCodeLine{00054                     \textcolor{comment}{//lattice[n][i] = BackTrace(lattice[n+1][i+1], lattice[n+1][i]);}}
+\DoxyCodeLine{00055                 \}}
+\DoxyCodeLine{00056             \}}
+\DoxyCodeLine{00057             \textcolor{keywordtype}{int} si = lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}();}
+\DoxyCodeLine{00058             \textcolor{keywordflow}{return} lattice[si][lattice[si].\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}()];     }
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestNewNamespace_8cc">
+<title>tests/TestNewNamespace.cc File Reference</title>
+<indexterm><primary>tests/TestNewNamespace.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestNewNamespace.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestNewNamespace_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespaceNSEuropeanOption">NSEuropeanOption</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1ab24ccb5397f0e20ed475c8c73f01b8b7">NSEuropeanOption::n</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a627ce352e7823346584f7085983f3ab1">NSEuropeanOption::N</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a75d44bc05f1445fb06b609489c943efa">NSEuropeanOption::CallPrice</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a5b101bb9ef49adf1afec1e6f2522ac80">NSEuropeanOption::PutPrice</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1afb9ebcf17007c774b22e21e4ed9564c9">NSEuropeanOption::Price</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestNewNamespace_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">NSEuropeanOption::r</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">NSEuropeanOption::sig</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1aabd913633d7343989fdef935b6d5740e">NSEuropeanOption::K</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">NSEuropeanOption::T</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a">NSEuropeanOption::U</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">NSEuropeanOption::b</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_namespaceNSEuropeanOption_1afc5ca727bf2d53aa85a9437cd5e44169">NSEuropeanOption::otyp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestNewNamespace_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestNewNamespace.cc</secondary></indexterm>
+<indexterm><primary>TestNewNamespace.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 101 of file TestNewNamespace.cc.</para>
+<programlisting>102 {
+103 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespaceNSEuropeanOption">NSEuropeanOption</link>;
+104 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;0.08;
+105 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>=&#32;0.30;
+106 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1aabd913633d7343989fdef935b6d5740e">K</link>&#32;=&#32;65.0;
+107 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;=&#32;0.25;
+108 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a">U</link>&#32;=&#32;60.0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;U&#32;==&#32;stock&#32;in&#32;this&#32;case</emphasis>
+109 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Black&#32;and&#32;Scholes&#32;stock&#32;option&#32;model&#32;(1973)</emphasis>
+110 
+111 &#32;&#32;&#32;&#32;<link linkend="_namespaceNSEuropeanOption_1afc5ca727bf2d53aa85a9437cd5e44169">otyp</link>&#32;=&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;European&#32;Call&#32;Option&#32;(this&#32;is&#32;the&#32;default&#32;type)</emphasis>
+112 
+113 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Option&#32;price:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceNSEuropeanOption_1afb9ebcf17007c774b22e21e4ed9564c9">Price</link>()&#32;&lt;&lt;&#32;std::endl;
+114 
+115 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+116 }
+</programlisting></section>
+</section>
+</section>

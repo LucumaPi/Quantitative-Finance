@@ -1,0 +1,58 @@
+\hypertarget{TestMap_8cc}{}\doxysection{tests/\+Test\+Map.cc File Reference}
+\label{TestMap_8cc}\index{tests/TestMap.cc@{tests/TestMap.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Test\+Map.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{TestMap_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestMap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestMap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestMap_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestMap.cc@{TestMap.cc}!main@{main}}
+\index{main@{main}!TestMap.cc@{TestMap.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestMap_8cc_source_l00018}{18}} of file \mbox{\hyperlink{TestMap_8cc_source}{Test\+Map.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     std::map<std::string, double> option;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{comment}{// Usind indexing to define the keys in the map}}
+\DoxyCodeLine{00024     option[\textcolor{stringliteral}{"r"}] = 0.10;     \textcolor{comment}{// Interest rate}}
+\DoxyCodeLine{00025     option[\textcolor{stringliteral}{"sig"}] = 0.28;   \textcolor{comment}{// Volatility}}
+\DoxyCodeLine{00026     option[\textcolor{stringliteral}{"K"}] = 19.0;     \textcolor{comment}{// Strike price}}
+\DoxyCodeLine{00027     option[\textcolor{stringliteral}{"T"}] = 0.75;     \textcolor{comment}{// Expiry dat}}
+\DoxyCodeLine{00028     option[\textcolor{stringliteral}{"S"}] = 19.0;     \textcolor{comment}{// Underlying asset}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     std::cout << \textcolor{stringliteral}{"Size of map: "} << option.size() << std::endl;}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{comment}{// Iterating in the map}}
+\DoxyCodeLine{00033     std::map<std::string, double>::iterator i = option.begin();}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{while} (i != option.end())}
+\DoxyCodeLine{00036     \{ }
+\DoxyCodeLine{00037             std::cout << \textcolor{stringliteral}{"Element pair ["} << (*i).first << \textcolor{stringliteral}{","} << (*i).second << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00038             i++;}
+\DoxyCodeLine{00039     \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00042 \}}
+
+\end{DoxyCode}

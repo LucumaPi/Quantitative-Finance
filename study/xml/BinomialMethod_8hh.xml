@@ -12,58 +12,112 @@
     <incdepgraph>
       <node id="3">
         <label>Vector.hh</label>
-        <link refid="Vector_8hh_source"/>
+        <link refid="Vector_8hh"/>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>cmath</label>
-      </node>
-      <node id="2">
-        <label>Lattice.hh</label>
-        <link refid="Lattice_8hh_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
-        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="18">
+        <label>../../src/BinomialMethod.cc</label>
+        <link refid="BinomialMethod_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../../src/Lattice.cc</label>
+        <link refid="Lattice_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>cmath</label>
+      </node>
+      <node id="2">
+        <label>Lattice.hh</label>
+        <link refid="Lattice_8hh"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Array.hh</label>
+        <link refid="Array_8hh"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>../../src/BinomialLatticeStrategy.cc</label>
+        <link refid="BinomialLatticeStrategy_8cc"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
         <label>vector</label>
       </node>
-      <node id="11">
+      <node id="16">
         <label>iostream</label>
       </node>
       <node id="6">
         <label>cstddef</label>
       </node>
-      <node id="9">
-        <label>BinomialLatticeStrategy.hh</label>
-        <link refid="BinomialLatticeStrategy_8hh_source"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
+      <node id="12">
+        <label>../../src/Vector.cc</label>
+        <link refid="Vector_8cc"/>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="11">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>BinomialLatticeStrategy.hh</label>
+        <link refid="BinomialLatticeStrategy_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="8" relation="include">
+        <link refid="FullArray_8hh"/>
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -71,10 +125,44 @@
         <link refid="BinomialMethod_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/BinomialMethod.cc</label>
+        <link refid="BinomialMethod_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tests/TestBinomialMethod.cc</label>
+        <link refid="TestBinomialMethod_8cc"/>
+      </node>
+      <node id="3">
+        <label>tests/director.cc</label>
+        <link refid="director_8cc"/>
+      </node>
+      <node id="5">
+        <label>tests/TestLatticeFactory.cc</label>
+        <link refid="TestLatticeFactory_8cc"/>
+      </node>
+      <node id="1">
+        <label>include/duffy/BinomialMethod.hh</label>
+        <link refid="BinomialMethod_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <innerclass refid="classBinomialMethod" prot="public">BinomialMethod</innerclass>
     <briefdescription>
     </briefdescription>
@@ -97,8 +185,8 @@
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BinomialMethod_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BinomialMethod_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Lattice.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BinomialLatticeStrategy.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Lattice_8hh" kindref="compound">Lattice.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="BinomialLatticeStrategy_8hh" kindref="compound">BinomialLatticeStrategy.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20" refid="classBinomialMethod" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classBinomialMethod" kindref="compound">BinomialMethod</ref></highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
@@ -111,25 +199,25 @@
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialMethod" kindref="compound">BinomialMethod</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialMethod_1a98ef45a14e91d551785c1edfdbfd99a4" kindref="member">BinomialMethod</ref>();</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor<sp/>taking<sp/>discount<sp/>factor,<sp/>strategy<sp/>(e.g.<sp/>CRR)<sp/>and<sp/>number<sp/>of<sp/>steps</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialMethod" kindref="compound">BinomialMethod</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>discounting,<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>&amp;<sp/>strategy,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialMethod_1a98ef45a14e91d551785c1edfdbfd99a4" kindref="member">BinomialMethod</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>discounting,<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>&amp;<sp/>strategy,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialise<sp/>lattice<sp/>data<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>buildLattice(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBinomialMethod_1a31651b3bcaa64a57e7a6e26f9f00ef05" kindref="member">buildLattice</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialise<sp/>lattice<sp/>node<sp/>values<sp/>(Forward<sp/>Induction)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>modifyLattice(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>U);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBinomialMethod_1a232d7301afe8bab7df7ee5633ff841e6" kindref="member">modifyLattice</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a" kindref="member">U</ref>);<sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>derivative<sp/>price<sp/>(Backward<sp/>Induction)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getPrice(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, int&gt;</ref>&amp;<sp/>RHS);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classBinomialMethod_1a62b8aa2bf9779858bbb0f27825af9268" kindref="member">getPrice</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, int&gt;</ref>&amp;<sp/>RHS);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Handy<sp/>function<sp/>to<sp/>give<sp/>us<sp/>the<sp/>size<sp/>at<sp/>expiry<sp/>date</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, int&gt;</ref><sp/>BasePyramidVector()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, int&gt;</ref><sp/><ref refid="classBinomialMethod_1ab3b69b60ccd9242119c3c5f6befc3690" kindref="member">BasePyramidVector</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Underlying<sp/>lattice</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/>getLattice()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/><ref refid="classBinomialMethod_1a45f662c73ae8b3d9cf3530a1c500f9ca" kindref="member">getLattice</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/BinomialMethod.cc&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>

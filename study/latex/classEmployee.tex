@@ -2,6 +2,10 @@
 \label{classEmployee}\index{Employee@{Employee}}
 
 
+{\ttfamily \#include $<$Person\+And\+Employee.\+hh$>$}
+
+
+
 Inheritance diagram for Employee\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,32 +25,157 @@ Collaboration diagram for Employee\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classEmployee_a45d4e4b9d3c976979a8bf9b3e18ac7c4}\label{classEmployee_a45d4e4b9d3c976979a8bf9b3e18ac7c4}} 
-{\bfseries Employee} (const std\+::string \&name, const \mbox{\hyperlink{classDatasimDate}{Datasim\+Date}} \&Dateof\+Birth, const std\+::string \&function, double salary, int Retires)
+\mbox{\hyperlink{classEmployee_a45d4e4b9d3c976979a8bf9b3e18ac7c4}{Employee}} (const std\+::string \&name, const \mbox{\hyperlink{classDatasimDate}{Datasim\+Date}} \&Dateof\+Birth, const std\+::string \&function, double salary, int Retires)
 \item 
-\mbox{\Hypertarget{classEmployee_aa2c5fe7f5ba6cbef162ddf12f8a20852}\label{classEmployee_aa2c5fe7f5ba6cbef162ddf12f8a20852}} 
-void {\bfseries print} () const
+void \mbox{\hyperlink{classEmployee_aa2c5fe7f5ba6cbef162ddf12f8a20852}{print}} () const
 \item 
-\mbox{\Hypertarget{classEmployee_a36e7052e1f34d639a6bc84693b78889a}\label{classEmployee_a36e7052e1f34d639a6bc84693b78889a}} 
-void {\bfseries Deep\+Print} () const
+void \mbox{\hyperlink{classEmployee_a36e7052e1f34d639a6bc84693b78889a}{Deep\+Print}} () const
 \item 
-\mbox{\Hypertarget{classEmployee_a1fe9ed9880a95f60cd1d02310099a4d0}\label{classEmployee_a1fe9ed9880a95f60cd1d02310099a4d0}} 
-int {\bfseries Years\+To\+Retirement} () const
+int \mbox{\hyperlink{classEmployee_a1fe9ed9880a95f60cd1d02310099a4d0}{Years\+To\+Retirement}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classEmployee_aee8a50b7b29bb1c959aeaf33b05d5c83}\label{classEmployee_aee8a50b7b29bb1c959aeaf33b05d5c83}} 
-std\+::string {\bfseries fun}
+std\+::string \mbox{\hyperlink{classEmployee_aee8a50b7b29bb1c959aeaf33b05d5c83}{fun}}
 \item 
-\mbox{\Hypertarget{classEmployee_a79944f815cb2fb441f2d458084c3706b}\label{classEmployee_a79944f815cb2fb441f2d458084c3706b}} 
-double {\bfseries sal}
+double \mbox{\hyperlink{classEmployee_a79944f815cb2fb441f2d458084c3706b}{sal}}
 \item 
-\mbox{\Hypertarget{classEmployee_a447b3da66846974ead06d74ff50643da}\label{classEmployee_a447b3da66846974ead06d74ff50643da}} 
-int {\bfseries r\+Age}
+int \mbox{\hyperlink{classEmployee_a447b3da66846974ead06d74ff50643da}{r\+Age}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{PersonAndEmployee_8hh_source_l00057}{57}} of file \mbox{\hyperlink{PersonAndEmployee_8hh_source}{Person\+And\+Employee.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEmployee_a45d4e4b9d3c976979a8bf9b3e18ac7c4}\label{classEmployee_a45d4e4b9d3c976979a8bf9b3e18ac7c4}} 
+\index{Employee@{Employee}!Employee@{Employee}}
+\index{Employee@{Employee}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{Employee()}{Employee()}}
+{\footnotesize\ttfamily Employee\+::\+Employee (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classDatasimDate}{Datasim\+Date}} \&}]{Dateof\+Birth,  }\item[{const std\+::string \&}]{function,  }\item[{double}]{salary,  }\item[{int}]{Retires }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{PersonAndEmployee_8hh_source_l00065}{65}} of file \mbox{\hyperlink{PersonAndEmployee_8hh_source}{Person\+And\+Employee.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066                                                                    : \mbox{\hyperlink{classPerson_a27cebd22009c2f3d495523832d4489bc}{Person}}(name, DateofBirth)}
+\DoxyCodeLine{00067         \{}
+\DoxyCodeLine{00068             \mbox{\hyperlink{classEmployee_aee8a50b7b29bb1c959aeaf33b05d5c83}{fun}} = \textcolor{keyword}{function};}
+\DoxyCodeLine{00069             \mbox{\hyperlink{classEmployee_a79944f815cb2fb441f2d458084c3706b}{sal}} = salary;}
+\DoxyCodeLine{00070             \mbox{\hyperlink{classEmployee_a447b3da66846974ead06d74ff50643da}{rAge}} = Retires;}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmployee_a36e7052e1f34d639a6bc84693b78889a}\label{classEmployee_a36e7052e1f34d639a6bc84693b78889a}} 
+\index{Employee@{Employee}!DeepPrint@{DeepPrint}}
+\index{DeepPrint@{DeepPrint}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{DeepPrint()}{DeepPrint()}}
+{\footnotesize\ttfamily void Employee\+::\+Deep\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classPerson_a9415b8b11b532c063f00737430a7694f}{Person}}.
+
+
+
+Definition at line \mbox{\hyperlink{PersonAndEmployee_8hh_source_l00088}{88}} of file \mbox{\hyperlink{PersonAndEmployee_8hh_source}{Person\+And\+Employee.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089         \{}
+\DoxyCodeLine{00090             \mbox{\hyperlink{classEmployee_aa2c5fe7f5ba6cbef162ddf12f8a20852}{print}}(); \textcolor{comment}{// Calls Employee::print()}}
+\DoxyCodeLine{00091         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEmployee_aa2c5fe7f5ba6cbef162ddf12f8a20852}\label{classEmployee_aa2c5fe7f5ba6cbef162ddf12f8a20852}} 
+\index{Employee@{Employee}!print@{print}}
+\index{print@{print}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Employee\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{PersonAndEmployee_8hh_source_l00074}{74}} of file \mbox{\hyperlink{PersonAndEmployee_8hh_source}{Person\+And\+Employee.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075         \{ \textcolor{comment}{// Who am I and what do I do?}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077             \textcolor{comment}{// Print Base class data}}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079             std::cout << \textcolor{stringliteral}{"\(\backslash\)n** Employee Data **\(\backslash\)n"};}
+\DoxyCodeLine{00080             \mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{Person::print}}();}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082             \textcolor{comment}{// Now print data from current derived class}}
+\DoxyCodeLine{00083             std::cout << \textcolor{stringliteral}{"\(\backslash\)nFunction: "} << \mbox{\hyperlink{classEmployee_aee8a50b7b29bb1c959aeaf33b05d5c83}{fun}} << \textcolor{stringliteral}{", Salary: "} << \mbox{\hyperlink{classEmployee_a79944f815cb2fb441f2d458084c3706b}{sal}}}
+\DoxyCodeLine{00084                         << \textcolor{stringliteral}{", Retires at: "} << \mbox{\hyperlink{classEmployee_a447b3da66846974ead06d74ff50643da}{rAge}} << std::endl}
+\DoxyCodeLine{00085                         << \mbox{\hyperlink{classEmployee_a1fe9ed9880a95f60cd1d02310099a4d0}{YearsToRetirement}}() << \textcolor{stringliteral}{" years to retirement.\(\backslash\)n"};}
+\DoxyCodeLine{00086         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEmployee_a1fe9ed9880a95f60cd1d02310099a4d0}\label{classEmployee_a1fe9ed9880a95f60cd1d02310099a4d0}} 
+\index{Employee@{Employee}!YearsToRetirement@{YearsToRetirement}}
+\index{YearsToRetirement@{YearsToRetirement}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{YearsToRetirement()}{YearsToRetirement()}}
+{\footnotesize\ttfamily int Employee\+::\+Years\+To\+Retirement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{PersonAndEmployee_8hh_source_l00093}{93}} of file \mbox{\hyperlink{PersonAndEmployee_8hh_source}{Person\+And\+Employee.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094         \{ \textcolor{comment}{// How many more years slogging away at C++?}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096             \textcolor{keywordflow}{return} \mbox{\hyperlink{classEmployee_a447b3da66846974ead06d74ff50643da}{rAge}} -\/ \mbox{\hyperlink{classPerson_aebd438308d431c5a20070a64288932d8}{age}}();}
+\DoxyCodeLine{00097         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEmployee_aee8a50b7b29bb1c959aeaf33b05d5c83}\label{classEmployee_aee8a50b7b29bb1c959aeaf33b05d5c83}} 
+\index{Employee@{Employee}!fun@{fun}}
+\index{fun@{fun}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{fun}{fun}}
+{\footnotesize\ttfamily std\+::string Employee\+::fun}
+
+
+
+Definition at line \mbox{\hyperlink{PersonAndEmployee_8hh_source_l00060}{60}} of file \mbox{\hyperlink{PersonAndEmployee_8hh_source}{Person\+And\+Employee.\+hh}}.
+
+\mbox{\Hypertarget{classEmployee_a447b3da66846974ead06d74ff50643da}\label{classEmployee_a447b3da66846974ead06d74ff50643da}} 
+\index{Employee@{Employee}!rAge@{rAge}}
+\index{rAge@{rAge}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{rAge}{rAge}}
+{\footnotesize\ttfamily int Employee\+::r\+Age}
+
+
+
+Definition at line \mbox{\hyperlink{PersonAndEmployee_8hh_source_l00062}{62}} of file \mbox{\hyperlink{PersonAndEmployee_8hh_source}{Person\+And\+Employee.\+hh}}.
+
+\mbox{\Hypertarget{classEmployee_a79944f815cb2fb441f2d458084c3706b}\label{classEmployee_a79944f815cb2fb441f2d458084c3706b}} 
+\index{Employee@{Employee}!sal@{sal}}
+\index{sal@{sal}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{sal}{sal}}
+{\footnotesize\ttfamily double Employee\+::sal}
+
+
+
+Definition at line \mbox{\hyperlink{PersonAndEmployee_8hh_source_l00061}{61}} of file \mbox{\hyperlink{PersonAndEmployee_8hh_source}{Person\+And\+Employee.\+hh}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Person\+And\+Employee.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{PersonAndEmployee_8hh}{Person\+And\+Employee.\+hh}}\end{DoxyCompactItemize}

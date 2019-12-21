@@ -1,0 +1,323 @@
+\hypertarget{Complex_8cc_source}{}\doxysection{Complex.\+cc}
+\label{Complex_8cc_source}\index{src/Complex.cc@{src/Complex.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// complex.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Code file for the class of complex numbers in two dimensional}}
+\DoxyCodeLine{00004 \textcolor{comment}{// geometry.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// Last modification dates:}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 1993-\/6-\/27: DD new functions added, mainly member functions changed to}}
+\DoxyCodeLine{00009 \textcolor{comment}{//        global functions and many new special functions (e.g. arc*. sqrt}}
+\DoxyCodeLine{00010 \textcolor{comment}{//        sinh, ...). Also operators + and -\/ for doubles.}}
+\DoxyCodeLine{00011 \textcolor{comment}{// 1993-\/7-\/2: DD Substantial coding and additions}}
+\DoxyCodeLine{00012 \textcolor{comment}{// 1993-\/11-\/11: EB initial code, name is now Complex}}
+\DoxyCodeLine{00013 \textcolor{comment}{// 1993-\/11-\/11: EB function operator = (double d) added}}
+\DoxyCodeLine{00014 \textcolor{comment}{// 1993-\/11-\/23: EB function /(Complex) , / (double), operator  ==, degenerate modified.}}
+\DoxyCodeLine{00015 \textcolor{comment}{// 1993-\/11-\/26: EB functions operator >, operator < added.}}
+\DoxyCodeLine{00016 \textcolor{comment}{// 2005-\/2-\/5 DD new lease of life}}
+\DoxyCodeLine{00017 \textcolor{comment}{// 2005-\/11-\/30 DD added sech(z) to be tested by muniangel :)}}
+\DoxyCodeLine{00018 \textcolor{comment}{// 2006-\/7-\/7 DD constructor com(double) added}}
+\DoxyCodeLine{00019 \textcolor{comment}{//}}
+\DoxyCodeLine{00020 \textcolor{comment}{// (C) Copyright Datasim Education BV 1992-\/2006}}
+\DoxyCodeLine{00021 \textcolor{comment}{//}}
+\DoxyCodeLine{00022 \textcolor{comment}{// The information contained in this file is property of Datasim Education BV Amsterdam Nederland.}}
+\DoxyCodeLine{00023 \textcolor{comment}{// The information contained herein is subject to change without notice. No part}}
+\DoxyCodeLine{00024 \textcolor{comment}{// of this information may be reproduced or transmitted in any form or by any means,}}
+\DoxyCodeLine{00025 \textcolor{comment}{// electronic or mechanical, for any purpose, without the express written permission}}
+\DoxyCodeLine{00026 \textcolor{comment}{// of Datasim BV.}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Complex_8hh}{duffy/Complex.hh}}>}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00030}\mbox{\hyperlink{Complex_8cc_a72441d40ccdf70c6c1da4a4afc2263e1}{00030}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_a72441d40ccdf70c6c1da4a4afc2263e1}{mpi}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00031 \{ \textcolor{comment}{// Multiply z by i == sqrt(-\/1)}}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}}(-\/z.y, z.x);}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00035}\mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{00035}} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex::Complex}}()}
+\DoxyCodeLine{00036 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00037     x = 1.0;}
+\DoxyCodeLine{00038     y = 0.0;}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00041}\mbox{\hyperlink{classComplex_af3655296a09cb1dcddf38cd474c029e1}{00041}} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex::Complex}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}} \&p)}
+\DoxyCodeLine{00042 \{ \textcolor{comment}{// Copy initialisor}}
+\DoxyCodeLine{00043     x = p.x;}
+\DoxyCodeLine{00044     y = p.y;}
+\DoxyCodeLine{00045 \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00047}\mbox{\hyperlink{classComplex_a752e59125951ab5d5f81cfbc7091fe05}{00047}} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex::Complex}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{Complex_8cc_a5785a70cbc18f01a89cdf4235832d1ba}{real}})}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049     x = \mbox{\hyperlink{classComplex_a5785a70cbc18f01a89cdf4235832d1ba}{real}};}
+\DoxyCodeLine{00050     y = 0.0;}
+\DoxyCodeLine{00051 \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00053}\mbox{\hyperlink{classComplex_af8df9575d21c2b72b5b958895a9daa00}{00053}} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex::Complex}}(\textcolor{keywordtype}{double} dx, \textcolor{keywordtype}{double} dy)}
+\DoxyCodeLine{00054 \{}
+\DoxyCodeLine{00055     x = dx;}
+\DoxyCodeLine{00056     y = dy;}
+\DoxyCodeLine{00057 \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00059}\mbox{\hyperlink{classComplex_a70e14b17c92e3da779686b98f9f3bb2d}{00059}} \mbox{\hyperlink{classComplex_a70e14b17c92e3da779686b98f9f3bb2d}{Complex::~Complex}}()}
+\DoxyCodeLine{00060 \{}
+\DoxyCodeLine{00061 \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00063}\mbox{\hyperlink{classComplex_ad63f572bf5b643c714e388cda5c6f5cb}{00063}} \mbox{\hyperlink{classComplex}{Complex}}\& \mbox{\hyperlink{classComplex_ad63f572bf5b643c714e388cda5c6f5cb}{Complex::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00064 \{}
+\DoxyCodeLine{00065     \textcolor{comment}{// Avoid doing assign to myself}}
+\DoxyCodeLine{00066     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&c)}
+\DoxyCodeLine{00067         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     x = c.x;}
+\DoxyCodeLine{00070     y = c.y;}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00073 \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00075}\mbox{\hyperlink{classComplex_ae567e20c39745c1bfe8f07be126a5fff}{00075}} \mbox{\hyperlink{classComplex}{Complex}}\& \mbox{\hyperlink{classComplex_ae567e20c39745c1bfe8f07be126a5fff}{Complex::operator += }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00076 \{}
+\DoxyCodeLine{00077         x += c.x;}
+\DoxyCodeLine{00078         y += c.y;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00081 \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00083}\mbox{\hyperlink{classComplex_a11b5aad9f09d44118ccb195742a684c5}{00083}} \mbox{\hyperlink{classComplex}{Complex}}\& \mbox{\hyperlink{classComplex_a11b5aad9f09d44118ccb195742a684c5}{Complex::operator -\/= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00084 \{}
+\DoxyCodeLine{00085         x -\/= c.x;}
+\DoxyCodeLine{00086         y -\/= c.y;}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00089 \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00091}\mbox{\hyperlink{classComplex_a318c1193b3ba9f3e9e06d88f9c1ef2a3}{00091}} \mbox{\hyperlink{classComplex}{Complex}}\& \mbox{\hyperlink{classComplex_a318c1193b3ba9f3e9e06d88f9c1ef2a3}{Complex::operator /= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00092 \{}
+\DoxyCodeLine{00093         \mbox{\hyperlink{classComplex}{Complex}} tmp = (*this) / c;}
+\DoxyCodeLine{00094         *\textcolor{keyword}{this} = tmp;}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00097 \}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00099}\mbox{\hyperlink{classComplex_a2f5beb61c61de440c20e69decc584952}{00099}} \mbox{\hyperlink{classComplex}{Complex}}\& \mbox{\hyperlink{classComplex_a2f5beb61c61de440c20e69decc584952}{Complex::operator *= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00100 \{}
+\DoxyCodeLine{00101     \mbox{\hyperlink{classComplex}{Complex}} tmp = (*this) * c;}
+\DoxyCodeLine{00102     *\textcolor{keyword}{this} = tmp;}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106 \}}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00108}\mbox{\hyperlink{classComplex_a31ccc3f500a725e38df3a29140a4d181}{00108}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classComplex_a31ccc3f500a725e38df3a29140a4d181}{Complex::xVal}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00109 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00110     \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{00111 \}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00113}\mbox{\hyperlink{classComplex_a4a6047044867525c7f08f9a1b20dd2af}{00113}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classComplex_a4a6047044867525c7f08f9a1b20dd2af}{Complex::yVal}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00114 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00115     \textcolor{keywordflow}{return} y;}
+\DoxyCodeLine{00116 \}}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00118}\mbox{\hyperlink{Complex_8cc_a5785a70cbc18f01a89cdf4235832d1ba}{00118}} \textcolor{keywordtype}{double} \mbox{\hyperlink{Complex_8cc_a5785a70cbc18f01a89cdf4235832d1ba}{real}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00119 \{}
+\DoxyCodeLine{00120     \textcolor{keywordflow}{return} c.x;}
+\DoxyCodeLine{00121 \}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00123}\mbox{\hyperlink{Complex_8cc_aea92c8c79175ecec909cb59c935a0c92}{00123}} \textcolor{keywordtype}{double} \mbox{\hyperlink{Complex_8cc_aea92c8c79175ecec909cb59c935a0c92}{imag}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00124 \{}
+\DoxyCodeLine{00125     \textcolor{keywordflow}{return} c.y;}
+\DoxyCodeLine{00126 \}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00129}\mbox{\hyperlink{Complex_8cc_ae75939524940d4f2451ee0a5eb066848}{00129}} \textcolor{keywordtype}{double} \mbox{\hyperlink{Complex_8cc_ae75939524940d4f2451ee0a5eb066848}{rad}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00130 \{ \textcolor{comment}{// Distance from origin}}
+\DoxyCodeLine{00131     \textcolor{keywordtype}{double} res = std::sqrt((c.x*c.x) + (c.y*c.y));}
+\DoxyCodeLine{00132     \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{00133 \}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00135}\mbox{\hyperlink{Complex_8cc_a3c3f09cbb99680921cde12c2029c8e6c}{00135}} \textcolor{keywordtype}{double} \mbox{\hyperlink{Complex_8cc_a3c3f09cbb99680921cde12c2029c8e6c}{modulus}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00136 \{ \textcolor{comment}{// Distance from the origin (Same as the rad() function)}}
+\DoxyCodeLine{00137     \textcolor{keywordflow}{return} \mbox{\hyperlink{Complex_8cc_ae75939524940d4f2451ee0a5eb066848}{rad}}(c);}
+\DoxyCodeLine{00138 \}}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00140}\mbox{\hyperlink{Complex_8cc_a45a3ff78ebe036a61d1382aea13de62a}{00140}} \textcolor{keywordtype}{double} \mbox{\hyperlink{Complex_8cc_a45a3ff78ebe036a61d1382aea13de62a}{abs}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00141 \{ \textcolor{comment}{// Absolute value of the complex number}}
+\DoxyCodeLine{00142     \textcolor{keywordflow}{return} \mbox{\hyperlink{Complex_8cc_ae75939524940d4f2451ee0a5eb066848}{rad}}(c);}
+\DoxyCodeLine{00143 \}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145 \textcolor{comment}{// Functionality}}
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00146}\mbox{\hyperlink{classComplex_af0435a6b94ce1cfd0680ae9ccff24561}{00146}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classComplex_af0435a6b94ce1cfd0680ae9ccff24561}{Complex::distance}} (\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2)}
+\DoxyCodeLine{00147 \{ \textcolor{comment}{// Euclidean distance}}
+\DoxyCodeLine{00148     \textcolor{keywordflow}{return} std::sqrt((x-\/c2.x)*(x-\/c2.x) + (y-\/c2.y)*(y-\/c2.y));}
+\DoxyCodeLine{00149 \}}
+\DoxyCodeLine{00150 }
+\DoxyCodeLine{00151 \textcolor{comment}{// Member operator overloading}}
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00152}\mbox{\hyperlink{classComplex_a3651b29a89a31f2384343e737af01786}{00152}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{classComplex_a3651b29a89a31f2384343e737af01786}{Complex::operator -\/ }}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00153 \textcolor{keyword}{}\{ \textcolor{comment}{// The additive inverse of the current complex number}}
+\DoxyCodeLine{00154     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex}}(-\/ x, -\/ y);}
+\DoxyCodeLine{00155 \}}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00157}\mbox{\hyperlink{classComplex_aa2cbbe9e937f49672084741932c6314c}{00157}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{classComplex_aa2cbbe9e937f49672084741932c6314c}{Complex::add}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00158 \textcolor{keyword}{}\{ \textcolor{comment}{// Add two complex numbers}}
+\DoxyCodeLine{00159     \mbox{\hyperlink{classComplex}{Complex}} result;}
+\DoxyCodeLine{00160     result.x = x + c2.x;}
+\DoxyCodeLine{00161     result.y = y + c2.y;}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00164 \}}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00166}\mbox{\hyperlink{classComplex_ab35f363450892fb54ebeb0a5a5d96ff8}{00166}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{classComplex_ab35f363450892fb54ebeb0a5a5d96ff8}{Complex::operator + }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00167 \textcolor{keyword}{}\{ \textcolor{comment}{// Add two complex numbers}}
+\DoxyCodeLine{00168     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex}}(x + c2.x, y + c2.y);}
+\DoxyCodeLine{00169 \}}
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00170}\mbox{\hyperlink{classComplex_a8c357281df321c057f561bddd02b6640}{00170}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{classComplex_a3651b29a89a31f2384343e737af01786}{Complex::operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00171 \textcolor{keyword}{}\{ \textcolor{comment}{// Subtract two complex numbers}}
+\DoxyCodeLine{00172     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex}}(x -\/ c2.x, y -\/ c2.y);}
+\DoxyCodeLine{00173 \}}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00175}\mbox{\hyperlink{classComplex_ac2694e88535753d9a588db307788473c}{00175}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{classComplex_ac2694e88535753d9a588db307788473c}{Complex::operator * }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00176 \textcolor{keyword}{}\{ \textcolor{comment}{// Multiply two complex numbers}}
+\DoxyCodeLine{00177     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex}}((x * c2.x) -\/ (y * c2.y),}
+\DoxyCodeLine{00178                (x * c2.y) + (y * c2.x));}
+\DoxyCodeLine{00179 \}}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00181}\mbox{\hyperlink{classComplex_a8bf00004de0d490060261f13168ead9f}{00181}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{classComplex_a8bf00004de0d490060261f13168ead9f}{Complex::operator / }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00182 \textcolor{keyword}{}\{ \textcolor{comment}{// Division of complex numbers}}
+\DoxyCodeLine{00183     \mbox{\hyperlink{classComplex}{Complex}} res;}
+\DoxyCodeLine{00184     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = \mbox{\hyperlink{classComplex_a3c3f09cbb99680921cde12c2029c8e6c}{modulus}}(c2);}
+\DoxyCodeLine{00185     \textcolor{keywordtype}{double} d = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} * \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00186     \mbox{\hyperlink{classComplex}{Complex}} tmp1 = \mbox{\hyperlink{classComplex_a89607cd585b76e5df1a2dfb5aeaab7a8}{conjugate}}(c2);}
+\DoxyCodeLine{00187     \mbox{\hyperlink{classComplex}{Complex}} tmp2 = tmp1 * (*this);}
+\DoxyCodeLine{00188     res =tmp2/d;}
+\DoxyCodeLine{00189     }
+\DoxyCodeLine{00190     \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{00191 \}}
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00193}\mbox{\hyperlink{classComplex_a385a011ee33ab37519844e3f6ed1d471}{00193}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{classComplex_a8bf00004de0d490060261f13168ead9f}{Complex::operator / }}(\textcolor{keywordtype}{double} d)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00194 \textcolor{keyword}{}\{ \textcolor{comment}{// Division of the complex number by a double}}
+\DoxyCodeLine{00195     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex_a43b9f07cdf697c71b5fd506a6cc80b8f}{Complex}}(x / d, y / d);}
+\DoxyCodeLine{00196 \}}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198 \textcolor{comment}{// Global operator overloading}}
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00199}\mbox{\hyperlink{Complex_8cc_abe3f055c0daea1aaeea0e669554422a7}{00199}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_abe3f055c0daea1aaeea0e669554422a7}{operator * }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c, \textcolor{keywordtype}{double} d)}
+\DoxyCodeLine{00200 \{ \textcolor{comment}{// Scaling by a double}}
+\DoxyCodeLine{00201     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}}(c.x * d, c.y * d);}
+\DoxyCodeLine{00202 \}}
+\DoxyCodeLine{00203 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00204}\mbox{\hyperlink{Complex_8cc_a8f7c64a77e1e179f5362bbd9cf5315f6}{00204}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_abe3f055c0daea1aaeea0e669554422a7}{operator * }}(\textcolor{keywordtype}{double} d, \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00205 \{ \textcolor{comment}{// Scaling by a double}}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207     \textcolor{comment}{// Reuse already made operator}}
+\DoxyCodeLine{00208     \textcolor{keywordflow}{return} c * d;}
+\DoxyCodeLine{00209 \}}
+\DoxyCodeLine{00210 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00211}\mbox{\hyperlink{Complex_8cc_a930dab6ca7411b426ec2d30b27b7ea90}{00211}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_a930dab6ca7411b426ec2d30b27b7ea90}{operator + }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c, \textcolor{keywordtype}{double} d)}
+\DoxyCodeLine{00212 \{}
+\DoxyCodeLine{00213     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}}(c.x + d, c.y);}
+\DoxyCodeLine{00214 \}}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00216}\mbox{\hyperlink{Complex_8cc_a9e192c9a21e15575f5d9cbf8cb93c59c}{00216}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_a930dab6ca7411b426ec2d30b27b7ea90}{operator + }}(\textcolor{keywordtype}{double} d, \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00217 \{}
+\DoxyCodeLine{00218     \textcolor{keywordflow}{return} c + d;}
+\DoxyCodeLine{00219 \}}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00221}\mbox{\hyperlink{Complex_8cc_a5e9ee99637c205e3d2651412955f8e21}{00221}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_a5e9ee99637c205e3d2651412955f8e21}{operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c, \textcolor{keywordtype}{double} d)}
+\DoxyCodeLine{00222 \{}
+\DoxyCodeLine{00223     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}}(c.x -\/ d, c.y);}
+\DoxyCodeLine{00224 \}}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00226}\mbox{\hyperlink{Complex_8cc_ac04e31ec5cbb8643690dd6c01bab7e0b}{00226}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_a5e9ee99637c205e3d2651412955f8e21}{operator -\/ }}(\textcolor{keywordtype}{double} d, \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00227 \{}
+\DoxyCodeLine{00228     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}}(d -\/ c.x, -\/c.y);}
+\DoxyCodeLine{00229 \}}
+\DoxyCodeLine{00230 }
+\DoxyCodeLine{00231 \textcolor{comment}{// Other functions}}
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00232}\mbox{\hyperlink{Complex_8cc_a396cd4aba5b5297abb4d57e455528e4c}{00232}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_a396cd4aba5b5297abb4d57e455528e4c}{conjugate}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00233 \{ \textcolor{comment}{// The complex conjugate of a complex number}}
+\DoxyCodeLine{00234     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}}(z.x, -\/z.y);}
+\DoxyCodeLine{00235 \}}
+\DoxyCodeLine{00236 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00237}\mbox{\hyperlink{Complex_8cc_afd49799b1e1745236282adafb1665e0b}{00237}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_afd49799b1e1745236282adafb1665e0b}{inverse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00238 \{ \textcolor{comment}{// The multiplicative inverse of the complex number}}
+\DoxyCodeLine{00239     \textcolor{comment}{// X + iY -\/-\/> 1.0 /(X + iY)}}
+\DoxyCodeLine{00240     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}}(1.0,0.0) / z;}
+\DoxyCodeLine{00241 \}}
+\DoxyCodeLine{00242 }
+\DoxyCodeLine{00243 \textcolor{comment}{// Complex trigonometric functions}}
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00244}\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{00244}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00245 \{ \textcolor{comment}{// Exponential function}}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247     \textcolor{keywordtype}{double} ex = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(c.x);}
+\DoxyCodeLine{00248     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}}(ex * \mbox{\hyperlink{Complex_8cc_af369383fdcdf6ec5e3a01b215e180c83}{cos}}(c.y), ex * \mbox{\hyperlink{Complex_8cc_af22660b33d2d25b25b83167ef6cf4c5d}{sin}}(c.y));}
+\DoxyCodeLine{00249 \}}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00251}\mbox{\hyperlink{Complex_8cc_af369383fdcdf6ec5e3a01b215e180c83}{00251}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_af369383fdcdf6ec5e3a01b215e180c83}{cos}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00252 \{ \textcolor{comment}{// Cosine function}}
+\DoxyCodeLine{00253     \mbox{\hyperlink{classComplex}{Complex}} term1 = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(\mbox{\hyperlink{Complex_8cc_a72441d40ccdf70c6c1da4a4afc2263e1}{mpi}}(z));}
+\DoxyCodeLine{00254     \mbox{\hyperlink{classComplex}{Complex}} term2 = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(-\/ \mbox{\hyperlink{Complex_8cc_a72441d40ccdf70c6c1da4a4afc2263e1}{mpi}}(z));}
+\DoxyCodeLine{00255 }
+\DoxyCodeLine{00256     \mbox{\hyperlink{classComplex}{Complex}} result = 0.5 * (term1 + term2);}
+\DoxyCodeLine{00257 }
+\DoxyCodeLine{00258     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00259 \}}
+\DoxyCodeLine{00260 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00261}\mbox{\hyperlink{Complex_8cc_af22660b33d2d25b25b83167ef6cf4c5d}{00261}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_af22660b33d2d25b25b83167ef6cf4c5d}{sin}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00262 \{ \textcolor{comment}{// Sine function}}
+\DoxyCodeLine{00263     \mbox{\hyperlink{classComplex}{Complex}} term1 = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(\mbox{\hyperlink{Complex_8cc_a72441d40ccdf70c6c1da4a4afc2263e1}{mpi}}(z));}
+\DoxyCodeLine{00264     \mbox{\hyperlink{classComplex}{Complex}} term2 = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(-\/ \mbox{\hyperlink{Complex_8cc_a72441d40ccdf70c6c1da4a4afc2263e1}{mpi}}(z));}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00266     \mbox{\hyperlink{classComplex}{Complex}} result = -\/ 0.5 * \mbox{\hyperlink{Complex_8cc_a72441d40ccdf70c6c1da4a4afc2263e1}{mpi}}(term1 -\/ term2);}
+\DoxyCodeLine{00267 }
+\DoxyCodeLine{00268     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00269 \}}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00271}\mbox{\hyperlink{Complex_8cc_ac205b42a2eec5378f97dfcc3d6428d93}{00271}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_ac205b42a2eec5378f97dfcc3d6428d93}{cosh}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00272 \{ \textcolor{comment}{// Hyperbolic cosine function}}
+\DoxyCodeLine{00273     \textcolor{keywordflow}{return} (\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(z)  + \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(-\/ (z))) * 0.5;}
+\DoxyCodeLine{00274 \}}
+\DoxyCodeLine{00275 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00276}\mbox{\hyperlink{Complex_8cc_aeaa6c0b46e054ab969bb0511f2bd74a8}{00276}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_aeaa6c0b46e054ab969bb0511f2bd74a8}{sinh}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00277 \{ \textcolor{comment}{// Hyperbolic sine function}}
+\DoxyCodeLine{00278     \textcolor{keywordflow}{return} (\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(z) -\/ \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(-\/ (z))) * 0.5;}
+\DoxyCodeLine{00279 \}}
+\DoxyCodeLine{00280 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00281}\mbox{\hyperlink{Complex_8cc_a7d9d7cb3216b4415845459dfd948d138}{00281}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_a7d9d7cb3216b4415845459dfd948d138}{tanh}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00282 \{ \textcolor{comment}{// Hyperbolic tangent function}}
+\DoxyCodeLine{00283 }
+\DoxyCodeLine{00284     \textcolor{keywordflow}{return} \mbox{\hyperlink{Complex_8cc_aeaa6c0b46e054ab969bb0511f2bd74a8}{sinh}}(z) / \mbox{\hyperlink{Complex_8cc_ac205b42a2eec5378f97dfcc3d6428d93}{cosh}}(z);}
+\DoxyCodeLine{00285 \}}
+\DoxyCodeLine{00286 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00287}\mbox{\hyperlink{Complex_8cc_a7e0e5dbe50bc627ea25a836ee2d0b3cd}{00287}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_a7e0e5dbe50bc627ea25a836ee2d0b3cd}{sech}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00288 \{ \textcolor{comment}{// Hyperbolic secant function}}
+\DoxyCodeLine{00289     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}} (2.0, 0.0)/(\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(z) + \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(-\/z));}
+\DoxyCodeLine{00290 \}}
+\DoxyCodeLine{00291 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00292}\mbox{\hyperlink{Complex_8cc_ad3b049ea6a0d0b0eda2a7837643688eb}{00292}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_ad3b049ea6a0d0b0eda2a7837643688eb}{csch}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00293 \{ \textcolor{comment}{// Hyperbolic cosecant function}}
+\DoxyCodeLine{00294     \textcolor{keywordflow}{return} \mbox{\hyperlink{classComplex}{Complex}} (2.0, 0.0)/(\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(z) -\/ \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(-\/z));}
+\DoxyCodeLine{00295 \}}
+\DoxyCodeLine{00296 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00297}\mbox{\hyperlink{Complex_8cc_ad26a758f4d68bdf9e590890bc0e19403}{00297}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_ad26a758f4d68bdf9e590890bc0e19403}{coth}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& z)}
+\DoxyCodeLine{00298 \{ \textcolor{comment}{// Hyperbolic cotangent function}}
+\DoxyCodeLine{00299     \textcolor{keywordflow}{return} \mbox{\hyperlink{Complex_8cc_ac205b42a2eec5378f97dfcc3d6428d93}{cosh}}(z) / \mbox{\hyperlink{Complex_8cc_aeaa6c0b46e054ab969bb0511f2bd74a8}{sinh}}(z);}
+\DoxyCodeLine{00300 \}}
+\DoxyCodeLine{00301 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00302}\mbox{\hyperlink{Complex_8cc_aa853f765f528a0e309077c0739f55f97}{00302}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_aa853f765f528a0e309077c0739f55f97}{tan}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00303 \{ \textcolor{comment}{// The tangent function}}
+\DoxyCodeLine{00304     \textcolor{keywordflow}{return} \mbox{\hyperlink{Complex_8cc_af22660b33d2d25b25b83167ef6cf4c5d}{sin}}(c) / \mbox{\hyperlink{Complex_8cc_af369383fdcdf6ec5e3a01b215e180c83}{cos}}(c);}
+\DoxyCodeLine{00305 \}}
+\DoxyCodeLine{00306 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00307}\mbox{\hyperlink{Complex_8cc_ae6ce3475f7257fa987d0bd4baf821be9}{00307}} \mbox{\hyperlink{classComplex}{Complex}} \mbox{\hyperlink{Complex_8cc_ae6ce3475f7257fa987d0bd4baf821be9}{cgt}}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& c)}
+\DoxyCodeLine{00308 \{ \textcolor{comment}{// The cotangent function}}
+\DoxyCodeLine{00309     \textcolor{keywordflow}{return} \mbox{\hyperlink{Complex_8cc_af369383fdcdf6ec5e3a01b215e180c83}{cos}}(c) / \mbox{\hyperlink{Complex_8cc_af22660b33d2d25b25b83167ef6cf4c5d}{sin}}(c);}
+\DoxyCodeLine{00310 \}}
+\DoxyCodeLine{00311 }
+\DoxyCodeLine{\Hypertarget{Complex_8cc_source_l00312}\mbox{\hyperlink{Complex_8cc_add2323a504cf184eb6348f88892a87c5}{00312}} std::ostream\& \mbox{\hyperlink{Complex_8cc_add2323a504cf184eb6348f88892a87c5}{operator << }}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& cmp)}
+\DoxyCodeLine{00313 \{ \textcolor{comment}{// Print the complex number}}
+\DoxyCodeLine{00314 }
+\DoxyCodeLine{00315     os << \textcolor{stringliteral}{"["} << cmp.x << \textcolor{stringliteral}{", "} << cmp.y << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00316     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{00317 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,61 @@
+\hypertarget{ExcelDriver_8cc}{}\doxysection{src/\+Excel\+Driver.cc File Reference}
+\label{ExcelDriver_8cc}\index{src/ExcelDriver.cc@{src/ExcelDriver.cc}}
+{\ttfamily \#include $<$duffy/\+Excel\+Driver.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Matrix\+Mechanisms.\+hh$>$}\newline
+Include dependency graph for Excel\+Driver.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ExcelDriver_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ExcelDriver_8cc_a47ae6379779323a65c3590559e78dcd1}{Excel\+Driver\+\_\+\+C\+PP}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{ExcelDriver_8cc_a1b724dd4e99548501ed8e37c192d9eca}{create\+Vector}} (const \mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \&mat, long row)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ExcelDriver_8cc_a47ae6379779323a65c3590559e78dcd1}\label{ExcelDriver_8cc_a47ae6379779323a65c3590559e78dcd1}} 
+\index{ExcelDriver.cc@{ExcelDriver.cc}!ExcelDriver\_CPP@{ExcelDriver\_CPP}}
+\index{ExcelDriver\_CPP@{ExcelDriver\_CPP}!ExcelDriver.cc@{ExcelDriver.cc}}
+\doxysubsubsection{\texorpdfstring{ExcelDriver\_CPP}{ExcelDriver\_CPP}}
+{\footnotesize\ttfamily \#define Excel\+Driver\+\_\+\+C\+PP}
+
+
+
+Definition at line \mbox{\hyperlink{ExcelDriver_8cc_source_l00032}{32}} of file \mbox{\hyperlink{ExcelDriver_8cc_source}{Excel\+Driver.\+cc}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ExcelDriver_8cc_a1b724dd4e99548501ed8e37c192d9eca}\label{ExcelDriver_8cc_a1b724dd4e99548501ed8e37c192d9eca}} 
+\index{ExcelDriver.cc@{ExcelDriver.cc}!createVector@{createVector}}
+\index{createVector@{createVector}!ExcelDriver.cc@{ExcelDriver.cc}}
+\doxysubsubsection{\texorpdfstring{createVector()}{createVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$double, long$>$ create\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \&}]{mat,  }\item[{long}]{row }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ExcelDriver_8cc_source_l00323}{323}} of file \mbox{\hyperlink{ExcelDriver_8cc_source}{Excel\+Driver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00324 \{}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326         \mbox{\hyperlink{classVector}{Vector<double, long>}} result (mat.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}(), mat.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}());}
+\DoxyCodeLine{00327         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = mat.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); i <= mat.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); i++)}
+\DoxyCodeLine{00328         \{}
+\DoxyCodeLine{00329             result[i] = mat(row, i);}
+\DoxyCodeLine{00330         \}}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00333 \}}
+
+\end{DoxyCode}

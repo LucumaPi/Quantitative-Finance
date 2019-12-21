@@ -2,6 +2,10 @@
 \label{classRainbowStrategy}\index{RainbowStrategy@{RainbowStrategy}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Rainbow\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,14 +25,64 @@ Collaboration diagram for Rainbow\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classRainbowStrategy_aef4fb1f52b01698f3074460a63634c76}\label{classRainbowStrategy_aef4fb1f52b01698f3074460a63634c76}} 
-{\bfseries Rainbow\+Strategy} (double strike, double cp, int D\+Min\+D\+Max)
+\mbox{\hyperlink{classRainbowStrategy_aef4fb1f52b01698f3074460a63634c76}{Rainbow\+Strategy}} (double strike, double cp, int D\+Min\+D\+Max)
 \item 
-\mbox{\Hypertarget{classRainbowStrategy_ab2ef5cfa977258e831b102521ddef28e}\label{classRainbowStrategy_ab2ef5cfa977258e831b102521ddef28e}} 
-double {\bfseries payoff} (double S1, double S2) const
+double \mbox{\hyperlink{classRainbowStrategy_ab2ef5cfa977258e831b102521ddef28e}{payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00037}{37}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRainbowStrategy_aef4fb1f52b01698f3074460a63634c76}\label{classRainbowStrategy_aef4fb1f52b01698f3074460a63634c76}} 
+\index{RainbowStrategy@{RainbowStrategy}!RainbowStrategy@{RainbowStrategy}}
+\index{RainbowStrategy@{RainbowStrategy}!RainbowStrategy@{RainbowStrategy}}
+\doxysubsubsection{\texorpdfstring{RainbowStrategy()}{RainbowStrategy()}}
+{\footnotesize\ttfamily Rainbow\+Strategy\+::\+Rainbow\+Strategy (\begin{DoxyParamCaption}\item[{double}]{strike,  }\item[{double}]{cp,  }\item[{int}]{D\+Min\+D\+Max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00044}{44}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045         \{ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = strike; w = cp; \mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}} = DMinDMax; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRainbowStrategy_ab2ef5cfa977258e831b102521ddef28e}\label{classRainbowStrategy_ab2ef5cfa977258e831b102521ddef28e}} 
+\index{RainbowStrategy@{RainbowStrategy}!payoff@{payoff}}
+\index{payoff@{payoff}!RainbowStrategy@{RainbowStrategy}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Rainbow\+Strategy\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{Multi\+Asset\+Payoff\+Strategy}}.
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00046}{46}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047         \{}
+\DoxyCodeLine{00048             \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}} == 1)  \textcolor{comment}{// DMax}}
+\DoxyCodeLine{00049                 \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} ( w * \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(S1,S2) -\/ w*\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, 0.0);}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}( w * \mbox{\hyperlink{GenericInequalities_8hh_adb69bfcb34a8cdf14dcb3fc08f9687c0}{Min}}(S1,S2) -\/ w*\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, 0.0);}
+\DoxyCodeLine{00052         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff\+Strategy.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoffStrategy_8hh}{Multi\+Asset\+Payoff\+Strategy.\+hh}}\end{DoxyCompactItemize}

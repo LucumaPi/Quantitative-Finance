@@ -1,0 +1,51 @@
+\hypertarget{TestPSetCreators_8cc_source}{}\doxysection{Test\+P\+Set\+Creators.\+cc}
+\label{TestPSetCreators_8cc_source}\index{tests/TestPSetCreators.cc@{tests/TestPSetCreators.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestPSetCreators.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Test program for property set creators.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// V2: use auto\_ptr}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Education BV 1998-\/2006}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{PSetCreators_8hh}{duffy/PSetCreators.hh}}>}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{\Hypertarget{TestPSetCreators_8cc_source_l00011}\mbox{\hyperlink{TestPSetCreators_8cc_a7e610041b7ed8f90e3a9be08354a4c7a}{00011}} \textcolor{keywordtype}{void} \mbox{\hyperlink{TestPSetCreators_8cc_a7e610041b7ed8f90e3a9be08354a4c7a}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string,double>}}\& pset)}
+\DoxyCodeLine{00012 \{}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \mbox{\hyperlink{classSimplePropertySet_aab3d4fc3315979035be3d5c64c42d425}{SimplePropertySet<std::string,double>::const\_iterator}} it;}
+\DoxyCodeLine{00015     }
+\DoxyCodeLine{00016     std::cout << \textcolor{stringliteral}{"\(\backslash\)nPrinting Property Set\(\backslash\)n"};}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     \textcolor{keywordflow}{for} (it= pset.\mbox{\hyperlink{classSimplePropertySet_af0c72b2e6a39f6d2d02ce443afa01de5}{Begin}}(); it!=pset.\mbox{\hyperlink{classSimplePropertySet_a6d3c8a051b7c6846508898c8375a2cfd}{End}}(); it++)}
+\DoxyCodeLine{00019     \{ }
+\DoxyCodeLine{00020     }
+\DoxyCodeLine{00021             std::cout << (*it).first << \textcolor{stringliteral}{", "} << (*it).second << std::endl;}
+\DoxyCodeLine{00022     \}}
+\DoxyCodeLine{00023 \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{TestPSetCreators_8cc_source_l00025}\mbox{\hyperlink{TestPSetCreators_8cc_ad211aa7e0bca36527cb86e66d69a885a}{00025}} \mbox{\hyperlink{classPSetFactory}{PSetFactory}}* \mbox{\hyperlink{TestPSetCreators_8cc_ad211aa7e0bca36527cb86e66d69a885a}{GetPSetFactory}}()}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{comment}{// Only 1 factory in this version, like model T}}
+\DoxyCodeLine{00029     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classConsolePSetFactory}{ConsolePSetFactory}};}
+\DoxyCodeLine{00030 \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{TestPSetCreators_8cc_source_l00032}\mbox{\hyperlink{TestPSetCreators_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00032}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestPSetCreators_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00033 \{}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \mbox{\hyperlink{classPSetFactory}{PSetFactory}}* fac = \mbox{\hyperlink{TestPSetCreators_8cc_ad211aa7e0bca36527cb86e66d69a885a}{GetPSetFactory}}();}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \mbox{\hyperlink{classSimplePropertySet}{PSet}}* mySet = fac-\/>\mbox{\hyperlink{classPSetFactory_abe4bdfbb13a8e4ac67ca59f7e3824589}{CreatePSet}}();}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \mbox{\hyperlink{TestPSetCreators_8cc_a7e610041b7ed8f90e3a9be08354a4c7a}{print}} (*mySet);}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keyword}{delete} fac;}
+\DoxyCodeLine{00042     \textcolor{keyword}{delete} mySet;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00045 \}}
+
+\end{DoxyCode}

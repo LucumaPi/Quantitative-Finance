@@ -1,0 +1,58 @@
+\hypertarget{Wrapper_8cc_source}{}\doxysection{Wrapper.\+cc}
+\label{Wrapper_8cc_source}\index{src/Wrapper.cc@{src/Wrapper.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Wrapper.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Class for use in heterogeneous data types.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// Notice that type are generic, so classes are built for you.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// Version 1 (i.e. minimal functionality).}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifndef Wrapper\_CC}}
+\DoxyCodeLine{\Hypertarget{Wrapper_8cc_source_l00012}\mbox{\hyperlink{Wrapper_8cc_ace6ce9c648fbb2bc18855c5df2097071}{00012}} \textcolor{preprocessor}{\#define Wrapper\_CC}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{SimplePropertySet_8hh}{duffy/SimplePropertySet.hh}}>}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{Wrapper_8cc_source_l00017}\mbox{\hyperlink{classAnyType}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classAnyType}{AnyType}} }
+\DoxyCodeLine{00018 \{ \textcolor{comment}{// Base class for all wrapped types}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Wrapper_8cc_source_l00021}\mbox{\hyperlink{classAnyType_a6fa876cd3334c1b65ac0f99b0b074ccf}{00021}}     \mbox{\hyperlink{classAnyType_a6fa876cd3334c1b65ac0f99b0b074ccf}{AnyType}}() \{\}}
+\DoxyCodeLine{00022 \};}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{\Hypertarget{Wrapper_8cc_source_l00024}\mbox{\hyperlink{classWrapper}{00024}} \textcolor{keyword}{template} <\textcolor{keyword}{class} T> \textcolor{keyword}{class }\mbox{\hyperlink{classWrapper}{Wrapper}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAnyType}{AnyType}}}
+\DoxyCodeLine{00025 \{ \textcolor{comment}{// Generic wrapper for any data type}}
+\DoxyCodeLine{00026 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027         \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} obj;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Wrapper_8cc_source_l00030}\mbox{\hyperlink{classWrapper_a747788c9b29a997f4d805ec60e6e16a2}{00030}}     \mbox{\hyperlink{classWrapper_a747788c9b29a997f4d805ec60e6e16a2}{Wrapper}}() \{ obj = \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}();\}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{Wrapper_8cc_source_l00032}\mbox{\hyperlink{classWrapper_ac286ab6c8dea5a2b5a243edea78eca7b}{00032}}     \mbox{\hyperlink{classWrapper_ac286ab6c8dea5a2b5a243edea78eca7b}{Wrapper}}(\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} wrappedObject) \{ obj = wrappedObject;\}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{comment}{// Need to know if current type is same as another type}}
+\DoxyCodeLine{00035     \textcolor{comment}{// This is a template member function}}
+\DoxyCodeLine{00036     \textcolor{keyword}{template} <\textcolor{keyword}{class} T2>}
+\DoxyCodeLine{\Hypertarget{Wrapper_8cc_source_l00037}\mbox{\hyperlink{classWrapper_a722618937323f1c2ae417b77021cf381}{00037}}             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classWrapper_a722618937323f1c2ae417b77021cf381}{sameType}} (\textcolor{keyword}{const} T2\& t2)}
+\DoxyCodeLine{00038     \{}
+\DoxyCodeLine{00039         }
+\DoxyCodeLine{00040         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(\mbox{\hyperlink{classWrapper}{Wrapper<T>}}) == \textcolor{keyword}{typeid}(t2))}
+\DoxyCodeLine{00041         \{}
+\DoxyCodeLine{00042             }
+\DoxyCodeLine{00043             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00044         \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \};}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

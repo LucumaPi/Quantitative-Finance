@@ -24,15 +24,15 @@
 \DoxyCodeLine{00020 }
 \DoxyCodeLine{00021     \textcolor{comment}{// Selector functions}}
 \DoxyCodeLine{00022     \textcolor{comment}{// Coefficients of parabolic second order operator}}
-\DoxyCodeLine{00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} diffusion(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0; \textcolor{comment}{// Coefficient of second derivative}}
-\DoxyCodeLine{00024     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} convection(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0; \textcolor{comment}{// Coefficient of first derivative}}
-\DoxyCodeLine{00025     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} zeroterm(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;  \textcolor{comment}{// Coefficient of zero derivative}}
-\DoxyCodeLine{00026     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} RHS(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;       \textcolor{comment}{// Inhomogeneous forcing term}}
+\DoxyCodeLine{00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVPImp_a6f66b0583fd3d65ad946650f1ff7ca1e}{diffusion}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0; \textcolor{comment}{// Coefficient of second derivative}}
+\DoxyCodeLine{00024     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVPImp_a44d3dc1c2d3b351705d101943c42c880}{convection}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const}   = 0; \textcolor{comment}{// Coefficient of first derivative}}
+\DoxyCodeLine{00025     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVPImp_ac6bab43d37b55879c6b29eefa0dad63f}{zeroterm}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;  \textcolor{comment}{// Coefficient of zero derivative}}
+\DoxyCodeLine{00026     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVPImp_ae2d0430ad38aa7b6055b1cb622051e67}{RHS}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;        \textcolor{comment}{// Inhomogeneous forcing term}}
 \DoxyCodeLine{00027 }
 \DoxyCodeLine{00028     \textcolor{comment}{// Boundary and initial conditions}}
-\DoxyCodeLine{00029     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} BCL(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;         \textcolor{comment}{// Left hand boundary condition}}
-\DoxyCodeLine{00030     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} BCR(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;     \textcolor{comment}{// Right hand boundary condition}}
-\DoxyCodeLine{00031     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} IC(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const} = 0;      \textcolor{comment}{// Initial condition}}
+\DoxyCodeLine{00029     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVPImp_aeff635ae5363a1858efc57c833500300}{BCL}}(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;          \textcolor{comment}{// Left hand boundary condition}}
+\DoxyCodeLine{00030     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVPImp_a371a1b065ab843b926b1baf727be09af}{BCR}}(\textcolor{keywordtype}{double} t) \textcolor{keyword}{const} = 0;      \textcolor{comment}{// Right hand boundary condition}}
+\DoxyCodeLine{00031     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVPImp_ad9cfdc5edfadcf5f18cb4d3a6b64f740}{IC}}(\textcolor{keywordtype}{double} x) \textcolor{keyword}{const} = 0;        \textcolor{comment}{// Initial condition}}
 \DoxyCodeLine{00032 \};}
 \DoxyCodeLine{00033 \textcolor{preprocessor}{\#include "../../src/IBVPImp.cc"}}
 \DoxyCodeLine{00034 \textcolor{preprocessor}{\#endif}}

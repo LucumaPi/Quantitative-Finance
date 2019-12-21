@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_Delegation_8cc">
+<title>tests/Delegation.cc File Reference</title>
+<indexterm><primary>tests/Delegation.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+</programlisting>Include dependency graph for Delegation.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="Delegation_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classB">B</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classD">D</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classClient">Client</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_Delegation_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_Delegation_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>Delegation.cc</secondary></indexterm>
+<indexterm><primary>Delegation.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 57 of file Delegation.cc.</para>
+<programlisting>58 {
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;arraySize&#32;=&#32;10;
+60 &#32;&#32;&#32;&#32;<link linkend="_classD">D</link>&#32;myDerived(arraySize);
+61 &#32;&#32;&#32;&#32;
+62 &#32;&#32;&#32;&#32;<link linkend="_classClient">Client</link>&#32;myClient(myDerived);
+63 
+64 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Client&#32;value:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;myClient.clientValue()&#32;&lt;&lt;&#32;std::endl;
+65 
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+67 }
+</programlisting></section>
+</section>
+</section>

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestLatticeBackwardInduction_8cc">
+<title>tests/TestLatticeBackwardInduction.cc File Reference</title>
+<indexterm><primary>tests/TestLatticeBackwardInduction.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Lattice.hh&gt;
+#include &lt;duffy/Vector.hh&gt;
+</programlisting>Include dependency graph for TestLatticeBackwardInduction.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestLatticeBackwardInduction_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespaceBackwardInduction">BackwardInduction</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceBackwardInduction_1a2ee4a25bb369ca52d0d7fe553f4ae502">BackwardInduction::taverse</link> (const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp;lattice)</para>
+</listitem>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, int &gt; <link linkend="_TestLatticeBackwardInduction_8cc_1a4550ecc74ce63528016936d22984f853">mycreateTerminalVector</link> (const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp;lattice)</para>
+</listitem>
+            <listitem><para>double <link linkend="_TestLatticeBackwardInduction_8cc_1ab6a22f5d618d1f2aef45ab03a2aed1de">mynodeValue</link> (double upper, double lower)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestLatticeBackwardInduction_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, int &gt;(* <link linkend="_namespaceBackwardInduction_1a0f1c3dce9e5b1a3c659c0014d7eede07">BackwardInduction::createTerminalVector</link> )(const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp;lattice)</para>
+</listitem>
+            <listitem><para>double(* <link linkend="_namespaceBackwardInduction_1a7dda378748f91b6c14847031ab129606">BackwardInduction::nodeValue</link> )(double, upper, double lower)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestLatticeBackwardInduction_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestLatticeBackwardInduction.cc</secondary></indexterm>
+<indexterm><primary>TestLatticeBackwardInduction.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 62 of file TestLatticeBackwardInduction.cc.</para>
+<programlisting>63 {
+64 
+65 &#32;&#32;&#32;&#32;<link linkend="_classLattice">Lattice&lt;double, int, 2&gt;</link>&#32;lattice;
+66 &#32;&#32;&#32;&#32;<link linkend="_namespaceBackwardInduction_1a0f1c3dce9e5b1a3c659c0014d7eede07">BackwardInduction::createTerminalVector</link>&#32;=&#32;<link linkend="_TestLatticeBackwardInduction_8cc_1a4550ecc74ce63528016936d22984f853">mycreateTerminalVector</link>(lattice);
+67 
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;upper&#32;=&#32;
+69 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;lower&#32;=&#32;
+70 &#32;&#32;&#32;&#32;<link linkend="_namespaceBackwardInduction_1a7dda378748f91b6c14847031ab129606">BackwardInduction::nodeValue</link>&#32;=&#32;<link linkend="_TestLatticeBackwardInduction_8cc_1ab6a22f5d618d1f2aef45ab03a2aed1de">mynodeValue</link>(uppper,&#32;lower,&#32;lattice);
+71 
+72 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespaceBackwardInduction">BackwardInduction</link>;
+73 
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;result&#32;=&#32;<link linkend="_namespaceBackwardInduction_1a2ee4a25bb369ca52d0d7fe553f4ae502">taverse</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classLattice">Lattice&lt;double, int, 2&gt;</link>&amp;&#32;lattice);
+75 }
+</programlisting>    </section><anchor xml:id="_TestLatticeBackwardInduction_8cc_1a4550ecc74ce63528016936d22984f853"/>    <section>
+    <title>mycreateTerminalVector()</title>
+<indexterm><primary>mycreateTerminalVector</primary><secondary>TestLatticeBackwardInduction.cc</secondary></indexterm>
+<indexterm><primary>TestLatticeBackwardInduction.cc</primary><secondary>mycreateTerminalVector</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt;double, int&gt; mycreateTerminalVector (const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp; lattice)</computeroutput></para><para>
+Definition at line 50 of file TestLatticeBackwardInduction.cc.</para>
+<programlisting>51 {
+52 
+53 &#32;&#32;&#32;&#32;<emphasis role="comment">//</emphasis>
+54 }
+</programlisting>    </section><anchor xml:id="_TestLatticeBackwardInduction_8cc_1ab6a22f5d618d1f2aef45ab03a2aed1de"/>    <section>
+    <title>mynodeValue()</title>
+<indexterm><primary>mynodeValue</primary><secondary>TestLatticeBackwardInduction.cc</secondary></indexterm>
+<indexterm><primary>TestLatticeBackwardInduction.cc</primary><secondary>mynodeValue</secondary></indexterm>
+<para><computeroutput>double mynodeValue (double upper, double lower)</computeroutput></para><para>
+Definition at line 56 of file TestLatticeBackwardInduction.cc.</para>
+<programlisting>57 {
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="comment">//</emphasis>
+60 }
+</programlisting></section>
+</section>
+</section>

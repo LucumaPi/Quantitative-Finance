@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPadeCRRStrategy">
 <title>PadeCRRStrategy Class Reference</title>
 <indexterm><primary>PadeCRRStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;BinomialLatticeStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for PadeCRRStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,54 @@ Collaboration diagram for PadeCRRStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classPadeCRRStrategy_1aa07d959ab5ca27e4a60e105e56a3fedc"/><emphasis role="strong">PadeCRRStrategy</emphasis> (double vol, double interest, double delta)</para>
+            <listitem><para><link linkend="_classPadeCRRStrategy_1aa07d959ab5ca27e4a60e105e56a3fedc">PadeCRRStrategy</link> (double vol, double interest, double delta)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 58 of file BinomialLatticeStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPadeCRRStrategy_1aa07d959ab5ca27e4a60e105e56a3fedc"/>    <section>
+    <title>PadeCRRStrategy()</title>
+<indexterm><primary>PadeCRRStrategy</primary><secondary>PadeCRRStrategy</secondary></indexterm>
+<indexterm><primary>PadeCRRStrategy</primary><secondary>PadeCRRStrategy</secondary></indexterm>
+<para><computeroutput>PadeCRRStrategy::PadeCRRStrategy (double vol, double interest, double delta)</computeroutput></para><para>
+Definition at line 72 of file BinomialLatticeStrategy.cc.</para>
+<programlisting>73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classBinomialLatticeStrategy_1a30116db67055ec31490b298ad9fda14a">BinomialLatticeStrategy</link>(vol,&#32;interest,&#32;delta)
+74 {
+75 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;double&#32;e&#32;=&#32;::exp((r)*k);</emphasis>
+76 <emphasis role="comment">&#32;&#32;&#32;&#32;double&#32;sr&#32;=&#32;::sqrt(exp(vol*vol*k)&#32;-&#32;1.0);</emphasis>
+77 <emphasis role="comment">&#32;&#32;&#32;&#32;u&#32;=&#32;e&#32;*&#32;(1.0&#32;+&#32;sr);</emphasis>
+78 <emphasis role="comment">&#32;&#32;&#32;&#32;d&#32;=&#32;e&#32;*&#32;(1.0&#32;-&#32;sr);*/</emphasis>
+79 
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;R1&#32;=&#32;(<link linkend="_classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae">r</link>&#32;-&#32;0.5&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>)&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0">k</link>;
+81 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;R2&#32;=&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>&#32;*&#32;std::sqrt(<link linkend="_classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0">k</link>);
+82 
+83 &#32;&#32;&#32;&#32;<emphasis role="comment">//u&#32;=&#32;::exp(R1&#32;+&#32;R2);</emphasis>
+84 &#32;&#32;&#32;&#32;<emphasis role="comment">//d&#32;=&#32;::exp(R1&#32;-&#32;R2);</emphasis>
+85 
+86 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Cayley&#32;transform</emphasis>
+87 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;z1&#32;=&#32;(R1&#32;+&#32;R2);
+88 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;z2&#32;=&#32;(R1&#32;-&#32;R2);
+89 
+90 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3">u</link>&#32;=&#32;(2.0&#32;+&#32;z1)&#32;/&#32;(2.0&#32;-&#32;z1);
+91 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7">d</link>&#32;=&#32;(2.0&#32;+&#32;z2)&#32;/&#32;(2.0&#32;-&#32;z2);
+92 
+93 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;UD&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3">u</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7">d</link>;
+94 
+95 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;discounting&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(-&#32;<link linkend="_classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae">r</link>*<link linkend="_classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0">k</link>);
+96 
+97 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f">p</link>&#32;=&#32;0.5;
+98 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/BinomialLatticeStrategy.hhsrc/BinomialLatticeStrategy.cc</section>
+include/duffy/<link linkend="_BinomialLatticeStrategy_8hh">BinomialLatticeStrategy.hh</link>src/<link linkend="_BinomialLatticeStrategy_8cc">BinomialLatticeStrategy.cc</link></section>
+</section>

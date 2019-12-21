@@ -7,10 +7,18 @@
     <includedby refid="ShapeComposite_8hh" local="no">include/duffy/ShapeComposite.hh</includedby>
     <includedby refid="Shape_8cc" local="no">src/Shape.cc</includedby>
     <invincdepgraph>
+      <node id="8">
+        <label>src/ShapeComposite.cc</label>
+        <link refid="ShapeComposite_8cc"/>
+      </node>
       <node id="2">
         <label>include/duffy/GenericComposite.hh</label>
-        <link refid="GenericComposite_8hh_source"/>
+        <link refid="GenericComposite_8hh"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -18,22 +26,40 @@
         <link refid="Shape_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/Shape.cc</label>
+        <link refid="Shape_8cc"/>
+      </node>
+      <node id="5">
+        <label>tests/Main.cc</label>
+        <link refid="Main_8cc"/>
+      </node>
+      <node id="6">
+        <label>include/duffy/PointNew.hpp</label>
+        <link refid="PointNew_8hpp"/>
+      </node>
+      <node id="7">
+        <label>include/duffy/ShapeComposite.hh</label>
+        <link refid="ShapeComposite_8hh"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/GenericComposite.cc</label>
+        <link refid="GenericComposite_8cc"/>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="4">
-        <label>include/duffy/PointNew.hpp</label>
-        <link refid="PointNew_8hpp_source"/>
-      </node>
-      <node id="5">
-        <label>include/duffy/ShapeComposite.hh</label>
-        <link refid="ShapeComposite_8hh_source"/>
-      </node>
-      <node id="3">
         <label>include/duffy/GenericVisitor.hh</label>
-        <link refid="GenericVisitor_8hh_source"/>
+        <link refid="GenericVisitor_8hh"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classShape" prot="public">Shape</innerclass>
@@ -58,12 +84,12 @@
 <codeline lineno="14"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructors<sp/>and<sp/>destructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape" kindref="compound">Shape</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape" kindref="compound">Shape</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classShape" kindref="compound">Shape</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classShape" kindref="compound">Shape</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape_1aaa8d87171e65e0d8ba3c5459978992a7" kindref="member">Shape</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape_1aaa8d87171e65e0d8ba3c5459978992a7" kindref="member">Shape</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classShape" kindref="compound">Shape</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classShape_1a935afc9e576015f967d90de56977167d" kindref="member">~Shape</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Operator<sp/>overloading</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape" kindref="compound">Shape</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classShape" kindref="compound">Shape</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape" kindref="compound">Shape</ref>&amp;<sp/><ref refid="classShape_1afcefeb5c8a6d3b2f7b6426d299eafe02" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classShape" kindref="compound">Shape</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>SHAPE_HH</highlight></codeline>

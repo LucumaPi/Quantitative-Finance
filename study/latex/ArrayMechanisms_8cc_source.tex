@@ -1,0 +1,787 @@
+\hypertarget{ArrayMechanisms_8cc_source}{}\doxysection{Array\+Mechanisms.\+cc}
+\label{ArrayMechanisms_8cc_source}\index{src/ArrayMechanisms.cc@{src/ArrayMechanisms.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// arraymechanisms.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// 2003-\/8-\/1 Initial code DD}}
+\DoxyCodeLine{00004 \textcolor{comment}{// 2003-\/80-\/6 DD major code review and changes}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 2004-\/4-\/3 DD testing etc.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2004-\/4-\/9 DD Code review and final fiat (for time being)}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2005-\/6-\/19 DD print function for Tensor}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 2005-\/1-\/8 DD big fix in l2Norm (wrong name)}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{// (C) Datasim Education BV 2003-\/2004}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#ifndef ArrayMechanisms\_CC}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00014}\mbox{\hyperlink{ArrayMechanisms_8cc_a5bbfa6106f64000f9dd4d577e73837f2}{00014}} \textcolor{preprocessor}{\#define ArrayMechanisms\_CC}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ArrayMechanisms_8hh}{duffy/ArrayMechanisms.hh}}>}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{comment}{// Sums and averages}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00019}\mbox{\hyperlink{ArrayMechanisms_8cc_aea32fac5839587550db96af2d9c443a0}{00019}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_aea32fac5839587550db96af2d9c443a0}{sum}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00020 \{ \textcolor{comment}{// Sum of elements}}
+\DoxyCodeLine{00021         V ans = x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()+1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             ans += x[j];}
+\DoxyCodeLine{00026         \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00029 \} }
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00031}\mbox{\hyperlink{ArrayMechanisms_8cc_a7383833d1a743d1cf913e8748e03e30d}{00031}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a7383833d1a743d1cf913e8748e03e30d}{product}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00032 \{ \textcolor{comment}{// Product of elements}}
+\DoxyCodeLine{00033     V ans = x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00036     \{}
+\DoxyCodeLine{00037         ans *= x[j];}
+\DoxyCodeLine{00038     \}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00041 \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00043}\mbox{\hyperlink{ArrayMechanisms_8cc_a1f180ea2ca6f8377075ebe0078a3a535}{00043}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a1f180ea2ca6f8377075ebe0078a3a535}{sumReciprocals}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x) }
+\DoxyCodeLine{00044 \{  \textcolor{comment}{// Sum of reciprocals    }}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         \textcolor{comment}{// Precondition (PREC): x is (strictly) positive}}
+\DoxyCodeLine{00047         V ans = V(0.0);}
+\DoxyCodeLine{00048     }
+\DoxyCodeLine{00049         \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00050         \{}
+\DoxyCodeLine{00051             ans += 1.0/x[j];}
+\DoxyCodeLine{00052         \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056 \} }
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00058}\mbox{\hyperlink{ArrayMechanisms_8cc_a259e88a526330c4e69811f4722c472e6}{00058}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a259e88a526330c4e69811f4722c472e6}{sumAbsoluteValues}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x) }
+\DoxyCodeLine{00059 \{  \textcolor{comment}{// Sum of reciprocals}}
+\DoxyCodeLine{00060         V ans = fabs(x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()]);}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062         \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()+1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00063         \{}
+\DoxyCodeLine{00064             ans += fabs(x[j]);}
+\DoxyCodeLine{00065         \}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 \} }
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071 \textcolor{comment}{// Mean value == sum() / N }}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00072}\mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{00072}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00073 \{}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_aea32fac5839587550db96af2d9c443a0}{sum}}(x) / V(x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}());}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077 \} }
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079 \textcolor{comment}{// Weighted arithmetic mean}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00080}\mbox{\hyperlink{ArrayMechanisms_8cc_acdb15569682a2e0bf2c6f8a8f2df74c9}{00080}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_acdb15569682a2e0bf2c6f8a8f2df74c9}{weightedArithMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& w)}
+\DoxyCodeLine{00081 \{}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         \textcolor{comment}{// PREC: x and w have the same size; start indexes not necessarily the same}}
+\DoxyCodeLine{00084         \textcolor{comment}{// PREC: sum(w) is not zero}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086         V ans = V(0.0);}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088         \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00089         \{}
+\DoxyCodeLine{00090             ans += w[j] * x[j];}
+\DoxyCodeLine{00091         \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         \textcolor{keywordflow}{return} ans / \mbox{\hyperlink{ArrayMechanisms_8cc_aea32fac5839587550db96af2d9c443a0}{sum}}(w);}
+\DoxyCodeLine{00094 \} }
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096 \textcolor{comment}{// Geometric mean or geometric average }}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00097}\mbox{\hyperlink{ArrayMechanisms_8cc_abc6df0dcf265521ed3239d9292fb7c62}{00097}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_abc6df0dcf265521ed3239d9292fb7c62}{geometricMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00098 \{}
+\DoxyCodeLine{00099     V ans = x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00102     \{}
+\DoxyCodeLine{00103         ans *= x[j];}
+\DoxyCodeLine{00104     \}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \textcolor{keywordflow}{return} std::pow(ans, 1.0 / x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() );}
+\DoxyCodeLine{00107 \} }
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109 \textcolor{comment}{// Harmonic mean}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00110}\mbox{\hyperlink{ArrayMechanisms_8cc_a13d345e8be1ef4121580faf897843983}{00110}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a13d345e8be1ef4121580faf897843983}{harmonicMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00111 \{}
+\DoxyCodeLine{00112     \textcolor{comment}{// PREC: sumReciprocals(x) not zero}}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     \textcolor{keywordflow}{return} V(x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) / \mbox{\hyperlink{ArrayMechanisms_8cc_a1f180ea2ca6f8377075ebe0078a3a535}{sumReciprocals}}(x);}
+\DoxyCodeLine{00115 \}}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117 \textcolor{comment}{// Root mean square (RMS)}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00118}\mbox{\hyperlink{ArrayMechanisms_8cc_a1961ee6c6a6ab7d95cad63dcb8963707}{00118}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a1961ee6c6a6ab7d95cad63dcb8963707}{quadraticMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00119 \{}
+\DoxyCodeLine{00120     \textcolor{keywordflow}{return} std::sqrt( \mbox{\hyperlink{ArrayMechanisms_8cc_ada1be3fbf31a833d8f891a1d9fbb9f02}{sumSquares}}(x) / V(x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) );}
+\DoxyCodeLine{00121 \}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123 \textcolor{comment}{// Sum of squares}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00124}\mbox{\hyperlink{ArrayMechanisms_8cc_ada1be3fbf31a833d8f891a1d9fbb9f02}{00124}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_ada1be3fbf31a833d8f891a1d9fbb9f02}{sumSquares}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00125 \{}
+\DoxyCodeLine{00126         V ans = V(0.0);}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128         \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00129         \{}
+\DoxyCodeLine{00130             ans += (x[j] * x[j]);}
+\DoxyCodeLine{00131         \}}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00134 \}}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137 \textcolor{comment}{// A function returning all of the above values in one foul swoop (performance)}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00138}\mbox{\hyperlink{ArrayMechanisms_8cc_a5213d504673342d3276c3335cc092339}{00138}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{ArrayMechanisms_8cc_a5213d504673342d3276c3335cc092339}{allAverages}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00139 \{}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141     \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} result;    \textcolor{comment}{// Empty list}}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"SUM"}, \mbox{\hyperlink{ArrayMechanisms_8cc_aea32fac5839587550db96af2d9c443a0}{sum}}(x)));}
+\DoxyCodeLine{00144     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"PRODUCT"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a7383833d1a743d1cf913e8748e03e30d}{product}}(x)));}
+\DoxyCodeLine{00145     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"SUMREC"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a1f180ea2ca6f8377075ebe0078a3a535}{sumReciprocals}}(x)));}
+\DoxyCodeLine{00146     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"SUMABSVAL"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a259e88a526330c4e69811f4722c472e6}{sumAbsoluteValues}}(x)));}
+\DoxyCodeLine{00147     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"MEAN"}, \mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}}(x)));}
+\DoxyCodeLine{00148     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"GMEAN"}, \mbox{\hyperlink{ArrayMechanisms_8cc_abc6df0dcf265521ed3239d9292fb7c62}{geometricMean}}(x)));}
+\DoxyCodeLine{00149     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"HMEAN"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a13d345e8be1ef4121580faf897843983}{harmonicMean}}(x)));}
+\DoxyCodeLine{00150     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"RMS"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a1961ee6c6a6ab7d95cad63dcb8963707}{quadraticMean}}(x)));}
+\DoxyCodeLine{00151     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"SUMSQ"}, \mbox{\hyperlink{ArrayMechanisms_8cc_ada1be3fbf31a833d8f891a1d9fbb9f02}{sumSquares}}(x)));}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00154 \}}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156 \textcolor{comment}{// Measures of Dispersion}}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00158}\mbox{\hyperlink{ArrayMechanisms_8cc_aabe7146d0ab655df7dea0dda59e33af6}{00158}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_aabe7146d0ab655df7dea0dda59e33af6}{deviationFromMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00159 \{}
+\DoxyCodeLine{00160         V \mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}} = \mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}}(x);}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162         V ans = V(0.0);}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164         \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00165         \{}
+\DoxyCodeLine{00166             ans += std::fabs(x[j] -\/ \mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}});}
+\DoxyCodeLine{00167         \}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169         \textcolor{keywordflow}{return} ans / x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}();}
+\DoxyCodeLine{00170 \}}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00173}\mbox{\hyperlink{ArrayMechanisms_8cc_a7f43379194df79cb9bfc98918b3d107d}{00173}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a7f43379194df79cb9bfc98918b3d107d}{standardDeviation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00174 \{}
+\DoxyCodeLine{00175         V myMean = \mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}}(x);}
+\DoxyCodeLine{00176         V tmp;}
+\DoxyCodeLine{00177 }
+\DoxyCodeLine{00178         V ans = V(0.0);}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180         \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00181         \{}
+\DoxyCodeLine{00182             tmp = x[j] -\/ myMean;}
+\DoxyCodeLine{00183             ans += tmp*tmp;}
+\DoxyCodeLine{00184         \}}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186         \textcolor{keywordflow}{return} std::sqrt(ans / V(x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()));}
+\DoxyCodeLine{00187 \}}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00189}\mbox{\hyperlink{ArrayMechanisms_8cc_a039fe821f2cc2ebd29c145218b7e594c}{00189}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a039fe821f2cc2ebd29c145218b7e594c}{variance}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00190 \{}
+\DoxyCodeLine{00191     V s = \mbox{\hyperlink{ArrayMechanisms_8cc_a7f43379194df79cb9bfc98918b3d107d}{standardDeviation}}(x);}
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00193     \textcolor{keywordflow}{return} s*s;}
+\DoxyCodeLine{00194 \}}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197 \textcolor{comment}{// A function returning all of the above values in one foul swoop (performance)}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00198}\mbox{\hyperlink{ArrayMechanisms_8cc_afa77a0c5d6e72e2000a53be658c5362e}{00198}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{ArrayMechanisms_8cc_afa77a0c5d6e72e2000a53be658c5362e}{allDispersions}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00199 \{}
+\DoxyCodeLine{00200 }
+\DoxyCodeLine{00201     \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} result;    \textcolor{comment}{// Empty list}}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"MDEV"}, \mbox{\hyperlink{ArrayMechanisms_8cc_aabe7146d0ab655df7dea0dda59e33af6}{deviationFromMean}}(x)));}
+\DoxyCodeLine{00204     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"STD"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a7f43379194df79cb9bfc98918b3d107d}{standardDeviation}}(x)));}
+\DoxyCodeLine{00205     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"VARIANCE"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a039fe821f2cc2ebd29c145218b7e594c}{variance}}(x)));}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00208 \}}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210 \textcolor{comment}{// Moments, Skewness and Kurtosis}}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212 \textcolor{comment}{// The rth moment about the value 0.0}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00213}\mbox{\hyperlink{ArrayMechanisms_8cc_a57b30169c08bc835f06a3b4226d358e3}{00213}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00214 \{}
+\DoxyCodeLine{00215     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(x, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, 0.0);}
+\DoxyCodeLine{00216 \}}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218 \textcolor{comment}{// The rth moment about the Mean m(r) as a special origin}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00219}\mbox{\hyperlink{ArrayMechanisms_8cc_abd89b7368c88dc0c18b171191ffce49c}{00219}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_abd89b7368c88dc0c18b171191ffce49c}{rthMomentMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00220 \{}
+\DoxyCodeLine{00221     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(x, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, \mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}}(x));}
+\DoxyCodeLine{00222 \}}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00224}\mbox{\hyperlink{ArrayMechanisms_8cc_a957257f28fea6eeb6990ac8e4f952691}{00224}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_abd89b7368c88dc0c18b171191ffce49c}{rthMomentMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& freq,}
+\DoxyCodeLine{00225                                             \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00226 \{}
+\DoxyCodeLine{00227     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(x, freq, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, \mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}}(x));}
+\DoxyCodeLine{00228 \}}
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230 \textcolor{comment}{// The rth moment about an origin A}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00231}\mbox{\hyperlink{ArrayMechanisms_8cc_aa20bfe76f87b23f972d4ac012e6b54d4}{00231}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, \textcolor{keyword}{const} V\& A)}
+\DoxyCodeLine{00232 \{}
+\DoxyCodeLine{00233     V ans = V(0.0); V pr = V(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00234     }
+\DoxyCodeLine{00235     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00236     \{}
+\DoxyCodeLine{00237         ans += std::pow(x[j] -\/ A, pr);}
+\DoxyCodeLine{00238     \}}
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00240     \textcolor{keywordflow}{return} ans / x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}();}
+\DoxyCodeLine{00241 \}}
+\DoxyCodeLine{00242 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00243}\mbox{\hyperlink{ArrayMechanisms_8cc_ae0e2e3e59d0a00971d76a4d0fc45951a}{00243}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& freq, }
+\DoxyCodeLine{00244                                         \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, \textcolor{keyword}{const} V\& A)}
+\DoxyCodeLine{00245 \{}
+\DoxyCodeLine{00246     V ans = V(0.0);}
+\DoxyCodeLine{00247     V vr = V(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00250     \{}
+\DoxyCodeLine{00251         ans += freq[j] * pow(x[j] -\/ A, vr);}
+\DoxyCodeLine{00252     \}}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254     \textcolor{keywordflow}{return} ans / \mbox{\hyperlink{ArrayMechanisms_8cc_aea32fac5839587550db96af2d9c443a0}{sum}}(freq);}
+\DoxyCodeLine{00255 \}}
+\DoxyCodeLine{00256 }
+\DoxyCodeLine{00257 \textcolor{comment}{// Mode: either the middel element or the mean of the two middle elements }}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00258}\mbox{\hyperlink{ArrayMechanisms_8cc_accd08ee829c11fff840fb28b56c66016}{00258}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_accd08ee829c11fff840fb28b56c66016}{median}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00259 \{}
+\DoxyCodeLine{00260     std::vector<V> v = \mbox{\hyperlink{ArrayMechanisms_8cc_abd5321c0d9d995769f70d91eca8e8e5e}{createSTLvector}}(x);}
+\DoxyCodeLine{00261 }
+\DoxyCodeLine{00262     stable\_sort(v.begin(), v.end());}
+\DoxyCodeLine{00263 }
+\DoxyCodeLine{00264     \textcolor{comment}{// Now v is sorted}}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00266     \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = v.size();}
+\DoxyCodeLine{00267 }
+\DoxyCodeLine{00268     \textcolor{keywordflow}{if} ((\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}/2)*2 == \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}) \textcolor{comment}{// Even list}}
+\DoxyCodeLine{00269     \{}
+\DoxyCodeLine{00270         \textcolor{keywordflow}{return} (v[\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}/2] + v[(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}/2) -\/ 1]) * V(0.5);}
+\DoxyCodeLine{00271     \}}
+\DoxyCodeLine{00272     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00273     \{}
+\DoxyCodeLine{00274         \textcolor{keywordflow}{return} v[\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}/2];}
+\DoxyCodeLine{00275     \}}
+\DoxyCodeLine{00276 \}}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278 \textcolor{comment}{// Number of occurrences of value d in vector x}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00279}\mbox{\hyperlink{ArrayMechanisms_8cc_a4dbe91f78965a3973c017e8fdc01d86c}{00279}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I \mbox{\hyperlink{ArrayMechanisms_8cc_a4dbe91f78965a3973c017e8fdc01d86c}{occurs}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} V\& d)}
+\DoxyCodeLine{00280 \{}
+\DoxyCodeLine{00281     I result = 0;}
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00284     \{}
+\DoxyCodeLine{00285             \textcolor{keywordflow}{if} (d == x[j])}
+\DoxyCodeLine{00286                 result++;}
+\DoxyCodeLine{00287     \}}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00290 \}}
+\DoxyCodeLine{00291 }
+\DoxyCodeLine{00292 \textcolor{comment}{// The element in x that occurs with the greatest frequency}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00293}\mbox{\hyperlink{ArrayMechanisms_8cc_a5b2af8b958fc1d86e138fb7220db2fae}{00293}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a5b2af8b958fc1d86e138fb7220db2fae}{mode}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00294 \{}
+\DoxyCodeLine{00295     \textcolor{comment}{// The value that occurs with the greatest frequency}}
+\DoxyCodeLine{00296     \textcolor{comment}{// Exx. Code can be optimized}}
+\DoxyCodeLine{00297 }
+\DoxyCodeLine{00298     std::map<V, I> elements;}
+\DoxyCodeLine{00299 }
+\DoxyCodeLine{00300     \textcolor{comment}{// Create unique list of elements}}
+\DoxyCodeLine{00301     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00302     \{}
+\DoxyCodeLine{00303             elements[x[j]] = \mbox{\hyperlink{ArrayMechanisms_8cc_a4dbe91f78965a3973c017e8fdc01d86c}{occurs}}(x, x[j]);}
+\DoxyCodeLine{00304     \}}
+\DoxyCodeLine{00305 }
+\DoxyCodeLine{00306     \textcolor{keyword}{typename} std::map<V, I>::iterator i = elements.begin();}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308     I ans = (*i).second;}
+\DoxyCodeLine{00309     V result = (*i).first;}
+\DoxyCodeLine{00310 }
+\DoxyCodeLine{00311     \textcolor{keywordflow}{while} (i != elements.end())}
+\DoxyCodeLine{00312     \{ }
+\DoxyCodeLine{00313             }
+\DoxyCodeLine{00314         \textcolor{keywordflow}{if} (ans < (*i).second)}
+\DoxyCodeLine{00315             result = (*i).second;}
+\DoxyCodeLine{00316 }
+\DoxyCodeLine{00317         i++;}
+\DoxyCodeLine{00318     \}}
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00321 \}}
+\DoxyCodeLine{00322 }
+\DoxyCodeLine{00323 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00324}\mbox{\hyperlink{ArrayMechanisms_8cc_a51f76c32be87bbb64dc2b2fe77953108}{00324}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a51f76c32be87bbb64dc2b2fe77953108}{skewness}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00325 \{}
+\DoxyCodeLine{00326     \textcolor{keywordflow}{return} (\mbox{\hyperlink{ArrayMechanisms_8cc_acbc48d749bdc03cf251b6db7e93df4c4}{mean}}(x) -\/ \mbox{\hyperlink{ArrayMechanisms_8cc_a5b2af8b958fc1d86e138fb7220db2fae}{mode}}(x)) / \mbox{\hyperlink{ArrayMechanisms_8cc_a7f43379194df79cb9bfc98918b3d107d}{standardDeviation}}(x);}
+\DoxyCodeLine{00327 \}}
+\DoxyCodeLine{00328 }
+\DoxyCodeLine{00329 \textcolor{comment}{// Extremum operations on vectors}}
+\DoxyCodeLine{00330 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00331}\mbox{\hyperlink{ArrayMechanisms_8cc_a1629e541754df6662b3c7bcf8c7f7e7a}{00331}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a1629e541754df6662b3c7bcf8c7f7e7a}{maxValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00332 \{}
+\DoxyCodeLine{00333     V ans = x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00334 }
+\DoxyCodeLine{00335     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00336     \{}
+\DoxyCodeLine{00337         \textcolor{keywordflow}{if} (ans < x[j])}
+\DoxyCodeLine{00338             ans = x[j];}
+\DoxyCodeLine{00339     \}}
+\DoxyCodeLine{00340 }
+\DoxyCodeLine{00341     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00342 \}}
+\DoxyCodeLine{00343 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00344}\mbox{\hyperlink{ArrayMechanisms_8cc_a3fd6d636d86485d9e274d6003f9cf981}{00344}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a3fd6d636d86485d9e274d6003f9cf981}{minValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00345 \{}
+\DoxyCodeLine{00346     V ans = x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00347     }
+\DoxyCodeLine{00348     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00349     \{}
+\DoxyCodeLine{00350         \textcolor{keywordflow}{if} (ans > x[j])}
+\DoxyCodeLine{00351             ans = x[j];}
+\DoxyCodeLine{00352     \}}
+\DoxyCodeLine{00353 }
+\DoxyCodeLine{00354     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00355 \}}
+\DoxyCodeLine{00356 }
+\DoxyCodeLine{00357 \textcolor{comment}{// Max and min of the absolute values}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00358}\mbox{\hyperlink{ArrayMechanisms_8cc_a224fe3e8a6c63d545f98b44ebbb2bd77}{00358}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a224fe3e8a6c63d545f98b44ebbb2bd77}{maxAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00359 \{}
+\DoxyCodeLine{00360     V ans = std::fabs(x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()]);}
+\DoxyCodeLine{00361     }
+\DoxyCodeLine{00362     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00363     \{}
+\DoxyCodeLine{00364         \textcolor{keywordflow}{if} (ans < std::fabs(x[j]))}
+\DoxyCodeLine{00365             ans = std::fabs(x[j]);}
+\DoxyCodeLine{00366     \}}
+\DoxyCodeLine{00367 }
+\DoxyCodeLine{00368     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00369 \}}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00371}\mbox{\hyperlink{ArrayMechanisms_8cc_a1444de407d9592e80d0b9ebcb24d9c9f}{00371}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a1444de407d9592e80d0b9ebcb24d9c9f}{minAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00372 \{}
+\DoxyCodeLine{00373 }
+\DoxyCodeLine{00374     V ans = std::fabs(x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()]);}
+\DoxyCodeLine{00375     }
+\DoxyCodeLine{00376     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00377     \{}
+\DoxyCodeLine{00378         \textcolor{keywordflow}{if} (ans > std::fabs(x[j]))}
+\DoxyCodeLine{00379             ans = std::fabs(x[j]);}
+\DoxyCodeLine{00380     \}}
+\DoxyCodeLine{00381 }
+\DoxyCodeLine{00382     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00383 \}}
+\DoxyCodeLine{00384 }
+\DoxyCodeLine{00385 \textcolor{comment}{// Index of max and min values }}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00386}\mbox{\hyperlink{ArrayMechanisms_8cc_a3b3c6f150e27a4d999b14733f81b172c}{00386}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I \mbox{\hyperlink{ArrayMechanisms_8cc_a3b3c6f150e27a4d999b14733f81b172c}{indexMaxValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00387 \{}
+\DoxyCodeLine{00388     I index = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}();}
+\DoxyCodeLine{00389     V ans = x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00390 }
+\DoxyCodeLine{00391     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00392     \{}
+\DoxyCodeLine{00393         \textcolor{keywordflow}{if} (ans < x[j])}
+\DoxyCodeLine{00394         \{}
+\DoxyCodeLine{00395             index = j;}
+\DoxyCodeLine{00396             ans = x[j];}
+\DoxyCodeLine{00397         \}}
+\DoxyCodeLine{00398     \}}
+\DoxyCodeLine{00399 }
+\DoxyCodeLine{00400     \textcolor{keywordflow}{return} index;}
+\DoxyCodeLine{00401 \}}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00403}\mbox{\hyperlink{ArrayMechanisms_8cc_a71ec96ee72e5a63195e9627020c77b91}{00403}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a71ec96ee72e5a63195e9627020c77b91}{indexMinValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00404 \{}
+\DoxyCodeLine{00405 }
+\DoxyCodeLine{00406     I index = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}();}
+\DoxyCodeLine{00407     V ans = x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00408 }
+\DoxyCodeLine{00409     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00410     \{}
+\DoxyCodeLine{00411         \textcolor{keywordflow}{if} (ans > x[j])}
+\DoxyCodeLine{00412         \{}
+\DoxyCodeLine{00413             index = j;}
+\DoxyCodeLine{00414             ans = x[j];}
+\DoxyCodeLine{00415         \}}
+\DoxyCodeLine{00416     \}}
+\DoxyCodeLine{00417 }
+\DoxyCodeLine{00418     \textcolor{keywordflow}{return} index;}
+\DoxyCodeLine{00419 \}}
+\DoxyCodeLine{00420 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00421}\mbox{\hyperlink{ArrayMechanisms_8cc_aaa5e1505fda32d2b536b574bd5f7fb0f}{00421}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I \mbox{\hyperlink{ArrayMechanisms_8cc_aaa5e1505fda32d2b536b574bd5f7fb0f}{indexMaxAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00422 \{}
+\DoxyCodeLine{00423     I index = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}();}
+\DoxyCodeLine{00424     V ans = std::fabs(x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()]);}
+\DoxyCodeLine{00425 }
+\DoxyCodeLine{00426     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00427     \{}
+\DoxyCodeLine{00428         \textcolor{keywordflow}{if} (ans < std::fabs(x[j]))}
+\DoxyCodeLine{00429         \{}
+\DoxyCodeLine{00430             index = j;}
+\DoxyCodeLine{00431             ans = std::fabs(x[j]);}
+\DoxyCodeLine{00432         \}}
+\DoxyCodeLine{00433     \}}
+\DoxyCodeLine{00434 }
+\DoxyCodeLine{00435     \textcolor{keywordflow}{return} index;}
+\DoxyCodeLine{00436 \}}
+\DoxyCodeLine{00437 }
+\DoxyCodeLine{00438 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00439}\mbox{\hyperlink{ArrayMechanisms_8cc_a10dcf29732fc9a591206fed9dad7fdc7}{00439}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a10dcf29732fc9a591206fed9dad7fdc7}{indexMinAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00440 \{}
+\DoxyCodeLine{00441     I index = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}();}
+\DoxyCodeLine{00442     V ans = std::fabs(x[x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()]);}
+\DoxyCodeLine{00443 }
+\DoxyCodeLine{00444     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00445     \{}
+\DoxyCodeLine{00446         \textcolor{keywordflow}{if} (ans > std::fabs(x[j]))}
+\DoxyCodeLine{00447         \{}
+\DoxyCodeLine{00448             index = j;}
+\DoxyCodeLine{00449             ans = std::fabs(x[j]);}
+\DoxyCodeLine{00450         \}}
+\DoxyCodeLine{00451     \}}
+\DoxyCodeLine{00452 }
+\DoxyCodeLine{00453     \textcolor{keywordflow}{return} index;}
+\DoxyCodeLine{00454 \}}
+\DoxyCodeLine{00455 }
+\DoxyCodeLine{00456 \textcolor{comment}{// Vector-\/vector extremum (difference of two vectors)}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00457}\mbox{\hyperlink{ArrayMechanisms_8cc_ae4c6b748a5a46e5d92733fb1d1a34edb}{00457}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a1629e541754df6662b3c7bcf8c7f7e7a}{maxValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB)}
+\DoxyCodeLine{00458 \{}
+\DoxyCodeLine{00459     \textcolor{comment}{// PREC: A and B have same size (holds for all the following functions too)}}
+\DoxyCodeLine{00460 }
+\DoxyCodeLine{00461     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00462 }
+\DoxyCodeLine{00463     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a1629e541754df6662b3c7bcf8c7f7e7a}{maxValue}}(vecDiff);}
+\DoxyCodeLine{00464 \}}
+\DoxyCodeLine{00465 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00466}\mbox{\hyperlink{ArrayMechanisms_8cc_a059efb34fbff2f079f2ca69e04669d95}{00466}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a3fd6d636d86485d9e274d6003f9cf981}{minValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB)}
+\DoxyCodeLine{00467 \{}
+\DoxyCodeLine{00468     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00469 }
+\DoxyCodeLine{00470     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a3fd6d636d86485d9e274d6003f9cf981}{minValue}}(vecDiff);}
+\DoxyCodeLine{00471 \}}
+\DoxyCodeLine{00472 }
+\DoxyCodeLine{00473 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00474}\mbox{\hyperlink{ArrayMechanisms_8cc_a26308a4ecf11e1f8094c7285d7d5f8d8}{00474}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a224fe3e8a6c63d545f98b44ebbb2bd77}{maxAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB)}
+\DoxyCodeLine{00475 \{}
+\DoxyCodeLine{00476     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00477 }
+\DoxyCodeLine{00478     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a224fe3e8a6c63d545f98b44ebbb2bd77}{maxAbsValue}}(vecDiff);}
+\DoxyCodeLine{00479 \}}
+\DoxyCodeLine{00480 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00481}\mbox{\hyperlink{ArrayMechanisms_8cc_a9c1f380040474c6e32ab6d6da2a3a891}{00481}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a1444de407d9592e80d0b9ebcb24d9c9f}{minAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB)}
+\DoxyCodeLine{00482 \{}
+\DoxyCodeLine{00483     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00484 }
+\DoxyCodeLine{00485     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a1444de407d9592e80d0b9ebcb24d9c9f}{minAbsValue}}(vecDiff);}
+\DoxyCodeLine{00486 \}}
+\DoxyCodeLine{00487 }
+\DoxyCodeLine{00488 \textcolor{comment}{// Vector and matrix norms}}
+\DoxyCodeLine{00489 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00490}\mbox{\hyperlink{ArrayMechanisms_8cc_a04996c27306bd339cb3776f24044deb4}{00490}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a04996c27306bd339cb3776f24044deb4}{innerProduct}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& y)}
+\DoxyCodeLine{00491 \{}
+\DoxyCodeLine{00492     \textcolor{comment}{// PREC: x and y have same size}}
+\DoxyCodeLine{00493     V ans = V(0.0);}
+\DoxyCodeLine{00494     }
+\DoxyCodeLine{00495     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00496     \{}
+\DoxyCodeLine{00497         ans += x[j] * y[j];}
+\DoxyCodeLine{00498     \}}
+\DoxyCodeLine{00499 }
+\DoxyCodeLine{00500     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00501 \}}
+\DoxyCodeLine{00502 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00503}\mbox{\hyperlink{ArrayMechanisms_8cc_a75a652af753fedaf9991ce139cf6e66a}{00503}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a75a652af753fedaf9991ce139cf6e66a}{l1Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00504 \{}
+\DoxyCodeLine{00505     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a259e88a526330c4e69811f4722c472e6}{sumAbsoluteValues}}(x);}
+\DoxyCodeLine{00506 \}}
+\DoxyCodeLine{00507 }
+\DoxyCodeLine{00508 \textcolor{comment}{// template <class V, class I> V ManyToManyRelationorm(const Vector<V,I>\& x)}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00509}\mbox{\hyperlink{ArrayMechanisms_8cc_a668d08308ea702fd8b718c9269666934}{00509}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a668d08308ea702fd8b718c9269666934}{l2Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00510 \{}
+\DoxyCodeLine{00511     \textcolor{keywordflow}{return} std::sqrt(\mbox{\hyperlink{ArrayMechanisms_8cc_ada1be3fbf31a833d8f891a1d9fbb9f02}{sumSquares}}(x));}
+\DoxyCodeLine{00512 \}}
+\DoxyCodeLine{00513 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00514}\mbox{\hyperlink{ArrayMechanisms_8cc_ae40b9d63ad56566ac2e6032014158066}{00514}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_ae40b9d63ad56566ac2e6032014158066}{lpNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& p)}
+\DoxyCodeLine{00515 \{}
+\DoxyCodeLine{00516     V ans = V(0.0); V myPower = V(p);}
+\DoxyCodeLine{00517     }
+\DoxyCodeLine{00518     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00519     \{}
+\DoxyCodeLine{00520         ans += std::pow(x[j], myPower);}
+\DoxyCodeLine{00521     \}}
+\DoxyCodeLine{00522 }
+\DoxyCodeLine{00523     \textcolor{keywordflow}{return} std::pow(ans, V(1.0)/ myPower);}
+\DoxyCodeLine{00524 \}}
+\DoxyCodeLine{00525 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00526}\mbox{\hyperlink{ArrayMechanisms_8cc_a61a3356be620e18abfb8e5ccc92945df}{00526}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a61a3356be620e18abfb8e5ccc92945df}{lInfinityNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00527 \{}
+\DoxyCodeLine{00528     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a224fe3e8a6c63d545f98b44ebbb2bd77}{maxAbsValue}}(x);}
+\DoxyCodeLine{00529 \}}
+\DoxyCodeLine{00530 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00531}\mbox{\hyperlink{ArrayMechanisms_8cc_abe75e0a9b49ea9923c15a384761d13d8}{00531}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{ArrayMechanisms_8cc_abe75e0a9b49ea9923c15a384761d13d8}{allNorms}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00532 \{}
+\DoxyCodeLine{00533     \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} result;    \textcolor{comment}{// Empty list}}
+\DoxyCodeLine{00534 }
+\DoxyCodeLine{00535     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"l1"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a75a652af753fedaf9991ce139cf6e66a}{l1Norm}}(x)));}
+\DoxyCodeLine{00536     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"l2"}, ManyToManyRelationorm(x)));}
+\DoxyCodeLine{00537     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"linf"}, \mbox{\hyperlink{ArrayMechanisms_8cc_a61a3356be620e18abfb8e5ccc92945df}{lInfinityNorm}}(x)));}
+\DoxyCodeLine{00538 }
+\DoxyCodeLine{00539     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00540 \}}
+\DoxyCodeLine{00541 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00542}\mbox{\hyperlink{ArrayMechanisms_8cc_a2da550c1edaab463f866ef24685a7053}{00542}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{ArrayMechanisms_8cc_abe75e0a9b49ea9923c15a384761d13d8}{allNorms}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB)}
+\DoxyCodeLine{00543 \{}
+\DoxyCodeLine{00544     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00545 }
+\DoxyCodeLine{00546     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_abe75e0a9b49ea9923c15a384761d13d8}{allNorms}}(vecDiff);}
+\DoxyCodeLine{00547 \}}
+\DoxyCodeLine{00548 }
+\DoxyCodeLine{00549 \textcolor{comment}{// Same vector morms as above except for the difference of two vectors}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00550}\mbox{\hyperlink{ArrayMechanisms_8cc_acd4e52a95d6941dfb88a4c1a88a7b9e6}{00550}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a75a652af753fedaf9991ce139cf6e66a}{l1Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB)}
+\DoxyCodeLine{00551 \{}
+\DoxyCodeLine{00552     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00553 }
+\DoxyCodeLine{00554     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a75a652af753fedaf9991ce139cf6e66a}{l1Norm}}(vecDiff);}
+\DoxyCodeLine{00555 \}}
+\DoxyCodeLine{00556 }
+\DoxyCodeLine{00557 \textcolor{comment}{//template <class V, class I> V ManyToManyRelationorm(const Vector<V,I>\& vectorA, const Vector<V,I>\& vectorB)}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00558}\mbox{\hyperlink{ArrayMechanisms_8cc_af986404a5cbb417ec449769a625929b0}{00558}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a668d08308ea702fd8b718c9269666934}{l2Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB)}
+\DoxyCodeLine{00559 \{}
+\DoxyCodeLine{00560     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00561 }
+\DoxyCodeLine{00562     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a668d08308ea702fd8b718c9269666934}{l2Norm}}(vecDiff);}
+\DoxyCodeLine{00563 \}}
+\DoxyCodeLine{00564 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00565}\mbox{\hyperlink{ArrayMechanisms_8cc_a385d69301d86f6bbc380ef28a69e0c51}{00565}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_ae40b9d63ad56566ac2e6032014158066}{lpNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB, \textcolor{keyword}{const} I\& p)}
+\DoxyCodeLine{00566 \{}
+\DoxyCodeLine{00567     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00568 }
+\DoxyCodeLine{00569     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_ae40b9d63ad56566ac2e6032014158066}{lpNorm}}(vecDiff, p);}
+\DoxyCodeLine{00570 \}}
+\DoxyCodeLine{00571 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00572}\mbox{\hyperlink{ArrayMechanisms_8cc_a1791ba9ec7602ca00189b3d031edf634}{00572}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8cc_a61a3356be620e18abfb8e5ccc92945df}{lInfinityNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB)}
+\DoxyCodeLine{00573 \{}
+\DoxyCodeLine{00574     \mbox{\hyperlink{classVector}{Vector<V,I>}} vecDiff = vectorA -\/ vectorB;}
+\DoxyCodeLine{00575 }
+\DoxyCodeLine{00576     \textcolor{keywordflow}{return} \mbox{\hyperlink{ArrayMechanisms_8cc_a61a3356be620e18abfb8e5ccc92945df}{lInfinityNorm}}(vecDiff);}
+\DoxyCodeLine{00577 \}}
+\DoxyCodeLine{00578 }
+\DoxyCodeLine{00579 \textcolor{comment}{// Functions for Operations Research}}
+\DoxyCodeLine{00580 }
+\DoxyCodeLine{00581 \textcolor{comment}{// Comparing vectors with each other}}
+\DoxyCodeLine{00582 }
+\DoxyCodeLine{00583 \textcolor{comment}{// Are all elements of a vector positive?}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00584}\mbox{\hyperlink{ArrayMechanisms_8cc_ac6a295c94e7d2e90ae8514dcf05377e5}{00584}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8cc_ac6a295c94e7d2e90ae8514dcf05377e5}{positive}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00585 \{}
+\DoxyCodeLine{00586     V zero = V(0.0);}
+\DoxyCodeLine{00587 }
+\DoxyCodeLine{00588     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00589     \{}
+\DoxyCodeLine{00590         \textcolor{keywordflow}{if} (x[j] <= zero)}
+\DoxyCodeLine{00591             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00592     \}}
+\DoxyCodeLine{00593 }
+\DoxyCodeLine{00594     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00595 \}}
+\DoxyCodeLine{00596 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00597}\mbox{\hyperlink{ArrayMechanisms_8cc_af844f9e94257e30adb2557f72bc776fe}{00597}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8cc_af844f9e94257e30adb2557f72bc776fe}{negative}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00598 \{}
+\DoxyCodeLine{00599     V zero = V(0.0);}
+\DoxyCodeLine{00600 }
+\DoxyCodeLine{00601     \textcolor{keywordflow}{for} (I j = x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00602     \{}
+\DoxyCodeLine{00603         \textcolor{keywordflow}{if} (x[j] >= zero)}
+\DoxyCodeLine{00604             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00605     \}}
+\DoxyCodeLine{00606 }
+\DoxyCodeLine{00607     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00608 \}}
+\DoxyCodeLine{00609 }
+\DoxyCodeLine{00610 \textcolor{comment}{// Is v1 < v2? etc. }}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00611}\mbox{\hyperlink{ArrayMechanisms_8cc_a7c74d80e1384b34d96195b6fb7abea03}{00611}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8cc_a7c74d80e1384b34d96195b6fb7abea03}{operator < }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2)}
+\DoxyCodeLine{00612 \{}
+\DoxyCodeLine{00613     \textcolor{comment}{// Iterate in the matrix; when the condition is NOT true }}
+\DoxyCodeLine{00614     \textcolor{comment}{// (the inverse of the inequality) then exit and return false}}
+\DoxyCodeLine{00615     \textcolor{keywordflow}{for} (I j = v1.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= v1.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00616     \{}
+\DoxyCodeLine{00617         \textcolor{keywordflow}{if} (v1[j] >= v2[j])}
+\DoxyCodeLine{00618             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00619     \}}
+\DoxyCodeLine{00620 }
+\DoxyCodeLine{00621     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00622 \}}
+\DoxyCodeLine{00623 }
+\DoxyCodeLine{00624 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00625}\mbox{\hyperlink{ArrayMechanisms_8cc_a10d1dbb4bde9b31e016ae7f59e66d75e}{00625}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8cc_a10d1dbb4bde9b31e016ae7f59e66d75e}{operator <= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2)}
+\DoxyCodeLine{00626 \{}
+\DoxyCodeLine{00627     \textcolor{comment}{// Iterate in the matrix; when the condition is NOT true }}
+\DoxyCodeLine{00628     \textcolor{comment}{// (the inverse of the inequality) then exit and return false}}
+\DoxyCodeLine{00629     \textcolor{keywordflow}{for} (I j = v1.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= v1.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00630     \{}
+\DoxyCodeLine{00631         \textcolor{keywordflow}{if} (v1[j] > v2[j])}
+\DoxyCodeLine{00632             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00633     \}}
+\DoxyCodeLine{00634 }
+\DoxyCodeLine{00635     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00636 \}}
+\DoxyCodeLine{00637 }
+\DoxyCodeLine{00638 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00639}\mbox{\hyperlink{ArrayMechanisms_8cc_a537b17e660b3bfc1ed9a5ea8eb5b8fe5}{00639}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8cc_a537b17e660b3bfc1ed9a5ea8eb5b8fe5}{operator > }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2)}
+\DoxyCodeLine{00640 \{}
+\DoxyCodeLine{00641     \textcolor{comment}{// Iterate in the matrix; when the condition is NOT true}}
+\DoxyCodeLine{00642     \textcolor{comment}{// (the inverse of the inequality) then exit and return false}}
+\DoxyCodeLine{00643     \textcolor{keywordflow}{for} (I j = v1.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= v1.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00644     \{}
+\DoxyCodeLine{00645         \textcolor{keywordflow}{if} (v1[j] <= v2[j])}
+\DoxyCodeLine{00646             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00647     \}}
+\DoxyCodeLine{00648 }
+\DoxyCodeLine{00649     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00650 \}}
+\DoxyCodeLine{00651 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00652}\mbox{\hyperlink{ArrayMechanisms_8cc_ac246693b295956f27f5823380e5f0941}{00652}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8cc_ac246693b295956f27f5823380e5f0941}{operator >= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2)}
+\DoxyCodeLine{00653 \{}
+\DoxyCodeLine{00654     \textcolor{comment}{// Iterate in the matrix; when the condition is NOT true }}
+\DoxyCodeLine{00655     \textcolor{comment}{// (the inverse of the inequality) then exit and return false}}
+\DoxyCodeLine{00656     \textcolor{keywordflow}{for} (I j = v1.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= v1.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00657     \{}
+\DoxyCodeLine{00658         \textcolor{keywordflow}{if} (v1[j] < v2[j])}
+\DoxyCodeLine{00659             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00660     \}}
+\DoxyCodeLine{00661 }
+\DoxyCodeLine{00662     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00663 \}}
+\DoxyCodeLine{00664 }
+\DoxyCodeLine{00665 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00666}\mbox{\hyperlink{ArrayMechanisms_8cc_a5b73c0e302fb50e0a12d98287b641acb}{00666}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8cc_a5b73c0e302fb50e0a12d98287b641acb}{operator == }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2)}
+\DoxyCodeLine{00667 \{}
+\DoxyCodeLine{00668     \textcolor{comment}{// Iterate in the matrix; when the condition is NOT true }}
+\DoxyCodeLine{00669     \textcolor{comment}{// (the inverse of the inequality) then exit and return false}}
+\DoxyCodeLine{00670     \textcolor{keywordflow}{for} (I j = v1.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= v1.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00671     \{}
+\DoxyCodeLine{00672         \textcolor{keywordflow}{if} (v1[j] != v2[j])}
+\DoxyCodeLine{00673             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00674     \}}
+\DoxyCodeLine{00675 }
+\DoxyCodeLine{00676     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00677 \}}
+\DoxyCodeLine{00678 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00679}\mbox{\hyperlink{ArrayMechanisms_8cc_a76316bb45bc18b42f0098871aa970fac}{00679}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8cc_a76316bb45bc18b42f0098871aa970fac}{operator != }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2)}
+\DoxyCodeLine{00680 \{}
+\DoxyCodeLine{00681     \textcolor{keywordflow}{if} (v1 == v2) }
+\DoxyCodeLine{00682         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00683 }
+\DoxyCodeLine{00684     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00685 \}}
+\DoxyCodeLine{00686 }
+\DoxyCodeLine{00687 \textcolor{comment}{// Utility functions}}
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00688}\mbox{\hyperlink{ArrayMechanisms_8cc_abd5321c0d9d995769f70d91eca8e8e5e}{00688}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V> std::vector<V> \mbox{\hyperlink{ArrayMechanisms_8cc_abd5321c0d9d995769f70d91eca8e8e5e}{createSTLvector}} (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,int>}}\& myVector)}
+\DoxyCodeLine{00689 \{ \textcolor{comment}{// Create an STL vector from a general Vector}}
+\DoxyCodeLine{00690 }
+\DoxyCodeLine{00691     std::vector<V> result(myVector.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}());}
+\DoxyCodeLine{00692     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < result.size(); i++)}
+\DoxyCodeLine{00693     \{}
+\DoxyCodeLine{00694 }
+\DoxyCodeLine{00695         result[i] = myVector[i+myVector.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00696     \}}
+\DoxyCodeLine{00697 }
+\DoxyCodeLine{00698     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00699 \}}
+\DoxyCodeLine{00700 }
+\DoxyCodeLine{00701 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00702}\mbox{\hyperlink{ArrayMechanisms_8cc_a78a90de96c8a055b6921cb51fe868cef}{00702}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \mbox{\hyperlink{classVector}{Vector<V, int>}} \mbox{\hyperlink{ArrayMechanisms_8cc_a78a90de96c8a055b6921cb51fe868cef}{createDatasimVector}} (\textcolor{keyword}{const} std::vector<V>\& mySTLvector)}
+\DoxyCodeLine{00703 \{ \textcolor{comment}{// Create a general Vector from an STL vector}}
+\DoxyCodeLine{00704     \mbox{\hyperlink{classVector}{Vector<V, int>}} result(mySTLvector.size());}
+\DoxyCodeLine{00705 }
+\DoxyCodeLine{00706     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0, j = result.MinIndex(); i < mySTLvector.size(); i++, j++)}
+\DoxyCodeLine{00707     \{}
+\DoxyCodeLine{00708 }
+\DoxyCodeLine{00709         result[j] = mySTLvector[i];}
+\DoxyCodeLine{00710     \}}
+\DoxyCodeLine{00711 }
+\DoxyCodeLine{00712     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00713 \}}
+\DoxyCodeLine{00714 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00715}\mbox{\hyperlink{ArrayMechanisms_8cc_ae92f1779b28708717fc43981b0d7e721}{00715}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{ArrayMechanisms_8cc_ae92f1779b28708717fc43981b0d7e721}{cumulativeVector}} (\textcolor{keyword}{const} std::vector<V>\& x)}
+\DoxyCodeLine{00716 \{ \textcolor{comment}{// Cumulative vector c[j] = c[j-\/1] + x[j]}}
+\DoxyCodeLine{00717 }
+\DoxyCodeLine{00718     \mbox{\hyperlink{classVector}{Vector<V, int>}} result(x.Size(), x.MaxIndex());}
+\DoxyCodeLine{00719 }
+\DoxyCodeLine{00720     result[x.MinIndex()] = x[x.MinIndex()];}
+\DoxyCodeLine{00721     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = x.MinIndex() + 1; i <= x.MaxIndex(); i++)}
+\DoxyCodeLine{00722     \{}
+\DoxyCodeLine{00723 }
+\DoxyCodeLine{00724         result[i] = result[i-\/1] + x[i];}
+\DoxyCodeLine{00725     \}}
+\DoxyCodeLine{00726 }
+\DoxyCodeLine{00727     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00728 \}}
+\DoxyCodeLine{00729 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00730}\mbox{\hyperlink{ArrayMechanisms_8cc_aa733a8c1b1c2946f0dee2369a2c0988d}{00730}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{ArrayMechanisms_8cc_aa733a8c1b1c2946f0dee2369a2c0988d}{reverse}} (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00731 \{}
+\DoxyCodeLine{00732     \mbox{\hyperlink{classVector}{Vector<V, I>}} result(x);}
+\DoxyCodeLine{00733 }
+\DoxyCodeLine{00734     \textcolor{keywordflow}{for} (I k = result.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); k <= result.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); k++)}
+\DoxyCodeLine{00735     \{}
+\DoxyCodeLine{00736 }
+\DoxyCodeLine{00737         result[k] = x[x.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}() -\/ k + x.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00738     \}}
+\DoxyCodeLine{00739 }
+\DoxyCodeLine{00740     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00741 \}}
+\DoxyCodeLine{00742 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00744}\mbox{\hyperlink{ArrayMechanisms_8cc_a7a738d11c1fc7a5a9204c8c2adb08402}{00744}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{ArrayMechanisms_8cc_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V,I>}}\& v)}
+\DoxyCodeLine{00745 \{}
+\DoxyCodeLine{00746 }
+\DoxyCodeLine{00747     std::cout << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nMinIndex: "} << v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() << \textcolor{stringliteral}{" , MaxIndex: "} << v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}() << std::endl;}
+\DoxyCodeLine{00748 }
+\DoxyCodeLine{00749     std::cout << \textcolor{stringliteral}{"\(\backslash\)nARR:["};}
+\DoxyCodeLine{00750     \textcolor{keywordflow}{for} (I j = v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00751     \{}
+\DoxyCodeLine{00752         std::cout << v[j] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00753     }
+\DoxyCodeLine{00754     \}}
+\DoxyCodeLine{00755 }
+\DoxyCodeLine{00756     std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00757 \}}
+\DoxyCodeLine{00758 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00759}\mbox{\hyperlink{ArrayMechanisms_8cc_a499368a9dddb1f6b8d6fb75eb6b9297d}{00759}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{ArrayMechanisms_8cc_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v)}
+\DoxyCodeLine{00760 \{}
+\DoxyCodeLine{00761     std::cout << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nMinIndex: "} << v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() << \textcolor{stringliteral}{" , MaxIndex: "} << v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}() << std::endl;}
+\DoxyCodeLine{00762 }
+\DoxyCodeLine{00763     std::cout << \textcolor{stringliteral}{"\(\backslash\)nARR:["};}
+\DoxyCodeLine{00764     \textcolor{keywordflow}{for} (I j = v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); j <= v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00765     \{}
+\DoxyCodeLine{00766         std::cout << v[j] << \textcolor{stringliteral}{", "};  }
+\DoxyCodeLine{00767     \}}
+\DoxyCodeLine{00768 }
+\DoxyCodeLine{00769     std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00770 \}}
+\DoxyCodeLine{00771 }
+\DoxyCodeLine{\Hypertarget{ArrayMechanisms_8cc_source_l00772}\mbox{\hyperlink{ArrayMechanisms_8cc_a6ff31a903affcca53d6aa3b526b8be2a}{00772}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{ArrayMechanisms_8cc_a7a738d11c1fc7a5a9204c8c2adb08402}{print}} (\mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& tensor)}
+\DoxyCodeLine{00773 \{}
+\DoxyCodeLine{00774     std::cout << \textcolor{stringliteral}{"Tensor, Rows "} << tensor.\mbox{\hyperlink{classTensor_a1d19abc6ebc88dcd1e31a9035d4f42f1}{Rows}}() << \textcolor{stringliteral}{", Columns "} << tensor.\mbox{\hyperlink{classTensor_acb5f71b7416a3361164821b624933dd3}{Columns}}() << }
+\DoxyCodeLine{00775             \textcolor{stringliteral}{", Third Dimension "} << tensor.\mbox{\hyperlink{classTensor_a4e12d325ed245411efd1d65c13110368}{sizeThird}}() << std::endl;}
+\DoxyCodeLine{00776 }
+\DoxyCodeLine{00777     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} k = tensor.\mbox{\hyperlink{classTensor_aa95268c48800c8ca1dd6243b59a09543}{MinThirdIndex}}(); k<= tensor.\mbox{\hyperlink{classTensor_a6266f47513cc5b5924573ac58390b7cb}{MaxThirdIndex}}(); k++)}
+\DoxyCodeLine{00778     \{}
+\DoxyCodeLine{00779         \mbox{\hyperlink{ArrayMechanisms_8cc_a7a738d11c1fc7a5a9204c8c2adb08402}{print}} (tensor[k]);}
+\DoxyCodeLine{00780     \}}
+\DoxyCodeLine{00781 \}}
+\DoxyCodeLine{00782 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

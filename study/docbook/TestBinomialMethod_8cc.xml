@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestBinomialMethod_8cc">
+<title>tests/TestBinomialMethod.cc File Reference</title>
+<indexterm><primary>tests/TestBinomialMethod.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/BinomialMethod.hh&gt;
+#include &lt;duffy/Lattice.hh&gt;
+#include &quot;../src/PayoffNamespace.cc&quot;
+</programlisting>Include dependency graph for TestBinomialMethod.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestBinomialMethod_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V , class I , int NumberNodes&gt; </para><para>void <link linkend="_TestBinomialMethod_8cc_1a4f588b04e89a733e6e27ba312ce437d3">print</link> (const <link linkend="_classLattice">Lattice</link>&lt; V, I, NumberNodes &gt; &amp;source)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestBinomialMethod_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestBinomialMethod_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestBinomialMethod.cc</secondary></indexterm>
+<indexterm><primary>TestBinomialMethod.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 31 of file TestBinomialMethod.cc.</para>
+<programlisting>32 {
+33 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespacePayoffNamespace">PayoffNamespace</link>;
+34 
+35 &#32;&#32;&#32;&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;10.0;
+36 &#32;&#32;&#32;&#32;<link linkend="_namespacePayoffNamespace_1a39ee14e55dbe34eb4f30330edd487f84">type</link>&#32;=&#32;1;&#32;<emphasis role="comment">//&#32;Euro</emphasis>
+37 
+38 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_classCallPayoff">CallPayoff</link>;
+39 
+40 &#32;&#32;&#32;&#32;<link linkend="_classBinomialMethod">BinomialMethod</link>&#32;bn&#32;(<link linkend="_namespacePayoffNamespace_1_1CallPayoff_1a10b9109397cc2cea2ac7cc9c6b224658">OptPayoff</link>);
+41 
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+43 }
+</programlisting>    </section><anchor xml:id="_TestBinomialMethod_8cc_1a4f588b04e89a733e6e27ba312ce437d3"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestBinomialMethod.cc</secondary></indexterm>
+<indexterm><primary>TestBinomialMethod.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , int NumberNodes&gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classLattice">Lattice</link>&lt; V, I, NumberNodes &gt; &amp; source)</computeroutput></para><para>
+Definition at line 12 of file TestBinomialMethod.cc.</para>
+<programlisting>13 {
+14 &#32;&#32;&#32;&#32;
+15 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;source.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();&#32;j&#32;&lt;=&#32;source.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();&#32;j++)
+16 &#32;&#32;&#32;&#32;{
+17 
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nBranch&#32;Number&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;:&#32;[&quot;</emphasis>;
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;source[j].MinIndex();&#32;i&#32;&lt;=&#32;source[j].<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();&#32;i++)
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;source[j][i]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+22 &#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+24 
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+27 &#32;&#32;&#32;&#32;}
+28 
+29 }
+</programlisting></section>
+</section>
+</section>

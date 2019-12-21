@@ -23,12 +23,60 @@ Collaboration diagram for Wrapper&lt; T &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classWrapper_1ac286ab6c8dea5a2b5a243edea78eca7b"/><emphasis role="strong">Wrapper</emphasis> (T wrappedObject)</para>
+            <listitem><para><link linkend="_classWrapper_1a747788c9b29a997f4d805ec60e6e16a2">Wrapper</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classWrapper_1a722618937323f1c2ae417b77021cf381"/>template&lt;class T2 &gt; </para><para>bool <emphasis role="strong">sameType</emphasis> (const T2 &amp;t2)</para>
+            <listitem><para><link linkend="_classWrapper_1ac286ab6c8dea5a2b5a243edea78eca7b">Wrapper</link> (T wrappedObject)</para>
+</listitem>
+            <listitem><para>template&lt;class T2 &gt; </para><para>bool <link linkend="_classWrapper_1a722618937323f1c2ae417b77021cf381">sameType</link> (const T2 &amp;t2)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class T&gt;
+class Wrapper&lt; T &gt;</title></simplesect>
+
+<para>
+Definition at line 24 of file Wrapper.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classWrapper_1a747788c9b29a997f4d805ec60e6e16a2"/>    <section>
+    <title>Wrapper()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Wrapper</primary><secondary>Wrapper&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Wrapper&lt; T &gt;</primary><secondary>Wrapper</secondary></indexterm>
+<computeroutput>template&lt;class T&gt; </computeroutput><para><computeroutput><link linkend="_classWrapper">Wrapper</link>&lt; T &gt;::<link linkend="_classWrapper">Wrapper</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 30 of file Wrapper.cc.</para>
+<programlisting>30 {&#32;obj&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>();}
+</programlisting>    </section><anchor xml:id="_classWrapper_1ac286ab6c8dea5a2b5a243edea78eca7b"/>    <section>
+    <title>Wrapper()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Wrapper</primary><secondary>Wrapper&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Wrapper&lt; T &gt;</primary><secondary>Wrapper</secondary></indexterm>
+<computeroutput>template&lt;class T&gt; </computeroutput><para><computeroutput><link linkend="_classWrapper">Wrapper</link>&lt; T &gt;::<link linkend="_classWrapper">Wrapper</link> (T wrappedObject)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 32 of file Wrapper.cc.</para>
+<programlisting>32 {&#32;obj&#32;=&#32;wrappedObject;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classWrapper_1a722618937323f1c2ae417b77021cf381"/>    <section>
+    <title>sameType()</title>
+<indexterm><primary>sameType</primary><secondary>Wrapper&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Wrapper&lt; T &gt;</primary><secondary>sameType</secondary></indexterm>
+<computeroutput>template&lt;class T&gt; </computeroutput><computeroutput>template&lt;class T2 &gt; </computeroutput><para><computeroutput>bool <link linkend="_classWrapper">Wrapper</link>&lt; T &gt;::sameType (const T2 &amp; t2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 37 of file Wrapper.cc.</para>
+<programlisting>38 &#32;&#32;&#32;&#32;{
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">typeid</emphasis>(<link linkend="_classWrapper">Wrapper&lt;T&gt;</link>)&#32;==&#32;<emphasis role="keyword">typeid</emphasis>(t2))
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+45 
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+47 &#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-src/Wrapper.cc</section>
+src/<link linkend="_Wrapper_8cc">Wrapper.cc</link></section>
+</section>

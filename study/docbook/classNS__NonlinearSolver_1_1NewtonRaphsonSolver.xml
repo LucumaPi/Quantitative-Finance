@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver">
 <title>NS_NonlinearSolver::NewtonRaphsonSolver Class Reference</title>
 <indexterm><primary>NS_NonlinearSolver::NewtonRaphsonSolver</primary></indexterm>
+<para>
+<computeroutput>#include &lt;NonlinearSolver.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for NS_NonlinearSolver::NewtonRaphsonSolver:<para>
     <informalfigure>
         <mediaobject>
@@ -23,21 +26,88 @@ Collaboration diagram for NS_NonlinearSolver::NewtonRaphsonSolver:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1a8c522cde713e284c68b237707bfa55e4"/><emphasis role="strong">NewtonRaphsonSolver</emphasis> (double guess)</para>
+            <listitem><para><link linkend="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1a8c522cde713e284c68b237707bfa55e4">NewtonRaphsonSolver</link> (double guess)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1ac4348d68da383f040c44279233612bd0"/>double <emphasis role="strong">solve</emphasis> ()</para>
+            <listitem><para>double <link linkend="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1ac4348d68da383f040c44279233612bd0">solve</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1a5cde6338212acb49f6d3b63448627970"/>void <emphasis role="strong">printStatistics</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1a5cde6338212acb49f6d3b63448627970">printStatistics</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1aabfba87ff6919e8b6e1808e66e0b64d2"/>double(* <emphasis role="strong">derivative</emphasis> )(double x)</para>
+            <listitem><para>double(* <link linkend="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1aabfba87ff6919e8b6e1808e66e0b64d2">derivative</link> )(double x)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 130 of file NonlinearSolver.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1a8c522cde713e284c68b237707bfa55e4"/>    <section>
+    <title>NewtonRaphsonSolver()</title>
+<indexterm><primary>NewtonRaphsonSolver</primary><secondary>NS_NonlinearSolver::NewtonRaphsonSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::NewtonRaphsonSolver</primary><secondary>NewtonRaphsonSolver</secondary></indexterm>
+<para><computeroutput>NS_NonlinearSolver::NewtonRaphsonSolver::NewtonRaphsonSolver (double guess)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 140 of file NonlinearSolver.hh.</para>
+<programlisting>141 &#32;&#32;&#32;&#32;{
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x0&#32;=&#32;guess;
+143 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1a5cde6338212acb49f6d3b63448627970"/>    <section>
+    <title>printStatistics()</title>
+<indexterm><primary>printStatistics</primary><secondary>NS_NonlinearSolver::NewtonRaphsonSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::NewtonRaphsonSolver</primary><secondary>printStatistics</secondary></indexterm>
+<para><computeroutput>void NS_NonlinearSolver::NewtonRaphsonSolver::printStatistics ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 162 of file NonlinearSolver.hh.</para>
+<programlisting>163 &#32;&#32;&#32;&#32;{
+164 
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nData&#32;pertaining&#32;to&#32;Newton&#32;Raphson&#32;method\n&quot;</emphasis>;
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Value:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;xCurrent&#32;&lt;&lt;&#32;std::endl;
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;iterations&#32;(actual):&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&lt;&lt;&#32;std::endl;
+168 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1ac4348d68da383f040c44279233612bd0"/>    <section>
+    <title>solve()</title>
+<indexterm><primary>solve</primary><secondary>NS_NonlinearSolver::NewtonRaphsonSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::NewtonRaphsonSolver</primary><secondary>solve</secondary></indexterm>
+<para><computeroutput>double NS_NonlinearSolver::NewtonRaphsonSolver::solve ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1a7336902d70e3ae47194eb92abac04333">NS_NonlinearSolver::NonlinearSolver</link>.</para>
+<para>
+Definition at line 145 of file NonlinearSolver.hh.</para>
+<programlisting>146 &#32;&#32;&#32;&#32;{
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;xPrevious&#32;=&#32;x0;
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;hn&#32;=&#32;100.0;
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;1;
+150 L1:
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hn&#32;=&#32;-&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(xPrevious)&#32;/&#32;<link linkend="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1aabfba87ff6919e8b6e1808e66e0b64d2">derivative</link>(xPrevious);
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xCurrent&#32;=&#32;xPrevious&#32;+&#32;hn;
+153 
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xPrevious&#32;=&#32;xCurrent;
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>++;
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fabs(hn)&#32;&gt;&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba">tol</link>)&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+157 
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;xCurrent;
+159 
+160 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver_1aabfba87ff6919e8b6e1808e66e0b64d2"/>    <section>
+    <title>derivative</title>
+<indexterm><primary>derivative</primary><secondary>NS_NonlinearSolver::NewtonRaphsonSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::NewtonRaphsonSolver</primary><secondary>derivative</secondary></indexterm>
+<para><computeroutput>double(* NS_NonlinearSolver::NewtonRaphsonSolver::derivative) (double x)</computeroutput></para><para>
+Definition at line 133 of file NonlinearSolver.hh.</para>
+</section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/NonlinearSolver.hh</section>
+include/duffy/<link linkend="_NonlinearSolver_8hh">NonlinearSolver.hh</link></section>
+</section>

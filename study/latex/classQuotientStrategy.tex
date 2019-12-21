@@ -2,6 +2,10 @@
 \label{classQuotientStrategy}\index{QuotientStrategy@{QuotientStrategy}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Quotient\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,14 +25,62 @@ Collaboration diagram for Quotient\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classQuotientStrategy_a75424ff1ffcab8ecefc083e8588a0a48}\label{classQuotientStrategy_a75424ff1ffcab8ecefc083e8588a0a48}} 
-{\bfseries Quotient\+Strategy} (double strike, double cp)
+\mbox{\hyperlink{classQuotientStrategy_a75424ff1ffcab8ecefc083e8588a0a48}{Quotient\+Strategy}} (double strike, double cp)
 \item 
-\mbox{\Hypertarget{classQuotientStrategy_a763e8600d4099546f0bd3e30eff53219}\label{classQuotientStrategy_a763e8600d4099546f0bd3e30eff53219}} 
-double {\bfseries payoff} (double S1, double S2) const
+double \mbox{\hyperlink{classQuotientStrategy_a763e8600d4099546f0bd3e30eff53219}{payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00100}{100}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQuotientStrategy_a75424ff1ffcab8ecefc083e8588a0a48}\label{classQuotientStrategy_a75424ff1ffcab8ecefc083e8588a0a48}} 
+\index{QuotientStrategy@{QuotientStrategy}!QuotientStrategy@{QuotientStrategy}}
+\index{QuotientStrategy@{QuotientStrategy}!QuotientStrategy@{QuotientStrategy}}
+\doxysubsubsection{\texorpdfstring{QuotientStrategy()}{QuotientStrategy()}}
+{\footnotesize\ttfamily Quotient\+Strategy\+::\+Quotient\+Strategy (\begin{DoxyParamCaption}\item[{double}]{strike,  }\item[{double}]{cp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00107}{107}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108         \{ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = strike; w = cp; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQuotientStrategy_a763e8600d4099546f0bd3e30eff53219}\label{classQuotientStrategy_a763e8600d4099546f0bd3e30eff53219}} 
+\index{QuotientStrategy@{QuotientStrategy}!payoff@{payoff}}
+\index{payoff@{payoff}!QuotientStrategy@{QuotientStrategy}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Quotient\+Strategy\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{Multi\+Asset\+Payoff\+Strategy}}.
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00109}{109}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110         \{}
+\DoxyCodeLine{00111             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} ( w * (S1/S2) -\/ w*\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, 0.0);}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff\+Strategy.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoffStrategy_8hh}{Multi\+Asset\+Payoff\+Strategy.\+hh}}\end{DoxyCompactItemize}

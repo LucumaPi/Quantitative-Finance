@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classIBVP">
 <title>IBVP Class Reference</title>
 <indexterm><primary>IBVP</primary></indexterm>
+<para>
+<computeroutput>#include &lt;IBVP.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for IBVP:<para>
     <informalfigure>
         <mediaobject>
@@ -14,28 +17,134 @@ Collaboration diagram for IBVP:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classIBVP_1a449355041ee520c752ab510137bd41a4"/><emphasis role="strong">IBVP</emphasis> (<link linkend="_classIBVPImp">IBVPImp</link> &amp;executor, const <link linkend="_classRange">Range</link>&lt; double &gt; &amp;xrange, const <link linkend="_classRange">Range</link>&lt; double &gt; &amp;trange)</para>
+            <listitem><para><link linkend="_classIBVP_1a449355041ee520c752ab510137bd41a4">IBVP</link> (<link linkend="_classIBVPImp">IBVPImp</link> &amp;executor, const <link linkend="_classRange">Range</link>&lt; double &gt; &amp;<link linkend="_classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1">xrange</link>, const <link linkend="_classRange">Range</link>&lt; double &gt; &amp;<link linkend="_classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b">trange</link>)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1a59a82bedba3a8de65997ce6b64e612b5"/>double <emphasis role="strong">diffusion</emphasis> (double x, double t) const</para>
+            <listitem><para>double <link linkend="_classIBVP_1a59a82bedba3a8de65997ce6b64e612b5">diffusion</link> (double x, double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1a74f384836849c568e26b10bae327ace5"/>double <emphasis role="strong">convection</emphasis> (double x, double t) const</para>
+            <listitem><para>double <link linkend="_classIBVP_1a74f384836849c568e26b10bae327ace5">convection</link> (double x, double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1adf8e3d7993a300e7dd5c727d935ad8aa"/>double <emphasis role="strong">zeroterm</emphasis> (double x, double t) const</para>
+            <listitem><para>double <link linkend="_classIBVP_1adf8e3d7993a300e7dd5c727d935ad8aa">zeroterm</link> (double x, double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1abba7e8fa377fb7cc5dbbd0da5922eca5"/>double <emphasis role="strong">RHS</emphasis> (double x, double t) const</para>
+            <listitem><para>double <link linkend="_classIBVP_1abba7e8fa377fb7cc5dbbd0da5922eca5">RHS</link> (double x, double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1a06a4841866f3ec0f7f62f67a7e800930"/>double <emphasis role="strong">BCL</emphasis> (double t) const</para>
+            <listitem><para>double <link linkend="_classIBVP_1a06a4841866f3ec0f7f62f67a7e800930">BCL</link> (double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1afd987bb4e41ff033ce8d0705818f4cef"/>double <emphasis role="strong">BCR</emphasis> (double t) const</para>
+            <listitem><para>double <link linkend="_classIBVP_1afd987bb4e41ff033ce8d0705818f4cef">BCR</link> (double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1a06c09ce3034e1e915ef7aba3cfd99832"/>double <emphasis role="strong">IC</emphasis> (double x) const</para>
+            <listitem><para>double <link linkend="_classIBVP_1a06c09ce3034e1e915ef7aba3cfd99832">IC</link> (double x) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1"/><link linkend="_classRange">Range</link>&lt; double &gt; &amp; <emphasis role="strong">xrange</emphasis> ()</para>
+            <listitem><para><link linkend="_classRange">Range</link>&lt; double &gt; &amp; <link linkend="_classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1">xrange</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b"/><link linkend="_classRange">Range</link>&lt; double &gt; &amp; <emphasis role="strong">trange</emphasis> ()</para>
+            <listitem><para><link linkend="_classRange">Range</link>&lt; double &gt; &amp; <link linkend="_classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b">trange</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 20 of file IBVP.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classIBVP_1a449355041ee520c752ab510137bd41a4"/>    <section>
+    <title>IBVP()</title>
+<indexterm><primary>IBVP</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>IBVP</secondary></indexterm>
+<para><computeroutput>IBVP::IBVP (<link linkend="_classIBVPImp">IBVPImp</link> &amp; executor, const <link linkend="_classRange">Range</link>&lt; double &gt; &amp; xrange, const <link linkend="_classRange">Range</link>&lt; double &gt; &amp; trange)</computeroutput></para><para>
+Definition at line 28 of file IBVP.cc.</para>
+<programlisting>29 {
+30 &#32;&#32;&#32;&#32;imp&#32;=&#32;&amp;executor;
+31 &#32;&#32;&#32;&#32;xaxis&#32;=&#32;<link linkend="_classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1">xrange</link>;
+32 
+33 &#32;&#32;&#32;&#32;taxis&#32;=&#32;<link linkend="_classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b">trange</link>;
+34 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classIBVP_1a06a4841866f3ec0f7f62f67a7e800930"/>    <section>
+    <title>BCL()</title>
+<indexterm><primary>BCL</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>BCL</secondary></indexterm>
+<para><computeroutput>double IBVP::BCL (double t) const</computeroutput></para><para>
+Definition at line 60 of file IBVP.cc.</para>
+<programlisting>61 {&#32;<emphasis role="comment">//&#32;Left&#32;hand&#32;boundary&#32;condition</emphasis>
+62 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;imp-&gt;<link linkend="_classIBVPImp_1aeff635ae5363a1858efc57c833500300">BCL</link>(t);
+63 }
+</programlisting>    </section><anchor xml:id="_classIBVP_1afd987bb4e41ff033ce8d0705818f4cef"/>    <section>
+    <title>BCR()</title>
+<indexterm><primary>BCR</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>BCR</secondary></indexterm>
+<para><computeroutput>double IBVP::BCR (double t) const</computeroutput></para><para>
+Definition at line 65 of file IBVP.cc.</para>
+<programlisting>66 {&#32;<emphasis role="comment">//&#32;Right&#32;hand&#32;boundary&#32;condition</emphasis>
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;imp-&gt;<link linkend="_classIBVPImp_1a371a1b065ab843b926b1baf727be09af">BCR</link>(t);
+68 }
+</programlisting>    </section><anchor xml:id="_classIBVP_1a74f384836849c568e26b10bae327ace5"/>    <section>
+    <title>convection()</title>
+<indexterm><primary>convection</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>convection</secondary></indexterm>
+<para><computeroutput>double IBVP::convection (double x, double t) const</computeroutput></para><para>
+Definition at line 42 of file IBVP.cc.</para>
+<programlisting>43 {&#32;<emphasis role="comment">//&#32;Coefficient&#32;of&#32;first&#32;derivative</emphasis>
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;imp-&gt;<link linkend="_classIBVPImp_1a44d3dc1c2d3b351705d101943c42c880">convection</link>(x,t);
+45 }
+</programlisting>    </section><anchor xml:id="_classIBVP_1a59a82bedba3a8de65997ce6b64e612b5"/>    <section>
+    <title>diffusion()</title>
+<indexterm><primary>diffusion</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>diffusion</secondary></indexterm>
+<para><computeroutput>double IBVP::diffusion (double x, double t) const</computeroutput></para><para>
+Definition at line 37 of file IBVP.cc.</para>
+<programlisting>38 {&#32;<emphasis role="comment">//&#32;Coefficient&#32;of&#32;second&#32;derivative</emphasis>
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;imp-&gt;<link linkend="_classIBVPImp_1a6f66b0583fd3d65ad946650f1ff7ca1e">diffusion</link>(x,t);
+40 }
+</programlisting>    </section><anchor xml:id="_classIBVP_1a06c09ce3034e1e915ef7aba3cfd99832"/>    <section>
+    <title>IC()</title>
+<indexterm><primary>IC</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>IC</secondary></indexterm>
+<para><computeroutput>double IBVP::IC (double x) const</computeroutput></para><para>
+Definition at line 70 of file IBVP.cc.</para>
+<programlisting>71 {&#32;<emphasis role="comment">//&#32;Initial&#32;condition</emphasis>
+72 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;imp-&gt;<link linkend="_classIBVPImp_1ad9cfdc5edfadcf5f18cb4d3a6b64f740">IC</link>(x);
+73 }
+</programlisting>    </section><anchor xml:id="_classIBVP_1abba7e8fa377fb7cc5dbbd0da5922eca5"/>    <section>
+    <title>RHS()</title>
+<indexterm><primary>RHS</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>RHS</secondary></indexterm>
+<para><computeroutput>double IBVP::RHS (double x, double t) const</computeroutput></para><para>
+Definition at line 54 of file IBVP.cc.</para>
+<programlisting>55 {&#32;<emphasis role="comment">//&#32;Inhomogeneous&#32;forcing&#32;term</emphasis>
+56 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;imp-&gt;<link linkend="_classIBVPImp_1ae2d0430ad38aa7b6055b1cb622051e67">RHS</link>(x,t);
+57 }
+</programlisting>    </section><anchor xml:id="_classIBVP_1a2bbe956e73b4174303b1a2ba481cb35b"/>    <section>
+    <title>trange()</title>
+<indexterm><primary>trange</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>trange</secondary></indexterm>
+<para><computeroutput><link linkend="_classRange">Range</link>&lt; double &gt; &amp; IBVP::trange ( )</computeroutput></para><para>
+Definition at line 81 of file IBVP.cc.</para>
+<programlisting>82 {
+83 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;taxis;
+84 }
+</programlisting>    </section><anchor xml:id="_classIBVP_1af6b0b31d8fe2020b43a22b8ee673c1a1"/>    <section>
+    <title>xrange()</title>
+<indexterm><primary>xrange</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>xrange</secondary></indexterm>
+<para><computeroutput><link linkend="_classRange">Range</link>&lt; double &gt; &amp; IBVP::xrange ( )</computeroutput></para><para>
+Definition at line 76 of file IBVP.cc.</para>
+<programlisting>77 {
+78 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;xaxis;
+79 }
+</programlisting>    </section><anchor xml:id="_classIBVP_1adf8e3d7993a300e7dd5c727d935ad8aa"/>    <section>
+    <title>zeroterm()</title>
+<indexterm><primary>zeroterm</primary><secondary>IBVP</secondary></indexterm>
+<indexterm><primary>IBVP</primary><secondary>zeroterm</secondary></indexterm>
+<para><computeroutput>double IBVP::zeroterm (double x, double t) const</computeroutput></para><para>
+Definition at line 48 of file IBVP.cc.</para>
+<programlisting>49 {&#32;&#32;&#32;<emphasis role="comment">//&#32;Coefficient&#32;of&#32;zero&#32;derivative</emphasis>
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;imp-&gt;<link linkend="_classIBVPImp_1ac6bab43d37b55879c6b29eefa0dad63f">zeroterm</link>(x,t);
+51 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/IBVP.hhsrc/IBVP.cc</section>
+include/duffy/<link linkend="_IBVP_8hh">IBVP.hh</link>src/<link linkend="_IBVP_8cc">IBVP.cc</link></section>
+</section>

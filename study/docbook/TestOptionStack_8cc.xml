@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestOptionStack_8cc">
+<title>tests/TestOptionStack.cc File Reference</title>
+<indexterm><primary>tests/TestOptionStack.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestOptionStack.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestOptionStack_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classSimpleOption">SimpleOption</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestOptionStack_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestOptionStack_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestOptionStack.cc</secondary></indexterm>
+<indexterm><primary>TestOptionStack.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 36 of file TestOptionStack.cc.</para>
+<programlisting>37 {
+38 <emphasis role="comment">/*</emphasis>
+39 <emphasis role="comment">&#32;&#32;&#32;&#32;{&#32;//&#32;Define&#32;a&#32;scope</emphasis>
+40 <emphasis role="comment"></emphasis>
+41 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SimpleOption&#32;opt1;</emphasis>
+42 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;opt1.print();</emphasis>
+43 <emphasis role="comment">&#32;&#32;&#32;&#32;}</emphasis>
+44 <emphasis role="comment"></emphasis>
+45 <emphasis role="comment">&#32;&#32;&#32;&#32;//opt1.print();&#32;opt1&#32;does&#32;not&#32;exist</emphasis>
+46 <emphasis role="comment"></emphasis>
+47 <emphasis role="comment">&#32;&#32;&#32;&#32;SimpleOption&#32;myPortfolio[10];&#32;</emphasis>
+48 <emphasis role="comment"></emphasis>
+49 <emphasis role="comment">&#32;&#32;&#32;&#32;//&#32;Initialise&#32;the&#32;array</emphasis>
+50 <emphasis role="comment">&#32;&#32;&#32;&#32;for&#32;(int&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;10;&#32;j++)</emphasis>
+51 <emphasis role="comment">&#32;&#32;&#32;&#32;{</emphasis>
+52 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myPortfolio[j].print();</emphasis>
+53 <emphasis role="comment">&#32;&#32;&#32;&#32;}</emphasis>
+54 <emphasis role="comment"></emphasis>
+55 <emphasis role="comment">//&#32;&#32;myPortfolio[-1].print();</emphasis>
+56 <emphasis role="comment">//&#32;&#32;myPortfolio[1000].print();</emphasis>
+57 <emphasis role="comment">*/</emphasis>
+58 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Heap&#32;based&#32;stuff&#32;\n&quot;</emphasis>;
+59 &#32;&#32;&#32;&#32;<link linkend="_classSimpleOption">SimpleOption</link>*&#32;opt;
+60 &#32;&#32;&#32;&#32;<link linkend="_classSimpleOption">SimpleOption</link>*&#32;opt2;
+61 
+62 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;default&#32;constructor</emphasis>
+63 &#32;&#32;&#32;&#32;opt&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classSimpleOption">SimpleOption</link>;
+64 &#32;&#32;&#32;&#32;opt&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+65 &#32;&#32;&#32;&#32;(*opt).print();
+66 
+67 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;constructor&#32;with&#32;2&#32;parameters</emphasis>
+68 &#32;&#32;&#32;&#32;opt2&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classSimpleOption">SimpleOption</link>(0.25,&#32;90.0);
+69 &#32;&#32;&#32;&#32;opt2&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+70 
+71 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;opt;
+72 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;opt2;
+73 
+74 &#32;&#32;&#32;&#32;opt&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classSimpleOption">SimpleOption</link>;
+75 &#32;&#32;&#32;&#32;(*opt).<link linkend="_classSimpleOption_1af441b963e40de95677f57a0082899a58">print</link>();
+76 
+77 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;create&#32;an&#32;array&#32;of&#32;options</emphasis>
+78 &#32;&#32;&#32;&#32;<link linkend="_classSimpleOption">SimpleOption</link>*&#32;optArray;
+79 
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;=&#32;10;
+81 &#32;&#32;&#32;&#32;optArray&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classSimpleOption">SimpleOption</link>[<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>];&#32;<emphasis role="comment">//&#32;Default&#32;constructor&#32;called</emphasis>
+82 
+83 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;&#32;j++)
+84 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Member&#32;data&#32;public&#32;for&#32;convenience&#32;only</emphasis>
+85 
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;optArray[j].<link linkend="_classSimpleOption_1acf2fd9d59d2420b979db90b252cda6ec">T</link>&#32;=&#32;1.0;&#32;<emphasis role="comment">//&#32;1&#32;year&#32;expiry</emphasis>
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;optArray[j].<link linkend="_classSimpleOption_1a50fe3b82fafe7ade7bbe2a9da5406a84">K</link>&#32;=&#32;100.0;&#32;<emphasis role="comment">//&#32;Strike&#32;price</emphasis>
+88 
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;optArray[j].<link linkend="_classSimpleOption_1af441b963e40de95677f57a0082899a58">print</link>();&#32;
+90 &#32;&#32;&#32;&#32;}
+91 
+92 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;[]&#32;optArray;
+93 
+94 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+95 }
+</programlisting></section>
+</section>
+</section>

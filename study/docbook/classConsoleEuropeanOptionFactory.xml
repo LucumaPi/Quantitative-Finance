@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classConsoleEuropeanOptionFactory">
 <title>ConsoleEuropeanOptionFactory Class Reference</title>
 <indexterm><primary>ConsoleEuropeanOptionFactory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;EuropeanOptionFactory.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for ConsoleEuropeanOptionFactory:<para>
     <informalfigure>
         <mediaobject>
@@ -23,10 +26,49 @@ Collaboration diagram for ConsoleEuropeanOptionFactory:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classConsoleEuropeanOptionFactory_1a7784d6fda149854e5a8a61af96765e0e"/><link linkend="_classOption">Option</link> * <emphasis role="strong">create</emphasis> () const</para>
+            <listitem><para><link linkend="_classOption">Option</link> * <link linkend="_classConsoleEuropeanOptionFactory_1a7784d6fda149854e5a8a61af96765e0e">create</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 20 of file EuropeanOptionFactory.hh.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classConsoleEuropeanOptionFactory_1a7784d6fda149854e5a8a61af96765e0e"/>    <section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>ConsoleEuropeanOptionFactory</secondary></indexterm>
+<indexterm><primary>ConsoleEuropeanOptionFactory</primary><secondary>create</secondary></indexterm>
+<para><computeroutput><link linkend="_classOption">Option</link>* ConsoleEuropeanOptionFactory::create ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classEuropeanOptionFactory_1ac24fbbbcda256a8008afe989e32e9433">EuropeanOptionFactory</link>.</para>
+<para>
+Definition at line 24 of file EuropeanOptionFactory.hh.</para>
+<programlisting>25 &#32;&#32;&#32;&#32;{
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n***&#32;Parameters&#32;for&#32;option&#32;object&#32;***\n&quot;</emphasis>;
+27 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classOption">Option</link>*&#32;opt&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classOption">Option</link>;
+29 
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Strike:&#32;&quot;</emphasis>;
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;opt-&gt;<link linkend="_classOption_1a40db81993d02b319a38e62b42a730d6a">K</link>;
+32 
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Volatility:&#32;&quot;</emphasis>;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;opt-&gt;<link linkend="_classOption_1a8b68f88d3e7a01dfea0b83e3e5a4f57e">sig</link>;
+35 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Interest&#32;rate:&#32;&quot;</emphasis>;
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;opt-&gt;<link linkend="_classOption_1abd44ab56edddcd59f80ca5c60c9b66f0">r</link>;
+38 
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Expiry&#32;date:&#32;&quot;</emphasis>;
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;opt-&gt;<link linkend="_classOption_1ae583dd6d430a3b428014efa942605d54">T</link>;
+41 
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;1.&#32;Call,&#32;2.&#32;Put:&#32;&quot;</emphasis>;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;opt-&gt;<link linkend="_classOption_1a08dcf2742c8429087baaacf694089cbe">type</link>;
+44 
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;opt;
+46 &#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/EuropeanOptionFactory.hh</section>
+include/duffy/<link linkend="_EuropeanOptionFactory_8hh">EuropeanOptionFactory.hh</link></section>
+</section>

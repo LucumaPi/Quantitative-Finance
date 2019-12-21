@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classFullArray">
 <title>FullArray&lt; V, TA &gt; Class Template Reference</title>
 <indexterm><primary>FullArray&lt; V, TA &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;FullArray.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for FullArray&lt; V, TA &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -23,20 +26,138 @@ Collaboration diagram for FullArray&lt; V, TA &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classFullArray_1a89c2fe9944639ae1ea069bf5c69117cc"/><emphasis role="strong">FullArray</emphasis> (std::size_t size)</para>
+            <listitem><para><link linkend="_classFullArray_1aa964a473d16b89f8380a03e252f24d1c">FullArray</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullArray_1afe445599c77bc8ecd849f982616960df"/><emphasis role="strong">FullArray</emphasis> (const <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp;source)</para>
+            <listitem><para><link linkend="_classFullArray_1a89c2fe9944639ae1ea069bf5c69117cc">FullArray</link> (std::size_t size)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullArray_1ae9a91c66741570e20758d54664676db8"/>virtual std::size_t <emphasis role="strong">Size</emphasis> () const</para>
+            <listitem><para><link linkend="_classFullArray_1afe445599c77bc8ecd849f982616960df">FullArray</link> (const <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullArray_1a0ecf139013ac590276644320dcc663fc"/>V &amp; <emphasis role="strong">operator[]</emphasis> (std::size_t index)</para>
+            <listitem><para>virtual <link linkend="_classFullArray_1a1fe55cb30365520b3f3a3eb731aecb2a">~FullArray</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullArray_1ab20c110bcf7e445dfc410b0fb55fa408"/>const V &amp; <emphasis role="strong">operator[]</emphasis> (std::size_t index) const</para>
+            <listitem><para>virtual std::size_t <link linkend="_classFullArray_1ae9a91c66741570e20758d54664676db8">Size</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullArray_1abb4489eb3c6bea585ca00f4b41ae7c1f"/><link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp;source)</para>
+            <listitem><para>V &amp; <link linkend="_classFullArray_1a0ecf139013ac590276644320dcc663fc">operator[]</link> (std::size_t index)</para>
+</listitem>
+            <listitem><para>const V &amp; <link linkend="_classFullArray_1ab20c110bcf7e445dfc410b0fb55fa408">operator[]</link> (std::size_t index) const</para>
+</listitem>
+            <listitem><para><link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp; <link linkend="_classFullArray_1abb4489eb3c6bea585ca00f4b41ae7c1f">operator=</link> (const <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp;source)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class V, class TA = std::allocator&lt;V&gt;&gt;
+class FullArray&lt; V, TA &gt;</title></simplesect>
+
+<para>
+Definition at line 15 of file FullArray.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classFullArray_1aa964a473d16b89f8380a03e252f24d1c"/>    <section>
+    <title>FullArray()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>FullArray</primary><secondary>FullArray&lt; V, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullArray&lt; V, TA &gt;</primary><secondary>FullArray</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput><link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt;::<link linkend="_classFullArray">FullArray</link> ( )</computeroutput></para><para>
+Definition at line 17 of file FullArray.cc.</para>
+<programlisting>17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classArrayStructure">ArrayStructure&lt;V&gt;</link>()
+18 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+19 
+20 &#32;&#32;&#32;&#32;m_vector=std::vector&lt;V,&#32;TA&gt;(1);&#32;<emphasis role="comment">//&#32;vector&#32;object&#32;with&#32;1&#32;element</emphasis>
+21 }
+</programlisting>    </section><anchor xml:id="_classFullArray_1a89c2fe9944639ae1ea069bf5c69117cc"/>    <section>
+    <title>FullArray()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>FullArray</primary><secondary>FullArray&lt; V, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullArray&lt; V, TA &gt;</primary><secondary>FullArray</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput><link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt;::<link linkend="_classFullArray">FullArray</link> (std::size_t size)</computeroutput></para><para>
+Definition at line 24 of file FullArray.cc.</para>
+<programlisting>24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classArrayStructure">ArrayStructure&lt;V&gt;</link>()
+25 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size</emphasis>
+26 
+27 &#32;&#32;&#32;&#32;m_vector=std::vector&lt;V,&#32;TA&gt;(size);
+28 }
+</programlisting>    </section><anchor xml:id="_classFullArray_1afe445599c77bc8ecd849f982616960df"/>    <section>
+    <title>FullArray()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>FullArray</primary><secondary>FullArray&lt; V, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullArray&lt; V, TA &gt;</primary><secondary>FullArray</secondary></indexterm>
+<computeroutput>template&lt;class V, class TA&gt; </computeroutput><para><computeroutput><link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt;::<link linkend="_classFullArray">FullArray</link> (const <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp; source)</computeroutput></para><para>
+Definition at line 31 of file FullArray.cc.</para>
+<programlisting>31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classArrayStructure">ArrayStructure&lt;V&gt;</link>(source)
+32 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+33 
+34 &#32;&#32;&#32;&#32;m_vector=source.m_vector;
+35 }
+</programlisting>    </section><anchor xml:id="_classFullArray_1a1fe55cb30365520b3f3a3eb731aecb2a"/>    <section>
+    <title>~FullArray()</title>
+<indexterm><primary>~FullArray</primary><secondary>FullArray&lt; V, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullArray&lt; V, TA &gt;</primary><secondary>~FullArray</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput><link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt;::~<link linkend="_classFullArray">FullArray</link> ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 38 of file FullArray.cc.</para>
+<programlisting>39 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+40 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classFullArray_1abb4489eb3c6bea585ca00f4b41ae7c1f"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>FullArray&lt; V, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullArray&lt; V, TA &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class V, class TA&gt; </computeroutput><para><computeroutput><link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp; <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt;::operator= (const <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt; &amp; source)</computeroutput></para><para>
+Definition at line 71 of file FullArray.cc.</para>
+<programlisting>72 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+73 
+74 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exit&#32;if&#32;same&#32;object</emphasis>
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>==&amp;source)&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+76 
+77 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;base&#32;class&#32;constructor</emphasis>
+78 &#32;&#32;&#32;&#32;<link linkend="_classArrayStructure_1aee8dc21d313bd8706f397a561332d654">ArrayStructure&lt;V&gt;::operator = </link>(source);
+79 
+80 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;the&#32;embedded&#32;vector</emphasis>
+81 &#32;&#32;&#32;&#32;m_vector=source.m_vector;
+82 
+83 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+84 }
+</programlisting>    </section><anchor xml:id="_classFullArray_1a0ecf139013ac590276644320dcc663fc"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>FullArray&lt; V, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullArray&lt; V, TA &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput>V &amp; <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt;::operator[] (std::size_t index)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classArrayStructure_1a81c632bed29ddd1a373b6769490a67d7">ArrayStructure&lt; V &gt;</link>.</para>
+<para>
+Definition at line 55 of file FullArray.cc.</para>
+<programlisting>56 {&#32;<emphasis role="comment">//&#32;Subscripting&#32;operator</emphasis>
+57 
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_vector[index&#32;-&#32;1];
+60 }
+</programlisting>    </section><anchor xml:id="_classFullArray_1ab20c110bcf7e445dfc410b0fb55fa408"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>FullArray&lt; V, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullArray&lt; V, TA &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput>const V &amp; <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt;::operator[] (std::size_t index) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classArrayStructure_1ad7d4487d8276969345406acbf753e00a">ArrayStructure&lt; V &gt;</link>.</para>
+<para>
+Definition at line 63 of file FullArray.cc.</para>
+<programlisting>64 {&#32;<emphasis role="comment">//&#32;Subscripting&#32;operator</emphasis>
+65 
+66 
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_vector[index&#32;-&#32;1];
+68 }
+</programlisting>    </section><anchor xml:id="_classFullArray_1ae9a91c66741570e20758d54664676db8"/>    <section>
+    <title>Size()</title>
+<indexterm><primary>Size</primary><secondary>FullArray&lt; V, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullArray&lt; V, TA &gt;</primary><secondary>Size</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput>std::size_t <link linkend="_classFullArray">FullArray</link>&lt; V, TA &gt;::Size ( ) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classArrayStructure_1a29bd0faa2d4f0e60152ef197d56148b4">ArrayStructure&lt; V &gt;</link>.</para>
+<para>
+Definition at line 44 of file FullArray.cc.</para>
+<programlisting>45 {&#32;<emphasis role="comment">//&#32;Size&#32;of&#32;the&#32;array</emphasis>
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_vector.size();
+48 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/FullArray.hhsrc/FullArray.cc</section>
+include/duffy/<link linkend="_FullArray_8hh">FullArray.hh</link>src/<link linkend="_FullArray_8cc">FullArray.cc</link></section>
+</section>

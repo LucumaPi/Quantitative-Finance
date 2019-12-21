@@ -1,0 +1,469 @@
+\hypertarget{MatrixMechanisms_8cc_source}{}\doxysection{Matrix\+Mechanisms.\+cc}
+\label{MatrixMechanisms_8cc_source}\index{src/MatrixMechanisms.cc@{src/MatrixMechanisms.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// matrixmechanisms.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Mechanism functions for matrices. }}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{//  Modification dates}}
+\DoxyCodeLine{00006 \textcolor{comment}{//  }}
+\DoxyCodeLine{00007 \textcolor{comment}{//  DD 2004-\/4-\/3 Kick off}}
+\DoxyCodeLine{00008 \textcolor{comment}{//  DD 2004-\/4-\/9 Power method, code review and round-\/off}}
+\DoxyCodeLine{00009 \textcolor{comment}{//  DD 2005-\/12-\/1 Extracting a row fom a Matrix (can be optmised)}}
+\DoxyCodeLine{00010 \textcolor{comment}{//  DD 2006-\/8-\/6 set\_diagomnal() commented out}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{// (C) Datasim Education BV 2004-\/2006}}
+\DoxyCodeLine{00013 \textcolor{comment}{//}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#ifndef MatrixMechanisms\_CC}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00016}\mbox{\hyperlink{MatrixMechanisms_8cc_aa7b3b363509018d7f8486fbd209c9d1c}{00016}} \textcolor{preprocessor}{\#define MatrixMechanisms\_CC}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{MatrixMechanisms_8hh}{duffy/MatrixMechanisms.hh}}>}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{SimplePropertySet_8hh}{duffy/SimplePropertySet.hh}}>}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{comment}{// Properties}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{comment}{// Sum of absolute values of row and column}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00024}\mbox{\hyperlink{MatrixMechanisms_8cc_ab00f24d33b315b3567881ca4f9ae13aa}{00024}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8cc_ab00f24d33b315b3567881ca4f9ae13aa}{sumAbsRow}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m, \textcolor{keyword}{const} I\& i)}
+\DoxyCodeLine{00025 \{ \textcolor{comment}{// Add up for a given row i}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     V result = std::fabs(m(i, m.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}()));}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordflow}{for} (I j = m.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}() + 1; j <= m.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00030     \{}
+\DoxyCodeLine{00031         result += std::fabs(m(i,j));}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00038}\mbox{\hyperlink{MatrixMechanisms_8cc_a4d1479b88b531287426c66badbcd18cf}{00038}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8cc_a4d1479b88b531287426c66badbcd18cf}{sumAbsColumn}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m, \textcolor{keyword}{const} I\& j)}
+\DoxyCodeLine{00039 \{ \textcolor{comment}{// Add up for a given column j}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     V result = std::fabs(m(m.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(), j));}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{keywordflow}{for} (I i = m.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}() + 1; i <= m.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00044     \{}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         result += std::fabs(m(i,j));}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051 \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \textcolor{comment}{// Now Abs sume of rows and columns for all indices}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00054}\mbox{\hyperlink{MatrixMechanisms_8cc_a44ab776341a8a095e655778574b5ce8d}{00054}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V,I>}} \mbox{\hyperlink{MatrixMechanisms_8cc_ab00f24d33b315b3567881ca4f9ae13aa}{sumAbsRow}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m)}
+\DoxyCodeLine{00055 \{}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \mbox{\hyperlink{classVector}{Vector<V,I>}} result (m.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}(), m.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}());}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{// Do for all rows}}
+\DoxyCodeLine{00060     \textcolor{keywordflow}{for} (I i = m.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= m.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00061     \{}
+\DoxyCodeLine{00062         result[i] = \mbox{\hyperlink{MatrixMechanisms_8cc_ab00f24d33b315b3567881ca4f9ae13aa}{sumAbsRow}}(m, i);}
+\DoxyCodeLine{00063     \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067 \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00070}\mbox{\hyperlink{MatrixMechanisms_8cc_afbf0607bc3db705b85a955c9cc6be698}{00070}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V,I>}} \mbox{\hyperlink{MatrixMechanisms_8cc_a4d1479b88b531287426c66badbcd18cf}{sumAbsColumn}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m)}
+\DoxyCodeLine{00071 \{}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \mbox{\hyperlink{classVector}{Vector<V,I>}} result (m.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}(), m.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}());}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{comment}{// Do for all columns}}
+\DoxyCodeLine{00076     \textcolor{keywordflow}{for} (I j = m.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j <= m.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00077     \{}
+\DoxyCodeLine{00078         result[j] = \mbox{\hyperlink{MatrixMechanisms_8cc_a4d1479b88b531287426c66badbcd18cf}{sumAbsColumn}}(m, j);}
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00082 \}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00085}\mbox{\hyperlink{MatrixMechanisms_8cc_a5736210e118bd1f67139779ad143f9ad}{00085}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8cc_a5736210e118bd1f67139779ad143f9ad}{l1Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix)}
+\DoxyCodeLine{00086 \{ \textcolor{comment}{// Largest column }}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088         V ans = V(0.0);}
+\DoxyCodeLine{00089         V tmp(ans);}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091         \textcolor{keywordflow}{for} (I j = matrix.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j <= matrix.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00092         \{}
+\DoxyCodeLine{00093             \textcolor{keywordflow}{for} (I i = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00094             \{}
+\DoxyCodeLine{00095                 tmp = \mbox{\hyperlink{MatrixMechanisms_8cc_a4d1479b88b531287426c66badbcd18cf}{sumAbsColumn}}(matrix, i);}
+\DoxyCodeLine{00096             \}}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098             \textcolor{keywordflow}{if} (tmp > ans)}
+\DoxyCodeLine{00099                     ans = tmp;}
+\DoxyCodeLine{00100         \}}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104 \}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00106}\mbox{\hyperlink{MatrixMechanisms_8cc_ad97ba861ea28d23de371ca12e82dbfbd}{00106}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8cc_ad97ba861ea28d23de371ca12e82dbfbd}{FrobeniusNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix)}
+\DoxyCodeLine{00107 \{      }
+\DoxyCodeLine{00108         V ans(0.0);}
+\DoxyCodeLine{00109         V tmp(0.0);}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111         \textcolor{keywordflow}{for} (I i = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00112         \{}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114             \textcolor{keywordflow}{for} (I j = matrix.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j<= matrix.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00115             \{}
+\DoxyCodeLine{00116                 tmp = matrix(i, j);}
+\DoxyCodeLine{00117                 ans += (tmp * tmp);}
+\DoxyCodeLine{00118             \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120         \}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122         \textcolor{keywordflow}{return} std::sqrt(ans);}
+\DoxyCodeLine{00123 \} }
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00125}\mbox{\hyperlink{MatrixMechanisms_8cc_a70cd51362f5af358d655ed9c0c7d0fea}{00125}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8cc_a70cd51362f5af358d655ed9c0c7d0fea}{lInfinityNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix)}
+\DoxyCodeLine{00126 \{ \textcolor{comment}{// Largest row}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128         V ans = V(0.0);}
+\DoxyCodeLine{00129         V tmp(ans);}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \textcolor{keywordflow}{for} (I i = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134             \textcolor{keywordflow}{for} (I j = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); j <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); j++)}
+\DoxyCodeLine{00135             \{}
+\DoxyCodeLine{00136                 tmp = \mbox{\hyperlink{MatrixMechanisms_8cc_ab00f24d33b315b3567881ca4f9ae13aa}{sumAbsRow}}(matrix, j);}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138             \}}
+\DoxyCodeLine{00139         }
+\DoxyCodeLine{00140             \textcolor{keywordflow}{if} (tmp > ans)}
+\DoxyCodeLine{00141                     ans = tmp;}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143         \}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148 \}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00150}\mbox{\hyperlink{MatrixMechanisms_8cc_a2e77e0a6325bf3711530f5ac5d5d777d}{00150}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{MatrixMechanisms_8cc_a2e77e0a6325bf3711530f5ac5d5d777d}{allNorms}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m)}
+\DoxyCodeLine{00151 \{}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153     \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} result;    \textcolor{comment}{// Empty list}}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"l1"}, \mbox{\hyperlink{MatrixMechanisms_8cc_a5736210e118bd1f67139779ad143f9ad}{l1Norm}}(m)));}
+\DoxyCodeLine{00156     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"l2"}, \mbox{\hyperlink{MatrixMechanisms_8cc_ad97ba861ea28d23de371ca12e82dbfbd}{FrobeniusNorm}}(m)));}
+\DoxyCodeLine{00157     result.\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{add}}(\mbox{\hyperlink{classProperty}{Property<std::string, double>}} (\textcolor{stringliteral}{"linf"}, \mbox{\hyperlink{MatrixMechanisms_8cc_a70cd51362f5af358d655ed9c0c7d0fea}{lInfinityNorm}}(m)));}
+\DoxyCodeLine{00158 }
+\DoxyCodeLine{00159     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161 \}}
+\DoxyCodeLine{00162 \textcolor{comment}{/*}}
+\DoxyCodeLine{00163 \textcolor{comment}{template <class V, class I> setDiagonal(Matrix<V,I>\& m, const V\& v)}}
+\DoxyCodeLine{00164 \textcolor{comment}{\{ // All diagonal elements get the value v}}
+\DoxyCodeLine{00165 \textcolor{comment}{}}
+\DoxyCodeLine{00166 \textcolor{comment}{        // Matrix must be square, otherwise ...}}
+\DoxyCodeLine{00167 \textcolor{comment}{}}
+\DoxyCodeLine{00168 \textcolor{comment}{        for (I j = m.MinRowIndex(); j <= m.MaxRowIndex(); j++)}}
+\DoxyCodeLine{00169 \textcolor{comment}{        \{}}
+\DoxyCodeLine{00170 \textcolor{comment}{            m(j,j) = v;}}
+\DoxyCodeLine{00171 \textcolor{comment}{        \}}}
+\DoxyCodeLine{00172 \textcolor{comment}{\}}}
+\DoxyCodeLine{00173 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00174}\mbox{\hyperlink{MatrixMechanisms_8cc_ab756c3f1b13fec78f42862639fb98f7c}{00174}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{MatrixMechanisms_8cc_ab756c3f1b13fec78f42862639fb98f7c}{initMatrix}}(\mbox{\hyperlink{classMatrix}{Matrix<V,I>}}\& m, \textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00175 \{ \textcolor{comment}{// All elements get the value v}}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177 }
+\DoxyCodeLine{00178         \textcolor{keywordflow}{for} (I i = m.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= m.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00179         \{}
+\DoxyCodeLine{00180             \textcolor{keywordflow}{for} (I j = m.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j <= m.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00181             \{}
+\DoxyCodeLine{00182                 m(i,j) = v;}
+\DoxyCodeLine{00183             \}}
+\DoxyCodeLine{00184         \}}
+\DoxyCodeLine{00185 \}}
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00189}\mbox{\hyperlink{MatrixMechanisms_8cc_a6f970bd30a1ac58d6f56b0737ecdb2f4}{00189}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}} \mbox{\hyperlink{MatrixMechanisms_8cc_a6f970bd30a1ac58d6f56b0737ecdb2f4}{createMatrix}}(}
+\DoxyCodeLine{00190     \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& lower, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& diagonal, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& upper)}
+\DoxyCodeLine{00191 \{ \textcolor{comment}{// Create a matrix based on the diagonal elements of a tridiagonal matrix; bit wasteful of}}
+\DoxyCodeLine{00192   \textcolor{comment}{// space but who cares! I've got a Pentium with a giga of memory}}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195     \textcolor{comment}{// We use the indexing as with LU decomposition routines, i.e.}}
+\DoxyCodeLine{00196     \textcolor{comment}{//}}
+\DoxyCodeLine{00197     \textcolor{comment}{//  lower [2, J]}}
+\DoxyCodeLine{00198     \textcolor{comment}{//  diagonal [1, J]}}
+\DoxyCodeLine{00199     \textcolor{comment}{//  upper [1, J-\/1]}}
+\DoxyCodeLine{00200     \textcolor{comment}{//}}
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I>}} result(diagonal.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}(), diagonal.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}(), 1, 1);}
+\DoxyCodeLine{00203 }
+\DoxyCodeLine{00204     \textcolor{comment}{// All values set to 0}}
+\DoxyCodeLine{00205     \mbox{\hyperlink{MatrixMechanisms_8cc_ab756c3f1b13fec78f42862639fb98f7c}{initMatrix}}(result, V(0.0));}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207     \textcolor{comment}{// Initialise the 'extremities' of the matrix}}
+\DoxyCodeLine{00208     result(result.MaxRowIndex(), result.MaxColumnIndex()) = diagonal[diagonal.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}()];}
+\DoxyCodeLine{00209     result(result.MaxRowIndex(), result.MaxColumnIndex() -\/1) = lower[lower.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}()];}
+\DoxyCodeLine{00210 }
+\DoxyCodeLine{00211     result(1, 1) = diagonal[diagonal.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00212     result(1, 2) = upper[upper.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214     \textcolor{comment}{// Now the 'uniform' part of the matrix}}
+\DoxyCodeLine{00215     \textcolor{keywordflow}{for} (I i = result.MinRowIndex() + 1; i <= result.MaxRowIndex() -\/ 1; i++)}
+\DoxyCodeLine{00216     \{}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218         \textcolor{comment}{// Create the diagonal element  }}
+\DoxyCodeLine{00219         result(i, i-\/1)  = lower[i];}
+\DoxyCodeLine{00220         result(i, i)    = diagonal[i];}
+\DoxyCodeLine{00221         result(i, i+1)  = upper[i];}
+\DoxyCodeLine{00222     \}}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00225 \}}
+\DoxyCodeLine{00226 \textcolor{comment}{// Other results for vectors and matrces}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00227}\mbox{\hyperlink{MatrixMechanisms_8cc_a24189db52fc13554f8f681d3041308c4}{00227}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8cc_a24189db52fc13554f8f681d3041308c4}{quadraticForm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00228 \{    }
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230         V ans = V(0.0);}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232         \textcolor{keywordflow}{for} (I i = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00233         \{}
+\DoxyCodeLine{00234 }
+\DoxyCodeLine{00235             \textcolor{keywordflow}{for} (I j = matrix.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j<= matrix.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00236             \{}
+\DoxyCodeLine{00237                 ans += matrix(i,j) * x[i] * x[j];}
+\DoxyCodeLine{00238             \}}
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00240         \}}
+\DoxyCodeLine{00241 }
+\DoxyCodeLine{00242         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00243 \}}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00245}\mbox{\hyperlink{MatrixMechanisms_8cc_a066bb3002419c7b680967d9ca5d4d259}{00245}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8cc_a066bb3002419c7b680967d9ca5d4d259}{RayleighQuotient}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& A, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x)}
+\DoxyCodeLine{00246 \{    }
+\DoxyCodeLine{00247 }
+\DoxyCodeLine{00248     \textcolor{comment}{// PREC: Compatibiity, number of columns of A == number of rows of x}}
+\DoxyCodeLine{00249     \textcolor{comment}{// PREC: inner product does not evaluate to 0.0}}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251 }
+\DoxyCodeLine{00252     \textcolor{keywordflow}{return} \mbox{\hyperlink{MatrixMechanisms_8cc_a24189db52fc13554f8f681d3041308c4}{quadraticForm}}(A, x) / \mbox{\hyperlink{ArrayMechanisms_8hh_a7feb2b4cbb0c06fa9146125c0e869513}{innerProduct}} (x,x);}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254 \}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00255}\mbox{\hyperlink{MatrixMechanisms_8cc_ac018d4a669ccf365d111f45a4adaa2dc}{00255}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_ac018d4a669ccf365d111f45a4adaa2dc}{operator < }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m2)}
+\DoxyCodeLine{00256 \{}
+\DoxyCodeLine{00257 }
+\DoxyCodeLine{00258         \textcolor{keywordflow}{for} (I i = m1.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= m1.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00259         \{}
+\DoxyCodeLine{00260 }
+\DoxyCodeLine{00261             \textcolor{keywordflow}{for} (I j = m1.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j<= m1.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00262             \{}
+\DoxyCodeLine{00263                 \textcolor{keywordflow}{if} (m1(i,j) >= m2(i,j))}
+\DoxyCodeLine{00264                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00265             \}}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267         \}}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00269 }
+\DoxyCodeLine{00270         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00271 \}}
+\DoxyCodeLine{00272 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00273}\mbox{\hyperlink{MatrixMechanisms_8cc_a597993d847c89c734413b05f38a9c9f0}{00273}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_a597993d847c89c734413b05f38a9c9f0}{operator <= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m2)}
+\DoxyCodeLine{00274 \{}
+\DoxyCodeLine{00275 }
+\DoxyCodeLine{00276         \textcolor{keywordflow}{for} (I i = m1.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= m1.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00277         \{}
+\DoxyCodeLine{00278 }
+\DoxyCodeLine{00279             \textcolor{keywordflow}{for} (I j = m1.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j<= m1.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00280             \{}
+\DoxyCodeLine{00281                 \textcolor{keywordflow}{if} (m1(i,j) > m2(i,j))}
+\DoxyCodeLine{00282                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00283             \}}
+\DoxyCodeLine{00284 }
+\DoxyCodeLine{00285         \}}
+\DoxyCodeLine{00286 }
+\DoxyCodeLine{00287 }
+\DoxyCodeLine{00288         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00289 \}}
+\DoxyCodeLine{00290 }
+\DoxyCodeLine{00291 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00292}\mbox{\hyperlink{MatrixMechanisms_8cc_a360b70783d7c6a48829976cc98e01e35}{00292}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_a360b70783d7c6a48829976cc98e01e35}{operator > }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m2)}
+\DoxyCodeLine{00293 \{}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295     \textcolor{keywordflow}{if} (m2 < m1)}
+\DoxyCodeLine{00296         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00297 }
+\DoxyCodeLine{00298     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00299 \}}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00301 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00302}\mbox{\hyperlink{MatrixMechanisms_8cc_a7843615d73e917ffc7d215e477327dc3}{00302}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_a7843615d73e917ffc7d215e477327dc3}{operator >= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m2)}
+\DoxyCodeLine{00303 \{}
+\DoxyCodeLine{00304 }
+\DoxyCodeLine{00305         \textcolor{keywordflow}{if} (m2 <= m1)}
+\DoxyCodeLine{00306             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00309 }
+\DoxyCodeLine{00310 \}}
+\DoxyCodeLine{00311 }
+\DoxyCodeLine{00312 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00313}\mbox{\hyperlink{MatrixMechanisms_8cc_a4a210eda4ebc2f9d623640d1b16d0988}{00313}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_a4a210eda4ebc2f9d623640d1b16d0988}{operator == }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m2)}
+\DoxyCodeLine{00314 \{}
+\DoxyCodeLine{00315 }
+\DoxyCodeLine{00316         \textcolor{keywordflow}{for} (I i = m1.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= m1.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00317         \{}
+\DoxyCodeLine{00318 }
+\DoxyCodeLine{00319             \textcolor{keywordflow}{for} (I j = m1.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j<= m1.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00320             \{}
+\DoxyCodeLine{00321                 \textcolor{keywordflow}{if} (m1(i,j) != m2(i,j))}
+\DoxyCodeLine{00322                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00323             \}}
+\DoxyCodeLine{00324 }
+\DoxyCodeLine{00325         \}}
+\DoxyCodeLine{00326 }
+\DoxyCodeLine{00327 }
+\DoxyCodeLine{00328         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00329 \}}
+\DoxyCodeLine{00330 }
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00332}\mbox{\hyperlink{MatrixMechanisms_8cc_a9f5d2853990c1de5ffb4e55aafafff76}{00332}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_a9f5d2853990c1de5ffb4e55aafafff76}{operator != }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m2)}
+\DoxyCodeLine{00333 \{}
+\DoxyCodeLine{00334 }
+\DoxyCodeLine{00335     \textcolor{keywordflow}{if} (m1 == m2)}
+\DoxyCodeLine{00336         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00337 }
+\DoxyCodeLine{00338     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00339 \}}
+\DoxyCodeLine{00340 }
+\DoxyCodeLine{00341 \textcolor{comment}{// Are all elements of a matrix positive?}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00342}\mbox{\hyperlink{MatrixMechanisms_8cc_a570766e15b464762973900186b753a13}{00342}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_a570766e15b464762973900186b753a13}{positive}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix)}
+\DoxyCodeLine{00343 \{}
+\DoxyCodeLine{00344 }
+\DoxyCodeLine{00345         V zero = V(0.0);}
+\DoxyCodeLine{00346 }
+\DoxyCodeLine{00347         \textcolor{keywordflow}{for} (I i = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00348         \{}
+\DoxyCodeLine{00349 }
+\DoxyCodeLine{00350             \textcolor{keywordflow}{for} (I j = matrix.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j<= matrix.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00351             \{}
+\DoxyCodeLine{00352                 \textcolor{keywordflow}{if} (matrix(i,j) <= zero)}
+\DoxyCodeLine{00353                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00354             \}}
+\DoxyCodeLine{00355 }
+\DoxyCodeLine{00356         \}}
+\DoxyCodeLine{00357 }
+\DoxyCodeLine{00358 }
+\DoxyCodeLine{00359         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00360 \}}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00363}\mbox{\hyperlink{MatrixMechanisms_8cc_ac9e0befc58c6791fc8b075b32a2503f3}{00363}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_ac9e0befc58c6791fc8b075b32a2503f3}{negative}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix)}
+\DoxyCodeLine{00364 \{}
+\DoxyCodeLine{00365 }
+\DoxyCodeLine{00366         V zero = V(0.0);}
+\DoxyCodeLine{00367 }
+\DoxyCodeLine{00368         \textcolor{keywordflow}{for} (I i = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00369         \{}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{00371             \textcolor{keywordflow}{for} (I j = matrix.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j<= matrix.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); j++)}
+\DoxyCodeLine{00372             \{}
+\DoxyCodeLine{00373                 \textcolor{keywordflow}{if} (matrix(i,j) >= zero)}
+\DoxyCodeLine{00374                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00375             \}}
+\DoxyCodeLine{00376 }
+\DoxyCodeLine{00377         \}}
+\DoxyCodeLine{00378 }
+\DoxyCodeLine{00379 }
+\DoxyCodeLine{00380         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00381     }
+\DoxyCodeLine{00382 \}}
+\DoxyCodeLine{00383 }
+\DoxyCodeLine{00384 }
+\DoxyCodeLine{00385 \textcolor{comment}{// Special functions for Numerical Linear Algebra}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00386}\mbox{\hyperlink{MatrixMechanisms_8cc_a5db7c0865d10f27ffacb4be16e0549cb}{00386}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8cc_a5db7c0865d10f27ffacb4be16e0549cb}{diagonallyDominant}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m)}
+\DoxyCodeLine{00387 \{}
+\DoxyCodeLine{00388 }
+\DoxyCodeLine{00389     \textcolor{keywordflow}{for} (I i = m.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= m.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00390     \{}
+\DoxyCodeLine{00391         V tmp = fabs(m(i,i));}
+\DoxyCodeLine{00392         \textcolor{keywordflow}{if} (tmp < \mbox{\hyperlink{MatrixMechanisms_8cc_ab00f24d33b315b3567881ca4f9ae13aa}{sumAbsRow}}(m, i) -\/ tmp)}
+\DoxyCodeLine{00393             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00394     \}}
+\DoxyCodeLine{00395 }
+\DoxyCodeLine{00396     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00397 }
+\DoxyCodeLine{00398 \}}
+\DoxyCodeLine{00399 }
+\DoxyCodeLine{00400 }
+\DoxyCodeLine{00401 \textcolor{comment}{// Gerschgorin's circle theorem: n eigenvalues of a matrix in a nX2 matrix of}}
+\DoxyCodeLine{00402 \textcolor{comment}{// lower and upper bounds}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00403}\mbox{\hyperlink{MatrixMechanisms_8cc_ae87f00e282d865c094ec0f8fe2668f7b}{00403}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}} \mbox{\hyperlink{MatrixMechanisms_8cc_ae87f00e282d865c094ec0f8fe2668f7b}{eigenvalueBounds}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m)}
+\DoxyCodeLine{00404 \{}
+\DoxyCodeLine{00405 }
+\DoxyCodeLine{00406     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, I>}} mat(m.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}(), 2, 1, 1);  \textcolor{comment}{// 2 columns}}
+\DoxyCodeLine{00407     \textcolor{keywordflow}{for} (I i = m.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= m.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00408     \{}
+\DoxyCodeLine{00409         V tmp = fabs(m(i,i));}
+\DoxyCodeLine{00410         V rsum = \mbox{\hyperlink{MatrixMechanisms_8cc_ab00f24d33b315b3567881ca4f9ae13aa}{sumAbsRow}}(m, i);}
+\DoxyCodeLine{00411 }
+\DoxyCodeLine{00412         mat(i, 2) = tmp -\/ rsum; \textcolor{comment}{// Lower limit}}
+\DoxyCodeLine{00413         mat(i, 1) = rsum;}
+\DoxyCodeLine{00414     \}}
+\DoxyCodeLine{00415 }
+\DoxyCodeLine{00416     \textcolor{keywordflow}{return} mat;}
+\DoxyCodeLine{00417 \}}
+\DoxyCodeLine{00418 }
+\DoxyCodeLine{00419 \textcolor{comment}{// Calculate largest eigenvalue by Power method}}
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00420}\mbox{\hyperlink{MatrixMechanisms_8cc_a4e524faf1c8db44e6d1261d2784c2795}{00420}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8cc_a4e524faf1c8db44e6d1261d2784c2795}{dominantEigenvalue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& A, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& svec,}
+\DoxyCodeLine{00421                                                  \textcolor{keyword}{const} V\& tolerance)}
+\DoxyCodeLine{00422 \{}
+\DoxyCodeLine{00423 }
+\DoxyCodeLine{00424     \mbox{\hyperlink{classVector}{Vector<V,I>}} startV = svec;}
+\DoxyCodeLine{00425     \mbox{\hyperlink{classVector}{Vector<V,I>}} currVector = (A * svec);}
+\DoxyCodeLine{00426     V tmp(0.0);}
+\DoxyCodeLine{00427     V nextValue (tmp);}
+\DoxyCodeLine{00428 }
+\DoxyCodeLine{00429     L1:}
+\DoxyCodeLine{00430         tmp = \mbox{\hyperlink{MatrixMechanisms_8cc_a066bb3002419c7b680967d9ca5d4d259}{RayleighQuotient}}(A, currVector);}
+\DoxyCodeLine{00431 }
+\DoxyCodeLine{00432         \textcolor{keywordflow}{if} (fabs(tmp-\/nextValue) > tolerance)}
+\DoxyCodeLine{00433         \{}
+\DoxyCodeLine{00434             nextValue = tmp;}
+\DoxyCodeLine{00435             startV = currVector;}
+\DoxyCodeLine{00436             currVector = A * startV;}
+\DoxyCodeLine{00437             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00438         \}}
+\DoxyCodeLine{00439 }
+\DoxyCodeLine{00440     \textcolor{keywordflow}{return} nextValue;}
+\DoxyCodeLine{00441 }
+\DoxyCodeLine{00442 \}}
+\DoxyCodeLine{00443 }
+\DoxyCodeLine{\Hypertarget{MatrixMechanisms_8cc_source_l00445}\mbox{\hyperlink{MatrixMechanisms_8cc_a9e52d9c1fa369021f257e9fe009cb661}{00445}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{MatrixMechanisms_8cc_a9e52d9c1fa369021f257e9fe009cb661}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V,I>}}\& mat)}
+\DoxyCodeLine{00446 \{}
+\DoxyCodeLine{00447 }
+\DoxyCodeLine{00448 }
+\DoxyCodeLine{00449     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = mat.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); i <= mat.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); i++)}
+\DoxyCodeLine{00450     \{}
+\DoxyCodeLine{00451     }
+\DoxyCodeLine{00452         std::cout << \textcolor{stringliteral}{"\(\backslash\)n["};}
+\DoxyCodeLine{00453         \textcolor{keywordflow}{for} (I j = mat.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); j <= mat.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}()-\/1; j++)}
+\DoxyCodeLine{00454         \{}
+\DoxyCodeLine{00455             std::cout << mat(i,j) << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00456         \}}
+\DoxyCodeLine{00457         std::cout << mat(i, mat.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}());}
+\DoxyCodeLine{00458         std::cout << \textcolor{stringliteral}{"]"} << std::endl;}
+\DoxyCodeLine{00459     }
+\DoxyCodeLine{00460     \}}
+\DoxyCodeLine{00461     std::cout << std::endl;}
+\DoxyCodeLine{00462 \}}
+\DoxyCodeLine{00463 }
+\DoxyCodeLine{00464 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

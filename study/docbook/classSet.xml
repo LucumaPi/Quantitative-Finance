@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSet">
 <title>Set&lt; V &gt; Class Template Reference</title>
 <indexterm><primary>Set&lt; V &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Set.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for Set&lt; V &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -23,84 +26,526 @@ Collaboration diagram for Set&lt; V &gt;:<para>
 <simplesect>
     <title>Public Types    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f"/>typedef std::set&lt; V &gt;::iterator <emphasis role="strong">iterator</emphasis></para>
+            <listitem><para>typedef std::set&lt; V &gt;::<link linkend="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f">iterator</link> <link linkend="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f">iterator</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1ac9c538ffe3c823f5f28fd65910289b24"/>typedef std::set&lt; V &gt;::const_iterator <emphasis role="strong">const_iterator</emphasis></para>
+            <listitem><para>typedef std::set&lt; V &gt;::<link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link> <link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classSet_1a1c22f4531f0962c3a354e3bacc0bad9a"/><emphasis role="strong">Set</emphasis> (const std::set&lt; V &gt; &amp;stlSet)</para>
+            <listitem><para><link linkend="_classSet_1ae909aa544663321e00cb18f398e5f66b">Set</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a739f06b4b802b7bcd41179e77c83bcc6"/><emphasis role="strong">Set</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet_1a1c22f4531f0962c3a354e3bacc0bad9a">Set</link> (const std::set&lt; V &gt; &amp;stlSet)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a7e184745fde7d92a8caf9aa4bf1d122f"/><emphasis role="strong">Set</emphasis> (const std::list&lt; V &gt; &amp;con)</para>
+            <listitem><para><link linkend="_classSet_1a739f06b4b802b7bcd41179e77c83bcc6">Set</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1ac5fb97b30e904016e81e2660ad1af712"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet_1a7e184745fde7d92a8caf9aa4bf1d122f">Set</link> (const std::list&lt; V &gt; &amp;con)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1ac70bbbfa5d581958225a4b5be178ac8a"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator^</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1ac5fb97b30e904016e81e2660ad1af712">operator=</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1aa5301a8039e0f02db70fc3179dcd8361"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator+</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para>virtual <link linkend="_classSet_1aafe7310e2d779a7385ec57fac57bf1e0">~Set</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1af0015d618dfb0075fa0139cac663e53e"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator-</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1ac70bbbfa5d581958225a4b5be178ac8a">operator^</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a2417374d39e95e1cedc36e3fcd3aa651"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">operator%</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1aa5301a8039e0f02db70fc3179dcd8361">operator+</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1aacfb08150129e254b0c5b74c47c2337f"/>template&lt;class V2 &gt; </para><para><link linkend="_classSet">Set</link>&lt; std::pair&lt; V, V2 &gt; &gt; <emphasis role="strong">operator*</emphasis> (const <link linkend="_classSet">Set</link>&lt; V2 &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1af0015d618dfb0075fa0139cac663e53e">operator-</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1ae688c6cb7ec18e29b45eb020c444362f"/>template&lt;class V2 &gt; </para><para><link linkend="_classSet">Set</link>&lt; std::pair&lt; V, V2 &gt; &gt; <emphasis role="strong">CartesianProduct</emphasis> (const <link linkend="_classSet">Set</link>&lt; V2 &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1a2417374d39e95e1cedc36e3fcd3aa651">operator%</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98"/>iterator <emphasis role="strong">Begin</emphasis> ()</para>
+            <listitem><para>template&lt;class V2 &gt; </para><para><link linkend="_classSet">Set</link>&lt; std::pair&lt; V, V2 &gt; &gt; <link linkend="_classSet_1aacfb08150129e254b0c5b74c47c2337f">operator*</link> (const <link linkend="_classSet">Set</link>&lt; V2 &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1af72b60644e986ecd02279b64b56e86f3"/>const_iterator <emphasis role="strong">Begin</emphasis> () const</para>
+            <listitem><para>template&lt;class V2 &gt; </para><para><link linkend="_classSet">Set</link>&lt; std::pair&lt; V, V2 &gt; &gt; <link linkend="_classSet_1ae688c6cb7ec18e29b45eb020c444362f">CartesianProduct</link> (const <link linkend="_classSet">Set</link>&lt; V2 &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec"/>iterator <emphasis role="strong">End</emphasis> ()</para>
+            <listitem><para><link linkend="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f">iterator</link> <link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1abfa04b4e41038f371b6b12d7553da6c6"/>const_iterator <emphasis role="strong">End</emphasis> () const</para>
+            <listitem><para><link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link> <link linkend="_classSet_1af72b60644e986ecd02279b64b56e86f3">Begin</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1aec2bedbb313cfc25c7100c6984760dd3"/>long <emphasis role="strong">Size</emphasis> () const</para>
+            <listitem><para><link linkend="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f">iterator</link> <link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a25791eed3b7ef4be9af5059cf09767f2"/>void <emphasis role="strong">Insert</emphasis> (const V &amp;v)</para>
+            <listitem><para><link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link> <link linkend="_classSet_1abfa04b4e41038f371b6b12d7553da6c6">End</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1aba4fd7b02967ba79b7e51ea38e33639a"/>void <emphasis role="strong">Insert</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;v)</para>
+            <listitem><para>long <link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a7c93429f1d8f232c421a6fde25cb982b"/>void <emphasis role="strong">Remove</emphasis> (const V &amp;v)</para>
+            <listitem><para>void <link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link> (const V &amp;v)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a1feb21675fad80514ee3b41fb67f8c20"/>void <emphasis role="strong">Replace</emphasis> (const V &amp;Old, const V &amp;New)</para>
+            <listitem><para>void <link linkend="_classSet_1aba4fd7b02967ba79b7e51ea38e33639a">Insert</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;v)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1af4c48c3aca006588ac6d572c7e1f984c"/>void <emphasis role="strong">Clear</emphasis> ()</para>
+            <listitem><para>void <link linkend="_classSet_1a7c93429f1d8f232c421a6fde25cb982b">Remove</link> (const V &amp;v)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a685c7dec3d054d0d9972457f13873568"/>bool <emphasis role="strong">Contains</emphasis> (const V &amp;v) const</para>
+            <listitem><para>void <link linkend="_classSet_1a1feb21675fad80514ee3b41fb67f8c20">Replace</link> (const V &amp;Old, const V &amp;New)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1ace9e8eb82ba76d99dcb8b016c3107e15"/>bool <emphasis role="strong">Empty</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classSet_1af4c48c3aca006588ac6d572c7e1f984c">Clear</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1aef67658b41a94e9f8c788cee280ffd92"/>void <emphasis role="strong">operator+</emphasis> (const V &amp;v)</para>
+            <listitem><para>bool <link linkend="_classSet_1a685c7dec3d054d0d9972457f13873568">Contains</link> (const V &amp;v) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a2306e1e18b56c40b1ec81d41641e7e1d"/>void <emphasis role="strong">operator-</emphasis> (const V &amp;v)</para>
+            <listitem><para>bool <link linkend="_classSet_1ace9e8eb82ba76d99dcb8b016c3107e15">Empty</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1ac7bb2705235f0d44e4793262510e1dc6"/>bool <emphasis role="strong">Subset</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
+            <listitem><para>void <link linkend="_classSet_1aef67658b41a94e9f8c788cee280ffd92">operator+</link> (const V &amp;v)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1abec7a201bd7d6632f4cf2a84e9ca2e0f"/>bool <emphasis role="strong">Superset</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
+            <listitem><para>void <link linkend="_classSet_1a2306e1e18b56c40b1ec81d41641e7e1d">operator-</link> (const V &amp;v)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1ac66e1af1032a7cc83b80a3d6b8a8ef30"/>bool <emphasis role="strong">Intersects</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
+            <listitem><para>bool <link linkend="_classSet_1ac7bb2705235f0d44e4793262510e1dc6">Subset</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classSet_1abec7a201bd7d6632f4cf2a84e9ca2e0f">Superset</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classSet_1ac66e1af1032a7cc83b80a3d6b8a8ef30">Intersects</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Friends    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classSet_1aa6f2d4a71a5915ece9dcc5367d09b715"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">Intersection</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1aa6f2d4a71a5915ece9dcc5367d09b715">Intersection</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a64d819415225059c47e2c10173d70f7b"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">Union</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1a64d819415225059c47e2c10173d70f7b">Union</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1adc454e79bea59a84cda183370001a91f"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">Difference</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1adc454e79bea59a84cda183370001a91f">Difference</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSet_1a226443fc57c552d16d44f6b782bfe515"/><link linkend="_classSet">Set</link>&lt; V &gt; <emphasis role="strong">SymmetricDifference</emphasis> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
+            <listitem><para><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet_1a226443fc57c552d16d44f6b782bfe515">SymmetricDifference</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp;s2)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class V&gt;
+class Set&lt; V &gt;</title></simplesect>
+
+<para>
+Definition at line 18 of file Set.hh.</para>
+</section>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_classSet_1ac9c538ffe3c823f5f28fd65910289b24"/>    <section>
+    <title>const_iterator</title>
+<indexterm><primary>const_iterator</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>const_iterator</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>typedef std::set&lt;V&gt;::<link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link> <link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link></computeroutput></para><para>
+Definition at line 26 of file Set.hh.</para>
+    </section><anchor xml:id="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f"/>    <section>
+    <title>iterator</title>
+<indexterm><primary>iterator</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>iterator</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>typedef std::set&lt;V&gt;::<link linkend="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f">iterator</link> <link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f">iterator</link></computeroutput></para><para>
+Definition at line 25 of file Set.hh.</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classSet_1ae909aa544663321e00cb18f398e5f66b"/>    <section>
+    <title>Set()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Set</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Set</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet">Set</link> ( )</computeroutput></para><para>
+Definition at line 28 of file Set.cc.</para>
+<programlisting>29 {&#32;<emphasis role="comment">//&#32;Empty&#32;set</emphasis>
+30 &#32;&#32;&#32;&#32;
+31 &#32;&#32;&#32;&#32;s&#32;=&#32;std::set&lt;V&gt;();
+32 }
+</programlisting>    </section><anchor xml:id="_classSet_1a1c22f4531f0962c3a354e3bacc0bad9a"/>    <section>
+    <title>Set()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Set</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Set</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet">Set</link> (const std::set&lt; V &gt; &amp; stlSet)</computeroutput></para><para>
+Definition at line 35 of file Set.cc.</para>
+<programlisting>36 {&#32;<emphasis role="comment">//&#32;Empty&#32;set</emphasis>
+37 &#32;&#32;&#32;&#32;
+38 &#32;&#32;&#32;&#32;s&#32;=&#32;stlSet;
+39 }
+</programlisting>    </section><anchor xml:id="_classSet_1a739f06b4b802b7bcd41179e77c83bcc6"/>    <section>
+    <title>Set()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Set</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Set</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet">Set</link> (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)</computeroutput></para><para>
+Definition at line 42 of file Set.cc.</para>
+<programlisting>43 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+44 
+45 &#32;&#32;&#32;&#32;s&#32;=&#32;std::set&lt;V&gt;(s2.s);
+46 }
+</programlisting>    </section><anchor xml:id="_classSet_1a7e184745fde7d92a8caf9aa4bf1d122f"/>    <section>
+    <title>Set()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Set</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Set</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet">Set</link> (const std::list&lt; V &gt; &amp; con)</computeroutput></para><para>
+Definition at line 51 of file Set.cc.</para>
+<programlisting>52 {&#32;<emphasis role="comment">//&#32;From&#32;am&#32;STL&#32;container&#32;(list,&#32;vector)</emphasis>
+53 
+54 &#32;&#32;&#32;&#32;s&#32;=&#32;std::set&lt;V&gt;();
+55 &#32;&#32;&#32;&#32;
+56 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;list&#32;iterator</emphasis>
+57 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::list&lt;V&gt;::const_iterator&#32;i;
+58 &#32;&#32;&#32;&#32;
+59 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Print&#32;every&#32;character&#32;in&#32;the&#32;list</emphasis>
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;con.begin();&#32;i&#32;!=&#32;con.end();&#32;++i)
+61 &#32;&#32;&#32;&#32;{
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.insert(*i);&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Will&#32;only&#32;be&#32;inserted&#32;once</emphasis>
+63 &#32;&#32;&#32;&#32;}
+64 }
+</programlisting>    </section><anchor xml:id="_classSet_1aafe7310e2d779a7385ec57fac57bf1e0"/>    <section>
+    <title>~Set()</title>
+<indexterm><primary>~Set</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>~Set</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::~<link linkend="_classSet">Set</link> ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 79 of file Set.cc.</para>
+<programlisting>80 {
+81 
+82 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98"/>    <section>
+    <title>Begin()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Begin</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Begin</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f">iterator</link> <link linkend="_classSet">Set</link>&lt; V &gt;::Begin ( )</computeroutput></para><para>
+Definition at line 170 of file Set.cc.</para>
+<programlisting>171 {&#32;<emphasis role="comment">//&#32;Return&#32;iterator&#32;at&#32;begin&#32;of&#32;set</emphasis>
+172 
+173 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s.begin();
+174 }
+</programlisting>    </section><anchor xml:id="_classSet_1af72b60644e986ecd02279b64b56e86f3"/>    <section>
+    <title>Begin()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Begin</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Begin</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link> <link linkend="_classSet">Set</link>&lt; V &gt;::Begin ( ) const</computeroutput></para><para>
+Definition at line 177 of file Set.cc.</para>
+<programlisting>178 {&#32;<emphasis role="comment">//&#32;Return&#32;const&#32;iterator&#32;at&#32;begin&#32;of&#32;set</emphasis>
+179 
+180 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s.begin();
+181 
+182 }
+</programlisting>    </section><anchor xml:id="_classSet_1ae688c6cb7ec18e29b45eb020c444362f"/>    <section>
+    <title>CartesianProduct()</title>
+<indexterm><primary>CartesianProduct</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>CartesianProduct</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><computeroutput>template&lt;class V2 &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;std::pair&lt;V, V2&gt; &gt; <link linkend="_classSet">Set</link>&lt; V &gt;::CartesianProduct (const <link linkend="_classSet">Set</link>&lt; V2 &gt; &amp; s2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 102 of file Set.hh.</para>
+<programlisting>103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+104 
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;std::pair&lt;V, V2&gt;</link>&#32;&gt;&#32;result;
+106 
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterate&#32;from&#32;begin&#32;to&#32;end&#32;of&#32;first&#32;set</emphasis>
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;At&#32;each&#32;level&#32;create&#32;a&#32;pair&#32;with&#32;second&#32;element&#32;from&#32;s2</emphasis>
+109 
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;V&gt;::const_iterator&#32;iOuter;
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;V2&gt;::const_iterator&#32;iInner;
+112 
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(iOuter&#32;=&#32;(*this).s.begin();&#32;iOuter&#32;!=&#32;(*this).s.end();&#32;iOuter++)
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(iInner&#32;=&#32;s2.<link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link>();&#32;iInner&#32;!=&#32;s2.<link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link>();&#32;iInner++)
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(std::pair&lt;V,V2&gt;(*iOuter,&#32;*iInner));
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+119 
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+121 
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1af4c48c3aca006588ac6d572c7e1f984c"/>    <section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Clear</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>void <link linkend="_classSet">Set</link>&lt; V &gt;::Clear ( )</computeroutput></para><para>
+Definition at line 244 of file Set.cc.</para>
+<programlisting>245 {&#32;<emphasis role="comment">//&#32;Remove&#32;all&#32;elements</emphasis>
+246 
+247 &#32;&#32;&#32;&#32;s.clear();
+248 }
+</programlisting>    </section><anchor xml:id="_classSet_1a685c7dec3d054d0d9972457f13873568"/>    <section>
+    <title>Contains()</title>
+<indexterm><primary>Contains</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Contains</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>bool <link linkend="_classSet">Set</link>&lt; V &gt;::Contains (const V &amp; v) const</computeroutput></para><para>
+Definition at line 251 of file Set.cc.</para>
+<programlisting>252 {&#32;<emphasis role="comment">//&#32;Is&#32;v&#32;in&#32;set?</emphasis>
+253 
+254 
+255 &#32;&#32;&#32;&#32;<link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link>&#32;it&#32;=&#32;s.find(v);
+256 
+257 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(it&#32;==&#32;s.end())
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+259 
+260 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+261 }
+</programlisting>    </section><anchor xml:id="_classSet_1ace9e8eb82ba76d99dcb8b016c3107e15"/>    <section>
+    <title>Empty()</title>
+<indexterm><primary>Empty</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Empty</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>bool <link linkend="_classSet">Set</link>&lt; V &gt;::Empty ( ) const</computeroutput></para><para>
+Definition at line 264 of file Set.cc.</para>
+<programlisting>265 {&#32;<emphasis role="comment">//&#32;Contains&#32;no&#32;elements</emphasis>
+266 
+267 
+268 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s.empty();
+269 }
+</programlisting>    </section><anchor xml:id="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec"/>    <section>
+    <title>End()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>End</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>End</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet_1a54d34cd05633a20d09b2e42fee9bb31f">iterator</link> <link linkend="_classSet">Set</link>&lt; V &gt;::End ( )</computeroutput></para><para>
+Definition at line 185 of file Set.cc.</para>
+<programlisting>186 {&#32;<emphasis role="comment">//&#32;Return&#32;iterator&#32;after&#32;end&#32;of&#32;set</emphasis>
+187 
+188 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s.end();
+189 
+190 }
+</programlisting>    </section><anchor xml:id="_classSet_1abfa04b4e41038f371b6b12d7553da6c6"/>    <section>
+    <title>End()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>End</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>End</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt;::<link linkend="_classSet_1ac9c538ffe3c823f5f28fd65910289b24">const_iterator</link> <link linkend="_classSet">Set</link>&lt; V &gt;::End ( ) const</computeroutput></para><para>
+Definition at line 193 of file Set.cc.</para>
+<programlisting>194 {&#32;<emphasis role="comment">//&#32;Return&#32;const&#32;iterator&#32;after&#32;end&#32;of&#32;set</emphasis>
+195 
+196 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s.end();
+197 
+198 }
+</programlisting>    </section><anchor xml:id="_classSet_1aba4fd7b02967ba79b7e51ea38e33639a"/>    <section>
+    <title>Insert()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Insert</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Insert</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>void <link linkend="_classSet">Set</link>&lt; V &gt;::Insert (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; v)</computeroutput></para><para>
+Definition at line 218 of file Set.cc.</para>
+<programlisting>219 {&#32;<emphasis role="comment">//&#32;Insert&#32;another&#32;set</emphasis>
+220 
+221 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Test&#32;this</emphasis>
+222 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;V&gt;::iterator&#32;i&#32;=&#32;s.begin();
+223 &#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;V&gt;&#32;&gt;&#32;insertiter(s,&#32;i);
+224 &#32;&#32;&#32;&#32;set_union(s.begin(),&#32;s.end(),&#32;mySet.s.begin(),&#32;mySet.s.end(),&#32;insertiter);
+225 
+226 }
+</programlisting>    </section><anchor xml:id="_classSet_1a25791eed3b7ef4be9af5059cf09767f2"/>    <section>
+    <title>Insert()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Insert</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Insert</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>void <link linkend="_classSet">Set</link>&lt; V &gt;::Insert (const V &amp; v)</computeroutput></para><para>
+Definition at line 211 of file Set.cc.</para>
+<programlisting>212 {&#32;<emphasis role="comment">//&#32;Insert&#32;an&#32;element</emphasis>
+213 
+214 &#32;&#32;&#32;&#32;s.insert(v);
+215 }
+</programlisting>    </section><anchor xml:id="_classSet_1ac66e1af1032a7cc83b80a3d6b8a8ef30"/>    <section>
+    <title>Intersects()</title>
+<indexterm><primary>Intersects</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Intersects</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>bool <link linkend="_classSet">Set</link>&lt; V &gt;::Intersects (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2) const</computeroutput></para><para>
+Definition at line 307 of file Set.cc.</para>
+<programlisting>308 {&#32;<emphasis role="comment">//&#32;s1&#32;and&#32;s2&#32;have&#32;common&#32;elements?</emphasis>
+309 
+310 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_classSet_1ace9e8eb82ba76d99dcb8b016c3107e15">Empty</link>()&#32;==&#32;<emphasis role="keyword">true</emphasis>&#32;||&#32;s2.<link linkend="_classSet_1ace9e8eb82ba76d99dcb8b016c3107e15">Empty</link>()&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+312 
+313 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;V&gt;::const_iterator&#32;iter;
+314 
+315 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(iter&#32;=&#32;s.begin();&#32;iter&#32;!=&#32;s.end();&#32;iter++)
+316 &#32;&#32;&#32;&#32;{
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s2.<link linkend="_classSet_1a685c7dec3d054d0d9972457f13873568">Contains</link>((*iter))&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+321 &#32;&#32;&#32;&#32;}
+322 
+323 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+324 }
+</programlisting>    </section><anchor xml:id="_classSet_1a2417374d39e95e1cedc36e3fcd3aa651"/>    <section>
+    <title>operator%()</title>
+<indexterm><primary>operator%</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>operator%</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;V&gt; <link linkend="_classSet">Set</link>&lt; V &gt;::operator% (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 90 of file Set.hh.</para>
+<programlisting>91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet_1a226443fc57c552d16d44f6b782bfe515">SymmetricDifference</link>(*<emphasis role="keyword">this</emphasis>,&#32;s2);
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1aacfb08150129e254b0c5b74c47c2337f"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><computeroutput>template&lt;class V2 &gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;std::pair&lt;V, V2&gt; &gt; <link linkend="_classSet">Set</link>&lt; V &gt;::operator* (const <link linkend="_classSet">Set</link>&lt; V2 &gt; &amp; s2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 96 of file Set.hh.</para>
+<programlisting>97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Product&#32;Set(set&#32;of&#32;pairs)</emphasis>
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet_1ae688c6cb7ec18e29b45eb020c444362f">CartesianProduct</link>(s2);
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1aa5301a8039e0f02db70fc3179dcd8361"/>    <section>
+    <title>operator+()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator+</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>operator+</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;V&gt; <link linkend="_classSet">Set</link>&lt; V &gt;::operator+ (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 62 of file Set.hh.</para>
+<programlisting>63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet_1a64d819415225059c47e2c10173d70f7b">Union</link>(*<emphasis role="keyword">this</emphasis>,&#32;s2);
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1aef67658b41a94e9f8c788cee280ffd92"/>    <section>
+    <title>operator+()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator+</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>operator+</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>void <link linkend="_classSet">Set</link>&lt; V &gt;::operator+ (const V &amp; v)</computeroutput></para><para>
+Definition at line 274 of file Set.cc.</para>
+<programlisting>275 {&#32;<emphasis role="comment">//&#32;Insert&#32;an&#32;element</emphasis>
+276 
+277 &#32;&#32;&#32;&#32;s.insert(v);
+278 }
+</programlisting>    </section><anchor xml:id="_classSet_1af0015d618dfb0075fa0139cac663e53e"/>    <section>
+    <title>operator-()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator-</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>operator-</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;V&gt; <link linkend="_classSet">Set</link>&lt; V &gt;::operator- (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 76 of file Set.hh.</para>
+<programlisting>77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet_1adc454e79bea59a84cda183370001a91f">Difference</link>(*<emphasis role="keyword">this</emphasis>,&#32;s2);
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1a2306e1e18b56c40b1ec81d41641e7e1d"/>    <section>
+    <title>operator-()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator-</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>operator-</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>void <link linkend="_classSet">Set</link>&lt; V &gt;::operator- (const V &amp; v)</computeroutput></para><para>
+Definition at line 281 of file Set.cc.</para>
+<programlisting>282 {&#32;<emphasis role="comment">//&#32;Remove&#32;an&#32;element</emphasis>
+283 
+284 &#32;&#32;&#32;&#32;s.remove(v);
+285 }
+</programlisting>    </section><anchor xml:id="_classSet_1ac5fb97b30e904016e81e2660ad1af712"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt; V &gt; <link linkend="_classSet">Set</link>&lt; V &gt;::operator= (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)</computeroutput></para><para>
+Definition at line 67 of file Set.cc.</para>
+<programlisting>68 {
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>&#32;==&#32;&amp;s2)
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+72 
+73 &#32;&#32;&#32;&#32;s&#32;=&#32;s2.s;
+74 
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+76 }
+</programlisting>    </section><anchor xml:id="_classSet_1ac70bbbfa5d581958225a4b5be178ac8a"/>    <section>
+    <title>operator^()</title>
+<indexterm><primary>operator^</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>operator^</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;V&gt; <link linkend="_classSet">Set</link>&lt; V &gt;::operator^ (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 48 of file Set.hh.</para>
+<programlisting>49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet_1aa6f2d4a71a5915ece9dcc5367d09b715">Intersection</link>(*<emphasis role="keyword">this</emphasis>,&#32;s2);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1a7c93429f1d8f232c421a6fde25cb982b"/>    <section>
+    <title>Remove()</title>
+<indexterm><primary>Remove</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Remove</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>void <link linkend="_classSet">Set</link>&lt; V &gt;::Remove (const V &amp; v)</computeroutput></para><para>
+Definition at line 229 of file Set.cc.</para>
+<programlisting>230 {&#32;<emphasis role="comment">//&#32;Remove&#32;an&#32;element</emphasis>
+231 
+232 &#32;&#32;&#32;&#32;s.erase(v);
+233 }
+</programlisting>    </section><anchor xml:id="_classSet_1a1feb21675fad80514ee3b41fb67f8c20"/>    <section>
+    <title>Replace()</title>
+<indexterm><primary>Replace</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Replace</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>void <link linkend="_classSet">Set</link>&lt; V &gt;::Replace (const V &amp; Old, const V &amp; New)</computeroutput></para><para>
+Definition at line 236 of file Set.cc.</para>
+<programlisting>237 {&#32;<emphasis role="comment">//&#32;Replace&#32;old&#32;by&#32;new</emphasis>
+238 
+239 &#32;&#32;&#32;&#32;s.erase(Old);
+240 &#32;&#32;&#32;&#32;s.insert(New);
+241 }
+</programlisting>    </section><anchor xml:id="_classSet_1aec2bedbb313cfc25c7100c6984760dd3"/>    <section>
+    <title>Size()</title>
+<indexterm><primary>Size</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Size</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>long <link linkend="_classSet">Set</link>&lt; V &gt;::Size ( ) const</computeroutput></para><para>
+Definition at line 203 of file Set.cc.</para>
+<programlisting>204 {&#32;<emphasis role="comment">//&#32;Number&#32;of&#32;elements&#32;</emphasis>
+205 
+206 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s.size();
+207 }
+</programlisting>    </section><anchor xml:id="_classSet_1ac7bb2705235f0d44e4793262510e1dc6"/>    <section>
+    <title>Subset()</title>
+<indexterm><primary>Subset</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Subset</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>bool <link linkend="_classSet">Set</link>&lt; V &gt;::Subset (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2) const</computeroutput></para><para>
+Definition at line 290 of file Set.cc.</para>
+<programlisting>291 {&#32;<emphasis role="comment">//&#32;This&#32;a&#32;subset&#32;of&#32;s2?</emphasis>
+292 
+293 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;includes(s2.s.begin(),&#32;s2.s.end(),&#32;(*this).s.begin(),&#32;(*this).s.end());
+294 
+295 
+296 }
+</programlisting>    </section><anchor xml:id="_classSet_1abec7a201bd7d6632f4cf2a84e9ca2e0f"/>    <section>
+    <title>Superset()</title>
+<indexterm><primary>Superset</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Superset</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput>bool <link linkend="_classSet">Set</link>&lt; V &gt;::Superset (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2) const</computeroutput></para><para>
+Definition at line 299 of file Set.cc.</para>
+<programlisting>300 {&#32;<emphasis role="comment">//&#32;this&#32;a&#32;superset&#32;of&#32;s2?</emphasis>
+301 
+302 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s2.<link linkend="_classSet_1ac7bb2705235f0d44e4793262510e1dc6">Subset</link>(*<emphasis role="keyword">this</emphasis>);
+303 
+304 }
+</programlisting></section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_classSet_1adc454e79bea59a84cda183370001a91f"/>    <section>
+    <title>Difference</title>
+<indexterm><primary>Difference</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Difference</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;V&gt; Difference (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+Definition at line 67 of file Set.hh.</para>
+<programlisting>68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::set&lt;V&gt;&#32;mydiff;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;V&gt;::iterator&#32;i&#32;=&#32;mydiff.begin();
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;V&gt;&#32;&gt;&#32;insertiter(mydiff,&#32;i);
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;set_difference(s1.s.begin(),&#32;s1.s.end(),&#32;s2.s.begin(),&#32;s2.s.end(),&#32;insertiter);
+73 
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet">Set&lt;V&gt;</link>(mydiff);
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1aa6f2d4a71a5915ece9dcc5367d09b715"/>    <section>
+    <title>Intersection</title>
+<indexterm><primary>Intersection</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Intersection</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;V&gt; Intersection (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+Definition at line 39 of file Set.hh.</para>
+<programlisting>40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::set&lt;V&gt;&#32;myintersect;
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;V&gt;::iterator&#32;i&#32;=&#32;myintersect.begin();
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;V&gt;&#32;&gt;&#32;insertiter(myintersect,&#32;i);
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;set_intersection(s1.s.begin(),&#32;s1.s.end(),&#32;s2.s.begin(),&#32;s2.s.end(),&#32;insertiter);
+45 
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet">Set&lt;V&gt;</link>(myintersect);
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1a226443fc57c552d16d44f6b782bfe515"/>    <section>
+    <title>SymmetricDifference</title>
+<indexterm><primary>SymmetricDifference</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>SymmetricDifference</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;V&gt; SymmetricDifference (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+Definition at line 81 of file Set.hh.</para>
+<programlisting>82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::set&lt;V&gt;&#32;mysdiff;
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;V&gt;::iterator&#32;i&#32;=&#32;mysdiff.begin();
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;V&gt;&#32;&gt;&#32;insertiter(mysdiff,&#32;i);
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;set_symmetric_difference(s1.s.begin(),&#32;s1.s.end(),&#32;s2.s.begin(),&#32;s2.s.end(),&#32;insertiter);
+87 
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet">Set&lt;V&gt;</link>(mysdiff);
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classSet_1a64d819415225059c47e2c10173d70f7b"/>    <section>
+    <title>Union</title>
+<indexterm><primary>Union</primary><secondary>Set&lt; V &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; V &gt;</primary><secondary>Union</secondary></indexterm>
+<computeroutput>template&lt;class V&gt; </computeroutput><para><computeroutput><link linkend="_classSet">Set</link>&lt;V&gt; Union (const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s1, const <link linkend="_classSet">Set</link>&lt; V &gt; &amp; s2)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+Definition at line 53 of file Set.hh.</para>
+<programlisting>54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::set&lt;V&gt;&#32;myunion;
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;V&gt;::iterator&#32;i&#32;=&#32;myunion.begin();
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::insert_iterator&lt;std::set&lt;V&gt;&#32;&gt;&#32;insertiter(myunion,&#32;i);
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;set_union(s1.s.begin(),&#32;s1.s.end(),&#32;s2.s.begin(),&#32;s2.s.end(),&#32;insertiter);
+59 
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classSet">Set&lt;V&gt;</link>(myunion);
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Set.hhsrc/Set.cc</section>
+include/duffy/<link linkend="_Set_8hh">Set.hh</link>src/<link linkend="_Set_8cc">Set.cc</link></section>
+</section>

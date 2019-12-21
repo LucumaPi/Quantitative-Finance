@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacePayoffNamespace_1_1CallPayoff">
+<title>PayoffNamespace::CallPayoff Namespace Reference</title>
+<indexterm><primary>PayoffNamespace::CallPayoff</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespacePayoffNamespace_1_1CallPayoff_1a10b9109397cc2cea2ac7cc9c6b224658">OptPayoff</link> (double S)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespacePayoffNamespace_1_1CallPayoff_1a10b9109397cc2cea2ac7cc9c6b224658"/>    <section>
+    <title>OptPayoff()</title>
+<indexterm><primary>OptPayoff</primary><secondary>PayoffNamespace::CallPayoff</secondary></indexterm>
+<indexterm><primary>PayoffNamespace::CallPayoff</primary><secondary>OptPayoff</secondary></indexterm>
+<para><computeroutput>double PayoffNamespace::CallPayoff::OptPayoff (double S)</computeroutput></para><para>
+Definition at line 19 of file PayoffNamespace.cc.</para>
+<programlisting>20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp&#32;=&#32;S&#32;-&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>;
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(tmp&#32;&gt;&#32;0.0)
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;tmp;
+25 
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+</section>

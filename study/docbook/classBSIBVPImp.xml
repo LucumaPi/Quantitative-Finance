@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBSIBVPImp">
 <title>BSIBVPImp Class Reference</title>
 <indexterm><primary>BSIBVPImp</primary></indexterm>
+<para>
+<computeroutput>#include &lt;BSIBVPImp.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for BSIBVPImp:<para>
     <informalfigure>
         <mediaobject>
@@ -23,31 +26,157 @@ Collaboration diagram for BSIBVPImp:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1a53b1215fe69f27963fd50efdff016c37"/><emphasis role="strong">BSIBVPImp</emphasis> (<link linkend="_classOption">Option</link> &amp;option)</para>
+            <listitem><para><link linkend="_classBSIBVPImp_1a53b1215fe69f27963fd50efdff016c37">BSIBVPImp</link> (<link linkend="_classOption">Option</link> &amp;option)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1a05000857b51162805c7e18eca965d0e2"/>double <emphasis role="strong">diffusion</emphasis> (double x, double t) const</para>
+            <listitem><para>double <link linkend="_classBSIBVPImp_1a05000857b51162805c7e18eca965d0e2">diffusion</link> (double x, double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1a5d87cb6dc051a19fc79480de9a500584"/>double <emphasis role="strong">convection</emphasis> (double x, double t) const</para>
+            <listitem><para>double <link linkend="_classBSIBVPImp_1a5d87cb6dc051a19fc79480de9a500584">convection</link> (double x, double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1a09792b6764a4a2399bc1bd1706390cfb"/>double <emphasis role="strong">zeroterm</emphasis> (double x, double t) const</para>
+            <listitem><para>double <link linkend="_classBSIBVPImp_1a09792b6764a4a2399bc1bd1706390cfb">zeroterm</link> (double x, double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1a3ea23ce43480c17b1a5ac901b18b44ad"/>double <emphasis role="strong">RHS</emphasis> (double x, double t) const</para>
+            <listitem><para>double <link linkend="_classBSIBVPImp_1a3ea23ce43480c17b1a5ac901b18b44ad">RHS</link> (double x, double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1ab2de01f340004202e7f2462bfde5fed0"/>double <emphasis role="strong">BCL</emphasis> (double t) const</para>
+            <listitem><para>double <link linkend="_classBSIBVPImp_1ab2de01f340004202e7f2462bfde5fed0">BCL</link> (double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1a6f61eb5b6eaa9c29771fe7807707d13c"/>double <emphasis role="strong">BCR</emphasis> (double t) const</para>
+            <listitem><para>double <link linkend="_classBSIBVPImp_1a6f61eb5b6eaa9c29771fe7807707d13c">BCR</link> (double t) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1aa08d1b40f4ea2af9b19b75a7bdff2961"/>double <emphasis role="strong">IC</emphasis> (double x) const</para>
+            <listitem><para>double <link linkend="_classBSIBVPImp_1aa08d1b40f4ea2af9b19b75a7bdff2961">IC</link> (double x) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c"/><link linkend="_classOption">Option</link> * <emphasis role="strong">opt</emphasis></para>
+            <listitem><para><link linkend="_classOption">Option</link> * <link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 24 of file BSIBVPImp.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classBSIBVPImp_1a53b1215fe69f27963fd50efdff016c37"/>    <section>
+    <title>BSIBVPImp()</title>
+<indexterm><primary>BSIBVPImp</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>BSIBVPImp</secondary></indexterm>
+<para><computeroutput>BSIBVPImp::BSIBVPImp (<link linkend="_classOption">Option</link> &amp; option)</computeroutput></para><para>
+Definition at line 28 of file BSIBVPImp.cc.</para>
+<programlisting>29 {
+30 &#32;&#32;&#32;&#32;<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>&#32;=&#32;&amp;option;
+31 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classBSIBVPImp_1ab2de01f340004202e7f2462bfde5fed0"/>    <section>
+    <title>BCL()</title>
+<indexterm><primary>BCL</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>BCL</secondary></indexterm>
+<para><computeroutput>double BSIBVPImp::BCL (double t) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPImp_1aeff635ae5363a1858efc57c833500300">IBVPImp</link>.</para>
+<para>
+Definition at line 56 of file BSIBVPImp.cc.</para>
+<programlisting>57 {
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>-&gt;<link linkend="_classOption_1a08dcf2742c8429087baaacf694089cbe">type</link>&#32;==&#32;<emphasis role="charliteral">&apos;C&apos;</emphasis>)
+60 &#32;&#32;&#32;&#32;{
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;&#32;<emphasis role="comment">//C</emphasis>
+62 &#32;&#32;&#32;&#32;}
+63 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+64 &#32;&#32;&#32;&#32;{
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>-&gt;<link linkend="_classOption_1a40db81993d02b319a38e62b42a730d6a">K</link>)&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(-&#32;(<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>-&gt;<link linkend="_classOption_1abd44ab56edddcd59f80ca5c60c9b66f0">r</link>)&#32;*&#32;((<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>-&gt;<link linkend="_classOption_1ae583dd6d430a3b428014efa942605d54">T</link>)&#32;-&#32;t));&#32;<emphasis role="comment">//&#32;P</emphasis>
+66 &#32;&#32;&#32;&#32;}
+67 }
+</programlisting>    </section><anchor xml:id="_classBSIBVPImp_1a6f61eb5b6eaa9c29771fe7807707d13c"/>    <section>
+    <title>BCR()</title>
+<indexterm><primary>BCR</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>BCR</secondary></indexterm>
+<para><computeroutput>double BSIBVPImp::BCR (double t) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPImp_1a371a1b065ab843b926b1baf727be09af">IBVPImp</link>.</para>
+<para>
+Definition at line 69 of file BSIBVPImp.cc.</para>
+<programlisting>70 {
+71 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>-&gt;<link linkend="_classOption_1a08dcf2742c8429087baaacf694089cbe">type</link>&#32;==&#32;<emphasis role="charliteral">&apos;C&apos;</emphasis>)
+72 &#32;&#32;&#32;&#32;{
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>-&gt;<link linkend="_classOption_1aa774bcef53ade3c37aa45c2d83a51181">SMax</link>;&#32;<emphasis role="comment">//&#32;Magic&#32;number</emphasis>
+74 &#32;&#32;&#32;&#32;}
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+76 &#32;&#32;&#32;&#32;{
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;&#32;<emphasis role="comment">//P</emphasis>
+78 &#32;&#32;&#32;&#32;}
+79 }
+</programlisting>    </section><anchor xml:id="_classBSIBVPImp_1a5d87cb6dc051a19fc79480de9a500584"/>    <section>
+    <title>convection()</title>
+<indexterm><primary>convection</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>convection</secondary></indexterm>
+<para><computeroutput>double BSIBVPImp::convection (double x, double t) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPImp_1a44d3dc1c2d3b351705d101943c42c880">IBVPImp</link>.</para>
+<para>
+Definition at line 40 of file BSIBVPImp.cc.</para>
+<programlisting>41 {&#32;<emphasis role="comment">//&#32;simulates&#32;drift</emphasis>
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>&#32;-&gt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)&#32;*&#32;x;&#32;<emphasis role="comment">//&#32;r&#32;==&#32;interest&#32;rate</emphasis>
+43 }
+</programlisting>    </section><anchor xml:id="_classBSIBVPImp_1a05000857b51162805c7e18eca965d0e2"/>    <section>
+    <title>diffusion()</title>
+<indexterm><primary>diffusion</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>diffusion</secondary></indexterm>
+<para><computeroutput>double BSIBVPImp::diffusion (double x, double t) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPImp_1a6f66b0583fd3d65ad946650f1ff7ca1e">IBVPImp</link>.</para>
+<para>
+Definition at line 33 of file BSIBVPImp.cc.</para>
+<programlisting>34 {&#32;<emphasis role="comment">//&#32;simulates&#32;diffusion</emphasis>
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;v&#32;=&#32;(<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>&#32;-&gt;&#32;<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>);&#32;<emphasis role="comment">//&#32;volatility</emphasis>
+36 
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.5&#32;*&#32;v&#32;*&#32;v&#32;*&#32;x&#32;*&#32;x;
+38 }
+</programlisting>    </section><anchor xml:id="_classBSIBVPImp_1aa08d1b40f4ea2af9b19b75a7bdff2961"/>    <section>
+    <title>IC()</title>
+<indexterm><primary>IC</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>IC</secondary></indexterm>
+<para><computeroutput>double BSIBVPImp::IC (double x) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPImp_1ad9cfdc5edfadcf5f18cb4d3a6b64f740">IBVPImp</link>.</para>
+<para>
+Definition at line 81 of file BSIBVPImp.cc.</para>
+<programlisting>82 {
+83 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(*opt).OptionPayoff.payoff(x);
+84 }
+</programlisting>    </section><anchor xml:id="_classBSIBVPImp_1a3ea23ce43480c17b1a5ac901b18b44ad"/>    <section>
+    <title>RHS()</title>
+<indexterm><primary>RHS</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>RHS</secondary></indexterm>
+<para><computeroutput>double BSIBVPImp::RHS (double x, double t) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPImp_1ae2d0430ad38aa7b6055b1cb622051e67">IBVPImp</link>.</para>
+<para>
+Definition at line 50 of file BSIBVPImp.cc.</para>
+<programlisting>51 {
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;
+53 }
+</programlisting>    </section><anchor xml:id="_classBSIBVPImp_1a09792b6764a4a2399bc1bd1706390cfb"/>    <section>
+    <title>zeroterm()</title>
+<indexterm><primary>zeroterm</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>zeroterm</secondary></indexterm>
+<para><computeroutput>double BSIBVPImp::zeroterm (double x, double t) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classIBVPImp_1ac6bab43d37b55879c6b29eefa0dad63f">IBVPImp</link>.</para>
+<para>
+Definition at line 45 of file BSIBVPImp.cc.</para>
+<programlisting>46 {
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-&#32;(<link linkend="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c">opt</link>&#32;-&gt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);&#32;&#32;&#32;&#32;
+48 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classBSIBVPImp_1a1385dc1b264a9f515a4658eb1819f40c"/>    <section>
+    <title>opt</title>
+<indexterm><primary>opt</primary><secondary>BSIBVPImp</secondary></indexterm>
+<indexterm><primary>BSIBVPImp</primary><secondary>opt</secondary></indexterm>
+<para><computeroutput><link linkend="_classOption">Option</link>* BSIBVPImp::opt</computeroutput></para><para>
+Definition at line 27 of file BSIBVPImp.hh.</para>
+</section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/BSIBVPImp.hhsrc/BSIBVPImp.cc</section>
+include/duffy/<link linkend="_BSIBVPImp_8hh">BSIBVPImp.hh</link>src/<link linkend="_BSIBVPImp_8cc">BSIBVPImp.cc</link></section>
+</section>

@@ -1,0 +1,175 @@
+\hypertarget{Property_8cc_source}{}\doxysection{Property.\+cc}
+\label{Property_8cc_source}\index{src/Property.cc@{src/Property.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// property.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Base class for Properties}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Last modification dates:}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{//  2001-\/6-\/18 DD Modifications to previously defined classes}}
+\DoxyCodeLine{00008 \textcolor{comment}{//  2001-\/7-\/2 DD Compiler directives}}
+\DoxyCodeLine{00009 \textcolor{comment}{//  2002-\/12-\/7 DD bug fix}}
+\DoxyCodeLine{00010 \textcolor{comment}{//  2003-\/8-\/1 DD new constructor with just a Value}}
+\DoxyCodeLine{00011 \textcolor{comment}{//  2004-\/4-\/26 DD l'ultima modificazione, last checks}}
+\DoxyCodeLine{00012 \textcolor{comment}{//  2004-\/7-\/20 DD optimisations and operators !=}}
+\DoxyCodeLine{00013 \textcolor{comment}{//  2004-\/7-\/23 DD Prototype and Visitor}}
+\DoxyCodeLine{00014 \textcolor{comment}{//  2004-\/8-\/4 DD Minor changes}}
+\DoxyCodeLine{00015 \textcolor{comment}{//  2004-\/8-\/7 DD operators +=, -\/= and *= for numeric V}}
+\DoxyCodeLine{00016 \textcolor{comment}{//  2006-\/8-\/8 DD numeric operators removed}}
+\DoxyCodeLine{00017 \textcolor{comment}{//}}
+\DoxyCodeLine{00018 \textcolor{comment}{// (C) Datasim Education BV 2001-\/2006}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#ifndef property\_CC}}
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00021}\mbox{\hyperlink{Property_8cc_ab4c0b344a4ed788cb91a67665d211d50}{00021}} \textcolor{preprocessor}{\#define property\_CC}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Property_8hh}{duffy/Property.hh}}>}}
+\DoxyCodeLine{00024 \textcolor{comment}{// Constructors and destructor}}
+\DoxyCodeLine{00025 \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00026}\mbox{\hyperlink{classProperty_af8aa99d860cce115830f820445e6ef82}{00026}} \mbox{\hyperlink{classProperty_af8aa99d860cce115830f820445e6ef82}{Property< Name,  Value>::Property}}()}
+\DoxyCodeLine{00027 \{\textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     nam = Name();}
+\DoxyCodeLine{00030     con = Value();}
+\DoxyCodeLine{00031 \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033 \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00034}\mbox{\hyperlink{classProperty_a0ca61b9ce1a8d06dea7b794d922c489f}{00034}} \mbox{\hyperlink{classProperty_af8aa99d860cce115830f820445e6ef82}{Property< Name,  Value>::Property}}(\textcolor{keyword}{const} Name\& name)}
+\DoxyCodeLine{00035 \{\textcolor{comment}{// Constructor  }}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     nam = name;}
+\DoxyCodeLine{00038     con = Value();}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042 \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00043}\mbox{\hyperlink{classProperty_affc9972cb059fcb9d6fd6a2935725db2}{00043}} \mbox{\hyperlink{classProperty_af8aa99d860cce115830f820445e6ef82}{Property< Name,  Value>::Property}}(\textcolor{keyword}{const} Name\& name, \textcolor{keyword}{const} Value\& t)}
+\DoxyCodeLine{00044 \{\textcolor{comment}{// Constructor  }}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     nam = name;}
+\DoxyCodeLine{00047     con = t;}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00051}\mbox{\hyperlink{classProperty_a08238ca37786059a03117ddb7fc4ff51}{00051}} \mbox{\hyperlink{classProperty_af8aa99d860cce115830f820445e6ef82}{Property< Name,  Value>::Property}}(\textcolor{keyword}{const} \mbox{\hyperlink{classProperty}{Property<Name, Value>}}\& source) }
+\DoxyCodeLine{00052 \{\textcolor{comment}{// Copy-\/constructor}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     nam = source.nam;}
+\DoxyCodeLine{00055     con = source.con;}
+\DoxyCodeLine{00056 \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00059}\mbox{\hyperlink{classProperty_a21f18bbb89de80e8b1a52ba3279a436d}{00059}} \mbox{\hyperlink{classProperty_a21f18bbb89de80e8b1a52ba3279a436d}{Property< Name,  Value>::~Property}}()}
+\DoxyCodeLine{00060 \{\textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064 \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value>  }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00065}\mbox{\hyperlink{classProperty_ac7d773c6385a82a906e53701c2cc163b}{00065}} \mbox{\hyperlink{classProperty}{Property< Name,  Value>}}\& \mbox{\hyperlink{classProperty_ac7d773c6385a82a906e53701c2cc163b}{Property<Name, Value>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classProperty}{Property<Name, Value>}}\& source)}
+\DoxyCodeLine{00066 \{\textcolor{comment}{// Assignment operator }}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source)}
+\DoxyCodeLine{00069         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     nam = source.nam;}
+\DoxyCodeLine{00072     con = source.con;}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00075 \}}
+\DoxyCodeLine{00076 \textcolor{comment}{/*}}
+\DoxyCodeLine{00077 \textcolor{comment}{// Arithmetic operations on properties (shortcuts). Mostly on}}
+\DoxyCodeLine{00078 \textcolor{comment}{// properties that already exist}}
+\DoxyCodeLine{00079 \textcolor{comment}{template <class Name, class Value>  }}
+\DoxyCodeLine{00080 \textcolor{comment}{    Property<Name, Value>\& Property<Name, Value>::operator += (const Value\& value)}}
+\DoxyCodeLine{00081 \textcolor{comment}{\{}}
+\DoxyCodeLine{00082 \textcolor{comment}{}}
+\DoxyCodeLine{00083 \textcolor{comment}{    con = con + value;}}
+\DoxyCodeLine{00084 \textcolor{comment}{}}
+\DoxyCodeLine{00085 \textcolor{comment}{    return *this;}}
+\DoxyCodeLine{00086 \textcolor{comment}{\}}}
+\DoxyCodeLine{00087 \textcolor{comment}{}}
+\DoxyCodeLine{00088 \textcolor{comment}{template <class Name, class Value>  }}
+\DoxyCodeLine{00089 \textcolor{comment}{    Property<Name, Value>\& Property<Name, Value>::operator *= (const Value\& value)}}
+\DoxyCodeLine{00090 \textcolor{comment}{\{}}
+\DoxyCodeLine{00091 \textcolor{comment}{}}
+\DoxyCodeLine{00092 \textcolor{comment}{    con = con * value;}}
+\DoxyCodeLine{00093 \textcolor{comment}{}}
+\DoxyCodeLine{00094 \textcolor{comment}{    return *this;}}
+\DoxyCodeLine{00095 \textcolor{comment}{\}}}
+\DoxyCodeLine{00096 \textcolor{comment}{}}
+\DoxyCodeLine{00097 \textcolor{comment}{template <class Name, class Value>  }}
+\DoxyCodeLine{00098 \textcolor{comment}{    Property<Name, Value>\& Property<Name, Value>::operator -\/= (const Value\& value)}}
+\DoxyCodeLine{00099 \textcolor{comment}{\{}}
+\DoxyCodeLine{00100 \textcolor{comment}{}}
+\DoxyCodeLine{00101 \textcolor{comment}{    con = con -\/ value;}}
+\DoxyCodeLine{00102 \textcolor{comment}{}}
+\DoxyCodeLine{00103 \textcolor{comment}{    return *this;}}
+\DoxyCodeLine{00104 \textcolor{comment}{\}}}
+\DoxyCodeLine{00105 \textcolor{comment}{*/}}
+\DoxyCodeLine{00106 \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value>  }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00107}\mbox{\hyperlink{classProperty_a7e1e5e423a9021764d505bd982a2b4da}{00107}} \mbox{\hyperlink{classPropertyThing}{PropertyThing<Name, Value>}}* \mbox{\hyperlink{classProperty_a7e1e5e423a9021764d505bd982a2b4da}{Property<Name, Value>::Copy}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{00108 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classProperty}{Property}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00111 \}}
+\DoxyCodeLine{00112 \textcolor{comment}{/*}}
+\DoxyCodeLine{00113 \textcolor{comment}{template <class Name, class Value>  }}
+\DoxyCodeLine{00114 \textcolor{comment}{void Property<Name, Value>::accept(PropertyThingVisitor<Name, Value>\& pv) }}
+\DoxyCodeLine{00115 \textcolor{comment}{\{}}
+\DoxyCodeLine{00116 \textcolor{comment}{}}
+\DoxyCodeLine{00117 \textcolor{comment}{    pv.Visit(*this);}}
+\DoxyCodeLine{00118 \textcolor{comment}{\}}}
+\DoxyCodeLine{00119 \textcolor{comment}{*/}}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121         }
+\DoxyCodeLine{00122 \textcolor{comment}{// Accessing function operators}}
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00123}\mbox{\hyperlink{classProperty_a682f715ad70b45bef80b85d10940f370}{00123}} \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> Value \mbox{\hyperlink{classProperty_a682f715ad70b45bef80b85d10940f370}{Property<Name, Value>::operator()}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00124 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126         \textcolor{keywordflow}{return} con;}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128 \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00130}\mbox{\hyperlink{classProperty_a7b923a1fd183b38fc1629852e06b39b6}{00130}} \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> \textcolor{keywordtype}{void} \mbox{\hyperlink{classProperty_a682f715ad70b45bef80b85d10940f370}{Property<Name, Value>::operator()}}(\textcolor{keyword}{const} Value\& t)}
+\DoxyCodeLine{00131 \{}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133         con = t;}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135 \}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00137}\mbox{\hyperlink{classProperty_a61070c4a41dcdbc890c6b27146931e97}{00137}} \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> Name \mbox{\hyperlink{classProperty_a61070c4a41dcdbc890c6b27146931e97}{Property<Name, Value>::name}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00138 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140     \textcolor{keywordflow}{return} nam;}
+\DoxyCodeLine{00141 \}}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00145}\mbox{\hyperlink{classProperty_ab70ddb3064e0ae6cfbcc661d5bc4505a}{00145}} \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> \textcolor{keywordtype}{bool} \mbox{\hyperlink{classProperty_ab70ddb3064e0ae6cfbcc661d5bc4505a}{Property<Name, Value>:: operator == }}(\textcolor{keyword}{const} \mbox{\hyperlink{classProperty}{Property<Name, Value>}}\& prop2)}
+\DoxyCodeLine{00146 \{}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148         \textcolor{keywordflow}{if} (name == prop2.\mbox{\hyperlink{classProperty_a61070c4a41dcdbc890c6b27146931e97}{name}}())}
+\DoxyCodeLine{00149             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00150 }
+\DoxyCodeLine{00151         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153 \}}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{\Hypertarget{Property_8cc_source_l00155}\mbox{\hyperlink{classProperty_a0f89884cb3d81307f9f325c8c45cb82e}{00155}} \textcolor{keyword}{template} <\textcolor{keyword}{class} Name, \textcolor{keyword}{class} Value> \textcolor{keywordtype}{bool} \mbox{\hyperlink{classProperty_a0f89884cb3d81307f9f325c8c45cb82e}{Property<Name, Value>:: operator != }}(\textcolor{keyword}{const} \mbox{\hyperlink{classProperty}{Property<Name, Value>}}\& prop2)}
+\DoxyCodeLine{00156 \{}
+\DoxyCodeLine{00157         \textcolor{comment}{/*}}
+\DoxyCodeLine{00158 \textcolor{comment}{        if (*this == source)}}
+\DoxyCodeLine{00159 \textcolor{comment}{            return false;}}
+\DoxyCodeLine{00160 \textcolor{comment}{}}
+\DoxyCodeLine{00161 \textcolor{comment}{        return true;}}
+\DoxyCodeLine{00162 \textcolor{comment}{        */}}
+\DoxyCodeLine{00163         \textcolor{keywordflow}{if} (*\textcolor{keyword}{this} == \&prop2)}
+\DoxyCodeLine{00164             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168 \}}
+\DoxyCodeLine{00169 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

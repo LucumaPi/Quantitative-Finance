@@ -1,0 +1,41 @@
+\hypertarget{TestInterfaces_8cc_source}{}\doxysection{Test\+Interfaces.\+cc}
+\label{TestInterfaces_8cc_source}\index{tests/TestInterfaces.cc@{tests/TestInterfaces.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestInterfaces.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Simulating interfaces in C++}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{MathsInterfaces_8hh}{duffy/MathsInterfaces.hh}}>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{TestInterfaces_8cc_source_l00010}\mbox{\hyperlink{classSimpleArray}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classSimpleArray}{SimpleArray}} : IOneDimensionalAccess<double> \textcolor{comment}{// Index == int}}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013         \textcolor{keywordtype}{double} first;}
+\DoxyCodeLine{00014         \textcolor{keywordtype}{double} second;}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TestInterfaces_8cc_source_l00017}\mbox{\hyperlink{classSimpleArray_aec083999188ccf92a40f1a1ca5954bec}{00017}}     \mbox{\hyperlink{classSimpleArray_aec083999188ccf92a40f1a1ca5954bec}{SimpleArray}}() \{ first = 1.0; second = 2.71;\}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{TestInterfaces_8cc_source_l00019}\mbox{\hyperlink{classSimpleArray_a59c33d9c8a91f5bb3c774f3de0993bc5}{00019}}     \textcolor{keywordtype}{double}\& \mbox{\hyperlink{classSimpleArray_a59c33d9c8a91f5bb3c774f3de0993bc5}{operator [] }}(\textcolor{keywordtype}{int} index)}
+\DoxyCodeLine{00020     \{}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{if} (1 == index) \textcolor{keywordflow}{return} first;}
+\DoxyCodeLine{00022         \textcolor{keywordflow}{if} (2 == index) \textcolor{keywordflow}{return} second;}
+\DoxyCodeLine{00023     \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025 \};}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{\Hypertarget{TestInterfaces_8cc_source_l00027}\mbox{\hyperlink{TestInterfaces_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00027}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestInterfaces_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00028 \{}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \mbox{\hyperlink{classSimpleArray}{SimpleArray}} myArr;}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     std::cout << myArr[1] << \textcolor{stringliteral}{", "} << myArr[2] << std::endl;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00035 \}}
+
+\end{DoxyCode}

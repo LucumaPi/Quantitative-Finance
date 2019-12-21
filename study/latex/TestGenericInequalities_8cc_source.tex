@@ -1,0 +1,46 @@
+\hypertarget{TestGenericInequalities_8cc_source}{}\doxysection{Test\+Generic\+Inequalities.\+cc}
+\label{TestGenericInequalities_8cc_source}\index{tests/TestGenericInequalities.cc@{tests/TestGenericInequalities.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestGenericInequalities.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Main program (Console-\/based) to test Max and }}
+\DoxyCodeLine{00004 \textcolor{comment}{// Min functions.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}     \textcolor{comment}{// Console input and output}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{GenericInequalities_8hh}{duffy/GenericInequalities.hh}}>} \textcolor{comment}{// Needed because it is templated}}
+\DoxyCodeLine{\Hypertarget{TestGenericInequalities_8cc_source_l00012}\mbox{\hyperlink{TestGenericInequalities_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00012}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestGenericInequalities_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014     \textcolor{comment}{// Prompt the user for input. Console output (cout)}}
+\DoxyCodeLine{00015     \textcolor{comment}{// and input (cin)}}
+\DoxyCodeLine{00016     \textcolor{keywordtype}{int} d1, d2;}
+\DoxyCodeLine{00017     std::cout << \textcolor{stringliteral}{"Give the first number: "};}
+\DoxyCodeLine{00018     std::cin >> d1;}
+\DoxyCodeLine{00019     std::cout << \textcolor{stringliteral}{"Give the second number: "};}
+\DoxyCodeLine{00020     std::cin >> d2;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordtype}{char} c; \textcolor{comment}{// Character type}}
+\DoxyCodeLine{00023     std::cout << \textcolor{stringliteral}{"Which function a) Max() or b) Min()? "};}
+\DoxyCodeLine{00024     std::cin >> c;}
+\DoxyCodeLine{00025     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'a'})}
+\DoxyCodeLine{00026     \{}
+\DoxyCodeLine{00027         std::cout << \textcolor{stringliteral}{"Max value is: "} << Max<int>(d1, d2) << std::endl;}
+\DoxyCodeLine{00028     \}}
+\DoxyCodeLine{00029     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00030     \{}
+\DoxyCodeLine{00031         std::cout << \textcolor{stringliteral}{"Min value is: "} << Min<int>(d1, d2) << std::endl;}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordtype}{long} dA = 12334; \textcolor{keywordtype}{long} dB = 2; \textcolor{keywordtype}{long} dC = -\/3;}
+\DoxyCodeLine{00035     std::cout << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nMax and min of three numbers: "} << std::endl;}
+\DoxyCodeLine{00036     std::cout << \textcolor{stringliteral}{"Max value is: "} << Max<long>(dA, dB, dC) << std::endl;}
+\DoxyCodeLine{00037     std::cout << \textcolor{stringliteral}{"Min value is: "} << Min<long>(dA, dB, dC) << std::endl;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00040 \}}
+
+\end{DoxyCode}

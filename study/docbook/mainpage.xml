@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainpage">
+<section xml:id="_index_1welcome">
+<title>Welcome</title>
+
+<para>Welcome to the official SFML documentation. Here you will find a detailed view of all the SFML <link xlink:href="./annotated.php">classes</link> and functions. 
+<literallayout>&#160;&#xa;</literallayout>
+ If you are looking for tutorials, you can visit the official website at <link xlink:href="https://www.sfml-dev.org/">www.sfml-dev.org</link>.</para>
+
+<para></para>
+</section>
+<section xml:id="_index_1example">
+<title>Short example</title>
+
+<para>Here is a short example, to show you how simple it is to use SFML:</para>
+
+<para><literallayout><computeroutput>#include&#32;&lt;SFML/Audio.hpp&gt;
+#include&#32;&lt;SFML/Graphics.hpp&gt;
+
+int&#32;main()
+{
+&#32;&#32;&#32;&#32;//&#32;Create&#32;the&#32;main&#32;window
+&#32;&#32;&#32;&#32;sf::RenderWindow&#32;window(sf::VideoMode(800,&#32;600),&#32;&quot;SFML&#32;window&quot;);
+
+&#32;&#32;&#32;&#32;//&#32;Load&#32;a&#32;sprite&#32;to&#32;display
+&#32;&#32;&#32;&#32;sf::Texture&#32;texture;
+&#32;&#32;&#32;&#32;if&#32;(!texture.loadFromFile(&quot;cute_image.jpg&quot;))
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;EXIT_FAILURE;
+&#32;&#32;&#32;&#32;sf::Sprite&#32;sprite(texture);
+
+&#32;&#32;&#32;&#32;//&#32;Create&#32;a&#32;graphical&#32;text&#32;to&#32;display
+&#32;&#32;&#32;&#32;sf::Font&#32;font;
+&#32;&#32;&#32;&#32;if&#32;(!font.loadFromFile(&quot;arial.ttf&quot;))
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;EXIT_FAILURE;
+&#32;&#32;&#32;&#32;sf::Text&#32;text(&quot;Hello&#32;SFML&quot;,&#32;font,&#32;50);
+
+&#32;&#32;&#32;&#32;//&#32;Load&#32;a&#32;music&#32;to&#32;play
+&#32;&#32;&#32;&#32;sf::Music&#32;music;
+&#32;&#32;&#32;&#32;if&#32;(!music.openFromFile(&quot;nice_music.ogg&quot;))
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;EXIT_FAILURE;
+
+&#32;&#32;&#32;&#32;//&#32;Play&#32;the&#32;music
+&#32;&#32;&#32;&#32;music.play();
+
+&#32;&#32;&#32;&#32;//&#32;Start&#32;the&#32;game&#32;loop
+&#32;&#32;&#32;&#32;while&#32;(window.isOpen())
+&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;Process&#32;events
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sf::Event&#32;event;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;while&#32;(window.pollEvent(event))
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;Close&#32;window:&#32;exit
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if&#32;(event.type&#32;==&#32;sf::Event::Closed)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;window.close();
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;Clear&#32;screen
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;window.clear();
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;Draw&#32;the&#32;sprite
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;window.draw(sprite);
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;Draw&#32;the&#32;string
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;window.draw(text);
+
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;Update&#32;the&#32;window
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;window.display();
+&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;return&#32;EXIT_SUCCESS;
+}
+</computeroutput></literallayout> </para>
+</section>
+</chapter>

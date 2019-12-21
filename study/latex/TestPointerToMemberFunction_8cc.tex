@@ -1,0 +1,75 @@
+\hypertarget{TestPointerToMemberFunction_8cc}{}\doxysection{tests/\+Test\+Pointer\+To\+Member\+Function.cc File Reference}
+\label{TestPointerToMemberFunction_8cc}\index{tests/TestPointerToMemberFunction.cc@{tests/TestPointerToMemberFunction.cc}}
+{\ttfamily \#include \char`\"{}../src/\+Payoff\+New.\+cc\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Test\+Pointer\+To\+Member\+Function.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{TestPointerToMemberFunction_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classOption}{Option}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef double(Payoff\+::$\ast$ \mbox{\hyperlink{TestPointerToMemberFunction_8cc_aa1af2de2b5c8c70946008001993327ac}{P\+Member}}) (double value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestPointerToMemberFunction_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{TestPointerToMemberFunction_8cc_aa1af2de2b5c8c70946008001993327ac}\label{TestPointerToMemberFunction_8cc_aa1af2de2b5c8c70946008001993327ac}} 
+\index{TestPointerToMemberFunction.cc@{TestPointerToMemberFunction.cc}!PMember@{PMember}}
+\index{PMember@{PMember}!TestPointerToMemberFunction.cc@{TestPointerToMemberFunction.cc}}
+\doxysubsubsection{\texorpdfstring{PMember}{PMember}}
+{\footnotesize\ttfamily typedef double(Payoff\+::$\ast$  P\+Member) (double value)}
+
+
+
+Definition at line \mbox{\hyperlink{TestPointerToMemberFunction_8cc_source_l00011}{11}} of file \mbox{\hyperlink{TestPointerToMemberFunction_8cc_source}{Test\+Pointer\+To\+Member\+Function.\+cc}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestPointerToMemberFunction_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestPointerToMemberFunction_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestPointerToMemberFunction.cc@{TestPointerToMemberFunction.cc}!main@{main}}
+\index{main@{main}!TestPointerToMemberFunction.cc@{TestPointerToMemberFunction.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestPointerToMemberFunction_8cc_source_l00049}{49}} of file \mbox{\hyperlink{TestPointerToMemberFunction_8cc_source}{Test\+Pointer\+To\+Member\+Function.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050 \{}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classOption}{Option}} myOption;}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classPayoff}{Payoff}} myPayoff(myOption.\mbox{\hyperlink{classOption_a40db81993d02b319a38e62b42a730d6a}{K}});}
+\DoxyCodeLine{00053     \mbox{\hyperlink{TestPointerToMemberFunction_8cc_aa1af2de2b5c8c70946008001993327ac}{PMember}} \mbox{\hyperlink{TestComplexArray_8cc_a96d33e68896cca70b2aaff9893026216}{myFunc}} = \mbox{\hyperlink{classPayoff_a81ee255183b0babc5e6d9663196a83de}{Payoff::Call}};}
+\DoxyCodeLine{00054     myOption.\mbox{\hyperlink{classOption_ad8226d961c2a9531f956d70e0de78136}{pay}} = myPayoff;}
+\DoxyCodeLine{00055     myOption.\mbox{\hyperlink{classOption_aad4544d348ddee46df4181af45ff483c}{pm}} = \mbox{\hyperlink{TestComplexArray_8cc_a96d33e68896cca70b2aaff9893026216}{myFunc}};}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{keywordtype}{double} d = myOption.\mbox{\hyperlink{classOption_a860218238db3dd970925771ebd27d53d}{payoff}}(23);}
+\DoxyCodeLine{00058     }
+\DoxyCodeLine{00059     std::cout << \textcolor{stringliteral}{"Call "} << d << std::endl;}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \mbox{\hyperlink{TestComplexArray_8cc_a96d33e68896cca70b2aaff9893026216}{myFunc}} = \mbox{\hyperlink{classPayoff_a5d0222f2d42995f5ab01820272761e21}{Payoff::Put}};}
+\DoxyCodeLine{00062     myOption.\mbox{\hyperlink{classOption_aad4544d348ddee46df4181af45ff483c}{pm}} = \mbox{\hyperlink{TestComplexArray_8cc_a96d33e68896cca70b2aaff9893026216}{myFunc}};}
+\DoxyCodeLine{00063     d = myOption.\mbox{\hyperlink{classOption_a860218238db3dd970925771ebd27d53d}{payoff}}(23);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     std::cout << \textcolor{stringliteral}{"Put "} << d << std::endl;}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00068 \}}
+
+\end{DoxyCode}

@@ -11,16 +11,34 @@
     <incdepgraph>
       <node id="4">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
-      <node id="8">
+      <node id="12">
         <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
+        <link refid="Array_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../../src/Matrix.cc</label>
+        <link refid="Matrix_8cc"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -28,114 +46,319 @@
         <link refid="Matrix_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../../src/MatrixStructure.cc</label>
+        <link refid="MatrixStructure_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../../src/FullMatrix.cc</label>
+        <link refid="FullMatrix_8cc"/>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="2">
         <label>FullMatrix.hh</label>
-        <link refid="FullMatrix_8hh_source"/>
+        <link refid="FullMatrix_8hh"/>
         <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>vector</label>
-      </node>
-      <node id="5">
-        <label>cstddef</label>
-      </node>
-      <node id="6">
-        <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>MatrixStructure.hh</label>
-        <link refid="MatrixStructure_8hh_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="7">
-        <label>include/duffy/ExcelMechanisms.hh</label>
-        <link refid="ExcelMechanisms_8hh_source"/>
-      </node>
-      <node id="11">
-        <label>include/duffy/LUSolver.hh</label>
-        <link refid="LUSolver_8hh_source"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>include/duffy/Tensor.hh</label>
-        <link refid="Tensor_8hh_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>include/duffy/MatrixMechanisms.hh</label>
-        <link refid="MatrixMechanisms_8hh_source"/>
-      </node>
-      <node id="5">
-        <label>include/duffy/ArrayMechanisms.hh</label>
-        <link refid="ArrayMechanisms_8hh_source"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>include/duffy/Matrix.hh</label>
-        <link refid="Matrix_8hh"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>AssocMatrix.hh</label>
-        <link refid="AssocMatrix_8hh_source"/>
-      </node>
-      <node id="2">
-        <label>include/duffy/NumericMatrix.hh</label>
-        <link refid="NumericMatrix_8hh_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+      </node>
+      <node id="6">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+      <node id="15">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>cstddef</label>
+      </node>
+      <node id="13">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
         <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>FullArray.hh</label>
+        <link refid="FullArray_8hh"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MatrixStructure.hh</label>
+        <link refid="MatrixStructure_8hh"/>
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="11">
+        <label>src/LatticeMechanisms.cc</label>
+        <link refid="LatticeMechanisms_8cc"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="10">
-        <label>include/duffy/IEulerIBVPSolver.hh</label>
-        <link refid="IEulerIBVPSolver_8hh_source"/>
+      <node id="24">
+        <label>include/duffy/ExcelMechanisms.hh</label>
+        <link refid="ExcelMechanisms_8hh"/>
+        <childnode refid="10" relation="include">
+        </childnode>
       </node>
-      <node id="9">
-        <label>include/duffy/EEulerIBVPSolver.hh</label>
-        <link refid="EEulerIBVPSolver_8hh_source"/>
+      <node id="30">
+        <label>src/IBVPSolver.cc</label>
+        <link refid="IBVPSolver_8cc"/>
       </node>
-      <node id="12">
-        <label>include/duffy/ExcelDriver.hh</label>
-        <link refid="ExcelDriver_8hh_source"/>
+      <node id="31">
+        <label>include/duffy/LUSolver.hh</label>
+        <link refid="LUSolver_8hh"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
       </node>
-      <node id="8">
-        <label>include/duffy/IBVPSolver.hh</label>
-        <link refid="IBVPSolver_8hh_source"/>
+      <node id="4">
+        <label>include/duffy/Tensor.hh</label>
+        <link refid="Tensor_8hh"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/duffy/MatrixMechanisms.hh</label>
+        <link refid="MatrixMechanisms_8hh"/>
+        <childnode refid="8" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/ExcelDriver.cc</label>
+        <link refid="ExcelDriver_8cc"/>
+      </node>
+      <node id="15">
+        <label>tests/TestNewLatticeBasic.cc</label>
+        <link refid="TestNewLatticeBasic_8cc"/>
+      </node>
+      <node id="14">
+        <label>tests/TestNewLattice.cc</label>
+        <link refid="TestNewLattice_8cc"/>
+      </node>
+      <node id="34">
+        <label>src/Matrix.cc</label>
+        <link refid="Matrix_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/duffy/ArrayMechanisms.hh</label>
+        <link refid="ArrayMechanisms_8hh"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>src/ExcelMechanisms.cc</label>
+        <link refid="ExcelMechanisms_8cc"/>
+      </node>
+      <node id="18">
+        <label>tests/TestSTD.cc</label>
+        <link refid="TestSTD_8cc"/>
+      </node>
+      <node id="13">
+        <label>tests/TestLatticeBasic.cc</label>
+        <link refid="TestLatticeBasic_8cc"/>
+      </node>
+      <node id="1">
+        <label>include/duffy/Matrix.hh</label>
+        <link refid="Matrix_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>src/EEulerIBVPSolver.cc</label>
+        <link refid="EEulerIBVPSolver_8cc"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>src/Tensor.cc</label>
+        <link refid="Tensor_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>tests/director.cc</label>
+        <link refid="director_8cc"/>
+      </node>
+      <node id="3">
+        <label>AssocMatrix.hh</label>
+        <link refid="AssocMatrix_8hh"/>
+      </node>
+      <node id="32">
+        <label>src/LUSolver.cc</label>
+        <link refid="LUSolver_8cc"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/duffy/NumericMatrix.hh</label>
+        <link refid="NumericMatrix_8hh"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>include/duffy/IEulerIBVPSolver.hh</label>
+        <link refid="IEulerIBVPSolver_8hh"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>src/NumericMatrix.cc</label>
+        <link refid="NumericMatrix_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>src/IEulerIBVPSolver.cc</label>
+        <link refid="IEulerIBVPSolver_8cc"/>
+      </node>
+      <node id="8">
+        <label>src/MatrixMechanisms.cc</label>
+        <link refid="MatrixMechanisms_8cc"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/ArrayMechanisms.cc</label>
+        <link refid="ArrayMechanisms_8cc"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>tests/TestRanges.cc</label>
+        <link refid="TestRanges_8cc"/>
+      </node>
+      <node id="16">
+        <label>tests/TestIBVP.cc</label>
+        <link refid="TestIBVP_8cc"/>
+      </node>
+      <node id="27">
+        <label>include/duffy/EEulerIBVPSolver.hh</label>
+        <link refid="EEulerIBVPSolver_8hh"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>include/duffy/ExcelDriver.hh</label>
+        <link refid="ExcelDriver_8hh"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>tests/testBSPDE1.cc</label>
+        <link refid="testBSPDE1_8cc"/>
+      </node>
+      <node id="21">
+        <label>tests/TestAssocMatrix.cc</label>
+        <link refid="TestAssocMatrix_8cc"/>
+      </node>
+      <node id="26">
+        <label>include/duffy/IBVPSolver.hh</label>
+        <link refid="IBVPSolver_8hh"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>tests/TestAssocArray.cc</label>
+        <link refid="TestAssocArray_8cc"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classMatrix" prot="public">Matrix</innerclass>
@@ -156,8 +379,8 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Matrix_hh</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Matrix_hh</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;FullMatrix.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Array.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="FullMatrix_8hh" kindref="compound">FullMatrix.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Array_8hh" kindref="compound">Array.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Default<sp/>structure<sp/>is<sp/>FullArray<sp/>with<sp/>default<sp/>allocator.<sp/>Default<sp/>integral<sp/>type<sp/>is<sp/>int.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>V,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>I<sp/>=<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>S<sp/>=<sp/>FullMatrix&lt;V&gt;<sp/>&gt;</highlight></codeline>
@@ -173,29 +396,29 @@
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructors<sp/>&amp;<sp/>destructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix" kindref="compound">Matrix</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix" kindref="compound">Matrix</ref>(I<sp/>rows,<sp/>I<sp/>columns);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor<sp/>with<sp/>size.<sp/>Start<sp/>index=0.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix" kindref="compound">Matrix</ref>(I<sp/>rows,<sp/>I<sp/>columns,<sp/>I<sp/>rowStart,<sp/>I<sp/>columnStart);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor<sp/>with<sp/>size<sp/>&amp;<sp/>start<sp/>index</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix" kindref="compound">Matrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix" kindref="compound">Matrix&lt;V, I, S&gt;</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classMatrix" kindref="compound">Matrix</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix_1a98af38996a2ce7d4491052d202ad2e77" kindref="member">Matrix</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix_1a98af38996a2ce7d4491052d202ad2e77" kindref="member">Matrix</ref>(I<sp/>rows,<sp/>I<sp/>columns);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor<sp/>with<sp/>size.<sp/>Start<sp/>index=0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix_1a98af38996a2ce7d4491052d202ad2e77" kindref="member">Matrix</ref>(I<sp/>rows,<sp/>I<sp/>columns,<sp/>I<sp/>rowStart,<sp/>I<sp/>columnStart);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor<sp/>with<sp/>size<sp/>&amp;<sp/>start<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix_1a98af38996a2ce7d4491052d202ad2e77" kindref="member">Matrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix" kindref="compound">Matrix&lt;V, I, S&gt;</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classMatrix_1a03485d6a3a841539855e599d772323ae" kindref="member">~Matrix</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Selectors</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>MinRowIndex()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>minimum<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>MaxRowIndex()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>maximum<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>MinColumnIndex()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>minimum<sp/>column<sp/>index</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>MaxColumnIndex()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>maximum<sp/>column<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classMatrix_1a0505cda9acadb178a38ec97718bf2fab" kindref="member">MinRowIndex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>minimum<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classMatrix_1abd8766ab01ecf06e70cdce889afba641" kindref="member">MaxRowIndex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>maximum<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9" kindref="member">MinColumnIndex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>minimum<sp/>column<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classMatrix_1af6cbab02648446701a31b7bce0110af7" kindref="member">MaxColumnIndex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>maximum<sp/>column<sp/>index</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>Rows()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>number<sp/>of<sp/>rows</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>Columns()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>number<sp/>of<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classMatrix_1a137b54c61fa1a897a903ea3c466dd271" kindref="member">Rows</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>number<sp/>of<sp/>rows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6" kindref="member">Columns</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>number<sp/>of<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Row(I<sp/>row,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classArray" kindref="compound">Array&lt;V, I&gt;</ref>&amp;<sp/>val);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Replace<sp/>row</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Column(I<sp/>column,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classArray" kindref="compound">Array&lt;V, I&gt;</ref>&amp;<sp/>val);<sp/><sp/></highlight><highlight class="comment">//<sp/>Replace<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMatrix_1ae64e55e347c3288a357230d8d0d03bed" kindref="member">Row</ref>(I<sp/>row,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classArray" kindref="compound">Array&lt;V, I&gt;</ref>&amp;<sp/>val);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Replace<sp/>row</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMatrix_1a2278829f8202d2a9b75a38457ce97d6d" kindref="member">Column</ref>(I<sp/>column,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classArray" kindref="compound">Array&lt;V, I&gt;</ref>&amp;<sp/>val);<sp/><sp/></highlight><highlight class="comment">//<sp/>Replace<sp/>column</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Operators</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>V&amp;<sp/>operator<sp/>()<sp/>(I<sp/>row,<sp/>I<sp/>column)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>element<sp/>at<sp/>position</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>V&amp;<sp/>operator<sp/>()<sp/>(I<sp/>row,<sp/>I<sp/>column);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>element<sp/>at<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>V&amp;<sp/><ref refid="classMatrix_1a7cb4c21fc4931498a7c366d0b66e1887" kindref="member">operator () </ref>(I<sp/>row,<sp/>I<sp/>column)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>element<sp/>at<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>V&amp;<sp/><ref refid="classMatrix_1a7cb4c21fc4931498a7c366d0b66e1887" kindref="member">operator () </ref>(I<sp/>row,<sp/>I<sp/>column);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>element<sp/>at<sp/>position</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix" kindref="compound">Matrix&lt;V, I, S&gt;</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix" kindref="compound">Matrix&lt;V, I, S&gt;</ref>&amp;<sp/>source);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix" kindref="compound">Matrix&lt;V, I, S&gt;</ref>&amp;<sp/><ref refid="classMatrix_1a4634b560e429e05ae482cc66ae6e6e8a" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix" kindref="compound">Matrix&lt;V, I, S&gt;</ref>&amp;<sp/>source);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/Matrix.cc&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>Matrix_HH</highlight></codeline>

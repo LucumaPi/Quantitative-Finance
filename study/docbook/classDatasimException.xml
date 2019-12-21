@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classDatasimException">
 <title>DatasimException Class Reference</title>
 <indexterm><primary>DatasimException</primary></indexterm>
+<para>
+<computeroutput>#include &lt;DatasimException.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for DatasimException:<para>
     <informalfigure>
         <mediaobject>
@@ -14,20 +17,117 @@ Collaboration diagram for DatasimException:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classDatasimException_1af417c602595f481d651cf6fd8e51bb04"/><emphasis role="strong">DatasimException</emphasis> (const std::string &amp;message, const std::string &amp;method, const std::string &amp;extraInfo)</para>
+            <listitem><para><link linkend="_classDatasimException_1ad13fe05d37a7408a830de3b607bac935">DatasimException</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classDatasimException_1a0b66cf81fa140e4c79200ebeb4a77495"/>std::string <emphasis role="strong">Message</emphasis> () const</para>
+            <listitem><para><link linkend="_classDatasimException_1af417c602595f481d651cf6fd8e51bb04">DatasimException</link> (const std::string &amp;message, const std::string &amp;method, const std::string &amp;extraInfo)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classDatasimException_1a9d3c628a95ad8319412644c0bf4fc5db"/>std::string <emphasis role="strong">rationale</emphasis> () const</para>
+            <listitem><para>std::string <link linkend="_classDatasimException_1a0b66cf81fa140e4c79200ebeb4a77495">Message</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classDatasimException_1a2a24aa450eba7284cb9b8eb019f4b031"/>std::string <emphasis role="strong">Method</emphasis> () const</para>
+            <listitem><para>std::string <link linkend="_classDatasimException_1a9d3c628a95ad8319412644c0bf4fc5db">rationale</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classDatasimException_1a3f35187da2d3cb0d57ddc295a535a130"/>std::vector&lt; std::string &gt; <emphasis role="strong">MessageDump</emphasis> () const</para>
+            <listitem><para>std::string <link linkend="_classDatasimException_1a2a24aa450eba7284cb9b8eb019f4b031">Method</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classDatasimException_1a1b21cfcf91a5e6d5c60b6ebffe0967cf"/>virtual void <emphasis role="strong">print</emphasis> () const</para>
+            <listitem><para>std::vector&lt; std::string &gt; <link linkend="_classDatasimException_1a3f35187da2d3cb0d57ddc295a535a130">MessageDump</link> () const</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classDatasimException_1a1b21cfcf91a5e6d5c60b6ebffe0967cf">print</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 14 of file DatasimException.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classDatasimException_1ad13fe05d37a7408a830de3b607bac935"/>    <section>
+    <title>DatasimException()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>DatasimException</primary><secondary>DatasimException</secondary></indexterm>
+<indexterm><primary>DatasimException</primary><secondary>DatasimException</secondary></indexterm>
+<para><computeroutput>DatasimException::DatasimException ( )</computeroutput></para><para>
+Definition at line 13 of file DatasimException.cc.</para>
+<programlisting>14 {
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mess&#32;=&#32;meth&#32;=&#32;why&#32;=&#32;std::string();
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;std::vector&lt;std::string&gt;(3);
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[0]&#32;=&#32;mess;
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[1]&#32;=&#32;meth;
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[2]&#32;=&#32;why;
+20 }
+</programlisting>    </section><anchor xml:id="_classDatasimException_1af417c602595f481d651cf6fd8e51bb04"/>    <section>
+    <title>DatasimException()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>DatasimException</primary><secondary>DatasimException</secondary></indexterm>
+<indexterm><primary>DatasimException</primary><secondary>DatasimException</secondary></indexterm>
+<para><computeroutput>DatasimException::DatasimException (const std::string &amp; message, const std::string &amp; method, const std::string &amp; extraInfo)</computeroutput></para><para>
+Definition at line 22 of file DatasimException.cc.</para>
+<programlisting>24 {
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mess&#32;=&#32;message;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;meth&#32;=&#32;method;
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;why&#32;=&#32;extraInfo;
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;std::vector&lt;std::string&gt;(3);
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[0]&#32;=&#32;mess;
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[1]&#32;=&#32;meth;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[2]&#32;=&#32;why;
+33 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classDatasimException_1a0b66cf81fa140e4c79200ebeb4a77495"/>    <section>
+    <title>Message()</title>
+<indexterm><primary>Message</primary><secondary>DatasimException</secondary></indexterm>
+<indexterm><primary>DatasimException</primary><secondary>Message</secondary></indexterm>
+<para><computeroutput>std::string DatasimException::Message ( ) const</computeroutput></para><para>
+Definition at line 35 of file DatasimException.cc.</para>
+<programlisting>36 {&#32;
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;mess;&#32;
+38 }
+</programlisting>    </section><anchor xml:id="_classDatasimException_1a3f35187da2d3cb0d57ddc295a535a130"/>    <section>
+    <title>MessageDump()</title>
+<indexterm><primary>MessageDump</primary><secondary>DatasimException</secondary></indexterm>
+<indexterm><primary>DatasimException</primary><secondary>MessageDump</secondary></indexterm>
+<para><computeroutput>std::vector&lt; std::string &gt; DatasimException::MessageDump ( ) const</computeroutput></para><para>
+Definition at line 50 of file DatasimException.cc.</para>
+<programlisting>51 {&#32;<emphasis role="comment">//&#32;Full&#32;message</emphasis>
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+53 }
+</programlisting>    </section><anchor xml:id="_classDatasimException_1a2a24aa450eba7284cb9b8eb019f4b031"/>    <section>
+    <title>Method()</title>
+<indexterm><primary>Method</primary><secondary>DatasimException</secondary></indexterm>
+<indexterm><primary>DatasimException</primary><secondary>Method</secondary></indexterm>
+<para><computeroutput>std::string DatasimException::Method ( ) const</computeroutput></para><para>
+Definition at line 45 of file DatasimException.cc.</para>
+<programlisting>46 {&#32;
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;meth;&#32;
+48 }
+</programlisting>    </section><anchor xml:id="_classDatasimException_1a1b21cfcf91a5e6d5c60b6ebffe0967cf"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>DatasimException</secondary></indexterm>
+<indexterm><primary>DatasimException</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void DatasimException::print ( ) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 55 of file DatasimException.cc.</para>
+<programlisting>56 {
+57 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Variant&#32;part</emphasis>
+58 &#32;&#32;&#32;&#32;std::vector&lt;std::string&gt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;<link linkend="_classDatasimException_1a3f35187da2d3cb0d57ddc295a535a130">MessageDump</link>();
+59 
+60 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[0]&#32;&lt;&lt;&#32;std::endl;
+61 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Invariant&#32;part</emphasis>
+62 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;1;&#32;j&#32;&lt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>.size();&#32;j++)
+63 &#32;&#32;&#32;&#32;{
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="charliteral">&apos;\t&apos;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>[j]&#32;&lt;&lt;&#32;std::endl;
+65 &#32;&#32;&#32;&#32;}
+66 }
+</programlisting>    </section><anchor xml:id="_classDatasimException_1a9d3c628a95ad8319412644c0bf4fc5db"/>    <section>
+    <title>rationale()</title>
+<indexterm><primary>rationale</primary><secondary>DatasimException</secondary></indexterm>
+<indexterm><primary>DatasimException</primary><secondary>rationale</secondary></indexterm>
+<para><computeroutput>std::string DatasimException::rationale ( ) const</computeroutput></para><para>
+Definition at line 40 of file DatasimException.cc.</para>
+<programlisting>41 {&#32;
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;why;&#32;
+43 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/DatasimException.hhsrc/DatasimException.cc</section>
+include/duffy/<link linkend="_DatasimException_8hh">DatasimException.hh</link>src/<link linkend="_DatasimException_8cc">DatasimException.cc</link></section>
+</section>

@@ -1,0 +1,133 @@
+\hypertarget{TestImpliedVolatility_8cc_source}{}\doxysection{Test\+Implied\+Volatility.\+cc}
+\label{TestImpliedVolatility_8cc_source}\index{tests/TestImpliedVolatility.cc@{tests/TestImpliedVolatility.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestImpliedVolatility.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing Implied Volatility (see Haug 1998)}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{NonlinearSolver_8hh}{duffy/NonlinearSolver.hh}}>}}
+\DoxyCodeLine{\Hypertarget{TestImpliedVolatility_8cc_source_l00010}\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{00010}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}(\textcolor{keywordtype}{double} x) }
+\DoxyCodeLine{00011 \{ }
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     \textcolor{keywordtype}{double} A = 1.0/std::sqrt(2.0 * 3.1415);}
+\DoxyCodeLine{00014     \textcolor{keywordflow}{return} A * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/x*x*0.5);}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{\Hypertarget{TestImpliedVolatility_8cc_source_l00018}\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{00018}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(\textcolor{keywordtype}{double} x) }
+\DoxyCodeLine{00019 \{ \textcolor{comment}{// The approximation to the cumulative normal distribution}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordtype}{double} a1 = 0.4361836;}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{double} a2 = -\/0.1201676;}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{double} a3 = 0.9372980;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keywordtype}{double} k = 1.0/(1.0 + (0.33267 * x));}
+\DoxyCodeLine{00027     }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{if} (x >= 0.0)}
+\DoxyCodeLine{00029     \{}
+\DoxyCodeLine{00030         \textcolor{keywordflow}{return} 1.0 -\/ \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}(x)* (a1*k + (a2*k*k) + (a3*k*k*k));}
+\DoxyCodeLine{00031     \}}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00033     \{}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} 1.0 -\/ \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(-\/x);}
+\DoxyCodeLine{00035     \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{\Hypertarget{TestImpliedVolatility_8cc_source_l00039}\mbox{\hyperlink{TestImpliedVolatility_8cc_a9776a1257d07edf93111927ddecc81cc}{00039}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestImpliedVolatility_8cc_a9776a1257d07edf93111927ddecc81cc}{CallPrice}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}})}
+\DoxyCodeLine{00040 \{}
+\DoxyCodeLine{00041     }
+\DoxyCodeLine{00042     \textcolor{comment}{// Test case Haug p. 172; student exercise to extend it}}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{double} S = 59.0;}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = 60.0;}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.067;}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{double} marketPrice = 2.82; \textcolor{comment}{// The call price}}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00048     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} = 0.25;           \textcolor{comment}{// Three months}}
+\DoxyCodeLine{00049     }
+\DoxyCodeLine{00050     \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}} * sqrt(\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}});}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{keywordtype}{double} d1 = ( log(S/\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}) + (\mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}+ (\mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}}*\mbox{\hyperlink{namespaceNSEuropeanOption_a974a1ee089fe6b1bb15292af1f2eef78}{sig}})*0.5 ) * \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} )/ tmp;}
+\DoxyCodeLine{00053     \textcolor{keywordtype}{double} d2 = d1 -\/ tmp;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordtype}{double} calculatedValue = (S * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}((\mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}-\/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})*\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}) * \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(d1)) -\/ (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(-\/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} * \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}})* \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}(d2));}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{comment}{// Function in the form f(x) = 0}}
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} marketPrice -\/ calculatedValue;}
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{\Hypertarget{TestImpliedVolatility_8cc_source_l00063}\mbox{\hyperlink{TestImpliedVolatility_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00063}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00064 \{}
+\DoxyCodeLine{00065     \textcolor{comment}{// Tell where to look for solvers, in a namespace}}
+\DoxyCodeLine{00066     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceNS__NonlinearSolver}{NS\_NonlinearSolver}};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{comment}{// 1. Bisection method}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{comment}{// Initial interval (range for volatility)}}
+\DoxyCodeLine{00071     \textcolor{keywordtype}{double} a = 0.1;     \textcolor{comment}{// 10\%}}
+\DoxyCodeLine{00072     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = 0.25;   \textcolor{comment}{// 25\%}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{comment}{// In this version all data is public; in a later version}}
+\DoxyCodeLine{00075     \textcolor{comment}{// make it private}}
+\DoxyCodeLine{00076     \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver}{BisectionSolver}} bs;}
+\DoxyCodeLine{00077     bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}} = \mbox{\hyperlink{TestImpliedVolatility_8cc_a9776a1257d07edf93111927ddecc81cc}{CallPrice}};}
+\DoxyCodeLine{00078     bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a116ed2c5cf4900e25c80fa11a658dd25}{a}} = a; bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_af5fb4bdea0feb69c4929b9f1037b4dfa}{b}} = \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00079     bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}} = 0.0001;}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{keywordtype}{double} result = bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a92b3d483b030f4f4e7014f8097dfd3db}{solve}}();}
+\DoxyCodeLine{00082     std::cout << \textcolor{stringliteral}{"Bisection: "} << result << \textcolor{stringliteral}{", "} << bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a8aa6679debb70886fdfaac7aae6d25aa}{accuracy}}() << std::endl;}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a1bd5e1ca8a817f8443cd4c510fcaf3af}{printStatistics}}();}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{comment}{/* NO NEWTON BECAUSE WE DO NOT HAVE THE DERIVATIVE!}}
+\DoxyCodeLine{00087 \textcolor{comment}{    // Newton Method}}
+\DoxyCodeLine{00088 \textcolor{comment}{    double initialGuess = 1.2;}}
+\DoxyCodeLine{00089 \textcolor{comment}{    NewtonRaphsonSolver nr(initialGuess);}}
+\DoxyCodeLine{00090 \textcolor{comment}{    nr.myF = CallPrice;}}
+\DoxyCodeLine{00091 \textcolor{comment}{    //nr.derivative = DerivativeCallPrice;}}
+\DoxyCodeLine{00092 \textcolor{comment}{    nr.tol = 0.0001;}}
+\DoxyCodeLine{00093 \textcolor{comment}{}}
+\DoxyCodeLine{00094 \textcolor{comment}{    double resultNR = nr.solve();}}
+\DoxyCodeLine{00095 \textcolor{comment}{    cout << "Newton Raphson: " << resultNR << endl;}}
+\DoxyCodeLine{00096 \textcolor{comment}{}}
+\DoxyCodeLine{00097 \textcolor{comment}{    nr.printStatistics();}}
+\DoxyCodeLine{00098 \textcolor{comment}{    */}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100     \textcolor{comment}{// Secant method}}
+\DoxyCodeLine{00101     \textcolor{keywordtype}{double} initialGuess0 = 1.2;}
+\DoxyCodeLine{00102     \textcolor{keywordtype}{double} initialGuess1 = 1.6;}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver}{SecantMethodSolver}} sm(initialGuess0, initialGuess1, \mbox{\hyperlink{TestImpliedVolatility_8cc_a9776a1257d07edf93111927ddecc81cc}{CallPrice}});}
+\DoxyCodeLine{00105     sm.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}} = 0.0001;}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107     \textcolor{keywordtype}{double} resultSM= sm.\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}{solve}}();}
+\DoxyCodeLine{00108     std::cout << \textcolor{stringliteral}{"Secant Method: "} << resultSM << std::endl;}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     sm.\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}{printStatistics}}();}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     std::cout << \textcolor{stringliteral}{"Steffensen's method\(\backslash\)n"};}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     \textcolor{comment}{// Steffensen's method}}
+\DoxyCodeLine{00115     \textcolor{keywordtype}{double} guess = 0.2;}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver}{SteffensensSolver}} steff(guess, \mbox{\hyperlink{TestImpliedVolatility_8cc_a9776a1257d07edf93111927ddecc81cc}{CallPrice}});}
+\DoxyCodeLine{00118     steff.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}} = 0.0001;}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{keywordtype}{double} resultST= steff.\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}{solve}}();}
+\DoxyCodeLine{00121     std::cout << \textcolor{stringliteral}{"Steffensen's Method: "} << resultST << std::endl;}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123     steff.\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}{printStatistics}}();}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125     std::cout << \textcolor{stringliteral}{"Finished\(\backslash\)n"};}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00128 \}}
+
+\end{DoxyCode}

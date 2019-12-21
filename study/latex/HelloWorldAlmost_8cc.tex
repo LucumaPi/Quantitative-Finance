@@ -1,0 +1,220 @@
+\hypertarget{HelloWorldAlmost_8cc}{}\doxysection{tests/\+Hello\+World\+Almost.cc File Reference}
+\label{HelloWorldAlmost_8cc}\index{tests/HelloWorldAlmost.cc@{tests/HelloWorldAlmost.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for Hello\+World\+Almost.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{HelloWorldAlmost_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJoin}{Join}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{HelloWorldAlmost_8cc_a776febc8b0a0c1bd1a3b5621711a3148}{Upper\+Case}} (std\+::string s)
+\item 
+bool \mbox{\hyperlink{HelloWorldAlmost_8cc_a2b7ab22ac85581b0a8d433ca70e84744}{my\+Greater}} (double x, double y)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}} (const std\+::vector$<$ T $>$ \&l, std\+::string s=std\+::string(\char`\"{}data\char`\"{}))
+\item 
+int \mbox{\hyperlink{HelloWorldAlmost_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{HelloWorldAlmost_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{HelloWorldAlmost_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{HelloWorldAlmost.cc@{HelloWorldAlmost.cc}!main@{main}}
+\index{main@{main}!HelloWorldAlmost.cc@{HelloWorldAlmost.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{HelloWorldAlmost_8cc_source_l00066}{66}} of file \mbox{\hyperlink{HelloWorldAlmost_8cc_source}{Hello\+World\+Almost.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067 \{}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     std::size\_t \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 10;}
+\DoxyCodeLine{00071     \textcolor{keywordtype}{double} val = 3.14;}
+\DoxyCodeLine{00072     std::vector<double> myVec(\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}, val); \textcolor{comment}{// Create n copies of val}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec);}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{comment}{// Access elements of the vector by using the indexing operator []}}
+\DoxyCodeLine{00077     \textcolor{comment}{// Change some values here and there}}
+\DoxyCodeLine{00078     myVec[0] = 2.0;}
+\DoxyCodeLine{00079     myVec[1] = 456.76;}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{keywordtype}{int} last\_element= myVec.size() -\/ 1;}
+\DoxyCodeLine{00082     myVec[last\_element] = 55.66;}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec);}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{comment}{// Now some algorithms}}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     std::vector<double> myVec2(myVec.size());}
+\DoxyCodeLine{00089     std::list<double> myList;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{comment}{// Copy source range of type T1 into target range of type T2}}
+\DoxyCodeLine{00092     copy(myVec.begin(), myVec.end(), myVec2.begin());}
+\DoxyCodeLine{00093     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec2, std::string(\textcolor{stringliteral}{"copy to a vector"}));}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     copy(myVec.begin(), myVec.end(), myList.begin());}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     \textcolor{comment}{// Copying and transformation at the same time }}
+\DoxyCodeLine{00099     std::vector<std::string> First(3);}
+\DoxyCodeLine{00100     First[0] = \textcolor{stringliteral}{"Bill"};}
+\DoxyCodeLine{00101     First[1] = \textcolor{stringliteral}{"Abbott"};}
+\DoxyCodeLine{00102     First[2] = \textcolor{stringliteral}{"Bassie"};}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     std::vector<std::string> Second(3);}
+\DoxyCodeLine{00105     Second[0] = \textcolor{stringliteral}{"Ben"};}
+\DoxyCodeLine{00106     Second[1] = \textcolor{stringliteral}{"Costello"};}
+\DoxyCodeLine{00107     Second[2] = \textcolor{stringliteral}{"Adriaan"};}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109     std::vector<std::string> Couples(3);}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111     \textcolor{comment}{// Now convert the First names to upper case}}
+\DoxyCodeLine{00112     transform (First.begin(), First.end(), First.begin(), \mbox{\hyperlink{HelloWorldAlmost_8cc_a776febc8b0a0c1bd1a3b5621711a3148}{UpperCase}});}
+\DoxyCodeLine{00113     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(First, std::string(\textcolor{stringliteral}{"An upper case vector"}));}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{comment}{// Now join to make a team}}
+\DoxyCodeLine{00116     transform (First.begin(), First.end(), Second.begin(), Couples.begin(),}
+\DoxyCodeLine{00117             \mbox{\hyperlink{classJoin}{Join}}());}
+\DoxyCodeLine{00118     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(Couples, std::string(\textcolor{stringliteral}{"Joined couples"}));}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{comment}{// Shift the elements of a vector to the left; those that fall off}}
+\DoxyCodeLine{00121     \textcolor{comment}{// are inserted at the end}}
+\DoxyCodeLine{00122     \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = 6;}
+\DoxyCodeLine{00123     std::vector<double> myVec3(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}); }
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < myVec3.size(); i++)}
+\DoxyCodeLine{00126     \{}
+\DoxyCodeLine{00127             myVec3[i] = double (i);}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129     \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131     \textcolor{keywordtype}{int} shiftFactor = 2;}
+\DoxyCodeLine{00132     rotate(myVec3.begin(), myVec3.begin() + shiftFactor, myVec3.end());}
+\DoxyCodeLine{00133     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec3, std::string(\textcolor{stringliteral}{"Rotated vector by 2 units"}));}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135     \textcolor{comment}{// Now reverse the order of elements in the vector; the first becomes}}
+\DoxyCodeLine{00136     \textcolor{comment}{// last and vice versa}}
+\DoxyCodeLine{00137     \mbox{\hyperlink{ArrayMechanisms_8hh_aa733a8c1b1c2946f0dee2369a2c0988d}{reverse}}(myVec3.begin(), myVec3.end());}
+\DoxyCodeLine{00138     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec3, std::string(\textcolor{stringliteral}{"Reversed vector vec3"}));}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141     \textcolor{comment}{// Now replace each occurrence of one value by a new value}}
+\DoxyCodeLine{00142     \textcolor{keywordtype}{double} oldVal = 2;}
+\DoxyCodeLine{00143     \textcolor{keywordtype}{double} newVal = 999;}
+\DoxyCodeLine{00144     replace(myVec3.begin(), myVec3.end(), oldVal, newVal);}
+\DoxyCodeLine{00145     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec3, std::string(\textcolor{stringliteral}{"Modified value of vec3"}));}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147     \textcolor{comment}{// Now remove this element }}
+\DoxyCodeLine{00148     remove(myVec3.begin(), myVec3.end(), newVal);}
+\DoxyCodeLine{00149     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec3, std::string(\textcolor{stringliteral}{"Removed element from vec3"}));}
+\DoxyCodeLine{00150 }
+\DoxyCodeLine{00151     \textcolor{comment}{// Sort the random access container vector<T> class}}
+\DoxyCodeLine{00152     myVec3[myVec3.size() -\/ 1] = 9999.0;}
+\DoxyCodeLine{00153     stable\_sort(myVec3.begin(), myVec3.end()); \textcolor{comment}{// Using < as comparitor}}
+\DoxyCodeLine{00154     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec3, std::string(\textcolor{stringliteral}{"Sorted vec3 with '<' ASCENDING "}));}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156     stable\_sort(myVec3.begin(), myVec3.end(), \mbox{\hyperlink{HelloWorldAlmost_8cc_a2b7ab22ac85581b0a8d433ca70e84744}{myGreater}});}
+\DoxyCodeLine{00157     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec3, std::string(\textcolor{stringliteral}{"Sorted vec3 with DESCENDING comparitor function "}));}
+\DoxyCodeLine{00158 }
+\DoxyCodeLine{00159     \textcolor{comment}{// Merge two sorted vectors}}
+\DoxyCodeLine{00160     std::vector<double> myVec4(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}, 2.41);   }
+\DoxyCodeLine{00161     std::vector<double> myVec5(myVec3.size() + myVec4.size()); \textcolor{comment}{// Output}}
+\DoxyCodeLine{00162     merge(myVec3.begin(), myVec3.end(), myVec4.begin(), myVec4.end(),}
+\DoxyCodeLine{00163             myVec5.begin());}
+\DoxyCodeLine{00164     \mbox{\hyperlink{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}{print}}(myVec5, std::string(\textcolor{stringliteral}{"Merged vector"}));}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{HelloWorldAlmost_8cc_a2b7ab22ac85581b0a8d433ca70e84744}\label{HelloWorldAlmost_8cc_a2b7ab22ac85581b0a8d433ca70e84744}} 
+\index{HelloWorldAlmost.cc@{HelloWorldAlmost.cc}!myGreater@{myGreater}}
+\index{myGreater@{myGreater}!HelloWorldAlmost.cc@{HelloWorldAlmost.cc}}
+\doxysubsubsection{\texorpdfstring{myGreater()}{myGreater()}}
+{\footnotesize\ttfamily bool my\+Greater (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{HelloWorldAlmost_8cc_source_l00045}{45}} of file \mbox{\hyperlink{HelloWorldAlmost_8cc_source}{Hello\+World\+Almost.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046 \{}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} x > y;}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}\label{HelloWorldAlmost_8cc_a9c960fa30e8750ff27cca1bf2cec5ef7}} 
+\index{HelloWorldAlmost.cc@{HelloWorldAlmost.cc}!print@{print}}
+\index{print@{print}!HelloWorldAlmost.cc@{HelloWorldAlmost.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{l,  }\item[{std\+::string}]{s = {\ttfamily std\+:\+:string(\char`\"{}data\char`\"{})} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{HelloWorldAlmost_8cc_source_l00050}{50}} of file \mbox{\hyperlink{HelloWorldAlmost_8cc_source}{Hello\+World\+Almost.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051 \{  \textcolor{comment}{// A generic print function for vectors}}
+\DoxyCodeLine{00052     }
+\DoxyCodeLine{00053     std::cout << std::endl << s << \textcolor{stringliteral}{", size of vector is "} << l.size() << \textcolor{stringliteral}{"\(\backslash\)n["};}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{comment}{// We must use a const iterator here, otherwise we get a compiler error.}}
+\DoxyCodeLine{00056     \textcolor{keyword}{typename} std::vector<T>::const\_iterator i;}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{for} (i = l.begin(); i != l.end(); i++)}
+\DoxyCodeLine{00058     \{}
+\DoxyCodeLine{00059             std::cout << *i << \textcolor{stringliteral}{","};}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     std::cout << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00064 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{HelloWorldAlmost_8cc_a776febc8b0a0c1bd1a3b5621711a3148}\label{HelloWorldAlmost_8cc_a776febc8b0a0c1bd1a3b5621711a3148}} 
+\index{HelloWorldAlmost.cc@{HelloWorldAlmost.cc}!UpperCase@{UpperCase}}
+\index{UpperCase@{UpperCase}!HelloWorldAlmost.cc@{HelloWorldAlmost.cc}}
+\doxysubsubsection{\texorpdfstring{UpperCase()}{UpperCase()}}
+{\footnotesize\ttfamily std\+::string Upper\+Case (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{HelloWorldAlmost_8cc_source_l00019}{19}} of file \mbox{\hyperlink{HelloWorldAlmost_8cc_source}{Hello\+World\+Almost.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020 \{ \textcolor{comment}{// Convert a string to upper case}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < s.length(); j++)}
+\DoxyCodeLine{00023     \{}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{if} (s[j] >= \textcolor{charliteral}{'a'} \&\& s[j] <= \textcolor{charliteral}{'z'})}
+\DoxyCodeLine{00025         \{}
+\DoxyCodeLine{00026             s[j] -\/= \textcolor{charliteral}{'a'} -\/ \textcolor{charliteral}{'A'};}
+\DoxyCodeLine{00027         \}}
+\DoxyCodeLine{00028     \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00031 \}}
+
+\end{DoxyCode}

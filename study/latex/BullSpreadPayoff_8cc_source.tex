@@ -1,0 +1,110 @@
+\hypertarget{BullSpreadPayoff_8cc_source}{}\doxysection{Bull\+Spread\+Payoff.\+cc}
+\label{BullSpreadPayoff_8cc_source}\index{src/BullSpreadPayoff.cc@{src/BullSpreadPayoff.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// BullSpreadPayoff.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// BullSpreadPayoff class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 5 june 1998  MB  Started}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2005-\/5-\/16 DD Modified from Shape hierarchy}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 1998 -\/ 2005}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{BullSpreadPayoff_8hh}{duffy/BullSpreadPayoff.hh}}>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{comment}{// Constructors and destructor}}
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00013}\mbox{\hyperlink{classBullSpreadPayoff_a0de546e8e042b534c52bad7dd84416b8}{00013}} \mbox{\hyperlink{classBullSpreadPayoff_a0de546e8e042b534c52bad7dd84416b8}{BullSpreadPayoff::BullSpreadPayoff}}(): \mbox{\hyperlink{classPayoff}{Payoff}}()}
+\DoxyCodeLine{00014 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016     K1 = K2 = 100.0; \textcolor{comment}{// Prototype value}}
+\DoxyCodeLine{00017     buyValue = 3.0;}
+\DoxyCodeLine{00018     sellValue = 1.0;}
+\DoxyCodeLine{00019 \}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00021}\mbox{\hyperlink{classBullSpreadPayoff_adb10614a8175c8f14a11d39b80a61289}{00021}} \mbox{\hyperlink{classBullSpreadPayoff_a0de546e8e042b534c52bad7dd84416b8}{BullSpreadPayoff::BullSpreadPayoff}}(\textcolor{keywordtype}{double} strike1, \textcolor{keywordtype}{double} strike2,}
+\DoxyCodeLine{00022                         \textcolor{keywordtype}{double} BuyVal, \textcolor{keywordtype}{double} SellVal): \mbox{\hyperlink{classPayoff}{Payoff}}()}
+\DoxyCodeLine{00023 \{ \textcolor{comment}{// Normal constructor with coordinates}}
+\DoxyCodeLine{00024  }
+\DoxyCodeLine{00025     K1 = strike1;}
+\DoxyCodeLine{00026     K2 = strike2;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     buyValue = BuyVal;}
+\DoxyCodeLine{00029     sellValue = SellVal;}
+\DoxyCodeLine{00030 \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00033}\mbox{\hyperlink{classBullSpreadPayoff_a33694980373376d59392aeaa401173b0}{00033}} \mbox{\hyperlink{classBullSpreadPayoff_a0de546e8e042b534c52bad7dd84416b8}{BullSpreadPayoff::BullSpreadPayoff}}(\textcolor{keyword}{const} \mbox{\hyperlink{classBullSpreadPayoff}{BullSpreadPayoff}}\& source): \mbox{\hyperlink{classPayoff}{Payoff}}(source)}
+\DoxyCodeLine{00034 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     K1 = source.K1;}
+\DoxyCodeLine{00037     K2 = source.K2;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     buyValue = source.buyValue;}
+\DoxyCodeLine{00040     sellValue = source.sellValue;}
+\DoxyCodeLine{00041 \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00043}\mbox{\hyperlink{classBullSpreadPayoff_a54bdf875caba241c5c8ed7337beb7561}{00043}} \mbox{\hyperlink{classBullSpreadPayoff_a54bdf875caba241c5c8ed7337beb7561}{BullSpreadPayoff:: ~BullSpreadPayoff}}()}
+\DoxyCodeLine{00044 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00045 \} }
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00048}\mbox{\hyperlink{classBullSpreadPayoff_a1ce73fd9dc1d45c200fb009c9df3ee13}{00048}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBullSpreadPayoff_a1ce73fd9dc1d45c200fb009c9df3ee13}{BullSpreadPayoff::Strike1}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00049 \textcolor{keyword}{}\{\textcolor{comment}{// Return K1}}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} K1;}
+\DoxyCodeLine{00051 \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00053}\mbox{\hyperlink{classBullSpreadPayoff_a37fcd22264e1d06fb2e794fe689a0ee9}{00053}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBullSpreadPayoff_a37fcd22264e1d06fb2e794fe689a0ee9}{BullSpreadPayoff::Strike2}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00054 \textcolor{keyword}{}\{\textcolor{comment}{// Return K2}}
+\DoxyCodeLine{00055     \textcolor{keywordflow}{return} K2;}
+\DoxyCodeLine{00056 \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00059}\mbox{\hyperlink{classBullSpreadPayoff_a9d8f81a1d25139ecd0d7391011a74f80}{00059}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBullSpreadPayoff_a1ce73fd9dc1d45c200fb009c9df3ee13}{BullSpreadPayoff::Strike1}}(\textcolor{keywordtype}{double} NewStrike1)}
+\DoxyCodeLine{00060 \{\textcolor{comment}{// Set K1}}
+\DoxyCodeLine{00061     K1 = NewStrike1;}
+\DoxyCodeLine{00062 \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00064}\mbox{\hyperlink{classBullSpreadPayoff_affd871c9127bf87fc2bb1b7aef5f6ee0}{00064}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBullSpreadPayoff_a37fcd22264e1d06fb2e794fe689a0ee9}{BullSpreadPayoff::Strike2}}(\textcolor{keywordtype}{double} NewStrike2)}
+\DoxyCodeLine{00065 \{\textcolor{comment}{// Set K2}}
+\DoxyCodeLine{00066     K2 = NewStrike2;}
+\DoxyCodeLine{00067 \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00069}\mbox{\hyperlink{classBullSpreadPayoff_a83c809b9fbf1119d9ed7680237edca1c}{00069}} \mbox{\hyperlink{classBullSpreadPayoff}{BullSpreadPayoff}}\& \mbox{\hyperlink{classBullSpreadPayoff_a83c809b9fbf1119d9ed7680237edca1c}{BullSpreadPayoff::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classBullSpreadPayoff}{BullSpreadPayoff}} \&source)}
+\DoxyCodeLine{00070 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00073     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{comment}{// Call base class assignment}}
+\DoxyCodeLine{00076     \mbox{\hyperlink{classPayoff_ad2a5f6ec9c8336d4dc6ab00ecdd83393}{Payoff::operator = }}(source);}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{comment}{// Copy state}}
+\DoxyCodeLine{00079     K1 = source.K1;  }
+\DoxyCodeLine{00080     K2 = source.K2;  }
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     buyValue = source.buyValue;}
+\DoxyCodeLine{00083     sellValue = source.sellValue;}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00086 \}}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00089}\mbox{\hyperlink{classBullSpreadPayoff_a6c3f86354323a9a6149ba2cf88a74ba7}{00089}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBullSpreadPayoff_a6c3f86354323a9a6149ba2cf88a74ba7}{BullSpreadPayoff::payoff}}(\textcolor{keywordtype}{double} S)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00090 \textcolor{keyword}{}\{ \textcolor{comment}{// Based on Hull's book}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092         \textcolor{keywordflow}{if} (S >= K2)}
+\DoxyCodeLine{00093             \textcolor{keywordflow}{return} K2 -\/ K1;}
+\DoxyCodeLine{00094         \textcolor{keywordflow}{if} (S <= K1)}
+\DoxyCodeLine{00095             \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097         \textcolor{comment}{// In the interval [K1, K2]}}
+\DoxyCodeLine{00098         \textcolor{keywordflow}{return} S -\/ K1;}
+\DoxyCodeLine{00099 \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{\Hypertarget{BullSpreadPayoff_8cc_source_l00101}\mbox{\hyperlink{classBullSpreadPayoff_ab5b5198456e1449ce0ea4fd2aee6938d}{00101}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBullSpreadPayoff_ab5b5198456e1449ce0ea4fd2aee6938d}{BullSpreadPayoff::profit}}(\textcolor{keywordtype}{double} S)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00102 \textcolor{keyword}{}\{ \textcolor{comment}{// Profit}}
+\DoxyCodeLine{00103     \textcolor{keywordflow}{return} \mbox{\hyperlink{classBullSpreadPayoff_a6c3f86354323a9a6149ba2cf88a74ba7}{payoff}}(S) -\/ (buyValue -\/ sellValue);}
+\DoxyCodeLine{00104 \}}
+
+\end{DoxyCode}

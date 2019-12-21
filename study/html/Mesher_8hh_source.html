@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: include/duffy/Mesher.hh Source File</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: include/duffy/Mesher.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +78,7 @@ $(function() {
 <div class="title">Mesher.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// mesher.hpp</span></div>
+<a href="Mesher_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// mesher.hpp</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// A simple mesher on a 1d domain. We divide</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// an interval into J+1 mesh points, J-1 of which</span></div>
@@ -95,8 +95,8 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Mesher_HH</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define Mesher_HH</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;Vector.hh&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;Range.hh&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Vector_8hh.html">Vector.hh</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Range_8hh.html">Range.hh</a>&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classMesher.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMesher.html">Mesher</a></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
@@ -106,24 +106,32 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classMesher.html">Mesher</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classMesher.html#a1d69a9028407d910b655ae908eed0b12">Mesher</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classMesher.html">Mesher</a> (<span class="keywordtype">double</span> A, <span class="keywordtype">double</span> <a class="code" href="classB.html">B</a>, <span class="keywordtype">double</span> t, <span class="keywordtype">double</span> T);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classMesher.html#a1d69a9028407d910b655ae908eed0b12">Mesher</a> (<span class="keywordtype">double</span> A, <span class="keywordtype">double</span> <a class="code" href="classB.html">B</a>, <span class="keywordtype">double</span> t, <span class="keywordtype">double</span> <a class="code" href="namespaceNSEuropeanOption.html#a62a4ea4e8132239d531a9760dfe36b4d">T</a>);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classMesher.html">Mesher</a> (<span class="keyword">const</span> <a class="code" href="classRange.html">Range&lt;double&gt;</a>&amp; rX, <span class="keyword">const</span> <a class="code" href="classRange.html">Range&lt;double&gt;</a>&amp; rT);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classMesher.html#a1d69a9028407d910b655ae908eed0b12">Mesher</a> (<span class="keyword">const</span> <a class="code" href="classRange.html">Range&lt;double&gt;</a>&amp; rX, <span class="keyword">const</span> <a class="code" href="classRange.html">Range&lt;double&gt;</a>&amp; rT);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> xarr(<span class="keywordtype">int</span> J);   <span class="comment">// Mesh in direction 1</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> yarr(<span class="keywordtype">int</span> N);   <span class="comment">// Mesh in direction 2</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> <a class="code" href="classMesher.html#ac4ea39f27ea742098ff6fb8c911804a6">xarr</a>(<span class="keywordtype">int</span> J);   <span class="comment">// Mesh in direction 1</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> <a class="code" href="classMesher.html#a1069208ef6f02d47bf5464552309834c">yarr</a>(<span class="keywordtype">int</span> <a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a>);   <span class="comment">// Mesh in direction 2</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">double</span> timeStep(<span class="keywordtype">int</span> N);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classMesher.html#abbdcb06b69e60ef36b71474494f38c0b">timeStep</a>(<span class="keywordtype">int</span> <a class="code" href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a>);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassMesher_html"><div class="ttname"><a href="classMesher.html">Mesher</a></div><div class="ttdef"><b>Definition:</b> Mesher.hh:21</div></div>
+<div class="ttc" id="aclassMesher_html_ac4ea39f27ea742098ff6fb8c911804a6"><div class="ttname"><a href="classMesher.html#ac4ea39f27ea742098ff6fb8c911804a6">Mesher::xarr</a></div><div class="ttdeci">Vector&lt; double, long &gt; xarr(int J)</div><div class="ttdef"><b>Definition:</b> <a href="Mesher_8cc_source.html#l00037">Mesher.cc:37</a></div></div>
+<div class="ttc" id="aclassMesher_html"><div class="ttname"><a href="classMesher.html">Mesher</a></div><div class="ttdef"><b>Definition:</b> <a href="Mesher_8hh_source.html#l00021">Mesher.hh:21</a></div></div>
+<div class="ttc" id="aclassMesher_html_a1069208ef6f02d47bf5464552309834c"><div class="ttname"><a href="classMesher.html#a1069208ef6f02d47bf5464552309834c">Mesher::yarr</a></div><div class="ttdeci">Vector&lt; double, long &gt; yarr(int N)</div><div class="ttdef"><b>Definition:</b> <a href="Mesher_8cc_source.html#l00056">Mesher.cc:56</a></div></div>
 <div class="ttc" id="aclassRange_html"><div class="ttname"><a href="classRange.html">Range&lt; double &gt;</a></div></div>
+<div class="ttc" id="aclassMesher_html_a1d69a9028407d910b655ae908eed0b12"><div class="ttname"><a href="classMesher.html#a1d69a9028407d910b655ae908eed0b12">Mesher::Mesher</a></div><div class="ttdeci">Mesher()</div><div class="ttdef"><b>Definition:</b> <a href="Mesher_8cc_source.html#l00019">Mesher.cc:19</a></div></div>
+<div class="ttc" id="aRange_8hh_html"><div class="ttname"><a href="Range_8hh.html">Range.hh</a></div></div>
+<div class="ttc" id="aTestImpliedVolatility_8cc_html_a6cbb82a21dec4c4f36c3f78340be64de"><div class="ttname"><a href="TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de">N</a></div><div class="ttdeci">double N(double x)</div><div class="ttdef"><b>Definition:</b> <a href="TestImpliedVolatility_8cc_source.html#l00018">TestImpliedVolatility.cc:18</a></div></div>
+<div class="ttc" id="aVector_8hh_html"><div class="ttname"><a href="Vector_8hh.html">Vector.hh</a></div></div>
 <div class="ttc" id="aclassVector_html"><div class="ttname"><a href="classVector.html">Vector&lt; double, long &gt;</a></div></div>
-<div class="ttc" id="aclassB_html"><div class="ttname"><a href="classB.html">B</a></div><div class="ttdef"><b>Definition:</b> Delegation.cc:9</div></div>
+<div class="ttc" id="anamespaceNSEuropeanOption_html_a62a4ea4e8132239d531a9760dfe36b4d"><div class="ttname"><a href="namespaceNSEuropeanOption.html#a62a4ea4e8132239d531a9760dfe36b4d">NSEuropeanOption::T</a></div><div class="ttdeci">double T</div><div class="ttdef"><b>Definition:</b> <a href="TestNewNamespace_8cc_source.html#l00024">TestNewNamespace.cc:24</a></div></div>
+<div class="ttc" id="aclassMesher_html_abbdcb06b69e60ef36b71474494f38c0b"><div class="ttname"><a href="classMesher.html#abbdcb06b69e60ef36b71474494f38c0b">Mesher::timeStep</a></div><div class="ttdeci">double timeStep(int N)</div><div class="ttdef"><b>Definition:</b> <a href="Mesher_8cc_source.html#l00075">Mesher.cc:75</a></div></div>
+<div class="ttc" id="aclassB_html"><div class="ttname"><a href="classB.html">B</a></div><div class="ttdef"><b>Definition:</b> <a href="Delegation_8cc_source.html#l00009">Delegation.cc:9</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

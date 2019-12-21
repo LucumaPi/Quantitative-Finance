@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_FunctionWrapper_8cc">
+<title>tests/FunctionWrapper.cc File Reference</title>
+<indexterm><primary>tests/FunctionWrapper.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+</programlisting>Include dependency graph for FunctionWrapper.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="FunctionWrapper_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classCommand">Command&lt; ReturnType, Arguments &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structTwoD">TwoD&lt; T &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structThreeD">ThreeD&lt; T &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_FunctionWrapper_8cc_1a10185f2b0ada9d247af3d199fe70d450">fun1</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_FunctionWrapper_8cc_1a467328085f4286187878f9193bf9134b">fun2</link> (<link linkend="_structTwoD">TwoD</link>&lt; double &gt; p)</para>
+</listitem>
+            <listitem><para>int <link linkend="_FunctionWrapper_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_FunctionWrapper_8cc_1a10185f2b0ada9d247af3d199fe70d450"/>    <section>
+    <title>fun1()</title>
+<indexterm><primary>fun1</primary><secondary>FunctionWrapper.cc</secondary></indexterm>
+<indexterm><primary>FunctionWrapper.cc</primary><secondary>fun1</secondary></indexterm>
+<para><computeroutput>double fun1 (double x)</computeroutput></para><para>
+Definition at line 36 of file FunctionWrapper.cc.</para>
+<programlisting>37 {
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x*x;
+39 }
+</programlisting>    </section><anchor xml:id="_FunctionWrapper_8cc_1a467328085f4286187878f9193bf9134b"/>    <section>
+    <title>fun2()</title>
+<indexterm><primary>fun2</primary><secondary>FunctionWrapper.cc</secondary></indexterm>
+<indexterm><primary>FunctionWrapper.cc</primary><secondary>fun2</secondary></indexterm>
+<para><computeroutput>double fun2 (<link linkend="_structTwoD">TwoD</link>&lt; double &gt; p)</computeroutput></para><para>
+Definition at line 41 of file FunctionWrapper.cc.</para>
+<programlisting>42 {
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;p.<link linkend="_structTwoD_1a5264a3d3cbf244d7bc1bcf2b4d2dd491">x</link>&#32;+&#32;p.<link linkend="_structTwoD_1ad5b896f64bf03e6cae5d14c816816bc9">y</link>;
+44 }
+</programlisting>    </section><anchor xml:id="_FunctionWrapper_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>FunctionWrapper.cc</secondary></indexterm>
+<indexterm><primary>FunctionWrapper.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 46 of file FunctionWrapper.cc.</para>
+<programlisting>47 {
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Single&#32;input&#32;variable</emphasis>
+50 &#32;&#32;&#32;&#32;<link linkend="_classCommand">Command&lt;double, double&gt;</link>&#32;cmd1;
+51 &#32;&#32;&#32;&#32;cmd1.<link linkend="_classCommand_1a6c4e0f1ef5aa231a3cd311f040264b8f">f</link>&#32;=&#32;<link linkend="_FunctionWrapper_8cc_1a10185f2b0ada9d247af3d199fe70d450">fun1</link>;
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;ans&#32;=&#32;cmd1.<link linkend="_classCommand_1ab5e079d4b8d60b25d9c6890de074e871">exec</link>(2.9);&#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;ans&#32;&lt;&lt;&#32;std::endl;
+54 &#32;&#32;&#32;&#32;
+55 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Pair&#32;of&#32;arguments</emphasis>
+56 &#32;&#32;&#32;&#32;<link linkend="_structTwoD">TwoD&lt;double&gt;</link>&#32;myP;&#32;myP.<link linkend="_structTwoD_1a5264a3d3cbf244d7bc1bcf2b4d2dd491">x</link>&#32;=&#32;3;&#32;myP.<link linkend="_structTwoD_1ad5b896f64bf03e6cae5d14c816816bc9">y</link>&#32;=&#32;4;
+57 
+58 &#32;&#32;&#32;&#32;<link linkend="_classCommand">Command&lt;double, TwoD&lt;double&gt;</link>&#32;&gt;&#32;cmd2;
+59 &#32;&#32;&#32;&#32;cmd2.<link linkend="_classCommand_1a6c4e0f1ef5aa231a3cd311f040264b8f">f</link>&#32;=&#32;<link linkend="_FunctionWrapper_8cc_1a467328085f4286187878f9193bf9134b">fun2</link>;
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;ans2&#32;=&#32;cmd2.<link linkend="_classCommand_1ab5e079d4b8d60b25d9c6890de074e871">exec</link>(myP);&#32;&#32;&#32;
+61 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;ans2&#32;&lt;&lt;&#32;std::endl;
+62 
+63 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+64 }
+</programlisting></section>
+</section>
+</section>

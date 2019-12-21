@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: include/duffy/IBVPSolver.hh Source File</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: include/duffy/IBVPSolver.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +78,7 @@ $(function() {
 <div class="title">IBVPSolver.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ibvpsolver.hpp</span></div>
+<a href="IBVPSolver_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ibvpsolver.hpp</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Solvers for initial boundary value problems. We </span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// use an abstract base class; derived class implement</span></div>
@@ -97,10 +97,10 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define IBVPSOLVER_HH</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;IBVP.hh&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;NumericMatrix.hh&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;LUSolver.hh&quot;</span>      <span class="comment">// !! for convenience</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;Mesher.hh&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="IBVP_8hh.html">IBVP.hh</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NumericMatrix_8hh.html">NumericMatrix.hh</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LUSolver_8hh.html">LUSolver.hh</a>&quot;</span>      <span class="comment">// !! for convenience</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Mesher_8hh.html">Mesher.hh</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
@@ -114,57 +114,89 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> initIC();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classIBVP.html">IBVP</a>* ibvp;             <span class="comment">// Pointer to &#39;parent&#39;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#ac23f7379cd6d342fc9e640171ec2a43b">   37</a></span>&#160;    <a class="code" href="classIBVP.html">IBVP</a>* <a class="code" href="classIBVPFDM.html#ac23f7379cd6d342fc9e640171ec2a43b">ibvp</a>;             <span class="comment">// Pointer to &#39;parent&#39;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">long</span> N;                 <span class="comment">// The number of subdivision of interval in IBVP </span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">double</span> k;               <span class="comment">// Step length; redundant data but is efficient </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#aac47fc0313cfd94d1c76185636f01e09">   39</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classIBVPFDM.html#aac47fc0313cfd94d1c76185636f01e09">N</a>;                 <span class="comment">// The number of subdivision of interval in IBVP </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#a823466697562114bcde6f8ae43eeb3f5">   40</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classIBVPFDM.html#a823466697562114bcde6f8ae43eeb3f5">k</a>;               <span class="comment">// Step length; redundant data but is efficient </span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">long</span> J;                 <span class="comment">// The number of subdivisions of interval in IBVP </span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">double</span> h, h2;           <span class="comment">// Step length; redundant data but is efficient </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#a6bb6f364bb5fb19ad47db62da69c04e4">   42</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classIBVPFDM.html#a6bb6f364bb5fb19ad47db62da69c04e4">J</a>;                 <span class="comment">// The number of subdivisions of interval in IBVP </span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#a57f9b055edffae6936be2cb12e1746cb">   43</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classIBVPFDM.html#a20ec2ca54a8768c22ae5579021bcbc21">h</a>, <a class="code" href="classIBVPFDM.html#a57f9b055edffae6936be2cb12e1746cb">h2</a>;           <span class="comment">// Step length; redundant data but is efficient </span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> DN;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> DJ;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">double</span> DJJ;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#a7dc9a42c9aa5e88a0ce91bb2381083ef">   45</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classIBVPFDM.html#a7dc9a42c9aa5e88a0ce91bb2381083ef">DN</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#aadd87ba406920f5c4441d26108568e7b">   46</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classIBVPFDM.html#aadd87ba406920f5c4441d26108568e7b">DJ</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#aad9a3178a48c9a131dd577cea5490495">   47</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classIBVPFDM.html#aad9a3178a48c9a131dd577cea5490495">DJJ</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">double</span> tprev, tnow;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">long</span> currentIndex, maxIndex;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classMesher.html">Mesher</a> m;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> xarr; <span class="comment">// Useful work array</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> tarr; <span class="comment">// Useful work array</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#adcbf3a3c0024261777514d461f5fa28c">   49</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classIBVPFDM.html#adcbf3a3c0024261777514d461f5fa28c">tprev</a>, <a class="code" href="classIBVPFDM.html#ae4013b6a973f974279aa08d006b6d1a2">tnow</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#a11c7f409e503aec453107f69460d4d5b">   50</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classIBVPFDM.html#aa0bbe9ffc911dccf04204793fe467622">currentIndex</a>, <a class="code" href="classIBVPFDM.html#a11c7f409e503aec453107f69460d4d5b">maxIndex</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#a8852681de171f76e8351a07c6bb3fe8c">   51</a></span>&#160;    <a class="code" href="classMesher.html">Mesher</a> <a class="code" href="classIBVPFDM.html#a8852681de171f76e8351a07c6bb3fe8c">m</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#acde024de54dc2124db544dc6424365c7">   52</a></span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> <a class="code" href="classIBVPFDM.html#acde024de54dc2124db544dc6424365c7">xarr</a>; <span class="comment">// Useful work array</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#aecdb91332047c215ff4548e897f8e2d8">   53</a></span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> <a class="code" href="classIBVPFDM.html#aecdb91332047c215ff4548e897f8e2d8">tarr</a>; <span class="comment">// Useful work array</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Help functions (Strategy) and redundant data</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;double, long&gt;</a> res;        <span class="comment">// Will contain the results of the calculations</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#af4d88dae8cdfdc020b7ab0b296a7c8d5">   56</a></span>&#160;    <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;double, long&gt;</a> <a class="code" href="classIBVPFDM.html#af4d88dae8cdfdc020b7ab0b296a7c8d5">res</a>;        <span class="comment">// Will contain the results of the calculations</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Other data </span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">long</span> n;     <span class="comment">// Current counter</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> vecOld;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> vecNew;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#aa060a346aafe2c9d6f563e86211652f9">   59</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classIBVPFDM.html#aa060a346aafe2c9d6f563e86211652f9">n</a>;     <span class="comment">// Current counter</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#a9b5cf717e24fa77775650cbc2913785f">   60</a></span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> <a class="code" href="classIBVPFDM.html#a9b5cf717e24fa77775650cbc2913785f">vecOld</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classIBVPFDM.html#acdb610da30891ef45dba3af0ef080a2c">   61</a></span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> <a class="code" href="classIBVPFDM.html#acdb610da30891ef45dba3af0ef080a2c">vecNew</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classIBVPFDM.html">IBVPFDM</a>(<span class="keyword">const</span> <a class="code" href="classIBVPFDM.html">IBVPFDM</a>&amp; source); </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classIBVPFDM.html">IBVPFDM</a>&amp; operator = (<span class="keyword">const</span> <a class="code" href="classIBVPFDM.html">IBVPFDM</a>&amp; source);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classIBVPFDM.html#a5a131f0efb8cb71abea192b6afd26cd2">IBVPFDM</a>(<span class="keyword">const</span> <a class="code" href="classIBVPFDM.html">IBVPFDM</a>&amp; source); </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classIBVPFDM.html">IBVPFDM</a>&amp; <a class="code" href="classIBVPFDM.html#a3102b8d994991d993193a35df3d6c5ee">operator = </a>(<span class="keyword">const</span> <a class="code" href="classIBVPFDM.html">IBVPFDM</a>&amp; source);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classIBVPFDM.html">IBVPFDM</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classIBVPFDM.html">IBVPFDM</a>(<a class="code" href="classIBVP.html">IBVP</a>&amp; source, <span class="keywordtype">long</span> NSteps, <span class="keywordtype">long</span> JSteps);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classIBVPFDM.html#a5a131f0efb8cb71abea192b6afd26cd2">IBVPFDM</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classIBVPFDM.html#a5a131f0efb8cb71abea192b6afd26cd2">IBVPFDM</a>(<a class="code" href="classIBVP.html">IBVP</a>&amp; source, <span class="keywordtype">long</span> NSteps, <span class="keywordtype">long</span> JSteps);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classIBVPFDM.html">IBVPFDM</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classIBVPFDM.html#a08763948c0e366be4f87d4fc7173b1a2">~IBVPFDM</a>();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// N.B. !!! Resulting output of size N+1 and start index 1 !!!!!!</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;double, long&gt;</a>&amp; result();      <span class="comment">// The result of the calculation</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> XValues() <span class="keyword">const</span>;       <span class="comment">// Array of x values</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> TValues() <span class="keyword">const</span>;       <span class="comment">// Array of time values</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classNumericMatrix.html">NumericMatrix&lt;double, long&gt;</a>&amp; <a class="code" href="classIBVPFDM.html#ab78e1e05532a2359e674a4a729314b9a">result</a>();      <span class="comment">// The result of the calculation</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> <a class="code" href="classIBVPFDM.html#a7172f8bc3eebc85940ece135065f96ba">XValues</a>() <span class="keyword">const</span>;       <span class="comment">// Array of x values</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classVector.html">Vector&lt;double, long&gt;</a> <a class="code" href="classIBVPFDM.html#a95e702453d0b896062b632498e40438c">TValues</a>() <span class="keyword">const</span>;       <span class="comment">// Array of time values</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Hook function for Template Method pattern </span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> calculateBC() = 0; <span class="comment">// Tells how to calculate sol. at n+1</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> calculate() = 0; <span class="comment">// Tells how to calculate sol. at n+1</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIBVPFDM.html#a42bd377e3c0b16ddb05d8a3dea7a873b">calculateBC</a>() = 0; <span class="comment">// Tells how to calculate sol. at n+1</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIBVPFDM.html#a5b73954c7ae1987e856c02b985387872">calculate</a>() = 0; <span class="comment">// Tells how to calculate sol. at n+1</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassMesher_html"><div class="ttname"><a href="classMesher.html">Mesher</a></div><div class="ttdef"><b>Definition:</b> Mesher.hh:21</div></div>
+<div class="ttc" id="aIBVP_8hh_html"><div class="ttname"><a href="IBVP_8hh.html">IBVP.hh</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a823466697562114bcde6f8ae43eeb3f5"><div class="ttname"><a href="classIBVPFDM.html#a823466697562114bcde6f8ae43eeb3f5">IBVPFDM::k</a></div><div class="ttdeci">double k</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00040">IBVPSolver.hh:40</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_aadd87ba406920f5c4441d26108568e7b"><div class="ttname"><a href="classIBVPFDM.html#aadd87ba406920f5c4441d26108568e7b">IBVPFDM::DJ</a></div><div class="ttdeci">double DJ</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00046">IBVPSolver.hh:46</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a42bd377e3c0b16ddb05d8a3dea7a873b"><div class="ttname"><a href="classIBVPFDM.html#a42bd377e3c0b16ddb05d8a3dea7a873b">IBVPFDM::calculateBC</a></div><div class="ttdeci">virtual void calculateBC()=0</div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a57f9b055edffae6936be2cb12e1746cb"><div class="ttname"><a href="classIBVPFDM.html#a57f9b055edffae6936be2cb12e1746cb">IBVPFDM::h2</a></div><div class="ttdeci">double h2</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00043">IBVPSolver.hh:43</a></div></div>
+<div class="ttc" id="aLUSolver_8hh_html"><div class="ttname"><a href="LUSolver_8hh.html">LUSolver.hh</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_adcbf3a3c0024261777514d461f5fa28c"><div class="ttname"><a href="classIBVPFDM.html#adcbf3a3c0024261777514d461f5fa28c">IBVPFDM::tprev</a></div><div class="ttdeci">double tprev</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00049">IBVPSolver.hh:49</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a8852681de171f76e8351a07c6bb3fe8c"><div class="ttname"><a href="classIBVPFDM.html#a8852681de171f76e8351a07c6bb3fe8c">IBVPFDM::m</a></div><div class="ttdeci">Mesher m</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00051">IBVPSolver.hh:51</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a7172f8bc3eebc85940ece135065f96ba"><div class="ttname"><a href="classIBVPFDM.html#a7172f8bc3eebc85940ece135065f96ba">IBVPFDM::XValues</a></div><div class="ttdeci">Vector&lt; double, long &gt; XValues() const</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8cc_source.html#l00146">IBVPSolver.cc:146</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a08763948c0e366be4f87d4fc7173b1a2"><div class="ttname"><a href="classIBVPFDM.html#a08763948c0e366be4f87d4fc7173b1a2">IBVPFDM::~IBVPFDM</a></div><div class="ttdeci">virtual ~IBVPFDM()</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8cc_source.html#l00113">IBVPSolver.cc:113</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_acde024de54dc2124db544dc6424365c7"><div class="ttname"><a href="classIBVPFDM.html#acde024de54dc2124db544dc6424365c7">IBVPFDM::xarr</a></div><div class="ttdeci">Vector&lt; double, long &gt; xarr</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00052">IBVPSolver.hh:52</a></div></div>
+<div class="ttc" id="aclassMesher_html"><div class="ttname"><a href="classMesher.html">Mesher</a></div><div class="ttdef"><b>Definition:</b> <a href="Mesher_8hh_source.html#l00021">Mesher.hh:21</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a3102b8d994991d993193a35df3d6c5ee"><div class="ttname"><a href="classIBVPFDM.html#a3102b8d994991d993193a35df3d6c5ee">IBVPFDM::operator=</a></div><div class="ttdeci">IBVPFDM &amp; operator=(const IBVPFDM &amp;source)</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8cc_source.html#l00117">IBVPSolver.cc:117</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a9b5cf717e24fa77775650cbc2913785f"><div class="ttname"><a href="classIBVPFDM.html#a9b5cf717e24fa77775650cbc2913785f">IBVPFDM::vecOld</a></div><div class="ttdeci">Vector&lt; double, long &gt; vecOld</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00060">IBVPSolver.hh:60</a></div></div>
 <div class="ttc" id="aclassNumericMatrix_html"><div class="ttname"><a href="classNumericMatrix.html">NumericMatrix&lt; double, long &gt;</a></div></div>
-<div class="ttc" id="aclassIBVPFDM_html"><div class="ttname"><a href="classIBVPFDM.html">IBVPFDM</a></div><div class="ttdef"><b>Definition:</b> IBVPSolver.hh:27</div></div>
+<div class="ttc" id="aNumericMatrix_8hh_html"><div class="ttname"><a href="NumericMatrix_8hh.html">NumericMatrix.hh</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a6bb6f364bb5fb19ad47db62da69c04e4"><div class="ttname"><a href="classIBVPFDM.html#a6bb6f364bb5fb19ad47db62da69c04e4">IBVPFDM::J</a></div><div class="ttdeci">long J</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00042">IBVPSolver.hh:42</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_aecdb91332047c215ff4548e897f8e2d8"><div class="ttname"><a href="classIBVPFDM.html#aecdb91332047c215ff4548e897f8e2d8">IBVPFDM::tarr</a></div><div class="ttdeci">Vector&lt; double, long &gt; tarr</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00053">IBVPSolver.hh:53</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_ae4013b6a973f974279aa08d006b6d1a2"><div class="ttname"><a href="classIBVPFDM.html#ae4013b6a973f974279aa08d006b6d1a2">IBVPFDM::tnow</a></div><div class="ttdeci">double tnow</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00049">IBVPSolver.hh:49</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_ac23f7379cd6d342fc9e640171ec2a43b"><div class="ttname"><a href="classIBVPFDM.html#ac23f7379cd6d342fc9e640171ec2a43b">IBVPFDM::ibvp</a></div><div class="ttdeci">IBVP * ibvp</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00037">IBVPSolver.hh:37</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_aad9a3178a48c9a131dd577cea5490495"><div class="ttname"><a href="classIBVPFDM.html#aad9a3178a48c9a131dd577cea5490495">IBVPFDM::DJJ</a></div><div class="ttdeci">double DJJ</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00047">IBVPSolver.hh:47</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html"><div class="ttname"><a href="classIBVPFDM.html">IBVPFDM</a></div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00027">IBVPSolver.hh:27</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_af4d88dae8cdfdc020b7ab0b296a7c8d5"><div class="ttname"><a href="classIBVPFDM.html#af4d88dae8cdfdc020b7ab0b296a7c8d5">IBVPFDM::res</a></div><div class="ttdeci">NumericMatrix&lt; double, long &gt; res</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00056">IBVPSolver.hh:56</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a7dc9a42c9aa5e88a0ce91bb2381083ef"><div class="ttname"><a href="classIBVPFDM.html#a7dc9a42c9aa5e88a0ce91bb2381083ef">IBVPFDM::DN</a></div><div class="ttdeci">double DN</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00045">IBVPSolver.hh:45</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a95e702453d0b896062b632498e40438c"><div class="ttname"><a href="classIBVPFDM.html#a95e702453d0b896062b632498e40438c">IBVPFDM::TValues</a></div><div class="ttdeci">Vector&lt; double, long &gt; TValues() const</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8cc_source.html#l00151">IBVPSolver.cc:151</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a20ec2ca54a8768c22ae5579021bcbc21"><div class="ttname"><a href="classIBVPFDM.html#a20ec2ca54a8768c22ae5579021bcbc21">IBVPFDM::h</a></div><div class="ttdeci">double h</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00043">IBVPSolver.hh:43</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_aa060a346aafe2c9d6f563e86211652f9"><div class="ttname"><a href="classIBVPFDM.html#aa060a346aafe2c9d6f563e86211652f9">IBVPFDM::n</a></div><div class="ttdeci">long n</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00059">IBVPSolver.hh:59</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_acdb610da30891ef45dba3af0ef080a2c"><div class="ttname"><a href="classIBVPFDM.html#acdb610da30891ef45dba3af0ef080a2c">IBVPFDM::vecNew</a></div><div class="ttdeci">Vector&lt; double, long &gt; vecNew</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00061">IBVPSolver.hh:61</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_aa0bbe9ffc911dccf04204793fe467622"><div class="ttname"><a href="classIBVPFDM.html#aa0bbe9ffc911dccf04204793fe467622">IBVPFDM::currentIndex</a></div><div class="ttdeci">long currentIndex</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00050">IBVPSolver.hh:50</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a5b73954c7ae1987e856c02b985387872"><div class="ttname"><a href="classIBVPFDM.html#a5b73954c7ae1987e856c02b985387872">IBVPFDM::calculate</a></div><div class="ttdeci">virtual void calculate()=0</div></div>
+<div class="ttc" id="aMesher_8hh_html"><div class="ttname"><a href="Mesher_8hh.html">Mesher.hh</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_ab78e1e05532a2359e674a4a729314b9a"><div class="ttname"><a href="classIBVPFDM.html#ab78e1e05532a2359e674a4a729314b9a">IBVPFDM::result</a></div><div class="ttdeci">NumericMatrix&lt; double, long &gt; &amp; result()</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8cc_source.html#l00123">IBVPSolver.cc:123</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a11c7f409e503aec453107f69460d4d5b"><div class="ttname"><a href="classIBVPFDM.html#a11c7f409e503aec453107f69460d4d5b">IBVPFDM::maxIndex</a></div><div class="ttdeci">long maxIndex</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00050">IBVPSolver.hh:50</a></div></div>
 <div class="ttc" id="aclassVector_html"><div class="ttname"><a href="classVector.html">Vector&lt; double, long &gt;</a></div></div>
-<div class="ttc" id="aclassIBVP_html"><div class="ttname"><a href="classIBVP.html">IBVP</a></div><div class="ttdef"><b>Definition:</b> IBVP.hh:20</div></div>
+<div class="ttc" id="aclassIBVP_html"><div class="ttname"><a href="classIBVP.html">IBVP</a></div><div class="ttdef"><b>Definition:</b> <a href="IBVP_8hh_source.html#l00020">IBVP.hh:20</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_a5a131f0efb8cb71abea192b6afd26cd2"><div class="ttname"><a href="classIBVPFDM.html#a5a131f0efb8cb71abea192b6afd26cd2">IBVPFDM::IBVPFDM</a></div><div class="ttdeci">IBVPFDM()</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8cc_source.html#l00087">IBVPSolver.cc:87</a></div></div>
+<div class="ttc" id="aclassIBVPFDM_html_aac47fc0313cfd94d1c76185636f01e09"><div class="ttname"><a href="classIBVPFDM.html#aac47fc0313cfd94d1c76185636f01e09">IBVPFDM::N</a></div><div class="ttdeci">long N</div><div class="ttdef"><b>Definition:</b> <a href="IBVPSolver_8hh_source.html#l00039">IBVPSolver.hh:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

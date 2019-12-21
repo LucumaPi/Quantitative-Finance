@@ -2,6 +2,10 @@
 \label{classBestWorstStrategy}\index{BestWorstStrategy@{BestWorstStrategy}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Best\+Worst\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,14 +25,65 @@ Collaboration diagram for Best\+Worst\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classBestWorstStrategy_a7fccff78a19686708b54f34c3b089786}\label{classBestWorstStrategy_a7fccff78a19686708b54f34c3b089786}} 
-{\bfseries Best\+Worst\+Strategy} (double cash, double Best\+Worst)
+\mbox{\hyperlink{classBestWorstStrategy_a7fccff78a19686708b54f34c3b089786}{Best\+Worst\+Strategy}} (double cash, double Best\+Worst)
 \item 
-\mbox{\Hypertarget{classBestWorstStrategy_a9f6f1a30e538d7c4ad18ea59bf808460}\label{classBestWorstStrategy_a9f6f1a30e538d7c4ad18ea59bf808460}} 
-double {\bfseries payoff} (double S1, double S2) const
+double \mbox{\hyperlink{classBestWorstStrategy_a9f6f1a30e538d7c4ad18ea59bf808460}{payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00080}{80}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBestWorstStrategy_a7fccff78a19686708b54f34c3b089786}\label{classBestWorstStrategy_a7fccff78a19686708b54f34c3b089786}} 
+\index{BestWorstStrategy@{BestWorstStrategy}!BestWorstStrategy@{BestWorstStrategy}}
+\index{BestWorstStrategy@{BestWorstStrategy}!BestWorstStrategy@{BestWorstStrategy}}
+\doxysubsubsection{\texorpdfstring{BestWorstStrategy()}{BestWorstStrategy()}}
+{\footnotesize\ttfamily Best\+Worst\+Strategy\+::\+Best\+Worst\+Strategy (\begin{DoxyParamCaption}\item[{double}]{cash,  }\item[{double}]{Best\+Worst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00087}{87}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088         \{ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = cash; w = BestWorst;\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBestWorstStrategy_a9f6f1a30e538d7c4ad18ea59bf808460}\label{classBestWorstStrategy_a9f6f1a30e538d7c4ad18ea59bf808460}} 
+\index{BestWorstStrategy@{BestWorstStrategy}!payoff@{payoff}}
+\index{payoff@{payoff}!BestWorstStrategy@{BestWorstStrategy}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Best\+Worst\+Strategy\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{Multi\+Asset\+Payoff\+Strategy}}.
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00090}{90}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091         \{}
+\DoxyCodeLine{00092     }
+\DoxyCodeLine{00093             \textcolor{keywordflow}{if} (w == 1) \textcolor{comment}{// Best}}
+\DoxyCodeLine{00094                 \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} (S1, S2, \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_adb69bfcb34a8cdf14dcb3fc08f9687c0}{Min}} (S1, S2, \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00097         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff\+Strategy.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoffStrategy_8hh}{Multi\+Asset\+Payoff\+Strategy.\+hh}}\end{DoxyCompactItemize}

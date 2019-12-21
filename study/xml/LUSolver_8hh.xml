@@ -11,14 +11,18 @@
     <incdepgraph>
       <node id="2">
         <label>Vector.hh</label>
-        <link refid="Vector_8hh_source"/>
+        <link refid="Vector_8hh"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -26,88 +30,205 @@
         <link refid="LUSolver_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
         </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
       </node>
-      <node id="12">
+      <node id="21">
         <label>cmath</label>
       </node>
       <node id="3">
         <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
+        <link refid="Array_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>../../src/Matrix.cc</label>
+        <link refid="Matrix_8cc"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="9">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
         <label>Matrix.hh</label>
-        <link refid="Matrix_8hh_source"/>
+        <link refid="Matrix_8hh"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>../../src/MatrixStructure.cc</label>
+        <link refid="MatrixStructure_8cc"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>../../src/FullMatrix.cc</label>
+        <link refid="FullMatrix_8cc"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>FullMatrix.hh</label>
+        <link refid="FullMatrix_8hh"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>../../src/LUSolver.cc</label>
+        <link refid="LUSolver_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>NumericMatrix.hh</label>
+        <link refid="NumericMatrix_8hh"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>../../src/NumericMatrix.cc</label>
+        <link refid="NumericMatrix_8cc"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="19">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>cstddef</label>
+      </node>
+      <node id="11">
+        <label>../../src/Vector.cc</label>
+        <link refid="Vector_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>FullArray.hh</label>
+        <link refid="FullArray_8hh"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>MatrixStructure.hh</label>
+        <link refid="MatrixStructure_8hh"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9">
+        <label>src/IBVPSolver.cc</label>
+        <link refid="IBVPSolver_8cc"/>
+      </node>
+      <node id="1">
+        <label>include/duffy/LUSolver.hh</label>
+        <link refid="LUSolver_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+      </node>
+      <node id="6">
+        <label>tests/TestSTD.cc</label>
+        <link refid="TestSTD_8cc"/>
+      </node>
+      <node id="4">
+        <label>src/EEulerIBVPSolver.cc</label>
+        <link refid="EEulerIBVPSolver_8cc"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="10">
-        <label>FullMatrix.hh</label>
-        <link refid="FullMatrix_8hh_source"/>
-        <childnode refid="11" relation="include">
+        <label>src/LUSolver.cc</label>
+        <link refid="LUSolver_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/duffy/IEulerIBVPSolver.hh</label>
+        <link refid="IEulerIBVPSolver_8hh"/>
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="8">
-        <label>NumericMatrix.hh</label>
-        <link refid="NumericMatrix_8hh_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>vector</label>
+        <label>src/IEulerIBVPSolver.cc</label>
+        <link refid="IEulerIBVPSolver_8cc"/>
       </node>
       <node id="5">
-        <label>cstddef</label>
-      </node>
-      <node id="6">
-        <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>MatrixStructure.hh</label>
-        <link refid="MatrixStructure_8hh_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="1">
-        <label>include/duffy/LUSolver.hh</label>
-        <link refid="LUSolver_8hh"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>include/duffy/IEulerIBVPSolver.hh</label>
-        <link refid="IEulerIBVPSolver_8hh_source"/>
+        <label>tests/TestIBVP.cc</label>
+        <link refid="TestIBVP_8cc"/>
       </node>
       <node id="3">
         <label>include/duffy/EEulerIBVPSolver.hh</label>
-        <link refid="EEulerIBVPSolver_8hh_source"/>
+        <link refid="EEulerIBVPSolver_8hh"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>include/duffy/IBVPSolver.hh</label>
-        <link refid="IBVPSolver_8hh_source"/>
+        <link refid="IBVPSolver_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -129,8 +250,8 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LUSolver_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LUSolver_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hh&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arrays<sp/>with<sp/>mathematical<sp/>properties</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;NumericMatrix.hh&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Matrices<sp/>with<sp/>numerical<sp/>properties</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector_8hh" kindref="compound">Vector.hh</ref>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arrays<sp/>with<sp/>mathematical<sp/>properties</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="NumericMatrix_8hh" kindref="compound">NumericMatrix.hh</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Matrices<sp/>with<sp/>numerical<sp/>properties</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17" refid="classLUTridiagonalSolver" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>V,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>I&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref></highlight></codeline>
@@ -161,19 +282,19 @@
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref>();</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref>(<ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>lower_A,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>diagonal_B,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>upper_C,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>rhs_R);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/>source);<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver_1aceddcd98aa6ec424d5e537f07d87576f" kindref="member">LUTridiagonalSolver</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver_1aceddcd98aa6ec424d5e537f07d87576f" kindref="member">LUTridiagonalSolver</ref>(<ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>lower_A,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>diagonal_B,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>upper_C,<sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref>&amp;<sp/>rhs_R);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver_1aceddcd98aa6ec424d5e537f07d87576f" kindref="member">LUTridiagonalSolver</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/>source);<sp/></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classLUTridiagonalSolver_1a1644f4512162dc3c91f5598dc3b5caad" kindref="member">~LUTridiagonalSolver</ref>();</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/>source);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/><ref refid="classLUTridiagonalSolver_1a2cdb62889b9371224819f07a5daf5df3" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLUTridiagonalSolver" kindref="compound">LUTridiagonalSolver&lt;V,I&gt;</ref>&amp;<sp/>source);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>the<sp/>(final)<sp/>solution<sp/>to<sp/>Au<sp/>=<sp/>r</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/>solve();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V,I&gt;</ref><sp/><ref refid="classLUTridiagonalSolver_1aaa85d72ad1cd651291fee595db3fe1d8" kindref="member">solve</ref>();</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>diagonallyDominant()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLUTridiagonalSolver_1a4cb24bdf98332a3fd46da775166ced08" kindref="member">diagonallyDominant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal">};</highlight></codeline>

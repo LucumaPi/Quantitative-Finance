@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classArray">
 <title>Array&lt; V, I, S &gt; Class Template Reference</title>
 <indexterm><primary>Array&lt; V, I, S &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Array.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for Array&lt; V, I, S &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -23,28 +26,169 @@ Collaboration diagram for Array&lt; V, I, S &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classArray_1a0c477151b2e9ee7cee999e635c0a53ad"/><emphasis role="strong">Array</emphasis> (I size)</para>
+            <listitem><para><link linkend="_classArray_1a825b1a1333fbf75a9a2d8812d02a58e4">Array</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1a16fff3c418cff090289bd944d54e0c18"/><emphasis role="strong">Array</emphasis> (I size, I start)</para>
+            <listitem><para><link linkend="_classArray_1a0c477151b2e9ee7cee999e635c0a53ad">Array</link> (I size)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1ad5271fd679b4a99a110724c4afba2569"/><emphasis role="strong">Array</emphasis> (I size, I start, const V &amp;value)</para>
+            <listitem><para><link linkend="_classArray_1a16fff3c418cff090289bd944d54e0c18">Array</link> (I size, I start)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1aa3192a8b393ea5fa18885d5db3c152f4"/><emphasis role="strong">Array</emphasis> (const <link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp;source)</para>
+            <listitem><para><link linkend="_classArray_1ad5271fd679b4a99a110724c4afba2569">Array</link> (I size, I start, const V &amp;value)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1acffe058a1dd631b05fb71a83e27b445a"/>I <emphasis role="strong">MinIndex</emphasis> () const</para>
+            <listitem><para><link linkend="_classArray_1aa3192a8b393ea5fa18885d5db3c152f4">Array</link> (const <link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965"/>I <emphasis role="strong">MaxIndex</emphasis> () const</para>
+            <listitem><para>virtual <link linkend="_classArray_1a1b1a13c1a2d5be706c18eda75f0941dd">~Array</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1a69342621906b355e8244466f9eeece71"/>I <emphasis role="strong">Size</emphasis> () const</para>
+            <listitem><para>I <link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1a75935c222b8e83ce9e5918196d80a445"/>virtual V &amp; <emphasis role="strong">operator[]</emphasis> (I index)</para>
+            <listitem><para>I <link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1a3e1537efaf9501fc6fe5c75654d3d63e"/>virtual const V &amp; <emphasis role="strong">operator[]</emphasis> (I index) const</para>
+            <listitem><para>I <link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classArray_1ac27f5b9655cda7daecc9d09298a454bf"/><link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp;source)</para>
+            <listitem><para>virtual V &amp; <link linkend="_classArray_1a75935c222b8e83ce9e5918196d80a445">operator[]</link> (I index)</para>
+</listitem>
+            <listitem><para>virtual const V &amp; <link linkend="_classArray_1a3e1537efaf9501fc6fe5c75654d3d63e">operator[]</link> (I index) const</para>
+</listitem>
+            <listitem><para><link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp; <link linkend="_classArray_1ac27f5b9655cda7daecc9d09298a454bf">operator=</link> (const <link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp;source)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class V, class I = int, class S = FullArray&lt;V&gt;&gt;
+class Array&lt; V, I, S &gt;</title></simplesect>
+
+<para>
+Definition at line 17 of file Array.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classArray_1a825b1a1333fbf75a9a2d8812d02a58e4"/>    <section>
+    <title>Array()<computeroutput>[1/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>Array</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classArray">Array</link>&lt; V, I, S &gt;::<link linkend="_classArray">Array</link> ( )</computeroutput></para><para>
+Definition at line 22 of file Array.cc.</para>
+<programlisting>23 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+24 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;S();
+25 &#32;&#32;&#32;&#32;m_start&#32;=&#32;1;
+26 }
+</programlisting>    </section><anchor xml:id="_classArray_1a0c477151b2e9ee7cee999e635c0a53ad"/>    <section>
+    <title>Array()<computeroutput>[2/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>Array</secondary></indexterm>
+<computeroutput>template&lt;class V , class I, class S &gt; </computeroutput><para><computeroutput><link linkend="_classArray">Array</link>&lt; V, I, S &gt;::<link linkend="_classArray">Array</link> (I size)</computeroutput></para><para>
+Definition at line 29 of file Array.cc.</para>
+<programlisting>30 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size.&#32;Start&#32;index=1.</emphasis>
+31 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;S(std::size_t(size));
+32 &#32;&#32;&#32;&#32;m_start&#32;=&#32;1;
+33 }
+</programlisting>    </section><anchor xml:id="_classArray_1a16fff3c418cff090289bd944d54e0c18"/>    <section>
+    <title>Array()<computeroutput>[3/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>Array</secondary></indexterm>
+<computeroutput>template&lt;class V , class I, class S &gt; </computeroutput><para><computeroutput><link linkend="_classArray">Array</link>&lt; V, I, S &gt;::<link linkend="_classArray">Array</link> (I size, I start)</computeroutput></para><para>
+Definition at line 36 of file Array.cc.</para>
+<programlisting>37 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size&#32;&amp;&#32;start&#32;index</emphasis>
+38 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;S(std::size_t(size));
+39 &#32;&#32;&#32;&#32;m_start&#32;=&#32;start;
+40 }
+</programlisting>    </section><anchor xml:id="_classArray_1ad5271fd679b4a99a110724c4afba2569"/>    <section>
+    <title>Array()<computeroutput>[4/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>Array</secondary></indexterm>
+<computeroutput>template&lt;class V, class I, class S &gt; </computeroutput><para><computeroutput><link linkend="_classArray">Array</link>&lt; V, I, S &gt;::<link linkend="_classArray">Array</link> (I size, I start, const V &amp; value)</computeroutput></para><para>
+Definition at line 43 of file Array.cc.</para>
+<programlisting>44 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size&#32;&amp;&#32;start&#32;index</emphasis>
+45 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;S(std::size_t(size));
+46 &#32;&#32;&#32;&#32;m_start&#32;=&#32;start;
+47 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initialise&#32;array&#32;elements</emphasis>
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;i&#32;&lt;=&#32;<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++)&#32;(*<emphasis role="keyword">this</emphasis>)[i]&#32;=&#32;value;
+49 }
+</programlisting>    </section><anchor xml:id="_classArray_1aa3192a8b393ea5fa18885d5db3c152f4"/>    <section>
+    <title>Array()<computeroutput>[5/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>Array</secondary></indexterm>
+<computeroutput>template&lt;class V, class I, class S&gt; </computeroutput><para><computeroutput><link linkend="_classArray">Array</link>&lt; V, I, S &gt;::<link linkend="_classArray">Array</link> (const <link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp; source)</computeroutput></para><para>
+Definition at line 52 of file Array.cc.</para>
+<programlisting>53 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+54 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;source.m_structure;
+55 &#32;&#32;&#32;&#32;m_start&#32;=&#32;source.m_start;
+56 }
+</programlisting>    </section><anchor xml:id="_classArray_1a1b1a13c1a2d5be706c18eda75f0941dd"/>    <section>
+    <title>~Array()</title>
+<indexterm><primary>~Array</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>~Array</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classArray">Array</link>&lt; V, I, S &gt;::~<link linkend="_classArray">Array</link> ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 59 of file Array.cc.</para>
+<programlisting>60 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+61 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965"/>    <section>
+    <title>MaxIndex()</title>
+<indexterm><primary>MaxIndex</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>MaxIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classArray">Array</link>&lt; V, I, S &gt;::MaxIndex ( ) const</computeroutput></para><para>
+Definition at line 71 of file Array.cc.</para>
+<programlisting>72 {&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;maximum&#32;index</emphasis>
+73 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_start&#32;+&#32;<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;-&#32;1;
+74 }
+</programlisting>    </section><anchor xml:id="_classArray_1acffe058a1dd631b05fb71a83e27b445a"/>    <section>
+    <title>MinIndex()</title>
+<indexterm><primary>MinIndex</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>MinIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classArray">Array</link>&lt; V, I, S &gt;::MinIndex ( ) const</computeroutput></para><para>
+Definition at line 65 of file Array.cc.</para>
+<programlisting>66 {&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;minimum&#32;index</emphasis>
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_start;
+68 }
+</programlisting>    </section><anchor xml:id="_classArray_1ac27f5b9655cda7daecc9d09298a454bf"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class V, class I, class S&gt; </computeroutput><para><computeroutput><link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp; <link linkend="_classArray">Array</link>&lt; V, I, S &gt;::operator= (const <link linkend="_classArray">Array</link>&lt; V, I, S &gt; &amp; source)</computeroutput></para><para>
+Definition at line 96 of file Array.cc.</para>
+<programlisting>97 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+98 
+99 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exit&#32;if&#32;same&#32;object</emphasis>
+100 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>&#32;==&#32;&amp;source)&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+101 
+102 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;source.m_structure;
+103 &#32;&#32;&#32;&#32;m_start&#32;=&#32;source.m_start;
+104 &#32;&#32;&#32;&#32;
+105 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+106 }
+</programlisting>    </section><anchor xml:id="_classArray_1a75935c222b8e83ce9e5918196d80a445"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class V , class I, class S &gt; </computeroutput><para><computeroutput>V &amp; <link linkend="_classArray">Array</link>&lt; V, I, S &gt;::operator[] (I index)<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 84 of file Array.cc.</para>
+<programlisting>85 {&#32;<emphasis role="comment">//&#32;Subscripting&#32;operator</emphasis>
+86 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_structure[index&#32;-&#32;m_start&#32;+&#32;1];
+87 }
+</programlisting>    </section><anchor xml:id="_classArray_1a3e1537efaf9501fc6fe5c75654d3d63e"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class V , class I, class S &gt; </computeroutput><para><computeroutput>const V &amp; <link linkend="_classArray">Array</link>&lt; V, I, S &gt;::operator[] (I index) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 90 of file Array.cc.</para>
+<programlisting>91 {&#32;<emphasis role="comment">//&#32;Subscripting&#32;operator</emphasis>
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_structure[index&#32;-&#32;m_start&#32;+&#32;1];
+93 }
+</programlisting>    </section><anchor xml:id="_classArray_1a69342621906b355e8244466f9eeece71"/>    <section>
+    <title>Size()</title>
+<indexterm><primary>Size</primary><secondary>Array&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Array&lt; V, I, S &gt;</primary><secondary>Size</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classArray">Array</link>&lt; V, I, S &gt;::Size ( ) const</computeroutput></para><para>
+Definition at line 77 of file Array.cc.</para>
+<programlisting>78 {&#32;<emphasis role="comment">//&#32;The&#32;size&#32;of&#32;the&#32;array</emphasis>
+79 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;I(m_structure.Size());
+80 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Array.hhsrc/Array.cc</section>
+include/duffy/<link linkend="_Array_8hh">Array.hh</link>src/<link linkend="_Array_8cc">Array.cc</link></section>
+</section>

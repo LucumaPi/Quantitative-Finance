@@ -14,12 +14,55 @@ Collaboration diagram for C1:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classC1_1a4222be94f2d7c78ac5794c5c54ac220e"/><emphasis role="strong">C1</emphasis> (int N)</para>
+            <listitem><para><link linkend="_classC1_1a4222be94f2d7c78ac5794c5c54ac220e">C1</link> (int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classC1_1ad279b0edbeb116fe47b199cd42e06560"/>double <emphasis role="strong">getValue</emphasis> () const</para>
+            <listitem><para>double <link linkend="_classC1_1ad279b0edbeb116fe47b199cd42e06560">getValue</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_classC1_1ae3385f47deadc6a01d600924fa9c852a">~C1</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 9 of file Association.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classC1_1a4222be94f2d7c78ac5794c5c54ac220e"/>    <section>
+    <title>C1()</title>
+<indexterm><primary>C1</primary><secondary>C1</secondary></indexterm>
+<indexterm><primary>C1</primary><secondary>C1</secondary></indexterm>
+<para><computeroutput>C1::C1 (int N)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 15 of file Association.cc.</para>
+<programlisting>16 &#32;&#32;&#32;&#32;{&#32;
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;size&#32;=&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iarr&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>[size];
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;&#32;j++)
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iarr[j]&#32;=&#32;double(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>-j);
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+23 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classC1_1ae3385f47deadc6a01d600924fa9c852a"/>    <section>
+    <title>~C1()</title>
+<indexterm><primary>~C1</primary><secondary>C1</secondary></indexterm>
+<indexterm><primary>C1</primary><secondary>~C1</secondary></indexterm>
+<para><computeroutput>C1::~C1 ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 26 of file Association.cc.</para>
+<programlisting>26 {&#32;<emphasis role="keyword">delete</emphasis>&#32;[]&#32;iarr;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classC1_1ad279b0edbeb116fe47b199cd42e06560"/>    <section>
+    <title>getValue()</title>
+<indexterm><primary>getValue</primary><secondary>C1</secondary></indexterm>
+<indexterm><primary>C1</primary><secondary>getValue</secondary></indexterm>
+<para><computeroutput>double C1::getValue ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 25 of file Association.cc.</para>
+<programlisting>25 {<emphasis role="keywordflow">return</emphasis>&#32;iarr[0]/double(size);}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-tests/Association.cc</section>
+tests/<link linkend="_Association_8cc">Association.cc</link></section>
+</section>

@@ -12,38 +12,38 @@
 \DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef MatrixStructure\_hh}}
 \DoxyCodeLine{00009 \textcolor{preprocessor}{\#define MatrixStructure\_hh}}
 \DoxyCodeLine{00010 }
-\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "ArrayStructure.hh"}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{ArrayStructure_8hh}{ArrayStructure.hh}}"}}
 \DoxyCodeLine{00012 }
 \DoxyCodeLine{00013 \textcolor{keyword}{template} <\textcolor{keyword}{class} TValue>}
 \DoxyCodeLine{\Hypertarget{MatrixStructure_8hh_source_l00014}\mbox{\hyperlink{classMatrixStructure}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classMatrixStructure}{MatrixStructure}}}
 \DoxyCodeLine{00015 \{}
 \DoxyCodeLine{00016 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00017     \textcolor{comment}{// Constructors \& destructor}}
-\DoxyCodeLine{00018     \mbox{\hyperlink{classMatrixStructure}{MatrixStructure}}();                                               \textcolor{comment}{// Default constructor}}
-\DoxyCodeLine{00019     \mbox{\hyperlink{classMatrixStructure}{MatrixStructure}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<TValue>}}\& source);           \textcolor{comment}{// Copy constructor}}
-\DoxyCodeLine{00020     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classMatrixStructure}{MatrixStructure}}();                                      \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00018     \mbox{\hyperlink{classMatrixStructure_ab9e6d544c166b894b28f7b83a2114afd}{MatrixStructure}}();                                               \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00019     \mbox{\hyperlink{classMatrixStructure_ab9e6d544c166b894b28f7b83a2114afd}{MatrixStructure}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<TValue>}}\& source);           \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00020     \textcolor{keyword}{virtual} \mbox{\hyperlink{classMatrixStructure_a63b1628587fc0e268b945f7e4b834624}{~MatrixStructure}}();                                     \textcolor{comment}{// Destructor}}
 \DoxyCodeLine{00021 }
 \DoxyCodeLine{00022     \textcolor{comment}{// Selectors}}
-\DoxyCodeLine{00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} Rows() \textcolor{keyword}{const}=0;                                  \textcolor{comment}{// Number of rows}}
-\DoxyCodeLine{00024     \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} Columns() \textcolor{keyword}{const}=0;                               \textcolor{comment}{// Number of columns}}
-\DoxyCodeLine{00025     \textcolor{keyword}{const} TValue\& Element(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column) \textcolor{keyword}{const};         \textcolor{comment}{// Get element at position}}
+\DoxyCodeLine{00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_a1f9a91f713f03ceeda90e4dc3d17dcb3}{Rows}}() \textcolor{keyword}{const}=0;                                  \textcolor{comment}{// Number of rows}}
+\DoxyCodeLine{00024     \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_a33fe5393a149b31d428a1931f1e0e7e1}{Columns}}() \textcolor{keyword}{const}=0;                                \textcolor{comment}{// Number of columns}}
+\DoxyCodeLine{00025     \textcolor{keyword}{const} TValue\& \mbox{\hyperlink{classMatrixStructure_a30fd4009debf853fa0cf5eec196c1d76}{Element}}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column) \textcolor{keyword}{const};          \textcolor{comment}{// Get element at position}}
 \DoxyCodeLine{00026 }
-\DoxyCodeLine{00027     \textcolor{keywordtype}{size\_t} MinRowIndex() \textcolor{keyword}{const};                                     \textcolor{comment}{// Return the minimum row index}}
-\DoxyCodeLine{00028     \textcolor{keywordtype}{size\_t} MaxRowIndex() \textcolor{keyword}{const};                                     \textcolor{comment}{// Return the maximum row index}}
-\DoxyCodeLine{00029     \textcolor{keywordtype}{size\_t} MinColumnIndex() \textcolor{keyword}{const};                                  \textcolor{comment}{// Return the minimum column index}}
-\DoxyCodeLine{00030     \textcolor{keywordtype}{size\_t} MaxColumnIndex() \textcolor{keyword}{const};                                  \textcolor{comment}{// Return the minimum column index}}
+\DoxyCodeLine{00027     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_a5ea22c53b73b04e14ca1ab05e8b22be0}{MinRowIndex}}() \textcolor{keyword}{const};                                      \textcolor{comment}{// Return the minimum row index}}
+\DoxyCodeLine{00028     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_aeadfc044bf86c889685062365303cddf}{MaxRowIndex}}() \textcolor{keyword}{const};                                      \textcolor{comment}{// Return the maximum row index}}
+\DoxyCodeLine{00029     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_a71f5cf156f0d3efa33b2aefa639b26b7}{MinColumnIndex}}() \textcolor{keyword}{const};                                    \textcolor{comment}{// Return the minimum column index}}
+\DoxyCodeLine{00030     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classMatrixStructure_a983c911ffca688272199c4d5dd703931}{MaxColumnIndex}}() \textcolor{keyword}{const};                                    \textcolor{comment}{// Return the minimum column index}}
 \DoxyCodeLine{00031 }
 \DoxyCodeLine{00032     \textcolor{comment}{// Modifiers}}
-\DoxyCodeLine{00033     \textcolor{keywordtype}{void} Element(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column, \textcolor{keyword}{const} TValue\& val);     \textcolor{comment}{// Change element at position}}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMatrixStructure_a30fd4009debf853fa0cf5eec196c1d76}{Element}}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column, \textcolor{keyword}{const} TValue\& val);      \textcolor{comment}{// Change element at position}}
 \DoxyCodeLine{00034 }
 \DoxyCodeLine{00035     \textcolor{comment}{// Operators}}
-\DoxyCodeLine{00036     \textcolor{keyword}{virtual} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<TValue>}}\& operator[] (\textcolor{keywordtype}{size\_t} index) = 0;                    \textcolor{comment}{// Subscripting operator}}
-\DoxyCodeLine{00037     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<TValue>}}\& operator[] (\textcolor{keywordtype}{size\_t} index) \textcolor{keyword}{const} = 0;        \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00036     \textcolor{keyword}{virtual} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<TValue>}}\& \mbox{\hyperlink{classMatrixStructure_aac06c3e30a639e2888a0a5bc367e67f8}{operator[] }}(\textcolor{keywordtype}{size\_t} index) = 0;                 \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00037     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<TValue>}}\& \mbox{\hyperlink{classMatrixStructure_aac06c3e30a639e2888a0a5bc367e67f8}{operator[] }}(\textcolor{keywordtype}{size\_t} index) \textcolor{keyword}{const} = 0;     \textcolor{comment}{// Subscripting operator}}
 \DoxyCodeLine{00038 }
-\DoxyCodeLine{00039     \textcolor{keyword}{const} TValue\& operator () (\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column) \textcolor{keyword}{const};    \textcolor{comment}{// Get the element at position}}
-\DoxyCodeLine{00040     TValue\& operator () (\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column);                \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00039     \textcolor{keyword}{const} TValue\& \mbox{\hyperlink{classMatrixStructure_a9bb17d896587d5810e745277975e5212}{operator () }}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column) \textcolor{keyword}{const};    \textcolor{comment}{// Get the element at position}}
+\DoxyCodeLine{00040     TValue\& \mbox{\hyperlink{classMatrixStructure_a9bb17d896587d5810e745277975e5212}{operator () }}(\textcolor{keywordtype}{size\_t} row, \textcolor{keywordtype}{size\_t} column);                \textcolor{comment}{// Get the element at position}}
 \DoxyCodeLine{00041 }
-\DoxyCodeLine{00042     \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<TValue>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<TValue>}}\& source);}
+\DoxyCodeLine{00042     \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<TValue>}}\& \mbox{\hyperlink{classMatrixStructure_a1d17ffed41cc515e70f90208b999191e}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrixStructure}{MatrixStructure<TValue>}}\& source);}
 \DoxyCodeLine{00043 \};}
 \DoxyCodeLine{00044 \textcolor{preprocessor}{\#include "../../src/MatrixStructure.cc"}}
 \DoxyCodeLine{00045 \textcolor{preprocessor}{\#endif  // MatrixStructure\_hh}}

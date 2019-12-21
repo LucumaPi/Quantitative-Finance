@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestAssocArrayTypedef_8cc">
+<title>tests/TestAssocArrayTypedef.cc File Reference</title>
+<indexterm><primary>tests/TestAssocArrayTypedef.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;duffy/AssocArray.hh&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestAssocArrayTypedef.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestAssocArrayTypedef_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classDD">DD</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="_classAssocArray">AssocArray</link>&lt; double, std::string &gt; <link linkend="_TestAssocArrayTypedef_8cc_1a6eb6772489e279ed41c4572b667ba89c">AArray</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_TestAssocArrayTypedef_8cc_1a2bb34dd95eef1806366acea95f2977db">print</link> (const <link linkend="_TestAssocArrayTypedef_8cc_1a6eb6772489e279ed41c4572b667ba89c">AArray</link> &amp;assArr)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestAssocArrayTypedef_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_TestAssocArrayTypedef_8cc_1a6eb6772489e279ed41c4572b667ba89c"/>    <section>
+    <title>AArray</title>
+<indexterm><primary>AArray</primary><secondary>TestAssocArrayTypedef.cc</secondary></indexterm>
+<indexterm><primary>TestAssocArrayTypedef.cc</primary><secondary>AArray</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="_classAssocArray">AssocArray</link>&lt;double, std::string&gt; <link linkend="_TestAssocArrayTypedef_8cc_1a6eb6772489e279ed41c4572b667ba89c">AArray</link></computeroutput></para><para>
+Definition at line 15 of file TestAssocArrayTypedef.cc.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestAssocArrayTypedef_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestAssocArrayTypedef.cc</secondary></indexterm>
+<indexterm><primary>TestAssocArrayTypedef.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 38 of file TestAssocArrayTypedef.cc.</para>
+<programlisting>39 {
+40 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;names;
+41 &#32;&#32;&#32;&#32;names.push_back(<emphasis role="stringliteral">&quot;A1&quot;</emphasis>);
+42 &#32;&#32;&#32;&#32;names.push_back(<emphasis role="stringliteral">&quot;A2&quot;</emphasis>);
+43 &#32;&#32;&#32;&#32;names.push_back(<emphasis role="stringliteral">&quot;A3&quot;</emphasis>);
+44 &#32;&#32;&#32;&#32;names.push_back(<emphasis role="stringliteral">&quot;A4&quot;</emphasis>);
+45 
+46 
+47 &#32;&#32;&#32;&#32;<link linkend="_classArray">Array&lt;double&gt;</link>&#32;myArr(4);
+48 &#32;&#32;&#32;&#32;myArr[1]&#32;=&#32;2.0;
+49 &#32;&#32;&#32;&#32;myArr[2]&#32;=&#32;3.0;
+50 &#32;&#32;&#32;&#32;myArr[3]&#32;=&#32;4.0;
+51 &#32;&#32;&#32;&#32;myArr[4]&#32;=&#32;5.0;
+52 
+53 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray">AArray</link>&#32;myAssocArray(names,&#32;myArr);
+54 <emphasis role="comment">/*</emphasis>
+55 <emphasis role="comment">&#32;&#32;&#32;&#32;//&#32;Iterating&#32;in&#32;the&#32;map</emphasis>
+56 <emphasis role="comment">&#32;&#32;&#32;&#32;print(myAssocArray);</emphasis>
+57 <emphasis role="comment"></emphasis>
+58 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+59 <emphasis role="comment">&#32;&#32;&#32;&#32;myAssocArray[&quot;A4&quot;]&#32;=&#32;99.99;</emphasis>
+60 <emphasis role="comment"></emphasis>
+61 <emphasis role="comment">&#32;&#32;&#32;&#32;print(myAssocArray);</emphasis>
+62 <emphasis role="comment"></emphasis>
+63 <emphasis role="comment">&#32;&#32;&#32;&#32;AssocArray&lt;double,&#32;std::string&gt;&#32;myAssocArray2(names,&#32;3.14);</emphasis>
+64 <emphasis role="comment">&#32;&#32;&#32;&#32;print(myAssocArray2);</emphasis>
+65 <emphasis role="comment"></emphasis>
+66 <emphasis role="comment"></emphasis>
+67 <emphasis role="comment">&#32;&#32;&#32;&#32;Array&lt;std::string&gt;&#32;mystrArray(4,&#32;1);</emphasis>
+68 <emphasis role="comment">&#32;&#32;&#32;&#32;mystrArray[1]&#32;=&#32;&quot;A&quot;;</emphasis>
+69 <emphasis role="comment">&#32;&#32;&#32;&#32;mystrArray[2]&#32;=&#32;&quot;B&quot;;</emphasis>
+70 <emphasis role="comment">&#32;&#32;&#32;&#32;mystrArray[3]&#32;=&#32;&quot;C&quot;;</emphasis>
+71 <emphasis role="comment">&#32;&#32;&#32;&#32;mystrArray[4]&#32;=&#32;&quot;D&quot;;</emphasis>
+72 <emphasis role="comment"></emphasis>
+73 <emphasis role="comment">&#32;&#32;&#32;&#32;Array&lt;double&gt;&#32;myArr3(4);</emphasis>
+74 <emphasis role="comment">&#32;&#32;&#32;&#32;myArr3[1]&#32;=&#32;-2.0;</emphasis>
+75 <emphasis role="comment">&#32;&#32;&#32;&#32;myArr3[2]&#32;=&#32;3.0;</emphasis>
+76 <emphasis role="comment">&#32;&#32;&#32;&#32;myArr3[3]&#32;=&#32;4.0;</emphasis>
+77 <emphasis role="comment">&#32;&#32;&#32;&#32;myArr3[4]&#32;=&#32;-5.0;</emphasis>
+78 <emphasis role="comment"></emphasis>
+79 <emphasis role="comment">&#32;&#32;&#32;&#32;AArray&#32;myAssocArray3(mystrArray,&#32;myArr3);</emphasis>
+80 <emphasis role="comment">&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;Last&#32;one\n&quot;;</emphasis>
+81 <emphasis role="comment">&#32;&#32;&#32;&#32;print(myAssocArray3);</emphasis>
+82 <emphasis role="comment"></emphasis>
+83 <emphasis role="comment">&#32;&#32;&#32;&#32;//&#32;Iterating</emphasis>
+84 <emphasis role="comment">&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;Iterating\n&quot;;</emphasis>
+85 <emphasis role="comment">&#32;&#32;&#32;&#32;AArray::const_iterator&#32;i;</emphasis>
+86 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+87 <emphasis role="comment">&#32;&#32;&#32;&#32;//&#32;Print&#32;every&#32;character&#32;in&#32;the&#32;vector</emphasis>
+88 <emphasis role="comment">&#32;&#32;&#32;&#32;for&#32;(i=myAssocArray3.Begin();&#32;i!=myAssocArray3.End();&#32;i++)</emphasis>
+89 <emphasis role="comment">&#32;&#32;&#32;&#32;{</emphasis>
+90 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&lt;&lt;&#32;&quot;{&quot;&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;&quot;,&#32;&quot;&#32;&lt;&lt;&#32;(*i).second&#32;&lt;&lt;&#32;&quot;}\n&quot;;</emphasis>
+91 <emphasis role="comment">&#32;&#32;&#32;&#32;}</emphasis>
+92 <emphasis role="comment"></emphasis>
+93 <emphasis role="comment">*/</emphasis>
+94 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+95 }
+</programlisting>    </section><anchor xml:id="_TestAssocArrayTypedef_8cc_1a2bb34dd95eef1806366acea95f2977db"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestAssocArrayTypedef.cc</secondary></indexterm>
+<indexterm><primary>TestAssocArrayTypedef.cc</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void print (const <link linkend="_TestAssocArrayTypedef_8cc_1a6eb6772489e279ed41c4572b667ba89c">AArray</link> &amp; assArr)</computeroutput></para><para>
+Definition at line 23 of file TestAssocArrayTypedef.cc.</para>
+<programlisting>24 {
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterating&#32;in&#32;the&#32;map</emphasis>
+26 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62">AArray::const_iterator</link>&#32;i&#32;=&#32;assArr.<link linkend="_classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107">Begin</link>();
+27 
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;assArr.<link linkend="_classAssocArray_1a600b9a0280c6f67380abc032dad1d755">End</link>())
+29 &#32;&#32;&#32;&#32;{
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Element&#32;pair&#32;[&quot;</emphasis>&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>&#32;&lt;&lt;&#32;(*i).second&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+31 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;assArr[(*i).first]&#32;&lt;&lt;&#32;&quot;,&#32;&quot;&#32;;</emphasis>
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+33 &#32;&#32;&#32;&#32;}
+34 
+35 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+36 }
+</programlisting></section>
+</section>
+</section>

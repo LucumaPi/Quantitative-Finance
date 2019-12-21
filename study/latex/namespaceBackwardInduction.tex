@@ -1,0 +1,75 @@
+\hypertarget{namespaceBackwardInduction}{}\doxysection{Backward\+Induction Namespace Reference}
+\label{namespaceBackwardInduction}\index{BackwardInduction@{BackwardInduction}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespaceBackwardInduction_a2ee4a25bb369ca52d0d7fe553f4ae502}{taverse}} (const \mbox{\hyperlink{classLattice}{Lattice}}$<$ double, int, 2 $>$ \&lattice)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, int $>$($\ast$ \mbox{\hyperlink{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}{create\+Terminal\+Vector}} )(const \mbox{\hyperlink{classLattice}{Lattice}}$<$ double, int, 2 $>$ \&lattice)
+\item 
+double($\ast$ \mbox{\hyperlink{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}{node\+Value}} )(double, upper, double lower)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceBackwardInduction_a2ee4a25bb369ca52d0d7fe553f4ae502}\label{namespaceBackwardInduction_a2ee4a25bb369ca52d0d7fe553f4ae502}} 
+\index{BackwardInduction@{BackwardInduction}!taverse@{taverse}}
+\index{taverse@{taverse}!BackwardInduction@{BackwardInduction}}
+\doxysubsubsection{\texorpdfstring{taverse()}{taverse()}}
+{\footnotesize\ttfamily double Backward\+Induction\+::taverse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLattice}{Lattice}}$<$ double, int, 2 $>$ \&}]{lattice }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source_l00026}{26}} of file \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source}{Test\+Lattice\+Backward\+Induction.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027         \{}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029             \textcolor{keywordtype}{int} ei = lattice.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}();}
+\DoxyCodeLine{00030             lattice[ei] = \mbox{\hyperlink{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}{createTerminalVector}}(lattice);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032             \textcolor{comment}{// Loop from the max index to the start (min) index}}
+\DoxyCodeLine{00033             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = lattice.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}() -\/ 1; \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} >= lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/-\/)}
+\DoxyCodeLine{00034             \{}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = std::copy[j].MinIndex(); i <= std::copy[j].MaxIndex(); i++)}
+\DoxyCodeLine{00037                 \{}
+\DoxyCodeLine{00038             }
+\DoxyCodeLine{00039         \textcolor{comment}{//          copy[n][i] = discounting * (p * copy[n+1][i+1] + (1.0-\/p) * copy[n+1][i]);}}
+\DoxyCodeLine{00040                     lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}][i] = \mbox{\hyperlink{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}{nodeValue}}(std::copy[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}+1][i+1], std::copy[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}+1][i])}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042                 \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \}}
+\DoxyCodeLine{00045             \textcolor{keywordtype}{int} si = lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}();}
+\DoxyCodeLine{00046             \textcolor{keywordflow}{return} lattice[si][lattice[si].\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}()];}
+\DoxyCodeLine{00047         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}\label{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}} 
+\index{BackwardInduction@{BackwardInduction}!createTerminalVector@{createTerminalVector}}
+\index{createTerminalVector@{createTerminalVector}!BackwardInduction@{BackwardInduction}}
+\doxysubsubsection{\texorpdfstring{createTerminalVector}{createTerminalVector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$double, int$>$($\ast$ Backward\+Induction\+::create\+Terminal\+Vector) (const \mbox{\hyperlink{classLattice}{Lattice}}$<$ double, int, 2 $>$ \&lattice)}
+
+
+
+Definition at line \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source_l00019}{19}} of file \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source}{Test\+Lattice\+Backward\+Induction.\+cc}}.
+
+\mbox{\Hypertarget{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}\label{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}} 
+\index{BackwardInduction@{BackwardInduction}!nodeValue@{nodeValue}}
+\index{nodeValue@{nodeValue}!BackwardInduction@{BackwardInduction}}
+\doxysubsubsection{\texorpdfstring{nodeValue}{nodeValue}}
+{\footnotesize\ttfamily double($\ast$ Backward\+Induction\+::node\+Value) (double, upper, double lower)}
+
+
+
+Definition at line \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source_l00022}{22}} of file \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source}{Test\+Lattice\+Backward\+Induction.\+cc}}.
+

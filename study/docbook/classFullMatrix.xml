@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classFullMatrix">
 <title>FullMatrix&lt; TValue, TA &gt; Class Template Reference</title>
 <indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;FullMatrix.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for FullMatrix&lt; TValue, TA &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -23,22 +26,149 @@ Collaboration diagram for FullMatrix&lt; TValue, TA &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classFullMatrix_1accfbf4f02da561a51dc82fdddaca6b22"/><emphasis role="strong">FullMatrix</emphasis> (std::size_t rows, std::size_t columns)</para>
+            <listitem><para><link linkend="_classFullMatrix_1a752d914154ab281d1ae08b78408516a1">FullMatrix</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullMatrix_1a172dc8750fab16c65e0442f864193176"/><emphasis role="strong">FullMatrix</emphasis> (const <link linkend="_classFullMatrix">FullMatrix</link>&lt; TValue, TA &gt; &amp;source)</para>
+            <listitem><para><link linkend="_classFullMatrix_1accfbf4f02da561a51dc82fdddaca6b22">FullMatrix</link> (std::size_t rows, std::size_t columns)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullMatrix_1a1fb7853dc531966114d01cf5720dd6aa"/>virtual std::size_t <emphasis role="strong">Rows</emphasis> () const</para>
+            <listitem><para><link linkend="_classFullMatrix_1a172dc8750fab16c65e0442f864193176">FullMatrix</link> (const <link linkend="_classFullMatrix">FullMatrix</link>&lt; TValue, TA &gt; &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullMatrix_1a6d02c0f09e188825938f9af6ae708614"/>virtual std::size_t <emphasis role="strong">Columns</emphasis> () const</para>
+            <listitem><para>virtual <link linkend="_classFullMatrix_1a0cdc89fd0c146b85ab72234c10f6bde0">~FullMatrix</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullMatrix_1abd4a9ea33b2b38aef74bffb0a37f689b"/>virtual <link linkend="_classArrayStructure">ArrayStructure</link>&lt; TValue &gt; &amp; <emphasis role="strong">operator[]</emphasis> (std::size_t index)</para>
+            <listitem><para>virtual std::size_t <link linkend="_classFullMatrix_1a1fb7853dc531966114d01cf5720dd6aa">Rows</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullMatrix_1a3a3450231c70f9cf1cac99b6abe242ea"/>virtual const <link linkend="_classArrayStructure">ArrayStructure</link>&lt; TValue &gt; &amp; <emphasis role="strong">operator[]</emphasis> (std::size_t index) const</para>
+            <listitem><para>virtual std::size_t <link linkend="_classFullMatrix_1a6d02c0f09e188825938f9af6ae708614">Columns</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classFullMatrix_1a27f85bb35d5ae4e346524707eb94674d"/><link linkend="_classFullMatrix">FullMatrix</link>&lt; TValue, TA &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classFullMatrix">FullMatrix</link>&lt; TValue, TA &gt; &amp;source)</para>
+            <listitem><para>virtual <link linkend="_classArrayStructure">ArrayStructure</link>&lt; TValue &gt; &amp; <link linkend="_classFullMatrix_1abd4a9ea33b2b38aef74bffb0a37f689b">operator[]</link> (std::size_t index)</para>
+</listitem>
+            <listitem><para>virtual const <link linkend="_classArrayStructure">ArrayStructure</link>&lt; TValue &gt; &amp; <link linkend="_classFullMatrix_1a3a3450231c70f9cf1cac99b6abe242ea">operator[]</link> (std::size_t index) const</para>
+</listitem>
+            <listitem><para><link linkend="_classFullMatrix">FullMatrix</link>&lt; TValue, TA &gt; &amp; <link linkend="_classFullMatrix_1a27f85bb35d5ae4e346524707eb94674d">operator=</link> (const <link linkend="_classFullMatrix">FullMatrix</link>&lt; TValue, TA &gt; &amp;source)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class TValue, class TA = std::allocator&lt;TValue&gt;&gt;
+class FullMatrix&lt; TValue, TA &gt;</title></simplesect>
+
+<para>
+Definition at line 15 of file FullMatrix.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classFullMatrix_1a752d914154ab281d1ae08b78408516a1"/>    <section>
+    <title>FullMatrix()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>FullMatrix</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>FullMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput><link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::<link linkend="_classFullMatrix">FullMatrix</link> ( )</computeroutput></para><para>
+Definition at line 17 of file FullMatrix.cc.</para>
+<programlisting>17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classMatrixStructure">MatrixStructure&lt;V&gt;</link>()
+18 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+19 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;<link linkend="_classFullArray">FullArray&lt;FullArray&lt;V, TA&gt;</link>,&#32;std::allocator&lt;FullArray&lt;V,&#32;TA&gt;&#32;&gt;&#32;&gt;();
+20 
+21 &#32;&#32;&#32;&#32;nr&#32;=&#32;nc&#32;=&#32;1;
+22 }
+</programlisting>    </section><anchor xml:id="_classFullMatrix_1accfbf4f02da561a51dc82fdddaca6b22"/>    <section>
+    <title>FullMatrix()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>FullMatrix</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>FullMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput><link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::<link linkend="_classFullMatrix">FullMatrix</link> (std::size_t rows, std::size_t columns)</computeroutput></para><para>
+Definition at line 25 of file FullMatrix.cc.</para>
+<programlisting>25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classMatrixStructure">MatrixStructure&lt;V&gt;</link>()
+26 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size</emphasis>
+27 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;the&#32;rows</emphasis>
+28 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;<link linkend="_classFullArray">FullArray&lt;FullArray&lt;V, TA&gt;</link>,&#32;std::allocator&lt;FullArray&lt;V,&#32;TA&gt;&#32;&gt;&#32;&gt;(rows);
+29 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;the&#32;columns&#32;to&#32;the&#32;rows</emphasis>
+30 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(std::size_t&#32;i=1;&#32;i&lt;=m_structure.<link linkend="_classFullArray_1ae9a91c66741570e20758d54664676db8">Size</link>();&#32;i++)&#32;m_structure[i]=<link linkend="_classFullArray">FullArray&lt;V, TA&gt;</link>(columns);
+31 
+32 &#32;&#32;&#32;&#32;nr&#32;=&#32;rows;&#32;nc&#32;=&#32;columns;
+33 }
+</programlisting>    </section><anchor xml:id="_classFullMatrix_1a172dc8750fab16c65e0442f864193176"/>    <section>
+    <title>FullMatrix()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>FullMatrix</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>FullMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V, class TA&gt; </computeroutput><para><computeroutput><link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::<link linkend="_classFullMatrix">FullMatrix</link> (const <link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt; &amp; source)</computeroutput></para><para>
+Definition at line 36 of file FullMatrix.cc.</para>
+<programlisting>36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classMatrixStructure">MatrixStructure&lt;V&gt;</link>(source)
+37 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+38 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;source.m_structure;
+39 
+40 &#32;&#32;&#32;&#32;nr&#32;=&#32;source.nr;&#32;nc&#32;=&#32;source.nc;
+41 }
+</programlisting>    </section><anchor xml:id="_classFullMatrix_1a0cdc89fd0c146b85ab72234c10f6bde0"/>    <section>
+    <title>~FullMatrix()</title>
+<indexterm><primary>~FullMatrix</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>~FullMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput><link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::~<link linkend="_classFullMatrix">FullMatrix</link> ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 44 of file FullMatrix.cc.</para>
+<programlisting>45 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+46 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classFullMatrix_1a6d02c0f09e188825938f9af6ae708614"/>    <section>
+    <title>Columns()</title>
+<indexterm><primary>Columns</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>Columns</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput>std::size_t <link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::Columns ( ) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMatrixStructure_1a33fe5393a149b31d428a1931f1e0e7e1">MatrixStructure&lt; TValue &gt;</link>.</para>
+<para>
+Definition at line 56 of file FullMatrix.cc.</para>
+<programlisting>57 {&#32;<emphasis role="comment">//&#32;Number&#32;of&#32;columns</emphasis>
+58 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nc;
+59 }
+</programlisting>    </section><anchor xml:id="_classFullMatrix_1a27f85bb35d5ae4e346524707eb94674d"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class V, class TA&gt; </computeroutput><para><computeroutput><link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt; &amp; <link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::operator= (const <link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt; &amp; source)</computeroutput></para><para>
+Definition at line 76 of file FullMatrix.cc.</para>
+<programlisting>77 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+78 
+79 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exit&#32;if&#32;same&#32;object</emphasis>
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>==&amp;source)&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+81 
+82 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;base&#32;class&#32;assignment</emphasis>
+83 &#32;&#32;&#32;&#32;<link linkend="_classMatrixStructure_1a1d17ffed41cc515e70f90208b999191e">MatrixStructure&lt;V&gt;::operator = </link>(source);
+84 
+85 &#32;&#32;&#32;&#32;m_structure&#32;=&#32;source.m_structure;
+86 
+87 &#32;&#32;&#32;&#32;nr&#32;=&#32;source.nr;&#32;nc&#32;=&#32;source.nc;
+88 
+89 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+90 }
+</programlisting>    </section><anchor xml:id="_classFullMatrix_1abd4a9ea33b2b38aef74bffb0a37f689b"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput><link linkend="_classArrayStructure">ArrayStructure</link>&lt; V &gt; &amp; <link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::operator[] (std::size_t index)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 64 of file FullMatrix.cc.</para>
+<programlisting>65 {&#32;<emphasis role="comment">//&#32;Subscripting&#32;operator</emphasis>
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_structure[row];
+67 }
+</programlisting>    </section><anchor xml:id="_classFullMatrix_1a3a3450231c70f9cf1cac99b6abe242ea"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput>const <link linkend="_classArrayStructure">ArrayStructure</link>&lt; V &gt; &amp; <link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::operator[] (std::size_t index) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 70 of file FullMatrix.cc.</para>
+<programlisting>71 {&#32;<emphasis role="comment">//&#32;Subscripting&#32;operator</emphasis>
+72 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_structure[row];
+73 }
+</programlisting>    </section><anchor xml:id="_classFullMatrix_1a1fb7853dc531966114d01cf5720dd6aa"/>    <section>
+    <title>Rows()</title>
+<indexterm><primary>Rows</primary><secondary>FullMatrix&lt; TValue, TA &gt;</secondary></indexterm>
+<indexterm><primary>FullMatrix&lt; TValue, TA &gt;</primary><secondary>Rows</secondary></indexterm>
+<computeroutput>template&lt;class V , class TA &gt; </computeroutput><para><computeroutput>std::size_t <link linkend="_classFullMatrix">FullMatrix</link>&lt; V, TA &gt;::Rows ( ) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMatrixStructure_1a1f9a91f713f03ceeda90e4dc3d17dcb3">MatrixStructure&lt; TValue &gt;</link>.</para>
+<para>
+Definition at line 50 of file FullMatrix.cc.</para>
+<programlisting>51 {&#32;<emphasis role="comment">//&#32;Number&#32;of&#32;rows</emphasis>
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nr;
+53 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/FullMatrix.hhsrc/FullMatrix.cc</section>
+include/duffy/<link linkend="_FullMatrix_8hh">FullMatrix.hh</link>src/<link linkend="_FullMatrix_8cc">FullMatrix.cc</link></section>
+</section>

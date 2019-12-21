@@ -2,6 +2,10 @@
 \label{classQuantoStrategy}\index{QuantoStrategy@{QuantoStrategy}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Quanto\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,14 +25,62 @@ Collaboration diagram for Quanto\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classQuantoStrategy_ab918d8af11ed5b7e93568ebdd4125113}\label{classQuantoStrategy_ab918d8af11ed5b7e93568ebdd4125113}} 
-{\bfseries Quanto\+Strategy} (double foreign\+Strike, double cp, double for\+Exchange\+Rate)
+\mbox{\hyperlink{classQuantoStrategy_ab918d8af11ed5b7e93568ebdd4125113}{Quanto\+Strategy}} (double foreign\+Strike, double cp, double for\+Exchange\+Rate)
 \item 
-\mbox{\Hypertarget{classQuantoStrategy_a63d76c65a3c648b9ee08d74cde31fac1}\label{classQuantoStrategy_a63d76c65a3c648b9ee08d74cde31fac1}} 
-double {\bfseries payoff} (double S1, double S2) const
+double \mbox{\hyperlink{classQuantoStrategy_a63d76c65a3c648b9ee08d74cde31fac1}{payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00116}{116}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQuantoStrategy_ab918d8af11ed5b7e93568ebdd4125113}\label{classQuantoStrategy_ab918d8af11ed5b7e93568ebdd4125113}} 
+\index{QuantoStrategy@{QuantoStrategy}!QuantoStrategy@{QuantoStrategy}}
+\index{QuantoStrategy@{QuantoStrategy}!QuantoStrategy@{QuantoStrategy}}
+\doxysubsubsection{\texorpdfstring{QuantoStrategy()}{QuantoStrategy()}}
+{\footnotesize\ttfamily Quanto\+Strategy\+::\+Quanto\+Strategy (\begin{DoxyParamCaption}\item[{double}]{foreign\+Strike,  }\item[{double}]{cp,  }\item[{double}]{for\+Exchange\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00124}{124}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125         \{ Kf = foreignStrike; w = cp; fer = forExchangeRate; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQuantoStrategy_a63d76c65a3c648b9ee08d74cde31fac1}\label{classQuantoStrategy_a63d76c65a3c648b9ee08d74cde31fac1}} 
+\index{QuantoStrategy@{QuantoStrategy}!payoff@{payoff}}
+\index{payoff@{payoff}!QuantoStrategy@{QuantoStrategy}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Quanto\+Strategy\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{Multi\+Asset\+Payoff\+Strategy}}.
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00127}{127}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128         \{}
+\DoxyCodeLine{00129             \textcolor{keywordflow}{return} fer * \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}} ( w * S1 -\/ w*Kf, 0.0);}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff\+Strategy.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoffStrategy_8hh}{Multi\+Asset\+Payoff\+Strategy.\+hh}}\end{DoxyCompactItemize}

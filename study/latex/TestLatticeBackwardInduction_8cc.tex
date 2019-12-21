@@ -1,0 +1,100 @@
+\hypertarget{TestLatticeBackwardInduction_8cc}{}\doxysection{tests/\+Test\+Lattice\+Backward\+Induction.cc File Reference}
+\label{TestLatticeBackwardInduction_8cc}\index{tests/TestLatticeBackwardInduction.cc@{tests/TestLatticeBackwardInduction.cc}}
+{\ttfamily \#include $<$duffy/\+Lattice.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Vector.\+hh$>$}\newline
+Include dependency graph for Test\+Lattice\+Backward\+Induction.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestLatticeBackwardInduction_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceBackwardInduction}{Backward\+Induction}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespaceBackwardInduction_a2ee4a25bb369ca52d0d7fe553f4ae502}{Backward\+Induction\+::taverse}} (const \mbox{\hyperlink{classLattice}{Lattice}}$<$ double, int, 2 $>$ \&lattice)
+\item 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, int $>$ \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_a4550ecc74ce63528016936d22984f853}{mycreate\+Terminal\+Vector}} (const \mbox{\hyperlink{classLattice}{Lattice}}$<$ double, int, 2 $>$ \&lattice)
+\item 
+double \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_ab6a22f5d618d1f2aef45ab03a2aed1de}{mynode\+Value}} (double upper, double lower)
+\item 
+int \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, int $>$($\ast$ \mbox{\hyperlink{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}{Backward\+Induction\+::create\+Terminal\+Vector}} )(const \mbox{\hyperlink{classLattice}{Lattice}}$<$ double, int, 2 $>$ \&lattice)
+\item 
+double($\ast$ \mbox{\hyperlink{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}{Backward\+Induction\+::node\+Value}} )(double, upper, double lower)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestLatticeBackwardInduction_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestLatticeBackwardInduction_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestLatticeBackwardInduction.cc@{TestLatticeBackwardInduction.cc}!main@{main}}
+\index{main@{main}!TestLatticeBackwardInduction.cc@{TestLatticeBackwardInduction.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source_l00062}{62}} of file \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source}{Test\+Lattice\+Backward\+Induction.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063 \{}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}} lattice;}
+\DoxyCodeLine{00066     \mbox{\hyperlink{namespaceBackwardInduction_a0f1c3dce9e5b1a3c659c0014d7eede07}{BackwardInduction::createTerminalVector}} = \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_a4550ecc74ce63528016936d22984f853}{mycreateTerminalVector}}(lattice);}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordtype}{double} upper = }
+\DoxyCodeLine{00069     \textcolor{keywordtype}{double} lower = }
+\DoxyCodeLine{00070     \mbox{\hyperlink{namespaceBackwardInduction_a7dda378748f91b6c14847031ab129606}{BackwardInduction::nodeValue}} = \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_ab6a22f5d618d1f2aef45ab03a2aed1de}{mynodeValue}}(uppper, lower, lattice);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceBackwardInduction}{BackwardInduction}};}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{keywordtype}{double} result = \mbox{\hyperlink{namespaceBackwardInduction_a2ee4a25bb369ca52d0d7fe553f4ae502}{taverse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& lattice);}
+\DoxyCodeLine{00075 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestLatticeBackwardInduction_8cc_a4550ecc74ce63528016936d22984f853}\label{TestLatticeBackwardInduction_8cc_a4550ecc74ce63528016936d22984f853}} 
+\index{TestLatticeBackwardInduction.cc@{TestLatticeBackwardInduction.cc}!mycreateTerminalVector@{mycreateTerminalVector}}
+\index{mycreateTerminalVector@{mycreateTerminalVector}!TestLatticeBackwardInduction.cc@{TestLatticeBackwardInduction.cc}}
+\doxysubsubsection{\texorpdfstring{mycreateTerminalVector()}{mycreateTerminalVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$double, int$>$ mycreate\+Terminal\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLattice}{Lattice}}$<$ double, int, 2 $>$ \&}]{lattice }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source_l00050}{50}} of file \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source}{Test\+Lattice\+Backward\+Induction.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051 \{}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{comment}{//}}
+\DoxyCodeLine{00054 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestLatticeBackwardInduction_8cc_ab6a22f5d618d1f2aef45ab03a2aed1de}\label{TestLatticeBackwardInduction_8cc_ab6a22f5d618d1f2aef45ab03a2aed1de}} 
+\index{TestLatticeBackwardInduction.cc@{TestLatticeBackwardInduction.cc}!mynodeValue@{mynodeValue}}
+\index{mynodeValue@{mynodeValue}!TestLatticeBackwardInduction.cc@{TestLatticeBackwardInduction.cc}}
+\doxysubsubsection{\texorpdfstring{mynodeValue()}{mynodeValue()}}
+{\footnotesize\ttfamily double mynode\+Value (\begin{DoxyParamCaption}\item[{double}]{upper,  }\item[{double}]{lower }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source_l00056}{56}} of file \mbox{\hyperlink{TestLatticeBackwardInduction_8cc_source}{Test\+Lattice\+Backward\+Induction.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057 \{}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{//}}
+\DoxyCodeLine{00060 \}}
+
+\end{DoxyCode}

@@ -3,6 +3,18 @@
   <compounddef id="MathsInterfaces_8hh" kind="file" language="C++">
     <compoundname>MathsInterfaces.hh</compoundname>
     <includedby refid="TestInterfaces_8cc" local="no">tests/TestInterfaces.cc</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/duffy/MathsInterfaces.hh</label>
+        <link refid="MathsInterfaces_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tests/TestInterfaces.cc</label>
+        <link refid="TestInterfaces_8cc"/>
+      </node>
+    </invincdepgraph>
       <sectiondef kind="define">
       <memberdef kind="define" id="MathsInterfaces_8hh_1a8f8bdbe5685d2ab60ca313c61017b92a" prot="public" static="no">
         <name>interface</name>
@@ -25,7 +37,7 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MathsInterfaces_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Simulate<sp/>C#<sp/>in<sp/>C++<sp/>for<sp/>a<sp/>possible<sp/>migration</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>interface<sp/>struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="MathsInterfaces_8hh_1a8f8bdbe5685d2ab60ca313c61017b92a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>interface<sp/>struct</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>V,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>I<sp/>=<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal">IOneDimensionalAccess</highlight></codeline>

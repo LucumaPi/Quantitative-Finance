@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classTRGFactory">
 <title>TRGFactory Class Reference</title>
 <indexterm><primary>TRGFactory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;LatticeFactory.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for TRGFactory:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,46 @@ Collaboration diagram for TRGFactory:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classTRGFactory_1a01c4def905794c039a8e60b3e5212ae2"/><emphasis role="strong">TRGFactory</emphasis> (double s, double r, double k)</para>
+            <listitem><para><link linkend="_classTRGFactory_1a01c4def905794c039a8e60b3e5212ae2">TRGFactory</link> (double <link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>, double <link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>, double <link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 129 of file LatticeFactory.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classTRGFactory_1a01c4def905794c039a8e60b3e5212ae2"/>    <section>
+    <title>TRGFactory()</title>
+<indexterm><primary>TRGFactory</primary><secondary>TRGFactory</secondary></indexterm>
+<indexterm><primary>TRGFactory</primary><secondary>TRGFactory</secondary></indexterm>
+<para><computeroutput>TRGFactory::TRGFactory (double s, double r, double k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 132 of file LatticeFactory.hh.</para>
+<programlisting>133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classLatticeFactory_1aec3b521318bcaed891fd9d3acb269d7f">LatticeFactory</link>(<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>,&#32;<link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>,&#32;<link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>)
+134 &#32;&#32;&#32;&#32;{
+135 &#32;&#32;&#32;&#32;
+136 &#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a709bb1b3ae7c5976629720ac29a20087">bType</link>&#32;=&#32;<link linkend="_classLatticeFactory_1a0ec2e0cbbdc1928d5f75bea6f6593f14aa3552a46dd1f16a919583e05abc557da">Additive</link>;
+137 
+138 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Needed&#32;for&#32;additive&#32;method:&#32;page&#32;19&#32;formula&#32;2.19&#32;</emphasis>
+139 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&quot;v&quot;&#32;is&#32;&quot;nu&quot;&#32;here,&#32;for&#32;&quot;v&quot;&#32;see&#32;&#32;page&#32;17&#32;formula&#32;2.14</emphasis>
+140 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;nu&#32;=&#32;<link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>&#32;-&#32;0.5&#32;*&#32;<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>&#32;*&#32;<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>;
+141 
+142 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;nudt&#32;=&#32;nu&#32;*&#32;<link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>;
+143 
+144 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;TRG&#32;parameters:&#32;page&#32;19&#32;formula&#32;2.19</emphasis>
+145 &#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a7183c1217f75a45b5951dbcc1115782b">u</link>&#32;=&#32;std::sqrt(&#32;<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>&#32;*&#32;<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>&#32;*&#32;<link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>&#32;+&#32;nudt&#32;*&#32;nudt&#32;);
+146 &#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a99e4419112358eac102e48d31090a79b">d</link>&#32;=&#32;-&#32;<link linkend="_classLatticeFactory_1a7183c1217f75a45b5951dbcc1115782b">u</link>;
+147 
+148 &#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a4552002d494824b82c182b6c3b145a8a">p</link>&#32;=&#32;0.5&#32;*&#32;(1.0&#32;+&#32;(nudt/<link linkend="_classLatticeFactory_1a7183c1217f75a45b5951dbcc1115782b">u</link>)&#32;);
+149 
+150 &#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/LatticeFactory.hh</section>
+include/duffy/<link linkend="_LatticeFactory_8hh">LatticeFactory.hh</link></section>
+</section>

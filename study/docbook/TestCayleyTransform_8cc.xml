@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestCayleyTransform_8cc">
+<title>tests/TestCayleyTransform.cc File Reference</title>
+<indexterm><primary>tests/TestCayleyTransform.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+</programlisting>Include dependency graph for TestCayleyTransform.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestCayleyTransform_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestCayleyTransform_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestCayleyTransform_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestCayleyTransform.cc</secondary></indexterm>
+<indexterm><primary>TestCayleyTransform.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 8 of file TestCayleyTransform.cc.</para>
+<programlisting>9 {
+10 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;R1&#32;=&#32;2.0;
+11 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;R2&#32;=&#32;4.44;
+12 
+13 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;=&#32;1000000000;
+14 <emphasis role="comment">/*</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;for&#32;(long&#32;j&#32;=&#32;1;&#32;j&#32;&lt;=&#32;N;&#32;j++)</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;{</emphasis>
+17 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//cout&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;&quot;&#32;&quot;;</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;double&#32;u1&#32;=&#32;::exp(R1&#32;+&#32;R2);</emphasis>
+19 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;double&#32;d1&#32;=&#32;::exp(R1&#32;-&#32;R2);</emphasis>
+20 <emphasis role="comment">&#32;&#32;&#32;&#32;}</emphasis>
+21 <emphasis role="comment">*/</emphasis>
+22 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;finished&#32;1\n&quot;</emphasis>;
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;k;&#32;std::cin&#32;&gt;&gt;&#32;k;
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Cayley&#32;transform</emphasis>
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;z1&#32;=&#32;(R1&#32;+&#32;R2);
+27 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;z2&#32;=&#32;(R1&#32;-&#32;R2);
+28 
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;i&#32;=&#32;1;&#32;i&#32;&lt;=&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;&#32;i++)
+30 &#32;&#32;&#32;&#32;{
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;u2&#32;=&#32;(2.0&#32;+&#32;z1)&#32;/&#32;(2.0&#32;-&#32;z1);
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d2&#32;=&#32;(2.0&#32;+&#32;z2)&#32;/&#32;(2.0&#32;-&#32;z2);
+33 &#32;&#32;&#32;&#32;}
+34 &#32;&#32;&#32;&#32;
+35 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;finished&#32;2\n&quot;</emphasis>;
+36 
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+38 }
+</programlisting></section>
+</section>
+</section>

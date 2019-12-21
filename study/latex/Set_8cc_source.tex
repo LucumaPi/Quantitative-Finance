@@ -1,0 +1,331 @@
+\hypertarget{Set_8cc_source}{}\doxysection{Set.\+cc}
+\label{Set_8cc_source}\index{src/Set.cc@{src/Set.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Set.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// C++ template class that implements the concept of}}
+\DoxyCodeLine{00004 \textcolor{comment}{// a mathematical set.}}
+\DoxyCodeLine{00005 \textcolor{comment}{// This class is composed of an STL set and uses Information}}
+\DoxyCodeLine{00006 \textcolor{comment}{// Hiding.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{//  Last modification dates:}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{//  2004-\/5-\/14 DD kick-\/off code (spec)}}
+\DoxyCodeLine{00011 \textcolor{comment}{//  2004-\/5-\/15 DD Code for member functions}}
+\DoxyCodeLine{00012 \textcolor{comment}{//  2004-\/5-\/20 DD Programmed Cartesian Product}}
+\DoxyCodeLine{00013 \textcolor{comment}{//  2004-\/7-\/4 DD Review of code}}
+\DoxyCodeLine{00014 \textcolor{comment}{//  2004-\/7-\/4 DD Cartesian product whose domain and range}}
+\DoxyCodeLine{00015 \textcolor{comment}{//  are in different spaces (using template member functions!)}}
+\DoxyCodeLine{00016 \textcolor{comment}{//  2004-\/9-\/14 DD Insert another set (union)}}
+\DoxyCodeLine{00017 \textcolor{comment}{//}}
+\DoxyCodeLine{00018 \textcolor{comment}{// (C) Datasim Education BV 2004-\/2006}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#ifndef Set\_CC}}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00021}\mbox{\hyperlink{Set_8cc_af298bad99bd0f0f59a72912c794c6933}{00021}} \textcolor{preprocessor}{\#define Set\_CC}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Set_8hh}{duffy/Set.hh}}>}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \textcolor{comment}{// Constructors}}
+\DoxyCodeLine{00027 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00028}\mbox{\hyperlink{classSet_ae909aa544663321e00cb18f398e5f66b}{00028}} \mbox{\hyperlink{classSet_ae909aa544663321e00cb18f398e5f66b}{Set<V>::Set}}()}
+\DoxyCodeLine{00029 \{ \textcolor{comment}{// Empty set}}
+\DoxyCodeLine{00030     }
+\DoxyCodeLine{00031     s = std::set<V>();}
+\DoxyCodeLine{00032 \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00035}\mbox{\hyperlink{classSet_a1c22f4531f0962c3a354e3bacc0bad9a}{00035}} \mbox{\hyperlink{classSet_ae909aa544663321e00cb18f398e5f66b}{Set<V>::Set}}(\textcolor{keyword}{const} std::set<V>\& stlSet)}
+\DoxyCodeLine{00036 \{ \textcolor{comment}{// Empty set}}
+\DoxyCodeLine{00037     }
+\DoxyCodeLine{00038     s = stlSet;}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00042}\mbox{\hyperlink{classSet_a739f06b4b802b7bcd41179e77c83bcc6}{00042}} \mbox{\hyperlink{classSet_ae909aa544663321e00cb18f398e5f66b}{Set<V>::Set}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<V>}}\& s2)}
+\DoxyCodeLine{00043 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     s = std::set<V>(s2.s);}
+\DoxyCodeLine{00046 \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \textcolor{comment}{// Construct a set from V that has STL-\/compatible iterators}}
+\DoxyCodeLine{00050 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00051}\mbox{\hyperlink{classSet_a7e184745fde7d92a8caf9aa4bf1d122f}{00051}} \mbox{\hyperlink{classSet_ae909aa544663321e00cb18f398e5f66b}{Set<V>::Set}}(\textcolor{keyword}{const} std::list<V>\& con)}
+\DoxyCodeLine{00052 \{ \textcolor{comment}{// From am STL container (list, vector)}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     s = std::set<V>();}
+\DoxyCodeLine{00055     }
+\DoxyCodeLine{00056     \textcolor{comment}{// Create list iterator}}
+\DoxyCodeLine{00057     \textcolor{keyword}{typename} std::list<V>::const\_iterator i;}
+\DoxyCodeLine{00058     }
+\DoxyCodeLine{00059     \textcolor{comment}{// Print every character in the list}}
+\DoxyCodeLine{00060     \textcolor{keywordflow}{for} (i = con.begin(); i != con.end(); ++i)}
+\DoxyCodeLine{00061     \{}
+\DoxyCodeLine{00062             s.insert(*i);       \textcolor{comment}{// Will only be inserted once}}
+\DoxyCodeLine{00063     \}}
+\DoxyCodeLine{00064 \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00067}\mbox{\hyperlink{classSet_ac5fb97b30e904016e81e2660ad1af712}{00067}} \mbox{\hyperlink{classSet}{Set<V>}} \mbox{\hyperlink{classSet_ac5fb97b30e904016e81e2660ad1af712}{Set<V>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<V>}}\& s2)}
+\DoxyCodeLine{00068 \{}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&s2)}
+\DoxyCodeLine{00071         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     s = s2.s;}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00076 \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00079}\mbox{\hyperlink{classSet_aafe7310e2d779a7385ec57fac57bf1e0}{00079}} \mbox{\hyperlink{classSet_aafe7310e2d779a7385ec57fac57bf1e0}{Set<V>::~Set}}()}
+\DoxyCodeLine{00080 \{}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082 \}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 \textcolor{comment}{// Standard set operations from High School}}
+\DoxyCodeLine{00085 \textcolor{comment}{// template <class V>}}
+\DoxyCodeLine{00086 \textcolor{comment}{// Set<V> Intersection(const Set<V>\& s1, const Set<V>\& s2)}}
+\DoxyCodeLine{00087 \textcolor{comment}{// \{}}
+\DoxyCodeLine{00088 \textcolor{comment}{//  std::set<V> myintersect;}}
+\DoxyCodeLine{00089 \textcolor{comment}{//  typename std::set<V>::iterator i = myintersect.begin();}}
+\DoxyCodeLine{00090 \textcolor{comment}{//  std::insert\_iterator<std::set<V> > insertiter(myintersect, i);}}
+\DoxyCodeLine{00091 \textcolor{comment}{//  set\_intersection(s1.s.begin(), s1.s.end(), s2.s.begin(), s2.s.end(), insertiter);}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093 \textcolor{comment}{//  return Set<V>(myintersect);}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097 \textcolor{comment}{// template <class V>}}
+\DoxyCodeLine{00098 \textcolor{comment}{// Set<V> Set<V>::operator \string^ (const Set<V>\& s2)}}
+\DoxyCodeLine{00099 \textcolor{comment}{// \{ // Intersection}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101 \textcolor{comment}{//  return Intersection(*this, s2);}}
+\DoxyCodeLine{00102 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105 \textcolor{comment}{// template <class V>}}
+\DoxyCodeLine{00106 \textcolor{comment}{// Set<V> Union(const Set<V>\& s1, const Set<V>\& s2)}}
+\DoxyCodeLine{00107 \textcolor{comment}{// \{}}
+\DoxyCodeLine{00108 \textcolor{comment}{//  std::set<V> myunion;}}
+\DoxyCodeLine{00109 \textcolor{comment}{//  typename std::set<V>::iterator i = myunion.begin();}}
+\DoxyCodeLine{00110 \textcolor{comment}{//  std::insert\_iterator<std::set<V> > insertiter(myunion, i);}}
+\DoxyCodeLine{00111 \textcolor{comment}{//  set\_union(s1.s.begin(), s1.s.end(), s2.s.begin(), s2.s.end(), insertiter);}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113 \textcolor{comment}{//  return Set<V>(myunion);}}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118 \textcolor{comment}{// template <class V>}}
+\DoxyCodeLine{00119 \textcolor{comment}{// Set<V> Set<V>::operator + (const Set<V>\& s2)}}
+\DoxyCodeLine{00120 \textcolor{comment}{// \{ // Union}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122 \textcolor{comment}{//  return Union(*this, s2);}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127 \textcolor{comment}{// template <class V>}}
+\DoxyCodeLine{00128 \textcolor{comment}{// Set<V> Difference(const Set<V>\& s1, const Set<V>\& s2)}}
+\DoxyCodeLine{00129 \textcolor{comment}{// \{}}
+\DoxyCodeLine{00130 \textcolor{comment}{//  std::set<V> mydiff;}}
+\DoxyCodeLine{00131 \textcolor{comment}{//  typename std::set<V>::iterator i = mydiff.begin();}}
+\DoxyCodeLine{00132 \textcolor{comment}{//  std::insert\_iterator<std::set<V> > insertiter(mydiff, i);}}
+\DoxyCodeLine{00133 \textcolor{comment}{//  set\_difference(s1.s.begin(), s1.s.end(), s2.s.begin(), s2.s.end(), insertiter);}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135 \textcolor{comment}{//  return Set<V>(mydiff);}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140 \textcolor{comment}{// template <class V>}}
+\DoxyCodeLine{00141 \textcolor{comment}{// Set<V> Set<V>::operator -\/ (const Set<V>\& s2)}}
+\DoxyCodeLine{00142 \textcolor{comment}{// \{ // Difference}}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144 \textcolor{comment}{//  return Difference(*this, s2);}}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149 \textcolor{comment}{// template <class V>}}
+\DoxyCodeLine{00150 \textcolor{comment}{// Set<V> SymmetricDifference(const Set<V>\& s1, const Set<V>\& s2)}}
+\DoxyCodeLine{00151 \textcolor{comment}{// \{}}
+\DoxyCodeLine{00152 \textcolor{comment}{//  std::set<V> mysdiff;}}
+\DoxyCodeLine{00153 \textcolor{comment}{//  typename std::set<V>::iterator i = mysdiff.begin();}}
+\DoxyCodeLine{00154 \textcolor{comment}{//  std::insert\_iterator<std::set<V> > insertiter(mysdiff, i);}}
+\DoxyCodeLine{00155 \textcolor{comment}{//  set\_symmetric\_difference(s1.s.begin(), s1.s.end(), s2.s.begin(), s2.s.end(), insertiter);}}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157 \textcolor{comment}{//  return Set<V>(mysdiff);}}
+\DoxyCodeLine{00158 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160 \textcolor{comment}{// template <class V>}}
+\DoxyCodeLine{00161 \textcolor{comment}{// Set<V> Set<V>::operator \% (const Set<V>\& s2)}}
+\DoxyCodeLine{00162 \textcolor{comment}{// \{ // Symmetric Difference}}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164 \textcolor{comment}{//  return SymmetricDifference(*this, s2);}}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \textcolor{keyword}{typename}}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00170}\mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{00170}} \mbox{\hyperlink{classSet_a54d34cd05633a20d09b2e42fee9bb31f}{Set<V>::iterator}} \mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{Set<V>::Begin}}()}
+\DoxyCodeLine{00171 \{ \textcolor{comment}{// Return iterator at begin of set}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173     \textcolor{keywordflow}{return} s.begin();}
+\DoxyCodeLine{00174 \}}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \textcolor{keyword}{typename}}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00177}\mbox{\hyperlink{classSet_af72b60644e986ecd02279b64b56e86f3}{00177}} \mbox{\hyperlink{classSet_ac9c538ffe3c823f5f28fd65910289b24}{Set<V>::const\_iterator}} \mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{Set<V>::Begin}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00178 \textcolor{keyword}{}\{ \textcolor{comment}{// Return const iterator at begin of set}}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180     \textcolor{keywordflow}{return} s.begin();}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182 \}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \textcolor{keyword}{typename}}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00185}\mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{00185}} \mbox{\hyperlink{classSet_a54d34cd05633a20d09b2e42fee9bb31f}{Set<V>::iterator}} \mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{Set<V>::End}}()}
+\DoxyCodeLine{00186 \{ \textcolor{comment}{// Return iterator after end of set}}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188     \textcolor{keywordflow}{return} s.end();}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190 \}}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \textcolor{keyword}{typename} }
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00193}\mbox{\hyperlink{classSet_abfa04b4e41038f371b6b12d7553da6c6}{00193}} \mbox{\hyperlink{classSet_ac9c538ffe3c823f5f28fd65910289b24}{Set<V>::const\_iterator}} \mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{Set<V>::End}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00194 \textcolor{keyword}{}\{ \textcolor{comment}{// Return const iterator after end of set}}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196     \textcolor{keywordflow}{return} s.end();}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198 \}}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200 }
+\DoxyCodeLine{00201 \textcolor{comment}{// Operations on a single set}}
+\DoxyCodeLine{00202 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00203}\mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{00203}} \textcolor{keywordtype}{long} \mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{Set<V>::Size}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00204 \textcolor{keyword}{}\{ \textcolor{comment}{// Number of elements }}
+\DoxyCodeLine{00205 }
+\DoxyCodeLine{00206     \textcolor{keywordflow}{return} s.size();}
+\DoxyCodeLine{00207 \}}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00211}\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{00211}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Set<V>::Insert}}(\textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00212 \{ \textcolor{comment}{// Insert an element}}
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214     s.insert(v);}
+\DoxyCodeLine{00215 \}}
+\DoxyCodeLine{00216 }
+\DoxyCodeLine{00217 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00218}\mbox{\hyperlink{classSet_aba4fd7b02967ba79b7e51ea38e33639a}{00218}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Set<V>::Insert}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<V>}}\& mySet)}
+\DoxyCodeLine{00219 \{ \textcolor{comment}{// Insert another set}}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221     \textcolor{comment}{// Test this}}
+\DoxyCodeLine{00222     \textcolor{keyword}{typename} std::set<V>::iterator i = s.begin();}
+\DoxyCodeLine{00223     std::insert\_iterator<std::set<V> > insertiter(s, i);}
+\DoxyCodeLine{00224     set\_union(s.begin(), s.end(), mySet.s.begin(), mySet.s.end(), insertiter);}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{00226 \}}
+\DoxyCodeLine{00227 }
+\DoxyCodeLine{00228 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00229}\mbox{\hyperlink{classSet_a7c93429f1d8f232c421a6fde25cb982b}{00229}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSet_a7c93429f1d8f232c421a6fde25cb982b}{Set<V>::Remove}}(\textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00230 \{ \textcolor{comment}{// Remove an element}}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232     s.erase(v);}
+\DoxyCodeLine{00233 \}}
+\DoxyCodeLine{00234 }
+\DoxyCodeLine{00235 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00236}\mbox{\hyperlink{classSet_a1feb21675fad80514ee3b41fb67f8c20}{00236}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSet_a1feb21675fad80514ee3b41fb67f8c20}{Set<V>::Replace}}(\textcolor{keyword}{const} V\& Old, \textcolor{keyword}{const} V\& New)}
+\DoxyCodeLine{00237 \{ \textcolor{comment}{// Replace old by new}}
+\DoxyCodeLine{00238 }
+\DoxyCodeLine{00239     s.erase(Old);}
+\DoxyCodeLine{00240     s.insert(New);}
+\DoxyCodeLine{00241 \}}
+\DoxyCodeLine{00242 }
+\DoxyCodeLine{00243 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00244}\mbox{\hyperlink{classSet_af4c48c3aca006588ac6d572c7e1f984c}{00244}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSet_af4c48c3aca006588ac6d572c7e1f984c}{Set<V>::Clear}}()}
+\DoxyCodeLine{00245 \{ \textcolor{comment}{// Remove all elements}}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247     s.clear();}
+\DoxyCodeLine{00248 \}}
+\DoxyCodeLine{00249 }
+\DoxyCodeLine{00250 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00251}\mbox{\hyperlink{classSet_a685c7dec3d054d0d9972457f13873568}{00251}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSet_a685c7dec3d054d0d9972457f13873568}{Set<V>::Contains}}(\textcolor{keyword}{const} V\& v)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00252 \textcolor{keyword}{}\{ \textcolor{comment}{// Is v in set?}}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254 }
+\DoxyCodeLine{00255     \mbox{\hyperlink{classSet_ac9c538ffe3c823f5f28fd65910289b24}{const\_iterator}} it = s.find(v);}
+\DoxyCodeLine{00256 }
+\DoxyCodeLine{00257     \textcolor{keywordflow}{if} (it == s.end())}
+\DoxyCodeLine{00258         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00261 \}}
+\DoxyCodeLine{00262 }
+\DoxyCodeLine{00263 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00264}\mbox{\hyperlink{classSet_ace9e8eb82ba76d99dcb8b016c3107e15}{00264}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSet_ace9e8eb82ba76d99dcb8b016c3107e15}{Set<V>::Empty}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00265 \textcolor{keyword}{}\{ \textcolor{comment}{// Contains no elements}}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267 }
+\DoxyCodeLine{00268     \textcolor{keywordflow}{return} s.empty();}
+\DoxyCodeLine{00269 \}}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271 }
+\DoxyCodeLine{00272 \textcolor{comment}{// Using 'clever' operators}}
+\DoxyCodeLine{00273 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00274}\mbox{\hyperlink{classSet_aef67658b41a94e9f8c788cee280ffd92}{00274}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSet_aa5301a8039e0f02db70fc3179dcd8361}{Set<V>::operator + }}(\textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00275 \{ \textcolor{comment}{// Insert an element}}
+\DoxyCodeLine{00276 }
+\DoxyCodeLine{00277     s.insert(v);}
+\DoxyCodeLine{00278 \}}
+\DoxyCodeLine{00279 }
+\DoxyCodeLine{00280 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00281}\mbox{\hyperlink{classSet_a2306e1e18b56c40b1ec81d41641e7e1d}{00281}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSet_af0015d618dfb0075fa0139cac663e53e}{Set<V>::operator -\/ }}(\textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00282 \{ \textcolor{comment}{// Remove an element}}
+\DoxyCodeLine{00283 }
+\DoxyCodeLine{00284     s.remove(v);}
+\DoxyCodeLine{00285 \}}
+\DoxyCodeLine{00286 }
+\DoxyCodeLine{00287 }
+\DoxyCodeLine{00288 \textcolor{comment}{// Relations between sets (s1 == *this)}}
+\DoxyCodeLine{00289 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00290}\mbox{\hyperlink{classSet_ac7bb2705235f0d44e4793262510e1dc6}{00290}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSet_ac7bb2705235f0d44e4793262510e1dc6}{Set<V>::Subset}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<V>}}\& s2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00291 \textcolor{keyword}{}\{ \textcolor{comment}{// This a subset of s2?}}
+\DoxyCodeLine{00292 }
+\DoxyCodeLine{00293     \textcolor{keywordflow}{return} includes(s2.s.begin(), s2.s.end(), (*this).s.begin(), (*this).s.end());}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296 \}}
+\DoxyCodeLine{00297 }
+\DoxyCodeLine{00298 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00299}\mbox{\hyperlink{classSet_abec7a201bd7d6632f4cf2a84e9ca2e0f}{00299}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSet_abec7a201bd7d6632f4cf2a84e9ca2e0f}{Set<V>::Superset}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<V>}}\& s2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00300 \textcolor{keyword}{}\{ \textcolor{comment}{// this a superset of s2?}}
+\DoxyCodeLine{00301 }
+\DoxyCodeLine{00302     \textcolor{keywordflow}{return} s2.\mbox{\hyperlink{classSet_ac7bb2705235f0d44e4793262510e1dc6}{Subset}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00303 }
+\DoxyCodeLine{00304 \}}
+\DoxyCodeLine{00305 }
+\DoxyCodeLine{00306 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{Set_8cc_source_l00307}\mbox{\hyperlink{classSet_ac66e1af1032a7cc83b80a3d6b8a8ef30}{00307}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSet_ac66e1af1032a7cc83b80a3d6b8a8ef30}{Set<V>::Intersects}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<V>}}\& s2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00308 \textcolor{keyword}{}\{ \textcolor{comment}{// s1 and s2 have common elements?}}
+\DoxyCodeLine{00309 }
+\DoxyCodeLine{00310     \textcolor{keywordflow}{if} (Empty() == \textcolor{keyword}{true} || s2.\mbox{\hyperlink{classSet_ace9e8eb82ba76d99dcb8b016c3107e15}{Empty}}() == \textcolor{keyword}{true})}
+\DoxyCodeLine{00311         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00312 }
+\DoxyCodeLine{00313     \textcolor{keyword}{typename} std::set<V>::const\_iterator iter;}
+\DoxyCodeLine{00314 }
+\DoxyCodeLine{00315     \textcolor{keywordflow}{for} (iter = s.begin(); iter != s.end(); iter++)}
+\DoxyCodeLine{00316     \{}
+\DoxyCodeLine{00317         \textcolor{keywordflow}{if} (s2.\mbox{\hyperlink{classSet_a685c7dec3d054d0d9972457f13873568}{Contains}}((*iter)) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00318         \{}
+\DoxyCodeLine{00319             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00320         \}}
+\DoxyCodeLine{00321     \}}
+\DoxyCodeLine{00322 }
+\DoxyCodeLine{00323     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00324 \}}
+\DoxyCodeLine{00325 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

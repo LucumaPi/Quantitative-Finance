@@ -1,0 +1,78 @@
+\hypertarget{TestRelation_8cc_source}{}\doxysection{Test\+Relation.\+cc}
+\label{TestRelation_8cc_source}\index{tests/TestRelation.cc@{tests/TestRelation.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testRelation.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing Relation class. This can be seen as a UNIVERSAL}}
+\DoxyCodeLine{00004 \textcolor{comment}{// MEDIATOR.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2004}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Relation_8hh}{duffy/Relation.hh}}>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{template} <\textcolor{keyword}{class} D, \textcolor{keyword}{class} R>}
+\DoxyCodeLine{\Hypertarget{TestRelation_8cc_source_l00013}\mbox{\hyperlink{TestRelation_8cc_ac20cd1a14c9b4b66d0ed20bba2a45b69}{00013}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{TestRelation_8cc_ac20cd1a14c9b4b66d0ed20bba2a45b69}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015     \textcolor{keyword}{typename} \mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{Relation<D,R>::const\_iterator}} i = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.Begin();}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.End())}
+\DoxyCodeLine{00018     \{ }
+\DoxyCodeLine{00019             std::cout << \textcolor{stringliteral}{"["} << (*i).first << \textcolor{stringliteral}{","} << (*i).second << \textcolor{stringliteral}{"], "};}
+\DoxyCodeLine{00020             i++;}
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022     std::cout << std::endl;}
+\DoxyCodeLine{00023 \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{TestRelation_8cc_source_l00025}\mbox{\hyperlink{TestRelation_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00025}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestRelation_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classSet}{Set<char>}} s1;}
+\DoxyCodeLine{00028     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00029     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{00030     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'C'});}
+\DoxyCodeLine{00031     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00032     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'F'});}
+\DoxyCodeLine{00033     }
+\DoxyCodeLine{00034     \mbox{\hyperlink{classSet}{Set<char>}} s2;}
+\DoxyCodeLine{00035     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'X'});}
+\DoxyCodeLine{00036     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'Y'});}
+\DoxyCodeLine{00037     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'Z'});}
+\DoxyCodeLine{00038         }
+\DoxyCodeLine{00039     \mbox{\hyperlink{classRelation}{Relation<char, char>}} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}(s1, s2);}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'A'}, \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{00042     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'A'}, \textcolor{charliteral}{'D'}); \textcolor{comment}{// will not be inserted}}
+\DoxyCodeLine{00043     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'A'}, \textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00044     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'A'}, \textcolor{charliteral}{'Y'});}
+\DoxyCodeLine{00045     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'B'}, \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{00046     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'B'}, \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{00047     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'B'}, \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{00048     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'B'}, \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{00049     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'B'}, \textcolor{charliteral}{'X'}); \textcolor{comment}{// Does not delete}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'C'}, \textcolor{charliteral}{'Y'});}
+\DoxyCodeLine{00051     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'B'}, \textcolor{charliteral}{'Z'});}
+\DoxyCodeLine{00052     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.addRelation(\textcolor{charliteral}{'B'}, \textcolor{charliteral}{'X'});}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \mbox{\hyperlink{TestRelation_8cc_ac20cd1a14c9b4b66d0ed20bba2a45b69}{print}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     std::cout << \textcolor{stringliteral}{"Delete X\(\backslash\)n"};}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.removeRangeElement(\textcolor{charliteral}{'X'});}
+\DoxyCodeLine{00059     \mbox{\hyperlink{TestRelation_8cc_ac20cd1a14c9b4b66d0ed20bba2a45b69}{print}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     std::cout << \textcolor{stringliteral}{"Delete B\(\backslash\)n"};}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.removeDomainElement(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{00064     \mbox{\hyperlink{TestRelation_8cc_ac20cd1a14c9b4b66d0ed20bba2a45b69}{print}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     std::cout << \textcolor{stringliteral}{"Delete A\(\backslash\)n"};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.removeDomainElement(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00069     \mbox{\hyperlink{TestRelation_8cc_ac20cd1a14c9b4b66d0ed20bba2a45b69}{print}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00072 \}}
+
+\end{DoxyCode}

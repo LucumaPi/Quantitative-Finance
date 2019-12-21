@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSetOperations2_8cc">
+<title>tests/TestSetOperations2.cc File Reference</title>
+<indexterm><primary>tests/TestSetOperations2.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;duffy/Set.hh&gt;
+</programlisting>Include dependency graph for TestSetOperations2.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSetOperations2_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link> (const <link linkend="_classSet">Set</link>&lt; T &gt; &amp;l, const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSetOperations2_8cc_1a4eba85fda2aa12e5b5dfa8278196c94d">printSet</link> (const <link linkend="_classSet">Set</link>&lt; std::pair&lt; T, T &gt; &gt; &amp;l, const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestSetOperations2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSetOperations2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSetOperations2.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations2.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 45 of file TestSetOperations2.cc.</para>
+<programlisting>46 {
+47 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;int&gt;</link>&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Only&#32;unique&#32;(new&#32;elements)&#32;added</emphasis>
+50 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(1);
+51 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(2);
+52 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(3);
+53 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>&#32;(<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>,&#32;<emphasis role="stringliteral">&quot;First&#32;set&quot;</emphasis>);
+54 
+55 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;s1;
+56 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+57 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;B&apos;</emphasis>);
+58 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;C&apos;</emphasis>);
+59 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+60 &#32;&#32;&#32;&#32;s1.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;F&apos;</emphasis>);
+61 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>&#32;(s1,&#32;<emphasis role="stringliteral">&quot;s1&quot;</emphasis>);
+62 
+63 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;s2;
+64 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;0&apos;</emphasis>);
+65 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+66 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;B&apos;</emphasis>);
+67 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;C&apos;</emphasis>);
+68 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+69 &#32;&#32;&#32;&#32;<emphasis role="comment">//s2.Insert(&apos;E&apos;);</emphasis>
+70 &#32;&#32;&#32;&#32;s2+<emphasis role="charliteral">&apos;E&apos;</emphasis>;
+71 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;H&apos;</emphasis>);
+72 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a1feb21675fad80514ee3b41fb67f8c20">Replace</link>(<emphasis role="charliteral">&apos;H&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;G&apos;</emphasis>);
+73 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>&#32;(s2,&#32;<emphasis role="stringliteral">&quot;s2&quot;</emphasis>);
+74 &#32;&#32;&#32;&#32;s2.<link linkend="_classSet_1a7c93429f1d8f232c421a6fde25cb982b">Remove</link>(<emphasis role="charliteral">&apos;G&apos;</emphasis>);
+75 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>&#32;(s2,&#32;<emphasis role="stringliteral">&quot;s2&quot;</emphasis>);
+76 
+77 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;ws;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Work&#32;space</emphasis>
+78 
+79 &#32;&#32;&#32;&#32;ws&#32;=&#32;s1&#32;+&#32;s2;
+80 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>(ws,&#32;<emphasis role="stringliteral">&quot;Union&quot;</emphasis>);
+81 
+82 &#32;&#32;&#32;&#32;ws&#32;=&#32;s1&#32;^&#32;s2;
+83 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>(ws,&#32;<emphasis role="stringliteral">&quot;Intersection&quot;</emphasis>);
+84 
+85 &#32;&#32;&#32;&#32;ws&#32;=&#32;s1&#32;-&#32;s2;
+86 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>(ws,&#32;<emphasis role="stringliteral">&quot;Difference&#32;s1&#32;-&#32;s2&quot;</emphasis>);
+87 
+88 &#32;&#32;&#32;&#32;ws&#32;=&#32;s2&#32;-&#32;s1;
+89 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>(ws,&#32;<emphasis role="stringliteral">&quot;Difference&#32;s2&#32;-&#32;s1&quot;</emphasis>);
+90 
+91 
+92 &#32;&#32;&#32;&#32;ws&#32;=&#32;s1&#32;%&#32;s2;
+93 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>(ws,&#32;<emphasis role="stringliteral">&quot;Symmetric&#32;Difference&quot;</emphasis>);
+94 
+95 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Subset/superset&#32;stuff</emphasis>
+96 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;s3;
+97 &#32;&#32;&#32;&#32;s3.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+98 &#32;&#32;&#32;&#32;s3.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;B&apos;</emphasis>);
+99 &#32;&#32;&#32;&#32;s3.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;C&apos;</emphasis>);
+100 &#32;&#32;&#32;&#32;s3.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+101 
+102 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s3.<link linkend="_classSet_1ac7bb2705235f0d44e4793262510e1dc6">Subset</link>(s1)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Yes,&#32;is&#32;subset&#32;OK\n&quot;</emphasis>;
+104 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bah1\n&quot;</emphasis>;
+106 
+107 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s1.Superset(s3)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Yes,&#32;is&#32;superset&#32;OK\n&quot;</emphasis>;
+109 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bah1\n&quot;</emphasis>;
+111 
+112 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s1.Intersects(s3)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Yes,&#32;we&#32;have&#32;intersection&#32;OK\n&quot;</emphasis>;
+114 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bah1\n&quot;</emphasis>;
+116 
+117 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;s4;
+118 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s1.Intersects(s4)&#32;==&#32;<emphasis role="keyword">false</emphasis>)
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Yes,&#32;we&#32;have&#32;NO&#32;intersection&#32;OK\n&quot;</emphasis>;
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bah1\n&quot;</emphasis>;
+122 
+123 &#32;&#32;&#32;&#32;s4.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+124 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s1.Intersects(s4)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Yes,&#32;we&#32;have&#32;intersection&#32;OK\n&quot;</emphasis>;
+126 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bah1\n&quot;</emphasis>;
+128 
+129 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Sets&#32;from&#32;lists</emphasis>
+130 &#32;&#32;&#32;&#32;std::list&lt;char&gt;&#32;myList;
+131 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+132 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;B&apos;</emphasis>);
+133 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;C&apos;</emphasis>);
+134 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;C&apos;</emphasis>);
+135 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;C&apos;</emphasis>);
+136 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+137 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+138 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+139 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;D&apos;</emphasis>);
+140 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+141 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+142 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+143 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+144 &#32;&#32;&#32;&#32;myList.push_back(<emphasis role="charliteral">&apos;A&apos;</emphasis>);
+145 
+146 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;char&gt;</link>&#32;s5(myList);
+147 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c">print</link>(s5,&#32;<emphasis role="stringliteral">&quot;Filtered&#32;set&quot;</emphasis>);
+148 
+149 
+150 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s5.Contains(<emphasis role="charliteral">&apos;A&apos;</emphasis>)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;OK,&#32;contains&#32;A\n&quot;</emphasis>;
+152 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bah\n&quot;</emphasis>;
+154 
+155 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s5.Contains(<emphasis role="charliteral">&apos;Z&apos;</emphasis>)&#32;==&#32;<emphasis role="keyword">false</emphasis>)
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;OK,&#32;contains&#32;NOT&#32;Z\n&quot;</emphasis>;
+157 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bah\n&quot;</emphasis>;
+159 
+160 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Cartesian&#32;product</emphasis>
+161 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;int&gt;</link>&#32;s11;
+162 &#32;&#32;&#32;&#32;s11.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(2);
+163 &#32;&#32;&#32;&#32;s11.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(3);
+164 
+165 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;int&gt;</link>&#32;s12;
+166 &#32;&#32;&#32;&#32;s12.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(8);
+167 &#32;&#32;&#32;&#32;s12.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(9);
+168 
+169 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;std::pair &lt;int, int&gt;</link>&#32;&gt;&#32;S&#32;=&#32;s11.<link linkend="_classSet_1ae688c6cb7ec18e29b45eb020c444362f">CartesianProduct</link>(s12);
+170 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1a4eba85fda2aa12e5b5dfa8278196c94d">printSet</link>(S,&#32;<emphasis role="stringliteral">&quot;Pr&quot;</emphasis>);
+171 
+172 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;std::pair &lt;int, int&gt;</link>&#32;&gt;&#32;S2&#32;=&#32;s12.<link linkend="_classSet_1ae688c6cb7ec18e29b45eb020c444362f">CartesianProduct</link>(s11);
+173 &#32;&#32;&#32;&#32;<link linkend="_TestSetOperations2_8cc_1a4eba85fda2aa12e5b5dfa8278196c94d">printSet</link>(S2,&#32;<emphasis role="stringliteral">&quot;Pr&quot;</emphasis>);
+174 
+175 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+176 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations2_8cc_1afc656eda04a46b44b586d145450e773c"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestSetOperations2.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations2.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classSet">Set</link>&lt; T &gt; &amp; l, const std::string &amp; name)</computeroutput></para><para>
+Definition at line 13 of file TestSetOperations2.cc.</para>
+<programlisting>14 {&#32;&#32;<emphasis role="comment">//&#32;Print&#32;the&#32;contents&#32;of&#32;a&#32;Set.&#32;Notice&#32;the&#32;presence&#32;of&#32;a&#32;constant&#32;iterator.</emphasis>
+15 &#32;&#32;&#32;&#32;
+16 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;name&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;size&#32;of&#32;set&#32;is&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;l.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&#32;&quot;</emphasis>;
+17 
+18 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;T&gt;::const_iterator&#32;i;
+19 
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;l.<link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link>();&#32;i&#32;!=&#32;l.<link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link>();&#32;++i)
+21 &#32;&#32;&#32;&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;*i&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+23 
+24 &#32;&#32;&#32;&#32;}
+25 
+26 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+27 }
+</programlisting>    </section><anchor xml:id="_TestSetOperations2_8cc_1a4eba85fda2aa12e5b5dfa8278196c94d"/>    <section>
+    <title>printSet()</title>
+<indexterm><primary>printSet</primary><secondary>TestSetOperations2.cc</secondary></indexterm>
+<indexterm><primary>TestSetOperations2.cc</primary><secondary>printSet</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void printSet (const <link linkend="_classSet">Set</link>&lt; std::pair&lt; T, T &gt; &gt; &amp; l, const std::string &amp; name)</computeroutput></para><para>
+Definition at line 29 of file TestSetOperations2.cc.</para>
+<programlisting>30 {&#32;&#32;<emphasis role="comment">//&#32;Print&#32;the&#32;contents&#32;of&#32;a&#32;Set.&#32;Notice&#32;the&#32;presence&#32;of&#32;a&#32;constant&#32;iterator.</emphasis>
+31 &#32;&#32;&#32;&#32;
+32 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;name&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;size&#32;of&#32;set&#32;is&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;l.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&#32;&quot;</emphasis>;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;std::pair&lt;T,&#32;T&gt;&#32;&gt;::const_iterator&#32;i;
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;l.<link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link>();&#32;i&#32;!=&#32;l.<link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link>();&#32;++i)
+37 &#32;&#32;&#32;&#32;{
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;(*i).second&#32;&lt;&lt;&#32;std::endl;
+39 
+40 &#32;&#32;&#32;&#32;}
+41 
+42 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+43 }
+</programlisting></section>
+</section>
+</section>

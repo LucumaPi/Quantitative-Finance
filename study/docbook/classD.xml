@@ -23,14 +23,76 @@ Collaboration diagram for D:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classD_1a6649b4477d56114c1077de910a8b82aa"/><emphasis role="strong">D</emphasis> (int N)</para>
+            <listitem><para><link linkend="_classD_1a6649b4477d56114c1077de910a8b82aa">D</link> (int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classD_1a30083bc921f2ca1a443011d4798d6765"/>double <emphasis role="strong">getValue</emphasis> ()</para>
+            <listitem><para>double <link linkend="_classD_1a30083bc921f2ca1a443011d4798d6765">getValue</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classD_1a6649b4477d56114c1077de910a8b82aa"/><emphasis role="strong">D</emphasis> (int N)</para>
+            <listitem><para><link linkend="_classD_1adca443258ee35f72ee59a0f3b30f358d">~D</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classD_1a6649b4477d56114c1077de910a8b82aa">D</link> (int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classD_1adca443258ee35f72ee59a0f3b30f358d">~D</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 20 of file Delegation.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classD_1a6649b4477d56114c1077de910a8b82aa"/>    <section>
+    <title>D()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>D</primary><secondary>D</secondary></indexterm>
+<indexterm><primary>D</primary><secondary>D</secondary></indexterm>
+<para><computeroutput>D::D (int N)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 26 of file Delegation.cc.</para>
+<programlisting>26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classB_1a9532a74021f7efb003dffbc9d4145e65">B</link>()&#32;
+27 &#32;&#32;&#32;&#32;{&#32;
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;size&#32;=&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iarr&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>[size];
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;&#32;j++)
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iarr[j]&#32;=&#32;double(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>-j);
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+34 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classD_1adca443258ee35f72ee59a0f3b30f358d"/>    <section>
+    <title>~D()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>~D</primary><secondary>D</secondary></indexterm>
+<indexterm><primary>D</primary><secondary>~D</secondary></indexterm>
+<para><computeroutput>D::~D ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 37 of file Delegation.cc.</para>
+<programlisting>37 {&#32;<emphasis role="keyword">delete</emphasis>&#32;[]&#32;iarr;&#32;}
+</programlisting>    </section><anchor xml:id="_classD_1a6649b4477d56114c1077de910a8b82aa"/>    <section>
+    <title>D()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>D</primary><secondary>D</secondary></indexterm>
+<indexterm><primary>D</primary><secondary>D</secondary></indexterm>
+<para><computeroutput>D::D (int N)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 24 of file VirtualDestructors.cc.</para>
+<programlisting>24 :&#32;<link linkend="_classB_1a9532a74021f7efb003dffbc9d4145e65">B</link>()&#32;{&#32;iarr&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>[<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>];&#32;}
+</programlisting>    </section><anchor xml:id="_classD_1adca443258ee35f72ee59a0f3b30f358d"/>    <section>
+    <title>~D()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>~D</primary><secondary>D</secondary></indexterm>
+<indexterm><primary>D</primary><secondary>~D</secondary></indexterm>
+<para><computeroutput>D::~D ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 25 of file VirtualDestructors.cc.</para>
+<programlisting>25 {&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Derived&#32;destructor\n&quot;</emphasis>;&#32;<emphasis role="keyword">delete</emphasis>&#32;[]&#32;iarr;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classD_1a30083bc921f2ca1a443011d4798d6765"/>    <section>
+    <title>getValue()</title>
+<indexterm><primary>getValue</primary><secondary>D</secondary></indexterm>
+<indexterm><primary>D</primary><secondary>getValue</secondary></indexterm>
+<para><computeroutput>double D::getValue ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classB_1a63badaaed2bfb7ac7756c13fe57fcbd9">B</link>.</para>
+<para>
+Definition at line 36 of file Delegation.cc.</para>
+<programlisting>36 {<emphasis role="keywordflow">return</emphasis>&#32;iarr[0]/double(size);}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-tests/Delegation.cctests/VirtualDestructors.cc</section>
+tests/<link linkend="_Delegation_8cc">Delegation.cc</link>tests/<link linkend="_VirtualDestructors_8cc">VirtualDestructors.cc</link></section>
+</section>

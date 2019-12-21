@@ -2,6 +2,10 @@
 \label{classJRFactory}\index{JRFactory@{JRFactory}}
 
 
+{\ttfamily \#include $<$Lattice\+Factory.\+hh$>$}
+
+
+
 Inheritance diagram for J\+R\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,12 +25,45 @@ Collaboration diagram for J\+R\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classJRFactory_afe5130ea21461c9b33ee7056e4ae1ca8}\label{classJRFactory_afe5130ea21461c9b33ee7056e4ae1ca8}} 
-{\bfseries J\+R\+Factory} (double s, double r, double k)
+\mbox{\hyperlink{classJRFactory_afe5130ea21461c9b33ee7056e4ae1ca8}{J\+R\+Factory}} (double \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}, double \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}, double \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00083}{83}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJRFactory_afe5130ea21461c9b33ee7056e4ae1ca8}\label{classJRFactory_afe5130ea21461c9b33ee7056e4ae1ca8}} 
+\index{JRFactory@{JRFactory}!JRFactory@{JRFactory}}
+\index{JRFactory@{JRFactory}!JRFactory@{JRFactory}}
+\doxysubsubsection{\texorpdfstring{JRFactory()}{JRFactory()}}
+{\footnotesize\ttfamily J\+R\+Factory\+::\+J\+R\+Factory (\begin{DoxyParamCaption}\item[{double}]{s,  }\item[{double}]{r,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00086}{86}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087         : \mbox{\hyperlink{classLatticeFactory_aec3b521318bcaed891fd9d3acb269d7f}{LatticeFactory}}(\mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}, \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}, \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}})}
+\DoxyCodeLine{00088     \{}
+\DoxyCodeLine{00089         \textcolor{keywordtype}{double} k2 = std::sqrt(\mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}});}
+\DoxyCodeLine{00090         \mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}} = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(\mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * k2);}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092         \mbox{\hyperlink{classLatticeFactory_a99e4419112358eac102e48d31090a79b}{d}} = 1.0/\mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}};}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094         \mbox{\hyperlink{classLatticeFactory_a4552002d494824b82c182b6c3b145a8a}{p}} = 0.5 + ((\mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}} -\/ 0.5 * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}) * k2 * 0.5) / \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}};}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Lattice\+Factory.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{LatticeFactory_8hh}{Lattice\+Factory.\+hh}}\end{DoxyCompactItemize}

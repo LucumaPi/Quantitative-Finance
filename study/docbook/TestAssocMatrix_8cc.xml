@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestAssocMatrix_8cc">
+<title>tests/TestAssocMatrix.cc File Reference</title>
+<indexterm><primary>tests/TestAssocMatrix.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/AssocArray.hh&gt;
+#include &lt;duffy/AssocMatrix.hh&gt;
+#include &lt;duffy/Array.hh&gt;
+#include &lt;duffy/ArrayMechanisms.hh&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestAssocMatrix.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestAssocMatrix_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_TestAssocMatrix_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link> (const <link linkend="_classAssocArray">AssocArray</link>&lt; double, std::string &gt; &amp;assArr)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestAssocMatrix_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestAssocMatrix_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestAssocMatrix.cc</secondary></indexterm>
+<indexterm><primary>TestAssocMatrix.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 30 of file TestAssocMatrix.cc.</para>
+<programlisting>31 {
+32 
+33 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;std::string&gt;</link>&#32;names;
+34 &#32;&#32;&#32;&#32;names.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A1&quot;</emphasis>);
+35 &#32;&#32;&#32;&#32;names.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A2&quot;</emphasis>);
+36 &#32;&#32;&#32;&#32;names.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A3&quot;</emphasis>);
+37 &#32;&#32;&#32;&#32;names.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(<emphasis role="stringliteral">&quot;A4&quot;</emphasis>);
+38 
+39 
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;defaultValue(0.0);
+41 
+42 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray">AssocArray&lt;double, std::string&gt;</link>&#32;myAssocArray(names,&#32;defaultValue);
+43 &#32;&#32;&#32;&#32;<link linkend="_TestAssocMatrix_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link>(myAssocArray);
+44 &#32;&#32;&#32;&#32;myAssocArray[<emphasis role="stringliteral">&quot;A4&quot;</emphasis>]&#32;=&#32;99.99;
+45 &#32;&#32;&#32;&#32;<link linkend="_TestAssocMatrix_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link>(myAssocArray);
+46 
+47 
+48 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Test&#32;other&#32;functions</emphasis>
+49 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray">AssocArray&lt;double, std::string&gt;</link>&#32;myAssocArray2(myAssocArray);
+50 &#32;&#32;&#32;&#32;<link linkend="_TestAssocMatrix_8cc_1a65fb09af05f940068b4a76bb46481ee0">print</link>(myAssocArray2);
+51 
+52 &#32;&#32;&#32;&#32;<link linkend="_classAssocMatrix">AssocMatrix&lt;double, std::string, std::string&gt;</link>&#32;myMat;
+53 &#32;&#32;&#32;&#32;<link linkend="_classAssocMatrix">AssocMatrix&lt;double, std::string, std::string&gt;</link>&#32;myMatcopy&#32;=&#32;myMat;
+54 
+55 &#32;&#32;&#32;&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;double, long&gt;</link>&#32;mat1(names.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>(),&#32;names.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>());
+56 &#32;&#32;&#32;&#32;<link linkend="_classAssocMatrix">AssocMatrix&lt;double, std::string, std::string&gt;</link>&#32;myMat2(names,&#32;names,&#32;mat1);
+57 
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+60 }
+</programlisting>    </section><anchor xml:id="_TestAssocMatrix_8cc_1a65fb09af05f940068b4a76bb46481ee0"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestAssocMatrix.cc</secondary></indexterm>
+<indexterm><primary>TestAssocMatrix.cc</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void print (const <link linkend="_classAssocArray">AssocArray</link>&lt; double, std::string &gt; &amp; assArr)</computeroutput></para><para>
+Definition at line 14 of file TestAssocMatrix.cc.</para>
+<programlisting>15 {
+16 
+17 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterating&#32;in&#32;the&#32;map</emphasis>
+18 &#32;&#32;&#32;&#32;<link linkend="_classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62">AssocArray&lt;double, std::string&gt;::const_iterator</link>&#32;i&#32;=&#32;assArr.<link linkend="_classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107">Begin</link>();
+19 
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;assArr.<link linkend="_classAssocArray_1a600b9a0280c6f67380abc032dad1d755">End</link>())
+21 &#32;&#32;&#32;&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*i).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;((*i).second)&#32;&lt;&lt;&#32;std::endl;
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+25 &#32;&#32;&#32;&#32;}
+26 
+27 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+28 }
+</programlisting></section>
+</section>
+</section>

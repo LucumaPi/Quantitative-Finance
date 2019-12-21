@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classNS__NonlinearSolver_1_1BisectionSolver">
 <title>NS_NonlinearSolver::BisectionSolver Class Reference</title>
 <indexterm><primary>NS_NonlinearSolver::BisectionSolver</primary></indexterm>
+<para>
+<computeroutput>#include &lt;NonlinearSolver.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for NS_NonlinearSolver::BisectionSolver:<para>
     <informalfigure>
         <mediaobject>
@@ -23,25 +26,135 @@ Collaboration diagram for NS_NonlinearSolver::BisectionSolver:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a92b3d483b030f4f4e7014f8097dfd3db"/>double <emphasis role="strong">solve</emphasis> ()</para>
+            <listitem><para>double <link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a92b3d483b030f4f4e7014f8097dfd3db">solve</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a8aa6679debb70886fdfaac7aae6d25aa"/>double <emphasis role="strong">accuracy</emphasis> () const</para>
+            <listitem><para>double <link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a8aa6679debb70886fdfaac7aae6d25aa">accuracy</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a1bd5e1ca8a817f8443cd4c510fcaf3af"/>void <emphasis role="strong">printStatistics</emphasis> ()</para>
+            <listitem><para>void <link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a1bd5e1ca8a817f8443cd4c510fcaf3af">printStatistics</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a2b63b5bd50b9a316b68b0c3253685630"/>long <emphasis role="strong">estimate</emphasis> () const</para>
+            <listitem><para>long <link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a2b63b5bd50b9a316b68b0c3253685630">estimate</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25"/>double <emphasis role="strong">a</emphasis></para>
+            <listitem><para>double <link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25">a</link></para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa"/>double <emphasis role="strong">b</emphasis></para>
+            <listitem><para>double <link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa">b</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 45 of file NonlinearSolver.hh.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a8aa6679debb70886fdfaac7aae6d25aa"/>    <section>
+    <title>accuracy()</title>
+<indexterm><primary>accuracy</primary><secondary>NS_NonlinearSolver::BisectionSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::BisectionSolver</primary><secondary>accuracy</secondary></indexterm>
+<para><computeroutput>double NS_NonlinearSolver::BisectionSolver::accuracy ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 99 of file NonlinearSolver.hh.</para>
+<programlisting>100 &#32;&#32;&#32;&#32;{
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;How&#32;close&#32;is&#32;our&#32;solution?</emphasis>
+102 
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;myTol;
+104 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a2b63b5bd50b9a316b68b0c3253685630"/>    <section>
+    <title>estimate()</title>
+<indexterm><primary>estimate</primary><secondary>NS_NonlinearSolver::BisectionSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::BisectionSolver</primary><secondary>estimate</secondary></indexterm>
+<para><computeroutput>long NS_NonlinearSolver::BisectionSolver::estimate ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 119 of file NonlinearSolver.hh.</para>
+<programlisting>120 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Estimates&#32;the&#32;number&#32;of&#32;needed&#32;iterations</emphasis>
+121 
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp&#32;=&#32;(<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa">b</link>&#32;-&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25">a</link>)&#32;/&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba">tol</link>;
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;val&#32;=&#32;1.0&#32;+&#32;(std::log(tmp)/std::log(2.0));
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::ceil(val);
+126 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a1bd5e1ca8a817f8443cd4c510fcaf3af"/>    <section>
+    <title>printStatistics()</title>
+<indexterm><primary>printStatistics</primary><secondary>NS_NonlinearSolver::BisectionSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::BisectionSolver</primary><secondary>printStatistics</secondary></indexterm>
+<para><computeroutput>void NS_NonlinearSolver::BisectionSolver::printStatistics ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 106 of file NonlinearSolver.hh.</para>
+<programlisting>107 &#32;&#32;&#32;&#32;{
+108 
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;m&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a92b3d483b030f4f4e7014f8097dfd3db">solve</link>();
+110 
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nData&#32;pertaining&#32;to&#32;Bisection&#32;method\n&quot;</emphasis>;
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Interval&#32;containing&#32;value:&#32;(&quot;</emphasis>&#32;&lt;&lt;&#32;aCurrent&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;bCurrent&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)\n&quot;</emphasis>;
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Value:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;m&#32;&lt;&lt;&#32;std::endl;
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;iterations&#32;(actual):&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&lt;&lt;&#32;std::endl;
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;iterations&#32;(scheduled):&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a2b63b5bd50b9a316b68b0c3253685630">estimate</link>()&#32;&lt;&lt;&#32;std::endl;
+117 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a92b3d483b030f4f4e7014f8097dfd3db"/>    <section>
+    <title>solve()</title>
+<indexterm><primary>solve</primary><secondary>NS_NonlinearSolver::BisectionSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::BisectionSolver</primary><secondary>solve</secondary></indexterm>
+<para><computeroutput>double NS_NonlinearSolver::BisectionSolver::solve ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1a7336902d70e3ae47194eb92abac04333">NS_NonlinearSolver::NonlinearSolver</link>.</para>
+<para>
+Definition at line 61 of file NonlinearSolver.hh.</para>
+<programlisting>62 &#32;&#32;&#32;&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;aPrevious&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25">a</link>;&#32;<emphasis role="keywordtype">double</emphasis>&#32;bPrevious&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa">b</link>;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;1;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myTol&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa">b</link>&#32;-&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25">a</link>;&#32;&#32;<emphasis role="comment">//&#32;Variable&#32;tolerance,&#32;starts&#32;at&#32;main&#32;interval</emphasis>
+66 L1:
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;midPoint&#32;=&#32;0.5&#32;*&#32;(aPrevious&#32;+&#32;bPrevious);
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;interval</emphasis>
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(midPoint)&#32;&lt;=&#32;0.0)
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+72 
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aCurrent&#32;=&#32;midPoint;
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bCurrent&#32;=&#32;bPrevious;
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+76 
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(midPoint)&#32;&gt;&#32;0.0)
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aCurrent&#32;=&#32;aPrevious;
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bCurrent&#32;=&#32;midPoint;
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+82 
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myTol&#32;*=&#32;0.5;&#32;<emphasis role="comment">//&#32;At&#32;each&#32;step&#32;we&#32;have&#32;a&#32;subdivision</emphasis>
+84 
+85 
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aPrevious&#32;=&#32;aCurrent;
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bPrevious&#32;=&#32;bCurrent;
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>++;
+89 
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(myTol&#32;&gt;&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba">tol</link>)&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+91 
+92 
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;have&#32;answer</emphasis>
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;midPoint&#32;=&#32;0.5&#32;*&#32;(aPrevious&#32;+&#32;bPrevious);
+95 &#32;&#32;&#32;&#32;
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;midPoint;
+97 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25"/>    <section>
+    <title>a</title>
+<indexterm><primary>a</primary><secondary>NS_NonlinearSolver::BisectionSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::BisectionSolver</primary><secondary>a</secondary></indexterm>
+<para><computeroutput>double NS_NonlinearSolver::BisectionSolver::a</computeroutput></para><para>
+Definition at line 50 of file NonlinearSolver.hh.</para>
+    </section><anchor xml:id="_classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa"/>    <section>
+    <title>b</title>
+<indexterm><primary>b</primary><secondary>NS_NonlinearSolver::BisectionSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::BisectionSolver</primary><secondary>b</secondary></indexterm>
+<para><computeroutput>double NS_NonlinearSolver::BisectionSolver::b</computeroutput></para><para>
+Definition at line 51 of file NonlinearSolver.hh.</para>
+</section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/NonlinearSolver.hh</section>
+include/duffy/<link linkend="_NonlinearSolver_8hh">NonlinearSolver.hh</link></section>
+</section>

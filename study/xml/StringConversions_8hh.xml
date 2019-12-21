@@ -10,19 +10,23 @@
     <includedby refid="StringConversions_8cc" local="no">src/StringConversions.cc</includedby>
     <includedby refid="TestExceptionSimple_8cc" local="no">tests/TestExceptionSimple.cc</includedby>
     <incdepgraph>
-      <node id="9">
+      <node id="13">
         <label>list</label>
       </node>
       <node id="2">
         <label>Vector.hh</label>
-        <link refid="Vector_8hh_source"/>
+        <link refid="Vector_8hh"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -30,47 +34,103 @@
         <link refid="StringConversions_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../../src/StringConversions.cc</label>
+        <link refid="StringConversions_8cc"/>
+        <childnode refid="1" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
+        <link refid="Array_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="8">
-        <label>string</label>
-      </node>
-      <node id="7">
         <label>vector</label>
       </node>
       <node id="5">
         <label>cstddef</label>
       </node>
-      <node id="6">
+      <node id="11">
+        <label>../../src/Vector.cc</label>
+        <link refid="Vector_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
         <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="7" relation="include">
+        <link refid="FullArray_8hh"/>
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
       <node id="2">
         <label>include/duffy/ExcelMechanisms.hh</label>
-        <link refid="ExcelMechanisms_8hh_source"/>
+        <link refid="ExcelMechanisms_8hh"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>include/duffy/StringConversions.hh</label>
         <link refid="StringConversions_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/StringConversions.cc</label>
+        <link refid="StringConversions_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/ExcelMechanisms.cc</label>
+        <link refid="ExcelMechanisms_8cc"/>
+      </node>
+      <node id="5">
+        <label>tests/TestExceptionSimple.cc</label>
+        <link refid="TestExceptionSimple_8cc"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="func">
@@ -175,21 +235,21 @@
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>StringConversions_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>StringConversions_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector_8hh" kindref="compound">Vector.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Simple<sp/>and<sp/>useful<sp/>string<sp/>converters</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal">std::string<sp/>getString(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">std::string<sp/><ref refid="StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183" kindref="member">getString</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal">std::string<sp/>getString(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">std::string<sp/><ref refid="StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183" kindref="member">getString</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal">std::string<sp/>getString(std::size_t<sp/>j);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">std::string<sp/><ref refid="StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183" kindref="member">getString</ref>(std::size_t<sp/>j);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal">std::string<sp/>getString(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">std::string<sp/><ref refid="StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183" kindref="member">getString</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Convert<sp/>an<sp/>array<sp/>to<sp/>a<sp/>list<sp/>of<sp/>strings</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal">std::list&lt;std::string&gt;<sp/>convertToString(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref>&amp;<sp/>arr);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">std::list&lt;std::string&gt;<sp/><ref refid="StringConversions_8hh_1aa9803942566e177490d69f756e68a138" kindref="member">convertToString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref>&amp;<sp/>arr);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/StringConversions.cc&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

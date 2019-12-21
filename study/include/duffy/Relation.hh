@@ -19,6 +19,16 @@
 // (C) Datasim Education BV 2004
 //
 
+/**
+ * @file Relation.hh
+ * @author Daniel J. Duffy (dduffy@datasim.nl)
+ * @brief Relation class template
+ * @version 0.1
+ * @date 2019-12-21
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
 #ifndef Relation_HH
 #define Relation_HH
@@ -29,7 +39,6 @@
 template <class D, class R> class Relation
 { // Classes representing mappings from D to R
 private:
-
 	// 'Control' information
 	Set<D> s1;			// Domain Set
 	Set<R> s2;			// Range Set

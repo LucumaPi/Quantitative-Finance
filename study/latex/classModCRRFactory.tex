@@ -2,6 +2,10 @@
 \label{classModCRRFactory}\index{ModCRRFactory@{ModCRRFactory}}
 
 
+{\ttfamily \#include $<$Lattice\+Factory.\+hh$>$}
+
+
+
 Inheritance diagram for Mod\+C\+R\+R\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,12 +25,46 @@ Collaboration diagram for Mod\+C\+R\+R\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classModCRRFactory_a696757239e4e08ad9d0a14f6e5c22fd7}\label{classModCRRFactory_a696757239e4e08ad9d0a14f6e5c22fd7}} 
-{\bfseries Mod\+C\+R\+R\+Factory} (double s, double r, double k, double S, double K, int N)
+\mbox{\hyperlink{classModCRRFactory_a696757239e4e08ad9d0a14f6e5c22fd7}{Mod\+C\+R\+R\+Factory}} (double \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}, double \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}, double \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}}, double S, double K, int \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00156}{156}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classModCRRFactory_a696757239e4e08ad9d0a14f6e5c22fd7}\label{classModCRRFactory_a696757239e4e08ad9d0a14f6e5c22fd7}} 
+\index{ModCRRFactory@{ModCRRFactory}!ModCRRFactory@{ModCRRFactory}}
+\index{ModCRRFactory@{ModCRRFactory}!ModCRRFactory@{ModCRRFactory}}
+\doxysubsubsection{\texorpdfstring{ModCRRFactory()}{ModCRRFactory()}}
+{\footnotesize\ttfamily Mod\+C\+R\+R\+Factory\+::\+Mod\+C\+R\+R\+Factory (\begin{DoxyParamCaption}\item[{double}]{s,  }\item[{double}]{r,  }\item[{double}]{k,  }\item[{double}]{S,  }\item[{double}]{K,  }\item[{int}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00159}{159}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160         : \mbox{\hyperlink{classLatticeFactory_aec3b521318bcaed891fd9d3acb269d7f}{LatticeFactory}}(\mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}, \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}, \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}})}
+\DoxyCodeLine{00161     \{}
+\DoxyCodeLine{00162         }
+\DoxyCodeLine{00163         \textcolor{keywordtype}{double} KN = std::log(\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}/S) / double (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00164         \textcolor{keywordtype}{double} VN = \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * std::sqrt(\mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}});}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166         \mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}} = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(KN + VN);}
+\DoxyCodeLine{00167         \mbox{\hyperlink{classLatticeFactory_a99e4419112358eac102e48d31090a79b}{d}} = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(KN -\/ VN);}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169         \mbox{\hyperlink{classLatticeFactory_a4552002d494824b82c182b6c3b145a8a}{p}} = (\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(\mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}} * \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}}) -\/ \mbox{\hyperlink{classLatticeFactory_a99e4419112358eac102e48d31090a79b}{d}}) / (\mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}} -\/ \mbox{\hyperlink{classLatticeFactory_a99e4419112358eac102e48d31090a79b}{d}});}
+\DoxyCodeLine{00170     \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Lattice\+Factory.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{LatticeFactory_8hh}{Lattice\+Factory.\+hh}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: include/duffy/FullMatrix.hh Source File</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: include/duffy/FullMatrix.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +78,7 @@ $(function() {
 <div class="title">FullMatrix.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// FullMatrix.hpp</span></div>
+<a href="FullMatrix_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// FullMatrix.hpp</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Template class for normal matrices.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// A size_t is used for indexing. Indexing starts at 1.</span></div>
@@ -88,8 +88,8 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef FullMatrix_HH</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define FullMatrix_HH</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;MatrixStructure.hh&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;FullArray.hh&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MatrixStructure_8hh.html">MatrixStructure.hh</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FullArray_8hh.html">FullArray.hh</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> TValue, <span class="keyword">class</span> TA=std::allocator&lt;TValue&gt; &gt;</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classFullMatrix.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFullMatrix.html">FullMatrix</a>: <span class="keyword">public</span> <a class="code" href="classMatrixStructure.html">MatrixStructure</a>&lt;TValue&gt;</div>
@@ -100,30 +100,38 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// Constructors &amp; destructor</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classFullMatrix.html">FullMatrix</a>();                                                   <span class="comment">// Default constructor</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classFullMatrix.html">FullMatrix</a>(std::size_t rows, std::size_t columns);                      <span class="comment">// Constructor with size</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classFullMatrix.html">FullMatrix</a>(<span class="keyword">const</span> <a class="code" href="classFullMatrix.html">FullMatrix&lt;TValue, TA&gt;</a>&amp; source);               <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classFullMatrix.html">FullMatrix</a>();                                          <span class="comment">// Destructor</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classFullMatrix.html#a752d914154ab281d1ae08b78408516a1">FullMatrix</a>();                                                   <span class="comment">// Default constructor</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classFullMatrix.html#a752d914154ab281d1ae08b78408516a1">FullMatrix</a>(std::size_t rows, std::size_t columns);                      <span class="comment">// Constructor with size</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classFullMatrix.html#a752d914154ab281d1ae08b78408516a1">FullMatrix</a>(<span class="keyword">const</span> <a class="code" href="classFullMatrix.html">FullMatrix&lt;TValue, TA&gt;</a>&amp; source);               <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classFullMatrix.html#a0cdc89fd0c146b85ab72234c10f6bde0">~FullMatrix</a>();                                          <span class="comment">// Destructor</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Selectors</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> std::size_t Rows() <span class="keyword">const</span>;                                   <span class="comment">// Number of rows</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> std::size_t Columns() <span class="keyword">const</span>;                                    <span class="comment">// Number of columns</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> std::size_t <a class="code" href="classFullMatrix.html#a1fb7853dc531966114d01cf5720dd6aa">Rows</a>() <span class="keyword">const</span>;                                   <span class="comment">// Number of rows</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> std::size_t <a class="code" href="classFullMatrix.html#a6d02c0f09e188825938f9af6ae708614">Columns</a>() <span class="keyword">const</span>;                                    <span class="comment">// Number of columns</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Modifiers</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Operators</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classArrayStructure.html">ArrayStructure&lt;TValue&gt;</a>&amp; operator[] (std::size_t index);                 <span class="comment">// Subscripting operator</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classArrayStructure.html">ArrayStructure&lt;TValue&gt;</a>&amp; operator[] (std::size_t index) <span class="keyword">const</span>;     <span class="comment">// Subscripting operator</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classArrayStructure.html">ArrayStructure&lt;TValue&gt;</a>&amp; <a class="code" href="classFullMatrix.html#abd4a9ea33b2b38aef74bffb0a37f689b">operator[] </a>(std::size_t index);                 <span class="comment">// Subscripting operator</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classArrayStructure.html">ArrayStructure&lt;TValue&gt;</a>&amp; <a class="code" href="classFullMatrix.html#abd4a9ea33b2b38aef74bffb0a37f689b">operator[] </a>(std::size_t index) <span class="keyword">const</span>;     <span class="comment">// Subscripting operator</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classFullMatrix.html">FullMatrix&lt;TValue, TA&gt;</a>&amp; operator = (<span class="keyword">const</span> <a class="code" href="classFullMatrix.html">FullMatrix&lt;TValue, TA&gt;</a>&amp; source);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classFullMatrix.html">FullMatrix&lt;TValue, TA&gt;</a>&amp; <a class="code" href="classFullMatrix.html#a27f85bb35d5ae4e346524707eb94674d">operator = </a>(<span class="keyword">const</span> <a class="code" href="classFullMatrix.html">FullMatrix&lt;TValue, TA&gt;</a>&amp; source);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;../../src/FullMatrix.cc&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif  // FullMatrix_HH</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassFullArray_html"><div class="ttname"><a href="classFullArray.html">FullArray</a></div><div class="ttdef"><b>Definition:</b> FullArray.hh:15</div></div>
-<div class="ttc" id="aclassArrayStructure_html"><div class="ttname"><a href="classArrayStructure.html">ArrayStructure</a></div><div class="ttdef"><b>Definition:</b> ArrayStructure.hh:14</div></div>
-<div class="ttc" id="aclassFullMatrix_html"><div class="ttname"><a href="classFullMatrix.html">FullMatrix</a></div><div class="ttdef"><b>Definition:</b> FullMatrix.hh:15</div></div>
-<div class="ttc" id="aclassMatrixStructure_html"><div class="ttname"><a href="classMatrixStructure.html">MatrixStructure</a></div><div class="ttdef"><b>Definition:</b> MatrixStructure.hh:14</div></div>
+<div class="ttc" id="aclassFullMatrix_html_a752d914154ab281d1ae08b78408516a1"><div class="ttname"><a href="classFullMatrix.html#a752d914154ab281d1ae08b78408516a1">FullMatrix::FullMatrix</a></div><div class="ttdeci">FullMatrix()</div><div class="ttdef"><b>Definition:</b> <a href="FullMatrix_8cc_source.html#l00017">FullMatrix.cc:17</a></div></div>
+<div class="ttc" id="aclassFullMatrix_html_a0cdc89fd0c146b85ab72234c10f6bde0"><div class="ttname"><a href="classFullMatrix.html#a0cdc89fd0c146b85ab72234c10f6bde0">FullMatrix::~FullMatrix</a></div><div class="ttdeci">virtual ~FullMatrix()</div><div class="ttdef"><b>Definition:</b> <a href="FullMatrix_8cc_source.html#l00044">FullMatrix.cc:44</a></div></div>
+<div class="ttc" id="aclassFullMatrix_html_abd4a9ea33b2b38aef74bffb0a37f689b"><div class="ttname"><a href="classFullMatrix.html#abd4a9ea33b2b38aef74bffb0a37f689b">FullMatrix::operator[]</a></div><div class="ttdeci">virtual ArrayStructure&lt; TValue &gt; &amp; operator[](std::size_t index)</div><div class="ttdef"><b>Definition:</b> <a href="FullMatrix_8cc_source.html#l00064">FullMatrix.cc:64</a></div></div>
+<div class="ttc" id="aMatrixStructure_8hh_html"><div class="ttname"><a href="MatrixStructure_8hh.html">MatrixStructure.hh</a></div></div>
+<div class="ttc" id="aclassFullMatrix_html_a6d02c0f09e188825938f9af6ae708614"><div class="ttname"><a href="classFullMatrix.html#a6d02c0f09e188825938f9af6ae708614">FullMatrix::Columns</a></div><div class="ttdeci">virtual std::size_t Columns() const</div><div class="ttdef"><b>Definition:</b> <a href="FullMatrix_8cc_source.html#l00056">FullMatrix.cc:56</a></div></div>
+<div class="ttc" id="aclassFullMatrix_html_a27f85bb35d5ae4e346524707eb94674d"><div class="ttname"><a href="classFullMatrix.html#a27f85bb35d5ae4e346524707eb94674d">FullMatrix::operator=</a></div><div class="ttdeci">FullMatrix&lt; TValue, TA &gt; &amp; operator=(const FullMatrix&lt; TValue, TA &gt; &amp;source)</div><div class="ttdef"><b>Definition:</b> <a href="FullMatrix_8cc_source.html#l00076">FullMatrix.cc:76</a></div></div>
+<div class="ttc" id="aFullArray_8hh_html"><div class="ttname"><a href="FullArray_8hh.html">FullArray.hh</a></div></div>
+<div class="ttc" id="aclassFullArray_html"><div class="ttname"><a href="classFullArray.html">FullArray</a></div><div class="ttdef"><b>Definition:</b> <a href="FullArray_8hh_source.html#l00015">FullArray.hh:15</a></div></div>
+<div class="ttc" id="aclassFullMatrix_html_a1fb7853dc531966114d01cf5720dd6aa"><div class="ttname"><a href="classFullMatrix.html#a1fb7853dc531966114d01cf5720dd6aa">FullMatrix::Rows</a></div><div class="ttdeci">virtual std::size_t Rows() const</div><div class="ttdef"><b>Definition:</b> <a href="FullMatrix_8cc_source.html#l00050">FullMatrix.cc:50</a></div></div>
+<div class="ttc" id="aclassArrayStructure_html"><div class="ttname"><a href="classArrayStructure.html">ArrayStructure</a></div><div class="ttdef"><b>Definition:</b> <a href="ArrayStructure_8hh_source.html#l00014">ArrayStructure.hh:14</a></div></div>
+<div class="ttc" id="aclassFullMatrix_html"><div class="ttname"><a href="classFullMatrix.html">FullMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="FullMatrix_8hh_source.html#l00015">FullMatrix.hh:15</a></div></div>
+<div class="ttc" id="aclassMatrixStructure_html"><div class="ttname"><a href="classMatrixStructure.html">MatrixStructure</a></div><div class="ttdef"><b>Definition:</b> <a href="MatrixStructure_8hh_source.html#l00014">MatrixStructure.hh:14</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -12,71 +12,142 @@
     <includedby refid="TestAssocArrayTypedef_8cc" local="no">tests/TestAssocArrayTypedef.cc</includedby>
     <includedby refid="TestAssocMatrix_8cc" local="no">tests/TestAssocMatrix.cc</includedby>
     <incdepgraph>
-      <node id="9">
+      <node id="12">
         <label>list</label>
       </node>
-      <node id="7">
+      <node id="10">
         <label>Set.hh</label>
-        <link refid="Set_8hh_source"/>
-        <childnode refid="8" relation="include">
+        <link refid="Set_8hh"/>
+        <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
-        <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="16">
+        <label>../../src/AssocArray.cc</label>
+        <link refid="AssocArray_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Array.hh</label>
+        <link refid="Array_8hh"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
         <label>map</label>
       </node>
-      <node id="6">
+      <node id="8">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
         <label>vector</label>
       </node>
       <node id="4">
         <label>cstddef</label>
       </node>
-      <node id="5">
+      <node id="9">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
         <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="6" relation="include">
+        <link refid="FullArray_8hh"/>
+        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
-      <node id="8">
+      <node id="11">
         <label>set</label>
+      </node>
+      <node id="14">
+        <label>algorithm</label>
       </node>
       <node id="1">
         <label>include/duffy/AssocArray.hh</label>
         <link refid="AssocArray_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>src/AssocArray.cc</label>
+        <link refid="AssocArray_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>AssocMatrix.hh</label>
-        <link refid="AssocMatrix_8hh_source"/>
+        <link refid="AssocMatrix_8hh"/>
+      </node>
+      <node id="6">
+        <label>tests/TestAssocMatrix.cc</label>
+        <link refid="TestAssocMatrix_8cc"/>
+      </node>
+      <node id="4">
+        <label>tests/TestAssocArray.cc</label>
+        <link refid="TestAssocArray_8cc"/>
+      </node>
+      <node id="5">
+        <label>tests/TestAssocArrayTypedef.cc</label>
+        <link refid="TestAssocArrayTypedef_8cc"/>
       </node>
       <node id="1">
         <label>include/duffy/AssocArray.hh</label>
         <link refid="AssocArray_8hh"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -99,8 +170,8 @@
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AssocArray_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AssocArray_HH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Array.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Set.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Array_8hh" kindref="compound">Array.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Set_8hh" kindref="compound">Set.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18" refid="classAssocArray" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>V,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>AI<sp/>=<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classAssocArray" kindref="compound">AssocArray</ref></highlight></codeline>
@@ -115,29 +186,29 @@
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructors<sp/>&amp;<sp/>destructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray" kindref="compound">AssocArray</ref>();</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray" kindref="compound">AssocArray</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classAssocArray" kindref="compound">AssocArray&lt;V, AI&gt;</ref>&amp;<sp/>arr2);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray_1a33a1d0f41fd0804939b454d02b8cace6" kindref="member">AssocArray</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray_1a33a1d0f41fd0804939b454d02b8cace6" kindref="member">AssocArray</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classAssocArray" kindref="compound">AssocArray&lt;V, AI&gt;</ref>&amp;<sp/>arr2);</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Construct<sp/>the<sp/>map<sp/>from<sp/>a<sp/>list<sp/>of<sp/>names<sp/>and<sp/>values</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray" kindref="compound">AssocArray</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;AI&gt;</ref>&amp;<sp/>names,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>V&amp;<sp/>val);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray_1a33a1d0f41fd0804939b454d02b8cace6" kindref="member">AssocArray</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSet" kindref="compound">Set&lt;AI&gt;</ref>&amp;<sp/>names,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>V&amp;<sp/>val);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray" kindref="compound">AssocArray&lt;V, AI&gt;</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classAssocArray" kindref="compound">AssocArray&lt;V, AI&gt;</ref>&amp;<sp/>ass2);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray" kindref="compound">AssocArray&lt;V, AI&gt;</ref>&amp;<sp/><ref refid="classAssocArray_1a217b73381b1ab8ec100fd09d2acdc4b8" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classAssocArray" kindref="compound">AssocArray&lt;V, AI&gt;</ref>&amp;<sp/>ass2);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>New<sp/>overloaded<sp/>indexing<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>V&amp;<sp/>operator<sp/>[]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AI&amp;<sp/>index);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Subscripting<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>V&amp;<sp/><ref refid="classAssocArray_1a8fac9fa310506a1319d71283e1dc54bc" kindref="member">operator [] </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AI&amp;<sp/>index);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Subscripting<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::map&lt;AI,V&gt;::iterator<sp/>iterator;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::map&lt;AI,V&gt;::const_iterator<sp/>const_iterator;</highlight></codeline>
+<codeline lineno="41" refid="classAssocArray_1ac1d9fb1b2682577b76f6dae9e674711c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::map&lt;AI,V&gt;::iterator<sp/><ref refid="classAssocArray_1ac1d9fb1b2682577b76f6dae9e674711c" kindref="member">iterator</ref>;</highlight></codeline>
+<codeline lineno="42" refid="classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::map&lt;AI,V&gt;::const_iterator<sp/><ref refid="classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62" kindref="member">const_iterator</ref>;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Iterator<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>iterator<sp/>Begin();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>assoc<sp/>array</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>const_iterator<sp/>Begin()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>assoc<sp/>array</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>iterator<sp/>End();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>assoc<sp/>array</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>const_iterator<sp/>End()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>assoc<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray_1ac1d9fb1b2682577b76f6dae9e674711c" kindref="member">iterator</ref><sp/><ref refid="classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107" kindref="member">Begin</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>assoc<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62" kindref="member">const_iterator</ref><sp/><ref refid="classAssocArray_1a3fbe23088af5d36d97acd4b76bcb0107" kindref="member">Begin</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>at<sp/>begin<sp/>of<sp/>assoc<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray_1ac1d9fb1b2682577b76f6dae9e674711c" kindref="member">iterator</ref><sp/><ref refid="classAssocArray_1a600b9a0280c6f67380abc032dad1d755" kindref="member">End</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>assoc<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAssocArray_1adea91a1cf7a2abbfdfd4c9bc7c746c62" kindref="member">const_iterator</ref><sp/><ref refid="classAssocArray_1a600b9a0280c6f67380abc032dad1d755" kindref="member">End</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>const<sp/>iterator<sp/>after<sp/>end<sp/>of<sp/>assoc<sp/>array</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Selectors</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>Size()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>str.size();<sp/>}</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;AI&gt;</ref><sp/>Keys()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>keys;<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classAssocArray_1ab2ab7a330c94e3fb36060c9ec6e908ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classAssocArray_1ab2ab7a330c94e3fb36060c9ec6e908ef" kindref="member">Size</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>str.size();<sp/>}</highlight></codeline>
+<codeline lineno="52" refid="classAssocArray_1a06535adaa02888ad24b3385eb1f83094" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSet" kindref="compound">Set&lt;AI&gt;</ref><sp/><ref refid="classAssocArray_1a06535adaa02888ad24b3385eb1f83094" kindref="member">Keys</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>keys;<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Modifiers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>void<sp/>add(const<sp/>AI&amp;<sp/>key,<sp/>const<sp/>V&amp;<sp/>value);</highlight><highlight class="normal"></highlight></codeline>

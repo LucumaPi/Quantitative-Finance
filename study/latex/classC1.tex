@@ -12,14 +12,79 @@ Collaboration diagram for C1\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classC1_a4222be94f2d7c78ac5794c5c54ac220e}\label{classC1_a4222be94f2d7c78ac5794c5c54ac220e}} 
-{\bfseries C1} (int N)
+\mbox{\hyperlink{classC1_a4222be94f2d7c78ac5794c5c54ac220e}{C1}} (int \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})
 \item 
-\mbox{\Hypertarget{classC1_ad279b0edbeb116fe47b199cd42e06560}\label{classC1_ad279b0edbeb116fe47b199cd42e06560}} 
-double {\bfseries get\+Value} () const
+double \mbox{\hyperlink{classC1_ad279b0edbeb116fe47b199cd42e06560}{get\+Value}} () const
+\item 
+\mbox{\hyperlink{classC1_ae3385f47deadc6a01d600924fa9c852a}{$\sim$\+C1}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Association_8cc_source_l00009}{9}} of file \mbox{\hyperlink{Association_8cc_source}{Association.\+cc}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classC1_a4222be94f2d7c78ac5794c5c54ac220e}\label{classC1_a4222be94f2d7c78ac5794c5c54ac220e}} 
+\index{C1@{C1}!C1@{C1}}
+\index{C1@{C1}!C1@{C1}}
+\doxysubsubsection{\texorpdfstring{C1()}{C1()}}
+{\footnotesize\ttfamily C1\+::\+C1 (\begin{DoxyParamCaption}\item[{int}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Association_8cc_source_l00015}{15}} of file \mbox{\hyperlink{Association_8cc_source}{Association.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016     \{ }
+\DoxyCodeLine{00017         size = \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}};}
+\DoxyCodeLine{00018         iarr = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[size];}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}; j++)}
+\DoxyCodeLine{00020         \{}
+\DoxyCodeLine{00021             iarr[j] = double(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}-\/j);}
+\DoxyCodeLine{00022         \}}
+\DoxyCodeLine{00023     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classC1_ae3385f47deadc6a01d600924fa9c852a}\label{classC1_ae3385f47deadc6a01d600924fa9c852a}} 
+\index{C1@{C1}!````~C1@{$\sim$C1}}
+\index{````~C1@{$\sim$C1}!C1@{C1}}
+\doxysubsubsection{\texorpdfstring{$\sim$C1()}{~C1()}}
+{\footnotesize\ttfamily C1\+::$\sim$\+C1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Association_8cc_source_l00026}{26}} of file \mbox{\hyperlink{Association_8cc_source}{Association.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026 \{ \textcolor{keyword}{delete} [] iarr; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classC1_ad279b0edbeb116fe47b199cd42e06560}\label{classC1_ad279b0edbeb116fe47b199cd42e06560}} 
+\index{C1@{C1}!getValue@{getValue}}
+\index{getValue@{getValue}!C1@{C1}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily double C1\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Association_8cc_source_l00025}{25}} of file \mbox{\hyperlink{Association_8cc_source}{Association.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025 \{\textcolor{keywordflow}{return} iarr[0]/double(size);\}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-tests/Association.\+cc\end{DoxyCompactItemize}
+tests/\mbox{\hyperlink{Association_8cc}{Association.\+cc}}\end{DoxyCompactItemize}

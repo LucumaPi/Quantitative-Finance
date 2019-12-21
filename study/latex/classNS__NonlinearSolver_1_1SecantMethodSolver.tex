@@ -2,6 +2,10 @@
 \label{classNS__NonlinearSolver_1_1SecantMethodSolver}\index{NS\_NonlinearSolver::SecantMethodSolver@{NS\_NonlinearSolver::SecantMethodSolver}}
 
 
+{\ttfamily \#include $<$Nonlinear\+Solver.\+hh$>$}
+
+
+
 Inheritance diagram for N\+S\+\_\+\+Nonlinear\+Solver\+::Secant\+Method\+Solver\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,18 +25,111 @@ Collaboration diagram for N\+S\+\_\+\+Nonlinear\+Solver\+::Secant\+Method\+Solve
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SecantMethodSolver_a3efbb4b75f28b61edcd72dcc9d6a0906}\label{classNS__NonlinearSolver_1_1SecantMethodSolver_a3efbb4b75f28b61edcd72dcc9d6a0906}} 
-{\bfseries Secant\+Method\+Solver} (double guess\+Zero, double guess\+One, double($\ast$my\+Function)(double x))
+\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_a3efbb4b75f28b61edcd72dcc9d6a0906}{Secant\+Method\+Solver}} (double guess\+Zero, double guess\+One, double($\ast$my\+Function)(double x))
 \item 
-\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}\label{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}} 
-double {\bfseries solve} ()
+double \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}{solve}} ()
 \item 
-\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}\label{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}} 
-void {\bfseries print\+Statistics} () const
+void \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}{print\+Statistics}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{NonlinearSolver_8hh_source_l00173}{173}} of file \mbox{\hyperlink{NonlinearSolver_8hh_source}{Nonlinear\+Solver.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SecantMethodSolver_a3efbb4b75f28b61edcd72dcc9d6a0906}\label{classNS__NonlinearSolver_1_1SecantMethodSolver_a3efbb4b75f28b61edcd72dcc9d6a0906}} 
+\index{NS\_NonlinearSolver::SecantMethodSolver@{NS\_NonlinearSolver::SecantMethodSolver}!SecantMethodSolver@{SecantMethodSolver}}
+\index{SecantMethodSolver@{SecantMethodSolver}!NS\_NonlinearSolver::SecantMethodSolver@{NS\_NonlinearSolver::SecantMethodSolver}}
+\doxysubsubsection{\texorpdfstring{SecantMethodSolver()}{SecantMethodSolver()}}
+{\footnotesize\ttfamily N\+S\+\_\+\+Nonlinear\+Solver\+::\+Secant\+Method\+Solver\+::\+Secant\+Method\+Solver (\begin{DoxyParamCaption}\item[{double}]{guess\+Zero,  }\item[{double}]{guess\+One,  }\item[{double($\ast$)(double x)}]{my\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NonlinearSolver_8hh_source_l00187}{187}} of file \mbox{\hyperlink{NonlinearSolver_8hh_source}{Nonlinear\+Solver.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189         \{}
+\DoxyCodeLine{00190             x0 = guessZero;}
+\DoxyCodeLine{00191             x1 = guessOne;}
+\DoxyCodeLine{00192             \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}} = myFunction;}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194             xOld = x0; xNew = x1; xCurrent = xNew;}
+\DoxyCodeLine{00195             fOld = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xOld); fNew = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xNew);}
+\DoxyCodeLine{00196         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}\label{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}} 
+\index{NS\_NonlinearSolver::SecantMethodSolver@{NS\_NonlinearSolver::SecantMethodSolver}!printStatistics@{printStatistics}}
+\index{printStatistics@{printStatistics}!NS\_NonlinearSolver::SecantMethodSolver@{NS\_NonlinearSolver::SecantMethodSolver}}
+\doxysubsubsection{\texorpdfstring{printStatistics()}{printStatistics()}}
+{\footnotesize\ttfamily void N\+S\+\_\+\+Nonlinear\+Solver\+::\+Secant\+Method\+Solver\+::print\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NonlinearSolver_8hh_source_l00223}{223}} of file \mbox{\hyperlink{NonlinearSolver_8hh_source}{Nonlinear\+Solver.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00224         \{}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{00226             std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Secant method\(\backslash\)n"};}
+\DoxyCodeLine{00227             std::cout << \textcolor{stringliteral}{"Value: "} << xCurrent << std::endl;}
+\DoxyCodeLine{00228             std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} << std::endl;}
+\DoxyCodeLine{00229         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}\label{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}} 
+\index{NS\_NonlinearSolver::SecantMethodSolver@{NS\_NonlinearSolver::SecantMethodSolver}!solve@{solve}}
+\index{solve@{solve}!NS\_NonlinearSolver::SecantMethodSolver@{NS\_NonlinearSolver::SecantMethodSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily double N\+S\+\_\+\+Nonlinear\+Solver\+::\+Secant\+Method\+Solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_a7336902d70e3ae47194eb92abac04333}{N\+S\+\_\+\+Nonlinear\+Solver\+::\+Nonlinear\+Solver}}.
+
+
+
+Definition at line \mbox{\hyperlink{NonlinearSolver_8hh_source_l00198}{198}} of file \mbox{\hyperlink{NonlinearSolver_8hh_source}{Nonlinear\+Solver.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00199         \{}
+\DoxyCodeLine{00200             \textcolor{keywordtype}{double} diff;}
+\DoxyCodeLine{00201             \textcolor{keywordtype}{double} hn; }
+\DoxyCodeLine{00202             \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 1;}
+\DoxyCodeLine{00203 L1:}
+\DoxyCodeLine{00204             assert(fOld != fNew);}
+\DoxyCodeLine{00205             diff = (xNew -\/ xOld)/(fNew -\/ fOld); \textcolor{comment}{// divide by zero?}}
+\DoxyCodeLine{00206             hn = -\/ \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xNew) * diff;}
+\DoxyCodeLine{00207             xCurrent = xNew + hn;}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209             \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++;}
+\DoxyCodeLine{00210             \textcolor{keywordflow}{if} (::fabs(hn) <= \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}})}
+\DoxyCodeLine{00211             \{}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213                 \textcolor{keywordflow}{return} xCurrent;}
+\DoxyCodeLine{00214             \}}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216             \textcolor{comment}{// Update all registers}}
+\DoxyCodeLine{00217             xOld = xNew; xNew = xCurrent; }
+\DoxyCodeLine{00218             fOld = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xOld); fNew = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xNew);}
+\DoxyCodeLine{00219                 }
+\DoxyCodeLine{00220             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00221         \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Nonlinear\+Solver.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{NonlinearSolver_8hh}{Nonlinear\+Solver.\+hh}}\end{DoxyCompactItemize}

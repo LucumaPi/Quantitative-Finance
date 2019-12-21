@@ -1,0 +1,158 @@
+\hypertarget{TestEuropeanOption_8cc}{}\doxysection{tests/\+Test\+European\+Option.cc File Reference}
+\label{TestEuropeanOption_8cc}\index{tests/TestEuropeanOption.cc@{tests/TestEuropeanOption.cc}}
+{\ttfamily \#include $<$duffy/\+European\+Option.\+hh$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Test\+European\+Option.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{TestEuropeanOption_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestEuropeanOption_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestEuropeanOption_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestEuropeanOption_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestEuropeanOption.cc@{TestEuropeanOption.cc}!main@{main}}
+\index{main@{main}!TestEuropeanOption.cc@{TestEuropeanOption.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestEuropeanOption_8cc_source_l00012}{12}} of file \mbox{\hyperlink{TestEuropeanOption_8cc_source}{Test\+European\+Option.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{ \textcolor{comment}{// All options are European}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \textcolor{comment}{// Call option on a stock}}
+\DoxyCodeLine{00016     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} callOption;}
+\DoxyCodeLine{00017     std::cout << \textcolor{stringliteral}{"Call option on a stock: "} << callOption.\mbox{\hyperlink{classEuropeanOption_a7d28b7f6ec2c07a783a43411214b4623}{Price}}() << std::endl;}
+\DoxyCodeLine{00018     }
+\DoxyCodeLine{00019     \textcolor{comment}{// Put option on a stock index}}
+\DoxyCodeLine{00020     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} indexOption;}
+\DoxyCodeLine{00021     indexOption.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"P"};}
+\DoxyCodeLine{00022     indexOption.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 100.0;}
+\DoxyCodeLine{00023     indexOption.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 95.0;}
+\DoxyCodeLine{00024     indexOption.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 0.5;}
+\DoxyCodeLine{00025     indexOption.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.10;}
+\DoxyCodeLine{00026     indexOption.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = 0.20;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordtype}{double} q = 0.05;        \textcolor{comment}{// Dividend yield}}
+\DoxyCodeLine{00029     indexOption.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = indexOption.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} -\/ q;}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     std::cout << \textcolor{stringliteral}{"Put option on an index: "} << indexOption.\mbox{\hyperlink{classEuropeanOption_a7d28b7f6ec2c07a783a43411214b4623}{Price}}() << std::endl;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{comment}{// Call and put options on a future}}
+\DoxyCodeLine{00034     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} futureOption;}
+\DoxyCodeLine{00035     futureOption.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"P"};}
+\DoxyCodeLine{00036     futureOption.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 19.0;}
+\DoxyCodeLine{00037     futureOption.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 19.0;}
+\DoxyCodeLine{00038     futureOption.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 0.75;}
+\DoxyCodeLine{00039     futureOption.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.10;}
+\DoxyCodeLine{00040     futureOption.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = 0.28;}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     futureOption.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = 0.0;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     std::cout << \textcolor{stringliteral}{"Put option on a future: "} << futureOption.\mbox{\hyperlink{classEuropeanOption_a7d28b7f6ec2c07a783a43411214b4623}{Price}}() << std::endl;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{comment}{// Now change over to a call on the option}}
+\DoxyCodeLine{00047     futureOption.\mbox{\hyperlink{classEuropeanOption_afb493b377653c08f304da346b9e6cbe9}{toggle}}();}
+\DoxyCodeLine{00048     std::cout << \textcolor{stringliteral}{"Call option on a future: "} << futureOption.\mbox{\hyperlink{classEuropeanOption_a7d28b7f6ec2c07a783a43411214b4623}{Price}}() << std::endl;}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     \textcolor{comment}{// Call option on currency}}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} currencyOption;}
+\DoxyCodeLine{00053     currencyOption.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"C"};}
+\DoxyCodeLine{00054     currencyOption.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 1.56;}
+\DoxyCodeLine{00055     currencyOption.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 1.60;}
+\DoxyCodeLine{00056     currencyOption.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 0.5;}
+\DoxyCodeLine{00057     currencyOption.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.06;}
+\DoxyCodeLine{00058     currencyOption.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = 0.12;}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     \textcolor{keywordtype}{double} rf = 0.08;       \textcolor{comment}{// risk-\/free rate of foreign currency}}
+\DoxyCodeLine{00061     currencyOption.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = currencyOption.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} -\/ rf;}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     std::cout << std::endl << \textcolor{stringliteral}{"** Other pricing examples **"} << std::endl << std::endl;}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     std::cout << \textcolor{stringliteral}{"Call option on a currency: "} << currencyOption.\mbox{\hyperlink{classEuropeanOption_a7d28b7f6ec2c07a783a43411214b4623}{Price}}() << std::endl;}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \textcolor{comment}{// Call and put options on a future: Delta and Elasticity}}
+\DoxyCodeLine{00070     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} futureOption2;}
+\DoxyCodeLine{00071     futureOption2.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"P"};}
+\DoxyCodeLine{00072     futureOption2.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 105.0;}
+\DoxyCodeLine{00073     futureOption2.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 100.0;}
+\DoxyCodeLine{00074     futureOption2.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 0.5;}
+\DoxyCodeLine{00075     futureOption2.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.10;}
+\DoxyCodeLine{00076     futureOption2.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = 0.36;}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     futureOption2.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = 0.0;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     std::cout << \textcolor{stringliteral}{"Delta on a put future: "} << futureOption2.\mbox{\hyperlink{classEuropeanOption_a4175705666df41879d3aa2dcbe399545}{Delta}}() << std::endl;}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{comment}{// Now change over to a call on the option}}
+\DoxyCodeLine{00083     futureOption2.\mbox{\hyperlink{classEuropeanOption_afb493b377653c08f304da346b9e6cbe9}{toggle}}();}
+\DoxyCodeLine{00084     std::cout << \textcolor{stringliteral}{"Delta on a call future: "} << futureOption2.\mbox{\hyperlink{classEuropeanOption_a4175705666df41879d3aa2dcbe399545}{Delta}}() << std::endl;}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     }
+\DoxyCodeLine{00087     \textcolor{comment}{// Stock Option: Gamma}}
+\DoxyCodeLine{00088     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} stockOption;}
+\DoxyCodeLine{00089     stockOption.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"C"};}
+\DoxyCodeLine{00090     stockOption.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 55.0;}
+\DoxyCodeLine{00091     stockOption.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 60.0;}
+\DoxyCodeLine{00092     stockOption.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 0.75;}
+\DoxyCodeLine{00093     stockOption.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.10;}
+\DoxyCodeLine{00094     stockOption.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = 0.30;}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     stockOption.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = stockOption.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}};}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099     stockOption.\mbox{\hyperlink{classEuropeanOption_afb493b377653c08f304da346b9e6cbe9}{toggle}}();}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{comment}{// Calculating theta of a European stock index}}
+\DoxyCodeLine{00102     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} indexOption2;}
+\DoxyCodeLine{00103     indexOption2.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"P"};}
+\DoxyCodeLine{00104     indexOption2.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 430.0;}
+\DoxyCodeLine{00105     indexOption2.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 405.0;}
+\DoxyCodeLine{00106     indexOption2.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 0.0833;   \textcolor{comment}{// One month expiration}}
+\DoxyCodeLine{00107     indexOption2.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.07;}
+\DoxyCodeLine{00108     indexOption2.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = 0.20;}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     \textcolor{keywordtype}{double} divYield = 0.05;     \textcolor{comment}{// Dividend yield, 5\% per annum}}
+\DoxyCodeLine{00111     indexOption2.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = indexOption2.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} -\/ divYield;}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     \textcolor{comment}{// Stock Option: Rho}}
+\DoxyCodeLine{00115     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} stockOption2;}
+\DoxyCodeLine{00116     stockOption2.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"C"};}
+\DoxyCodeLine{00117     stockOption2.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 72.0;}
+\DoxyCodeLine{00118     stockOption2.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 75.0;}
+\DoxyCodeLine{00119     stockOption2.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 1.0;}
+\DoxyCodeLine{00120     stockOption2.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.09;}
+\DoxyCodeLine{00121     stockOption2.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = 0.19;}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123     stockOption2.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = stockOption2.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}};}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125     \textcolor{comment}{// Calculating Cost of Carry of a European stock index}}
+\DoxyCodeLine{00126     \mbox{\hyperlink{classEuropeanOption}{EuropeanOption}} indexOption3;}
+\DoxyCodeLine{00127     indexOption3.\mbox{\hyperlink{classEuropeanOption_a20f87006303d3a68d75e8a0009474447}{optType}} = \textcolor{stringliteral}{"P"};}
+\DoxyCodeLine{00128     indexOption3.\mbox{\hyperlink{classEuropeanOption_ac548e7d587d5b57931498ffbc412ff31}{U}} = 500.0;}
+\DoxyCodeLine{00129     indexOption3.\mbox{\hyperlink{classEuropeanOption_ac5a93ec015d6f962ff1f373087b9a504}{K}} = 490.0;}
+\DoxyCodeLine{00130     indexOption3.\mbox{\hyperlink{classEuropeanOption_ac72914717c7810e83167497180818102}{T}} = 0.222225;}
+\DoxyCodeLine{00131     indexOption3.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} = 0.08;}
+\DoxyCodeLine{00132     indexOption3.\mbox{\hyperlink{classEuropeanOption_a308f27729695ab5bd5226d4db5f2d3ce}{sig}} = 0.15;}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134     \textcolor{keywordtype}{double} divYield3 = 0.05;        \textcolor{comment}{// Dividend yield, 5\% per annum}}
+\DoxyCodeLine{00135     indexOption3.\mbox{\hyperlink{classEuropeanOption_a50730804c94de3202267590a45f34232}{b}} = indexOption3.\mbox{\hyperlink{classEuropeanOption_aa5c345e946f8f9caace7d7286ffd2d8b}{r}} -\/ divYield3 ;}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00138 \}}
+
+\end{DoxyCode}

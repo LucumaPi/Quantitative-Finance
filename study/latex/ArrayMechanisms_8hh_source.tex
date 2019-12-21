@@ -22,151 +22,151 @@
 \DoxyCodeLine{00018 \textcolor{preprocessor}{\#ifndef ArrayMechanisms\_hh}}
 \DoxyCodeLine{00019 \textcolor{preprocessor}{\#define ArrayMechanisms\_hh}}
 \DoxyCodeLine{00020 }
-\DoxyCodeLine{00021 \textcolor{preprocessor}{\#include "SimplePropertySet.hh"}}
-\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include "Range.hh"}}
-\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include "Tensor.hh"}}
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{SimplePropertySet_8hh}{SimplePropertySet.hh}}"}}
+\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Range_8hh}{Range.hh}}"}}
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Tensor_8hh}{Tensor.hh}}"}}
 \DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <cmath>}}
 \DoxyCodeLine{00025 }
 \DoxyCodeLine{00026 \textcolor{comment}{// Sums and averages}}
-\DoxyCodeLine{00027 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V sum(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); \textcolor{comment}{// Sum of elements}}
-\DoxyCodeLine{00028 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V product(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); \textcolor{comment}{// Product of elements}}
-\DoxyCodeLine{00029 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V sumReciprocals(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); \textcolor{comment}{// Sum of reciprocals}}
-\DoxyCodeLine{00030 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V sumAbsoluteValues(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); \textcolor{comment}{// Sum of absolute values}}
+\DoxyCodeLine{00027 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); \textcolor{comment}{// Sum of elements}}
+\DoxyCodeLine{00028 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a7383833d1a743d1cf913e8748e03e30d}{product}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); \textcolor{comment}{// Product of elements}}
+\DoxyCodeLine{00029 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a1f180ea2ca6f8377075ebe0078a3a535}{sumReciprocals}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); \textcolor{comment}{// Sum of reciprocals}}
+\DoxyCodeLine{00030 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a259e88a526330c4e69811f4722c472e6}{sumAbsoluteValues}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); \textcolor{comment}{// Sum of absolute values}}
 \DoxyCodeLine{00031 }
 \DoxyCodeLine{00032 }
 \DoxyCodeLine{00033 \textcolor{comment}{// Mean value == sum() / N }}
-\DoxyCodeLine{00034 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V mean(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); }
+\DoxyCodeLine{00034 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_acbc48d749bdc03cf251b6db7e93df4c4}{mean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); }
 \DoxyCodeLine{00035 }
 \DoxyCodeLine{00036 \textcolor{comment}{// Weighted arithmetic mean}}
-\DoxyCodeLine{00037 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V weightedArithMean(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& w); }
+\DoxyCodeLine{00037 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_acdb15569682a2e0bf2c6f8a8f2df74c9}{weightedArithMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& w); }
 \DoxyCodeLine{00038 }
 \DoxyCodeLine{00039 \textcolor{comment}{// Geometric mean or geometric average }}
-\DoxyCodeLine{00040 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V geometricMean(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); }
+\DoxyCodeLine{00040 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_abc6df0dcf265521ed3239d9292fb7c62}{geometricMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); }
 \DoxyCodeLine{00041 }
 \DoxyCodeLine{00042 \textcolor{comment}{// Harmonic mean}}
-\DoxyCodeLine{00043 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V harmonicMean(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); }
+\DoxyCodeLine{00043 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a13d345e8be1ef4121580faf897843983}{harmonicMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); }
 \DoxyCodeLine{00044 }
 \DoxyCodeLine{00045 \textcolor{comment}{// Root mean square (RMS)}}
-\DoxyCodeLine{00046 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V quadraticMean(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); }
+\DoxyCodeLine{00046 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a1961ee6c6a6ab7d95cad63dcb8963707}{quadraticMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x); }
 \DoxyCodeLine{00047 }
 \DoxyCodeLine{00048 \textcolor{comment}{// Sum of squares}}
-\DoxyCodeLine{00049 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V sumSquares(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00049 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_ada1be3fbf31a833d8f891a1d9fbb9f02}{sumSquares}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00050 }
 \DoxyCodeLine{00051 \textcolor{comment}{// A function returning all of the above values in one foul swoop (performance)}}
-\DoxyCodeLine{00052 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} allAverages(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00052 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{ArrayMechanisms_8hh_a5213d504673342d3276c3335cc092339}{allAverages}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00053 }
 \DoxyCodeLine{00055 }
 \DoxyCodeLine{00056 \textcolor{comment}{// Measures of Dispersion}}
 \DoxyCodeLine{00057 }
-\DoxyCodeLine{00058 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V deviationFromMean(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00059 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V standardDeviation(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00060 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V variance(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00058 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_aabe7146d0ab655df7dea0dda59e33af6}{deviationFromMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00059 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a7f43379194df79cb9bfc98918b3d107d}{standardDeviation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00060 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a039fe821f2cc2ebd29c145218b7e594c}{variance}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00061 }
 \DoxyCodeLine{00062 \textcolor{comment}{// A function returning all of the above values in one foul swoop (performance)}}
-\DoxyCodeLine{00063 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} allDispersions(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00063 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{ArrayMechanisms_8hh_afa77a0c5d6e72e2000a53be658c5362e}{allDispersions}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00064 }
 \DoxyCodeLine{00065 \textcolor{comment}{// Moments, Skewness and Kurtosis}}
 \DoxyCodeLine{00066 }
 \DoxyCodeLine{00067 \textcolor{comment}{// The rth moment}}
-\DoxyCodeLine{00068 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V rthMoment(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& r);}
+\DoxyCodeLine{00068 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
 \DoxyCodeLine{00069 }
 \DoxyCodeLine{00070 \textcolor{comment}{// The rth moment about the Mean m(r)}}
-\DoxyCodeLine{00071 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V rthMomentMean(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& r);}
-\DoxyCodeLine{00072 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V rthMomentMean(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& freq,}
-\DoxyCodeLine{00073                                             \textcolor{keyword}{const} I\& r);}
+\DoxyCodeLine{00071 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_abd89b7368c88dc0c18b171191ffce49c}{rthMomentMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00072 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_abd89b7368c88dc0c18b171191ffce49c}{rthMomentMean}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& freq,}
+\DoxyCodeLine{00073                                             \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
 \DoxyCodeLine{00074 }
 \DoxyCodeLine{00075 \textcolor{comment}{// The rth moment about an origin A}}
-\DoxyCodeLine{00076 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V rthMoment(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& r, \textcolor{keyword}{const} V\& A);}
+\DoxyCodeLine{00076 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, \textcolor{keyword}{const} V\& A);}
 \DoxyCodeLine{00077 }
 \DoxyCodeLine{00078 \textcolor{comment}{// The rth moment about an origin A and with frequencies of each element in vector}}
-\DoxyCodeLine{00079 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V rthMoment(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& freq, }
-\DoxyCodeLine{00080                                         \textcolor{keyword}{const} I\& r, \textcolor{keyword}{const} V\& A);}
+\DoxyCodeLine{00079 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a57b30169c08bc835f06a3b4226d358e3}{rthMoment}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& freq, }
+\DoxyCodeLine{00080                                         \textcolor{keyword}{const} I\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, \textcolor{keyword}{const} V\& A);}
 \DoxyCodeLine{00081 }
 \DoxyCodeLine{00082 \textcolor{comment}{// Mode: either the middle element or the mean of the two middle elements }}
-\DoxyCodeLine{00083 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V median(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00083 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_accd08ee829c11fff840fb28b56c66016}{median}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00084 }
 \DoxyCodeLine{00085 \textcolor{comment}{// Number of occurrences of value d in vector x}}
-\DoxyCodeLine{00086 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I occurs(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} V\& d);}
+\DoxyCodeLine{00086 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I \mbox{\hyperlink{ArrayMechanisms_8hh_a4dbe91f78965a3973c017e8fdc01d86c}{occurs}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} V\& d);}
 \DoxyCodeLine{00087 }
 \DoxyCodeLine{00088 \textcolor{comment}{// The element in x that occurs with the greatest frequency}}
-\DoxyCodeLine{00089 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V mode(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00089 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a5b2af8b958fc1d86e138fb7220db2fae}{mode}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00090 }
-\DoxyCodeLine{00091 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V skewness(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00091 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a51f76c32be87bbb64dc2b2fe77953108}{skewness}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00092 }
 \DoxyCodeLine{00093 \textcolor{comment}{// Extremum operations on vectors}}
 \DoxyCodeLine{00094 }
-\DoxyCodeLine{00095 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V maxValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00096 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V minValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00095 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a1629e541754df6662b3c7bcf8c7f7e7a}{maxValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00096 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a3fd6d636d86485d9e274d6003f9cf981}{minValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00097 }
 \DoxyCodeLine{00098 \textcolor{comment}{// Max and min of the absolute values}}
-\DoxyCodeLine{00099 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V maxAbsValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00100 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V minAbsValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00099 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a224fe3e8a6c63d545f98b44ebbb2bd77}{maxAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00100 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a1444de407d9592e80d0b9ebcb24d9c9f}{minAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00101 }
 \DoxyCodeLine{00102 \textcolor{comment}{// Index of max and min values }}
-\DoxyCodeLine{00103 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I indexMaxValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00104 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V indexMinValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00103 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I \mbox{\hyperlink{ArrayMechanisms_8hh_a3b3c6f150e27a4d999b14733f81b172c}{indexMaxValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00104 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a71ec96ee72e5a63195e9627020c77b91}{indexMinValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00105 }
-\DoxyCodeLine{00106 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I indexMaxAbsValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00107 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V indexMinAbsValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00106 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> I \mbox{\hyperlink{ArrayMechanisms_8hh_aaa5e1505fda32d2b536b574bd5f7fb0f}{indexMaxAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00107 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a10dcf29732fc9a591206fed9dad7fdc7}{indexMinAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00108 }
 \DoxyCodeLine{00109 \textcolor{comment}{// Vector-\/vector extremum (difference of two vectors)}}
-\DoxyCodeLine{00110 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V maxValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
-\DoxyCodeLine{00111 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V minValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
+\DoxyCodeLine{00110 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a1629e541754df6662b3c7bcf8c7f7e7a}{maxValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
+\DoxyCodeLine{00111 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a3fd6d636d86485d9e274d6003f9cf981}{minValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
 \DoxyCodeLine{00112 }
-\DoxyCodeLine{00113 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V maxAbsValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
-\DoxyCodeLine{00114 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V minAbsValue(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
+\DoxyCodeLine{00113 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a224fe3e8a6c63d545f98b44ebbb2bd77}{maxAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
+\DoxyCodeLine{00114 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a1444de407d9592e80d0b9ebcb24d9c9f}{minAbsValue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
 \DoxyCodeLine{00115 }
 \DoxyCodeLine{00116 \textcolor{comment}{// Vector and matrix norms}}
 \DoxyCodeLine{00117 }
-\DoxyCodeLine{00118 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V innerProduct(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
-\DoxyCodeLine{00119 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V l1Norm(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00120 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V l2Norm(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);      \textcolor{comment}{// Euclidean norm}}
-\DoxyCodeLine{00121 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V lpNorm(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& p);      }
-\DoxyCodeLine{00122 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V lInfinityNorm(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);   \textcolor{comment}{// L infinity norm}}
+\DoxyCodeLine{00118 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a7feb2b4cbb0c06fa9146125c0e869513}{innerProduct}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
+\DoxyCodeLine{00119 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a75a652af753fedaf9991ce139cf6e66a}{l1Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00120 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a668d08308ea702fd8b718c9269666934}{l2Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);        \textcolor{comment}{// Euclidean norm}}
+\DoxyCodeLine{00121 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_ae40b9d63ad56566ac2e6032014158066}{lpNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x, \textcolor{keyword}{const} I\& p);        }
+\DoxyCodeLine{00122 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a61a3356be620e18abfb8e5ccc92945df}{lInfinityNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);  \textcolor{comment}{// L infinity norm}}
 \DoxyCodeLine{00123 }
-\DoxyCodeLine{00124 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} allNorms(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00124 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{ArrayMechanisms_8hh_abe75e0a9b49ea9923c15a384761d13d8}{allNorms}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00125 }
 \DoxyCodeLine{00126 \textcolor{comment}{// Same vector morms as above except for the difference of two vectors}}
-\DoxyCodeLine{00127 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V l1Norm(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
-\DoxyCodeLine{00128 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V l2Norm(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);     \textcolor{comment}{// Euclidean norm}}
-\DoxyCodeLine{00129 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V lpNorm(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB, \textcolor{keyword}{const} I\& p);     }
-\DoxyCodeLine{00130 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V lInfinityNorm(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);  \textcolor{comment}{// L infinity norm}}
+\DoxyCodeLine{00127 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a75a652af753fedaf9991ce139cf6e66a}{l1Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
+\DoxyCodeLine{00128 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a668d08308ea702fd8b718c9269666934}{l2Norm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);       \textcolor{comment}{// Euclidean norm}}
+\DoxyCodeLine{00129 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_ae40b9d63ad56566ac2e6032014158066}{lpNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB, \textcolor{keyword}{const} I\& p);       }
+\DoxyCodeLine{00130 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{ArrayMechanisms_8hh_a61a3356be620e18abfb8e5ccc92945df}{lInfinityNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB); \textcolor{comment}{// L infinity norm}}
 \DoxyCodeLine{00131 }
-\DoxyCodeLine{00132 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} allNorms(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
+\DoxyCodeLine{00132 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{ArrayMechanisms_8hh_abe75e0a9b49ea9923c15a384761d13d8}{allNorms}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorA, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& vectorB);}
 \DoxyCodeLine{00133 }
 \DoxyCodeLine{00134 \textcolor{comment}{// Functions for Operations Research and Numerical Linear Algebra}}
 \DoxyCodeLine{00135 }
 \DoxyCodeLine{00136 \textcolor{comment}{// Comparing vectors with each other}}
 \DoxyCodeLine{00137 }
 \DoxyCodeLine{00138 \textcolor{comment}{// Are all elements of a vector positive?}}
-\DoxyCodeLine{00139 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} positive(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00140 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} negative(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00139 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8hh_ac6a295c94e7d2e90ae8514dcf05377e5}{positive}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00140 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8hh_af844f9e94257e30adb2557f72bc776fe}{negative}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00141 }
 \DoxyCodeLine{00142 }
 \DoxyCodeLine{00143 \textcolor{comment}{// Is v1 < v2? etc. }}
-\DoxyCodeLine{00144 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator < (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
-\DoxyCodeLine{00145 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator <= (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
-\DoxyCodeLine{00146 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator > (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
-\DoxyCodeLine{00147 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator >= (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
-\DoxyCodeLine{00148 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator == (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
-\DoxyCodeLine{00149 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator != (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
+\DoxyCodeLine{00144 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8hh_a7c74d80e1384b34d96195b6fb7abea03}{operator < }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
+\DoxyCodeLine{00145 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8hh_a10d1dbb4bde9b31e016ae7f59e66d75e}{operator <= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
+\DoxyCodeLine{00146 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8hh_a537b17e660b3bfc1ed9a5ea8eb5b8fe5}{operator > }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
+\DoxyCodeLine{00147 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8hh_ac246693b295956f27f5823380e5f0941}{operator >= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
+\DoxyCodeLine{00148 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8hh_a5b73c0e302fb50e0a12d98287b641acb}{operator == }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
+\DoxyCodeLine{00149 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{ArrayMechanisms_8hh_a76316bb45bc18b42f0098871aa970fac}{operator != }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v2);}
 \DoxyCodeLine{00150 }
 \DoxyCodeLine{00151 \textcolor{comment}{// Utility functions}}
 \DoxyCodeLine{00152 }
 \DoxyCodeLine{00153 \textcolor{comment}{// Create an STL vector from a general Vector}}
-\DoxyCodeLine{00154 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> std::vector<V> createSTLvector (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,int>}}\& myVector);}
+\DoxyCodeLine{00154 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> std::vector<V> \mbox{\hyperlink{ArrayMechanisms_8hh_abd5321c0d9d995769f70d91eca8e8e5e}{createSTLvector}} (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,int>}}\& myVector);}
 \DoxyCodeLine{00155 \textcolor{comment}{// Create a general Vector from an STL vector}}
-\DoxyCodeLine{00156 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \mbox{\hyperlink{classVector}{Vector<V, int>}} createDatasimVector (\textcolor{keyword}{const} std::vector<V>\& mySTLvector);}
+\DoxyCodeLine{00156 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \mbox{\hyperlink{classVector}{Vector<V, int>}} \mbox{\hyperlink{ArrayMechanisms_8hh_a78a90de96c8a055b6921cb51fe868cef}{createDatasimVector}} (\textcolor{keyword}{const} std::vector<V>\& mySTLvector);}
 \DoxyCodeLine{00157 }
 \DoxyCodeLine{00158 \textcolor{comment}{// Cumulative vector c[j] = c[j-\/1] + x[j]}}
-\DoxyCodeLine{00159 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V, I>}} cumulativeVector (\textcolor{keyword}{const} std::vector<V>\& x);}
+\DoxyCodeLine{00159 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{ArrayMechanisms_8hh_ae92f1779b28708717fc43981b0d7e721}{cumulativeVector}} (\textcolor{keyword}{const} std::vector<V>\& x);}
 \DoxyCodeLine{00160 }
 \DoxyCodeLine{00161 \textcolor{comment}{// First shall be last}}
-\DoxyCodeLine{00162 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V, I>}} reverse (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00162 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{ArrayMechanisms_8hh_aa733a8c1b1c2946f0dee2369a2c0988d}{reverse}} (\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00163 }
-\DoxyCodeLine{00165 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} print(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V,I>}}\& v);}
-\DoxyCodeLine{00166 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} print(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v);}
-\DoxyCodeLine{00167 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} print (\mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& tensor);}
+\DoxyCodeLine{00165 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V,I>}}\& v);}
+\DoxyCodeLine{00166 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v);}
+\DoxyCodeLine{00167 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}} (\mbox{\hyperlink{classTensor}{Tensor<V, I>}}\& tensor);}
 \DoxyCodeLine{00168 \textcolor{preprocessor}{\#include "../../src/ArrayMechanisms.cc"}}
 \DoxyCodeLine{00169 \textcolor{preprocessor}{\#endif}}
 

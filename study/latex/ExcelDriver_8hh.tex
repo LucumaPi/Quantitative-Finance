@@ -1,0 +1,58 @@
+\hypertarget{ExcelDriver_8hh}{}\doxysection{include/duffy/\+Excel\+Driver.hh File Reference}
+\label{ExcelDriver_8hh}\index{include/duffy/ExcelDriver.hh@{include/duffy/ExcelDriver.hh}}
+{\ttfamily \#include \char`\"{}../src/\+Excel\+Imports.\+cc\char`\"{}}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Vector.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Numeric\+Matrix.\+hh\char`\"{}}\newline
+Include dependency graph for Excel\+Driver.\+hh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ExcelDriver_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{ExcelDriver_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classExcelDriver}{Excel\+Driver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector}{Vector}}$<$ double, long $>$ \mbox{\hyperlink{ExcelDriver_8hh_a1b724dd4e99548501ed8e37c192d9eca}{create\+Vector}} (const \mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \&mat, long row)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ExcelDriver_8hh_a1b724dd4e99548501ed8e37c192d9eca}\label{ExcelDriver_8hh_a1b724dd4e99548501ed8e37c192d9eca}} 
+\index{ExcelDriver.hh@{ExcelDriver.hh}!createVector@{createVector}}
+\index{createVector@{createVector}!ExcelDriver.hh@{ExcelDriver.hh}}
+\doxysubsubsection{\texorpdfstring{createVector()}{createVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector}{Vector}}$<$double, long$>$ create\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classNumericMatrix}{Numeric\+Matrix}}$<$ double, long $>$ \&}]{mat,  }\item[{long}]{row }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ExcelDriver_8cc_source_l00323}{323}} of file \mbox{\hyperlink{ExcelDriver_8cc_source}{Excel\+Driver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00324 \{}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326         \mbox{\hyperlink{classVector}{Vector<double, long>}} result (mat.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}(), mat.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}());}
+\DoxyCodeLine{00327         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = mat.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}(); i <= mat.\mbox{\hyperlink{classMatrix_af6cbab02648446701a31b7bce0110af7}{MaxColumnIndex}}(); i++)}
+\DoxyCodeLine{00328         \{}
+\DoxyCodeLine{00329             result[i] = mat(row, i);}
+\DoxyCodeLine{00330         \}}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00333 \}}
+
+\end{DoxyCode}

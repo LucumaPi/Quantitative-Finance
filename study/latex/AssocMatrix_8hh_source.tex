@@ -15,24 +15,24 @@
 \DoxyCodeLine{00012 \textcolor{preprocessor}{\#ifndef AssocMatrix\_HH}}
 \DoxyCodeLine{00013 \textcolor{preprocessor}{\#define AssocMatrix\_HH}}
 \DoxyCodeLine{00014 }
-\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "AssocArray.hh"}}
-\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include "NumericMatrix.hh"}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{AssocArray_8hh}{AssocArray.hh}}"}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{NumericMatrix_8hh}{NumericMatrix.hh}}"}}
 \DoxyCodeLine{00017 \textcolor{comment}{//\#include "Set.hh"}}
 \DoxyCodeLine{00018 }
 \DoxyCodeLine{00019 \textcolor{comment}{// Spreadsheet-\/like stuff}}
 \DoxyCodeLine{00020 \textcolor{keyword}{template} <\textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2> }
 \DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00021}\mbox{\hyperlink{structSpreadSheetVertex}{00021}}         \textcolor{keyword}{struct }\mbox{\hyperlink{structSpreadSheetVertex}{SpreadSheetVertex}}}
 \DoxyCodeLine{00022 \{}
-\DoxyCodeLine{00023         AI1 first;}
-\DoxyCodeLine{00024         AI2 second;}
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00023}\mbox{\hyperlink{structSpreadSheetVertex_ab38191438cab228269626d8e6d25b39d}{00023}}         AI1 \mbox{\hyperlink{structSpreadSheetVertex_ab38191438cab228269626d8e6d25b39d}{first}};}
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00024}\mbox{\hyperlink{structSpreadSheetVertex_a56fba3e9639a4721b49bbbdb68f52ae9}{00024}}         AI2 \mbox{\hyperlink{structSpreadSheetVertex_a56fba3e9639a4721b49bbbdb68f52ae9}{second}};}
 \DoxyCodeLine{00025 \};      }
 \DoxyCodeLine{00026 }
 \DoxyCodeLine{00027 \textcolor{keyword}{template} <\textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2>}
 \DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00028}\mbox{\hyperlink{structSpreadSheetRange}{00028}}         \textcolor{keyword}{struct }\mbox{\hyperlink{structSpreadSheetRange}{SpreadSheetRange}}}
 \DoxyCodeLine{00029 \{}
 \DoxyCodeLine{00030 }
-\DoxyCodeLine{00031         \mbox{\hyperlink{structSpreadSheetVertex}{SpreadSheetVertex<AI1, AI2>}} upperLeft;}
-\DoxyCodeLine{00032         \mbox{\hyperlink{structSpreadSheetVertex}{SpreadSheetVertex<AI1, AI2>}} lowerRight;}
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00031}\mbox{\hyperlink{structSpreadSheetRange_a162552eb32806cc172e1dc7e7c74da07}{00031}}         \mbox{\hyperlink{structSpreadSheetVertex}{SpreadSheetVertex<AI1, AI2>}} \mbox{\hyperlink{structSpreadSheetRange_a162552eb32806cc172e1dc7e7c74da07}{upperLeft}};}
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00032}\mbox{\hyperlink{structSpreadSheetRange_a3d228f1713cd8d0189f7d2bd0a312512}{00032}}         \mbox{\hyperlink{structSpreadSheetVertex}{SpreadSheetVertex<AI1, AI2>}} \mbox{\hyperlink{structSpreadSheetRange_a3d228f1713cd8d0189f7d2bd0a312512}{lowerRight}};}
 \DoxyCodeLine{00033 }
 \DoxyCodeLine{00034 \};}
 \DoxyCodeLine{00035 }
@@ -55,29 +55,29 @@
 \DoxyCodeLine{00052 }
 \DoxyCodeLine{00053 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00054     \textcolor{comment}{// Constructors \& destructor}}
-\DoxyCodeLine{00055     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix}}();}
-\DoxyCodeLine{00056     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V, AI1, AI2>}}\& arr2);}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classAssocMatrix_a804b8f1b6123e030823f18abfdd0efb4}{AssocMatrix}}();}
+\DoxyCodeLine{00056     \mbox{\hyperlink{classAssocMatrix_a804b8f1b6123e030823f18abfdd0efb4}{AssocMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V, AI1, AI2>}}\& arr2);}
 \DoxyCodeLine{00057     \textcolor{comment}{// Construct the map from a list of names and values}}
-\DoxyCodeLine{00058     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI1>}}\& Rnames, \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI2>}}\& Cnames, }
+\DoxyCodeLine{00058     \mbox{\hyperlink{classAssocMatrix_a804b8f1b6123e030823f18abfdd0efb4}{AssocMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI1>}}\& Rnames, \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI2>}}\& Cnames, }
 \DoxyCodeLine{00059                                      \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, long>}}\& matrix);}
 \DoxyCodeLine{00060 }
-\DoxyCodeLine{00061     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V, AI1, AI2>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V, AI1, AI2>}}\& ass2);}
+\DoxyCodeLine{00061     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V, AI1, AI2>}}\& \mbox{\hyperlink{classAssocMatrix_a584ec0fa44e926ef4e44d6a251dcf01a}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V, AI1, AI2>}}\& ass2);}
 \DoxyCodeLine{00062 }
 \DoxyCodeLine{00063     \textcolor{comment}{// New overloaded indexing operator}}
-\DoxyCodeLine{00064     \textcolor{keyword}{virtual} V\& operator () (\textcolor{keyword}{const} AI1\& index1, \textcolor{keyword}{const} AI2\& index2);}
+\DoxyCodeLine{00064     \textcolor{keyword}{virtual} V\& \mbox{\hyperlink{classAssocMatrix_a0d1563baeba3a42f1b9abcd2d7877779}{operator () }}(\textcolor{keyword}{const} AI1\& index1, \textcolor{keyword}{const} AI2\& index2);}
 \DoxyCodeLine{00065 }
 \DoxyCodeLine{00066     \textcolor{comment}{// Modifiers}}
 \DoxyCodeLine{00067     \textcolor{comment}{// Change values in some range}}
-\DoxyCodeLine{00068     \textcolor{keywordtype}{void} modify(\textcolor{keyword}{const} \mbox{\hyperlink{structSpreadSheetRange}{SpreadSheetRange<AI1, AI2>}}\& range, \textcolor{keywordtype}{void} (*f)(V\& cellValue));}
+\DoxyCodeLine{00068     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAssocMatrix_a326e6e4074d55872bc38d7968d2a3525}{modify}}(\textcolor{keyword}{const} \mbox{\hyperlink{structSpreadSheetRange}{SpreadSheetRange<AI1, AI2>}}\& range, \textcolor{keywordtype}{void} (*f)(V\& cellValue));}
 \DoxyCodeLine{00069 }
 \DoxyCodeLine{00070     \textcolor{comment}{// Selectors; inline for convenience and readability}}
-\DoxyCodeLine{00071     \textcolor{keywordtype}{long} Size()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} str.size(); \}}
-\DoxyCodeLine{00072     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, long>}} extract(\textcolor{keyword}{const} \mbox{\hyperlink{structSpreadSheetRange}{SpreadSheetRange<AI1, AI2>}}\& range);}
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00071}\mbox{\hyperlink{classAssocMatrix_a0bcc0fcd9e5ff08dc2af4dea25ddda41}{00071}}     \textcolor{keywordtype}{long} \mbox{\hyperlink{classAssocMatrix_a0bcc0fcd9e5ff08dc2af4dea25ddda41}{Size}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} str.size(); \}}
+\DoxyCodeLine{00072     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, long>}} \mbox{\hyperlink{classAssocMatrix_a74a3cfe29f843fd8e52ac0e24f6d62e8}{extract}}(\textcolor{keyword}{const} \mbox{\hyperlink{structSpreadSheetRange}{SpreadSheetRange<AI1, AI2>}}\& range);}
 \DoxyCodeLine{00073 }
 \DoxyCodeLine{00074     \textcolor{comment}{// Return copies of keys}}
-\DoxyCodeLine{00075     \mbox{\hyperlink{classSet}{Set<AI1>}} RowKeys()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} keysRows; \}   }
-\DoxyCodeLine{00076     \mbox{\hyperlink{classSet}{Set<AI2>}} ColumnKeys()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} keysColumns; \}     }
-\DoxyCodeLine{00077     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, long>}}* Data() \{ \textcolor{keywordflow}{return} mat; \}}
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00075}\mbox{\hyperlink{classAssocMatrix_adce6a940baf8f9d7c5a7b258a447ab3a}{00075}}     \mbox{\hyperlink{classSet}{Set<AI1>}} \mbox{\hyperlink{classAssocMatrix_adce6a940baf8f9d7c5a7b258a447ab3a}{RowKeys}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} keysRows; \}    }
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00076}\mbox{\hyperlink{classAssocMatrix_a3d10f575ea198ec26e22048ce30e45f1}{00076}}     \mbox{\hyperlink{classSet}{Set<AI2>}} \mbox{\hyperlink{classAssocMatrix_a3d10f575ea198ec26e22048ce30e45f1}{ColumnKeys}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} keysColumns; \}       }
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8hh_source_l00077}\mbox{\hyperlink{classAssocMatrix_ac7671399c8b31d220d42d03da7e11182}{00077}}     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, long>}}* \mbox{\hyperlink{classAssocMatrix_ac7671399c8b31d220d42d03da7e11182}{Data}}() \{ \textcolor{keywordflow}{return} mat; \}}
 \DoxyCodeLine{00078 }
 \DoxyCodeLine{00079 \};}
 \DoxyCodeLine{00080 \textcolor{preprocessor}{\#include "../../src/AssocMatrix.cc"}}

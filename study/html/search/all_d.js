@@ -1,8 +1,20 @@
 var searchData=
 [
-  ['onefactorpayoff_111',['OneFactorPayoff',['../classOneFactorPayoff.html',1,'']]],
-  ['operator_2d_112',['operator-',['../classVector.html#a4d3ac08839678685a6cc72df5d629588',1,'Vector']]],
-  ['option_113',['Option',['../classOption.html',1,'']]],
-  ['outofbounds_114',['OutOfBounds',['../classOutOfBounds.html',1,'']]],
-  ['outperformancestrategy_115',['OutPerformanceStrategy',['../classOutPerformanceStrategy.html',1,'']]]
+  ['n_488',['N',['../classIBVPFDM.html#aac47fc0313cfd94d1c76185636f01e09',1,'IBVPFDM::N()'],['../classEuropeanOption.html#a50f30d22081c76d0285601a1d6b0d094',1,'EuropeanOption::N(double x) const'],['../classEuropeanOption.html#a50f30d22081c76d0285601a1d6b0d094',1,'EuropeanOption::N(double x) const'],['../classIBVPFDM.html#aa060a346aafe2c9d6f563e86211652f9',1,'IBVPFDM::n()'],['../classEuropeanOption.html#ae24941dd1b8987c851744946b1b0805d',1,'EuropeanOption::n(double x) const'],['../classEuropeanOption.html#ae24941dd1b8987c851744946b1b0805d',1,'EuropeanOption::n(double x) const'],['../TestImpliedVolatility_8cc.html#a6cbb82a21dec4c4f36c3f78340be64de',1,'N():&#160;TestImpliedVolatility.cc'],['../namespaceNSEuropeanOption.html#a627ce352e7823346584f7085983f3ab1',1,'NSEuropeanOption::N()'],['../TestImpliedVolatility_8cc.html#a927694c350b26693c65f7c8b73b3dba3',1,'n():&#160;TestImpliedVolatility.cc'],['../namespaceNSEuropeanOption.html#ab24ccb5397f0e20ed475c8c73f01b8b7',1,'NSEuropeanOption::n()']]],
+  ['nam_489',['nam',['../classPerson.html#ae6ee626f8471b70bef418998ab35623e',1,'Person::nam()'],['../classPerson.html#ac6d7e0d7d60ff303b4dfde117c4356ea',1,'Person::nam()']]],
+  ['name_490',['name',['../classProperty.html#a61070c4a41dcdbc890c6b27146931e97',1,'Property::name()'],['../classSimplePropertySet.html#a7674e0f5c6b6a747aa85d54bc52d1ab7',1,'SimplePropertySet::name()']]],
+  ['negative_491',['negative',['../ArrayMechanisms_8hh.html#af844f9e94257e30adb2557f72bc776fe',1,'negative(const Vector&lt; V, I &gt; &amp;x):&#160;ArrayMechanisms.cc'],['../MatrixMechanisms_8hh.html#aca20512a1e8b7a2f9ac0e6aa6cb7052a',1,'negative(const NumericMatrix&lt; V, I &gt; &amp;x):&#160;MatrixMechanisms.cc'],['../ArrayMechanisms_8cc.html#af844f9e94257e30adb2557f72bc776fe',1,'negative(const Vector&lt; V, I &gt; &amp;x):&#160;ArrayMechanisms.cc'],['../MatrixMechanisms_8cc.html#ac9e0befc58c6791fc8b075b32a2503f3',1,'negative(const NumericMatrix&lt; V, I &gt; &amp;matrix):&#160;MatrixMechanisms.cc']]],
+  ['newtonraphsonsolver_492',['NewtonRaphsonSolver',['../classNS__NonlinearSolver_1_1NewtonRaphsonSolver.html',1,'NS_NonlinearSolver::NewtonRaphsonSolver'],['../classNS__NonlinearSolver_1_1NewtonRaphsonSolver.html#a8c522cde713e284c68b237707bfa55e4',1,'NS_NonlinearSolver::NewtonRaphsonSolver::NewtonRaphsonSolver()']]],
+  ['nodevalue_493',['nodeValue',['../namespaceBackwardInduction.html#a7dda378748f91b6c14847031ab129606',1,'BackwardInduction']]],
+  ['nonlinearsolver_494',['NonlinearSolver',['../classNS__NonlinearSolver_1_1NonlinearSolver.html',1,'NS_NonlinearSolver::NonlinearSolver'],['../classNS__NonlinearSolver_1_1NonlinearSolver.html#a5371c3342836f79f66b556b2e6dc110f',1,'NS_NonlinearSolver::NonlinearSolver::NonlinearSolver()'],['../classNS__NonlinearSolver_1_1NonlinearSolver.html#a9fefab630c3d0243c1b98893baa56711',1,'NS_NonlinearSolver::NonlinearSolver::NonlinearSolver(double(*function)(double))']]],
+  ['nonlinearsolver_2ehh_495',['NonlinearSolver.hh',['../NonlinearSolver_8hh.html',1,'']]],
+  ['ns_5fnonlinearsolver_496',['NS_NonlinearSolver',['../namespaceNS__NonlinearSolver.html',1,'']]],
+  ['nseuropeanoption_497',['NSEuropeanOption',['../namespaceNSEuropeanOption.html',1,'']]],
+  ['numbernodes_498',['numberNodes',['../classLattice.html#a114af77d5b77fa52ffd28c42f7f97b5f',1,'Lattice']]],
+  ['numericmatrix_499',['NumericMatrix',['../classNumericMatrix.html',1,'NumericMatrix&lt; V, I, S &gt;'],['../classNumericMatrix.html#acaff2f3e39970e6203e91435b8c44ce6',1,'NumericMatrix::NumericMatrix()'],['../classNumericMatrix.html#a64725ef6f2b55b179194c2f62aa2cd8e',1,'NumericMatrix::NumericMatrix(I rows, I columns)'],['../classNumericMatrix.html#a4bdde6c901346fbd0b3c26741e85e3ed',1,'NumericMatrix::NumericMatrix(I rows, I columns, I rowStart, I columnStart)'],['../classNumericMatrix.html#a18f0a755f5a322c4dbb0d172addc531f',1,'NumericMatrix::NumericMatrix(const Matrix&lt; V, I, S &gt; &amp;source)'],['../classNumericMatrix.html#a72ff7005e1c0c7935d444c2915fd2cbd',1,'NumericMatrix::NumericMatrix(const NumericMatrix&lt; V, I, S &gt; &amp;source)']]],
+  ['numericmatrix_2ecc_500',['NumericMatrix.cc',['../NumericMatrix_8cc.html',1,'']]],
+  ['numericmatrix_2ehh_501',['NumericMatrix.hh',['../NumericMatrix_8hh.html',1,'']]],
+  ['numericmatrix_3c_20double_2c_20long_20_3e_502',['NumericMatrix&lt; double, long &gt;',['../classNumericMatrix.html',1,'']]],
+  ['numericmatrix_3c_20v_2c_20long_20_3e_503',['NumericMatrix&lt; V, long &gt;',['../classNumericMatrix.html',1,'']]],
+  ['numericmatrix_5fcc_504',['NumericMatrix_CC',['../NumericMatrix_8cc.html#ae9fbe5d88453107ae8d74a7f1a7792be',1,'NumericMatrix.cc']]]
 ];

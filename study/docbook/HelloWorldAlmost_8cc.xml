@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_HelloWorldAlmost_8cc">
+<title>tests/HelloWorldAlmost.cc File Reference</title>
+<indexterm><primary>tests/HelloWorldAlmost.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;list&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+</programlisting>Include dependency graph for HelloWorldAlmost.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="HelloWorldAlmost_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classJoin">Join</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_HelloWorldAlmost_8cc_1a776febc8b0a0c1bd1a3b5621711a3148">UpperCase</link> (std::string s)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_HelloWorldAlmost_8cc_1a2b7ab22ac85581b0a8d433ca70e84744">myGreater</link> (double x, double y)</para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link> (const std::vector&lt; T &gt; &amp;l, std::string s=std::string(&quot;data&quot;))</para>
+</listitem>
+            <listitem><para>int <link linkend="_HelloWorldAlmost_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_HelloWorldAlmost_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>HelloWorldAlmost.cc</secondary></indexterm>
+<indexterm><primary>HelloWorldAlmost.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 66 of file HelloWorldAlmost.cc.</para>
+<programlisting>67 {
+68 
+69 
+70 &#32;&#32;&#32;&#32;std::size_t&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;10;
+71 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;val&#32;=&#32;3.14;
+72 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;myVec(<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>,&#32;val);&#32;&#32;<emphasis role="comment">//&#32;Create&#32;n&#32;copies&#32;of&#32;val</emphasis>
+73 
+74 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec);
+75 
+76 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Access&#32;elements&#32;of&#32;the&#32;vector&#32;by&#32;using&#32;the&#32;indexing&#32;operator&#32;[]</emphasis>
+77 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Change&#32;some&#32;values&#32;here&#32;and&#32;there</emphasis>
+78 &#32;&#32;&#32;&#32;myVec[0]&#32;=&#32;2.0;
+79 &#32;&#32;&#32;&#32;myVec[1]&#32;=&#32;456.76;
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;last_element=&#32;myVec.size()&#32;-&#32;1;
+82 &#32;&#32;&#32;&#32;myVec[last_element]&#32;=&#32;55.66;
+83 
+84 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec);
+85 
+86 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;some&#32;algorithms</emphasis>
+87 
+88 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;myVec2(myVec.size());
+89 &#32;&#32;&#32;&#32;std::list&lt;double&gt;&#32;myList;
+90 
+91 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;source&#32;range&#32;of&#32;type&#32;T1&#32;into&#32;target&#32;range&#32;of&#32;type&#32;T2</emphasis>
+92 &#32;&#32;&#32;&#32;copy(myVec.begin(),&#32;myVec.end(),&#32;myVec2.begin());
+93 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec2,&#32;std::string(<emphasis role="stringliteral">&quot;copy&#32;to&#32;a&#32;vector&quot;</emphasis>));
+94 
+95 &#32;&#32;&#32;&#32;copy(myVec.begin(),&#32;myVec.end(),&#32;myList.begin());
+96 
+97 
+98 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copying&#32;and&#32;transformation&#32;at&#32;the&#32;same&#32;time&#32;</emphasis>
+99 &#32;&#32;&#32;&#32;std::vector&lt;std::string&gt;&#32;First(3);
+100 &#32;&#32;&#32;&#32;First[0]&#32;=&#32;<emphasis role="stringliteral">&quot;Bill&quot;</emphasis>;
+101 &#32;&#32;&#32;&#32;First[1]&#32;=&#32;<emphasis role="stringliteral">&quot;Abbott&quot;</emphasis>;
+102 &#32;&#32;&#32;&#32;First[2]&#32;=&#32;<emphasis role="stringliteral">&quot;Bassie&quot;</emphasis>;
+103 
+104 &#32;&#32;&#32;&#32;std::vector&lt;std::string&gt;&#32;Second(3);
+105 &#32;&#32;&#32;&#32;Second[0]&#32;=&#32;<emphasis role="stringliteral">&quot;Ben&quot;</emphasis>;
+106 &#32;&#32;&#32;&#32;Second[1]&#32;=&#32;<emphasis role="stringliteral">&quot;Costello&quot;</emphasis>;
+107 &#32;&#32;&#32;&#32;Second[2]&#32;=&#32;<emphasis role="stringliteral">&quot;Adriaan&quot;</emphasis>;
+108 
+109 &#32;&#32;&#32;&#32;std::vector&lt;std::string&gt;&#32;Couples(3);
+110 
+111 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;convert&#32;the&#32;First&#32;names&#32;to&#32;upper&#32;case</emphasis>
+112 &#32;&#32;&#32;&#32;transform&#32;(First.begin(),&#32;First.end(),&#32;First.begin(),&#32;<link linkend="_HelloWorldAlmost_8cc_1a776febc8b0a0c1bd1a3b5621711a3148">UpperCase</link>);
+113 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(First,&#32;std::string(<emphasis role="stringliteral">&quot;An&#32;upper&#32;case&#32;vector&quot;</emphasis>));
+114 
+115 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;join&#32;to&#32;make&#32;a&#32;team</emphasis>
+116 &#32;&#32;&#32;&#32;transform&#32;(First.begin(),&#32;First.end(),&#32;Second.begin(),&#32;Couples.begin(),
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classJoin">Join</link>());
+118 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(Couples,&#32;std::string(<emphasis role="stringliteral">&quot;Joined&#32;couples&quot;</emphasis>));
+119 
+120 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Shift&#32;the&#32;elements&#32;of&#32;a&#32;vector&#32;to&#32;the&#32;left;&#32;those&#32;that&#32;fall&#32;off</emphasis>
+121 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;are&#32;inserted&#32;at&#32;the&#32;end</emphasis>
+122 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;=&#32;6;
+123 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;myVec3(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>);&#32;&#32;
+124 
+125 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;myVec3.size();&#32;i++)
+126 &#32;&#32;&#32;&#32;{
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myVec3[i]&#32;=&#32;double&#32;(i);
+128 
+129 &#32;&#32;&#32;&#32;}
+130 
+131 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;shiftFactor&#32;=&#32;2;
+132 &#32;&#32;&#32;&#32;rotate(myVec3.begin(),&#32;myVec3.begin()&#32;+&#32;shiftFactor,&#32;myVec3.end());
+133 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec3,&#32;std::string(<emphasis role="stringliteral">&quot;Rotated&#32;vector&#32;by&#32;2&#32;units&quot;</emphasis>));
+134 
+135 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;reverse&#32;the&#32;order&#32;of&#32;elements&#32;in&#32;the&#32;vector;&#32;the&#32;first&#32;becomes</emphasis>
+136 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;last&#32;and&#32;vice&#32;versa</emphasis>
+137 &#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1aa733a8c1b1c2946f0dee2369a2c0988d">reverse</link>(myVec3.begin(),&#32;myVec3.end());
+138 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec3,&#32;std::string(<emphasis role="stringliteral">&quot;Reversed&#32;vector&#32;vec3&quot;</emphasis>));
+139 
+140 
+141 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;replace&#32;each&#32;occurrence&#32;of&#32;one&#32;value&#32;by&#32;a&#32;new&#32;value</emphasis>
+142 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;oldVal&#32;=&#32;2;
+143 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;newVal&#32;=&#32;999;
+144 &#32;&#32;&#32;&#32;replace(myVec3.begin(),&#32;myVec3.end(),&#32;oldVal,&#32;newVal);
+145 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec3,&#32;std::string(<emphasis role="stringliteral">&quot;Modified&#32;value&#32;of&#32;vec3&quot;</emphasis>));
+146 
+147 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;remove&#32;this&#32;element&#32;</emphasis>
+148 &#32;&#32;&#32;&#32;remove(myVec3.begin(),&#32;myVec3.end(),&#32;newVal);
+149 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec3,&#32;std::string(<emphasis role="stringliteral">&quot;Removed&#32;element&#32;from&#32;vec3&quot;</emphasis>));
+150 
+151 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Sort&#32;the&#32;random&#32;access&#32;container&#32;vector&lt;T&gt;&#32;class</emphasis>
+152 &#32;&#32;&#32;&#32;myVec3[myVec3.size()&#32;-&#32;1]&#32;=&#32;9999.0;
+153 &#32;&#32;&#32;&#32;stable_sort(myVec3.begin(),&#32;myVec3.end());&#32;<emphasis role="comment">//&#32;Using&#32;&lt;&#32;as&#32;comparitor</emphasis>
+154 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec3,&#32;std::string(<emphasis role="stringliteral">&quot;Sorted&#32;vec3&#32;with&#32;&apos;&lt;&apos;&#32;ASCENDING&#32;&quot;</emphasis>));
+155 
+156 &#32;&#32;&#32;&#32;stable_sort(myVec3.begin(),&#32;myVec3.end(),&#32;<link linkend="_HelloWorldAlmost_8cc_1a2b7ab22ac85581b0a8d433ca70e84744">myGreater</link>);
+157 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec3,&#32;std::string(<emphasis role="stringliteral">&quot;Sorted&#32;vec3&#32;with&#32;DESCENDING&#32;comparitor&#32;function&#32;&quot;</emphasis>));
+158 
+159 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Merge&#32;two&#32;sorted&#32;vectors</emphasis>
+160 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;myVec4(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>,&#32;2.41);&#32;&#32;&#32;&#32;
+161 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;myVec5(myVec3.size()&#32;+&#32;myVec4.size());&#32;<emphasis role="comment">//&#32;Output</emphasis>
+162 &#32;&#32;&#32;&#32;merge(myVec3.begin(),&#32;myVec3.end(),&#32;myVec4.begin(),&#32;myVec4.end(),
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myVec5.begin());
+164 &#32;&#32;&#32;&#32;<link linkend="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7">print</link>(myVec5,&#32;std::string(<emphasis role="stringliteral">&quot;Merged&#32;vector&quot;</emphasis>));
+165 
+166 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+167 }
+</programlisting>    </section><anchor xml:id="_HelloWorldAlmost_8cc_1a2b7ab22ac85581b0a8d433ca70e84744"/>    <section>
+    <title>myGreater()</title>
+<indexterm><primary>myGreater</primary><secondary>HelloWorldAlmost.cc</secondary></indexterm>
+<indexterm><primary>HelloWorldAlmost.cc</primary><secondary>myGreater</secondary></indexterm>
+<para><computeroutput>bool myGreater (double x, double y)</computeroutput></para><para>
+Definition at line 45 of file HelloWorldAlmost.cc.</para>
+<programlisting>46 {
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x&#32;&gt;&#32;y;
+48 }
+</programlisting>    </section><anchor xml:id="_HelloWorldAlmost_8cc_1a9c960fa30e8750ff27cca1bf2cec5ef7"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>HelloWorldAlmost.cc</secondary></indexterm>
+<indexterm><primary>HelloWorldAlmost.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void print (const std::vector&lt; T &gt; &amp; l, std::string s = <computeroutput>std::string(&quot;data&quot;)</computeroutput>
+)</computeroutput></para><para>
+Definition at line 50 of file HelloWorldAlmost.cc.</para>
+<programlisting>51 {&#32;&#32;<emphasis role="comment">//&#32;A&#32;generic&#32;print&#32;function&#32;for&#32;vectors</emphasis>
+52 &#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;s&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;size&#32;of&#32;vector&#32;is&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;l.size()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&quot;</emphasis>;
+54 
+55 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;We&#32;must&#32;use&#32;a&#32;const&#32;iterator&#32;here,&#32;otherwise&#32;we&#32;get&#32;a&#32;compiler&#32;error.</emphasis>
+56 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::vector&lt;T&gt;::const_iterator&#32;i;
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;l.begin();&#32;i&#32;!=&#32;l.end();&#32;i++)
+58 &#32;&#32;&#32;&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;*i&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>;
+60 
+61 &#32;&#32;&#32;&#32;}
+62 
+63 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+64 }
+</programlisting>    </section><anchor xml:id="_HelloWorldAlmost_8cc_1a776febc8b0a0c1bd1a3b5621711a3148"/>    <section>
+    <title>UpperCase()</title>
+<indexterm><primary>UpperCase</primary><secondary>HelloWorldAlmost.cc</secondary></indexterm>
+<indexterm><primary>HelloWorldAlmost.cc</primary><secondary>UpperCase</secondary></indexterm>
+<para><computeroutput>std::string UpperCase (std::string s)</computeroutput></para><para>
+Definition at line 19 of file HelloWorldAlmost.cc.</para>
+<programlisting>20 {&#32;<emphasis role="comment">//&#32;Convert&#32;a&#32;string&#32;to&#32;upper&#32;case</emphasis>
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;s.length();&#32;j++)
+23 &#32;&#32;&#32;&#32;{
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(s[j]&#32;&gt;=&#32;<emphasis role="charliteral">&apos;a&apos;</emphasis>&#32;&amp;&amp;&#32;s[j]&#32;&lt;=&#32;<emphasis role="charliteral">&apos;z&apos;</emphasis>)
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s[j]&#32;-=&#32;<emphasis role="charliteral">&apos;a&apos;</emphasis>&#32;-&#32;<emphasis role="charliteral">&apos;A&apos;</emphasis>;
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+28 &#32;&#32;&#32;&#32;}
+29 
+30 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s;
+31 }
+</programlisting></section>
+</section>
+</section>

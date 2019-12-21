@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classOutPerformanceStrategy">
 <title>OutPerformanceStrategy Class Reference</title>
 <indexterm><primary>OutPerformanceStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MultiAssetPayoffStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for OutPerformanceStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,46 @@ Collaboration diagram for OutPerformanceStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classOutPerformanceStrategy_1a1b2e246fd8a12e09cabfa5bd2e1d5929"/><emphasis role="strong">OutPerformanceStrategy</emphasis> (double currentRate1, double currentRate2, double cp, double strikeRate)</para>
+            <listitem><para><link linkend="_classOutPerformanceStrategy_1a1b2e246fd8a12e09cabfa5bd2e1d5929">OutPerformanceStrategy</link> (double currentRate1, double currentRate2, double cp, double strikeRate)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classOutPerformanceStrategy_1ab7f1f4f9607b5acb710f0e1252c3b5c7"/>double <emphasis role="strong">payoff</emphasis> (double S1, double S2) const</para>
+            <listitem><para>double <link linkend="_classOutPerformanceStrategy_1ab7f1f4f9607b5acb710f0e1252c3b5c7">payoff</link> (double S1, double S2) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 171 of file MultiAssetPayoffStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classOutPerformanceStrategy_1a1b2e246fd8a12e09cabfa5bd2e1d5929"/>    <section>
+    <title>OutPerformanceStrategy()</title>
+<indexterm><primary>OutPerformanceStrategy</primary><secondary>OutPerformanceStrategy</secondary></indexterm>
+<indexterm><primary>OutPerformanceStrategy</primary><secondary>OutPerformanceStrategy</secondary></indexterm>
+<para><computeroutput>OutPerformanceStrategy::OutPerformanceStrategy (double currentRate1, double currentRate2, double cp, double strikeRate)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 179 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;I1&#32;=&#32;currentRate1;&#32;I2&#32;=&#32;currentRate2;
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;w&#32;=&#32;cp;&#32;k&#32;=&#32;strikeRate;
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classOutPerformanceStrategy_1ab7f1f4f9607b5acb710f0e1252c3b5c7"/>    <section>
+    <title>payoff()</title>
+<indexterm><primary>payoff</primary><secondary>OutPerformanceStrategy</secondary></indexterm>
+<indexterm><primary>OutPerformanceStrategy</primary><secondary>payoff</secondary></indexterm>
+<para><computeroutput>double OutPerformanceStrategy::payoff (double S1, double S2) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">MultiAssetPayoffStrategy</link>.</para>
+<para>
+Definition at line 185 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>&#32;(w*((I1/S1)&#32;-&#32;(I2/S2))&#32;-&#32;w*&#32;k,&#32;0.0);
+188 
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-MultiAssetPayoffStrategy.hh</section>
+<link linkend="_MultiAssetPayoffStrategy_8hh">MultiAssetPayoffStrategy.hh</link></section>
+</section>

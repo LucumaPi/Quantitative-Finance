@@ -7,31 +7,51 @@
     <incdepgraph>
       <node id="4">
         <label>Vector.hh</label>
-        <link refid="Vector_8hh_source"/>
+        <link refid="Vector_8hh"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
-      <node id="10">
+      <node id="14">
+        <label>../../src/Lattice.cc</label>
+        <link refid="Lattice_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
         <label>cmath</label>
       </node>
       <node id="3">
         <label>Lattice.hh</label>
-        <link refid="Lattice_8hh_source"/>
+        <link refid="Lattice_8hh"/>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
+        <link refid="Array_8hh"/>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -40,50 +60,102 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="8">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
         <label>vector</label>
       </node>
-      <node id="11">
+      <node id="16">
         <label>iostream</label>
       </node>
       <node id="7">
         <label>cstddef</label>
       </node>
+      <node id="13">
+        <label>../../src/Vector.cc</label>
+        <link refid="Vector_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>duffy/BinomialLatticeStrategy.hh</label>
-        <link refid="BinomialLatticeStrategy_8hh_source"/>
+        <link refid="BinomialLatticeStrategy_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>FullArray.hh</label>
+        <link refid="FullArray_8hh"/>
         <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="4">
+        <label>src/BinomialMethod.cc</label>
+        <link refid="BinomialMethod_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>src/BinomialLatticeStrategy.cc</label>
         <link refid="BinomialLatticeStrategy_8cc"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="6">
+        <label>tests/TestBinomialMethod.cc</label>
+        <link refid="TestBinomialMethod_8cc"/>
+      </node>
+      <node id="5">
+        <label>tests/director.cc</label>
+        <link refid="director_8cc"/>
+      </node>
+      <node id="7">
+        <label>tests/TestLatticeFactory.cc</label>
+        <link refid="TestLatticeFactory_8cc"/>
+      </node>
       <node id="2">
         <label>include/duffy/BinomialLatticeStrategy.hh</label>
-        <link refid="BinomialLatticeStrategy_8hh_source"/>
+        <link refid="BinomialLatticeStrategy_8hh"/>
+        <childnode refid="1" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>include/duffy/BinomialMethod.hh</label>
-        <link refid="BinomialMethod_8hh_source"/>
+        <link refid="BinomialMethod_8hh"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
@@ -121,38 +193,38 @@
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BinomialLatticeStrategy_CC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BinomialLatticeStrategy_CC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="BinomialLatticeStrategy_8cc_1a4400b553f9a11c3e808cb2ffbecb1cc6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BinomialLatticeStrategy_CC</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/BinomialLatticeStrategy.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="BinomialLatticeStrategy_8hh" kindref="compound">duffy/BinomialLatticeStrategy.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal">BinomialLatticeStrategy::BinomialLatticeStrategy(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)</highlight></codeline>
+<codeline lineno="23" refid="classBinomialLatticeStrategy_1a30116db67055ec31490b298ad9fda14a" refkind="member"><highlight class="normal"><ref refid="classBinomialLatticeStrategy_1a30116db67055ec31490b298ad9fda14a" kindref="member">BinomialLatticeStrategy::BinomialLatticeStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)</highlight></codeline>
 <codeline lineno="24"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>s<sp/>=<sp/>vol;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>r<sp/>=<sp/>interest;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>k<sp/>=<sp/>delta;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>bType<sp/>=<sp/>Multiplicative;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>=<sp/>vol;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref><sp/>=<sp/>interest;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref><sp/>=<sp/>delta;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a2c17c2472572ea3ae463c7dd079c3035" kindref="member">bType</ref><sp/>=<sp/><ref refid="BinomialLatticeStrategy_8hh_1add398b812ca9f586ea244ce5a9dc8c99a8609fa7d8218524a919c5f648dd308b4" kindref="member">Multiplicative</ref>;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Useful<sp/>function</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BinomialLatticeStrategy::updateLattice</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/>source,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rootValue)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="34"><highlight class="keyword"></highlight><highlight class="normal">{<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>depth<sp/>of<sp/>the<sp/>lattice;<sp/>this<sp/>a<sp/>Template<sp/>Method<sp/>Pattern</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>si<sp/>=<sp/>source.MinIndex();</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>source[si][source[si].MinIndex()]<sp/>=<sp/>rootValue;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBinomialLatticeStrategy_1ab9fa2c3c07acc19168da24dcc84f7af8" kindref="member">BinomialLatticeStrategy::updateLattice</ref></highlight></codeline>
+<codeline lineno="33" refid="classBinomialLatticeStrategy_1ab9fa2c3c07acc19168da24dcc84f7af8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classLattice" kindref="compound">Lattice&lt;double, int, 2&gt;</ref>&amp;<sp/>source,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rootValue)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>depth<sp/>of<sp/>the<sp/>lattice;<sp/>this<sp/>a<sp/>Template<sp/>Method<sp/>Pattern</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>si<sp/>=<sp/>source.<ref refid="classLattice_1a07442df63222c6627f46efc4ae91acf9" kindref="member">MinIndex</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>source[si][source[si].<ref refid="classLattice_1a07442df63222c6627f46efc4ae91acf9" kindref="member">MinIndex</ref>()]<sp/>=<sp/>rootValue;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Loop<sp/>from<sp/>the<sp/>min<sp/>index<sp/>to<sp/>the<sp/>end<sp/>index</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>source.MinIndex()<sp/>+<sp/>1;<sp/>n<sp/>&lt;=<sp/>source.MaxIndex();<sp/>n++)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref><sp/>=<sp/>source.MinIndex()<sp/>+<sp/>1;<sp/><ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref><sp/>&lt;=<sp/>source.MaxIndex();<sp/><ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>++)</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>source[n].MinIndex();<sp/>i<sp/>&lt;<sp/>source[n].MaxIndex();<sp/>i++)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>source[<ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>].MinIndex();<sp/>i<sp/>&lt;<sp/>source[<ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>].MaxIndex();<sp/>i++)</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[n][i]<sp/>=<sp/>d<sp/>*<sp/>source[n-1][i];</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[n][i+1]<sp/>=<sp/>u<sp/>*<sp/>source[n-1][i];</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[<ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>][i]<sp/>=<sp/>d<sp/>*<sp/>source[<ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>-1][i];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[<ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>][i+1]<sp/>=<sp/>u<sp/>*<sp/>source[<ref refid="TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3" kindref="member">n</ref>-1][i];</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal">CRRStrategy::CRRStrategy(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
+<codeline lineno="50" refid="classCRRStrategy_1ad614899efc71dc828b9701383fa11993" refkind="member"><highlight class="normal"><ref refid="classCRRStrategy_1ad614899efc71dc828b9701383fa11993" kindref="member">CRRStrategy::CRRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>(vol,<sp/>interest,<sp/>delta)</highlight></codeline>
 <codeline lineno="52"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>double<sp/>e<sp/>=<sp/>::exp((r)*k);</highlight></codeline>
@@ -160,21 +232,21 @@
 <codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>e<sp/>*<sp/>(1.0<sp/>+<sp/>sr);</highlight></codeline>
 <codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>e<sp/>*<sp/>(1.0<sp/>-<sp/>sr);*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R1<sp/>=<sp/>(r<sp/>-<sp/>0.5<sp/>*<sp/>s<sp/>*<sp/>s)<sp/>*<sp/>k;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R2<sp/>=<sp/>s<sp/>*<sp/>std::sqrt(k);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R1<sp/>=<sp/>(<ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref><sp/>-<sp/>0.5<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref>)<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R2<sp/>=<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/>std::sqrt(<ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>);</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>std::exp(R1<sp/>+<sp/>R2);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>std::exp(R1<sp/>-<sp/>R2);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>=<sp/><ref refid="Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c" kindref="member">std::exp</ref>(R1<sp/>+<sp/>R2);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref><sp/>=<sp/><ref refid="Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c" kindref="member">std::exp</ref>(R1<sp/>-<sp/>R2);</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;UD<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>u<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>d;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;UD<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref>;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>discounting<sp/>=<sp/>std::exp(-<sp/>r*k);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>discounting<sp/>=<sp/><ref refid="Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c" kindref="member">std::exp</ref>(-<sp/><ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref>*<ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0.5;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f" kindref="member">p</ref><sp/>=<sp/>0.5;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal">PadeCRRStrategy::PadeCRRStrategy(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
+<codeline lineno="72" refid="classPadeCRRStrategy_1aa07d959ab5ca27e4a60e105e56a3fedc" refkind="member"><highlight class="normal"><ref refid="classPadeCRRStrategy_1aa07d959ab5ca27e4a60e105e56a3fedc" kindref="member">PadeCRRStrategy::PadeCRRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>(vol,<sp/>interest,<sp/>delta)</highlight></codeline>
 <codeline lineno="74"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>double<sp/>e<sp/>=<sp/>::exp((r)*k);</highlight></codeline>
@@ -182,8 +254,8 @@
 <codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>e<sp/>*<sp/>(1.0<sp/>+<sp/>sr);</highlight></codeline>
 <codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>e<sp/>*<sp/>(1.0<sp/>-<sp/>sr);*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R1<sp/>=<sp/>(r<sp/>-<sp/>0.5<sp/>*<sp/>s<sp/>*<sp/>s)<sp/>*<sp/>k;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R2<sp/>=<sp/>s<sp/>*<sp/>std::sqrt(k);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R1<sp/>=<sp/>(<ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref><sp/>-<sp/>0.5<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref>)<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R2<sp/>=<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/>std::sqrt(<ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>);</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//u<sp/>=<sp/>::exp(R1<sp/>+<sp/>R2);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//d<sp/>=<sp/>::exp(R1<sp/>-<sp/>R2);</highlight><highlight class="normal"></highlight></codeline>
@@ -192,34 +264,34 @@
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z1<sp/>=<sp/>(R1<sp/>+<sp/>R2);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z2<sp/>=<sp/>(R1<sp/>-<sp/>R2);</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>(2.0<sp/>+<sp/>z1)<sp/>/<sp/>(2.0<sp/>-<sp/>z1);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>(2.0<sp/>+<sp/>z2)<sp/>/<sp/>(2.0<sp/>-<sp/>z2);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>=<sp/>(2.0<sp/>+<sp/>z1)<sp/>/<sp/>(2.0<sp/>-<sp/>z1);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref><sp/>=<sp/>(2.0<sp/>+<sp/>z2)<sp/>/<sp/>(2.0<sp/>-<sp/>z2);</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;UD<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>u<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>d;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;UD<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref>;</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>discounting<sp/>=<sp/>std::exp(-<sp/>r*k);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>discounting<sp/>=<sp/><ref refid="Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c" kindref="member">std::exp</ref>(-<sp/><ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref>*<ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0.5;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f" kindref="member">p</ref><sp/>=<sp/>0.5;</highlight></codeline>
 <codeline lineno="98"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal">JRStrategy::JRStrategy(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
+<codeline lineno="100" refid="classJRStrategy_1a36c42ba9880af4425a68d7784bce5057" refkind="member"><highlight class="normal"><ref refid="classJRStrategy_1a36c42ba9880af4425a68d7784bce5057" kindref="member">JRStrategy::JRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>(vol,<sp/>interest,<sp/>delta)</highlight></codeline>
 <codeline lineno="102"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k2<sp/>=<sp/>std::sqrt(k);</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>std::exp(s<sp/>*<sp/>k2);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k2<sp/>=<sp/>std::sqrt(<ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>=<sp/><ref refid="Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c" kindref="member">std::exp</ref>(<ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/>k2);</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>1.0/u;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref><sp/>=<sp/>1.0/<ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref>;</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0.5<sp/>+<sp/>((r<sp/>-<sp/>0.5<sp/>*<sp/>s<sp/>*<sp/>s)<sp/>*<sp/>k2<sp/>*<sp/>0.5)<sp/>/<sp/>s;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f" kindref="member">p</ref><sp/>=<sp/>0.5<sp/>+<sp/>((<ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref><sp/>-<sp/>0.5<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref>)<sp/>*<sp/>k2<sp/>*<sp/>0.5)<sp/>/<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref>;</highlight></codeline>
 <codeline lineno="109"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal">PadeJRStrategy::PadeJRStrategy(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
+<codeline lineno="111" refid="classPadeJRStrategy_1a7b1e2cfc3aeff6ee644e305e6a63ea7e" refkind="member"><highlight class="normal"><ref refid="classPadeJRStrategy_1a7b1e2cfc3aeff6ee644e305e6a63ea7e" kindref="member">PadeJRStrategy::PadeJRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>(vol,<sp/>interest,<sp/>delta)</highlight></codeline>
 <codeline lineno="113"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k2<sp/>=<sp/>std::sqrt(k);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k2<sp/>=<sp/>std::sqrt(<ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>);</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cayley<sp/>transform</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z<sp/>=<sp/>s<sp/>*<sp/>std::sqrt(k);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z<sp/>=<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/>std::sqrt(<ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>);</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"></highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>u<sp/>=<sp/>::exp(s<sp/>*<sp/>k2);</highlight></codeline>
 <codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>1.0/u;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -231,62 +303,62 @@
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>num<sp/>=<sp/>12.0<sp/>-<sp/>(6.0*z)<sp/>+<sp/>(z*z);</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>denom<sp/>=<sp/>12.0<sp/>+<sp/>(6.0*z)<sp/>+<sp/>(z*z);</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>num/denom;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>denom/num;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref><sp/>=<sp/>num/denom;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>=<sp/>denom/num;</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0.5<sp/>+<sp/>((r<sp/>-<sp/>0.5<sp/>*<sp/>s<sp/>*<sp/>s)<sp/>*<sp/>k2<sp/>*<sp/>0.5)<sp/>/<sp/>s;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f" kindref="member">p</ref><sp/>=<sp/>0.5<sp/>+<sp/>((<ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref><sp/>-<sp/>0.5<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref>)<sp/>*<sp/>k2<sp/>*<sp/>0.5)<sp/>/<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref>;</highlight></codeline>
 <codeline lineno="133"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal">EQPStrategy::EQPStrategy(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
+<codeline lineno="135" refid="classEQPStrategy_1a6fb4f5ab383d1cdf3a32e6689704bdeb" refkind="member"><highlight class="normal"><ref refid="classEQPStrategy_1a6fb4f5ab383d1cdf3a32e6689704bdeb" kindref="member">EQPStrategy::EQPStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>(vol,<sp/>interest,<sp/>delta)</highlight></codeline>
 <codeline lineno="137"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>bType<sp/>=<sp/>Additive;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a2c17c2472572ea3ae463c7dd079c3035" kindref="member">bType</ref><sp/>=<sp/><ref refid="BinomialLatticeStrategy_8hh_1add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c" kindref="member">Additive</ref>;</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Needed<sp/>for<sp/>additive<sp/>method:<sp/>page<sp/>19<sp/>Clewlow/Strickland<sp/>formula<sp/>2.17<sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;v&quot;<sp/>is<sp/>&quot;nu&quot;<sp/>here,<sp/>for<sp/>&quot;v&quot;<sp/>see<sp/><sp/>page<sp/>19<sp/>formula<sp/>2.14</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu<sp/>=<sp/>r<sp/>-<sp/>0.5<sp/>*<sp/>s<sp/>*<sp/>s;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu<sp/>=<sp/><ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref><sp/>-<sp/>0.5<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref>;</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a<sp/>=<sp/>nu<sp/>*<sp/>k;</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>0.5<sp/>*<sp/>std::sqrt(<sp/>(4.0<sp/>*<sp/>s<sp/>*<sp/>s<sp/>*<sp/>k)<sp/>-<sp/>(3.0<sp/>*<sp/>nu<sp/>*<sp/>nu<sp/>*<sp/>k<sp/>*<sp/>k)<sp/>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a<sp/>=<sp/>nu<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff" kindref="member">b</ref><sp/>=<sp/>0.5<sp/>*<sp/>std::sqrt(<sp/>(4.0<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>)<sp/>-<sp/>(3.0<sp/>*<sp/>nu<sp/>*<sp/>nu<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>)<sp/>);</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>EQP<sp/>parameters:<sp/>page<sp/>19<sp/>formula<sp/>2.17</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>0.5<sp/>*<sp/>a<sp/>+<sp/>b;</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>1.5<sp/>*<sp/>a<sp/>-<sp/>b;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>=<sp/>0.5<sp/>*<sp/>a<sp/>+<sp/><ref refid="namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff" kindref="member">b</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref><sp/>=<sp/>1.5<sp/>*<sp/>a<sp/>-<sp/><ref refid="namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff" kindref="member">b</ref>;</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0.5;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f" kindref="member">p</ref><sp/>=<sp/>0.5;</highlight></codeline>
 <codeline lineno="153"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal">TRGStrategy::TRGStrategy(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
+<codeline lineno="155" refid="classTRGStrategy_1a48a3eac7077e04eba3c0a310330b72a7" refkind="member"><highlight class="normal"><ref refid="classTRGStrategy_1a48a3eac7077e04eba3c0a310330b72a7" kindref="member">TRGStrategy::TRGStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta)<sp/></highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>(vol,<sp/>interest,<sp/>delta)</highlight></codeline>
 <codeline lineno="157"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>bType<sp/>=<sp/>Additive;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a2c17c2472572ea3ae463c7dd079c3035" kindref="member">bType</ref><sp/>=<sp/><ref refid="BinomialLatticeStrategy_8hh_1add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c" kindref="member">Additive</ref>;</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"></highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Needed<sp/>for<sp/>additive<sp/>method:<sp/>page<sp/>19<sp/>formula<sp/>2.19<sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;v&quot;<sp/>is<sp/>&quot;nu&quot;<sp/>here,<sp/>for<sp/>&quot;v&quot;<sp/>see<sp/><sp/>page<sp/>17<sp/>formula<sp/>2.14</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu<sp/>=<sp/>r<sp/>-<sp/>0.5<sp/>*<sp/>s<sp/>*<sp/>s;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu<sp/>=<sp/><ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref><sp/>-<sp/>0.5<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref>;</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nudt<sp/>=<sp/>nu<sp/>*<sp/>k;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nudt<sp/>=<sp/>nu<sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>;</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TRG<sp/>parameters:<sp/>page<sp/>19<sp/>formula<sp/>2.19</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>std::sqrt(<sp/>s<sp/>*<sp/>s<sp/>*<sp/>k<sp/>+<sp/>nudt<sp/>*<sp/>nudt<sp/>);</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>-<sp/>u;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>=<sp/>std::sqrt(<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref><sp/>+<sp/>nudt<sp/>*<sp/>nudt<sp/>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref><sp/>=<sp/>-<sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref>;</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"></highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>0.5<sp/>*<sp/>(1.0<sp/>+<sp/>(nudt/u)<sp/>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f" kindref="member">p</ref><sp/>=<sp/>0.5<sp/>*<sp/>(1.0<sp/>+<sp/>(nudt/<ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref>)<sp/>);</highlight></codeline>
 <codeline lineno="171"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"></highlight></codeline>
 <codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal">ModCRRStrategy::ModCRRStrategy(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>K,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N)<sp/></highlight></codeline>
+<codeline lineno="174" refid="classModCRRStrategy_1a6d9b5c5d8e7f78a3dc279c96b618791e" refkind="member"><highlight class="normal"><ref refid="classModCRRStrategy_1a6d9b5c5d8e7f78a3dc279c96b618791e" kindref="member">ModCRRStrategy::ModCRRStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vol,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>interest,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>S,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb" kindref="member">K</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>)<sp/></highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classBinomialLatticeStrategy" kindref="compound">BinomialLatticeStrategy</ref>(vol,<sp/>interest,<sp/>delta)</highlight></codeline>
 <codeline lineno="176"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>s<sp/>==<sp/>volatility,<sp/>k<sp/>=<sp/>step<sp/>size<sp/>in<sp/>time</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>KN<sp/>=<sp/>std::log(K/S)<sp/>/<sp/>double<sp/>(N);</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VN<sp/>=<sp/>s<sp/>*<sp/>std::sqrt(k);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>KN<sp/>=<sp/>std::log(<ref refid="namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb" kindref="member">K</ref>/S)<sp/>/<sp/>double<sp/>(<ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VN<sp/>=<sp/><ref refid="classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce" kindref="member">s</ref><sp/>*<sp/>std::sqrt(<ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>);</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>u<sp/>=<sp/>std::exp(KN<sp/>+<sp/>VN);</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>std::exp(KN<sp/>-<sp/>VN);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>=<sp/><ref refid="Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c" kindref="member">std::exp</ref>(KN<sp/>+<sp/>VN);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref><sp/>=<sp/><ref refid="Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c" kindref="member">std::exp</ref>(KN<sp/>-<sp/>VN);</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>(std::exp(r<sp/>*<sp/>k)<sp/>-<sp/>d)<sp/>/<sp/>(u<sp/>-<sp/>d);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f" kindref="member">p</ref><sp/>=<sp/>(<ref refid="Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c" kindref="member">std::exp</ref>(<ref refid="classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae" kindref="member">r</ref><sp/>*<sp/><ref refid="classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0" kindref="member">k</ref>)<sp/>-<sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref>)<sp/>/<sp/>(<ref refid="classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3" kindref="member">u</ref><sp/>-<sp/><ref refid="classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7" kindref="member">d</ref>);</highlight></codeline>
 <codeline lineno="185"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"></highlight></codeline>
 <codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>

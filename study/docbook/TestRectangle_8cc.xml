@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestRectangle_8cc">
+<title>tests/TestRectangle.cc File Reference</title>
+<indexterm><primary>tests/TestRectangle.cc</primary></indexterm>
+<programlisting>#include &quot;../src/Rectangle.cc&quot;
+</programlisting>Include dependency graph for TestRectangle.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestRectangle_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestRectangle_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestRectangle_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestRectangle.cc</secondary></indexterm>
+<indexterm><primary>TestRectangle.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 11 of file TestRectangle.cc.</para>
+<programlisting>12 {
+13 
+14 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bad&#32;square:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+15 &#32;&#32;&#32;&#32;<link linkend="_classBadSquare">BadSquare</link>&#32;bs;
+16 &#32;&#32;&#32;&#32;bs.<link linkend="_classRectangle_1a4e315c59754599c74e99e8b31f7031a0">print</link>();
+17 
+18 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;change&#32;the&#32;size</emphasis>
+19 &#32;&#32;&#32;&#32;bs.<link linkend="_classRectangle_1a73f8ce5cab932751a8e087bfe94e364e">setHeight</link>(2.0);
+20 &#32;&#32;&#32;&#32;bs.<link linkend="_classRectangle_1a4e315c59754599c74e99e8b31f7031a0">print</link>();
+21 
+22 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Good&#32;square:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+23 &#32;&#32;&#32;&#32;<link linkend="_classGoodSquare">GoodSquare</link>&#32;gs;
+24 &#32;&#32;&#32;&#32;gs.<link linkend="_classGoodSquare_1aeb44d1887bb768f563a9ddc0f73ff415">print</link>();
+25 
+26 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;change&#32;the&#32;size</emphasis>
+27 &#32;&#32;&#32;&#32;gs.<link linkend="_classGoodSquare_1a06b56adcb5f00340eaa871e39031c3eb">setSize</link>(2.0);
+28 &#32;&#32;&#32;&#32;gs.<link linkend="_classGoodSquare_1aeb44d1887bb768f563a9ddc0f73ff415">print</link>();
+29 
+30 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+31 }
+</programlisting></section>
+</section>
+</section>

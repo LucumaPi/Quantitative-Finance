@@ -18,84 +18,84 @@
 \DoxyCodeLine{00014 \textcolor{preprocessor}{\#ifndef BinomialLatticeStrategy\_HH}}
 \DoxyCodeLine{00015 \textcolor{preprocessor}{\#define BinomialLatticeStrategy\_HH}}
 \DoxyCodeLine{00016 }
-\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "Lattice.hh"}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Lattice_8hh}{Lattice.hh}}"}}
 \DoxyCodeLine{00018 \textcolor{preprocessor}{\#include <cmath>}}
 \DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{00020 }
-\DoxyCodeLine{00021 \textcolor{keyword}{enum} BinomialType \{Additive, Multiplicative\};}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00021}\mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99a8609fa7d8218524a919c5f648dd308b4}{00021}} \textcolor{keyword}{enum} \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99}{BinomialType}} \{\mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c}{Additive}}, \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99a8609fa7d8218524a919c5f648dd308b4}{Multiplicative}}\};}
 \DoxyCodeLine{00022 }
 \DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00023}\mbox{\hyperlink{classBinomialLatticeStrategy}{00023}} \textcolor{keyword}{class }\mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}}
 \DoxyCodeLine{00024 \{ \textcolor{comment}{// Based on Clewlow and Strickland 1998}}
 \DoxyCodeLine{00025 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00026         \textcolor{keywordtype}{double} u;}
-\DoxyCodeLine{00027         \textcolor{keywordtype}{double} d;}
-\DoxyCodeLine{00028         \textcolor{keywordtype}{double} p;}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00026}\mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{00026}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}};}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00027}\mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{00027}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}};}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00028}\mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{00028}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}};}
 \DoxyCodeLine{00029 }
-\DoxyCodeLine{00030         \textcolor{keywordtype}{double} s;}
-\DoxyCodeLine{00031         \textcolor{keywordtype}{double} r;}
-\DoxyCodeLine{00032         \textcolor{keywordtype}{double} k;}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00030}\mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{00030}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}};}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00031}\mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{00031}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}};}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00032}\mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{00032}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}};}
 \DoxyCodeLine{00033 }
-\DoxyCodeLine{00034         BinomialType bType;}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00034}\mbox{\hyperlink{classBinomialLatticeStrategy_a2c17c2472572ea3ae463c7dd079c3035}{00034}}         \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99}{BinomialType}} \mbox{\hyperlink{classBinomialLatticeStrategy_a2c17c2472572ea3ae463c7dd079c3035}{bType}};}
 \DoxyCodeLine{00035 }
-\DoxyCodeLine{00036         \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
+\DoxyCodeLine{00036         \mbox{\hyperlink{classBinomialLatticeStrategy_a30116db67055ec31490b298ad9fda14a}{BinomialLatticeStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
 \DoxyCodeLine{00037 }
 \DoxyCodeLine{00038 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00039         \textcolor{comment}{// Useful function}}
-\DoxyCodeLine{00040         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} updateLattice}
+\DoxyCodeLine{00040         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBinomialLatticeStrategy_ab9fa2c3c07acc19168da24dcc84f7af8}{updateLattice}}}
 \DoxyCodeLine{00041             (\mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& source, \textcolor{keywordtype}{double} rootValue) \textcolor{keyword}{const};}
 \DoxyCodeLine{00042 }
 \DoxyCodeLine{00043         \textcolor{comment}{// Public inline functions for normal clients}}
-\DoxyCodeLine{00044         \textcolor{keywordtype}{double} downValue()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} d;\}}
-\DoxyCodeLine{00045         \textcolor{keywordtype}{double} upValue()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} u;\}}
-\DoxyCodeLine{00046         \textcolor{keywordtype}{double} probValue()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} p;\}}
-\DoxyCodeLine{00047         BinomialType binomialType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} bType;\}}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00044}\mbox{\hyperlink{classBinomialLatticeStrategy_ac831614255b54ebf6e624b616748a7e2}{00044}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_ac831614255b54ebf6e624b616748a7e2}{downValue}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}};\}}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00045}\mbox{\hyperlink{classBinomialLatticeStrategy_a66374392d012923a905648e01e278fda}{00045}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_a66374392d012923a905648e01e278fda}{upValue}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}};\}}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00046}\mbox{\hyperlink{classBinomialLatticeStrategy_aaf1021851864043b478bd3b436c53413}{00046}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialLatticeStrategy_aaf1021851864043b478bd3b436c53413}{probValue}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}};\}}
+\DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00047}\mbox{\hyperlink{classBinomialLatticeStrategy_a7a16e4ad1b19050c8167a452a8a86408}{00047}}         \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99}{BinomialType}} \mbox{\hyperlink{classBinomialLatticeStrategy_a7a16e4ad1b19050c8167a452a8a86408}{binomialType}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classBinomialLatticeStrategy_a2c17c2472572ea3ae463c7dd079c3035}{bType}};\}}
 \DoxyCodeLine{00048 }
 \DoxyCodeLine{00049 \};}
 \DoxyCodeLine{00050 }
 \DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00051}\mbox{\hyperlink{classCRRStrategy}{00051}} \textcolor{keyword}{class }\mbox{\hyperlink{classCRRStrategy}{CRRStrategy}}: \textcolor{keyword}{public} \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}}
 \DoxyCodeLine{00052 \{}
 \DoxyCodeLine{00053 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00054     \mbox{\hyperlink{classCRRStrategy}{CRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classCRRStrategy_ad614899efc71dc828b9701383fa11993}{CRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
 \DoxyCodeLine{00055 }
 \DoxyCodeLine{00056 \};}
 \DoxyCodeLine{00057 }
 \DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00058}\mbox{\hyperlink{classPadeCRRStrategy}{00058}} \textcolor{keyword}{class }\mbox{\hyperlink{classPadeCRRStrategy}{PadeCRRStrategy}}: \textcolor{keyword}{public} \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}}
 \DoxyCodeLine{00059 \{}
 \DoxyCodeLine{00060 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00061     \mbox{\hyperlink{classPadeCRRStrategy}{PadeCRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
+\DoxyCodeLine{00061     \mbox{\hyperlink{classPadeCRRStrategy_aa07d959ab5ca27e4a60e105e56a3fedc}{PadeCRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
 \DoxyCodeLine{00062 }
 \DoxyCodeLine{00063 \};}
 \DoxyCodeLine{00064 }
 \DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00065}\mbox{\hyperlink{classJRStrategy}{00065}} \textcolor{keyword}{class }\mbox{\hyperlink{classJRStrategy}{JRStrategy}}: \textcolor{keyword}{public} \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}}
 \DoxyCodeLine{00066 \{}
 \DoxyCodeLine{00067 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00068     \mbox{\hyperlink{classJRStrategy}{JRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
+\DoxyCodeLine{00068     \mbox{\hyperlink{classJRStrategy_a36c42ba9880af4425a68d7784bce5057}{JRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
 \DoxyCodeLine{00069 }
 \DoxyCodeLine{00070 \};}
 \DoxyCodeLine{00071 }
 \DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00072}\mbox{\hyperlink{classPadeJRStrategy}{00072}} \textcolor{keyword}{class }\mbox{\hyperlink{classPadeJRStrategy}{PadeJRStrategy}}: \textcolor{keyword}{public} \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}}
 \DoxyCodeLine{00073 \{}
 \DoxyCodeLine{00074 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00075     \mbox{\hyperlink{classPadeJRStrategy}{PadeJRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
+\DoxyCodeLine{00075     \mbox{\hyperlink{classPadeJRStrategy_a7b1e2cfc3aeff6ee644e305e6a63ea7e}{PadeJRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
 \DoxyCodeLine{00076 }
 \DoxyCodeLine{00077 \};}
 \DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00078}\mbox{\hyperlink{classEQPStrategy}{00078}} \textcolor{keyword}{class }\mbox{\hyperlink{classEQPStrategy}{EQPStrategy}}: \textcolor{keyword}{public} \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}}
 \DoxyCodeLine{00079 \{}
 \DoxyCodeLine{00080 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00081     \mbox{\hyperlink{classEQPStrategy}{EQPStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
+\DoxyCodeLine{00081     \mbox{\hyperlink{classEQPStrategy_a6fb4f5ab383d1cdf3a32e6689704bdeb}{EQPStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
 \DoxyCodeLine{00082 }
 \DoxyCodeLine{00083 \};}
 \DoxyCodeLine{00084 }
 \DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00085}\mbox{\hyperlink{classTRGStrategy}{00085}} \textcolor{keyword}{class }\mbox{\hyperlink{classTRGStrategy}{TRGStrategy}}: \textcolor{keyword}{public} \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}}
 \DoxyCodeLine{00086 \{}
 \DoxyCodeLine{00087 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00088     \mbox{\hyperlink{classTRGStrategy}{TRGStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
+\DoxyCodeLine{00088     \mbox{\hyperlink{classTRGStrategy_a48a3eac7077e04eba3c0a310330b72a7}{TRGStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta);}
 \DoxyCodeLine{00089 \};}
 \DoxyCodeLine{00090 }
 \DoxyCodeLine{\Hypertarget{BinomialLatticeStrategy_8hh_source_l00091}\mbox{\hyperlink{classModCRRStrategy}{00091}} \textcolor{keyword}{class }\mbox{\hyperlink{classModCRRStrategy}{ModCRRStrategy}}: \textcolor{keyword}{public} \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}}
 \DoxyCodeLine{00092 \{}
 \DoxyCodeLine{00093 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00094     \mbox{\hyperlink{classModCRRStrategy}{ModCRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta, \textcolor{keywordtype}{double} S, \textcolor{keywordtype}{double} K, \textcolor{keywordtype}{int} N);}
+\DoxyCodeLine{00094     \mbox{\hyperlink{classModCRRStrategy_a6d9b5c5d8e7f78a3dc279c96b618791e}{ModCRRStrategy}}(\textcolor{keywordtype}{double} vol, \textcolor{keywordtype}{double} interest, \textcolor{keywordtype}{double} delta, \textcolor{keywordtype}{double} S, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
 \DoxyCodeLine{00095 }
 \DoxyCodeLine{00096 \};}
 \DoxyCodeLine{00097 \textcolor{preprocessor}{\#include "../../src/BinomialLatticeStrategy.cc"}}

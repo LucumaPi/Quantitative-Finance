@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: include/duffy/Lattice.hh Source File</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: include/duffy/Lattice.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +78,7 @@ $(function() {
 <div class="title">Lattice.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Lattice.hpp</span></div>
+<a href="Lattice_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Lattice.hpp</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Class respresenting a special kind of tree-like matrix that is</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// needed in specific applications, for example binomial and trinomial </span></div>
@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef Lattice_hpp</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define Lattice_hpp</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;Vector.hh&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Vector_8hh.html">Vector.hh</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classLattice.html">   27</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> V, <span class="keyword">class</span> I, <span class="keywordtype">int</span> NumberNodes&gt; <span class="keyword">class </span><a class="code" href="classLattice.html">Lattice</a></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{ <span class="comment">// Generic lattice class</span></div>
@@ -114,31 +114,42 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> typ;            <span class="comment">// What kind of lattice (number of nodes)</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Constructors &amp; destructor</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classLattice.html">Lattice</a>();                      <span class="comment">// Default constructor</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classLattice.html">Lattice</a>(<span class="keyword">const</span> I&amp; Nrows);    <span class="comment">// Number of rows and branch factor</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classLattice.html">Lattice</a>(<span class="keyword">const</span> I&amp; Nrows, <span class="keyword">const</span> V&amp; val); <span class="comment">// + value at nodes</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classLattice.html">Lattice</a>(<span class="keyword">const</span> <a class="code" href="classLattice.html">Lattice&lt;V, I, NumberNodes&gt;</a>&amp; source);      <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classLattice.html">Lattice</a>();                         <span class="comment">// Destructor</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classLattice.html#a9fe92ce8abfb8668e28064b394f7a057">Lattice</a>();                      <span class="comment">// Default constructor</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classLattice.html#a9fe92ce8abfb8668e28064b394f7a057">Lattice</a>(<span class="keyword">const</span> I&amp; Nrows);    <span class="comment">// Number of rows and branch factor</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classLattice.html#a9fe92ce8abfb8668e28064b394f7a057">Lattice</a>(<span class="keyword">const</span> I&amp; Nrows, <span class="keyword">const</span> V&amp; val); <span class="comment">// + value at nodes</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classLattice.html#a9fe92ce8abfb8668e28064b394f7a057">Lattice</a>(<span class="keyword">const</span> <a class="code" href="classLattice.html">Lattice&lt;V, I, NumberNodes&gt;</a>&amp; source);      <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classLattice.html#a9625188af2d5da9d88b2f747db907042">~Lattice</a>();                         <span class="comment">// Destructor</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Iterating in a Lattice; we need forward and backward versions</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    I MinIndex() <span class="keyword">const</span>;                             <span class="comment">// Return the minimum row index</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    I MaxIndex() <span class="keyword">const</span>;                             <span class="comment">// Return the maximum row index</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    I Depth() <span class="keyword">const</span>;                                <span class="comment">// The (depth) number of rows in the lattice</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    I <a class="code" href="classLattice.html#a07442df63222c6627f46efc4ae91acf9">MinIndex</a>() <span class="keyword">const</span>;                             <span class="comment">// Return the minimum row index</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    I <a class="code" href="classLattice.html#a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</a>() <span class="keyword">const</span>;                             <span class="comment">// Return the maximum row index</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    I <a class="code" href="classLattice.html#a0911d29a485c5e8555b8f25e7589434a">Depth</a>() <span class="keyword">const</span>;                                <span class="comment">// The (depth) number of rows in the lattice</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Operators</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classLattice.html">Lattice&lt;V, I, NumberNodes&gt;</a>&amp; operator = (<span class="keyword">const</span> <a class="code" href="classLattice.html">Lattice&lt;V, I, NumberNodes&gt;</a>&amp; source);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classVector.html">Vector&lt;V, I&gt;</a>&amp; operator [] (<span class="keyword">const</span> I&amp; nLevel );               <span class="comment">// Subscripting operator</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <a class="code" href="classVector.html">Vector&lt;V, I&gt;</a>&amp; operator [] (<span class="keyword">const</span> I&amp; nLevel ) <span class="keyword">const</span>;               <span class="comment">// Subscripting operator</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classLattice.html">Lattice&lt;V, I, NumberNodes&gt;</a>&amp; <a class="code" href="classLattice.html#a135fdd0475ed6105b3367d507681a404">operator = </a>(<span class="keyword">const</span> <a class="code" href="classLattice.html">Lattice&lt;V, I, NumberNodes&gt;</a>&amp; source);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classVector.html">Vector&lt;V, I&gt;</a>&amp; <a class="code" href="classLattice.html#ab444412f2030b7594d611c1f7429a953">operator [] </a>(<span class="keyword">const</span> I&amp; nLevel );               <span class="comment">// Subscripting operator</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <a class="code" href="classVector.html">Vector&lt;V, I&gt;</a>&amp; <a class="code" href="classLattice.html#ab444412f2030b7594d611c1f7429a953">operator [] </a>(<span class="keyword">const</span> I&amp; nLevel ) <span class="keyword">const</span>;               <span class="comment">// Subscripting operator</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// We need the form of the lattice at the &#39;base&#39; of the pyramid. This</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// will be needed when we use backward induction </span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classVector.html">Vector&lt;V, I&gt;</a> BasePyramidVector() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    I BasePyramidSize() <span class="keyword">const</span>;                  <span class="comment">// The number of discrete points at end</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    I numberNodes() <span class="keyword">const</span>;                      <span class="comment">// Total number of mesh points</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classVector.html">Vector&lt;V, I&gt;</a> <a class="code" href="classLattice.html#a0454fa42ebad2e9fbb71e884f3befaf6">BasePyramidVector</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    I <a class="code" href="classLattice.html#a37afc93f46019f322291307c1bed2e11">BasePyramidSize</a>() <span class="keyword">const</span>;                  <span class="comment">// The number of discrete points at end</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    I <a class="code" href="classLattice.html#a114af77d5b77fa52ffd28c42f7f97b5f">numberNodes</a>() <span class="keyword">const</span>;                      <span class="comment">// Total number of mesh points</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;../../src/Lattice.cc&quot;</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassLattice_html"><div class="ttname"><a href="classLattice.html">Lattice</a></div><div class="ttdef"><b>Definition:</b> Lattice.hh:27</div></div>
-<div class="ttc" id="aclassArray_html"><div class="ttname"><a href="classArray.html">Array</a></div><div class="ttdef"><b>Definition:</b> Array.hh:17</div></div>
+<div class="ttc" id="aclassLattice_html_ab444412f2030b7594d611c1f7429a953"><div class="ttname"><a href="classLattice.html#ab444412f2030b7594d611c1f7429a953">Lattice::operator[]</a></div><div class="ttdeci">Vector&lt; V, I &gt; &amp; operator[](const I &amp;nLevel)</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00105">Lattice.cc:105</a></div></div>
+<div class="ttc" id="aclassLattice_html"><div class="ttname"><a href="classLattice.html">Lattice</a></div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8hh_source.html#l00027">Lattice.hh:27</a></div></div>
+<div class="ttc" id="aclassLattice_html_a9fe92ce8abfb8668e28064b394f7a057"><div class="ttname"><a href="classLattice.html#a9fe92ce8abfb8668e28064b394f7a057">Lattice::Lattice</a></div><div class="ttdeci">Lattice()</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00027">Lattice.cc:27</a></div></div>
+<div class="ttc" id="aclassLattice_html_a07442df63222c6627f46efc4ae91acf9"><div class="ttname"><a href="classLattice.html#a07442df63222c6627f46efc4ae91acf9">Lattice::MinIndex</a></div><div class="ttdeci">I MinIndex() const</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00089">Lattice.cc:89</a></div></div>
+<div class="ttc" id="aclassLattice_html_a114af77d5b77fa52ffd28c42f7f97b5f"><div class="ttname"><a href="classLattice.html#a114af77d5b77fa52ffd28c42f7f97b5f">Lattice::numberNodes</a></div><div class="ttdeci">I numberNodes() const</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00133">Lattice.cc:133</a></div></div>
+<div class="ttc" id="aclassLattice_html_a0454fa42ebad2e9fbb71e884f3befaf6"><div class="ttname"><a href="classLattice.html#a0454fa42ebad2e9fbb71e884f3befaf6">Lattice::BasePyramidVector</a></div><div class="ttdeci">Vector&lt; V, I &gt; BasePyramidVector() const</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00119">Lattice.cc:119</a></div></div>
+<div class="ttc" id="aclassLattice_html_a37afc93f46019f322291307c1bed2e11"><div class="ttname"><a href="classLattice.html#a37afc93f46019f322291307c1bed2e11">Lattice::BasePyramidSize</a></div><div class="ttdeci">I BasePyramidSize() const</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00125">Lattice.cc:125</a></div></div>
+<div class="ttc" id="aclassLattice_html_a135fdd0475ed6105b3367d507681a404"><div class="ttname"><a href="classLattice.html#a135fdd0475ed6105b3367d507681a404">Lattice::operator=</a></div><div class="ttdeci">Lattice&lt; V, I, NumberNodes &gt; &amp; operator=(const Lattice&lt; V, I, NumberNodes &gt; &amp;source)</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00077">Lattice.cc:77</a></div></div>
+<div class="ttc" id="aclassArray_html"><div class="ttname"><a href="classArray.html">Array</a></div><div class="ttdef"><b>Definition:</b> <a href="Array_8hh_source.html#l00017">Array.hh:17</a></div></div>
+<div class="ttc" id="aclassLattice_html_a5cac27496a08f2a14d8e1d65732a4c34"><div class="ttname"><a href="classLattice.html#a5cac27496a08f2a14d8e1d65732a4c34">Lattice::MaxIndex</a></div><div class="ttdeci">I MaxIndex() const</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00094">Lattice.cc:94</a></div></div>
+<div class="ttc" id="aclassLattice_html_a0911d29a485c5e8555b8f25e7589434a"><div class="ttname"><a href="classLattice.html#a0911d29a485c5e8555b8f25e7589434a">Lattice::Depth</a></div><div class="ttdeci">I Depth() const</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00099">Lattice.cc:99</a></div></div>
+<div class="ttc" id="aclassLattice_html_a9625188af2d5da9d88b2f747db907042"><div class="ttname"><a href="classLattice.html#a9625188af2d5da9d88b2f747db907042">Lattice::~Lattice</a></div><div class="ttdeci">virtual ~Lattice()</div><div class="ttdef"><b>Definition:</b> <a href="Lattice_8cc_source.html#l00072">Lattice.cc:72</a></div></div>
+<div class="ttc" id="aVector_8hh_html"><div class="ttname"><a href="Vector_8hh.html">Vector.hh</a></div></div>
 <div class="ttc" id="aclassVector_html"><div class="ttname"><a href="classVector.html">Vector&lt; V, I &gt;</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

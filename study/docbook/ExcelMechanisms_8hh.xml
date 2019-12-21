@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ExcelMechanisms_8hh">
+<title>include/duffy/ExcelMechanisms.hh File Reference</title>
+<indexterm><primary>include/duffy/ExcelMechanisms.hh</primary></indexterm>
+<programlisting>#include &quot;Vector.hh&quot;
+#include &quot;NumericMatrix.hh&quot;
+#include &quot;Tensor.hh&quot;
+#include &quot;StringConversions.hh&quot;
+#include &lt;string&gt;
+#include &lt;list&gt;
+</programlisting>Include dependency graph for ExcelMechanisms.hh:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ExcelMechanisms_8hh__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ExcelMechanisms_8hh__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1a590d2646d246756846f9f3af2adb37fa">printOneExcel</link> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;functionResult, const std::string &amp;title=std::string(&quot;Title&quot;), const std::string &amp;horizontal=std::string(&quot;X&quot;), const std::string &amp;vertical=std::string(&quot;Y&quot;), const std::string &amp;legend=std::string(&quot;*&quot;))</para>
+</listitem>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1abd7a7502659fd7fdba4b6057bcafd210">printInExcel</link> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, const std::list&lt; std::string &gt; &amp;labels, const std::list&lt; <link linkend="_classVector">Vector</link>&lt; double, long &gt; &gt; &amp;functionResult, const std::string &amp;title=std::string(&quot;Title&quot;), const std::string &amp;horizontal=std::string(&quot;X&quot;), const std::string &amp;vertical=std::string(&quot;Y&quot;))</para>
+</listitem>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1aeaadfb639eb159e4a9fda2bc24af25b3">printMatrixInExcel</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;matrix, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;xarr, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;yarr, const std::string &amp;SheetName=std::string(&quot;Matrix&quot;))</para>
+</listitem>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1ac1af554008147e356ae4de60600ef2b1">printMatrixChartsInExcel</link> (int freq, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;matrix, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;rowAarr, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;colArr, const std::string &amp;SheetName=std::string(&quot;Matrix&quot;))</para>
+</listitem>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1a5c06f7e2edeb4aa0d33c7e36500d269c">printTensorInExcel</link> (const <link linkend="_classTensor">Tensor</link>&lt; double, long &gt; &amp;tensor, long freq=1)</para>
+</listitem>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1ab56a98bda136b6e7808598a780df43e2">printTensorInExcel</link> (const <link linkend="_classTensor">Tensor</link>&lt; double, long &gt; &amp;tensor, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;xarr, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;yarr, const std::string &amp;SheetName=std::string(&quot;Tensor&quot;), long freq=1)</para>
+</listitem>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1ac9b48eb511f76a077cbadc60946c8634">printDifferenceInExcel</link> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;y1, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;y2, const std::string &amp;title=std::string(&quot;Difference&quot;), const std::string &amp;horizontal=std::string(&quot;X Values&quot;), const std::string &amp;vertical=std::string(&quot;Y Values&quot;), const std::string &amp;legend=std::string(&quot;*&quot;), long freq=1)</para>
+</listitem>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1a2d9828ad723373ba781ef1c33498ef3a">printMatrixDifferenceInExcel</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;matrix1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;matrix2, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;xarr, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;yarr, const std::string &amp;SheetName=std::string(&quot;Matrix&quot;))</para>
+</listitem>
+            <listitem><para>void <link linkend="_ExcelMechanisms_8hh_1a4d6e83cb634939b5c6f7253db0416a6a">printDiscreteFunctionValues</link> (double(*f)(double x), double A, double <link linkend="_classB">B</link>, long nSteps, const std::string &amp;title, const std::string &amp;horizontal, const std::string &amp;vertical, const std::string &amp;legend)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_ExcelMechanisms_8hh_1ac9b48eb511f76a077cbadc60946c8634"/>    <section>
+    <title>printDifferenceInExcel()</title>
+<indexterm><primary>printDifferenceInExcel</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printDifferenceInExcel</secondary></indexterm>
+<para><computeroutput>void printDifferenceInExcel (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; x, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; y1, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; y2, const std::string &amp; title = <computeroutput>std::string(&quot;Difference&quot;)</computeroutput>
+, const std::string &amp; horizontal = <computeroutput>std::string(&quot;X Values&quot;)</computeroutput>
+, const std::string &amp; vertical = <computeroutput>std::string(&quot;Y Values&quot;)</computeroutput>
+, const std::string &amp; legend = <computeroutput>std::string(&quot;*&quot;)</computeroutput>
+, long freq = <computeroutput>1</computeroutput>
+)</computeroutput></para>    </section><anchor xml:id="_ExcelMechanisms_8hh_1a4d6e83cb634939b5c6f7253db0416a6a"/>    <section>
+    <title>printDiscreteFunctionValues()</title>
+<indexterm><primary>printDiscreteFunctionValues</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printDiscreteFunctionValues</secondary></indexterm>
+<para><computeroutput>void printDiscreteFunctionValues (double(*)(double x) f, double A, double B, long nSteps, const std::string &amp; title, const std::string &amp; horizontal, const std::string &amp; vertical, const std::string &amp; legend)</computeroutput></para><para>
+Definition at line 292 of file ExcelMechanisms.cc.</para>
+<programlisting>297 {&#32;&#32;&#32;&#32;
+298 
+299 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;discrete&#32;x&#32;and&#32;y&#32;arrays</emphasis>
+300 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;h&#32;=&#32;(<link linkend="_classB">B</link>&#32;-&#32;A)&#32;/&#32;<emphasis role="keywordtype">double</emphasis>&#32;(nSteps);
+301 
+302 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;mesh(nSteps&#32;+&#32;1,&#32;1);
+303 
+304 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;val&#32;=&#32;A;
+305 
+306 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;i&#32;=&#32;1;&#32;i&#32;&lt;=&#32;nSteps&#32;+&#32;1;&#32;i++)&#32;&#32;
+307 &#32;&#32;&#32;&#32;{
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mesh[i]&#32;=&#32;val;
+309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val&#32;+=&#32;h;
+310 &#32;&#32;&#32;&#32;}
+311 
+312 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;array&#32;of&#32;values</emphasis>
+313 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;result(nSteps&#32;+&#32;1,&#32;1);
+314 
+315 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;i2&#32;=&#32;1;&#32;i2&#32;&lt;=&#32;nSteps&#32;+&#32;1;&#32;i2++)&#32;&#32;&#32;
+316 &#32;&#32;&#32;&#32;{
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i2]&#32;=&#32;(*f)(mesh[i2]);
+318 &#32;&#32;&#32;&#32;
+319 &#32;&#32;&#32;&#32;}
+320 
+321 &#32;&#32;&#32;&#32;<link linkend="_ExcelMechanisms_8cc_1a12ea9eaf7398a6bb8d5546b0d428c74e">printOneExcel</link>(mesh,&#32;result,&#32;title,&#32;horizontal,&#32;vertical,&#32;legend);
+322 }
+</programlisting>    </section><anchor xml:id="_ExcelMechanisms_8hh_1abd7a7502659fd7fdba4b6057bcafd210"/>    <section>
+    <title>printInExcel()</title>
+<indexterm><primary>printInExcel</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printInExcel</secondary></indexterm>
+<para><computeroutput>void printInExcel (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; x, const std::list&lt; std::string &gt; &amp; labels, const std::list&lt; <link linkend="_classVector">Vector</link>&lt; double, long &gt; &gt; &amp; functionResult, const std::string &amp; title = <computeroutput>std::string(&quot;Title&quot;)</computeroutput>
+, const std::string &amp; horizontal = <computeroutput>std::string(&quot;X&quot;)</computeroutput>
+, const std::string &amp; vertical = <computeroutput>std::string(&quot;Y&quot;)</computeroutput>
+)</computeroutput></para><para>
+Definition at line 62 of file ExcelMechanisms.cc.</para>
+<programlisting>68 {&#32;<emphasis role="comment">//&#32;Print&#32;a&#32;list&#32;of&#32;Vectors&#32;in&#32;Excel.&#32;Each&#32;vector&#32;is&#32;the&#32;output&#32;of</emphasis>
+69 &#32;&#32;<emphasis role="comment">//&#32;a&#32;finite&#32;difference&#32;scheme&#32;for&#32;a&#32;scalar&#32;IVP</emphasis>
+70 
+71 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;Type&#32;I</emphasis>
+72 <emphasis role="comment">//&#32;&#32;if&#32;(x.Size()&#32;!=&#32;labels.size()&#32;||&#32;x.Size()&#32;!=&#32;functionResult.size())</emphasis>
+73 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;No&#32;cheque&#32;of&#32;x&#32;array&#32;size</emphasis>
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(labels.size()&#32;!=&#32;functionResult.size())
+75 &#32;&#32;&#32;&#32;{
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;tmp&#32;=&#32;<emphasis role="stringliteral">&quot;Sizes&#32;of&#32;vectors&#32;are&#32;X,&#32;Y,&#32;Label:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(functionResult.size())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(labels.size());
+78 
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classDatasimException">DatasimException</link>(std::string(<emphasis role="stringliteral">&quot;Size&#32;mismatch&#32;of&#32;vectors&#32;and&#32;labels&quot;</emphasis>),&#32;std::string(<emphasis role="stringliteral">&quot;PrintInExcel&quot;</emphasis>),
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp);
+81 &#32;&#32;&#32;&#32;}
+82 
+83 
+84 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Starting&#32;Excel\n&quot;</emphasis>;
+85 
+86 &#32;&#32;&#32;&#32;<link linkend="_classExcelDriver">ExcelDriver</link>&amp;&#32;excel&#32;=&#32;<link linkend="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8">ExcelDriver::Instance</link>();
+87 
+88 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b">MakeVisible</link>(<emphasis role="keyword">true</emphasis>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;is&#32;INVISIBLE!</emphasis>
+89 
+90 
+91 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4">CreateChart</link>(x,&#32;labels,&#32;functionResult,&#32;title,&#32;horizontal,&#32;vertical);
+92 
+93 }
+</programlisting>    </section><anchor xml:id="_ExcelMechanisms_8hh_1ac1af554008147e356ae4de60600ef2b1"/>    <section>
+    <title>printMatrixChartsInExcel()</title>
+<indexterm><primary>printMatrixChartsInExcel</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printMatrixChartsInExcel</secondary></indexterm>
+<para><computeroutput>void printMatrixChartsInExcel (int freq, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; matrix, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; rowAarr, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; colArr, const std::string &amp; SheetName = <computeroutput>std::string(&quot;Matrix&quot;)</computeroutput>
+)</computeroutput></para><para>
+Definition at line 127 of file ExcelMechanisms.cc.</para>
+<programlisting>131 {
+132 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;Type&#32;II,&#32;III</emphasis>
+133 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rowArr.Size()&#32;!=&#32;matrix.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>()&#32;||&#32;colArr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;!=&#32;matrix.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())
+134 &#32;&#32;&#32;&#32;{
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;tmp&#32;=&#32;std::string(<emphasis role="stringliteral">&quot;Vectors&#32;X,&#32;Y,&#32;matrix&#32;M:&#32;&quot;</emphasis>)&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(rowArr.Size())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(colArr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1ae7f29803a022e2b09ff177e1d4d317ba">bracketL</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(matrix.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(matrix.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1afe78097e7e8ceef40f1540c81b31e046">bracketR</link>;
+137 
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classDatasimException">DatasimException</link>(std::string(<emphasis role="stringliteral">&quot;Size&#32;mismatch&#32;of&#32;vector(s)&#32;and&#32;matrix&quot;</emphasis>),&#32;std::string(<emphasis role="stringliteral">&quot;PrintMatrixChartsInExcel&quot;</emphasis>),
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp);
+140 &#32;&#32;&#32;&#32;}
+141 
+142 
+143 &#32;&#32;&#32;&#32;std::string&#32;title;
+144 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;tmp(matrix.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>(),&#32;matrix.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>());
+145 
+146 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;matrix.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;&lt;=&#32;matrix.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>++)
+147 &#32;&#32;&#32;&#32;{
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;title&#32;=&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;<link linkend="_ExcelDriver_8hh_1a1b724dd4e99548501ed8e37c192d9eca">createVector</link>(matrix,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);&#32;<emphasis role="comment">//&#32;Can&#32;optimise&#32;(later)</emphasis>
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>(tmp);
+151 
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>/freq)*freq&#32;==&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ExcelMechanisms_8cc_1a12ea9eaf7398a6bb8d5546b0d428c74e">printOneExcel</link>(colArr,&#32;tmp,&#32;title);&#32;
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+156 &#32;&#32;&#32;&#32;}
+157 
+158 &#32;&#32;&#32;&#32;
+159 }
+</programlisting>    </section><anchor xml:id="_ExcelMechanisms_8hh_1a2d9828ad723373ba781ef1c33498ef3a"/>    <section>
+    <title>printMatrixDifferenceInExcel()</title>
+<indexterm><primary>printMatrixDifferenceInExcel</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printMatrixDifferenceInExcel</secondary></indexterm>
+<para><computeroutput>void printMatrixDifferenceInExcel (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; matrix1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; matrix2, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; xarr, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; yarr, const std::string &amp; SheetName = <computeroutput>std::string(&quot;Matrix&quot;)</computeroutput>
+)</computeroutput></para><para>
+Definition at line 188 of file ExcelMechanisms.cc.</para>
+<programlisting>192 {
+193 
+194 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;Type&#32;IV&#32;m1,&#32;m2&#32;have&#32;same&#32;&apos;shape&apos;</emphasis>
+195 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(matrix1.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>()&#32;!=&#32;matrix2.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>()&#32;||&#32;matrix1.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>()&#32;!=&#32;matrix2.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())
+196 &#32;&#32;&#32;&#32;{
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;tmp1&#32;=&#32;std::string(<emphasis role="stringliteral">&quot;,&#32;x&#32;and&#32;y&#32;arrays:&#32;&quot;</emphasis>)&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1ae7f29803a022e2b09ff177e1d4d317ba">bracketL</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(xarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(yarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1afe78097e7e8ceef40f1540c81b31e046">bracketR</link>;
+198 
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;tmp&#32;=&#32;<emphasis role="stringliteral">&quot;Incompatible&#32;matrices:&#32;[&quot;</emphasis>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(matrix1.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(matrix1.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1afe78097e7e8ceef40f1540c81b31e046">bracketR</link>&#32;+&#32;
+200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ExcelMechanisms_8cc_1ae7f29803a022e2b09ff177e1d4d317ba">bracketL</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(matrix2.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(matrix2.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1afe78097e7e8ceef40f1540c81b31e046">bracketR</link>;
+201 
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;+=&#32;tmp1;
+203 
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classDatasimException">DatasimException</link>(std::string(<emphasis role="stringliteral">&quot;Size&#32;mismatch&#32;of&#32;matrices&quot;</emphasis>),&#32;std::string(<emphasis role="stringliteral">&quot;PrintMatrixDifferenceInExcel&quot;</emphasis>),tmp);
+205 &#32;&#32;&#32;&#32;}
+206 
+207 
+208 &#32;&#32;&#32;&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;double, long&gt;</link>&#32;m2&#32;=&#32;matrix1&#32;-&#32;matrix2;
+209 
+210 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;Type&#32;II,&#32;III</emphasis>
+211 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(xarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;!=&#32;m2.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>()&#32;||&#32;yarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;!=&#32;m2.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())
+212 &#32;&#32;&#32;&#32;{
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;tmp&#32;=&#32;<emphasis role="stringliteral">&quot;Vectors&#32;X,&#32;Y,&#32;matrix&#32;M:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(xarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(yarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ExcelMechanisms_8cc_1ae7f29803a022e2b09ff177e1d4d317ba">bracketL</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(m2.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(m2.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1afe78097e7e8ceef40f1540c81b31e046">bracketR</link>;
+215 
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classDatasimException">DatasimException</link>(std::string(<emphasis role="stringliteral">&quot;Size&#32;mismatch&#32;of&#32;vector(s)&#32;and&#32;matrix&quot;</emphasis>),&#32;std::string(<emphasis role="stringliteral">&quot;PrintMatrixDifferenceInExcel&quot;</emphasis>),
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp);
+218 &#32;&#32;&#32;&#32;}
+219 
+220 &#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>(m2);
+221 
+222 &#32;&#32;&#32;&#32;<link linkend="_ExcelMechanisms_8cc_1aac6ffa2b45a155a9ab9c33ea6a70c8e7">printMatrixInExcel</link>(m2,&#32;xarr,&#32;yarr,&#32;SheetName);
+223 
+224 }
+</programlisting>    </section><anchor xml:id="_ExcelMechanisms_8hh_1aeaadfb639eb159e4a9fda2bc24af25b3"/>    <section>
+    <title>printMatrixInExcel()</title>
+<indexterm><primary>printMatrixInExcel</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printMatrixInExcel</secondary></indexterm>
+<para><computeroutput>void printMatrixInExcel (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; matrix, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; xarr, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; yarr, const std::string &amp; SheetName = <computeroutput>std::string(&quot;Matrix&quot;)</computeroutput>
+)</computeroutput></para><para>
+Definition at line 96 of file ExcelMechanisms.cc.</para>
+<programlisting>99 {
+100 
+101 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;Type&#32;II,&#32;III</emphasis>
+102 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(xarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;!=&#32;matrix.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>()&#32;||&#32;yarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;!=&#32;matrix.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())
+103 &#32;&#32;&#32;&#32;{
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;tmp&#32;=&#32;<emphasis role="stringliteral">&quot;Vectors&#32;X,&#32;Y,&#32;matrix&#32;M:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(xarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(yarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1ae7f29803a022e2b09ff177e1d4d317ba">bracketL</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(matrix.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(matrix.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1afe78097e7e8ceef40f1540c81b31e046">bracketR</link>;
+106 
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classDatasimException">DatasimException</link>(std::string(<emphasis role="stringliteral">&quot;Size&#32;mismatch&#32;of&#32;vector(s)&#32;and&#32;matrix&quot;</emphasis>),&#32;std::string(<emphasis role="stringliteral">&quot;PrintMatrixInExcel&quot;</emphasis>),
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp);
+109 &#32;&#32;&#32;&#32;}
+110 
+111 &#32;&#32;&#32;&#32;<link linkend="_classExcelDriver">ExcelDriver</link>&amp;&#32;excel&#32;=&#32;<link linkend="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8">ExcelDriver::Instance</link>();
+112 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b">MakeVisible</link>(<emphasis role="keyword">true</emphasis>);
+113 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Print&#32;a&#32;matrix&#32;showing&#32;the&#32;x&#32;and&#32;y&#32;positions</emphasis>
+114 
+115 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;We&#32;need&#32;to&#32;convert&#32;the&#32;double&#32;arrays&#32;to&#32;lists&#32;of&#32;strings</emphasis>
+116 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Starting&#32;Excel&quot;</emphasis>;
+117 
+118 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;rowlabels&#32;=&#32;<link linkend="_StringConversions_8hh_1aa9803942566e177490d69f756e68a138">convertToString</link>(xarr);
+119 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;columnlabels&#32;=&#32;<link linkend="_StringConversions_8hh_1aa9803942566e177490d69f756e68a138">convertToString</link>(yarr);
+120 
+121 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Staring&#32;Excel&quot;</emphasis>;
+122 &#32;&#32;&#32;&#32;
+123 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1a63753818c5895ff1ed84dad214de4332">AddMatrix</link>(SheetName,&#32;matrix,&#32;rowlabels,&#32;columnlabels);
+124 
+125 }
+</programlisting>    </section><anchor xml:id="_ExcelMechanisms_8hh_1a590d2646d246756846f9f3af2adb37fa"/>    <section>
+    <title>printOneExcel()</title>
+<indexterm><primary>printOneExcel</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printOneExcel</secondary></indexterm>
+<para><computeroutput>void printOneExcel (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; x, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; functionResult, const std::string &amp; title = <computeroutput>std::string(&quot;Title&quot;)</computeroutput>
+, const std::string &amp; horizontal = <computeroutput>std::string(&quot;X&quot;)</computeroutput>
+, const std::string &amp; vertical = <computeroutput>std::string(&quot;Y&quot;)</computeroutput>
+, const std::string &amp; legend = <computeroutput>std::string(&quot;*&quot;)</computeroutput>
+)</computeroutput></para><para>
+Definition at line 28 of file ExcelMechanisms.cc.</para>
+<programlisting>34 {&#32;
+35 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;N.B.&#32;Excel&#32;has&#32;a&#32;limit&#32;of&#32;8&#32;charts;&#32;after&#32;that&#32;you&#32;get&#32;a&#32;run-time&#32;error</emphasis>
+36 
+37 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;Type&#32;I</emphasis>
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;!=&#32;functionResult.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())
+39 &#32;&#32;&#32;&#32;{
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;tmp&#32;=&#32;std::string(<emphasis role="stringliteral">&quot;Sizes&#32;of&#32;vectors&#32;are&#32;X,&#32;Y:&#32;&quot;</emphasis>)&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;std::string(<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>)&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(functionResult.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>());
+42 
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classDatasimException">DatasimException</link>(std::string(<emphasis role="stringliteral">&quot;Size&#32;mismatch&#32;of&#32;two&#32;vectors&quot;</emphasis>),&#32;std::string(<emphasis role="stringliteral">&quot;PrintOneExcel&quot;</emphasis>),
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp);
+45 &#32;&#32;&#32;&#32;}
+46 
+47 
+48 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Starting&#32;Excel\n&quot;</emphasis>;
+49 
+50 &#32;&#32;&#32;&#32;<link linkend="_classExcelDriver">ExcelDriver</link>&amp;&#32;excel&#32;=&#32;<link linkend="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8">ExcelDriver::Instance</link>();
+51 
+52 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b">MakeVisible</link>(<emphasis role="keyword">true</emphasis>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;is&#32;INVISIBLE!</emphasis>
+53 
+54 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Workaround</emphasis>
+55 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;legendList;&#32;legendList.push_back(legend);
+56 &#32;&#32;&#32;&#32;std::list&lt;Vector&lt;double,&#32;long&gt;&#32;&gt;&#32;functionResultList;&#32;functionResultList.push_back(functionResult);
+57 
+58 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4">CreateChart</link>(x,&#32;legendList,&#32;functionResultList,&#32;title,&#32;horizontal,&#32;vertical);
+59 &#32;&#32;&#32;&#32;
+60 }
+</programlisting>    </section><anchor xml:id="_ExcelMechanisms_8hh_1ab56a98bda136b6e7808598a780df43e2"/>    <section>
+    <title>printTensorInExcel()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>printTensorInExcel</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printTensorInExcel</secondary></indexterm>
+<para><computeroutput>void printTensorInExcel (const <link linkend="_classTensor">Tensor</link>&lt; double, long &gt; &amp; tensor, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; xarr, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; yarr, const std::string &amp; SheetName = <computeroutput>std::string(&quot;Tensor&quot;)</computeroutput>
+, long freq = <computeroutput>1</computeroutput>
+)</computeroutput></para><para>
+Definition at line 254 of file ExcelMechanisms.cc.</para>
+<programlisting>257 {
+258 
+259 
+260 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;Type&#32;II,&#32;III</emphasis>
+261 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(xarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;!=&#32;tensor.<link linkend="_classTensor_1a1d19abc6ebc88dcd1e31a9035d4f42f1">Rows</link>()&#32;||&#32;yarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;!=&#32;tensor.<link linkend="_classTensor_1acb5f71b7416a3361164821b624933dd3">Columns</link>())
+262 &#32;&#32;&#32;&#32;{
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;tmp&#32;=&#32;std::string(<emphasis role="stringliteral">&quot;Vectors&#32;X,&#32;Y,&#32;tensor&#32;M:&#32;&quot;</emphasis>)&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(xarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(yarr.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;+&#32;
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ExcelMechanisms_8cc_1ae7f29803a022e2b09ff177e1d4d317ba">bracketL</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(tensor.<link linkend="_classTensor_1a1d19abc6ebc88dcd1e31a9035d4f42f1">Rows</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1aabafce4ba408fc2e6b3a9ae23264c15b">comma</link>&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(tensor.<link linkend="_classTensor_1acb5f71b7416a3361164821b624933dd3">Columns</link>())&#32;+&#32;<link linkend="_ExcelMechanisms_8cc_1afe78097e7e8ceef40f1540c81b31e046">bracketR</link>;
+265 
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classDatasimException">DatasimException</link>(std::string(<emphasis role="stringliteral">&quot;Size&#32;mismatch&#32;of&#32;vector(s)&#32;and&#32;tensor&quot;</emphasis>),&#32;std::string(<emphasis role="stringliteral">&quot;PrintTensorInExcel&quot;</emphasis>),
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp);
+268 &#32;&#32;&#32;&#32;}
+269 
+270 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;rowlabels&#32;=&#32;<link linkend="_StringConversions_8hh_1aa9803942566e177490d69f756e68a138">convertToString</link>(xarr);
+271 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;columnlabels&#32;=&#32;<link linkend="_StringConversions_8hh_1aa9803942566e177490d69f756e68a138">convertToString</link>(yarr);
+272 
+273 &#32;&#32;&#32;&#32;<link linkend="_classExcelDriver">ExcelDriver</link>&amp;&#32;excel&#32;=&#32;<link linkend="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8">ExcelDriver::Instance</link>();
+274 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b">MakeVisible</link>(<emphasis role="keyword">true</emphasis>);&#32;&#32;&#32;&#32;
+275 
+276 &#32;&#32;&#32;&#32;std::string&#32;tmp;
+277 
+278 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;i&#32;=&#32;tensor.<link linkend="_classTensor_1aa95268c48800c8ca1dd6243b59a09543">MinThirdIndex</link>();&#32;i&#32;&lt;=&#32;tensor.<link linkend="_classTensor_1a6266f47513cc5b5924573ac58390b7cb">MaxThirdIndex</link>();&#32;i++)
+279 &#32;&#32;&#32;&#32;{
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;SheetName&#32;+&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(i);
+281 
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((i/freq)*freq&#32;==&#32;i&#32;||&#32;i&#32;==&#32;tensor.<link linkend="_classTensor_1aa95268c48800c8ca1dd6243b59a09543">MinThirdIndex</link>())
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1a63753818c5895ff1ed84dad214de4332">AddMatrix</link>(tmp,&#32;tensor[i],&#32;rowlabels,&#32;columnlabels);
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+286 
+287 &#32;&#32;&#32;&#32;}
+288 
+289 }
+</programlisting>    </section><anchor xml:id="_ExcelMechanisms_8hh_1a5c06f7e2edeb4aa0d33c7e36500d269c"/>    <section>
+    <title>printTensorInExcel()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>printTensorInExcel</primary><secondary>ExcelMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ExcelMechanisms.hh</primary><secondary>printTensorInExcel</secondary></indexterm>
+<para><computeroutput>void printTensorInExcel (const <link linkend="_classTensor">Tensor</link>&lt; double, long &gt; &amp; tensor, long freq = <computeroutput>1</computeroutput>
+)</computeroutput></para><para>
+Definition at line 227 of file ExcelMechanisms.cc.</para>
+<programlisting>228 {
+229 
+230 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;None&#32;needed,&#32;always&#32;works</emphasis>
+231 
+232 &#32;&#32;&#32;&#32;<link linkend="_classExcelDriver">ExcelDriver</link>&amp;&#32;excel&#32;=&#32;<link linkend="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8">ExcelDriver::Instance</link>();
+233 &#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b">MakeVisible</link>(<emphasis role="keyword">true</emphasis>);&#32;&#32;&#32;&#32;
+234 
+235 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;Use:&#32;excel.AddMatrix(sheetName,&#32;matrix,&#32;rowlabels,&#32;columnlabels);</emphasis>
+236 
+237 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;rowlabels(tensor.<link linkend="_classTensor_1aef9f18eee21230b69a12c03ddf765abc">MaxFirstIndex</link>());
+238 &#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;columnlabels(tensor.<link linkend="_classTensor_1aa7a13e524f1fbbfdf0bdf68192e034b4">MaxSecondIndex</link>());
+239 &#32;&#32;&#32;&#32;std::string&#32;name;
+240 
+241 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;i&#32;=&#32;tensor.<link linkend="_classTensor_1aa95268c48800c8ca1dd6243b59a09543">MinThirdIndex</link>();&#32;i&#32;&lt;=&#32;tensor.<link linkend="_classTensor_1a6266f47513cc5b5924573ac58390b7cb">MaxThirdIndex</link>();&#32;i++)
+242 &#32;&#32;&#32;&#32;{
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;name&#32;=&#32;<link linkend="_StringConversions_8hh_1a213a07386067dc8dfe4aa69843afd183">getString</link>(i);
+244 
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((i/freq)*freq&#32;==&#32;i&#32;||&#32;i&#32;==&#32;tensor.<link linkend="_classTensor_1aa95268c48800c8ca1dd6243b59a09543">MinThirdIndex</link>())
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;excel.<link linkend="_classExcelDriver_1a63753818c5895ff1ed84dad214de4332">AddMatrix</link>(name,&#32;tensor[i],&#32;rowlabels,&#32;columnlabels);
+248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+249 
+250 &#32;&#32;&#32;&#32;}
+251 
+252 }
+</programlisting></section>
+</section>
+</section>

@@ -2,6 +2,10 @@
 \label{classFullArray}\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
 
 
+{\ttfamily \#include $<$Full\+Array.\+hh$>$}
+
+
+
 Inheritance diagram for Full\+Array$<$ V, TA $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,27 +25,217 @@ Collaboration diagram for Full\+Array$<$ V, TA $>$\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classFullArray_a89c2fe9944639ae1ea069bf5c69117cc}\label{classFullArray_a89c2fe9944639ae1ea069bf5c69117cc}} 
-{\bfseries Full\+Array} (std\+::size\+\_\+t size)
+\mbox{\hyperlink{classFullArray_aa964a473d16b89f8380a03e252f24d1c}{Full\+Array}} ()
 \item 
-\mbox{\Hypertarget{classFullArray_afe445599c77bc8ecd849f982616960df}\label{classFullArray_afe445599c77bc8ecd849f982616960df}} 
-{\bfseries Full\+Array} (const \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \&source)
+\mbox{\hyperlink{classFullArray_a89c2fe9944639ae1ea069bf5c69117cc}{Full\+Array}} (std\+::size\+\_\+t size)
 \item 
-\mbox{\Hypertarget{classFullArray_ae9a91c66741570e20758d54664676db8}\label{classFullArray_ae9a91c66741570e20758d54664676db8}} 
-virtual std\+::size\+\_\+t {\bfseries Size} () const
+\mbox{\hyperlink{classFullArray_afe445599c77bc8ecd849f982616960df}{Full\+Array}} (const \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \&source)
 \item 
-\mbox{\Hypertarget{classFullArray_a0ecf139013ac590276644320dcc663fc}\label{classFullArray_a0ecf139013ac590276644320dcc663fc}} 
-V \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (std\+::size\+\_\+t index)
+virtual \mbox{\hyperlink{classFullArray_a1fe55cb30365520b3f3a3eb731aecb2a}{$\sim$\+Full\+Array}} ()
 \item 
-\mbox{\Hypertarget{classFullArray_ab20c110bcf7e445dfc410b0fb55fa408}\label{classFullArray_ab20c110bcf7e445dfc410b0fb55fa408}} 
-const V \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (std\+::size\+\_\+t index) const
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classFullArray_ae9a91c66741570e20758d54664676db8}{Size}} () const
 \item 
-\mbox{\Hypertarget{classFullArray_abb4489eb3c6bea585ca00f4b41ae7c1f}\label{classFullArray_abb4489eb3c6bea585ca00f4b41ae7c1f}} 
-\mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \&source)
+V \& \mbox{\hyperlink{classFullArray_a0ecf139013ac590276644320dcc663fc}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t index)
+\item 
+const V \& \mbox{\hyperlink{classFullArray_ab20c110bcf7e445dfc410b0fb55fa408}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t index) const
+\item 
+\mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \& \mbox{\hyperlink{classFullArray_abb4489eb3c6bea585ca00f4b41ae7c1f}{operator=}} (const \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \&source)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class V, class TA = std\+::allocator$<$\+V$>$$>$\newline
+class Full\+Array$<$ V, T\+A $>$}
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8hh_source_l00015}{15}} of file \mbox{\hyperlink{FullArray_8hh_source}{Full\+Array.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFullArray_aa964a473d16b89f8380a03e252f24d1c}\label{classFullArray_aa964a473d16b89f8380a03e252f24d1c}} 
+\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}!FullArray@{FullArray}}
+\index{FullArray@{FullArray}!FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
+\doxysubsubsection{\texorpdfstring{FullArray()}{FullArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+\mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$\+::\mbox{\hyperlink{classFullArray}{Full\+Array}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8cc_source_l00017}{17}} of file \mbox{\hyperlink{FullArray_8cc_source}{Full\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017                            : \mbox{\hyperlink{classArrayStructure}{ArrayStructure<V>}}()}
+\DoxyCodeLine{00018 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     m\_vector=std::vector<V, TA>(1); \textcolor{comment}{// vector object with 1 element}}
+\DoxyCodeLine{00021 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullArray_a89c2fe9944639ae1ea069bf5c69117cc}\label{classFullArray_a89c2fe9944639ae1ea069bf5c69117cc}} 
+\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}!FullArray@{FullArray}}
+\index{FullArray@{FullArray}!FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
+\doxysubsubsection{\texorpdfstring{FullArray()}{FullArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+\mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$\+::\mbox{\hyperlink{classFullArray}{Full\+Array}} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8cc_source_l00024}{24}} of file \mbox{\hyperlink{FullArray_8cc_source}{Full\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                                          : \mbox{\hyperlink{classArrayStructure}{ArrayStructure<V>}}()}
+\DoxyCodeLine{00025 \{ \textcolor{comment}{// Constructor with size}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     m\_vector=std::vector<V, TA>(size);}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullArray_afe445599c77bc8ecd849f982616960df}\label{classFullArray_afe445599c77bc8ecd849f982616960df}} 
+\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}!FullArray@{FullArray}}
+\index{FullArray@{FullArray}!FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
+\doxysubsubsection{\texorpdfstring{FullArray()}{FullArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class V, class TA$>$ \\
+\mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$\+::\mbox{\hyperlink{classFullArray}{Full\+Array}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8cc_source_l00031}{31}} of file \mbox{\hyperlink{FullArray_8cc_source}{Full\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031                                                          : \mbox{\hyperlink{classArrayStructure}{ArrayStructure<V>}}(source)}
+\DoxyCodeLine{00032 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     m\_vector=source.m\_vector;}
+\DoxyCodeLine{00035 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullArray_a1fe55cb30365520b3f3a3eb731aecb2a}\label{classFullArray_a1fe55cb30365520b3f3a3eb731aecb2a}} 
+\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}!````~FullArray@{$\sim$FullArray}}
+\index{````~FullArray@{$\sim$FullArray}!FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$FullArray()}{~FullArray()}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+\mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$\+::$\sim$\mbox{\hyperlink{classFullArray}{Full\+Array}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8cc_source_l00038}{38}} of file \mbox{\hyperlink{FullArray_8cc_source}{Full\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00040 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFullArray_abb4489eb3c6bea585ca00f4b41ae7c1f}\label{classFullArray_abb4489eb3c6bea585ca00f4b41ae7c1f}} 
+\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class V, class TA$>$ \\
+\mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \& \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$ \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8cc_source_l00071}{71}} of file \mbox{\hyperlink{FullArray_8cc_source}{Full\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00075     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{comment}{// Call base class constructor}}
+\DoxyCodeLine{00078     \mbox{\hyperlink{classArrayStructure_aee8dc21d313bd8706f397a561332d654}{ArrayStructure<V>::operator = }}(source);}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{comment}{// Copy the embedded vector}}
+\DoxyCodeLine{00081     m\_vector=source.m\_vector;}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00084 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullArray_a0ecf139013ac590276644320dcc663fc}\label{classFullArray_a0ecf139013ac590276644320dcc663fc}} 
+\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+V \& \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classArrayStructure_a81c632bed29ddd1a373b6769490a67d7}{Array\+Structure$<$ V $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8cc_source_l00055}{55}} of file \mbox{\hyperlink{FullArray_8cc_source}{Full\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056 \{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} m\_vector[index -\/ 1];}
+\DoxyCodeLine{00060 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullArray_ab20c110bcf7e445dfc410b0fb55fa408}\label{classFullArray_ab20c110bcf7e445dfc410b0fb55fa408}} 
+\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+const V \& \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classArrayStructure_ad7d4487d8276969345406acbf753e00a}{Array\+Structure$<$ V $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8cc_source_l00063}{63}} of file \mbox{\hyperlink{FullArray_8cc_source}{Full\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064 \{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} m\_vector[index -\/ 1];}
+\DoxyCodeLine{00068 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFullArray_ae9a91c66741570e20758d54664676db8}\label{classFullArray_ae9a91c66741570e20758d54664676db8}} 
+\index{FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}!Size@{Size}}
+\index{Size@{Size}!FullArray$<$ V, TA $>$@{FullArray$<$ V, TA $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily template$<$class V , class TA $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classFullArray}{Full\+Array}}$<$ V, TA $>$\+::Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classArrayStructure_a29bd0faa2d4f0e60152ef197d56148b4}{Array\+Structure$<$ V $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{FullArray_8cc_source_l00044}{44}} of file \mbox{\hyperlink{FullArray_8cc_source}{Full\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045 \{ \textcolor{comment}{// Size of the array}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} m\_vector.size();}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Full\+Array.\+hh\item 
-src/Full\+Array.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{FullArray_8hh}{Full\+Array.\+hh}}\item 
+src/\mbox{\hyperlink{FullArray_8cc}{Full\+Array.\+cc}}\end{DoxyCompactItemize}

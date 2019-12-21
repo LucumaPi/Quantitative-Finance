@@ -1,0 +1,83 @@
+\hypertarget{GenericCreator_8cc_source}{}\doxysection{Generic\+Creator.\+cc}
+\label{GenericCreator_8cc_source}\index{src/GenericCreator.cc@{src/GenericCreator.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// GenericCreator.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// The Abstract Factory to end all abstract factories?}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Policy classes, policies and required interaces are }}
+\DoxyCodeLine{00006 \textcolor{comment}{// important in this context.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Point_8hh}{duffy/Point.hh}}>}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00014}\mbox{\hyperlink{classAbstractFactory}{00014}} \textcolor{keyword}{template} <\textcolor{keyword}{class} T> \textcolor{keyword}{class }\mbox{\hyperlink{classAbstractFactory}{AbstractFactory}}}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017         \textcolor{keyword}{virtual} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}* \mbox{\hyperlink{classAbstractFactory_a6c6ad72b50ce9e534f54145cd8ba4f47}{Create}}() = 0;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \};}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00021}\mbox{\hyperlink{classHeapCreator}{00021}} \textcolor{keyword}{template} <\textcolor{keyword}{class} T> \textcolor{keyword}{class }\mbox{\hyperlink{classHeapCreator}{HeapCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAbstractFactory}{AbstractFactory}}<T>}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00024}\mbox{\hyperlink{classHeapCreator_a44904c9903236de51ee2b8f64ac542bc}{00024}}         \textcolor{keyword}{virtual} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}* \mbox{\hyperlink{classHeapCreator_a44904c9903236de51ee2b8f64ac542bc}{Create}}()}
+\DoxyCodeLine{00025         \{}
+\DoxyCodeLine{00026             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}();}
+\DoxyCodeLine{00027         \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \};}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00031}\mbox{\hyperlink{classPrototypeCreator}{00031}} \textcolor{keyword}{template} <\textcolor{keyword}{class} T> \textcolor{keyword}{class }\mbox{\hyperlink{classPrototypeCreator}{PrototypeCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAbstractFactory}{AbstractFactory}}<T>}
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034         \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}* proto;}
+\DoxyCodeLine{00035 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00036}\mbox{\hyperlink{classPrototypeCreator_af11e1a6eff1e0d0a879ecc0ed632ae5f}{00036}}     \mbox{\hyperlink{classPrototypeCreator_af11e1a6eff1e0d0a879ecc0ed632ae5f}{PrototypeCreator}} () \{proto = 0;\}}
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00037}\mbox{\hyperlink{classPrototypeCreator_ad0d32c2d51be57184e61a4016783e5f0}{00037}}     \mbox{\hyperlink{classPrototypeCreator_ad0d32c2d51be57184e61a4016783e5f0}{PrototypeCreator}} (\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}* prototype) \{ proto = prototype; \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00039}\mbox{\hyperlink{classPrototypeCreator_abd7061e565987226d957855f98fb6bc2}{00039}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}* \mbox{\hyperlink{classPrototypeCreator_abd7061e565987226d957855f98fb6bc2}{Create}}()}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}(*proto);}
+\DoxyCodeLine{00042     \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044 \};}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00047}\mbox{\hyperlink{GenericCreator_8cc_af68ffa5b985c3dbcfcf6c3628bc92279}{00047}}     \mbox{\hyperlink{classAbstractFactory}{AbstractFactory<T>}}* \mbox{\hyperlink{GenericCreator_8cc_af68ffa5b985c3dbcfcf6c3628bc92279}{GetFactory}}()}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049     \textcolor{keywordtype}{int} choice = 1;}
+\DoxyCodeLine{00050     std::cout << \textcolor{stringliteral}{"Factories: 1) Heap 2) Prototype "};}
+\DoxyCodeLine{00051     std::cin >> choice;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{if} (choice == 1)}
+\DoxyCodeLine{00054     \{}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classHeapCreator}{HeapCreator<T>}}();}
+\DoxyCodeLine{00056     \}}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00058     \{}
+\DoxyCodeLine{00059         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classPrototypeCreator}{PrototypeCreator<T>}}();}
+\DoxyCodeLine{00060     \}}
+\DoxyCodeLine{00061 \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{\Hypertarget{GenericCreator_8cc_source_l00063}\mbox{\hyperlink{GenericCreator_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00063}} \textcolor{keywordtype}{int} \mbox{\hyperlink{GenericCreator_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00064 \{}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \mbox{\hyperlink{classHeapCreator}{HeapCreator<int>}} hfac;}
+\DoxyCodeLine{00067     \textcolor{keywordtype}{int}* myInt = hfac.\mbox{\hyperlink{classHeapCreator_a44904c9903236de51ee2b8f64ac542bc}{Create}}();}
+\DoxyCodeLine{00068     std::cout << *myInt << std::endl;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \mbox{\hyperlink{classHeapCreator}{HeapCreator<Point>}} hfac2;}
+\DoxyCodeLine{00071     \mbox{\hyperlink{classPoint}{Point}}* myPt = hfac2.\mbox{\hyperlink{classHeapCreator_a44904c9903236de51ee2b8f64ac542bc}{Create}}();}
+\DoxyCodeLine{00072     std::cout << (*myPt).\mbox{\hyperlink{classPoint_ae86421f3b20ffcf813e2736002e68459}{X}}() << \textcolor{stringliteral}{", "} << (*myPt).Y() << std::endl;}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \mbox{\hyperlink{classAbstractFactory}{AbstractFactory<double>}}* fac = GetFactory<double>();}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00077 \}}
+
+\end{DoxyCode}

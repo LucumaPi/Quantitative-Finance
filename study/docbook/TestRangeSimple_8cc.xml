@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestRangeSimple_8cc">
+<title>tests/TestRangeSimple.cc File Reference</title>
+<indexterm><primary>tests/TestRangeSimple.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/Range.hh&gt;
+#include &lt;duffy/DatasimDate.hh&gt;
+</programlisting>Include dependency graph for TestRangeSimple.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestRangeSimple_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class Numeric &gt; </para><para>void <link linkend="_TestRangeSimple_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c">print</link> (const <link linkend="_classRange">Range</link>&lt; Numeric &gt; &amp;range)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestRangeSimple_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestRangeSimple_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestRangeSimple.cc</secondary></indexterm>
+<indexterm><primary>TestRangeSimple.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 17 of file TestRangeSimple.cc.</para>
+<programlisting>18 {
+19 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;int&gt;</link>&#32;range1&#32;(0,&#32;10);
+20 
+21 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;valL&#32;=&#32;-1;
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;valM&#32;=&#32;5;
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;valR&#32;=&#32;20;
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(range1.left(valL)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;valL&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;to&#32;left,&#32;OK\n&quot;</emphasis>;
+27 
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(range1.contains(valM)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;valM&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;in&#32;interval,&#32;OK\n&quot;</emphasis>;
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(range1.right(valR)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;valR&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;to&#32;right,&#32;OK\n&quot;</emphasis>;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;interval&#32;between&#32;now&#32;and&#32;1&#32;year&apos;s&#32;time</emphasis>
+35 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;now;
+36 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;nextYear&#32;=&#32;now.<link linkend="_classDatasimDate_1a4a66bc65f73f0257cad52ae6a86653ab">add_years</link>(1);
+37 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;DatasimDate&gt;</link>&#32;dateSchedule(now,&#32;nextYear);
+38 
+39 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;datL&#32;=&#32;now&#32;-&#32;1;&#32;<emphasis role="comment">//&#32;yesterday</emphasis>
+40 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;datM&#32;=&#32;now.<link linkend="_classDatasimDate_1adefb5ed1054f46821f7f3886445a7386">add_halfyear</link>();
+41 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;datR&#32;=&#32;nextYear&#32;+&#32;1;&#32;<emphasis role="comment">//&#32;One&#32;year&#32;and&#32;a&#32;day&#32;from&#32;now</emphasis>
+42 &#32;&#32;&#32;&#32;
+43 &#32;&#32;&#32;&#32;
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(dateSchedule.left(datL)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;datL&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;to&#32;left,&#32;OK\n&quot;</emphasis>;
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(dateSchedule.contains(datM)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;datM&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;in&#32;interval,&#32;OK\n&quot;</emphasis>;
+49 
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(dateSchedule.right(datR)&#32;==&#32;<emphasis role="keyword">true</emphasis>)
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;datR&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;to&#32;right,&#32;OK\n&quot;</emphasis>;
+52 
+53 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;now&#32;&lt;&lt;&#32;std::endl;
+54 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;nextYear&#32;&lt;&lt;&#32;std::endl;
+55 
+56 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**\n&quot;</emphasis>;
+57 
+58 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;datL&#32;&lt;&lt;&#32;std::endl;
+59 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;datM&#32;&lt;&lt;&#32;std::endl;
+60 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;datR&#32;&lt;&lt;&#32;std::endl;
+61 
+62 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;types&#32;and&#32;synonyms</emphasis>
+63 &#32;&#32;&#32;&#32;<link linkend="_classRange">Range&lt;double&gt;</link>&#32;d(-1.0,&#32;1.0);
+64 &#32;&#32;&#32;&#32;<link linkend="_TestRangeSimple_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c">print</link>&#32;(d);
+65 
+66 &#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;<link linkend="_classRange">Range&lt;double&gt;</link>&#32;DoubleRange;
+67 &#32;&#32;&#32;&#32;DoubleRange&#32;d1(-1.0,&#32;1.0);
+68 &#32;&#32;&#32;&#32;<link linkend="_TestRangeSimple_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c">print</link>&#32;(d1);
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;<link linkend="_classRange">Range&lt;DatasimDate&gt;</link>&#32;DateRange;
+71 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;today;
+72 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;anotherDate&#32;=&#32;today&#32;+&#32;365;
+73 &#32;&#32;&#32;&#32;DateRange&#32;whatsAnotherYear(today,&#32;anotherDate);
+74 &#32;&#32;&#32;&#32;<link linkend="_TestRangeSimple_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c">print</link>(whatsAnotherYear);
+75 
+76 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+77 }
+</programlisting>    </section><anchor xml:id="_TestRangeSimple_8cc_1a8b0ac6442ecc94172e4b2c11a2ebee2c"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestRangeSimple.cc</secondary></indexterm>
+<indexterm><primary>TestRangeSimple.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class Numeric &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classRange">Range</link>&lt; Numeric &gt; &amp; range)</computeroutput></para><para>
+Definition at line 12 of file TestRangeSimple.cc.</para>
+<programlisting>13 {
+14 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;[&quot;</emphasis>&#32;&lt;&lt;&#32;range.<link linkend="_classRange_1a885e2f67531baf6df9359f95c3f8ebaa">low</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&quot;</emphasis>&#32;&lt;&lt;&#32;range.<link linkend="_classRange_1aa0f159ae114a4053113ba035b1fc7b21">high</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+15 }
+</programlisting></section>
+</section>
+</section>

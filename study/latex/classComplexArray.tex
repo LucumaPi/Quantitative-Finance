@@ -2,6 +2,10 @@
 \label{classComplexArray}\index{ComplexArray@{ComplexArray}}
 
 
+{\ttfamily \#include $<$Complex\+Array.\+hh$>$}
+
+
+
 Collaboration diagram for Complex\+Array\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,33 +16,216 @@ Collaboration diagram for Complex\+Array\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classComplexArray_a86e1e6f77ebe1fec2da3e49c8a698f51}\label{classComplexArray_a86e1e6f77ebe1fec2da3e49c8a698f51}} 
-{\bfseries Complex\+Array} (int size)
+\mbox{\hyperlink{classComplexArray_a86e1e6f77ebe1fec2da3e49c8a698f51}{Complex\+Array}} (int size)
 \item 
-\mbox{\Hypertarget{classComplexArray_a41698990e7798098a8904393fef81f8b}\label{classComplexArray_a41698990e7798098a8904393fef81f8b}} 
-{\bfseries Complex\+Array} (const \mbox{\hyperlink{classComplexArray}{Complex\+Array}} \&source)
+\mbox{\hyperlink{classComplexArray_a41698990e7798098a8904393fef81f8b}{Complex\+Array}} (const \mbox{\hyperlink{classComplexArray}{Complex\+Array}} \&source)
 \item 
-\mbox{\Hypertarget{classComplexArray_a9b9f180503f0272aedeb0c6bf7a86c2b}\label{classComplexArray_a9b9f180503f0272aedeb0c6bf7a86c2b}} 
-int {\bfseries Size} () const
+virtual \mbox{\hyperlink{classComplexArray_ab43d4afa961ad46b074d93941ca2a97f}{$\sim$\+Complex\+Array}} ()
 \item 
-\mbox{\Hypertarget{classComplexArray_ab9cefe61064be624d5237baf9f2b4507}\label{classComplexArray_ab9cefe61064be624d5237baf9f2b4507}} 
-int {\bfseries Min\+Index} () const
+int \mbox{\hyperlink{classComplexArray_a9b9f180503f0272aedeb0c6bf7a86c2b}{Size}} () const
 \item 
-\mbox{\Hypertarget{classComplexArray_ab5237189531cc3d8e67810b0b1143e01}\label{classComplexArray_ab5237189531cc3d8e67810b0b1143e01}} 
-int {\bfseries Max\+Index} () const
+int \mbox{\hyperlink{classComplexArray_ab9cefe61064be624d5237baf9f2b4507}{Min\+Index}} () const
 \item 
-\mbox{\Hypertarget{classComplexArray_a8536da65b076aed2bfbb97c78679d245}\label{classComplexArray_a8536da65b076aed2bfbb97c78679d245}} 
-const \mbox{\hyperlink{classComplex}{Complex}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index) const
+int \mbox{\hyperlink{classComplexArray_ab5237189531cc3d8e67810b0b1143e01}{Max\+Index}} () const
 \item 
-\mbox{\Hypertarget{classComplexArray_a736eedc4dc6ad8629342ef8f2a7b3deb}\label{classComplexArray_a736eedc4dc6ad8629342ef8f2a7b3deb}} 
-\mbox{\hyperlink{classComplex}{Complex}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index)
+const \mbox{\hyperlink{classComplex}{Complex}} \& \mbox{\hyperlink{classComplexArray_a8536da65b076aed2bfbb97c78679d245}{operator\mbox{[}$\,$\mbox{]}}} (int index) const
 \item 
-\mbox{\Hypertarget{classComplexArray_a5ffde5253af5abdab97ac58d6ff7e1f7}\label{classComplexArray_a5ffde5253af5abdab97ac58d6ff7e1f7}} 
-\mbox{\hyperlink{classComplexArray}{Complex\+Array}} \& {\bfseries operator=} (const \mbox{\hyperlink{classComplexArray}{Complex\+Array}} \&source)
+\mbox{\hyperlink{classComplex}{Complex}} \& \mbox{\hyperlink{classComplexArray_a736eedc4dc6ad8629342ef8f2a7b3deb}{operator\mbox{[}$\,$\mbox{]}}} (int index)
+\item 
+\mbox{\hyperlink{classComplexArray}{Complex\+Array}} \& \mbox{\hyperlink{classComplexArray_a5ffde5253af5abdab97ac58d6ff7e1f7}{operator=}} (const \mbox{\hyperlink{classComplexArray}{Complex\+Array}} \&source)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8hh_source_l00012}{12}} of file \mbox{\hyperlink{ComplexArray_8hh_source}{Complex\+Array.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classComplexArray_a86e1e6f77ebe1fec2da3e49c8a698f51}\label{classComplexArray_a86e1e6f77ebe1fec2da3e49c8a698f51}} 
+\index{ComplexArray@{ComplexArray}!ComplexArray@{ComplexArray}}
+\index{ComplexArray@{ComplexArray}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{ComplexArray()}{ComplexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Complex\+Array\+::\+Complex\+Array (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00023}{23}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025     arr = \textcolor{keyword}{new} \mbox{\hyperlink{classComplex}{Complex}}[size];}
+\DoxyCodeLine{00026     size = size;}
+\DoxyCodeLine{00027 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classComplexArray_a41698990e7798098a8904393fef81f8b}\label{classComplexArray_a41698990e7798098a8904393fef81f8b}} 
+\index{ComplexArray@{ComplexArray}!ComplexArray@{ComplexArray}}
+\index{ComplexArray@{ComplexArray}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{ComplexArray()}{ComplexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Complex\+Array\+::\+Complex\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classComplexArray}{Complex\+Array}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00030}{30}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032     \textcolor{comment}{// Deep copy source}}
+\DoxyCodeLine{00033     size = source.size;}
+\DoxyCodeLine{00034     arr = \textcolor{keyword}{new} \mbox{\hyperlink{classComplex}{Complex}}[size];}
+\DoxyCodeLine{00035     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++) arr[i] = source.arr[i];}
+\DoxyCodeLine{00036 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classComplexArray_ab43d4afa961ad46b074d93941ca2a97f}\label{classComplexArray_ab43d4afa961ad46b074d93941ca2a97f}} 
+\index{ComplexArray@{ComplexArray}!````~ComplexArray@{$\sim$ComplexArray}}
+\index{````~ComplexArray@{$\sim$ComplexArray}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{$\sim$ComplexArray()}{~ComplexArray()}}
+{\footnotesize\ttfamily Complex\+Array\+::$\sim$\+Complex\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00039}{39}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040 \{}
+\DoxyCodeLine{00041     \textcolor{keyword}{delete}[] arr;}
+\DoxyCodeLine{00042 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classComplexArray_ab5237189531cc3d8e67810b0b1143e01}\label{classComplexArray_ab5237189531cc3d8e67810b0b1143e01}} 
+\index{ComplexArray@{ComplexArray}!MaxIndex@{MaxIndex}}
+\index{MaxIndex@{MaxIndex}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{MaxIndex()}{MaxIndex()}}
+{\footnotesize\ttfamily int Complex\+Array\+::\+Max\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00056}{56}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057 \{ \textcolor{comment}{// Largest index in array}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} size -\/ 1;}
+\DoxyCodeLine{00060 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classComplexArray_ab9cefe61064be624d5237baf9f2b4507}\label{classComplexArray_ab9cefe61064be624d5237baf9f2b4507}} 
+\index{ComplexArray@{ComplexArray}!MinIndex@{MinIndex}}
+\index{MinIndex@{MinIndex}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{MinIndex()}{MinIndex()}}
+{\footnotesize\ttfamily int Complex\+Array\+::\+Min\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00050}{50}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051 \{ \textcolor{comment}{// Smallest index in array}}
+\DoxyCodeLine{00052     }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00054 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classComplexArray_a5ffde5253af5abdab97ac58d6ff7e1f7}\label{classComplexArray_a5ffde5253af5abdab97ac58d6ff7e1f7}} 
+\index{ComplexArray@{ComplexArray}!operator=@{operator=}}
+\index{operator=@{operator=}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classComplexArray}{Complex\+Array}} \& Complex\+Array\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classComplexArray}{Complex\+Array}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00082}{82}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083 \{}
+\DoxyCodeLine{00084     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00085     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{comment}{// Delete old memory}}
+\DoxyCodeLine{00088     \textcolor{keyword}{delete}[] arr;}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{comment}{// Deep copy source}}
+\DoxyCodeLine{00091     size = source.size;}
+\DoxyCodeLine{00092     arr = \textcolor{keyword}{new} \mbox{\hyperlink{classComplex}{Complex}}[size];}
+\DoxyCodeLine{00093     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++) arr[i] = source.arr[i];}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00096 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classComplexArray_a736eedc4dc6ad8629342ef8f2a7b3deb}\label{classComplexArray_a736eedc4dc6ad8629342ef8f2a7b3deb}} 
+\index{ComplexArray@{ComplexArray}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classComplex}{Complex}} \& Complex\+Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00073}{73}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074 \{}
+\DoxyCodeLine{00075     \textcolor{comment}{// Simple bounds checking. Should throw an exception.}}
+\DoxyCodeLine{00076     \textcolor{comment}{//  if (index<0 || index>=size) return arr[0];}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{keywordflow}{return} arr[index];}
+\DoxyCodeLine{00079 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classComplexArray_a8536da65b076aed2bfbb97c78679d245}\label{classComplexArray_a8536da65b076aed2bfbb97c78679d245}} 
+\index{ComplexArray@{ComplexArray}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classComplex}{Complex}} \& Complex\+Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00064}{64}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065 \{}
+\DoxyCodeLine{00066     \textcolor{comment}{// Simple bounds checking. Should throw an exception.}}
+\DoxyCodeLine{00067     \textcolor{comment}{// if (index<0 || index>=size) return arr[0];}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \textcolor{keywordflow}{return} arr[index];}
+\DoxyCodeLine{00070 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classComplexArray_a9b9f180503f0272aedeb0c6bf7a86c2b}\label{classComplexArray_a9b9f180503f0272aedeb0c6bf7a86c2b}} 
+\index{ComplexArray@{ComplexArray}!Size@{Size}}
+\index{Size@{Size}!ComplexArray@{ComplexArray}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily int Complex\+Array\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{ComplexArray_8cc_source_l00045}{45}} of file \mbox{\hyperlink{ComplexArray_8cc_source}{Complex\+Array.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046 \{}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Complex\+Array.\+hh\item 
-src/Complex\+Array.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{ComplexArray_8hh}{Complex\+Array.\+hh}}\item 
+src/\mbox{\hyperlink{ComplexArray_8cc}{Complex\+Array.\+cc}}\end{DoxyCompactItemize}

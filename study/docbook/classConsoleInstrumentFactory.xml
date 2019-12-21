@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classConsoleInstrumentFactory">
 <title>ConsoleInstrumentFactory Class Reference</title>
 <indexterm><primary>ConsoleInstrumentFactory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Instrument.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for ConsoleInstrumentFactory:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,173 @@ Collaboration diagram for ConsoleInstrumentFactory:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classConsoleInstrumentFactory_1a444f78bcb31b6ef6b6e0d469745904ca"/><link linkend="_classOption">Option</link> * <emphasis role="strong">CreateOption</emphasis> () const</para>
+            <listitem><para><link linkend="_classOption">Option</link> * <link linkend="_classConsoleInstrumentFactory_1a444f78bcb31b6ef6b6e0d469745904ca">CreateOption</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classConsoleInstrumentFactory_1a189d2413f0b58fad4eba81d39f970fe6"/><link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link> * <emphasis role="strong">CreateOption</emphasis> () const</para>
+            <listitem><para><link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link> * <link linkend="_classConsoleInstrumentFactory_1a189d2413f0b58fad4eba81d39f970fe6">CreateOption</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 57 of file Instrument.hh.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classConsoleInstrumentFactory_1a444f78bcb31b6ef6b6e0d469745904ca"/>    <section>
+    <title>CreateOption()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>CreateOption</primary><secondary>ConsoleInstrumentFactory</secondary></indexterm>
+<indexterm><primary>ConsoleInstrumentFactory</primary><secondary>CreateOption</secondary></indexterm>
+<para><computeroutput><link linkend="_classOption">Option</link>* ConsoleInstrumentFactory::CreateOption ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classInstrumentFactory_1acc735ba0c9d3b8c36269d3553c1cb401">InstrumentFactory</link>.</para>
+<para>
+Definition at line 61 of file Instrument.hh.</para>
+<programlisting>62 &#32;&#32;&#32;&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dr;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Interest&#32;rate</emphasis>
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dsig;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Volatility</emphasis>
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dK;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Strike&#32;price</emphasis>
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dT;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Expiry&#32;date</emphasis>
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;db;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Cost&#32;of&#32;carry&#32;&#32;&#32;&#32;</emphasis>
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dSMax;&#32;&#32;&#32;<emphasis role="comment">//&#32;Far&#32;field&#32;boundary</emphasis>
+69 
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Interest&#32;rate:&#32;&quot;</emphasis>;
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dr;
+72 
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Volatility:&#32;&quot;</emphasis>;
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dsig;
+75 
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Strike&#32;Price:&#32;&quot;</emphasis>;
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dK;
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dSMax&#32;=&#32;4.0&#32;*&#32;dK;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Magix&#32;Number&#32;!!!!</emphasis>
+79 
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Expiry:&#32;&quot;</emphasis>;
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dT;
+82 
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Should&#32;ask&#32;what&#32;kind&#32;of&#32;option&#32;(as&#32;in&#32;Haug&#32;1998)</emphasis>
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Cost&#32;of&#32;carry:&#32;&quot;</emphasis>;
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;db;
+86 
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classOption">Option</link>*&#32;result&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classOption">Option</link>;
+88 
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Payoff&#32;1)&#32;Call,&#32;2)&#32;Put:&#32;&quot;</emphasis>;
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;ans;
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;ans;
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;==&#32;1)
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;&#32;<link linkend="_namespacePayoffNamespace_1a39ee14e55dbe34eb4f30330edd487f84">type</link>&#32;=&#32;<emphasis role="charliteral">&apos;C&apos;</emphasis>;
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(*result).OptionPayoff&#32;=&#32;<link linkend="_classOneFactorPayoff">OneFactorPayoff</link>(dK,&#32;<link linkend="_OneFactorPayoff_8hh_1a014348d679f2afcacf81af0e762ad426">MyCallPayoffFN</link>);
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;&#32;<link linkend="_namespacePayoffNamespace_1a39ee14e55dbe34eb4f30330edd487f84">type</link>&#32;=&#32;<emphasis role="charliteral">&apos;P&apos;</emphasis>;
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(*result).OptionPayoff&#32;=&#32;<link linkend="_classOneFactorPayoff">OneFactorPayoff</link>(dK,&#32;<link linkend="_OneFactorPayoff_8hh_1a941b079b8b777eac5fafaf713f67027a">MyPutPayoffFN</link>);
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+102 
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classOption_1abd44ab56edddcd59f80ca5c60c9b66f0">r</link>&#32;&#32;&#32;=&#32;dr;
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classOption_1a8b68f88d3e7a01dfea0b83e3e5a4f57e">sig</link>&#32;=&#32;dsig;
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classOption_1a40db81993d02b319a38e62b42a730d6a">K</link>&#32;&#32;&#32;=&#32;dK;
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classOption_1ae583dd6d430a3b428014efa942605d54">T</link>&#32;&#32;&#32;=&#32;dT;
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classOption_1aa3f69771cb6066c69d588fc7682fc1e8">b</link>&#32;&#32;&#32;=&#32;db;
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classOption_1aa774bcef53ade3c37aa45c2d83a51181">SMax</link>&#32;=&#32;dSMax;
+109 
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+111 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classConsoleInstrumentFactory_1a189d2413f0b58fad4eba81d39f970fe6"/>    <section>
+    <title>CreateOption()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>CreateOption</primary><secondary>ConsoleInstrumentFactory</secondary></indexterm>
+<indexterm><primary>ConsoleInstrumentFactory</primary><secondary>CreateOption</secondary></indexterm>
+<para><computeroutput><link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link>* ConsoleInstrumentFactory::CreateOption ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classInstrumentFactory_1acc735ba0c9d3b8c36269d3553c1cb401">InstrumentFactory</link>.</para>
+<para>
+Definition at line 135 of file InstrumentNew.hh.</para>
+<programlisting>136 &#32;&#32;&#32;&#32;{
+137 
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dr;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Interest&#32;rate</emphasis>
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dsig1,&#32;dsig2;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Volatility</emphasis>
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;div1,&#32;div2;&#32;&#32;<emphasis role="comment">//&#32;Dividends</emphasis>
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;drho;
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dK;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Strike&#32;price</emphasis>
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dT;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Expiry&#32;date</emphasis>
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dSMax1,&#32;dSMax2;&#32;&#32;<emphasis role="comment">//&#32;Far&#32;field&#32;boundary</emphasis>
+145 
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;dw1,&#32;dw2;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Weights&#32;of&#32;each&#32;asset</emphasis>
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;dtype;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;C&#32;+1,&#32;P&#32;-1</emphasis>
+148 L1:
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Type&#32;Call&#32;+1,&#32;Put&#32;-1:&#32;&quot;</emphasis>;
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dtype;
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dtype&#32;=&#32;-1;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;!!!&#32;for&#32;the&#32;moment</emphasis>
+152 
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Interest&#32;rate:&#32;&quot;</emphasis>;
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dr;
+155 
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Strike:&#32;&quot;</emphasis>;
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dK;
+158 
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Volatility&#32;1:&#32;&quot;</emphasis>;
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dsig1;
+161 
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Volatility&#32;2:&#32;&quot;</emphasis>;
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dsig2;
+164 
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Dividend&#32;1:&#32;&quot;</emphasis>;
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;div1;
+167 
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Dividend&#32;2:&#32;&quot;</emphasis>;
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;div2;
+170 
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Correlation:&#32;&quot;</emphasis>;
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;drho;
+173 
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;First&#32;Far&#32;Field:&#32;&quot;</emphasis>;
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dSMax1;
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Second&#32;Far&#32;Field:&#32;&quot;</emphasis>;
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dSMax2;
+178 
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;weight&#32;1:&#32;&quot;</emphasis>;
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dw1;
+181 
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Weight&#32;2:&#32;&quot;</emphasis>;
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dw2;
+184 
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Expiry:&#32;&quot;</emphasis>;
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;dT;
+187 
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Is&#32;this&#32;correct,&#32;carry&#32;on?&quot;</emphasis>;
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;c;&#32;std::cin&#32;&gt;&gt;&#32;c;
+190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(c&#32;!=&#32;<emphasis role="charliteral">&apos;y&apos;</emphasis>&#32;&amp;&amp;&#32;c&#32;!=&#32;<emphasis role="charliteral">&apos;Y&apos;</emphasis>)
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+194 
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link>*&#32;result&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classTwoFactorOptionData">TwoFactorOptionData</link>;
+196 
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a25052f44d08faa7a22a3c27fa2340272">r</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;dr;
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a4b9b46a69bf26cc011046b29d1beec66">sig1</link>&#32;&#32;&#32;&#32;=&#32;dsig1;
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a7f147d9543ea7775009b8c959ee33e6b">sig2</link>&#32;&#32;&#32;&#32;=&#32;dsig2;
+200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a84b0c9fc08aca003ed163f35e6ddd8bc">rho</link>&#32;&#32;&#32;&#32;&#32;=&#32;drho;
+201 
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1afa527e63f712230bcd06dde13bf41a94">D1</link>&#32;&#32;&#32;&#32;&#32;&#32;=&#32;div1;
+203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1ae314dc85a263e11020ac4bfe69005333">D2</link>&#32;&#32;&#32;&#32;&#32;&#32;=&#32;div2;
+204 &#32;&#32;&#32;&#32;
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a1e4be0455ac266930ca0226726d98c24">K</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;dK;
+206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a0541afde0972d35c6b6cb62fedcda914">T</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;dT;
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a0acb7ed41b7e485ae6cc3f6ffc518616">SMax1</link>&#32;&#32;&#32;=&#32;dSMax1;
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a4368573d6a2f01f49c58d50d1a8ccf7d">SMax2</link>&#32;&#32;&#32;=&#32;dSMax2;
+209 
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a7c3239018650cc024d625cbf38d6b677">type</link>&#32;&#32;&#32;&#32;=&#32;dtype;
+211 &#32;&#32;&#32;&#32;
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a09861cf6a9d6cf5815f2ffd278059ce0">w1</link>&#32;&#32;&#32;&#32;&#32;&#32;=&#32;dw1;
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1a490f9fe97fe78fbc99af91fa8a8da86b">w2</link>&#32;&#32;&#32;&#32;&#32;&#32;=&#32;dw2;
+214 &#32;&#32;&#32;&#32;
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;assign&#32;the&#32;payoff&#32;function</emphasis>
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result-&gt;<link linkend="_classTwoFactorOptionData_1ad373a006f81f791e0d87b7ce5352025f">pay</link>&#32;=&#32;<link linkend="_classBasketStrategy">BasketStrategy</link>(dK,&#32;dtype,&#32;dw1,&#32;dw2);
+217 
+218 
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+220 
+221 &#32;&#32;&#32;&#32;}&#32;&#32;&#32;
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Instrument.hhinclude/duffy/InstrumentNew.hh</section>
+include/duffy/<link linkend="_Instrument_8hh">Instrument.hh</link>include/duffy/<link linkend="_InstrumentNew_8hh">InstrumentNew.hh</link></section>
+</section>

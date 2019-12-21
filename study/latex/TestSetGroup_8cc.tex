@@ -1,0 +1,104 @@
+\hypertarget{TestSetGroup_8cc}{}\doxysection{tests/\+Test\+Set\+Group.cc File Reference}
+\label{TestSetGroup_8cc}\index{tests/TestSetGroup.cc@{tests/TestSetGroup.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$duffy/\+Set.\+hh$>$}\newline
+Include dependency graph for Test\+Set\+Group.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestSetGroup_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSetGroup_8cc_afc656eda04a46b44b586d145450e773c}{print}} (const \mbox{\hyperlink{classSet}{Set}}$<$ T $>$ \&l, const std\+::string \&name)
+\item 
+int \mbox{\hyperlink{TestSetGroup_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestSetGroup_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestSetGroup_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestSetGroup.cc@{TestSetGroup.cc}!main@{main}}
+\index{main@{main}!TestSetGroup.cc@{TestSetGroup.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetGroup_8cc_source_l00031}{31}} of file \mbox{\hyperlink{TestSetGroup_8cc_source}{Test\+Set\+Group.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     std::map<std::string, Set<int> > group; }
+\DoxyCodeLine{00035     }
+\DoxyCodeLine{00036     \mbox{\hyperlink{classSet}{Set<int>}} \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}};                \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00037     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.Insert(1);}
+\DoxyCodeLine{00038     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.Insert(2);}
+\DoxyCodeLine{00039     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.Insert(3);}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \mbox{\hyperlink{classSet}{Set<int>}} s11;}
+\DoxyCodeLine{00042     s11.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(2);}
+\DoxyCodeLine{00043     s11.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(3);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \mbox{\hyperlink{classSet}{Set<int>}} s12;}
+\DoxyCodeLine{00046     s12.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(8);}
+\DoxyCodeLine{00047     s12.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(9);}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     \textcolor{comment}{// Using indexing to define the keys in the map}}
+\DoxyCodeLine{00051     group[\textcolor{stringliteral}{"a"}]  = \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}};       }
+\DoxyCodeLine{00052     group[\textcolor{stringliteral}{"b"}]  = s11;  }
+\DoxyCodeLine{00053     group[\textcolor{stringliteral}{"c"}]  = s12;      }
+\DoxyCodeLine{00054     group[\textcolor{stringliteral}{"d"}]  = \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}};   }
+\DoxyCodeLine{00055     group[\textcolor{stringliteral}{"e"}]  = s11;  }
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     std::cout << \textcolor{stringliteral}{"Size of map: "} << group.size() << std::endl;}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{// Iterating in the map}}
+\DoxyCodeLine{00060     std::map<std::string, Set<int> >::iterator i = group.begin();}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{keywordflow}{while} (i != group.end())}
+\DoxyCodeLine{00063     \{ }
+\DoxyCodeLine{00064             \mbox{\hyperlink{TestSetGroup_8cc_afc656eda04a46b44b586d145450e773c}{print}}((*i).second, (*i).first);}
+\DoxyCodeLine{00065             i++;}
+\DoxyCodeLine{00066     \}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00069 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetGroup_8cc_afc656eda04a46b44b586d145450e773c}\label{TestSetGroup_8cc_afc656eda04a46b44b586d145450e773c}} 
+\index{TestSetGroup.cc@{TestSetGroup.cc}!print@{print}}
+\index{print@{print}!TestSetGroup.cc@{TestSetGroup.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSet}{Set}}$<$ T $>$ \&}]{l,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetGroup_8cc_source_l00015}{15}} of file \mbox{\hyperlink{TestSetGroup_8cc_source}{Test\+Set\+Group.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016 \{  \textcolor{comment}{// Print the contents of a Set. Notice the presence of a constant iterator.}}
+\DoxyCodeLine{00017     }
+\DoxyCodeLine{00018     std::cout << std::endl << name << \textcolor{stringliteral}{", size of set is "} << l.\mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{Size}}() << \textcolor{stringliteral}{"\(\backslash\)n[ "};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \textcolor{keyword}{typename} std::set<T>::const\_iterator i;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{for} (i = l.\mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{Begin}}(); i != l.\mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{End}}(); ++i)}
+\DoxyCodeLine{00023     \{}
+\DoxyCodeLine{00024             std::cout << *i << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     std::cout << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00029 \}}
+
+\end{DoxyCode}

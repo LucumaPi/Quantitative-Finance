@@ -1,0 +1,85 @@
+\hypertarget{Mesher_8cc_source}{}\doxysection{Mesher.\+cc}
+\label{Mesher_8cc_source}\index{src/Mesher.cc@{src/Mesher.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// mesher.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// A simple mesher on a 1d domain. We divide}}
+\DoxyCodeLine{00004 \textcolor{comment}{// an interval into J+1 mesh points, J-\/1 of which}}
+\DoxyCodeLine{00005 \textcolor{comment}{// are internal mesh points.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// DD 2005-\/10-\/1 Mesh can be in any time interval [t1, T]}}
+\DoxyCodeLine{00008 \textcolor{comment}{// DD 2005-\/12-\/1 hpp and cpp versions}}
+\DoxyCodeLine{00009 \textcolor{comment}{// DD 2005-\/12-\/1 mesh in T direction}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00012 \textcolor{comment}{//}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#ifndef Mesher\_CC}}
+\DoxyCodeLine{\Hypertarget{Mesher_8cc_source_l00015}\mbox{\hyperlink{Mesher_8cc_afcca37167bae0cb7b0589400a08de9cf}{00015}} \textcolor{preprocessor}{\#define Mesher\_CC}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Mesher_8hh}{duffy/Mesher.hh}}>}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{Mesher_8cc_source_l00019}\mbox{\hyperlink{classMesher_a1d69a9028407d910b655ae908eed0b12}{00019}} \mbox{\hyperlink{classMesher_a1d69a9028407d910b655ae908eed0b12}{Mesher::Mesher}}()}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021     a = 0.0; b = 1.0;}
+\DoxyCodeLine{00022     LT = 0.0; HT = 1.0;}
+\DoxyCodeLine{00023 \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{Mesher_8cc_source_l00025}\mbox{\hyperlink{classMesher_a41237fa5d56d9eeac6f5f2e5fff72e95}{00025}} \mbox{\hyperlink{classMesher_a1d69a9028407d910b655ae908eed0b12}{Mesher::Mesher}}(\textcolor{keywordtype}{double} A, \textcolor{keywordtype}{double} \mbox{\hyperlink{classB}{B}}, \textcolor{keywordtype}{double} t, \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}})}
+\DoxyCodeLine{00026 \{ \textcolor{comment}{// Describe the domain of integration}}
+\DoxyCodeLine{00027     a = A; b = \mbox{\hyperlink{classB}{B}};}
+\DoxyCodeLine{00028     LT = t; HT = \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}};}
+\DoxyCodeLine{00029 \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{Mesher_8cc_source_l00031}\mbox{\hyperlink{classMesher_ac22307b6943d7e41d0908449a7b06daf}{00031}} \mbox{\hyperlink{classMesher_a1d69a9028407d910b655ae908eed0b12}{Mesher::Mesher}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<double>}}\& rX, \textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<double>}}\& rT)}
+\DoxyCodeLine{00032 \{ \textcolor{comment}{// Describe the domain of integration}}
+\DoxyCodeLine{00033     a = rX.\mbox{\hyperlink{classRange_a885e2f67531baf6df9359f95c3f8ebaa}{low}}(); b = rX.\mbox{\hyperlink{classRange_aa0f159ae114a4053113ba035b1fc7b21}{high}}();}
+\DoxyCodeLine{00034     LT = rT.\mbox{\hyperlink{classRange_a885e2f67531baf6df9359f95c3f8ebaa}{low}}(); HT = rT.\mbox{\hyperlink{classRange_aa0f159ae114a4053113ba035b1fc7b21}{high}}();}
+\DoxyCodeLine{00035 \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{\Hypertarget{Mesher_8cc_source_l00037}\mbox{\hyperlink{classMesher_ac4ea39f27ea742098ff6fb8c911804a6}{00037}} \mbox{\hyperlink{classVector}{Vector<double, long>}} \mbox{\hyperlink{classMesher_ac4ea39f27ea742098ff6fb8c911804a6}{Mesher::xarr}}(\textcolor{keywordtype}{int} J)}
+\DoxyCodeLine{00038 \{}
+\DoxyCodeLine{00039     \textcolor{comment}{// NB Full array (includes end points)}}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{double} h = (b -\/ a) / \textcolor{keywordtype}{double} (J);}
+\DoxyCodeLine{00041     }
+\DoxyCodeLine{00042     \textcolor{keywordtype}{int} size = J + 1;}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{int} start = 1;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \mbox{\hyperlink{classVector}{Vector<double, long>}} result(size, start);}
+\DoxyCodeLine{00046     result[result.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()] = a;}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = result.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= result.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00049     \{}
+\DoxyCodeLine{00050         result[j] = result[j -\/ 1] + h;}
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00054 \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{\Hypertarget{Mesher_8cc_source_l00056}\mbox{\hyperlink{classMesher_a1069208ef6f02d47bf5464552309834c}{00056}} \mbox{\hyperlink{classVector}{Vector<double, long>}} \mbox{\hyperlink{classMesher_a1069208ef6f02d47bf5464552309834c}{Mesher::yarr}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})}
+\DoxyCodeLine{00057 \{}
+\DoxyCodeLine{00058     \textcolor{comment}{// NB Full array (includes end points)}}
+\DoxyCodeLine{00059     \textcolor{keywordtype}{double} k = (HT -\/ LT) / \textcolor{keywordtype}{double} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00060     }
+\DoxyCodeLine{00061     \textcolor{keywordtype}{int} size = \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} + 1;}
+\DoxyCodeLine{00062     \textcolor{keywordtype}{int} start = 1;}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \mbox{\hyperlink{classVector}{Vector<double, long>}} result(size, start);}
+\DoxyCodeLine{00065     result[result.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()] = LT;}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = result.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}() + 1; j <= result.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00068     \{}
+\DoxyCodeLine{00069         result[j] = result[j -\/ 1] + k;}
+\DoxyCodeLine{00070     \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00073 \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{\Hypertarget{Mesher_8cc_source_l00075}\mbox{\hyperlink{classMesher_abbdcb06b69e60ef36b71474494f38c0b}{00075}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classMesher_abbdcb06b69e60ef36b71474494f38c0b}{Mesher::timeStep}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})}
+\DoxyCodeLine{00076 \{}
+\DoxyCodeLine{00077     \textcolor{keywordflow}{return} (HT -\/ LT)/double (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00078 \}}
+\DoxyCodeLine{00079 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

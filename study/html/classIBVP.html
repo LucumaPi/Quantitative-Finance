@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: IBVP Class Reference</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: IBVP Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -77,6 +77,8 @@ $(function() {
 <div class="title">IBVP Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="IBVP_8hh_source.html">IBVP.hh</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for IBVP:</div>
 <div class="dyncontent">
@@ -88,42 +90,333 @@ Collaboration diagram for IBVP:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a449355041ee520c752ab510137bd41a4"><td class="memItemLeft" align="right" valign="top"><a id="a449355041ee520c752ab510137bd41a4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>IBVP</b> (<a class="el" href="classIBVPImp.html">IBVPImp</a> &amp;executor, const <a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;xrange, const <a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;trange)</td></tr>
+<tr class="memitem:a449355041ee520c752ab510137bd41a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#a449355041ee520c752ab510137bd41a4">IBVP</a> (<a class="el" href="classIBVPImp.html">IBVPImp</a> &amp;executor, const <a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;<a class="el" href="classIBVP.html#af6b0b31d8fe2020b43a22b8ee673c1a1">xrange</a>, const <a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;<a class="el" href="classIBVP.html#a2bbe956e73b4174303b1a2ba481cb35b">trange</a>)</td></tr>
 <tr class="separator:a449355041ee520c752ab510137bd41a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59a82bedba3a8de65997ce6b64e612b5"><td class="memItemLeft" align="right" valign="top"><a id="a59a82bedba3a8de65997ce6b64e612b5"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>diffusion</b> (double x, double t) const</td></tr>
+<tr class="memitem:a59a82bedba3a8de65997ce6b64e612b5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#a59a82bedba3a8de65997ce6b64e612b5">diffusion</a> (double x, double t) const</td></tr>
 <tr class="separator:a59a82bedba3a8de65997ce6b64e612b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74f384836849c568e26b10bae327ace5"><td class="memItemLeft" align="right" valign="top"><a id="a74f384836849c568e26b10bae327ace5"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>convection</b> (double x, double t) const</td></tr>
+<tr class="memitem:a74f384836849c568e26b10bae327ace5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#a74f384836849c568e26b10bae327ace5">convection</a> (double x, double t) const</td></tr>
 <tr class="separator:a74f384836849c568e26b10bae327ace5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8e3d7993a300e7dd5c727d935ad8aa"><td class="memItemLeft" align="right" valign="top"><a id="adf8e3d7993a300e7dd5c727d935ad8aa"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>zeroterm</b> (double x, double t) const</td></tr>
+<tr class="memitem:adf8e3d7993a300e7dd5c727d935ad8aa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#adf8e3d7993a300e7dd5c727d935ad8aa">zeroterm</a> (double x, double t) const</td></tr>
 <tr class="separator:adf8e3d7993a300e7dd5c727d935ad8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abba7e8fa377fb7cc5dbbd0da5922eca5"><td class="memItemLeft" align="right" valign="top"><a id="abba7e8fa377fb7cc5dbbd0da5922eca5"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>RHS</b> (double x, double t) const</td></tr>
+<tr class="memitem:abba7e8fa377fb7cc5dbbd0da5922eca5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#abba7e8fa377fb7cc5dbbd0da5922eca5">RHS</a> (double x, double t) const</td></tr>
 <tr class="separator:abba7e8fa377fb7cc5dbbd0da5922eca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a4841866f3ec0f7f62f67a7e800930"><td class="memItemLeft" align="right" valign="top"><a id="a06a4841866f3ec0f7f62f67a7e800930"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>BCL</b> (double t) const</td></tr>
+<tr class="memitem:a06a4841866f3ec0f7f62f67a7e800930"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#a06a4841866f3ec0f7f62f67a7e800930">BCL</a> (double t) const</td></tr>
 <tr class="separator:a06a4841866f3ec0f7f62f67a7e800930"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd987bb4e41ff033ce8d0705818f4cef"><td class="memItemLeft" align="right" valign="top"><a id="afd987bb4e41ff033ce8d0705818f4cef"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>BCR</b> (double t) const</td></tr>
+<tr class="memitem:afd987bb4e41ff033ce8d0705818f4cef"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#afd987bb4e41ff033ce8d0705818f4cef">BCR</a> (double t) const</td></tr>
 <tr class="separator:afd987bb4e41ff033ce8d0705818f4cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06c09ce3034e1e915ef7aba3cfd99832"><td class="memItemLeft" align="right" valign="top"><a id="a06c09ce3034e1e915ef7aba3cfd99832"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>IC</b> (double x) const</td></tr>
+<tr class="memitem:a06c09ce3034e1e915ef7aba3cfd99832"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#a06c09ce3034e1e915ef7aba3cfd99832">IC</a> (double x) const</td></tr>
 <tr class="separator:a06c09ce3034e1e915ef7aba3cfd99832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b0b31d8fe2020b43a22b8ee673c1a1"><td class="memItemLeft" align="right" valign="top"><a id="af6b0b31d8fe2020b43a22b8ee673c1a1"></a>
-<a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>xrange</b> ()</td></tr>
+<tr class="memitem:af6b0b31d8fe2020b43a22b8ee673c1a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#af6b0b31d8fe2020b43a22b8ee673c1a1">xrange</a> ()</td></tr>
 <tr class="separator:af6b0b31d8fe2020b43a22b8ee673c1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bbe956e73b4174303b1a2ba481cb35b"><td class="memItemLeft" align="right" valign="top"><a id="a2bbe956e73b4174303b1a2ba481cb35b"></a>
-<a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>trange</b> ()</td></tr>
+<tr class="memitem:a2bbe956e73b4174303b1a2ba481cb35b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBVP.html#a2bbe956e73b4174303b1a2ba481cb35b">trange</a> ()</td></tr>
 <tr class="separator:a2bbe956e73b4174303b1a2ba481cb35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="IBVP_8hh_source.html#l00020">20</a> of file <a class="el" href="IBVP_8hh_source.html">IBVP.hh</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a449355041ee520c752ab510137bd41a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a449355041ee520c752ab510137bd41a4">&#9670;&nbsp;</a></span>IBVP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IBVP::IBVP </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classIBVPImp.html">IBVPImp</a> &amp;&#160;</td>
+          <td class="paramname"><em>executor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xrange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>trange</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00028">28</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    imp = &amp;executor;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    xaxis = <a class="code" href="classIBVP.html#af6b0b31d8fe2020b43a22b8ee673c1a1">xrange</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    taxis = <a class="code" href="classIBVP.html#a2bbe956e73b4174303b1a2ba481cb35b">trange</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a06a4841866f3ec0f7f62f67a7e800930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06a4841866f3ec0f7f62f67a7e800930">&#9670;&nbsp;</a></span>BCL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IBVP::BCL </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00060">60</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{ <span class="comment">// Left hand boundary condition</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> imp-&gt;<a class="code" href="classIBVPImp.html#aeff635ae5363a1858efc57c833500300">BCL</a>(t);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd987bb4e41ff033ce8d0705818f4cef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd987bb4e41ff033ce8d0705818f4cef">&#9670;&nbsp;</a></span>BCR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IBVP::BCR </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00065">65</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="comment">// Right hand boundary condition</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> imp-&gt;<a class="code" href="classIBVPImp.html#a371a1b065ab843b926b1baf727be09af">BCR</a>(t);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a74f384836849c568e26b10bae327ace5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f384836849c568e26b10bae327ace5">&#9670;&nbsp;</a></span>convection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IBVP::convection </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00042">42</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{ <span class="comment">// Coefficient of first derivative</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> imp-&gt;<a class="code" href="classIBVPImp.html#a44d3dc1c2d3b351705d101943c42c880">convection</a>(x,t);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a59a82bedba3a8de65997ce6b64e612b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59a82bedba3a8de65997ce6b64e612b5">&#9670;&nbsp;</a></span>diffusion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IBVP::diffusion </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00037">37</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{ <span class="comment">// Coefficient of second derivative</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> imp-&gt;<a class="code" href="classIBVPImp.html#a6f66b0583fd3d65ad946650f1ff7ca1e">diffusion</a>(x,t);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a06c09ce3034e1e915ef7aba3cfd99832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c09ce3034e1e915ef7aba3cfd99832">&#9670;&nbsp;</a></span>IC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IBVP::IC </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00070">70</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{ <span class="comment">// Initial condition</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> imp-&gt;<a class="code" href="classIBVPImp.html#ad9cfdc5edfadcf5f18cb4d3a6b64f740">IC</a>(x);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abba7e8fa377fb7cc5dbbd0da5922eca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abba7e8fa377fb7cc5dbbd0da5922eca5">&#9670;&nbsp;</a></span>RHS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IBVP::RHS </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00054">54</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <span class="comment">// Inhomogeneous forcing term</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> imp-&gt;<a class="code" href="classIBVPImp.html#ae2d0430ad38aa7b6055b1cb622051e67">RHS</a>(x,t);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2bbe956e73b4174303b1a2ba481cb35b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bbe956e73b4174303b1a2ba481cb35b">&#9670;&nbsp;</a></span>trange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp; IBVP::trange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00081">81</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> taxis;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af6b0b31d8fe2020b43a22b8ee673c1a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6b0b31d8fe2020b43a22b8ee673c1a1">&#9670;&nbsp;</a></span>xrange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRange.html">Range</a>&lt; double &gt; &amp; IBVP::xrange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00076">76</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> xaxis;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adf8e3d7993a300e7dd5c727d935ad8aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8e3d7993a300e7dd5c727d935ad8aa">&#9670;&nbsp;</a></span>zeroterm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IBVP::zeroterm </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="IBVP_8cc_source.html#l00048">48</a> of file <a class="el" href="IBVP_8cc_source.html">IBVP.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{   <span class="comment">// Coefficient of zero derivative</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> imp-&gt;<a class="code" href="classIBVPImp.html#ac6bab43d37b55879c6b29eefa0dad63f">zeroterm</a>(x,t);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/duffy/<a class="el" href="IBVP_8hh_source.html">IBVP.hh</a></li>
-<li>src/IBVP.cc</li>
+<li>src/<a class="el" href="IBVP_8cc_source.html">IBVP.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassIBVP_html_af6b0b31d8fe2020b43a22b8ee673c1a1"><div class="ttname"><a href="classIBVP.html#af6b0b31d8fe2020b43a22b8ee673c1a1">IBVP::xrange</a></div><div class="ttdeci">Range&lt; double &gt; &amp; xrange()</div><div class="ttdef"><b>Definition:</b> <a href="IBVP_8cc_source.html#l00076">IBVP.cc:76</a></div></div>
+<div class="ttc" id="aclassIBVPImp_html_ad9cfdc5edfadcf5f18cb4d3a6b64f740"><div class="ttname"><a href="classIBVPImp.html#ad9cfdc5edfadcf5f18cb4d3a6b64f740">IBVPImp::IC</a></div><div class="ttdeci">virtual double IC(double x) const =0</div></div>
+<div class="ttc" id="aclassIBVP_html_a2bbe956e73b4174303b1a2ba481cb35b"><div class="ttname"><a href="classIBVP.html#a2bbe956e73b4174303b1a2ba481cb35b">IBVP::trange</a></div><div class="ttdeci">Range&lt; double &gt; &amp; trange()</div><div class="ttdef"><b>Definition:</b> <a href="IBVP_8cc_source.html#l00081">IBVP.cc:81</a></div></div>
+<div class="ttc" id="aclassIBVPImp_html_ae2d0430ad38aa7b6055b1cb622051e67"><div class="ttname"><a href="classIBVPImp.html#ae2d0430ad38aa7b6055b1cb622051e67">IBVPImp::RHS</a></div><div class="ttdeci">virtual double RHS(double x, double t) const =0</div></div>
+<div class="ttc" id="aclassIBVPImp_html_aeff635ae5363a1858efc57c833500300"><div class="ttname"><a href="classIBVPImp.html#aeff635ae5363a1858efc57c833500300">IBVPImp::BCL</a></div><div class="ttdeci">virtual double BCL(double t) const =0</div></div>
+<div class="ttc" id="aclassIBVPImp_html_a371a1b065ab843b926b1baf727be09af"><div class="ttname"><a href="classIBVPImp.html#a371a1b065ab843b926b1baf727be09af">IBVPImp::BCR</a></div><div class="ttdeci">virtual double BCR(double t) const =0</div></div>
+<div class="ttc" id="aclassIBVPImp_html_ac6bab43d37b55879c6b29eefa0dad63f"><div class="ttname"><a href="classIBVPImp.html#ac6bab43d37b55879c6b29eefa0dad63f">IBVPImp::zeroterm</a></div><div class="ttdeci">virtual double zeroterm(double x, double t) const =0</div></div>
+<div class="ttc" id="aclassIBVPImp_html_a6f66b0583fd3d65ad946650f1ff7ca1e"><div class="ttname"><a href="classIBVPImp.html#a6f66b0583fd3d65ad946650f1ff7ca1e">IBVPImp::diffusion</a></div><div class="ttdeci">virtual double diffusion(double x, double t) const =0</div></div>
+<div class="ttc" id="aclassIBVPImp_html_a44d3dc1c2d3b351705d101943c42c880"><div class="ttname"><a href="classIBVPImp.html#a44d3dc1c2d3b351705d101943c42c880">IBVPImp::convection</a></div><div class="ttdeci">virtual double convection(double x, double t) const =0</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

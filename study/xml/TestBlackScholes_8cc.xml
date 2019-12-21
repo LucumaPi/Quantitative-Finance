@@ -7,7 +7,7 @@
     <incdepgraph>
       <node id="5">
         <label>duffy/DatasimException.hh</label>
-        <link refid="DatasimException_8hh_source"/>
+        <link refid="DatasimException_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -20,7 +20,7 @@
       </node>
       <node id="3">
         <label>OneFactorPayoff.hh</label>
-        <link refid="OneFactorPayoff_8hh_source"/>
+        <link refid="OneFactorPayoff_8hh"/>
       </node>
       <node id="1">
         <label>tests/TestBlackScholes.cc</label>
@@ -38,7 +38,7 @@
       </node>
       <node id="2">
         <label>duffy/Instrument.hh</label>
-        <link refid="Instrument_8hh_source"/>
+        <link refid="Instrument_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -97,11 +97,11 @@
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;duffy/IEulerIBVPSolver.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;duffy/ArrayMechanisms.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;duffy/MatrixMechanisms.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Instrument.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Instrument_8hh" kindref="compound">duffy/Instrument.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;duffy/ExcelMechanisms.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/DatasimException.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="DatasimException_8hh" kindref="compound">duffy/DatasimException.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><ref refid="classInstrumentFactory" kindref="compound">InstrumentFactory</ref>*<sp/>GetInstrumentFactory()</highlight></codeline>
+<codeline lineno="24" refid="TestBlackScholes_8cc_1a944b59805882970c6620c319340c3d0d" refkind="member"><highlight class="normal"><ref refid="classInstrumentFactory" kindref="compound">InstrumentFactory</ref>*<sp/><ref refid="TestBlackScholes_8cc_1a944b59805882970c6620c319340c3d0d" kindref="member">GetInstrumentFactory</ref>()</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Instrument<sp/>Factory<sp/>:<sp/>1=Console<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exStyle<sp/>=<sp/>1;<sp/>std::cin<sp/>&gt;&gt;<sp/>exStyle;</highlight></codeline>
@@ -111,7 +111,7 @@
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="32"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="34" refid="TestBlackScholes_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestBlackScholes_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="35"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>We<sp/>build<sp/>up<sp/>the<sp/>object<sp/>network<sp/>based<sp/>on<sp/>the</highlight><highlight class="normal"></highlight></codeline>
@@ -120,9 +120,9 @@
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A.<sp/>The<sp/>Continuous<sp/>Problem</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Black<sp/>Scholes<sp/>example</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInstrumentFactory" kindref="compound">InstrumentFactory</ref>*<sp/>myFactory<sp/>=<sp/>GetInstrumentFactory();</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTwoFactorOptionData" kindref="compound">TwoFactorOptionData</ref>*<sp/>myOption<sp/>=<sp/>myFactory-&gt;CreateOption();</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>myOption<sp/>-&gt;<sp/>print();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInstrumentFactory" kindref="compound">InstrumentFactory</ref>*<sp/>myFactory<sp/>=<sp/><ref refid="TestBlackScholes_8cc_1a944b59805882970c6620c319340c3d0d" kindref="member">GetInstrumentFactory</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTwoFactorOptionData" kindref="compound">TwoFactorOptionData</ref>*<sp/>myOption<sp/>=<sp/>myFactory-&gt;<ref refid="classInstrumentFactory_1acc735ba0c9d3b8c36269d3553c1cb401" kindref="member">CreateOption</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>myOption<sp/>-&gt;<sp/><ref refid="ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402" kindref="member">print</ref>();</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout<sp/>&lt;&lt;<sp/>&quot;1)<sp/>European<sp/>or<sp/>2)<sp/>American<sp/>style:<sp/>&quot;;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>exStyle<sp/>=<sp/>1;<sp/>cin<sp/>&gt;&gt;<sp/>exStyle;</highlight><highlight class="normal"></highlight></codeline>

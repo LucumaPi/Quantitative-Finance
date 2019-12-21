@@ -12,14 +12,60 @@ Collaboration diagram for Client\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classClient_a8a529313d0b2a2b38afc062131ad8be2}\label{classClient_a8a529313d0b2a2b38afc062131ad8be2}} 
-{\bfseries Client} (\mbox{\hyperlink{classB}{B}} \&delegate)
+\mbox{\hyperlink{classClient_a8a529313d0b2a2b38afc062131ad8be2}{Client}} (\mbox{\hyperlink{classB}{B}} \&delegate)
 \item 
-\mbox{\Hypertarget{classClient_aefa39b4806f923f2a4a4fa0b7020007a}\label{classClient_aefa39b4806f923f2a4a4fa0b7020007a}} 
-double {\bfseries client\+Value} () const
+double \mbox{\hyperlink{classClient_aefa39b4806f923f2a4a4fa0b7020007a}{client\+Value}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Delegation_8cc_source_l00040}{40}} of file \mbox{\hyperlink{Delegation_8cc_source}{Delegation.\+cc}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_a8a529313d0b2a2b38afc062131ad8be2}\label{classClient_a8a529313d0b2a2b38afc062131ad8be2}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classB}{B}} \&}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Delegation_8cc_source_l00045}{45}} of file \mbox{\hyperlink{Delegation_8cc_source}{Delegation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045 \{ \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = \&delegate; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_aefa39b4806f923f2a4a4fa0b7020007a}\label{classClient_aefa39b4806f923f2a4a4fa0b7020007a}} 
+\index{Client@{Client}!clientValue@{clientValue}}
+\index{clientValue@{clientValue}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{clientValue()}{clientValue()}}
+{\footnotesize\ttfamily double Client\+::client\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Delegation_8cc_source_l00048}{48}} of file \mbox{\hyperlink{Delegation_8cc_source}{Delegation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049     \{}
+\DoxyCodeLine{00050         \textcolor{keywordtype}{double} tmp = \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} -\/> \mbox{\hyperlink{TestOtherExceptions_8cc_a5d6745a4ce55928507e360ba8b8f54d2}{getValue}}();}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052         \textcolor{comment}{// Modify for current situation}}
+\DoxyCodeLine{00053         \textcolor{keywordflow}{return} tmp * 100.0;}
+\DoxyCodeLine{00054     \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-tests/Delegation.\+cc\end{DoxyCompactItemize}
+tests/\mbox{\hyperlink{Delegation_8cc}{Delegation.\+cc}}\end{DoxyCompactItemize}

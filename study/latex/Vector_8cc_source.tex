@@ -1,0 +1,414 @@
+\hypertarget{Vector_8cc_source}{}\doxysection{Vector.\+cc}
+\label{Vector_8cc_source}\index{src/Vector.cc@{src/Vector.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Vector.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Vector class is an array with mathematical functions}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 29 january 1999  RD  Started}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2002-\/1-\/21 DD removed some special functions; delta, gamma etc.}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2004-\/3-\/13 DD new 'Command' non-\/memebr functions}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 2004-\/4-\/14 DD Maths operators +, -\/, * are now friends}}
+\DoxyCodeLine{00009 \textcolor{comment}{// 2005-\/12-\/17 DD size\_t -\/-\/> I}}
+\DoxyCodeLine{00010 \textcolor{comment}{// 2006-\/1-\/13 DD Damn it A BUG!!!!!!!!!!!!! was testing FDM from chapter 19}}
+\DoxyCodeLine{00011 \textcolor{comment}{// 2006-\/2-\/2 DD all friend members (e.g. operators) must have the template }}
+\DoxyCodeLine{00012 \textcolor{comment}{// specification otherwise it is not correct C++.}}
+\DoxyCodeLine{00013 \textcolor{comment}{/*}}
+\DoxyCodeLine{00014 \textcolor{comment}{template <class V, class I, class S>}}
+\DoxyCodeLine{00015 \textcolor{comment}{Vector<V, I, S> Vector<V, I, S>::operator -\/ () const}}
+\DoxyCodeLine{00016 \textcolor{comment}{\{ // Unary minus}}
+\DoxyCodeLine{00017 \textcolor{comment}{}}
+\DoxyCodeLine{00018 \textcolor{comment}{    // Create new vector of same size and same starting index}}
+\DoxyCodeLine{00019 \textcolor{comment}{    Vector<V, I, S> result(Size(), MinIndex());}}
+\DoxyCodeLine{00020 \textcolor{comment}{}}
+\DoxyCodeLine{00021 \textcolor{comment}{    // Copy all elements negative}}
+\DoxyCodeLine{00022 \textcolor{comment}{    for (I i=MinIndex(); i<=MaxIndex(); i++) }}
+\DoxyCodeLine{00024 \textcolor{comment}{    result[i] = -\/ (*this)[i];}}
+\DoxyCodeLine{00025 \textcolor{comment}{}}
+\DoxyCodeLine{00026 \textcolor{comment}{    // Return result}}
+\DoxyCodeLine{00027 \textcolor{comment}{    return result;}}
+\DoxyCodeLine{00028 \textcolor{comment}{\}*/}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2006}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033 \textcolor{preprocessor}{\#ifndef Vector\_CC}}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00034}\mbox{\hyperlink{Vector_8cc_a4fb5e0a78499e58c28cc4f735eb3f5c9}{00034}} \textcolor{preprocessor}{\#define Vector\_CC}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Vector_8hh}{duffy/Vector.hh}}>}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00040 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00041}\mbox{\hyperlink{classVector_a765046708d9d87fdd6bff0f552cfe5fd}{00041}} \mbox{\hyperlink{classVector_a765046708d9d87fdd6bff0f552cfe5fd}{Vector<V, I, S>::Vector}}(): \mbox{\hyperlink{classArray}{Array}}<V, I, S>()}
+\DoxyCodeLine{00042 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00043 \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00046}\mbox{\hyperlink{classVector_a739cc1db2c630929a3f832fb08fd7580}{00046}} \mbox{\hyperlink{classVector_a765046708d9d87fdd6bff0f552cfe5fd}{Vector<V, I, S>::Vector}}(I size): \mbox{\hyperlink{classArray}{Array}}<V, I, S>(size)}
+\DoxyCodeLine{00047 \{ \textcolor{comment}{// Constructor with size. Start index=1.}}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00051}\mbox{\hyperlink{classVector_a0005126cfc5b0d8021b44c895a10efb9}{00051}} \mbox{\hyperlink{classVector_a765046708d9d87fdd6bff0f552cfe5fd}{Vector<V, I, S>::Vector}}(I size, I start): \mbox{\hyperlink{classArray}{Array}}<V, I, S>(size, start)}
+\DoxyCodeLine{00052 \{ \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00053 \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00056}\mbox{\hyperlink{classVector_ad5f2b58884b5ede9f73fe3088e24b7ba}{00056}} \mbox{\hyperlink{classVector_a765046708d9d87fdd6bff0f552cfe5fd}{Vector<V, I, S>::Vector}}(I size, I start, \textcolor{keyword}{const} V\& val): \mbox{\hyperlink{classArray}{Array}}<V, I, S>(size, start, val)}
+\DoxyCodeLine{00057 \{ \textcolor{comment}{// Constructor with size \& start index}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     }
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00064}\mbox{\hyperlink{classVector_ae544cce04c5c298f42170a84fc78feaa}{00064}} \mbox{\hyperlink{classVector_a765046708d9d87fdd6bff0f552cfe5fd}{Vector<V, I, S>::Vector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& source): \mbox{\hyperlink{classArray}{Array}}<V, I, S>(source)}
+\DoxyCodeLine{00065 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00066 \}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00069}\mbox{\hyperlink{classVector_a96a0c65cc8ddb0fa8f56605b27530be4}{00069}} \mbox{\hyperlink{classVector_a765046708d9d87fdd6bff0f552cfe5fd}{Vector<V, I, S>::Vector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array<V, I, S>}}\& source): \mbox{\hyperlink{classArray}{Array}}<V, I, S>(source)}
+\DoxyCodeLine{00070 \{ \textcolor{comment}{// Constructor with a Array}}
+\DoxyCodeLine{00071 \}}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00074}\mbox{\hyperlink{classVector_a742d398867e106120e62421c1fa4df28}{00074}} \mbox{\hyperlink{classVector_a742d398867e106120e62421c1fa4df28}{Vector<V, I, S>::~Vector}}()}
+\DoxyCodeLine{00075 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00076 \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00080 \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00081 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00082}\mbox{\hyperlink{classVector_ad1e72c9605dbcaecd4fb0b406bd9e949}{00082}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& \mbox{\hyperlink{classVector_ad1e72c9605dbcaecd4fb0b406bd9e949}{Vector<V, I, S>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& source)}
+\DoxyCodeLine{00083 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00086     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     \textcolor{comment}{// Call baseclass assignment}}
+\DoxyCodeLine{00089     \mbox{\hyperlink{classArray_ac27f5b9655cda7daecc9d09298a454bf}{Array<V, I, S>::operator = }}(source);}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00092 \}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00095}\mbox{\hyperlink{classVector_a4d3ac08839678685a6cc72df5d629588}{00095}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{classVector_a4d3ac08839678685a6cc72df5d629588}{Vector<V, I, S>::operator -\/ }}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00096 \textcolor{keyword}{}\{ \textcolor{comment}{// Unary minus}}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     \textcolor{comment}{// Create new vector of same size and same starting index}}
+\DoxyCodeLine{00099     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} result(this-\/>Size(), this-\/>MinIndex());}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{comment}{// Copy all elements negative}}
+\DoxyCodeLine{00102     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++) }
+\DoxyCodeLine{00104     result[i] = -\/ (*\textcolor{keyword}{this})[i];}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \textcolor{comment}{// Return result}}
+\DoxyCodeLine{00107     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00108 \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00111}\mbox{\hyperlink{Vector_8cc_aa461f5203f9b4412609b67f69cb2a635}{00111}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{Vector_8cc_aa461f5203f9b4412609b67f69cb2a635}{operator + }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v, \textcolor{keyword}{const} V\& a)}
+\DoxyCodeLine{00112 \{ \textcolor{comment}{// Add v to every element}}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     \textcolor{comment}{// Create new vector of same size and same starting index}}
+\DoxyCodeLine{00115     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} result(v.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}(), v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}());}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \textcolor{comment}{// Copy all elements + v}}
+\DoxyCodeLine{00118     \textcolor{keywordflow}{for} (I i = v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++) }
+\DoxyCodeLine{00119         result[i] = v[i] + a;}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     \textcolor{comment}{// Return result}}
+\DoxyCodeLine{00122     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00123 \}}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00127}\mbox{\hyperlink{Vector_8cc_a5b41ab3ceca804c717acf5fc86b772ec}{00127}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{Vector_8cc_aa461f5203f9b4412609b67f69cb2a635}{operator + }}(\textcolor{keyword}{const} V\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v)}
+\DoxyCodeLine{00128 \{}
+\DoxyCodeLine{00129     \textcolor{keywordflow}{return} v + a;}
+\DoxyCodeLine{00130 \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00133}\mbox{\hyperlink{Vector_8cc_a27bdc159143ca52ae07d1aa4b24ce743}{00133}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{Vector_8cc_a27bdc159143ca52ae07d1aa4b24ce743}{operator * }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v, \textcolor{keyword}{const} V\& a)}
+\DoxyCodeLine{00134 \{ \textcolor{comment}{// Multiply to every element by a}}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136     \textcolor{comment}{// Create new vector of same size and same starting index}}
+\DoxyCodeLine{00137     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} result(v.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}(), v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}());}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139     \textcolor{comment}{// Copy all elements + v}}
+\DoxyCodeLine{00140     \textcolor{keywordflow}{for} (I i = v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++) }
+\DoxyCodeLine{00141         result[i] = v[i] * a;}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     \textcolor{comment}{// Return result}}
+\DoxyCodeLine{00144     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00145 \}}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00148}\mbox{\hyperlink{Vector_8cc_afb3ceb010380d3fe8b57ce4daf733a9c}{00148}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{Vector_8cc_a27bdc159143ca52ae07d1aa4b24ce743}{operator * }}(\textcolor{keyword}{const} V\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v)}
+\DoxyCodeLine{00149 \{}
+\DoxyCodeLine{00150     \textcolor{keywordflow}{return} v * a;}
+\DoxyCodeLine{00151 \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00155}\mbox{\hyperlink{Vector_8cc_ab5a7585120f4de1ffab2fe57e3343156}{00155}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{Vector_8cc_ab5a7585120f4de1ffab2fe57e3343156}{operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v, \textcolor{keyword}{const} V\& a)}
+\DoxyCodeLine{00156 \{ \textcolor{comment}{// Subtract v from every element}}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158     \textcolor{comment}{// Create new vector of same size and same starting index}}
+\DoxyCodeLine{00159     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} result(v.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}(), v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}());}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161     \textcolor{comment}{// Copy all elements -\/ v}}
+\DoxyCodeLine{00162     \textcolor{keywordflow}{for} (I i = v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++) }
+\DoxyCodeLine{00163         result[i] = v[i] -\/ a;}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165     \textcolor{comment}{// Return result}}
+\DoxyCodeLine{00166     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00167 \}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00170}\mbox{\hyperlink{Vector_8cc_a037a73bc502290929dd09a87cf74cf3c}{00170}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{Vector_8cc_ab5a7585120f4de1ffab2fe57e3343156}{operator -\/ }}(\textcolor{keyword}{const} V\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v)}
+\DoxyCodeLine{00171 \{}
+\DoxyCodeLine{00172     \textcolor{comment}{// Create new vector of same size and same starting index}}
+\DoxyCodeLine{00173     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} result(v.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}(), v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}());}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175     \textcolor{comment}{// Copy all elements -\/ v}}
+\DoxyCodeLine{00176     \textcolor{keywordflow}{for} (I i = v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++) }
+\DoxyCodeLine{00177         result[i] = a -\/ v[i];}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179     \textcolor{comment}{// Return result}}
+\DoxyCodeLine{00180     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182 \}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00185}\mbox{\hyperlink{classVector_a9fd95354ab6ee0b1f9d6176485a5d07e}{00185}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{classVector_a9fd95354ab6ee0b1f9d6176485a5d07e}{Vector<V, I, S>::operator / }}(\textcolor{keyword}{const} V\& a)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00186 \textcolor{keyword}{}\{ \textcolor{comment}{// Add v to every element}}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188     \textcolor{comment}{// Create new vector of same size and same starting index}}
+\DoxyCodeLine{00189     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} result(this-\/>Size(), this-\/>MinIndex());}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191     \textcolor{comment}{// Copy all elements + v}}
+\DoxyCodeLine{00192     \textcolor{keywordflow}{for} (I i = this-\/>MinIndex(); i <= this-\/>MaxIndex(); i++) }
+\DoxyCodeLine{00193         result[i] = (*\textcolor{keyword}{this})[i] / a;}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195     \textcolor{comment}{// Return result}}
+\DoxyCodeLine{00196     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00197 \}}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00201}\mbox{\hyperlink{classVector_a078a9a245b2da118666687141b6267ad}{00201}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{classVector_a06bf0d108a6880772a9c401b2c1c9f9a}{Vector<V, I, S>::operator + }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00202 \textcolor{keyword}{}\{ \textcolor{comment}{// Add the elements}}
+\DoxyCodeLine{00203 }
+\DoxyCodeLine{00204 }
+\DoxyCodeLine{00205     \textcolor{comment}{// Create new vector of same size and same starting index}}
+\DoxyCodeLine{00206     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} result(this-\/>Size(), this-\/>MinIndex());}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208     \textcolor{comment}{// Result[x]=Source[x]+v[x];}}
+\DoxyCodeLine{00209     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++) result[i] = (*\textcolor{keyword}{this})[i] + v[i];}
+\DoxyCodeLine{00210 }
+\DoxyCodeLine{00211     \textcolor{comment}{// Return result}}
+\DoxyCodeLine{00212     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00213 \}}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00216}\mbox{\hyperlink{classVector_a64db21574df8fc0fb6f88806946883c5}{00216}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}} \mbox{\hyperlink{classVector_a4d3ac08839678685a6cc72df5d629588}{Vector<V, I, S>::operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00217 \textcolor{keyword}{}\{ \textcolor{comment}{// Subtract the elements}}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00220     \textcolor{comment}{// Create new vector of same size and same starting index}}
+\DoxyCodeLine{00221     \mbox{\hyperlink{classVector}{Vector<V, I, S>}} result(this-\/>Size(), this-\/>MinIndex());}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223     \textcolor{comment}{// Result[x]=Source[x]-\/v[x];}}
+\DoxyCodeLine{00224     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++) result[i] = (*\textcolor{keyword}{this})[i] -\/ v[i];}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{00226     \textcolor{comment}{// Return result}}
+\DoxyCodeLine{00227     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00228 \}}
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230 }
+\DoxyCodeLine{00231 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00232}\mbox{\hyperlink{classVector_ac28c73a1721c117307df604977747ce4}{00232}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& \mbox{\hyperlink{classVector_ac28c73a1721c117307df604977747ce4}{Vector<V, I, S>::operator += }}(\textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00233 \{ \textcolor{comment}{// Add v to every element}}
+\DoxyCodeLine{00234 }
+\DoxyCodeLine{00235     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++)}
+\DoxyCodeLine{00236         (*\textcolor{keyword}{this})[i] = (*this)[i] + v;}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00239 \}}
+\DoxyCodeLine{00240 }
+\DoxyCodeLine{00241 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00242}\mbox{\hyperlink{classVector_aa34b7c6deb116fa3bf6c1c15129dde1f}{00242}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& \mbox{\hyperlink{classVector_aa34b7c6deb116fa3bf6c1c15129dde1f}{Vector<V, I, S>::operator -\/= }}(\textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00243 \{ \textcolor{comment}{// Subtract v from every element}}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{00245     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++)}
+\DoxyCodeLine{00246         (*\textcolor{keyword}{this})[i] = (*this)[i] -\/ v;}
+\DoxyCodeLine{00247 }
+\DoxyCodeLine{00248     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00249 \}}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00252}\mbox{\hyperlink{classVector_a0bed077f3b8953872d58ca79e679acc7}{00252}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& \mbox{\hyperlink{classVector_a0bed077f3b8953872d58ca79e679acc7}{Vector<V, I, S>::operator *= }}(\textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00253 \{ \textcolor{comment}{// Multiply every element by v}}
+\DoxyCodeLine{00254 }
+\DoxyCodeLine{00255     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++) }
+\DoxyCodeLine{00256         (*\textcolor{keyword}{this})[i] = (*this)[i] * v;}
+\DoxyCodeLine{00257 }
+\DoxyCodeLine{00258     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00259 \}}
+\DoxyCodeLine{00260 }
+\DoxyCodeLine{00261 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00262}\mbox{\hyperlink{classVector_a8b918b3139b18e5e27a8756bdd6ae3af}{00262}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& \mbox{\hyperlink{classVector_a8b918b3139b18e5e27a8756bdd6ae3af}{Vector<V, I, S>::operator /= }}(\textcolor{keyword}{const} V\& v)}
+\DoxyCodeLine{00263 \{ \textcolor{comment}{// Divide every element by v}}
+\DoxyCodeLine{00264 }
+\DoxyCodeLine{00265     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++) }
+\DoxyCodeLine{00266         (*\textcolor{keyword}{this})[i] = (*this)[i] / v;}
+\DoxyCodeLine{00267 }
+\DoxyCodeLine{00268     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00269 \}}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00272}\mbox{\hyperlink{classVector_a8432fd96e8676fad86aed380d109758d}{00272}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& \mbox{\hyperlink{classVector_ac28c73a1721c117307df604977747ce4}{Vector<V, I, S>::operator += }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v)}
+\DoxyCodeLine{00273 \{ \textcolor{comment}{// Add the elements}}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275 }
+\DoxyCodeLine{00276     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++) }
+\DoxyCodeLine{00277         (*\textcolor{keyword}{this})[i] = (*this)[i] + v[i];}
+\DoxyCodeLine{00278 }
+\DoxyCodeLine{00279     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00280 \}}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00282 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00283}\mbox{\hyperlink{classVector_a95fab83dcb33c37fbc2d4ad08d5bd4b5}{00283}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& \mbox{\hyperlink{classVector_aa34b7c6deb116fa3bf6c1c15129dde1f}{Vector<V, I, S>::operator -\/= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v)}
+\DoxyCodeLine{00284 \{ \textcolor{comment}{// Subtract the elements}}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286 }
+\DoxyCodeLine{00287     \textcolor{keywordflow}{for} (I i=this-\/>inIndex(); i<=this-\/>MaxIndex(); i++) }
+\DoxyCodeLine{00288             (*\textcolor{keyword}{this})[i] = (*this)[i] -\/ v[i];}
+\DoxyCodeLine{00289     ;}
+\DoxyCodeLine{00290     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00291 \}}
+\DoxyCodeLine{00292 }
+\DoxyCodeLine{00293 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keyword}{class} S>}
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00294}\mbox{\hyperlink{classVector_aad9d123cf2ae44d7321401a7d37905d6}{00294}} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& \mbox{\hyperlink{classVector_a0bed077f3b8953872d58ca79e679acc7}{Vector<V, I, S>::operator *= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I, S>}}\& v)}
+\DoxyCodeLine{00295 \{ \textcolor{comment}{// Multiply the elements}}
+\DoxyCodeLine{00296 }
+\DoxyCodeLine{00297 }
+\DoxyCodeLine{00298     \textcolor{keywordflow}{for} (I i=this-\/>MinIndex(); i<=this-\/>MaxIndex(); i++) }
+\DoxyCodeLine{00299         (*\textcolor{keyword}{this})[i] = (*this)[i] * v[i];}
+\DoxyCodeLine{00300         }
+\DoxyCodeLine{00301     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00302 \}}
+\DoxyCodeLine{00303 }
+\DoxyCodeLine{00304 }
+\DoxyCodeLine{00305 }
+\DoxyCodeLine{00306 }
+\DoxyCodeLine{00307 \textcolor{comment}{// Some 'command' type functions that are useful in some applications. Most functions}}
+\DoxyCodeLine{00308 \textcolor{comment}{// are void and this promotes Efficiency. Usability is also enhanced. }}
+\DoxyCodeLine{00309 \textcolor{comment}{// }}
+\DoxyCodeLine{00310 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00311}\mbox{\hyperlink{Vector_8cc_a6553f392c54a87ee890ecddd59a26675}{00311}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_a6553f392c54a87ee890ecddd59a26675}{scale}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a)}
+\DoxyCodeLine{00312 \{ \textcolor{comment}{// v * a}}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314     \textcolor{keywordflow}{for} (I i = v.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= v.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00315     \{}
+\DoxyCodeLine{00316         v[i] *= a;}
+\DoxyCodeLine{00317     \}}
+\DoxyCodeLine{00318 }
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320 \}}
+\DoxyCodeLine{00321 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00322}\mbox{\hyperlink{Vector_8cc_a5f15071d730549f04efa382b61747ff9}{00322}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_a6553f392c54a87ee890ecddd59a26675}{scale}}(\textcolor{keyword}{const} V\& a, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v)}
+\DoxyCodeLine{00323 \{ \textcolor{comment}{// a * v}}
+\DoxyCodeLine{00324 }
+\DoxyCodeLine{00325     \mbox{\hyperlink{Vector_8cc_a6553f392c54a87ee890ecddd59a26675}{scale}}(v, a);}
+\DoxyCodeLine{00326 \}}
+\DoxyCodeLine{00327 }
+\DoxyCodeLine{00328 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00329}\mbox{\hyperlink{Vector_8cc_af8ed022403e1f5df6daa9094218a4c0d}{00329}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_af8ed022403e1f5df6daa9094218a4c0d}{add}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a)}
+\DoxyCodeLine{00330 \{ \textcolor{comment}{// v + a}}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00333     \{}
+\DoxyCodeLine{00334         v[i] += a;}
+\DoxyCodeLine{00335     \}}
+\DoxyCodeLine{00336 }
+\DoxyCodeLine{00337 \}}
+\DoxyCodeLine{00338 }
+\DoxyCodeLine{00339 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00340}\mbox{\hyperlink{Vector_8cc_a3cbb0860a42a282a26aa253ca68c6c17}{00340}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_af8ed022403e1f5df6daa9094218a4c0d}{add}}(\textcolor{keyword}{const} V\& a, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v)}
+\DoxyCodeLine{00341 \{ \textcolor{comment}{// a + v}}
+\DoxyCodeLine{00342 }
+\DoxyCodeLine{00343     \mbox{\hyperlink{Vector_8cc_af8ed022403e1f5df6daa9094218a4c0d}{add}}(v, a);}
+\DoxyCodeLine{00344 \}}
+\DoxyCodeLine{00345 }
+\DoxyCodeLine{00346 }
+\DoxyCodeLine{00347 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00348}\mbox{\hyperlink{Vector_8cc_aa26460af602b9e4373900eff4dddad44}{00348}}             \mbox{\hyperlink{Vector_8cc_aa26460af602b9e4373900eff4dddad44}{scaleAndOffset}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a, \textcolor{keyword}{const} V\& \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}})}
+\DoxyCodeLine{00349 \{ \textcolor{comment}{// (a * v) + b    }}
+\DoxyCodeLine{00350 }
+\DoxyCodeLine{00351     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00352     \{}
+\DoxyCodeLine{00353         v[i] *= a;}
+\DoxyCodeLine{00354         v[i] += \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00355     \}}
+\DoxyCodeLine{00356 \}}
+\DoxyCodeLine{00357 }
+\DoxyCodeLine{00358 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00359}\mbox{\hyperlink{Vector_8cc_a54791aa42dc417c7354e496ead4f4f3d}{00359}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_a54791aa42dc417c7354e496ead4f4f3d}{subtract}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a)}
+\DoxyCodeLine{00360 \{ \textcolor{comment}{// v -\/ a}}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00363     \{}
+\DoxyCodeLine{00364         v[i] -\/= a;}
+\DoxyCodeLine{00365     \}}
+\DoxyCodeLine{00366 \}}
+\DoxyCodeLine{00367 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00368}\mbox{\hyperlink{Vector_8cc_a0f66592839cd574711bf87a26a5b2a89}{00368}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_a54791aa42dc417c7354e496ead4f4f3d}{subtract}}(\textcolor{keyword}{const} V\& a, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& v)}
+\DoxyCodeLine{00369 \{ \textcolor{comment}{// a -\/ v}}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{00371     \textcolor{comment}{// This operation is not commutative, so redo the for loop}}
+\DoxyCodeLine{00372 }
+\DoxyCodeLine{00373     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00374     \{}
+\DoxyCodeLine{00375         v[i] = a -\/ v[i];}
+\DoxyCodeLine{00376     \}}
+\DoxyCodeLine{00377     }
+\DoxyCodeLine{00378 \}}
+\DoxyCodeLine{00379 }
+\DoxyCodeLine{00380 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00381}\mbox{\hyperlink{Vector_8cc_ac65a469b31f9731cd9ad92430f432b71}{00381}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_ac65a469b31f9731cd9ad92430f432b71}{divide}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& a)}
+\DoxyCodeLine{00382 \{ \textcolor{comment}{// v / a}}
+\DoxyCodeLine{00383 }
+\DoxyCodeLine{00384     \textcolor{keywordflow}{for} (I i= v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00385     \{}
+\DoxyCodeLine{00386         v[i] /= a;}
+\DoxyCodeLine{00387     \}}
+\DoxyCodeLine{00388 \}}
+\DoxyCodeLine{00389 }
+\DoxyCodeLine{00390 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00391}\mbox{\hyperlink{Vector_8cc_ac52a9d15dae2f25b50260dfbae3d724b}{00391}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_ac52a9d15dae2f25b50260dfbae3d724b}{toggleSign}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v)}
+\DoxyCodeLine{00392 \{ \textcolor{comment}{// -\/v (unary minus)}}
+\DoxyCodeLine{00393 }
+\DoxyCodeLine{00394     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00395     \{}
+\DoxyCodeLine{00396         v[i] = -\/v[i];}
+\DoxyCodeLine{00397     \}}
+\DoxyCodeLine{00398 \}}
+\DoxyCodeLine{00399 }
+\DoxyCodeLine{\Hypertarget{Vector_8cc_source_l00400}\mbox{\hyperlink{Vector_8cc_af8510e3d2131a57d037a03f3c8e4596c}{00400}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{Vector_8cc_af8510e3d2131a57d037a03f3c8e4596c}{assign}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& v, \textcolor{keyword}{const} V\& RHS)}
+\DoxyCodeLine{00401 \{ \textcolor{comment}{// All elements = RHS}}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{00403     \textcolor{keywordflow}{for} (I i = v. MinIndex(); i <= v. MaxIndex(); i++)}
+\DoxyCodeLine{00404     \{}
+\DoxyCodeLine{00405         v[i] = RHS;}
+\DoxyCodeLine{00406     \}}
+\DoxyCodeLine{00407 \}}
+\DoxyCodeLine{00408 }
+\DoxyCodeLine{00409 }
+\DoxyCodeLine{00410 \textcolor{preprocessor}{\#endif  // Vector\_CC}}
+
+\end{DoxyCode}

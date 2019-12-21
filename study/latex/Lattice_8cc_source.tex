@@ -1,0 +1,146 @@
+\hypertarget{Lattice_8cc_source}{}\doxysection{Lattice.\+cc}
+\label{Lattice_8cc_source}\index{src/Lattice.cc@{src/Lattice.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Lattice.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Class respresenting a special kind of triangular matrix that is}}
+\DoxyCodeLine{00004 \textcolor{comment}{// needed in specific applications, for example binomial and trinomial }}
+\DoxyCodeLine{00005 \textcolor{comment}{// methods in options pricing.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// The matrix is 'expanding' in the form of a lattice; the user must define a function}}
+\DoxyCodeLine{00008 \textcolor{comment}{// that states how many elements to create in moving from step 'n' to step 'n+1'.}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{// Last modification dates:}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{//  2001-\/4-\/23 DD kick-\/off date}}
+\DoxyCodeLine{00013 \textcolor{comment}{//  2005-\/1-\/3 DD new template form; can combine binomial and trinomial}}
+\DoxyCodeLine{00014 \textcolor{comment}{//  methods into 1 class}}
+\DoxyCodeLine{00015 \textcolor{comment}{//  2005-\/1-\/4 DD improved, optimised code}}
+\DoxyCodeLine{00016 \textcolor{comment}{//  2005-\/11-\/2 DD testing etc.}}
+\DoxyCodeLine{00017 \textcolor{comment}{//}}
+\DoxyCodeLine{00018 \textcolor{comment}{// (C) Datasim Component Technology 2001-\/2006}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#ifndef Lattice\_CC}}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00022}\mbox{\hyperlink{Lattice_8cc_a6636fe3d05b9974b01596163f473b4c2}{00022}} \textcolor{preprocessor}{\#define Lattice\_CC}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Lattice_8hh}{duffy/Lattice.hh}}>}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00027}\mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{00027}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{Lattice< V, I, NumberNodes>::Lattice}}()}
+\DoxyCodeLine{00028 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00029         tree = \mbox{\hyperlink{classArray}{Array<Vector<V, I>}} > (1, 1); \textcolor{comment}{// A flat matrix with 1 row in array}}
+\DoxyCodeLine{00030                                             \textcolor{comment}{// Start index == 1}}
+\DoxyCodeLine{00031         tree[1] = \mbox{\hyperlink{classVector}{Vector<V, I>}} (1,1);}
+\DoxyCodeLine{00032         typ = 2;                            \textcolor{comment}{// Binomial method}}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00035}\mbox{\hyperlink{classLattice_afda324cc8c833a70695e9cbe18a51057}{00035}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{Lattice< V, I, NumberNodes>::Lattice}}(\textcolor{keyword}{const} I\& Nrows)}
+\DoxyCodeLine{00036 \{ \textcolor{comment}{// Number of rows and branch factor}}
+\DoxyCodeLine{00037     nrows = Nrows;}
+\DoxyCodeLine{00038     typ = NumberNodes;}
+\DoxyCodeLine{00039     tree = \mbox{\hyperlink{classArray}{Array<Vector<V, I>}}, I> (Nrows + 1, 1); \textcolor{comment}{// Start index == 1}}
+\DoxyCodeLine{00040     I currentBranch = 1;    \textcolor{comment}{// There is always one single root}}
+\DoxyCodeLine{00041     \textcolor{comment}{// Initialise tree vectors (give sizes of vectors)}}
+\DoxyCodeLine{00042     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = tree.MinIndex(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} <= tree.MaxIndex(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++)}
+\DoxyCodeLine{00043     \{}
+\DoxyCodeLine{00044         tree[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}] =  \mbox{\hyperlink{classVector}{Vector<V, I>}}(currentBranch,1);  }
+\DoxyCodeLine{00045         \textcolor{comment}{// Calculate the next number of columns}}
+\DoxyCodeLine{00046         currentBranch += (typ -\/ 1);}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00050}\mbox{\hyperlink{classLattice_ac6b6d97ee0948d2c7cd7b76366ef8579}{00050}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{Lattice< V, I, NumberNodes>::Lattice}}(\textcolor{keyword}{const} I\& Nrows, \textcolor{keyword}{const} V\& val)}
+\DoxyCodeLine{00051 \{ \textcolor{comment}{// Number of rows and branch factor}}
+\DoxyCodeLine{00052     nrows = Nrows;}
+\DoxyCodeLine{00053     typ = NumberNodes;}
+\DoxyCodeLine{00054     tree = \mbox{\hyperlink{classArray}{Array<Vector<V, I>}}, I> (nrows + 1, 1); \textcolor{comment}{// Start index == 1}}
+\DoxyCodeLine{00055     I currentBranch = 1;    \textcolor{comment}{// There is always one single root}}
+\DoxyCodeLine{00056     \textcolor{comment}{// Initialise tree vectors (give sizes of vectors)}}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = tree.MinIndex(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} <= tree.MaxIndex(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++)}
+\DoxyCodeLine{00058     \{}
+\DoxyCodeLine{00059         tree[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}] =  \mbox{\hyperlink{classVector}{Vector<V, I>}}(currentBranch, 1, val);    }
+\DoxyCodeLine{00060         \textcolor{comment}{// Calculate the next number of columns}}
+\DoxyCodeLine{00061         currentBranch += (typ -\/ 1);}
+\DoxyCodeLine{00062     \}}
+\DoxyCodeLine{00063 \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00065}\mbox{\hyperlink{classLattice_a10b13338775f9e191d14d265439d13c0}{00065}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \mbox{\hyperlink{classLattice_a9fe92ce8abfb8668e28064b394f7a057}{Lattice<V, I, NumberNodes>::Lattice}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& source)}
+\DoxyCodeLine{00066 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00067     tree = source.tree;}
+\DoxyCodeLine{00068     typ = source.typ;}
+\DoxyCodeLine{00069     nrows = source.nrows;}
+\DoxyCodeLine{00070 \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00072}\mbox{\hyperlink{classLattice_a9625188af2d5da9d88b2f747db907042}{00072}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \mbox{\hyperlink{classLattice_a9625188af2d5da9d88b2f747db907042}{Lattice<V, I, NumberNodes>::~Lattice}}()}
+\DoxyCodeLine{00073 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00074 \}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076 \textcolor{comment}{// Operators}}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00077}\mbox{\hyperlink{classLattice_a135fdd0475ed6105b3367d507681a404}{00077}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& \mbox{\hyperlink{classLattice_a135fdd0475ed6105b3367d507681a404}{Lattice< V, I, NumberNodes>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& source)}
+\DoxyCodeLine{00078 \{}
+\DoxyCodeLine{00079     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source)}
+\DoxyCodeLine{00080         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00081     tree = source.tree;}
+\DoxyCodeLine{00082     typ = source.typ;}
+\DoxyCodeLine{00083     nrows = source.nrows;}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00086 \}}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088 \textcolor{comment}{// Iterating in a Lattice; we need forward and backward versions}}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00089}\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{00089}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> I \mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{Lattice< V, I, NumberNodes>::MinIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00090 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the minimum row index}}
+\DoxyCodeLine{00091     \textcolor{keywordflow}{return} tree.MinIndex();}
+\DoxyCodeLine{00092 \}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00094}\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{00094}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> I \mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{Lattice<V, I, NumberNodes>::MaxIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00095 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the maximum row index}}
+\DoxyCodeLine{00096     \textcolor{keywordflow}{return} tree.MaxIndex();}
+\DoxyCodeLine{00097 \}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00099}\mbox{\hyperlink{classLattice_a0911d29a485c5e8555b8f25e7589434a}{00099}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> I \mbox{\hyperlink{classLattice_a0911d29a485c5e8555b8f25e7589434a}{Lattice<V, I, NumberNodes>::Depth}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00100 \textcolor{keyword}{}\{ \textcolor{comment}{// The (depth) number of rows in the lattice}}
+\DoxyCodeLine{00101     \textcolor{keywordflow}{return} tree.Size();}
+\DoxyCodeLine{00102 \}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes>}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00105}\mbox{\hyperlink{classLattice_ab444412f2030b7594d611c1f7429a953}{00105}} \mbox{\hyperlink{classVector}{Vector<V, I>}}\& \mbox{\hyperlink{classLattice_ab444412f2030b7594d611c1f7429a953}{Lattice<V, I, NumberNodes>::operator [] }}(\textcolor{keyword}{const} I\& nLevel)}
+\DoxyCodeLine{00106 \{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00107     \textcolor{keywordflow}{return} tree[nLevel];}
+\DoxyCodeLine{00108 \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes>}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00111}\mbox{\hyperlink{classLattice_a25365d1583521fe97c48761f493edaa3}{00111}} \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V, I>}}\& \mbox{\hyperlink{classLattice_ab444412f2030b7594d611c1f7429a953}{Lattice<V, I, NumberNodes>::operator [] }}(\textcolor{keyword}{const} I\& nLevel)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00112 \textcolor{keyword}{}\{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00113     \textcolor{keywordflow}{return} tree[nLevel];}
+\DoxyCodeLine{00114 \}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116 \textcolor{comment}{// We need the form of the lattice at the 'base' of the pyramid. This}}
+\DoxyCodeLine{00117 \textcolor{comment}{// will be needed when we use backward induction }}
+\DoxyCodeLine{00118 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes>}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00119}\mbox{\hyperlink{classLattice_a0454fa42ebad2e9fbb71e884f3befaf6}{00119}} \mbox{\hyperlink{classVector}{Vector<V, I>}} \mbox{\hyperlink{classLattice_a0454fa42ebad2e9fbb71e884f3befaf6}{Lattice<V, I, NumberNodes>::BasePyramidVector}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00120 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00121     \textcolor{keywordflow}{return} tree[tree.MaxIndex()];}
+\DoxyCodeLine{00122 \}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes>}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00125}\mbox{\hyperlink{classLattice_a37afc93f46019f322291307c1bed2e11}{00125}} I \mbox{\hyperlink{classLattice_a37afc93f46019f322291307c1bed2e11}{Lattice<V, I, NumberNodes>::BasePyramidSize}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00126 \textcolor{keyword}{}\{ \textcolor{comment}{// The number of discrete points at end}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128     \textcolor{comment}{// This is a sequence}}
+\DoxyCodeLine{00129     \textcolor{keywordflow}{return} 1 + nrows *(typ -\/ 1);}
+\DoxyCodeLine{00130 \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes>}
+\DoxyCodeLine{\Hypertarget{Lattice_8cc_source_l00133}\mbox{\hyperlink{classLattice_a114af77d5b77fa52ffd28c42f7f97b5f}{00133}} I \mbox{\hyperlink{classLattice_a114af77d5b77fa52ffd28c42f7f97b5f}{Lattice<V, I, NumberNodes>::numberNodes}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00134 \textcolor{keyword}{}\{ \textcolor{comment}{// The number of discrete points at end}}
+\DoxyCodeLine{00135     \textcolor{comment}{// Summation (Series)}}
+\DoxyCodeLine{00136     \textcolor{keywordtype}{double} tmp2 = double(nrows * (nrows + 1)) / 2.0;}
+\DoxyCodeLine{00137     \textcolor{keywordflow}{return} 1 + nrows + (typ -\/1 ) * I(tmp2);}
+\DoxyCodeLine{00138 \}}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

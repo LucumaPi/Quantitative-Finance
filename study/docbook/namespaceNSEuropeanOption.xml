@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceNSEuropeanOption">
+<title>NSEuropeanOption Namespace Reference</title>
+<indexterm><primary>NSEuropeanOption</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1ab24ccb5397f0e20ed475c8c73f01b8b7">n</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a627ce352e7823346584f7085983f3ab1">N</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a75d44bc05f1445fb06b609489c943efa">CallPrice</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a5b101bb9ef49adf1afec1e6f2522ac80">PutPrice</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1afb9ebcf17007c774b22e21e4ed9564c9">Price</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1aabd913633d7343989fdef935b6d5740e">K</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a">U</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_namespaceNSEuropeanOption_1afc5ca727bf2d53aa85a9437cd5e44169">otyp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceNSEuropeanOption_1a75d44bc05f1445fb06b609489c943efa"/>    <section>
+    <title>CallPrice()</title>
+<indexterm><primary>CallPrice</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>CallPrice</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::CallPrice ( )</computeroutput></para><para>
+Definition at line 61 of file TestNewNamespace.cc.</para>
+<programlisting>62 {
+63 
+64 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>&#32;*&#32;sqrt(<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>);
+65 
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d1&#32;=&#32;(&#32;std::log(<link linkend="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a">U</link>/<link linkend="_namespaceNSEuropeanOption_1aabd913633d7343989fdef935b6d5740e">K</link>)&#32;+&#32;(<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>+&#32;(<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>*<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>)*0.5&#32;)&#32;*&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;)/&#32;tmp;
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d2&#32;=&#32;d1&#32;-&#32;tmp;
+68 
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a">U</link>&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>((<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>-<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)*<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>)&#32;*&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>(d1))&#32;-&#32;(<link linkend="_namespaceNSEuropeanOption_1aabd913633d7343989fdef935b6d5740e">K</link>&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(-<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;*&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>)*&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>(d2));
+71 
+72 }
+</programlisting>    </section><anchor xml:id="_namespaceNSEuropeanOption_1ab24ccb5397f0e20ed475c8c73f01b8b7"/>    <section>
+    <title>n()</title>
+<indexterm><primary>n</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>n</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::n (double x)</computeroutput></para><para>
+Definition at line 30 of file TestNewNamespace.cc.</para>
+<programlisting>31 {&#32;
+32 
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;A&#32;=&#32;1.0/std::sqrt(2.0&#32;*&#32;3.1415);
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;A&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(-x*x*0.5);
+35 
+36 }
+</programlisting>    </section><anchor xml:id="_namespaceNSEuropeanOption_1a627ce352e7823346584f7085983f3ab1"/>    <section>
+    <title>N()</title>
+<indexterm><primary>N</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>N</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::N (double x)</computeroutput></para><para>
+Definition at line 38 of file TestNewNamespace.cc.</para>
+<programlisting>39 {&#32;<emphasis role="comment">//&#32;The&#32;approximation&#32;to&#32;the&#32;cumulative&#32;normal&#32;distribution</emphasis>
+40 
+41 
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a1&#32;=&#32;0.4361836;
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a2&#32;=&#32;-0.1201676;
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a3&#32;=&#32;0.9372980;
+45 
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;k&#32;=&#32;1.0/(1.0&#32;+&#32;(0.33267&#32;*&#32;x));
+47 &#32;&#32;&#32;&#32;
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x&#32;&gt;=&#32;0.0)
+49 &#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1.0&#32;-&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>(x)*&#32;(a1*k&#32;+&#32;(a2*k*k)&#32;+&#32;(a3*k*k*k));
+51 &#32;&#32;&#32;&#32;}
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+53 &#32;&#32;&#32;&#32;{
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1.0&#32;-&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>(-x);
+55 &#32;&#32;&#32;&#32;}
+56 
+57 }
+</programlisting>    </section><anchor xml:id="_namespaceNSEuropeanOption_1afb9ebcf17007c774b22e21e4ed9564c9"/>    <section>
+    <title>Price()</title>
+<indexterm><primary>Price</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>Price</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::Price ( )</computeroutput></para><para>
+Definition at line 86 of file TestNewNamespace.cc.</para>
+<programlisting>87 {
+88 
+89 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_namespaceNSEuropeanOption_1afc5ca727bf2d53aa85a9437cd5e44169">otyp</link>&#32;==&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>)
+90 &#32;&#32;&#32;&#32;{
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a9776a1257d07edf93111927ddecc81cc">CallPrice</link>();
+92 &#32;&#32;&#32;&#32;}
+93 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a5b101bb9ef49adf1afec1e6f2522ac80">PutPrice</link>();
+95 
+96 }
+</programlisting>    </section><anchor xml:id="_namespaceNSEuropeanOption_1a5b101bb9ef49adf1afec1e6f2522ac80"/>    <section>
+    <title>PutPrice()</title>
+<indexterm><primary>PutPrice</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>PutPrice</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::PutPrice ( )</computeroutput></para><para>
+Definition at line 74 of file TestNewNamespace.cc.</para>
+<programlisting>75 {
+76 
+77 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>&#32;*&#32;std::sqrt(<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>);
+78 
+79 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d1&#32;=&#32;(&#32;std::log(<link linkend="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a">U</link>/<link linkend="_namespaceNSEuropeanOption_1aabd913633d7343989fdef935b6d5740e">K</link>)&#32;+&#32;(<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>+&#32;(<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>*<link linkend="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78">sig</link>)*0.5&#32;)&#32;*&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>&#32;)/&#32;tmp;
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d2&#32;=&#32;d1&#32;-&#32;tmp;
+81 
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_namespaceNSEuropeanOption_1aabd913633d7343989fdef935b6d5740e">K</link>&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(-<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;*&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>)*&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>(-d2))&#32;-&#32;(<link linkend="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a">U</link>&#32;*&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>((<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>-<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>)*<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>)&#32;*&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>(-d1));
+83 
+84 }
+</programlisting></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff"/>    <section>
+    <title>b</title>
+<indexterm><primary>b</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>b</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::b</computeroutput></para><para>
+Definition at line 26 of file TestNewNamespace.cc.</para>
+    </section><anchor xml:id="_namespaceNSEuropeanOption_1aabd913633d7343989fdef935b6d5740e"/>    <section>
+    <title>K</title>
+<indexterm><primary>K</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>K</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::K</computeroutput></para><para>
+Definition at line 23 of file TestNewNamespace.cc.</para>
+    </section><anchor xml:id="_namespaceNSEuropeanOption_1afc5ca727bf2d53aa85a9437cd5e44169"/>    <section>
+    <title>otyp</title>
+<indexterm><primary>otyp</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>otyp</secondary></indexterm>
+<para><computeroutput>std::string NSEuropeanOption::otyp</computeroutput></para><para>
+Definition at line 28 of file TestNewNamespace.cc.</para>
+    </section><anchor xml:id="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723"/>    <section>
+    <title>r</title>
+<indexterm><primary>r</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>r</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::r</computeroutput></para><para>
+Definition at line 21 of file TestNewNamespace.cc.</para>
+    </section><anchor xml:id="_namespaceNSEuropeanOption_1a974a1ee089fe6b1bb15292af1f2eef78"/>    <section>
+    <title>sig</title>
+<indexterm><primary>sig</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>sig</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::sig</computeroutput></para><para>
+Definition at line 22 of file TestNewNamespace.cc.</para>
+    </section><anchor xml:id="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d"/>    <section>
+    <title>T</title>
+<indexterm><primary>T</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>T</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::T</computeroutput></para><para>
+Definition at line 24 of file TestNewNamespace.cc.</para>
+    </section><anchor xml:id="_namespaceNSEuropeanOption_1a267b938e7da93825e13c6abc6b76ea8a"/>    <section>
+    <title>U</title>
+<indexterm><primary>U</primary><secondary>NSEuropeanOption</secondary></indexterm>
+<indexterm><primary>NSEuropeanOption</primary><secondary>U</secondary></indexterm>
+<para><computeroutput>double NSEuropeanOption::U</computeroutput></para><para>
+Definition at line 25 of file TestNewNamespace.cc.</para>
+</section>
+</section>
+</section>

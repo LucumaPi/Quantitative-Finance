@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRange">
 <title>Range&lt; Type &gt; Class Template Reference</title>
 <indexterm><primary>Range&lt; Type &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Range.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for Range&lt; Type &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -23,32 +26,229 @@ Collaboration diagram for Range&lt; Type &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classRange_1a7ce1e904703bd7e049db8c7aca16a0cb"/><emphasis role="strong">Range</emphasis> (const Type &amp;low, const Type &amp;high)</para>
+            <listitem><para><link linkend="_classRange_1a1ae29a7125bc7127c67ec67829d1e6fe">Range</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1a4390939e24185ab8c083c125cf7c5625"/><emphasis role="strong">Range</emphasis> (const <link linkend="_classRange">Range</link>&lt; Type &gt; &amp;ran2)</para>
+            <listitem><para><link linkend="_classRange_1a7ce1e904703bd7e049db8c7aca16a0cb">Range</link> (const Type &amp;<link linkend="_classRange_1a885e2f67531baf6df9359f95c3f8ebaa">low</link>, const Type &amp;<link linkend="_classRange_1aa0f159ae114a4053113ba035b1fc7b21">high</link>)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1a885e2f67531baf6df9359f95c3f8ebaa"/>void <emphasis role="strong">low</emphasis> (const Type &amp;t1)</para>
+            <listitem><para><link linkend="_classRange_1a4390939e24185ab8c083c125cf7c5625">Range</link> (const <link linkend="_classRange">Range</link>&lt; Type &gt; &amp;ran2)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1aa0f159ae114a4053113ba035b1fc7b21"/>void <emphasis role="strong">high</emphasis> (const Type &amp;t1)</para>
+            <listitem><para>virtual <link linkend="_classRange_1ac3495950469e6c7ba652e99ac7e69df9">~Range</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1adecc879cfe67dd9ee2212a008ab15f99"/>Type <emphasis role="strong">low</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classRange_1a885e2f67531baf6df9359f95c3f8ebaa">low</link> (const Type &amp;t1)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1a04c4f592efe2d03e17868d5268cedfb5"/>Type <emphasis role="strong">high</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classRange_1aa0f159ae114a4053113ba035b1fc7b21">high</link> (const Type &amp;t1)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1a2cdcb2c3dbc38dcb923e302ad366f12c"/>Type <emphasis role="strong">spread</emphasis> () const</para>
+            <listitem><para>Type <link linkend="_classRange_1adecc879cfe67dd9ee2212a008ab15f99">low</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1ab772b50dd178ffaeba1f6df900cef30b"/>bool <emphasis role="strong">left</emphasis> (const Type &amp;value) const</para>
+            <listitem><para>Type <link linkend="_classRange_1a04c4f592efe2d03e17868d5268cedfb5">high</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1aefe9e0df9c7555ec1235764389feea36"/>bool <emphasis role="strong">right</emphasis> (const Type &amp;value) const</para>
+            <listitem><para>Type <link linkend="_classRange_1a2cdcb2c3dbc38dcb923e302ad366f12c">spread</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1abca95dd7b50b7142fe6d40d58816dec5"/>bool <emphasis role="strong">contains</emphasis> (const Type &amp;value) const</para>
+            <listitem><para>bool <link linkend="_classRange_1ab772b50dd178ffaeba1f6df900cef30b">left</link> (const Type &amp;value) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1a9d6efa72341e127230d4aa86fcd3b489"/><link linkend="_classVector">Vector</link>&lt; Type, long &gt; <emphasis role="strong">mesh</emphasis> (long nSteps) const</para>
+            <listitem><para>bool <link linkend="_classRange_1aefe9e0df9c7555ec1235764389feea36">right</link> (const Type &amp;value) const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classRange_1afea02da4611e86fbbd710e64fead5a18"/><link linkend="_classRange">Range</link>&lt; Type &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classRange">Range</link>&lt; Type &gt; &amp;ran2)</para>
+            <listitem><para>bool <link linkend="_classRange_1abca95dd7b50b7142fe6d40d58816dec5">contains</link> (const Type &amp;value) const</para>
+</listitem>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; Type, long &gt; <link linkend="_classRange_1a9d6efa72341e127230d4aa86fcd3b489">mesh</link> (long nSteps) const</para>
+</listitem>
+            <listitem><para><link linkend="_classRange">Range</link>&lt; Type &gt; &amp; <link linkend="_classRange_1afea02da4611e86fbbd710e64fead5a18">operator=</link> (const <link linkend="_classRange">Range</link>&lt; Type &gt; &amp;ran2)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class Type&gt;
+class Range&lt; Type &gt;</title></simplesect>
+
+<para>
+Definition at line 15 of file Range.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classRange_1a1ae29a7125bc7127c67ec67829d1e6fe"/>    <section>
+    <title>Range()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Range</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>Range</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput><link linkend="_classRange">Range</link>&lt; Type &gt;::<link linkend="_classRange">Range</link> ( )</computeroutput></para><para>
+Definition at line 30 of file Range.cc.</para>
+<programlisting>31 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor.</emphasis>
+32 &#32;&#32;&#32;&#32;
+33 &#32;&#32;&#32;&#32;Type&#32;def(0);&#32;<emphasis role="comment">//&#32;Need&#32;this</emphasis>
+34 &#32;&#32;&#32;&#32;lo&#32;=&#32;def;
+35 &#32;&#32;&#32;&#32;hi&#32;=&#32;def;
+36 }
+</programlisting>    </section><anchor xml:id="_classRange_1a7ce1e904703bd7e049db8c7aca16a0cb"/>    <section>
+    <title>Range()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Range</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>Range</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput><link linkend="_classRange">Range</link>&lt; Type &gt;::<link linkend="_classRange">Range</link> (const Type &amp; low, const Type &amp; high)</computeroutput></para><para>
+Definition at line 39 of file Range.cc.</para>
+<programlisting>40 {&#32;<emphasis role="comment">//</emphasis>
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&#32;&lt;&#32;h)
+42 &#32;&#32;&#32;&#32;{
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lo&#32;=&#32;l;
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hi&#32;=&#32;h;
+45 &#32;&#32;&#32;&#32;}
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+48 &#32;&#32;&#32;&#32;{
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hi&#32;=&#32;l;
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lo&#32;=&#32;h;
+51 &#32;&#32;&#32;&#32;}
+52 }
+</programlisting>    </section><anchor xml:id="_classRange_1a4390939e24185ab8c083c125cf7c5625"/>    <section>
+    <title>Range()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Range</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>Range</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput><link linkend="_classRange">Range</link>&lt; Type &gt;::<link linkend="_classRange">Range</link> (const <link linkend="_classRange">Range</link>&lt; Type &gt; &amp; ran2)</computeroutput></para><para>
+Definition at line 55 of file Range.cc.</para>
+<programlisting>56 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+57 
+58 &#32;&#32;&#32;&#32;lo&#32;=&#32;r2.lo;
+59 &#32;&#32;&#32;&#32;hi&#32;=&#32;r2.hi;
+60 }
+</programlisting>    </section><anchor xml:id="_classRange_1ac3495950469e6c7ba652e99ac7e69df9"/>    <section>
+    <title>~Range()</title>
+<indexterm><primary>~Range</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>~Range</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput><link linkend="_classRange">Range</link>&lt; Type &gt;::~<link linkend="_classRange">Range</link> ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 64 of file Range.cc.</para>
+<programlisting>65 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+66 
+67 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classRange_1abca95dd7b50b7142fe6d40d58816dec5"/>    <section>
+    <title>contains()</title>
+<indexterm><primary>contains</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>contains</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput>bool <link linkend="_classRange">Range</link>&lt; Type &gt;::contains (const Type &amp; value) const</computeroutput></para><para>
+Definition at line 129 of file Range.cc.</para>
+<programlisting>130 {<emphasis role="comment">//&#32;Does&#32;range&#32;contain&#32;t</emphasis>
+131 
+132 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((lo&#32;&lt;=&#32;t)&#32;&amp;&amp;&#32;(hi&#32;&gt;=&#32;t))
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+134 
+135 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+136 }
+</programlisting>    </section><anchor xml:id="_classRange_1a04c4f592efe2d03e17868d5268cedfb5"/>    <section>
+    <title>high()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>high</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>high</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput>Type <link linkend="_classRange">Range</link>&lt; Type &gt;::high ( ) const</computeroutput></para><para>
+Definition at line 94 of file Range.cc.</para>
+<programlisting>95 {<emphasis role="comment">//&#32;Returns&#32;the&#32;higher&#32;bound&#32;of&#32;the&#32;range</emphasis>
+96 
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;hi;
+98 }
+</programlisting>    </section><anchor xml:id="_classRange_1aa0f159ae114a4053113ba035b1fc7b21"/>    <section>
+    <title>high()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>high</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>high</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput>void <link linkend="_classRange">Range</link>&lt; Type &gt;::high (const Type &amp; t1)</computeroutput></para><para>
+Definition at line 79 of file Range.cc.</para>
+<programlisting>80 {<emphasis role="comment">//&#32;The&#32;high&#32;value&#32;of&#32;the&#32;range&#32;will&#32;be&#32;set&#32;with&#32;the&#32;value&#32;t1</emphasis>
+81 
+82 
+83 &#32;&#32;&#32;&#32;hi&#32;=&#32;t1;
+84 }
+</programlisting>    </section><anchor xml:id="_classRange_1ab772b50dd178ffaeba1f6df900cef30b"/>    <section>
+    <title>left()</title>
+<indexterm><primary>left</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>left</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput>bool <link linkend="_classRange">Range</link>&lt; Type &gt;::left (const Type &amp; value) const</computeroutput></para><para>
+Definition at line 109 of file Range.cc.</para>
+<programlisting>110 {&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;current&#32;value&#32;is&#32;to&#32;the&#32;left&#32;of&#32;the&#32;range</emphasis>
+111 
+112 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(val&#32;&lt;&#32;lo)
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+114 
+115 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+116 }
+</programlisting>    </section><anchor xml:id="_classRange_1adecc879cfe67dd9ee2212a008ab15f99"/>    <section>
+    <title>low()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>low</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>low</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput>Type <link linkend="_classRange">Range</link>&lt; Type &gt;::low ( ) const</computeroutput></para><para>
+Definition at line 87 of file Range.cc.</para>
+<programlisting>88 {<emphasis role="comment">//&#32;Returns&#32;the&#32;lower&#32;bound&#32;of&#32;the&#32;range</emphasis>
+89 
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;lo;
+91 }
+</programlisting>    </section><anchor xml:id="_classRange_1a885e2f67531baf6df9359f95c3f8ebaa"/>    <section>
+    <title>low()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>low</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>low</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput>void <link linkend="_classRange">Range</link>&lt; Type &gt;::low (const Type &amp; t1)</computeroutput></para><para>
+Definition at line 71 of file Range.cc.</para>
+<programlisting>72 {<emphasis role="comment">//&#32;The&#32;low&#32;value&#32;of&#32;the&#32;range&#32;will&#32;be&#32;set&#32;with&#32;the&#32;value&#32;t1</emphasis>
+73 
+74 
+75 &#32;&#32;&#32;&#32;lo&#32;=&#32;t1;
+76 }
+</programlisting>    </section><anchor xml:id="_classRange_1a9d6efa72341e127230d4aa86fcd3b489"/>    <section>
+    <title>mesh()</title>
+<indexterm><primary>mesh</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>mesh</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt; Type, long &gt; <link linkend="_classRange">Range</link>&lt; Type &gt;::mesh (long nSteps) const</computeroutput></para><para>
+Definition at line 151 of file Range.cc.</para>
+<programlisting>152 {&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;discrete&#32;mesh</emphasis>
+153 
+154 &#32;&#32;&#32;&#32;Type&#32;h&#32;=&#32;(hi&#32;-&#32;lo)&#32;/&#32;Type&#32;(nSteps);
+155 
+156 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;Type, long&gt;</link>&#32;result(nSteps&#32;+&#32;1,&#32;1);
+157 
+158 &#32;&#32;&#32;&#32;Type&#32;val&#32;=&#32;lo;
+159 
+160 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;i&#32;=&#32;1;&#32;i&#32;&lt;=&#32;nSteps&#32;+&#32;1;&#32;i++)&#32;&#32;
+161 &#32;&#32;&#32;&#32;{
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;val;
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val&#32;+=&#32;h;
+164 &#32;&#32;&#32;&#32;}
+165 
+166 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+167 }
+</programlisting>    </section><anchor xml:id="_classRange_1afea02da4611e86fbbd710e64fead5a18"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput><link linkend="_classRange">Range</link>&lt; Type &gt; &amp; <link linkend="_classRange">Range</link>&lt; Type &gt;::operator= (const <link linkend="_classRange">Range</link>&lt; Type &gt; &amp; ran2)</computeroutput></para><para>
+Definition at line 140 of file Range.cc.</para>
+<programlisting>141 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+142 
+143 &#32;&#32;&#32;&#32;hi&#32;=&#32;r2.hi;
+144 &#32;&#32;&#32;&#32;lo&#32;=&#32;r2.lo;
+145 
+146 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+147 }
+</programlisting>    </section><anchor xml:id="_classRange_1aefe9e0df9c7555ec1235764389feea36"/>    <section>
+    <title>right()</title>
+<indexterm><primary>right</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>right</secondary></indexterm>
+<computeroutput>template&lt;class Type&gt; </computeroutput><para><computeroutput>bool <link linkend="_classRange">Range</link>&lt; Type &gt;::right (const Type &amp; value) const</computeroutput></para><para>
+Definition at line 119 of file Range.cc.</para>
+<programlisting>120 {&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;current&#32;value&#32;is&#32;to&#32;the&#32;right&#32;of&#32;the&#32;range</emphasis>
+121 
+122 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(val&#32;&gt;&#32;hi)
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+124 
+125 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+126 }
+</programlisting>    </section><anchor xml:id="_classRange_1a2cdcb2c3dbc38dcb923e302ad366f12c"/>    <section>
+    <title>spread()</title>
+<indexterm><primary>spread</primary><secondary>Range&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Range&lt; Type &gt;</primary><secondary>spread</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>Type <link linkend="_classRange">Range</link>&lt; Type &gt;::spread ( ) const</computeroutput></para><para>
+Definition at line 101 of file Range.cc.</para>
+<programlisting>102 {<emphasis role="comment">//&#32;Returns&#32;the&#32;higher&#32;bound&#32;of&#32;the&#32;range</emphasis>
+103 
+104 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;hi&#32;-&#32;lo;
+105 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Range.hhsrc/Range.cc</section>
+include/duffy/<link linkend="_Range_8hh">Range.hh</link>src/<link linkend="_Range_8cc">Range.cc</link></section>
+</section>

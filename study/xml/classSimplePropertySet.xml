@@ -3,6 +3,7 @@
   <compounddef id="classSimplePropertySet" kind="class" language="C++" prot="public">
     <compoundname>SimplePropertySet</compoundname>
     <basecompoundref refid="classPropertyThing" prot="public" virt="non-virtual">PropertyThing&lt; N, V &gt;</basecompoundref>
+    <includes refid="SimplePropertySet_8hh" local="no">SimplePropertySet.hh</includes>
     <templateparamlist>
       <param>
         <type>class</type>
@@ -19,7 +20,7 @@
     </templateparamlist>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classSimplePropertySet_1ae7e2bc706a3ded16c053d59d7a1343be" prot="public" static="no">
-        <type>std::map&lt; N, V &gt;::iterator</type>
+        <type>std::map&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt;::<ref refid="classSimplePropertySet_1ae7e2bc706a3ded16c053d59d7a1343be" kindref="member">iterator</ref></type>
         <definition>typedef std::map&lt;N, V&gt;::iterator SimplePropertySet&lt; N, V &gt;::iterator</definition>
         <argsstring></argsstring>
         <name>iterator</name>
@@ -32,7 +33,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="38" column="38" bodyfile="include/duffy/SimplePropertySet.hh" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classSimplePropertySet_1aab3d4fc3315979035be3d5c64c42d425" prot="public" static="no">
-        <type>std::map&lt; N, V &gt;::const_iterator</type>
+        <type>std::map&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt;::<ref refid="classSimplePropertySet_1aab3d4fc3315979035be3d5c64c42d425" kindref="member">const_iterator</ref></type>
         <definition>typedef std::map&lt;N, V&gt;::const_iterator SimplePropertySet&lt; N, V &gt;::const_iterator</definition>
         <argsstring></argsstring>
         <name>const_iterator</name>
@@ -47,7 +48,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classSimplePropertySet_1a0800a56253703394fe7b6d1e87d69b6d" prot="private" static="no" mutable="no">
-        <type>N</type>
+        <type><ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref></type>
         <definition>N SimplePropertySet&lt; N, V &gt;::nam</definition>
         <argsstring></argsstring>
         <name>nam</name>
@@ -60,7 +61,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="29" column="3" bodyfile="include/duffy/SimplePropertySet.hh" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSimplePropertySet_1ae18260a10e9445bb3053c8d574beab13" prot="private" static="no" mutable="no">
-        <type>std::map&lt; N, V &gt;</type>
+        <type>std::map&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt;</type>
         <definition>std::map&lt;N, V&gt; SimplePropertySet&lt; N, V &gt;::sl</definition>
         <argsstring></argsstring>
         <name>sl</name>
@@ -73,7 +74,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="32" column="10" bodyfile="include/duffy/SimplePropertySet.hh" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSimplePropertySet_1a9324491848a6b497373d26d586aef0b8" prot="private" static="no" mutable="no">
-        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; N &gt;</type>
+        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &gt;</type>
         <definition>Set&lt;N&gt; SimplePropertySet&lt; N, V &gt;::keys</definition>
         <argsstring></argsstring>
         <name>keys</name>
@@ -106,7 +107,7 @@
         <argsstring>(const N &amp;name)</argsstring>
         <name>SimplePropertySet</name>
         <param>
-          <type>const N &amp;</type>
+          <type>const <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &amp;</type>
           <declname>name</declname>
         </param>
         <briefdescription>
@@ -123,7 +124,7 @@
         <argsstring>(const SimplePropertySet&lt; N, V &gt; &amp;source)</argsstring>
         <name>SimplePropertySet</name>
         <param>
-          <type>const <ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet</ref>&lt; N, V &gt; &amp;</type>
+          <type>const <ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt; &amp;</type>
           <declname>source</declname>
         </param>
         <briefdescription>
@@ -140,11 +141,11 @@
         <argsstring>(const N &amp;name, const Set&lt; N &gt; &amp;keySet)</argsstring>
         <name>SimplePropertySet</name>
         <param>
-          <type>const N &amp;</type>
+          <type>const <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &amp;</type>
           <declname>name</declname>
         </param>
         <param>
-          <type>const <ref refid="classSet" kindref="compound">Set</ref>&lt; N &gt; &amp;</type>
+          <type>const <ref refid="classSet" kindref="compound">Set</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &gt; &amp;</type>
           <declname>keySet</declname>
         </param>
         <briefdescription>
@@ -169,7 +170,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="47" column="9" bodyfile="src/SimplePropertySet.cc" bodystart="73" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1af0c72b2e6a39f6d2d02ce443afa01de5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>iterator</type>
+        <type><ref refid="classSimplePropertySet_1ae7e2bc706a3ded16c053d59d7a1343be" kindref="member">iterator</ref></type>
         <definition>SimplePropertySet&lt; N, V &gt;::iterator SimplePropertySet&lt; N, V &gt;::Begin</definition>
         <argsstring>()</argsstring>
         <name>Begin</name>
@@ -182,7 +183,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="50" column="14" bodyfile="src/SimplePropertySet.cc" bodystart="81" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1a6802c214360692877d33fa97de489c81" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>const_iterator</type>
+        <type><ref refid="classSimplePropertySet_1aab3d4fc3315979035be3d5c64c42d425" kindref="member">const_iterator</ref></type>
         <definition>SimplePropertySet&lt; N, V &gt;::const_iterator SimplePropertySet&lt; N, V &gt;::Begin</definition>
         <argsstring>() const</argsstring>
         <name>Begin</name>
@@ -195,7 +196,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="51" column="16" bodyfile="src/SimplePropertySet.cc" bodystart="88" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1a6d3c8a051b7c6846508898c8375a2cfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>iterator</type>
+        <type><ref refid="classSimplePropertySet_1ae7e2bc706a3ded16c053d59d7a1343be" kindref="member">iterator</ref></type>
         <definition>SimplePropertySet&lt; N, V &gt;::iterator SimplePropertySet&lt; N, V &gt;::End</definition>
         <argsstring>()</argsstring>
         <name>End</name>
@@ -208,7 +209,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="52" column="10" bodyfile="src/SimplePropertySet.cc" bodystart="95" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1a5d6159e4afdef3815a3caa7840867f3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>const_iterator</type>
+        <type><ref refid="classSimplePropertySet_1aab3d4fc3315979035be3d5c64c42d425" kindref="member">const_iterator</ref></type>
         <definition>SimplePropertySet&lt; N, V &gt;::const_iterator SimplePropertySet&lt; N, V &gt;::End</definition>
         <argsstring>() const</argsstring>
         <name>End</name>
@@ -234,7 +235,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="56" column="5" bodyfile="src/SimplePropertySet.cc" bodystart="110" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1adee2b738f8853c056e40c72384a442bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>N</type>
+        <type><ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref></type>
         <definition>N SimplePropertySet&lt; N, V &gt;::operator()</definition>
         <argsstring>() const</argsstring>
         <name>operator()</name>
@@ -247,7 +248,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="57" column="3" bodyfile="src/SimplePropertySet.cc" bodystart="117" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1a7674e0f5c6b6a747aa85d54bc52d1ab7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>N</type>
+        <type><ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref></type>
         <definition>N SimplePropertySet&lt; N, V &gt;::name</definition>
         <argsstring>() const</argsstring>
         <name>name</name>
@@ -260,7 +261,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="58" column="3" bodyfile="src/SimplePropertySet.cc" bodystart="124" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1a6ba0b7ab8d9122312489ca390c4bf403" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; N &gt; &amp;</type>
+        <type><ref refid="classSet" kindref="compound">Set</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &gt; &amp;</type>
         <definition>Set&lt; N &gt; &amp; SimplePropertySet&lt; N, V &gt;::definingSet</definition>
         <argsstring>() const</argsstring>
         <name>definingSet</name>
@@ -278,7 +279,7 @@
         <argsstring>(const N &amp;search_name) const</argsstring>
         <name>hasProperty</name>
         <param>
-          <type>const N &amp;</type>
+          <type>const <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &amp;</type>
           <declname>search_name</declname>
         </param>
         <briefdescription>
@@ -295,7 +296,7 @@
         <argsstring>(const N &amp;name) const</argsstring>
         <name>value</name>
         <param>
-          <type>const N &amp;</type>
+          <type>const <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &amp;</type>
           <declname>name</declname>
         </param>
         <briefdescription>
@@ -312,7 +313,7 @@
         <argsstring>(const N &amp;name)</argsstring>
         <name>operator()</name>
         <param>
-          <type>const N &amp;</type>
+          <type>const <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &amp;</type>
           <declname>name</declname>
         </param>
         <briefdescription>
@@ -329,7 +330,7 @@
         <argsstring>(const N &amp;name, const V &amp;value)</argsstring>
         <name>value</name>
         <param>
-          <type>const N &amp;</type>
+          <type>const <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &amp;</type>
           <declname>name</declname>
         </param>
         <param>
@@ -350,7 +351,7 @@
         <argsstring>(const Property&lt; N, V &gt; &amp;prop)</argsstring>
         <name>value</name>
         <param>
-          <type>const <ref refid="classProperty" kindref="compound">Property</ref>&lt; N, V &gt; &amp;</type>
+          <type>const <ref refid="classProperty" kindref="compound">Property</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt; &amp;</type>
           <declname>prop</declname>
         </param>
         <briefdescription>
@@ -380,7 +381,7 @@
         <argsstring>(const Property&lt; N, V &gt; &amp;p)</argsstring>
         <name>add</name>
         <param>
-          <type>const <ref refid="classProperty" kindref="compound">Property</ref>&lt; N, V &gt; &amp;</type>
+          <type>const <ref refid="classProperty" kindref="compound">Property</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -397,7 +398,7 @@
         <argsstring>(const N &amp;key, const V &amp;value)</argsstring>
         <name>add</name>
         <param>
-          <type>const N &amp;</type>
+          <type>const <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &amp;</type>
           <declname>key</declname>
         </param>
         <param>
@@ -418,7 +419,7 @@
         <argsstring>(const N &amp;key)</argsstring>
         <name>remove</name>
         <param>
-          <type>const N &amp;</type>
+          <type>const <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref> &amp;</type>
           <declname>key</declname>
         </param>
         <briefdescription>
@@ -435,7 +436,7 @@
         <argsstring>(const Property&lt; N, V &gt; &amp;prop)</argsstring>
         <name>remove</name>
         <param>
-          <type>const <ref refid="classProperty" kindref="compound">Property</ref>&lt; N, V &gt; &amp;</type>
+          <type>const <ref refid="classProperty" kindref="compound">Property</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt; &amp;</type>
           <declname>prop</declname>
         </param>
         <briefdescription>
@@ -447,12 +448,12 @@
         <location file="include/duffy/SimplePropertySet.hh" line="76" column="6" bodyfile="src/SimplePropertySet.cc" bodystart="260" bodyend="264"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1a3f605fbec62d086f9d5cd3fd204bb9e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet</ref>&lt; N, V &gt; &amp;</type>
+        <type><ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt; &amp;</type>
         <definition>SimplePropertySet&lt; N, V &gt; &amp; SimplePropertySet&lt; N, V &gt;::operator=</definition>
         <argsstring>(const SimplePropertySet&lt; N, V &gt; &amp;source)</argsstring>
         <name>operator=</name>
         <param>
-          <type>const <ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet</ref>&lt; N, V &gt; &amp;</type>
+          <type>const <ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt; &amp;</type>
           <declname>source</declname>
         </param>
         <briefdescription>
@@ -464,7 +465,7 @@
         <location file="include/duffy/SimplePropertySet.hh" line="80" column="19" bodyfile="src/SimplePropertySet.cc" bodystart="269" bodyend="281"/>
       </memberdef>
       <memberdef kind="function" id="classSimplePropertySet_1a5310d09ff2e7065a119dbf1368179cef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type><ref refid="classPropertyThing" kindref="compound">PropertyThing</ref>&lt; N, V &gt; *</type>
+        <type><ref refid="classPropertyThing" kindref="compound">PropertyThing</ref>&lt; <ref refid="TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de" kindref="member">N</ref>, V &gt; *</type>
         <definition>PropertyThing&lt; N, V &gt; * SimplePropertySet&lt; N, V &gt;::Copy</definition>
         <argsstring>() const</argsstring>
         <name>Copy</name>

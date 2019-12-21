@@ -1,0 +1,162 @@
+\hypertarget{testBSPDE1_8cc_source}{}\doxysection{test\+B\+S\+P\+D\+E1.\+cc}
+\label{testBSPDE1_8cc_source}\index{tests/testBSPDE1.cc@{tests/testBSPDE1.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testBSPDE1.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing 1 factor BS model.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "fdmdirector.cpp"}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ArrayMechanisms_8hh}{duffy/ArrayMechanisms.hh}}>}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00013 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "exceldriver.cpp"}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00017}\mbox{\hyperlink{testBSPDE1_8cc_a149efd6e8bf55adf2d5ac330c54399e8}{00017}} \textcolor{keywordtype}{void} \mbox{\hyperlink{testBSPDE1_8cc_a149efd6e8bf55adf2d5ac330c54399e8}{printOneExcel}}(\mbox{\hyperlink{classVector}{Vector<double, long>}} \& x,                       }
+\DoxyCodeLine{00018                     \mbox{\hyperlink{classVector}{Vector<double, long>}}\& functionResult,}
+\DoxyCodeLine{00019                     \textcolor{keywordtype}{string}\& title)}
+\DoxyCodeLine{00020 \{ }
+\DoxyCodeLine{00021     \textcolor{comment}{// N.B. Excel has a limit of 8 charts; after that you get a run-\/time error}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     cout << \textcolor{stringliteral}{"Starting Excel\(\backslash\)n"};}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}} \& excel = \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{ExcelDriver::Instance}}();}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     excel.\mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{MakeVisible}}(\textcolor{keyword}{true});     \textcolor{comment}{// Default is INVISIBLE!}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     excel.\mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{CreateChart}}(x, functionResult, title, \textcolor{stringliteral}{"X"}, \textcolor{stringliteral}{"Y"});}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     }
+\DoxyCodeLine{00032 \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \textcolor{comment}{// Excel output as well}}
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00035}\mbox{\hyperlink{testBSPDE1_8cc_a689883716e398917d98055ec15d2f26a}{00035}} \textcolor{keywordtype}{void} \mbox{\hyperlink{testBSPDE1_8cc_a689883716e398917d98055ec15d2f26a}{printInExcel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& x,                            \textcolor{comment}{// X array}}
+\DoxyCodeLine{00036                     \textcolor{keyword}{const} list<string>\& labels,                         \textcolor{comment}{// Names of each vector}}
+\DoxyCodeLine{00037                     \textcolor{keyword}{const} list<\mbox{\hyperlink{classVector}{Vector<double, long>}} >\& functionResult)  \textcolor{comment}{// The list of Y values}}
+\DoxyCodeLine{00038 \{ \textcolor{comment}{// Print a list of Vectors in Excel. Each vector is the output of}}
+\DoxyCodeLine{00039   \textcolor{comment}{// a finite difference scheme for a scalar IVP}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     cout << \textcolor{stringliteral}{"Starting Excel\(\backslash\)n"};}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}} \& excel = \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{ExcelDriver::Instance}}();}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     excel.\mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{MakeVisible}}(\textcolor{keyword}{true});     \textcolor{comment}{// Default is INVISIBLE!}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{comment}{// Don't make the string names too long!!}}
+\DoxyCodeLine{00049     excel.\mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{CreateChart}}(x, labels, functionResult, \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"FDM Scalar IVP"}),}
+\DoxyCodeLine{00050                         \textcolor{keywordtype}{string}(\textcolor{stringliteral}{"Time Axis"}), \textcolor{keywordtype}{string} (\textcolor{stringliteral}{"Value"}));}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00057}\mbox{\hyperlink{testBSPDE1_8cc_a5f20917ab7db101f63e800c0661cbdaf}{00057}} \textcolor{keywordtype}{double} \mbox{\hyperlink{testBSPDE1_8cc_a5f20917ab7db101f63e800c0661cbdaf}{mySigma}} (\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)}
+\DoxyCodeLine{00058 \{}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     \textcolor{keywordtype}{double} sigmaS = 0.30 * 0.30;}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{keywordflow}{return} 0.5 * sigmaS * x * x;}
+\DoxyCodeLine{00063 \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00065}\mbox{\hyperlink{testBSPDE1_8cc_aa789daccad9f898dd8ee84bafa78562d}{00065}} \textcolor{keywordtype}{double} \mbox{\hyperlink{testBSPDE1_8cc_aa789daccad9f898dd8ee84bafa78562d}{myMu}} (\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)}
+\DoxyCodeLine{00066 \{}
+\DoxyCodeLine{00067     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.06;}
+\DoxyCodeLine{00068     \textcolor{keywordtype}{double} \mbox{\hyperlink{classD}{D}} = 0.00;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} -\/ \mbox{\hyperlink{classD}{D}}) * x;}
+\DoxyCodeLine{00071 \}}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00073}\mbox{\hyperlink{testBSPDE1_8cc_a78f556b51570bd9080d1930398b6f1cd}{00073}} \textcolor{keywordtype}{double} \mbox{\hyperlink{testBSPDE1_8cc_a78f556b51570bd9080d1930398b6f1cd}{myB}} (\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)}
+\DoxyCodeLine{00074 \{}
+\DoxyCodeLine{00075     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.06;}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{keywordflow}{return}  -\/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00078 \}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00080}\mbox{\hyperlink{testBSPDE1_8cc_a22864aa2fe212665fc7c0a8ca0ed56de}{00080}} \textcolor{keywordtype}{double} \mbox{\hyperlink{testBSPDE1_8cc_a22864aa2fe212665fc7c0a8ca0ed56de}{myF}} (\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)}
+\DoxyCodeLine{00081 \{}
+\DoxyCodeLine{00082     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00083 \}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00085}\mbox{\hyperlink{testBSPDE1_8cc_a70741760b87deb1bba6bc22abb9251ef}{00085}} \textcolor{keywordtype}{double} \mbox{\hyperlink{testBSPDE1_8cc_a70741760b87deb1bba6bc22abb9251ef}{myBCL}} (\textcolor{keywordtype}{double} t)}
+\DoxyCodeLine{00086 \{}
+\DoxyCodeLine{00087  \textcolor{comment}{//return 0.0; // C}}
+\DoxyCodeLine{00088     }
+\DoxyCodeLine{00089     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = 10;}
+\DoxyCodeLine{00090     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.06;}
+\DoxyCodeLine{00091     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} = 1.0;}
+\DoxyCodeLine{00092     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} * \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{::exp}}(-\/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} * (\mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} -\/ t));}
+\DoxyCodeLine{00093 \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00095}\mbox{\hyperlink{testBSPDE1_8cc_a3b1df2aaa00e8165b1397d7ced71646a}{00095}} \textcolor{keywordtype}{double} \mbox{\hyperlink{testBSPDE1_8cc_a3b1df2aaa00e8165b1397d7ced71646a}{myBCR}} (\textcolor{keywordtype}{double} t)}
+\DoxyCodeLine{00096 \{}
+\DoxyCodeLine{00097     \textcolor{keywordtype}{double} Smax = 100;}
+\DoxyCodeLine{00098 \textcolor{comment}{//  return Smax;}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100     }
+\DoxyCodeLine{00101     \textcolor{keywordflow}{return} 0.0; \textcolor{comment}{// P}}
+\DoxyCodeLine{00102 \}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00104}\mbox{\hyperlink{testBSPDE1_8cc_a63e3842c00c76b5bb726e114fa382678}{00104}} \textcolor{keywordtype}{double} \mbox{\hyperlink{testBSPDE1_8cc_a63e3842c00c76b5bb726e114fa382678}{myIC}} (\textcolor{keywordtype}{double} x)}
+\DoxyCodeLine{00105 \{}
+\DoxyCodeLine{00106     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = 10;}
+\DoxyCodeLine{00107     }
+\DoxyCodeLine{00108     \textcolor{keywordflow}{if} (x < \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}})}
+\DoxyCodeLine{00109         \textcolor{keywordflow}{return} -\/(x -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113 \}}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{\Hypertarget{testBSPDE1_8cc_source_l00116}\mbox{\hyperlink{testBSPDE1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00116}} \textcolor{keywordtype}{int} \mbox{\hyperlink{testBSPDE1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00117 \{}
+\DoxyCodeLine{00118     \textcolor{keyword}{using namespace }BlackScholesOneFactorIBVP;}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{comment}{// Assignment of functions}}
+\DoxyCodeLine{00121     sigma = \mbox{\hyperlink{testBSPDE1_8cc_a5f20917ab7db101f63e800c0661cbdaf}{mySigma}};}
+\DoxyCodeLine{00122     mu = \mbox{\hyperlink{testBSPDE1_8cc_aa789daccad9f898dd8ee84bafa78562d}{myMu}};}
+\DoxyCodeLine{00123     \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = \mbox{\hyperlink{testBSPDE1_8cc_a78f556b51570bd9080d1930398b6f1cd}{myB}};}
+\DoxyCodeLine{00124     f = \mbox{\hyperlink{testBSPDE1_8cc_a22864aa2fe212665fc7c0a8ca0ed56de}{myF}};}
+\DoxyCodeLine{00125     BCL = \mbox{\hyperlink{testBSPDE1_8cc_a70741760b87deb1bba6bc22abb9251ef}{myBCL}};}
+\DoxyCodeLine{00126     BCR = \mbox{\hyperlink{testBSPDE1_8cc_a3b1df2aaa00e8165b1397d7ced71646a}{myBCR}};}
+\DoxyCodeLine{00127     IC = \mbox{\hyperlink{testBSPDE1_8cc_a63e3842c00c76b5bb726e114fa382678}{myIC}};}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}} = 1.0;    \textcolor{keywordtype}{int} J= 200; \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = 4000-\/1;}
+\DoxyCodeLine{00130     \textcolor{keywordtype}{double} Smax = 100.0;}
+\DoxyCodeLine{00131     FDMDirector fdir(Smax, \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}, J, \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00132     fdir.Start();}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134 L1:}
+\DoxyCodeLine{00135     fdir.doit();}
+\DoxyCodeLine{00136     \textcolor{comment}{//  print(fdir.current());}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138     \textcolor{keywordflow}{if} (fdir.isDone() == \textcolor{keyword}{false})}
+\DoxyCodeLine{00139         \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141     \mbox{\hyperlink{classVector}{Vector<double, long>}} xresult(J+1, 1);}
+\DoxyCodeLine{00142     xresult[xresult.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()] = 0.0;}
+\DoxyCodeLine{00143     \textcolor{keywordtype}{double} h = Smax / (double) (J);}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} j = xresult.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()+1; j <= xresult.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00146     \{}
+\DoxyCodeLine{00147             xresult[j] = xresult[j-\/1] + h;}
+\DoxyCodeLine{00148     \}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}} (xresult);}
+\DoxyCodeLine{00151     \textcolor{comment}{//print(fdir.current());}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153     \mbox{\hyperlink{testBSPDE1_8cc_a149efd6e8bf55adf2d5ac330c54399e8}{printOneExcel}}(xresult, fdir.current(), string(\textcolor{stringliteral}{"Value"}));}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00156 \}}
+
+\end{DoxyCode}

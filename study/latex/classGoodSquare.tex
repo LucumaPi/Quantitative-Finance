@@ -21,17 +21,104 @@ Collaboration diagram for Good\+Square\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classGoodSquare_a347dbfd768d18c3f81c0d372dae1ccdb}\label{classGoodSquare_a347dbfd768d18c3f81c0d372dae1ccdb}} 
-{\bfseries Good\+Square} (const \mbox{\hyperlink{classPoint}{Point}} \&base\+Point, double size)
+\mbox{\hyperlink{classGoodSquare_a9cbd56bd2be63f31b6cccba4b216d4ce}{Good\+Square}} ()
 \item 
-\mbox{\Hypertarget{classGoodSquare_a06b56adcb5f00340eaa871e39031c3eb}\label{classGoodSquare_a06b56adcb5f00340eaa871e39031c3eb}} 
-void {\bfseries set\+Size} (double new\+Size)
+\mbox{\hyperlink{classGoodSquare_a347dbfd768d18c3f81c0d372dae1ccdb}{Good\+Square}} (const \mbox{\hyperlink{classPoint}{Point}} \&base\+Point, double size)
 \item 
-\mbox{\Hypertarget{classGoodSquare_aeb44d1887bb768f563a9ddc0f73ff415}\label{classGoodSquare_aeb44d1887bb768f563a9ddc0f73ff415}} 
-void {\bfseries print} () const
+void \mbox{\hyperlink{classGoodSquare_a06b56adcb5f00340eaa871e39031c3eb}{set\+Size}} (double new\+Size)
+\item 
+void \mbox{\hyperlink{classGoodSquare_aeb44d1887bb768f563a9ddc0f73ff415}{print}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Rectangle_8cc_source_l00084}{84}} of file \mbox{\hyperlink{Rectangle_8cc_source}{Rectangle.\+cc}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGoodSquare_a9cbd56bd2be63f31b6cccba4b216d4ce}\label{classGoodSquare_a9cbd56bd2be63f31b6cccba4b216d4ce}} 
+\index{GoodSquare@{GoodSquare}!GoodSquare@{GoodSquare}}
+\index{GoodSquare@{GoodSquare}!GoodSquare@{GoodSquare}}
+\doxysubsubsection{\texorpdfstring{GoodSquare()}{GoodSquare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Good\+Square\+::\+Good\+Square (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Rectangle_8cc_source_l00089}{89}} of file \mbox{\hyperlink{Rectangle_8cc_source}{Rectangle.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090         \{}
+\DoxyCodeLine{00091             \textcolor{keywordtype}{double} size = 1.0;}
+\DoxyCodeLine{00092             \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = \mbox{\hyperlink{classRectangle}{Rectangle}} (\mbox{\hyperlink{classPoint}{Point}}(), size, size); \textcolor{comment}{// Unit square}}
+\DoxyCodeLine{00093             }
+\DoxyCodeLine{00094         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGoodSquare_a347dbfd768d18c3f81c0d372dae1ccdb}\label{classGoodSquare_a347dbfd768d18c3f81c0d372dae1ccdb}} 
+\index{GoodSquare@{GoodSquare}!GoodSquare@{GoodSquare}}
+\index{GoodSquare@{GoodSquare}!GoodSquare@{GoodSquare}}
+\doxysubsubsection{\texorpdfstring{GoodSquare()}{GoodSquare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Good\+Square\+::\+Good\+Square (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{base\+Point,  }\item[{double}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Rectangle_8cc_source_l00096}{96}} of file \mbox{\hyperlink{Rectangle_8cc_source}{Rectangle.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097         \{}
+\DoxyCodeLine{00098             \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = \mbox{\hyperlink{classRectangle}{Rectangle}} (basePoint, size, size);}
+\DoxyCodeLine{00099             }
+\DoxyCodeLine{00100         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGoodSquare_aeb44d1887bb768f563a9ddc0f73ff415}\label{classGoodSquare_aeb44d1887bb768f563a9ddc0f73ff415}} 
+\index{GoodSquare@{GoodSquare}!print@{print}}
+\index{print@{print}!GoodSquare@{GoodSquare}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Good\+Square\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Rectangle_8cc_source_l00111}{111}} of file \mbox{\hyperlink{Rectangle_8cc_source}{Rectangle.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112         \{}
+\DoxyCodeLine{00113             \textcolor{comment}{// Delegate to the embedded rectangle's output mechanism}}
+\DoxyCodeLine{00114             \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.print();}
+\DoxyCodeLine{00115         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGoodSquare_a06b56adcb5f00340eaa871e39031c3eb}\label{classGoodSquare_a06b56adcb5f00340eaa871e39031c3eb}} 
+\index{GoodSquare@{GoodSquare}!setSize@{setSize}}
+\index{setSize@{setSize}!GoodSquare@{GoodSquare}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Good\+Square\+::set\+Size (\begin{DoxyParamCaption}\item[{double}]{new\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Rectangle_8cc_source_l00102}{102}} of file \mbox{\hyperlink{Rectangle_8cc_source}{Rectangle.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103         \{ \textcolor{comment}{// An adpator function, this ensures that constraints}}
+\DoxyCodeLine{00104           \textcolor{comment}{// on the square are always satisfied}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106             \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.setHeight(newSize);}
+\DoxyCodeLine{00107             \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.setWidth(newSize);}
+\DoxyCodeLine{00108         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/Rectangle.\+cc\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{Rectangle_8cc}{Rectangle.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestNonlinearSolver_8cc">
+<title>tests/TestNonlinearSolver.cc File Reference</title>
+<indexterm><primary>tests/TestNonlinearSolver.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/NonlinearSolver.hh&gt;
+</programlisting>Include dependency graph for TestNonlinearSolver.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestNonlinearSolver_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_TestNonlinearSolver_8cc_1a843a3918b1381a4fe89fc6724199d7b7">Func1</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_TestNonlinearSolver_8cc_1ad00503aecf167d4637c74f34aea3b74b">DerivativeFunc1</link> (double x)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestNonlinearSolver_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestNonlinearSolver_8cc_1ad00503aecf167d4637c74f34aea3b74b"/>    <section>
+    <title>DerivativeFunc1()</title>
+<indexterm><primary>DerivativeFunc1</primary><secondary>TestNonlinearSolver.cc</secondary></indexterm>
+<indexterm><primary>TestNonlinearSolver.cc</primary><secondary>DerivativeFunc1</secondary></indexterm>
+<para><computeroutput>double DerivativeFunc1 (double x)</computeroutput></para><para>
+Definition at line 17 of file TestNonlinearSolver.cc.</para>
+<programlisting>18 {
+19 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Just&#32;the&#32;derivative,&#32;need&#32;for&#32;Newton&apos;s&#32;method</emphasis>
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(0.5&#32;*&#32;x)&#32;-&#32;<link linkend="_Complex_8cc_1af369383fdcdf6ec5e3a01b215e180c83">std::cos</link>(x);
+21 }
+</programlisting>    </section><anchor xml:id="_TestNonlinearSolver_8cc_1a843a3918b1381a4fe89fc6724199d7b7"/>    <section>
+    <title>Func1()</title>
+<indexterm><primary>Func1</primary><secondary>TestNonlinearSolver.cc</secondary></indexterm>
+<indexterm><primary>TestNonlinearSolver.cc</primary><secondary>Func1</secondary></indexterm>
+<para><computeroutput>double Func1 (double x)</computeroutput></para><para>
+Definition at line 10 of file TestNonlinearSolver.cc.</para>
+<programlisting>11 {
+12 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp&#32;=&#32;0.5&#32;*&#32;x;
+13 
+14 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(tmp*tmp)&#32;-&#32;<link linkend="_Complex_8cc_1af22660b33d2d25b25b83167ef6cf4c5d">std::sin</link>(x);
+15 }
+</programlisting>    </section><anchor xml:id="_TestNonlinearSolver_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestNonlinearSolver.cc</secondary></indexterm>
+<indexterm><primary>TestNonlinearSolver.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 24 of file TestNonlinearSolver.cc.</para>
+<programlisting>25 {
+26 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Tell&#32;where&#32;to&#32;look&#32;for&#32;solvers,&#32;in&#32;a&#32;namespace</emphasis>
+27 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespaceNS__NonlinearSolver">NS_NonlinearSolver</link>;
+28 
+29 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;1.&#32;Bisection&#32;method</emphasis>
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initial&#32;interval</emphasis>
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a&#32;=&#32;1.52;
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;2.0;
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;In&#32;this&#32;version&#32;all&#32;data&#32;is&#32;public;&#32;in&#32;a&#32;later&#32;version</emphasis>
+36 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;make&#32;it&#32;private</emphasis>
+37 &#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver">BisectionSolver</link>&#32;bs;
+38 &#32;&#32;&#32;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>&#32;=&#32;<link linkend="_TestNonlinearSolver_8cc_1a843a3918b1381a4fe89fc6724199d7b7">Func1</link>;
+39 &#32;&#32;&#32;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a116ed2c5cf4900e25c80fa11a658dd25">a</link>&#32;=&#32;a;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1af5fb4bdea0feb69c4929b9f1037b4dfa">b</link>&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>;
+40 &#32;&#32;&#32;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba">tol</link>&#32;=&#32;0.0001;
+41 
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;result&#32;=&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a92b3d483b030f4f4e7014f8097dfd3db">solve</link>();
+43 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Bisection:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;result&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a8aa6679debb70886fdfaac7aae6d25aa">accuracy</link>()&#32;&lt;&lt;&#32;std::endl;
+44 
+45 &#32;&#32;&#32;&#32;bs.<link linkend="_classNS__NonlinearSolver_1_1BisectionSolver_1a1bd5e1ca8a817f8443cd4c510fcaf3af">printStatistics</link>();
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Newton&#32;Method</emphasis>
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;initialGuess&#32;=&#32;1.2;
+49 &#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1NewtonRaphsonSolver">NewtonRaphsonSolver</link>&#32;nr(initialGuess);
+50 &#32;&#32;&#32;&#32;nr.myF&#32;=&#32;<link linkend="_TestNonlinearSolver_8cc_1a843a3918b1381a4fe89fc6724199d7b7">Func1</link>;
+51 &#32;&#32;&#32;&#32;nr.derivative&#32;=&#32;<link linkend="_TestNonlinearSolver_8cc_1ad00503aecf167d4637c74f34aea3b74b">DerivativeFunc1</link>;
+52 &#32;&#32;&#32;&#32;nr.tol&#32;=&#32;0.0001;
+53 
+54 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;resultNR&#32;=&#32;nr.solve();
+55 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Newton&#32;Raphson:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;resultNR&#32;&lt;&lt;&#32;std::endl;
+56 
+57 &#32;&#32;&#32;&#32;nr.printStatistics();
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Secant&#32;method</emphasis>
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;initialGuess0&#32;=&#32;1.2;
+61 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;initialGuess1&#32;=&#32;1.6;
+62 
+63 &#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1SecantMethodSolver">SecantMethodSolver</link>&#32;sm(initialGuess0,&#32;initialGuess1,&#32;<link linkend="_TestNonlinearSolver_8cc_1a843a3918b1381a4fe89fc6724199d7b7">Func1</link>);
+64 &#32;&#32;&#32;&#32;sm.tol&#32;=&#32;0.0001;
+65 
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;resultSM=&#32;sm.solve();
+67 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Secant&#32;Method:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;resultSM&#32;&lt;&lt;&#32;std::endl;
+68 
+69 &#32;&#32;&#32;&#32;sm.printStatistics();
+70 
+71 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Steffensen&apos;s&#32;method\n&quot;</emphasis>;
+72 
+73 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Steffensen&apos;s&#32;method</emphasis>
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;guess&#32;=&#32;1.4;
+75 
+76 &#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1SteffensensSolver">SteffensensSolver</link>&#32;steff(guess,&#32;<link linkend="_TestNonlinearSolver_8cc_1a843a3918b1381a4fe89fc6724199d7b7">Func1</link>);
+77 &#32;&#32;&#32;&#32;steff.tol&#32;=&#32;0.01;
+78 
+79 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;resultST=&#32;steff.solve();
+80 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Steffensen&apos;s&#32;Method:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;resultST&#32;&lt;&lt;&#32;std::endl;
+81 
+82 &#32;&#32;&#32;&#32;steff.printStatistics();
+83 
+84 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Finished\n&quot;</emphasis>;
+85 
+86 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+87 }
+</programlisting></section>
+</section>
+</section>

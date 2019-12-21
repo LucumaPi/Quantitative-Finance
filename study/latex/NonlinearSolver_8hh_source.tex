@@ -23,26 +23,26 @@
 \DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <cmath>}}
 \DoxyCodeLine{00020 \textcolor{preprocessor}{\#include <cassert>}}
 \DoxyCodeLine{00021 }
-\DoxyCodeLine{00022 \textcolor{keyword}{namespace }NS\_NonlinearSolver}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00022}\mbox{\hyperlink{namespaceNS__NonlinearSolver}{00022}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceNS__NonlinearSolver}{NS\_NonlinearSolver}}}
 \DoxyCodeLine{00023 \{}
 \DoxyCodeLine{00024 }
 \DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00025}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{00025}} \textcolor{keyword}{class }\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}}
 \DoxyCodeLine{00026 \{}
 \DoxyCodeLine{00027 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028         double (*myF)(\textcolor{keywordtype}{double} x);    \textcolor{comment}{// Function whose root we want}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00028}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{00028}}         double (*\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}})(\textcolor{keywordtype}{double} x); \textcolor{comment}{// Function whose root we want}}
 \DoxyCodeLine{00029         }
-\DoxyCodeLine{00030         \textcolor{keywordtype}{double} tol;                 \textcolor{comment}{// Desired accuracy}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00030}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{00030}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}};                  \textcolor{comment}{// Desired accuracy}}
 \DoxyCodeLine{00031 }
-\DoxyCodeLine{00032         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}() \{\}}
-\DoxyCodeLine{00033         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}\& n2) \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this};\}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00032}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_a5371c3342836f79f66b556b2e6dc110f}{00032}}         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_a5371c3342836f79f66b556b2e6dc110f}{NonlinearSolver}}() \{\}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00033}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_adf16f5f92db6f555e4352f26673dd8f5}{00033}}         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}\& \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_adf16f5f92db6f555e4352f26673dd8f5}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}\& n2) \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this};\}}
 \DoxyCodeLine{00034 }
 \DoxyCodeLine{00035 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00036         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}(\textcolor{keywordtype}{double} (*\textcolor{keyword}{function})(\textcolor{keywordtype}{double}))}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00036}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_a9fefab630c3d0243c1b98893baa56711}{00036}}         \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_a9fefab630c3d0243c1b98893baa56711}{NonlinearSolver}}(\textcolor{keywordtype}{double} (*\textcolor{keyword}{function})(\textcolor{keywordtype}{double}))}
 \DoxyCodeLine{00037         \{}
 \DoxyCodeLine{00038 }
 \DoxyCodeLine{00039         \}}
 \DoxyCodeLine{00040 }
-\DoxyCodeLine{00041         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} solve() = 0;}
+\DoxyCodeLine{00041         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_a7336902d70e3ae47194eb92abac04333}{solve}}() = 0;}
 \DoxyCodeLine{00042 }
 \DoxyCodeLine{00043 \};}
 \DoxyCodeLine{00044 }
@@ -51,8 +51,8 @@
 \DoxyCodeLine{00047 \textcolor{keyword}{public}:}
 \DoxyCodeLine{00048 }
 \DoxyCodeLine{00049         \textcolor{comment}{// Interval where we seek a solution}}
-\DoxyCodeLine{00050         \textcolor{keywordtype}{double} a;}
-\DoxyCodeLine{00051         \textcolor{keywordtype}{double} b;}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00050}\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a116ed2c5cf4900e25c80fa11a658dd25}{00050}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a116ed2c5cf4900e25c80fa11a658dd25}{a}};}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00051}\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_af5fb4bdea0feb69c4929b9f1037b4dfa}{00051}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_af5fb4bdea0feb69c4929b9f1037b4dfa}{b}};}
 \DoxyCodeLine{00052     }
 \DoxyCodeLine{00053 \textcolor{keyword}{private}:}
 \DoxyCodeLine{00054         \textcolor{comment}{// Redundant data but useful as a log and postprocessing}}
@@ -62,23 +62,23 @@
 \DoxyCodeLine{00058         \textcolor{keywordtype}{double} midPoint;}
 \DoxyCodeLine{00059 \textcolor{keyword}{public}: }
 \DoxyCodeLine{00060 }
-\DoxyCodeLine{00061     \textcolor{keywordtype}{double} solve() }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00061}\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a92b3d483b030f4f4e7014f8097dfd3db}{00061}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a92b3d483b030f4f4e7014f8097dfd3db}{solve}}() }
 \DoxyCodeLine{00062     \{}
-\DoxyCodeLine{00063         \textcolor{keywordtype}{double} aPrevious = a; \textcolor{keywordtype}{double} bPrevious = b;}
-\DoxyCodeLine{00064         n = 1;}
-\DoxyCodeLine{00065         myTol = b -\/ a;  \textcolor{comment}{// Variable tolerance, starts at main interval}}
+\DoxyCodeLine{00063         \textcolor{keywordtype}{double} aPrevious = \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a116ed2c5cf4900e25c80fa11a658dd25}{a}}; \textcolor{keywordtype}{double} bPrevious = \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_af5fb4bdea0feb69c4929b9f1037b4dfa}{b}};}
+\DoxyCodeLine{00064         \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 1;}
+\DoxyCodeLine{00065         myTol = \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_af5fb4bdea0feb69c4929b9f1037b4dfa}{b}} -\/ \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a116ed2c5cf4900e25c80fa11a658dd25}{a}};    \textcolor{comment}{// Variable tolerance, starts at main interval}}
 \DoxyCodeLine{00066 L1:}
 \DoxyCodeLine{00067         midPoint = 0.5 * (aPrevious + bPrevious);}
 \DoxyCodeLine{00068         }
 \DoxyCodeLine{00069         \textcolor{comment}{// Default interval}}
-\DoxyCodeLine{00070         \textcolor{keywordflow}{if} (myF(midPoint) <= 0.0)}
+\DoxyCodeLine{00070         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(midPoint) <= 0.0)}
 \DoxyCodeLine{00071         \{}
 \DoxyCodeLine{00072 }
 \DoxyCodeLine{00073             aCurrent = midPoint;}
 \DoxyCodeLine{00074             bCurrent = bPrevious;}
 \DoxyCodeLine{00075         \}}
 \DoxyCodeLine{00076 }
-\DoxyCodeLine{00077         \textcolor{keywordflow}{if} (myF(midPoint) > 0.0)}
+\DoxyCodeLine{00077         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(midPoint) > 0.0)}
 \DoxyCodeLine{00078         \{}
 \DoxyCodeLine{00079             aCurrent = aPrevious;}
 \DoxyCodeLine{00080             bCurrent = midPoint;}
@@ -89,9 +89,9 @@
 \DoxyCodeLine{00085 }
 \DoxyCodeLine{00086         aPrevious = aCurrent;}
 \DoxyCodeLine{00087         bPrevious = bCurrent;}
-\DoxyCodeLine{00088         n++;}
+\DoxyCodeLine{00088         \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++;}
 \DoxyCodeLine{00089 }
-\DoxyCodeLine{00090         \textcolor{keywordflow}{if} (myTol > tol) \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00090         \textcolor{keywordflow}{if} (myTol > \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}}) \textcolor{keywordflow}{goto} L1;}
 \DoxyCodeLine{00091 }
 \DoxyCodeLine{00092 }
 \DoxyCodeLine{00093         \textcolor{comment}{// Now have answer}}
@@ -100,30 +100,30 @@
 \DoxyCodeLine{00096         \textcolor{keywordflow}{return} midPoint;}
 \DoxyCodeLine{00097     \}}
 \DoxyCodeLine{00098 }
-\DoxyCodeLine{00099     \textcolor{keywordtype}{double} accuracy()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00099}\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a8aa6679debb70886fdfaac7aae6d25aa}{00099}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a8aa6679debb70886fdfaac7aae6d25aa}{accuracy}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{00100 \textcolor{keyword}{    }\{}
 \DoxyCodeLine{00101         \textcolor{comment}{// How close is our solution?}}
 \DoxyCodeLine{00102 }
 \DoxyCodeLine{00103         \textcolor{keywordflow}{return} myTol;}
 \DoxyCodeLine{00104     \}}
 \DoxyCodeLine{00105 }
-\DoxyCodeLine{00106     \textcolor{keywordtype}{void} printStatistics() }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00106}\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a1bd5e1ca8a817f8443cd4c510fcaf3af}{00106}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a1bd5e1ca8a817f8443cd4c510fcaf3af}{printStatistics}}() }
 \DoxyCodeLine{00107     \{}
 \DoxyCodeLine{00108 }
-\DoxyCodeLine{00109         \textcolor{keywordtype}{double} m = solve();}
+\DoxyCodeLine{00109         \textcolor{keywordtype}{double} m = \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a92b3d483b030f4f4e7014f8097dfd3db}{solve}}();}
 \DoxyCodeLine{00110 }
 \DoxyCodeLine{00111         std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Bisection method\(\backslash\)n"};}
 \DoxyCodeLine{00112         std::cout << \textcolor{stringliteral}{"Interval containing value: ("} << aCurrent << \textcolor{stringliteral}{","}}
 \DoxyCodeLine{00113                                             << bCurrent << \textcolor{stringliteral}{")\(\backslash\)n"};}
 \DoxyCodeLine{00114         std::cout << \textcolor{stringliteral}{"Value: "} << m << std::endl;}
-\DoxyCodeLine{00115         std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << n << std::endl;}
-\DoxyCodeLine{00116         std::cout << \textcolor{stringliteral}{"Number of iterations (scheduled): "} << estimate() << std::endl;}
+\DoxyCodeLine{00115         std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} << std::endl;}
+\DoxyCodeLine{00116         std::cout << \textcolor{stringliteral}{"Number of iterations (scheduled): "} << \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a2b63b5bd50b9a316b68b0c3253685630}{estimate}}() << std::endl;}
 \DoxyCodeLine{00117     \}}
 \DoxyCodeLine{00118 }
-\DoxyCodeLine{00119     \textcolor{keywordtype}{long} estimate()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00119}\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a2b63b5bd50b9a316b68b0c3253685630}{00119}}     \textcolor{keywordtype}{long} \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a2b63b5bd50b9a316b68b0c3253685630}{estimate}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{00120 \textcolor{keyword}{    }\{ \textcolor{comment}{// Estimates the number of needed iterations}}
 \DoxyCodeLine{00121 }
-\DoxyCodeLine{00122             \textcolor{keywordtype}{double} tmp = (b -\/ a) / tol;}
+\DoxyCodeLine{00122             \textcolor{keywordtype}{double} tmp = (\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_af5fb4bdea0feb69c4929b9f1037b4dfa}{b}} -\/ \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a116ed2c5cf4900e25c80fa11a658dd25}{a}}) / \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}};}
 \DoxyCodeLine{00123             \textcolor{keywordtype}{double} val = 1.0 + (std::log(tmp)/std::log(2.0));}
 \DoxyCodeLine{00124             }
 \DoxyCodeLine{00125             \textcolor{keywordflow}{return} std::ceil(val);}
@@ -134,41 +134,41 @@
 \DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00130}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver}{00130}} \textcolor{keyword}{class }\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver}{NewtonRaphsonSolver}} : \textcolor{keyword}{public} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver}{NonlinearSolver}}}
 \DoxyCodeLine{00131 \{}
 \DoxyCodeLine{00132 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00133         double (*derivative)(\textcolor{keywordtype}{double} x); \textcolor{comment}{// Derivative of unknown function}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00133}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_aabfba87ff6919e8b6e1808e66e0b64d2}{00133}}         double (*\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_aabfba87ff6919e8b6e1808e66e0b64d2}{derivative}})(\textcolor{keywordtype}{double} x); \textcolor{comment}{// Derivative of unknown function}}
 \DoxyCodeLine{00134 }
 \DoxyCodeLine{00135 \textcolor{keyword}{private}:}
 \DoxyCodeLine{00136         \textcolor{keywordtype}{double} x0;      \textcolor{comment}{// Initial guess}}
 \DoxyCodeLine{00137         \textcolor{keywordtype}{double} xCurrent;}
 \DoxyCodeLine{00138         \textcolor{keywordtype}{int} n;          \textcolor{comment}{// Number of steps taken until now}}
 \DoxyCodeLine{00139 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00140     \mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver}{NewtonRaphsonSolver}}(\textcolor{keywordtype}{double} guess)}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00140}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_a8c522cde713e284c68b237707bfa55e4}{00140}}     \mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_a8c522cde713e284c68b237707bfa55e4}{NewtonRaphsonSolver}}(\textcolor{keywordtype}{double} guess)}
 \DoxyCodeLine{00141     \{}
 \DoxyCodeLine{00142         x0 = guess;}
 \DoxyCodeLine{00143     \}}
 \DoxyCodeLine{00144 }
-\DoxyCodeLine{00145     \textcolor{keywordtype}{double} solve() }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00145}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_ac4348d68da383f040c44279233612bd0}{00145}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_ac4348d68da383f040c44279233612bd0}{solve}}() }
 \DoxyCodeLine{00146     \{}
 \DoxyCodeLine{00147         \textcolor{keywordtype}{double} xPrevious = x0;}
 \DoxyCodeLine{00148         \textcolor{keywordtype}{double} hn = 100.0;}
-\DoxyCodeLine{00149         n = 1;}
+\DoxyCodeLine{00149         \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 1;}
 \DoxyCodeLine{00150 L1:}
-\DoxyCodeLine{00151         hn = -\/ myF(xPrevious) / derivative(xPrevious);}
+\DoxyCodeLine{00151         hn = -\/ \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xPrevious) / \mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_aabfba87ff6919e8b6e1808e66e0b64d2}{derivative}}(xPrevious);}
 \DoxyCodeLine{00152         xCurrent = xPrevious + hn;}
 \DoxyCodeLine{00153 }
 \DoxyCodeLine{00154         xPrevious = xCurrent;}
-\DoxyCodeLine{00155         n++;}
-\DoxyCodeLine{00156         \textcolor{keywordflow}{if} (fabs(hn) > tol) \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00155         \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++;}
+\DoxyCodeLine{00156         \textcolor{keywordflow}{if} (fabs(hn) > \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}}) \textcolor{keywordflow}{goto} L1;}
 \DoxyCodeLine{00157 }
 \DoxyCodeLine{00158         \textcolor{keywordflow}{return} xCurrent;}
 \DoxyCodeLine{00159 }
 \DoxyCodeLine{00160     \}}
 \DoxyCodeLine{00161 }
-\DoxyCodeLine{00162     \textcolor{keywordtype}{void} printStatistics()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00162}\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_a5cde6338212acb49f6d3b63448627970}{00162}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_a5cde6338212acb49f6d3b63448627970}{printStatistics}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{00163 \textcolor{keyword}{    }\{}
 \DoxyCodeLine{00164 }
 \DoxyCodeLine{00165         std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Newton Raphson method\(\backslash\)n"};}
 \DoxyCodeLine{00166         std::cout << \textcolor{stringliteral}{"Value: "} << xCurrent << std::endl;}
-\DoxyCodeLine{00167         std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << n << std::endl;}
+\DoxyCodeLine{00167         std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} << std::endl;}
 \DoxyCodeLine{00168     \}}
 \DoxyCodeLine{00169 }
 \DoxyCodeLine{00170 \};}
@@ -188,30 +188,30 @@
 \DoxyCodeLine{00184         \textcolor{keywordtype}{long} n;             \textcolor{comment}{// Number of iterations taken}}
 \DoxyCodeLine{00185 }
 \DoxyCodeLine{00186 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00187         \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver}{SecantMethodSolver}}(\textcolor{keywordtype}{double} guessZero, \textcolor{keywordtype}{double} guessOne,}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00187}\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_a3efbb4b75f28b61edcd72dcc9d6a0906}{00187}}         \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_a3efbb4b75f28b61edcd72dcc9d6a0906}{SecantMethodSolver}}(\textcolor{keywordtype}{double} guessZero, \textcolor{keywordtype}{double} guessOne,}
 \DoxyCodeLine{00188                                 \textcolor{keywordtype}{double} (*myFunction)(\textcolor{keywordtype}{double} x))}
 \DoxyCodeLine{00189         \{}
 \DoxyCodeLine{00190             x0 = guessZero;}
 \DoxyCodeLine{00191             x1 = guessOne;}
-\DoxyCodeLine{00192             myF = myFunction;}
+\DoxyCodeLine{00192             \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}} = myFunction;}
 \DoxyCodeLine{00193 }
 \DoxyCodeLine{00194             xOld = x0; xNew = x1; xCurrent = xNew;}
-\DoxyCodeLine{00195             fOld = myF(xOld); fNew = myF(xNew);}
+\DoxyCodeLine{00195             fOld = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xOld); fNew = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xNew);}
 \DoxyCodeLine{00196         \}}
 \DoxyCodeLine{00197 }
-\DoxyCodeLine{00198         \textcolor{keywordtype}{double} solve() }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00198}\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}{00198}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}{solve}}() }
 \DoxyCodeLine{00199         \{}
 \DoxyCodeLine{00200             \textcolor{keywordtype}{double} diff;}
 \DoxyCodeLine{00201             \textcolor{keywordtype}{double} hn; }
-\DoxyCodeLine{00202             n = 1;}
+\DoxyCodeLine{00202             \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 1;}
 \DoxyCodeLine{00203 L1:}
 \DoxyCodeLine{00204             assert(fOld != fNew);}
 \DoxyCodeLine{00205             diff = (xNew -\/ xOld)/(fNew -\/ fOld); \textcolor{comment}{// divide by zero?}}
-\DoxyCodeLine{00206             hn = -\/ myF(xNew) * diff;}
+\DoxyCodeLine{00206             hn = -\/ \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xNew) * diff;}
 \DoxyCodeLine{00207             xCurrent = xNew + hn;}
 \DoxyCodeLine{00208 }
-\DoxyCodeLine{00209             n++;}
-\DoxyCodeLine{00210             \textcolor{keywordflow}{if} (::fabs(hn) <= tol)}
+\DoxyCodeLine{00209             \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++;}
+\DoxyCodeLine{00210             \textcolor{keywordflow}{if} (::fabs(hn) <= \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}})}
 \DoxyCodeLine{00211             \{}
 \DoxyCodeLine{00212 }
 \DoxyCodeLine{00213                 \textcolor{keywordflow}{return} xCurrent;}
@@ -219,17 +219,17 @@
 \DoxyCodeLine{00215 }
 \DoxyCodeLine{00216             \textcolor{comment}{// Update all registers}}
 \DoxyCodeLine{00217             xOld = xNew; xNew = xCurrent; }
-\DoxyCodeLine{00218             fOld = myF(xOld); fNew = myF(xNew);}
+\DoxyCodeLine{00218             fOld = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xOld); fNew = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xNew);}
 \DoxyCodeLine{00219                 }
 \DoxyCodeLine{00220             \textcolor{keywordflow}{goto} L1;}
 \DoxyCodeLine{00221         \}}
 \DoxyCodeLine{00222 }
-\DoxyCodeLine{00223         \textcolor{keywordtype}{void} printStatistics()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00223}\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}{00223}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}{printStatistics}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{00224 \textcolor{keyword}{        }\{}
 \DoxyCodeLine{00225 }
 \DoxyCodeLine{00226             std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Secant method\(\backslash\)n"};}
 \DoxyCodeLine{00227             std::cout << \textcolor{stringliteral}{"Value: "} << xCurrent << std::endl;}
-\DoxyCodeLine{00228             std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << n << std::endl;}
+\DoxyCodeLine{00228             std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} << std::endl;}
 \DoxyCodeLine{00229         \}}
 \DoxyCodeLine{00230 }
 \DoxyCodeLine{00231 \};}
@@ -240,31 +240,31 @@
 \DoxyCodeLine{00236         \textcolor{keywordtype}{double} x0;          \textcolor{comment}{// Initial guess}}
 \DoxyCodeLine{00237 }
 \DoxyCodeLine{00238         \textcolor{keywordtype}{double} xPrevious, xCurrent;}
-\DoxyCodeLine{00239         \textcolor{keywordtype}{long} n;             \textcolor{comment}{// Number of iterations taken}}
+\DoxyCodeLine{00239         \textcolor{keywordtype}{long} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}};                \textcolor{comment}{// Number of iterations taken}}
 \DoxyCodeLine{00240 }
 \DoxyCodeLine{00241 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00242         \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver}{SteffensensSolver}}(\textcolor{keywordtype}{double} guess, \textcolor{keywordtype}{double} (*myFunction)(\textcolor{keywordtype}{double} x))}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00242}\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_a558377d506d5fba156a5a05d4e900cbd}{00242}}         \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_a558377d506d5fba156a5a05d4e900cbd}{SteffensensSolver}}(\textcolor{keywordtype}{double} guess, \textcolor{keywordtype}{double} (*myFunction)(\textcolor{keywordtype}{double} x))}
 \DoxyCodeLine{00243         \{}
 \DoxyCodeLine{00244             x0 = guess; xPrevious = x0;}
-\DoxyCodeLine{00245             myF = myFunction;}
+\DoxyCodeLine{00245             \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}} = myFunction;}
 \DoxyCodeLine{00246 }
 \DoxyCodeLine{00247         \}}
 \DoxyCodeLine{00248 }
-\DoxyCodeLine{00249         \textcolor{keywordtype}{double} solve() }
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00249}\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}{00249}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}{solve}}() }
 \DoxyCodeLine{00250         \{}
 \DoxyCodeLine{00251             \textcolor{keywordtype}{double} tmp;}
 \DoxyCodeLine{00252             \textcolor{keywordtype}{double} hn; }
-\DoxyCodeLine{00253             n = 1;}
+\DoxyCodeLine{00253             \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 1;}
 \DoxyCodeLine{00254             xPrevious = x0;}
 \DoxyCodeLine{00255 L1:}
-\DoxyCodeLine{00256             tmp = myF(xPrevious);}
-\DoxyCodeLine{00257             hn = (myF(xPrevious + tmp)  -\/ tmp)/ tmp;}
+\DoxyCodeLine{00256             tmp = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xPrevious);}
+\DoxyCodeLine{00257             hn = (\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xPrevious + tmp)  -\/ tmp)/ tmp;}
 \DoxyCodeLine{00258             hn = tmp/hn;}
 \DoxyCodeLine{00259             xCurrent = xPrevious -\/ hn;}
 \DoxyCodeLine{00260             xPrevious = xCurrent;}
 \DoxyCodeLine{00261 }
-\DoxyCodeLine{00262             n++;}
-\DoxyCodeLine{00263             \textcolor{keywordflow}{if} (::fabs(hn) <= tol)}
+\DoxyCodeLine{00262             \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++;}
+\DoxyCodeLine{00263             \textcolor{keywordflow}{if} (::fabs(hn) <= \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}})}
 \DoxyCodeLine{00264             \{}
 \DoxyCodeLine{00265                 \textcolor{keywordflow}{return} xCurrent;}
 \DoxyCodeLine{00266                 }
@@ -273,12 +273,12 @@
 \DoxyCodeLine{00269             \textcolor{keywordflow}{goto} L1;}
 \DoxyCodeLine{00270         \}}
 \DoxyCodeLine{00271 }
-\DoxyCodeLine{00272         \textcolor{keywordtype}{void} printStatistics()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{NonlinearSolver_8hh_source_l00272}\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}{00272}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}{printStatistics}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{00273 \textcolor{keyword}{        }\{}
 \DoxyCodeLine{00274 }
 \DoxyCodeLine{00275             std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Steffensen's method\(\backslash\)n"};}
 \DoxyCodeLine{00276             std::cout << \textcolor{stringliteral}{"Value: "} << xCurrent << std::endl;}
-\DoxyCodeLine{00277             std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << n << std::endl;}
+\DoxyCodeLine{00277             std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} << std::endl;}
 \DoxyCodeLine{00278         \}}
 \DoxyCodeLine{00279 }
 \DoxyCodeLine{00280 \};}

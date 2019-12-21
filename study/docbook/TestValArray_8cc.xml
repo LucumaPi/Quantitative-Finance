@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestValArray_8cc">
+<title>tests/TestValArray.cc File Reference</title>
+<indexterm><primary>tests/TestValArray.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;valarray&gt;
+</programlisting>Include dependency graph for TestValArray.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestValArray_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef std::valarray&lt; double &gt; <link linkend="_TestValArray_8cc_1add6849942318af6b6fcebb983463fd5e">DoubleArray</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class T &gt; </para><para>std::valarray&lt; T &gt; <link linkend="_TestValArray_8cc_1a8f09d30f410be3925decb30560301b1b">multiply</link> (const std::valarray&lt; T &gt; &amp;vec1, const T &amp;factor)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestValArray_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_TestValArray_8cc_1add6849942318af6b6fcebb983463fd5e"/>    <section>
+    <title>DoubleArray</title>
+<indexterm><primary>DoubleArray</primary><secondary>TestValArray.cc</secondary></indexterm>
+<indexterm><primary>TestValArray.cc</primary><secondary>DoubleArray</secondary></indexterm>
+<para><computeroutput>typedef std::valarray&lt;double&gt; <link linkend="_TestValArray_8cc_1add6849942318af6b6fcebb983463fd5e">DoubleArray</link></computeroutput></para><para>
+Definition at line 24 of file TestValArray.cc.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestValArray_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestValArray.cc</secondary></indexterm>
+<indexterm><primary>TestValArray.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 26 of file TestValArray.cc.</para>
+<programlisting>27 {
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;
+29 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Give&#32;size:&#32;&quot;</emphasis>;
+30 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>;
+31 &#32;&#32;&#32;&#32;
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;factor&#32;=&#32;0.5;
+33 
+34 &#32;&#32;&#32;&#32;<link linkend="_TestValArray_8cc_1add6849942318af6b6fcebb983463fd5e">DoubleArray</link>&#32;inputArray(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>);
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initialisation&#32;of&#32;input&#32;array</emphasis>
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;inputArray.size();&#32;j++)
+38 &#32;&#32;&#32;&#32;{
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputArray[j]&#32;=&#32;double&#32;(j+1);&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Simple&#32;values</emphasis>
+40 &#32;&#32;&#32;&#32;}
+41 &#32;&#32;&#32;&#32;<link linkend="_TestValArray_8cc_1add6849942318af6b6fcebb983463fd5e">DoubleArray</link>&#32;outputArray&#32;=&#32;<link linkend="_TestValArray_8cc_1a8f09d30f410be3925decb30560301b1b">multiply</link>(inputArray,&#32;factor);
+42 
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;outputArray.size();&#32;i++)
+44 &#32;&#32;&#32;&#32;{
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;outputArray[i]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+46 &#32;&#32;&#32;&#32;}
+47 
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+49 }
+</programlisting>    </section><anchor xml:id="_TestValArray_8cc_1a8f09d30f410be3925decb30560301b1b"/>    <section>
+    <title>multiply()</title>
+<indexterm><primary>multiply</primary><secondary>TestValArray.cc</secondary></indexterm>
+<indexterm><primary>TestValArray.cc</primary><secondary>multiply</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>std::valarray&lt;T&gt; multiply (const std::valarray&lt; T &gt; &amp; vec1, const T &amp; factor)</computeroutput></para><para>
+Definition at line 10 of file TestValArray.cc.</para>
+<programlisting>11 {&#32;<emphasis role="comment">//&#32;Multiply&#32;a&#32;vector&#32;by&#32;a&#32;scalar&#32;factor</emphasis>
+12 
+13 &#32;&#32;&#32;&#32;std::valarray&lt;T&gt;&#32;result&#32;(vec1.size());&#32;<emphasis role="comment">//&#32;Same&#32;size</emphasis>
+14 
+15 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;result.size();&#32;j++)
+16 &#32;&#32;&#32;&#32;{
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[j]&#32;=&#32;vec1[j]&#32;*&#32;factor;
+18 &#32;&#32;&#32;&#32;}
+19 
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+21 }
+</programlisting></section>
+</section>
+</section>

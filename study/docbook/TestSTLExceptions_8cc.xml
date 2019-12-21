@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSTLExceptions_8cc">
+<title>tests/TestSTLExceptions.cc File Reference</title>
+<indexterm><primary>tests/TestSTLExceptions.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;exception&gt;
+#include &lt;string&gt;
+</programlisting>Include dependency graph for TestSTLExceptions.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSTLExceptions_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestSTLExceptions_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSTLExceptions_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSTLExceptions.cc</secondary></indexterm>
+<indexterm><primary>TestSTLExceptions.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 13 of file TestSTLExceptions.cc.</para>
+<programlisting>14 {
+15 
+16 
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>
+18 &#32;&#32;&#32;&#32;{
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::overflow_error(std::string(<emphasis role="stringliteral">&quot;first&quot;</emphasis>));
+20 &#32;&#32;&#32;&#32;}&#32;&#32;&#32;
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::runtime_error&amp;&#32;e)
+23 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;This&#32;gets&#32;caught</emphasis>
+24 
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;e.what()&#32;&lt;&lt;&#32;std::endl;
+26 
+27 &#32;&#32;&#32;&#32;}
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::exception&amp;&#32;e)
+29 &#32;&#32;&#32;&#32;{
+30 
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;e.what()&#32;&lt;&lt;&#32;std::endl;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+33 &#32;&#32;&#32;&#32;}
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+36 }
+</programlisting></section>
+</section>
+</section>

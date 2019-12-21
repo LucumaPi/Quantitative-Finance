@@ -1,0 +1,103 @@
+\hypertarget{ComplexArray_8cc_source}{}\doxysection{Complex\+Array.\+cc}
+\label{ComplexArray_8cc_source}\index{src/ComplexArray.cc@{src/ComplexArray.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ComplexArray.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Simple templated ComplexArray class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 2005-\/4-\/2 DD kick-\/off code}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// (C) Datasim Education BV  1995-\/2006}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#ifndef ComplexArray\_CC}}
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00010}\mbox{\hyperlink{ComplexArray_8cc_a89ae3564e631ded6ab13d35e5f37b576}{00010}} \textcolor{preprocessor}{\#define ComplexArray\_CC}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ComplexArray_8hh}{duffy/ComplexArray.hh}}>}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00015 ComplexArray::ComplexArray()}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     \textcolor{comment}{// Create an ComplexArray with default size == 1}}
+\DoxyCodeLine{00018     arr = \textcolor{keyword}{new} \mbox{\hyperlink{classComplex}{Complex}}[1];}
+\DoxyCodeLine{00019     size = 1;}
+\DoxyCodeLine{00020 \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{comment}{// Constructor with size}}
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00023}\mbox{\hyperlink{classComplexArray_a86e1e6f77ebe1fec2da3e49c8a698f51}{00023}} ComplexArray::ComplexArray(\textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025     arr = \textcolor{keyword}{new} \mbox{\hyperlink{classComplex}{Complex}}[size];}
+\DoxyCodeLine{00026     size = size;}
+\DoxyCodeLine{00027 \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00030}\mbox{\hyperlink{classComplexArray_a41698990e7798098a8904393fef81f8b}{00030}} ComplexArray::ComplexArray(\textcolor{keyword}{const} \mbox{\hyperlink{classComplexArray}{ComplexArray}}\& source)}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032     \textcolor{comment}{// Deep copy source}}
+\DoxyCodeLine{00033     size = source.size;}
+\DoxyCodeLine{00034     arr = \textcolor{keyword}{new} \mbox{\hyperlink{classComplex}{Complex}}[size];}
+\DoxyCodeLine{00035     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++) arr[i] = source.arr[i];}
+\DoxyCodeLine{00036 \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00039}\mbox{\hyperlink{classComplexArray_ab43d4afa961ad46b074d93941ca2a97f}{00039}} \mbox{\hyperlink{classComplexArray_ab43d4afa961ad46b074d93941ca2a97f}{ComplexArray::~ComplexArray}}()}
+\DoxyCodeLine{00040 \{}
+\DoxyCodeLine{00041     \textcolor{keyword}{delete}[] arr;}
+\DoxyCodeLine{00042 \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044 \textcolor{comment}{// Get the size}}
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00045}\mbox{\hyperlink{classComplexArray_a9b9f180503f0272aedeb0c6bf7a86c2b}{00045}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classComplexArray_a9b9f180503f0272aedeb0c6bf7a86c2b}{ComplexArray::Size}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00046 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00050}\mbox{\hyperlink{classComplexArray_ab9cefe61064be624d5237baf9f2b4507}{00050}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classComplexArray_ab9cefe61064be624d5237baf9f2b4507}{ComplexArray::MinIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00051 \textcolor{keyword}{}\{ \textcolor{comment}{// Smallest index in array}}
+\DoxyCodeLine{00052     }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00054 \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00056}\mbox{\hyperlink{classComplexArray_ab5237189531cc3d8e67810b0b1143e01}{00056}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classComplexArray_ab5237189531cc3d8e67810b0b1143e01}{ComplexArray::MaxIndex}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00057 \textcolor{keyword}{}\{ \textcolor{comment}{// Largest index in array}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} size -\/ 1;}
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063 \textcolor{comment}{// Index operator for const ComplexArrays}}
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00064}\mbox{\hyperlink{classComplexArray_a8536da65b076aed2bfbb97c78679d245}{00064}} \textcolor{keyword}{const} \mbox{\hyperlink{classComplex}{Complex}}\& \mbox{\hyperlink{classComplexArray_a8536da65b076aed2bfbb97c78679d245}{ComplexArray::operator[]}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00065 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00066     \textcolor{comment}{// Simple bounds checking. Should throw an exception.}}
+\DoxyCodeLine{00067     \textcolor{comment}{// if (index<0 || index>=size) return arr[0];}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \textcolor{keywordflow}{return} arr[index];}
+\DoxyCodeLine{00070 \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 \textcolor{comment}{// Index operator for non const ComplexArrays}}
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00073}\mbox{\hyperlink{classComplexArray_a736eedc4dc6ad8629342ef8f2a7b3deb}{00073}} \mbox{\hyperlink{classComplex}{Complex}}\& \mbox{\hyperlink{classComplexArray_a8536da65b076aed2bfbb97c78679d245}{ComplexArray::operator[]}}(\textcolor{keywordtype}{int} index)}
+\DoxyCodeLine{00074 \{}
+\DoxyCodeLine{00075     \textcolor{comment}{// Simple bounds checking. Should throw an exception.}}
+\DoxyCodeLine{00076     \textcolor{comment}{//  if (index<0 || index>=size) return arr[0];}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{keywordflow}{return} arr[index];}
+\DoxyCodeLine{00079 \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081 \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{\Hypertarget{ComplexArray_8cc_source_l00082}\mbox{\hyperlink{classComplexArray_a5ffde5253af5abdab97ac58d6ff7e1f7}{00082}} \mbox{\hyperlink{classComplexArray}{ComplexArray}}\& \mbox{\hyperlink{classComplexArray_a5ffde5253af5abdab97ac58d6ff7e1f7}{ComplexArray::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classComplexArray}{ComplexArray}}\& source)}
+\DoxyCodeLine{00083 \{}
+\DoxyCodeLine{00084     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00085     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{comment}{// Delete old memory}}
+\DoxyCodeLine{00088     \textcolor{keyword}{delete}[] arr;}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{comment}{// Deep copy source}}
+\DoxyCodeLine{00091     size = source.size;}
+\DoxyCodeLine{00092     arr = \textcolor{keyword}{new} \mbox{\hyperlink{classComplex}{Complex}}[size];}
+\DoxyCodeLine{00093     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++) arr[i] = source.arr[i];}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00096 \}}
+\DoxyCodeLine{00097 \textcolor{preprocessor}{\#endif // ComplexArray\_CC}}
+
+\end{DoxyCode}

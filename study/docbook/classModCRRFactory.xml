@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classModCRRFactory">
 <title>ModCRRFactory Class Reference</title>
 <indexterm><primary>ModCRRFactory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;LatticeFactory.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for ModCRRFactory:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,39 @@ Collaboration diagram for ModCRRFactory:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classModCRRFactory_1a696757239e4e08ad9d0a14f6e5c22fd7"/><emphasis role="strong">ModCRRFactory</emphasis> (double s, double r, double k, double S, double K, int N)</para>
+            <listitem><para><link linkend="_classModCRRFactory_1a696757239e4e08ad9d0a14f6e5c22fd7">ModCRRFactory</link> (double <link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>, double <link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>, double <link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>, double S, double K, int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 156 of file LatticeFactory.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classModCRRFactory_1a696757239e4e08ad9d0a14f6e5c22fd7"/>    <section>
+    <title>ModCRRFactory()</title>
+<indexterm><primary>ModCRRFactory</primary><secondary>ModCRRFactory</secondary></indexterm>
+<indexterm><primary>ModCRRFactory</primary><secondary>ModCRRFactory</secondary></indexterm>
+<para><computeroutput>ModCRRFactory::ModCRRFactory (double s, double r, double k, double S, double K, int N)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 159 of file LatticeFactory.hh.</para>
+<programlisting>160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classLatticeFactory_1aec3b521318bcaed891fd9d3acb269d7f">LatticeFactory</link>(<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>,&#32;<link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>,&#32;<link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>)
+161 &#32;&#32;&#32;&#32;{
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;KN&#32;=&#32;std::log(<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>/S)&#32;/&#32;double&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>);
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;VN&#32;=&#32;<link linkend="_classLatticeFactory_1a60d65acca1c40e10105e0b45532a2a30">s</link>&#32;*&#32;std::sqrt(<link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>);
+165 
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a7183c1217f75a45b5951dbcc1115782b">u</link>&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(KN&#32;+&#32;VN);
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a99e4419112358eac102e48d31090a79b">d</link>&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(KN&#32;-&#32;VN);
+168 
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classLatticeFactory_1a4552002d494824b82c182b6c3b145a8a">p</link>&#32;=&#32;(<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(<link linkend="_classLatticeFactory_1ae5b47a8cf4ef7e20c0297615837bb592">r</link>&#32;*&#32;<link linkend="_classLatticeFactory_1a418f424cf85a82bf52cd7cfcebc677d3">k</link>)&#32;-&#32;<link linkend="_classLatticeFactory_1a99e4419112358eac102e48d31090a79b">d</link>)&#32;/&#32;(<link linkend="_classLatticeFactory_1a7183c1217f75a45b5951dbcc1115782b">u</link>&#32;-&#32;<link linkend="_classLatticeFactory_1a99e4419112358eac102e48d31090a79b">d</link>);
+170 &#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/LatticeFactory.hh</section>
+include/duffy/<link linkend="_LatticeFactory_8hh">LatticeFactory.hh</link></section>
+</section>

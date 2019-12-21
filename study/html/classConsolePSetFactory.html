@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Introduction to C++ for Financial Engineers: ConsolePSetFactory Class Reference</title>
+<title>Introduction to C++ for Financial Engineers by Daniel J. Duffy.: ConsolePSetFactory Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo-fl-white.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Introduction to C++ for Financial Engineers
+   <div id="projectname">Introduction to C++ for Financial Engineers by Daniel J. Duffy.
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation of book Introduction to C++ for Financial Engineers by Daniel J. Duffy.</div>
+   <div id="projectbrief">Library for loading C++ classes from C the book Introduction to C++ for Financial Engineers</div>
   </td>
  </tr>
  </tbody>
@@ -77,6 +77,8 @@ $(function() {
 <div class="title">ConsolePSetFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="PSetCreators_8hh_source.html">PSetCreators.hh</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ConsolePSetFactory:</div>
 <div class="dyncontent">
@@ -98,14 +100,75 @@ Collaboration diagram for ConsolePSetFactory:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6f76ed109fda348775bef6b2756dcf22"><td class="memItemLeft" align="right" valign="top"><a id="a6f76ed109fda348775bef6b2756dcf22"></a>
-<a class="el" href="classSimplePropertySet.html">PSet</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>CreatePSet</b> () const</td></tr>
+<tr class="memitem:a6f76ed109fda348775bef6b2756dcf22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PSetCreators_8hh.html#a8bf722177716a5b2cf455321bc20a560">PSet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsolePSetFactory.html#a6f76ed109fda348775bef6b2756dcf22">CreatePSet</a> () const</td></tr>
 <tr class="separator:a6f76ed109fda348775bef6b2756dcf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="PSetCreators_8hh_source.html#l00021">21</a> of file <a class="el" href="PSetCreators_8hh_source.html">PSetCreators.hh</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6f76ed109fda348775bef6b2756dcf22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f76ed109fda348775bef6b2756dcf22">&#9670;&nbsp;</a></span>CreatePSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="PSetCreators_8hh.html#a8bf722177716a5b2cf455321bc20a560">PSet</a>* ConsolePSetFactory::CreatePSet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classPSetFactory.html#abe4bdfbb13a8e4ac67ca59f7e3824589">PSetFactory</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="PSetCreators_8hh_source.html#l00025">25</a> of file <a class="el" href="PSetCreators_8hh_source.html">PSetCreators.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// Add key value pairs until finished</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::string k; <span class="keywordtype">double</span> v;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Give name of property set: &quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::cin &gt;&gt; k;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classSimplePropertySet.html">PSet</a>* result = <span class="keyword">new</span> <a class="code" href="PSetCreators_8hh.html#a8bf722177716a5b2cf455321bc20a560">PSet</a>(k);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;L1:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Key name (EXIT): &quot;</span>; std::cin &gt;&gt; k; std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (k == std::string(<span class="stringliteral">&quot;EXIT&quot;</span>))</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span>; std::cin &gt;&gt; v; std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        result-&gt;<a class="code" href="classSimplePropertySet.html#a8663619c5669177f23286672ad49ceca">add</a>(k, v);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">goto</span> L1;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/duffy/<a class="el" href="PSetCreators_8hh_source.html">PSetCreators.hh</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassSimplePropertySet_html"><div class="ttname"><a href="classSimplePropertySet.html">SimplePropertySet</a></div><div class="ttdef"><b>Definition:</b> <a href="SimplePropertySet_8hh_source.html#l00024">SimplePropertySet.hh:24</a></div></div>
+<div class="ttc" id="aPSetCreators_8hh_html_a8bf722177716a5b2cf455321bc20a560"><div class="ttname"><a href="PSetCreators_8hh.html#a8bf722177716a5b2cf455321bc20a560">PSet</a></div><div class="ttdeci">SimplePropertySet&lt; std::string, double &gt; PSet</div><div class="ttdef"><b>Definition:</b> <a href="PSetCreators_8hh_source.html#l00012">PSetCreators.hh:12</a></div></div>
+<div class="ttc" id="aclassSimplePropertySet_html_a8663619c5669177f23286672ad49ceca"><div class="ttname"><a href="classSimplePropertySet.html#a8663619c5669177f23286672ad49ceca">SimplePropertySet::add</a></div><div class="ttdeci">void add(const Property&lt; N, V &gt; &amp;p)</div><div class="ttdef"><b>Definition:</b> <a href="SimplePropertySet_8cc_source.html#l00236">SimplePropertySet.cc:236</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

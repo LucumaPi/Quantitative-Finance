@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_Exception2_8cc">
+<title>tests/Exception2.cc File Reference</title>
+<indexterm><primary>tests/Exception2.cc</primary></indexterm>
+<programlisting>#include &lt;cmath&gt;
+#include &quot;../src/MathErr.cc&quot;
+</programlisting>Include dependency graph for Exception2.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="Exception2_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V &gt; </para><para>void <link linkend="_Exception2_8cc_1a5505649500f56eb117210d7ffa7fa45b">print</link> (const std::vector&lt; V &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V &gt; </para><para>V <link linkend="_Exception2_8cc_1a37185c557354c7e617e677999957a52d">sumReciprocals</link> (const std::vector&lt; V &gt; &amp;array)</para>
+</listitem>
+            <listitem><para>int <link linkend="_Exception2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_Exception2_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>Exception2.cc</secondary></indexterm>
+<indexterm><primary>Exception2.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 44 of file Exception2.cc.</para>
+<programlisting>45 {
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;size&#32;=&#32;10;
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;elementsValue&#32;=&#32;3.1415;
+48 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;myArray&#32;(size,&#32;elementsValue);
+49 &#32;&#32;&#32;&#32;myArray[5]&#32;=&#32;0.0;
+50 &#32;&#32;&#32;&#32;<link linkend="_Exception2_8cc_1a5505649500f56eb117210d7ffa7fa45b">print</link>(myArray);
+51 
+52 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;create&#32;a&#32;try/catch&#32;block</emphasis>
+53 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>
+54 &#32;&#32;&#32;&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;answer&#32;=&#32;<link linkend="_Exception2_8cc_1a37185c557354c7e617e677999957a52d">sumReciprocals</link>(myArray);
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Sum&#32;of&#32;reciprocals:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;answer&#32;&lt;&lt;&#32;std::endl;
+57 &#32;&#32;&#32;&#32;}
+58 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<link linkend="_classZeroDivide">ZeroDivide</link>&amp;&#32;exception)
+59 &#32;&#32;&#32;&#32;{
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;exception.<link linkend="_classMathErr_1a08430e27bd7a6a09cfc5debdef3e8a65">print</link>();
+61 &#32;&#32;&#32;&#32;}
+62 
+63 Lab1:&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nGive&#32;a&#32;new&#32;value&#32;for&#32;index&#32;number&#32;5:&quot;</emphasis>;
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;val;
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;val;
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myArray[5]&#32;=&#32;val;
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(val&#32;==&#32;999.0)
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;&#32;<emphasis role="comment">//&#32;Exit&#32;the&#32;program</emphasis>
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+73 
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;answer&#32;=&#32;<link linkend="_Exception2_8cc_1a37185c557354c7e617e677999957a52d">sumReciprocals</link>(myArray);
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Sum&#32;of&#32;reciprocals:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;answer&#32;&lt;&lt;&#32;std::endl;
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<link linkend="_classZeroDivide">ZeroDivide</link>&amp;&#32;exception)
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;exception.<link linkend="_classMathErr_1a08430e27bd7a6a09cfc5debdef3e8a65">print</link>();
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;Lab1;
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+82 &#32;&#32;&#32;&#32;
+83 &#32;&#32;&#32;&#32;
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+85 
+86 }
+</programlisting>    </section><anchor xml:id="_Exception2_8cc_1a5505649500f56eb117210d7ffa7fa45b"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>Exception2.cc</secondary></indexterm>
+<indexterm><primary>Exception2.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>void print (const std::vector&lt; V &gt; &amp; v)</computeroutput></para><para>
+Definition at line 13 of file Exception2.cc.</para>
+<programlisting>14 {
+15 
+16 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nARR:[&quot;</emphasis>;
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;v.size();&#32;j++)
+18 &#32;&#32;&#32;&#32;{
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;v[j]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+20 &#32;&#32;&#32;&#32;
+21 &#32;&#32;&#32;&#32;}
+22 
+23 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+24 }
+</programlisting>    </section><anchor xml:id="_Exception2_8cc_1a37185c557354c7e617e677999957a52d"/>    <section>
+    <title>sumReciprocals()</title>
+<indexterm><primary>sumReciprocals</primary><secondary>Exception2.cc</secondary></indexterm>
+<indexterm><primary>Exception2.cc</primary><secondary>sumReciprocals</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>V sumReciprocals (const std::vector&lt; V &gt; &amp; array)</computeroutput></para><para>
+Definition at line 27 of file Exception2.cc.</para>
+<programlisting>28 {&#32;<emphasis role="comment">//&#32;Sum&#32;of&#32;reciprocals&#32;</emphasis>
+29 &#32;&#32;&#32;&#32;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;array.size();&#32;j++)
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fabs(array[j]&#32;&lt;&#32;0.001))&#32;<emphasis role="comment">//&#32;Magic&#32;number,&#32;for&#32;convenience</emphasis>
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<link linkend="_classZeroDivide">ZeroDivide</link>(<emphasis role="stringliteral">&quot;divide&#32;by&#32;zero&quot;</emphasis>,<emphasis role="stringliteral">&quot;sumReciprocals&quot;</emphasis>,&#32;std::string());
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+37 
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;1.0/array[j];
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+42 }&#32;
+</programlisting></section>
+</section>
+</section>

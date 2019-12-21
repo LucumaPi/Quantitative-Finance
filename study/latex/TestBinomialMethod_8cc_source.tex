@@ -1,0 +1,49 @@
+\hypertarget{TestBinomialMethod_8cc_source}{}\doxysection{Test\+Binomial\+Method.\+cc}
+\label{TestBinomialMethod_8cc_source}\index{tests/TestBinomialMethod.cc@{tests/TestBinomialMethod.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testBinomialMethod.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing the binomial method}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2003-\/2005}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{BinomialMethod_8hh}{duffy/BinomialMethod.hh}}>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Lattice_8hh}{duffy/Lattice.hh}}>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "../src/PayoffNamespace.cc"}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{TestBinomialMethod_8cc_source_l00012}\mbox{\hyperlink{TestBinomialMethod_8cc_a4f588b04e89a733e6e27ba312ce437d3}{00012}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \textcolor{keywordtype}{void} \mbox{\hyperlink{TestBinomialMethod_8cc_a4f588b04e89a733e6e27ba312ce437d3}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& source)}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014     }
+\DoxyCodeLine{00015     \textcolor{keywordflow}{for} (I j = source.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); j <= source.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00016     \{}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018         std::cout << \textcolor{stringliteral}{"\(\backslash\)nBranch Number "} << j << \textcolor{stringliteral}{": ["};}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{for} (I i = source[j].MinIndex(); i <= source[j].\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00020         \{}
+\DoxyCodeLine{00021             std::cout << source[j][i] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00022     }
+\DoxyCodeLine{00023         \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00026             }
+\DoxyCodeLine{00027     \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{TestBinomialMethod_8cc_source_l00031}\mbox{\hyperlink{TestBinomialMethod_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00031}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestBinomialMethod_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacePayoffNamespace}{PayoffNamespace}};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = 10.0;}
+\DoxyCodeLine{00036     \mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}} = 1; \textcolor{comment}{// Euro}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{keyword}{using namespace }\mbox{\hyperlink{classCallPayoff}{CallPayoff}};}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \mbox{\hyperlink{classBinomialMethod}{BinomialMethod}} bn (\mbox{\hyperlink{namespacePayoffNamespace_1_1CallPayoff_a10b9109397cc2cea2ac7cc9c6b224658}{OptPayoff}});}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}

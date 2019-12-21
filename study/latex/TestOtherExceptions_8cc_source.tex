@@ -1,0 +1,71 @@
+\hypertarget{TestOtherExceptions_8cc_source}{}\doxysection{Test\+Other\+Exceptions.\+cc}
+\label{TestOtherExceptions_8cc_source}\index{tests/TestOtherExceptions.cc@{tests/TestOtherExceptions.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestOtherExceptions.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Simple program to test tensors.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 2005-\/12-\/3 DD kick-\/off}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2006-\/4-\/14 DD exceptions}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 2004-\/2006}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{TestOtherExceptions_8cc_source_l00014}\mbox{\hyperlink{classBoundsError}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classBoundsError}{BoundsError}}}
+\DoxyCodeLine{00015 \{ \textcolor{comment}{// Empty exception class}}
+\DoxyCodeLine{00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017 \};}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{TestOtherExceptions_8cc_source_l00019}\mbox{\hyperlink{TestOtherExceptions_8cc_a5d6745a4ce55928507e360ba8b8f54d2}{00019}} \textcolor{keywordtype}{void} \mbox{\hyperlink{TestOtherExceptions_8cc_a5d6745a4ce55928507e360ba8b8f54d2}{getValue}}(\textcolor{keywordtype}{int} j) \textcolor{keywordflow}{throw} (\textcolor{keywordtype}{int}, std::string)}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{if} (j == 0) \textcolor{keywordflow}{throw} int(123);}
+\DoxyCodeLine{00022         \textcolor{keywordflow}{if} (j > 100) \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"out of bounds"});}
+\DoxyCodeLine{00023         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classBoundsError}{BoundsError}}(); \textcolor{comment}{// Throws unexpected if no catch(...)}}
+\DoxyCodeLine{00024 \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{TestOtherExceptions_8cc_source_l00026}\mbox{\hyperlink{TestOtherExceptions_8cc_a5538262279580eb18e3d9d430ac741a5}{00026}} \textcolor{keywordtype}{void} \mbox{\hyperlink{TestOtherExceptions_8cc_a5538262279580eb18e3d9d430ac741a5}{getValueVersionTwo}}(\textcolor{keywordtype}{int} j) \textcolor{keywordflow}{throw} (\textcolor{keywordtype}{int}, std::string)}
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028         \textcolor{keywordflow}{if} (j == 0) \textcolor{keywordflow}{throw} int(123);}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{if} (j > 100) \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"out of bounds"});}
+\DoxyCodeLine{00030         }
+\DoxyCodeLine{00031         \textcolor{comment}{// Re-\/throw}}
+\DoxyCodeLine{00032         \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{\Hypertarget{TestOtherExceptions_8cc_source_l00035}\mbox{\hyperlink{TestOtherExceptions_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00035}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestOtherExceptions_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041         std::cout << \textcolor{stringliteral}{"Value: "};}
+\DoxyCodeLine{00042         \textcolor{keywordtype}{int} val; std::cin >> val;}
+\DoxyCodeLine{00043 \textcolor{comment}{//      getValue(val);}}
+\DoxyCodeLine{00044         \mbox{\hyperlink{TestOtherExceptions_8cc_a5538262279580eb18e3d9d430ac741a5}{getValueVersionTwo}}(val);}
+\DoxyCodeLine{00045     \}   }
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int}\& e)}
+\DoxyCodeLine{00048     \{}
+\DoxyCodeLine{00049         std::cout << \textcolor{stringliteral}{"integer "} << e << std::endl;}
+\DoxyCodeLine{00050         }
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{catch} (std::string\& e)}
+\DoxyCodeLine{00054     \{}
+\DoxyCodeLine{00055         std::cout << e << std::endl;}
+\DoxyCodeLine{00056         }
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{catch} (...)}
+\DoxyCodeLine{00059     \{}
+\DoxyCodeLine{00060         std::cout << \textcolor{stringliteral}{"No idea, really\(\backslash\)n:"};}
+\DoxyCodeLine{00061         }
+\DoxyCodeLine{00062     \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00065 \}}
+
+\end{DoxyCode}

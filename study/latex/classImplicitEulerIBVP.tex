@@ -2,6 +2,10 @@
 \label{classImplicitEulerIBVP}\index{ImplicitEulerIBVP@{ImplicitEulerIBVP}}
 
 
+{\ttfamily \#include $<$I\+Euler\+I\+B\+V\+P\+Solver.\+hh$>$}
+
+
+
 Inheritance diagram for Implicit\+Euler\+I\+B\+VP\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,19 +25,165 @@ Collaboration diagram for Implicit\+Euler\+I\+B\+VP\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classImplicitEulerIBVP_a2309820ab1e205587063b03d369c003d}\label{classImplicitEulerIBVP_a2309820ab1e205587063b03d369c003d}} 
-{\bfseries Implicit\+Euler\+I\+B\+VP} (\mbox{\hyperlink{classIBVP}{I\+B\+VP}} \&source, long N\+Steps, long J\+Steps)
+\mbox{\hyperlink{classImplicitEulerIBVP_ac6c81a57b70da3275fcb4b74b5e30f1e}{Implicit\+Euler\+I\+B\+VP}} ()
 \item 
-\mbox{\Hypertarget{classImplicitEulerIBVP_afc239aeb2cd0d045f4836dca607abaa6}\label{classImplicitEulerIBVP_afc239aeb2cd0d045f4836dca607abaa6}} 
-void {\bfseries calculate\+BC} ()
+\mbox{\hyperlink{classImplicitEulerIBVP_a2309820ab1e205587063b03d369c003d}{Implicit\+Euler\+I\+B\+VP}} (\mbox{\hyperlink{classIBVP}{I\+B\+VP}} \&source, long N\+Steps, long J\+Steps)
 \item 
-\mbox{\Hypertarget{classImplicitEulerIBVP_af71d063f8fb5df6a5a269c3c4f82fbc3}\label{classImplicitEulerIBVP_af71d063f8fb5df6a5a269c3c4f82fbc3}} 
-void {\bfseries calculate} ()
+void \mbox{\hyperlink{classImplicitEulerIBVP_afc239aeb2cd0d045f4836dca607abaa6}{calculate\+BC}} ()
+\item 
+void \mbox{\hyperlink{classImplicitEulerIBVP_af71d063f8fb5df6a5a269c3c4f82fbc3}{calculate}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{IEulerIBVPSolver_8hh_source_l00016}{16}} of file \mbox{\hyperlink{IEulerIBVPSolver_8hh_source}{I\+Euler\+I\+B\+V\+P\+Solver.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classImplicitEulerIBVP_ac6c81a57b70da3275fcb4b74b5e30f1e}\label{classImplicitEulerIBVP_ac6c81a57b70da3275fcb4b74b5e30f1e}} 
+\index{ImplicitEulerIBVP@{ImplicitEulerIBVP}!ImplicitEulerIBVP@{ImplicitEulerIBVP}}
+\index{ImplicitEulerIBVP@{ImplicitEulerIBVP}!ImplicitEulerIBVP@{ImplicitEulerIBVP}}
+\doxysubsubsection{\texorpdfstring{ImplicitEulerIBVP()}{ImplicitEulerIBVP()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Implicit\+Euler\+I\+B\+V\+P\+::\+Implicit\+Euler\+I\+B\+VP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{IEulerIBVPSolver_8cc_source_l00022}{22}} of file \mbox{\hyperlink{IEulerIBVPSolver_8cc_source}{I\+Euler\+I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022                                     : \mbox{\hyperlink{classIBVPFDM_a5a131f0efb8cb71abea192b6afd26cd2}{IBVPFDM}}()}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{00024     \textcolor{comment}{// !!! number of unknowns is J -\/ 1 (Dirichlet)}}
+\DoxyCodeLine{00025     A = \mbox{\hyperlink{classVector}{Vector<double, long>}} (\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1, 1);}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classB}{B}} = \mbox{\hyperlink{classVector}{Vector<double, long>}} (\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1, 1);}
+\DoxyCodeLine{00027     C = \mbox{\hyperlink{classVector}{Vector<double, long>}} (\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1, 1);}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     F = \mbox{\hyperlink{classVector}{Vector<double, long>}} (\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1, 1);}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classImplicitEulerIBVP_a2309820ab1e205587063b03d369c003d}\label{classImplicitEulerIBVP_a2309820ab1e205587063b03d369c003d}} 
+\index{ImplicitEulerIBVP@{ImplicitEulerIBVP}!ImplicitEulerIBVP@{ImplicitEulerIBVP}}
+\index{ImplicitEulerIBVP@{ImplicitEulerIBVP}!ImplicitEulerIBVP@{ImplicitEulerIBVP}}
+\doxysubsubsection{\texorpdfstring{ImplicitEulerIBVP()}{ImplicitEulerIBVP()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Implicit\+Euler\+I\+B\+V\+P\+::\+Implicit\+Euler\+I\+B\+VP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIBVP}{I\+B\+VP}} \&}]{source,  }\item[{long}]{N\+Steps,  }\item[{long}]{J\+Steps }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{IEulerIBVPSolver_8cc_source_l00032}{32}} of file \mbox{\hyperlink{IEulerIBVPSolver_8cc_source}{I\+Euler\+I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033         : \mbox{\hyperlink{classIBVPFDM_a5a131f0efb8cb71abea192b6afd26cd2}{IBVPFDM}}(source, NSteps, JSteps)}
+\DoxyCodeLine{00034 \{}
+\DoxyCodeLine{00035     \textcolor{comment}{// !!! number of unknowns is J -\/ 1 (Dirichlet)}}
+\DoxyCodeLine{00036     A = \mbox{\hyperlink{classVector}{Vector<double, long>}} (\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1, 1);}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classB}{B}} = \mbox{\hyperlink{classVector}{Vector<double, long>}} (\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1, 1);}
+\DoxyCodeLine{00038     C = \mbox{\hyperlink{classVector}{Vector<double, long>}} (\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1, 1);}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     F = \mbox{\hyperlink{classVector}{Vector<double, long>}} (\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1, 1);}
+\DoxyCodeLine{00041 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classImplicitEulerIBVP_af71d063f8fb5df6a5a269c3c4f82fbc3}\label{classImplicitEulerIBVP_af71d063f8fb5df6a5a269c3c4f82fbc3}} 
+\index{ImplicitEulerIBVP@{ImplicitEulerIBVP}!calculate@{calculate}}
+\index{calculate@{calculate}!ImplicitEulerIBVP@{ImplicitEulerIBVP}}
+\doxysubsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily void Implicit\+Euler\+I\+B\+V\+P\+::calculate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBVPFDM_a5b73954c7ae1987e856c02b985387872}{I\+B\+V\+P\+F\+DM}}.
+
+
+
+Definition at line \mbox{\hyperlink{IEulerIBVPSolver_8cc_source_l00054}{54}} of file \mbox{\hyperlink{IEulerIBVPSolver_8cc_source}{I\+Euler\+I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055 \{ \textcolor{comment}{// Tells how to calculate sol. at n+1}}
+\DoxyCodeLine{00056     \textcolor{comment}{// In general we need to solve a tridiagonal system}}
+\DoxyCodeLine{00057     \textcolor{keywordtype}{double} tmp1, tmp2;}
+\DoxyCodeLine{00058     }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = F.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}(); i <= F.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00060     \{}
+\DoxyCodeLine{00061         tmp1 = (\mbox{\hyperlink{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}{k}}*\mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}}-\/>\mbox{\hyperlink{classIBVP_a59a82bedba3a8de65997ce6b64e612b5}{diffusion}}(\mbox{\hyperlink{classIBVPFDM_acde024de54dc2124db544dc6424365c7}{xarr}}[i+1],\mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}} ));}
+\DoxyCodeLine{00062         tmp2 = (0.5 * \mbox{\hyperlink{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}{k}} * \mbox{\hyperlink{classIBVPFDM_a20ec2ca54a8768c22ae5579021bcbc21}{h}}* (\mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}}-\/>\mbox{\hyperlink{classIBVP_a74f384836849c568e26b10bae327ace5}{convection}}(\mbox{\hyperlink{classIBVPFDM_acde024de54dc2124db544dc6424365c7}{xarr}}[i+1], \mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}})));}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064         \textcolor{comment}{// Coefficients of the U terms}}
+\DoxyCodeLine{00065         A[i] = tmp1 -\/ tmp2;}
+\DoxyCodeLine{00066         \mbox{\hyperlink{classB}{B}}[i] = -\/\mbox{\hyperlink{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}{h2}} -\/ (2.0*tmp1) + (\mbox{\hyperlink{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}{k}}*\mbox{\hyperlink{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}{h2}}*(\mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}}-\/>\mbox{\hyperlink{classIBVP_adf8e3d7993a300e7dd5c727d935ad8aa}{zeroterm}}(\mbox{\hyperlink{classIBVPFDM_acde024de54dc2124db544dc6424365c7}{xarr}}[i+1],\mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}})));}
+\DoxyCodeLine{00067         C[i] = tmp1 + tmp2;}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069         F[i] = \mbox{\hyperlink{classIBVPFDM_a57f9b055edffae6936be2cb12e1746cb}{h2}}*(\mbox{\hyperlink{classIBVPFDM_a823466697562114bcde6f8ae43eeb3f5}{k}} * (\mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}} -\/> RHS(\mbox{\hyperlink{classIBVPFDM_acde024de54dc2124db544dc6424365c7}{xarr}}[i+1], \mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}})) -\/ \mbox{\hyperlink{classIBVPFDM_a9b5cf717e24fa77775650cbc2913785f}{vecOld}}[i+1]); \textcolor{comment}{//?\&}}
+\DoxyCodeLine{00070     \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 \textcolor{comment}{//      std::cout << "Coeficients";}}
+\DoxyCodeLine{00073 \textcolor{comment}{//      print(A); print(B); print(C); print(F);}}
+\DoxyCodeLine{00074 \textcolor{comment}{//      int kl; std::cin >> kl;}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{comment}{// Correction term for RHS}}
+\DoxyCodeLine{00077     F[1]    -\/= A[1] * \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}[\mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()];}
+\DoxyCodeLine{00078     F[\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1] -\/= C[\mbox{\hyperlink{classIBVPFDM_a6bb6f364bb5fb19ad47db62da69c04e4}{J}}-\/1] * \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}[\mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}()] ;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{comment}{// Now solve the system of equations}}
+\DoxyCodeLine{00081     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<double, long>}} mySolver(A, \mbox{\hyperlink{classB}{B}}, C, F);}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{comment}{// The matrix must be diagonally dominant; we call the}}
+\DoxyCodeLine{00084     \textcolor{comment}{// assert macro and the programs stops}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     assert (mySolver.diagonallyDominant() == \textcolor{keyword}{true});}
+\DoxyCodeLine{00087     }
+\DoxyCodeLine{00088     \mbox{\hyperlink{classVector}{Vector <double, long>}} solution = mySolver.solve();}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} ii = \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()+1; ii <= \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}()-\/1; ii++)}
+\DoxyCodeLine{00091     \{}
+\DoxyCodeLine{00092         \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}[ii] = solution[ii-\/1];}
+\DoxyCodeLine{00093     \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{comment}{//print(vecNew);}}
+\DoxyCodeLine{00096     \textcolor{comment}{//int k; std::cin >> k;}}
+\DoxyCodeLine{00097 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classImplicitEulerIBVP_afc239aeb2cd0d045f4836dca607abaa6}\label{classImplicitEulerIBVP_afc239aeb2cd0d045f4836dca607abaa6}} 
+\index{ImplicitEulerIBVP@{ImplicitEulerIBVP}!calculateBC@{calculateBC}}
+\index{calculateBC@{calculateBC}!ImplicitEulerIBVP@{ImplicitEulerIBVP}}
+\doxysubsubsection{\texorpdfstring{calculateBC()}{calculateBC()}}
+{\footnotesize\ttfamily void Implicit\+Euler\+I\+B\+V\+P\+::calculate\+BC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIBVPFDM_a42bd377e3c0b16ddb05d8a3dea7a873b}{I\+B\+V\+P\+F\+DM}}.
+
+
+
+Definition at line \mbox{\hyperlink{IEulerIBVPSolver_8cc_source_l00043}{43}} of file \mbox{\hyperlink{IEulerIBVPSolver_8cc_source}{I\+Euler\+I\+B\+V\+P\+Solver.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044 \{ \textcolor{comment}{// Tells how to calculate sol. at n+1}}
+\DoxyCodeLine{00045     \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}[\mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}.\mbox{\hyperlink{classArray_acffe058a1dd631b05fb71a83e27b445a}{MinIndex}}()] = \mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}}-\/>\mbox{\hyperlink{classIBVP_a06a4841866f3ec0f7f62f67a7e800930}{BCL}}(\mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}});}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}[\mbox{\hyperlink{classIBVPFDM_acdb610da30891ef45dba3af0ef080a2c}{vecNew}}.\mbox{\hyperlink{classArray_a8ce7791cd1ec7ba63ec71772a7144965}{MaxIndex}}()] = \mbox{\hyperlink{classIBVPFDM_ac23f7379cd6d342fc9e640171ec2a43b}{ibvp}}-\/>\mbox{\hyperlink{classIBVP_afd987bb4e41ff033ce8d0705818f4cef}{BCR}}(\mbox{\hyperlink{classIBVPFDM_ae4013b6a973f974279aa08d006b6d1a2}{tnow}});}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{comment}{//      std::cout << "IC";}}
+\DoxyCodeLine{00049 \textcolor{comment}{//      print(vecOld);}}
+\DoxyCodeLine{00050 \textcolor{comment}{//      int kk;}}
+\DoxyCodeLine{00051 \textcolor{comment}{//      std::cin >> kk;}}
+\DoxyCodeLine{00052 \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/I\+Euler\+I\+B\+V\+P\+Solver.\+hh\item 
-src/I\+Euler\+I\+B\+V\+P\+Solver.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{IEulerIBVPSolver_8hh}{I\+Euler\+I\+B\+V\+P\+Solver.\+hh}}\item 
+src/\mbox{\hyperlink{IEulerIBVPSolver_8cc}{I\+Euler\+I\+B\+V\+P\+Solver.\+cc}}\end{DoxyCompactItemize}

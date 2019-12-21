@@ -1,0 +1,78 @@
+\hypertarget{TestExceptionSimple_8cc}{}\doxysection{tests/\+Test\+Exception\+Simple.cc File Reference}
+\label{TestExceptionSimple_8cc}\index{tests/TestExceptionSimple.cc@{tests/TestExceptionSimple.cc}}
+{\ttfamily \#include $<$duffy/\+String\+Conversions.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Datasim\+Exception.\+hh$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Test\+Exception\+Simple.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestExceptionSimple_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{TestExceptionSimple_8cc_a38de28707c9a94a220e3138f1f26572c}{Divide}} (double x, double y)
+\item 
+int \mbox{\hyperlink{TestExceptionSimple_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestExceptionSimple_8cc_a38de28707c9a94a220e3138f1f26572c}\label{TestExceptionSimple_8cc_a38de28707c9a94a220e3138f1f26572c}} 
+\index{TestExceptionSimple.cc@{TestExceptionSimple.cc}!Divide@{Divide}}
+\index{Divide@{Divide}!TestExceptionSimple.cc@{TestExceptionSimple.cc}}
+\doxysubsubsection{\texorpdfstring{Divide()}{Divide()}}
+{\footnotesize\ttfamily double Divide (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestExceptionSimple_8cc_source_l00013}{13}} of file \mbox{\hyperlink{TestExceptionSimple_8cc_source}{Test\+Exception\+Simple.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015         \textcolor{comment}{// Precondition: y is not zero}}
+\DoxyCodeLine{00016         \textcolor{keywordflow}{if} (y == 0.0)}
+\DoxyCodeLine{00017         \{}
+\DoxyCodeLine{00018     }
+\DoxyCodeLine{00019             \textcolor{keywordflow}{throw} \mbox{\hyperlink{classDatasimException}{DatasimException}}(std::string(\textcolor{stringliteral}{"\(\backslash\)tDivide by zero"}), std::string(\textcolor{stringliteral}{"In function Divide"}),}
+\DoxyCodeLine{00020                 std::string(\textcolor{stringliteral}{"Try with non-\/zero value"}));}
+\DoxyCodeLine{00021         \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keywordflow}{return} x/y;}
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestExceptionSimple_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestExceptionSimple_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestExceptionSimple.cc@{TestExceptionSimple.cc}!main@{main}}
+\index{main@{main}!TestExceptionSimple.cc@{TestExceptionSimple.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestExceptionSimple_8cc_source_l00026}{26}} of file \mbox{\hyperlink{TestExceptionSimple_8cc_source}{Test\+Exception\+Simple.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00030     \{}
+\DoxyCodeLine{00031         std::cout << \textcolor{stringliteral}{"Give a number to divide by: "} << std::endl;}
+\DoxyCodeLine{00032         \textcolor{keywordtype}{double} y; std::cin >> y;}
+\DoxyCodeLine{00033         }
+\DoxyCodeLine{00034         std::cout << \mbox{\hyperlink{TestExceptionSimple_8cc_a38de28707c9a94a220e3138f1f26572c}{Divide}}(2.0, y);}
+\DoxyCodeLine{00035     \}}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{catch}(\mbox{\hyperlink{classDatasimException}{DatasimException}}\& e)}
+\DoxyCodeLine{00037     \{}
+\DoxyCodeLine{00038         e.\mbox{\hyperlink{classDatasimException_a1b21cfcf91a5e6d5c60b6ebffe0967cf}{print}}();}
+\DoxyCodeLine{00039         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00040     \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}

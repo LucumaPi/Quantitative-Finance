@@ -1,0 +1,80 @@
+\hypertarget{TestBinomialMethod_8cc}{}\doxysection{tests/\+Test\+Binomial\+Method.cc File Reference}
+\label{TestBinomialMethod_8cc}\index{tests/TestBinomialMethod.cc@{tests/TestBinomialMethod.cc}}
+{\ttfamily \#include $<$duffy/\+Binomial\+Method.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Lattice.\+hh$>$}\newline
+{\ttfamily \#include \char`\"{}../src/\+Payoff\+Namespace.\+cc\char`\"{}}\newline
+Include dependency graph for Test\+Binomial\+Method.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestBinomialMethod_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class V , class I , int Number\+Nodes$>$ }\\void \mbox{\hyperlink{TestBinomialMethod_8cc_a4f588b04e89a733e6e27ba312ce437d3}{print}} (const \mbox{\hyperlink{classLattice}{Lattice}}$<$ V, I, Number\+Nodes $>$ \&source)
+\item 
+int \mbox{\hyperlink{TestBinomialMethod_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestBinomialMethod_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestBinomialMethod_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestBinomialMethod.cc@{TestBinomialMethod.cc}!main@{main}}
+\index{main@{main}!TestBinomialMethod.cc@{TestBinomialMethod.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestBinomialMethod_8cc_source_l00031}{31}} of file \mbox{\hyperlink{TestBinomialMethod_8cc_source}{Test\+Binomial\+Method.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacePayoffNamespace}{PayoffNamespace}};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = 10.0;}
+\DoxyCodeLine{00036     \mbox{\hyperlink{namespacePayoffNamespace_a39ee14e55dbe34eb4f30330edd487f84}{type}} = 1; \textcolor{comment}{// Euro}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{keyword}{using namespace }\mbox{\hyperlink{classCallPayoff}{CallPayoff}};}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \mbox{\hyperlink{classBinomialMethod}{BinomialMethod}} bn (\mbox{\hyperlink{namespacePayoffNamespace_1_1CallPayoff_a10b9109397cc2cea2ac7cc9c6b224658}{OptPayoff}});}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestBinomialMethod_8cc_a4f588b04e89a733e6e27ba312ce437d3}\label{TestBinomialMethod_8cc_a4f588b04e89a733e6e27ba312ce437d3}} 
+\index{TestBinomialMethod.cc@{TestBinomialMethod.cc}!print@{print}}
+\index{print@{print}!TestBinomialMethod.cc@{TestBinomialMethod.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class V , class I , int Number\+Nodes$>$ \\
+void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLattice}{Lattice}}$<$ V, I, Number\+Nodes $>$ \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestBinomialMethod_8cc_source_l00012}{12}} of file \mbox{\hyperlink{TestBinomialMethod_8cc_source}{Test\+Binomial\+Method.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014     }
+\DoxyCodeLine{00015     \textcolor{keywordflow}{for} (I j = source.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); j <= source.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00016     \{}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018         std::cout << \textcolor{stringliteral}{"\(\backslash\)nBranch Number "} << j << \textcolor{stringliteral}{": ["};}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{for} (I i = source[j].MinIndex(); i <= source[j].\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00020         \{}
+\DoxyCodeLine{00021             std::cout << source[j][i] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00022     }
+\DoxyCodeLine{00023         \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00026             }
+\DoxyCodeLine{00027     \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \}}
+
+\end{DoxyCode}

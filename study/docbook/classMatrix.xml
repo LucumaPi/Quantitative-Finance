@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMatrix">
 <title>Matrix&lt; V, I, S &gt; Class Template Reference</title>
 <indexterm><primary>Matrix&lt; V, I, S &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Matrix.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for Matrix&lt; V, I, S &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -23,36 +26,255 @@ Collaboration diagram for Matrix&lt; V, I, S &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classMatrix_1af2a49400ee9b259b5ebde513caf653e3"/><emphasis role="strong">Matrix</emphasis> (I rows, I columns)</para>
+            <listitem><para><link linkend="_classMatrix_1a98af38996a2ce7d4491052d202ad2e77">Matrix</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1abcbe0a38ad757891923a3906bf5fc62c"/><emphasis role="strong">Matrix</emphasis> (I rows, I columns, I rowStart, I columnStart)</para>
+            <listitem><para><link linkend="_classMatrix_1af2a49400ee9b259b5ebde513caf653e3">Matrix</link> (I rows, I columns)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1adea6382876e02a821672c3b35b1d6925"/><emphasis role="strong">Matrix</emphasis> (const <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp;source)</para>
+            <listitem><para><link linkend="_classMatrix_1abcbe0a38ad757891923a3906bf5fc62c">Matrix</link> (I rows, I columns, I rowStart, I columnStart)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab"/>I <emphasis role="strong">MinRowIndex</emphasis> () const</para>
+            <listitem><para><link linkend="_classMatrix_1adea6382876e02a821672c3b35b1d6925">Matrix</link> (const <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp;source)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1abd8766ab01ecf06e70cdce889afba641"/>I <emphasis role="strong">MaxRowIndex</emphasis> () const</para>
+            <listitem><para>virtual <link linkend="_classMatrix_1a03485d6a3a841539855e599d772323ae">~Matrix</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9"/>I <emphasis role="strong">MinColumnIndex</emphasis> () const</para>
+            <listitem><para>I <link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1af6cbab02648446701a31b7bce0110af7"/>I <emphasis role="strong">MaxColumnIndex</emphasis> () const</para>
+            <listitem><para>I <link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271"/>I <emphasis role="strong">Rows</emphasis> () const</para>
+            <listitem><para>I <link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6"/>I <emphasis role="strong">Columns</emphasis> () const</para>
+            <listitem><para>I <link linkend="_classMatrix_1af6cbab02648446701a31b7bce0110af7">MaxColumnIndex</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1ae64e55e347c3288a357230d8d0d03bed"/>void <emphasis role="strong">Row</emphasis> (I row, const <link linkend="_classArray">Array</link>&lt; V, I &gt; &amp;val)</para>
+            <listitem><para>I <link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1a2278829f8202d2a9b75a38457ce97d6d"/>void <emphasis role="strong">Column</emphasis> (I column, const <link linkend="_classArray">Array</link>&lt; V, I &gt; &amp;val)</para>
+            <listitem><para>I <link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link> () const</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1a7cb4c21fc4931498a7c366d0b66e1887"/>const V &amp; <emphasis role="strong">operator()</emphasis> (I row, I column) const</para>
+            <listitem><para>void <link linkend="_classMatrix_1ae64e55e347c3288a357230d8d0d03bed">Row</link> (I row, const <link linkend="_classArray">Array</link>&lt; V, I &gt; &amp;val)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1a284ca839071cf9a8e7fd2229d5a07dc7"/>V &amp; <emphasis role="strong">operator()</emphasis> (I row, I column)</para>
+            <listitem><para>void <link linkend="_classMatrix_1a2278829f8202d2a9b75a38457ce97d6d">Column</link> (I column, const <link linkend="_classArray">Array</link>&lt; V, I &gt; &amp;val)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMatrix_1a4634b560e429e05ae482cc66ae6e6e8a"/><link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp;source)</para>
+            <listitem><para>const V &amp; <link linkend="_classMatrix_1a7cb4c21fc4931498a7c366d0b66e1887">operator()</link> (I row, I column) const</para>
+</listitem>
+            <listitem><para>V &amp; <link linkend="_classMatrix_1a284ca839071cf9a8e7fd2229d5a07dc7">operator()</link> (I row, I column)</para>
+</listitem>
+            <listitem><para><link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp; <link linkend="_classMatrix_1a4634b560e429e05ae482cc66ae6e6e8a">operator=</link> (const <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp;source)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class V, class I = int, class S = FullMatrix&lt;V&gt;&gt;
+class Matrix&lt; V, I, S &gt;</title></simplesect>
+
+<para>
+Definition at line 18 of file Matrix.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classMatrix_1a98af38996a2ce7d4491052d202ad2e77"/>    <section>
+    <title>Matrix()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Matrix</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>Matrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::<link linkend="_classMatrix">Matrix</link> ( )</computeroutput></para><para>
+Definition at line 21 of file Matrix.cc.</para>
+<programlisting>22 {&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+23 
+24 &#32;&#32;&#32;&#32;m_structure=S();
+25 
+26 &#32;&#32;&#32;&#32;m_rowstart=1;
+27 &#32;&#32;&#32;&#32;m_columnstart=1;
+28 
+29 &#32;&#32;&#32;&#32;nr&#32;=&#32;nc&#32;=&#32;1;
+30 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1af2a49400ee9b259b5ebde513caf653e3"/>    <section>
+    <title>Matrix()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Matrix</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>Matrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class I, class S &gt; </computeroutput><para><computeroutput><link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::<link linkend="_classMatrix">Matrix</link> (I rows, I columns)</computeroutput></para><para>
+Definition at line 33 of file Matrix.cc.</para>
+<programlisting>34 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size.&#32;Start&#32;index=1.</emphasis>
+35 
+36 &#32;&#32;&#32;&#32;m_structure=S(rows,&#32;columns);
+37 
+38 &#32;&#32;&#32;&#32;m_rowstart=1;
+39 &#32;&#32;&#32;&#32;m_columnstart=1;
+40 
+41 &#32;&#32;&#32;&#32;nr&#32;=&#32;rows;&#32;nc&#32;=&#32;columns;
+42 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1abcbe0a38ad757891923a3906bf5fc62c"/>    <section>
+    <title>Matrix()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Matrix</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>Matrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class I, class S &gt; </computeroutput><para><computeroutput><link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::<link linkend="_classMatrix">Matrix</link> (I rows, I columns, I rowStart, I columnStart)</computeroutput></para><para>
+Definition at line 45 of file Matrix.cc.</para>
+<programlisting>46 {&#32;<emphasis role="comment">//&#32;Constructor&#32;with&#32;size&#32;&amp;&#32;start&#32;index</emphasis>
+47 
+48 &#32;&#32;&#32;&#32;m_structure=S(rows,&#32;columns);
+49 
+50 &#32;&#32;&#32;&#32;m_rowstart=rowStart;
+51 &#32;&#32;&#32;&#32;m_columnstart=columnStart;
+52 
+53 &#32;&#32;&#32;&#32;nr&#32;=&#32;rows;&#32;nc&#32;=&#32;columns;
+54 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1adea6382876e02a821672c3b35b1d6925"/>    <section>
+    <title>Matrix()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Matrix</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>Matrix</secondary></indexterm>
+<computeroutput>template&lt;class V, class I, class S&gt; </computeroutput><para><computeroutput><link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::<link linkend="_classMatrix">Matrix</link> (const <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp; source)</computeroutput></para><para>
+Definition at line 57 of file Matrix.cc.</para>
+<programlisting>58 {&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+59 
+60 &#32;&#32;&#32;&#32;m_structure=source.m_structure;
+61 
+62 &#32;&#32;&#32;&#32;m_rowstart=source.m_rowstart;
+63 &#32;&#32;&#32;&#32;m_columnstart=source.m_columnstart;
+64 
+65 &#32;&#32;&#32;&#32;nr&#32;=&#32;source.nr;&#32;nc&#32;=&#32;source.nc;
+66 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1a03485d6a3a841539855e599d772323ae"/>    <section>
+    <title>~Matrix()</title>
+<indexterm><primary>~Matrix</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>~Matrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput><link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::~<link linkend="_classMatrix">Matrix</link> ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 69 of file Matrix.cc.</para>
+<programlisting>70 {&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+71 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classMatrix_1a2278829f8202d2a9b75a38457ce97d6d"/>    <section>
+    <title>Column()</title>
+<indexterm><primary>Column</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>Column</secondary></indexterm>
+<computeroutput>template&lt;class V, class I, class S &gt; </computeroutput><para><computeroutput>void <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::Column (I column, const <link linkend="_classArray">Array</link>&lt; V, I &gt; &amp; val)</computeroutput></para><para>
+Definition at line 130 of file Matrix.cc.</para>
+<programlisting>131 {&#32;<emphasis role="comment">//&#32;Replace&#32;column</emphasis>
+132 
+133 &#32;&#32;&#32;&#32;I&#32;i,&#32;j;
+134 
+135 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Replace&#32;the&#32;column&#32;elements</emphasis>
+136 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i=val.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>(),&#32;j=<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;i&lt;=val.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++,&#32;j++)&#32;m_structure[j][column]=val[i];
+137 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6"/>    <section>
+    <title>Columns()</title>
+<indexterm><primary>Columns</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>Columns</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::Columns ( ) const</computeroutput></para><para>
+Definition at line 110 of file Matrix.cc.</para>
+<programlisting>111 {&#32;<emphasis role="comment">//&#32;The&#32;number&#32;of&#32;columns</emphasis>
+112 
+113 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nc;
+114 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1af6cbab02648446701a31b7bce0110af7"/>    <section>
+    <title>MaxColumnIndex()</title>
+<indexterm><primary>MaxColumnIndex</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>MaxColumnIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::MaxColumnIndex ( ) const</computeroutput></para><para>
+Definition at line 96 of file Matrix.cc.</para>
+<programlisting>97 {&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;maximum&#32;column&#32;index</emphasis>
+98 
+99 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_columnstart&#32;+&#32;<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>()&#32;-&#32;1;
+100 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1abd8766ab01ecf06e70cdce889afba641"/>    <section>
+    <title>MaxRowIndex()</title>
+<indexterm><primary>MaxRowIndex</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>MaxRowIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::MaxRowIndex ( ) const</computeroutput></para><para>
+Definition at line 82 of file Matrix.cc.</para>
+<programlisting>83 {&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;maximum&#32;row&#32;index</emphasis>
+84 
+85 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_rowstart&#32;+&#32;<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>()&#32;-&#32;1;
+86 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9"/>    <section>
+    <title>MinColumnIndex()</title>
+<indexterm><primary>MinColumnIndex</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>MinColumnIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::MinColumnIndex ( ) const</computeroutput></para><para>
+Definition at line 89 of file Matrix.cc.</para>
+<programlisting>90 {&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;minimum&#32;column&#32;index</emphasis>
+91 
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_columnstart;
+93 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab"/>    <section>
+    <title>MinRowIndex()</title>
+<indexterm><primary>MinRowIndex</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>MinRowIndex</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::MinRowIndex ( ) const</computeroutput></para><para>
+Definition at line 75 of file Matrix.cc.</para>
+<programlisting>76 {&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;minimum&#32;row&#32;index</emphasis>
+77 
+78 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_rowstart;
+79 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1a284ca839071cf9a8e7fd2229d5a07dc7"/>    <section>
+    <title>operator()()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;class V , class I, class S &gt; </computeroutput><para><computeroutput>V &amp; <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::operator() (I row, I column)</computeroutput></para><para>
+Definition at line 152 of file Matrix.cc.</para>
+<programlisting>153 {&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;element&#32;at&#32;position</emphasis>
+154 
+155 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_structure[row&#32;-&#32;m_rowstart&#32;+&#32;1][column&#32;-&#32;m_columnstart&#32;+&#32;1];
+156 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1a7cb4c21fc4931498a7c366d0b66e1887"/>    <section>
+    <title>operator()()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;class V , class I, class S &gt; </computeroutput><para><computeroutput>const V &amp; <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::operator() (I row, I column) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 144 of file Matrix.cc.</para>
+<programlisting>145 {&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;element&#32;at&#32;position</emphasis>
+146 
+147 &#32;&#32;&#32;&#32;
+148 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_structure[row&#32;-&#32;m_rowstart&#32;+&#32;1][column&#32;-&#32;m_columnstart&#32;+&#32;1];
+149 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1a4634b560e429e05ae482cc66ae6e6e8a"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class V, class I, class S&gt; </computeroutput><para><computeroutput><link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp; <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::operator= (const <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt; &amp; source)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 162 of file Matrix.cc.</para>
+<programlisting>163 {&#32;<emphasis role="comment">//&#32;Assignment&#32;operator</emphasis>
+164 
+165 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exit&#32;if&#32;same&#32;object</emphasis>
+166 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>==&amp;source)&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+167 
+168 &#32;&#32;&#32;&#32;m_structure=source.m_structure;
+169 
+170 &#32;&#32;&#32;&#32;m_rowstart=source.m_rowstart;
+171 &#32;&#32;&#32;&#32;m_columnstart=source.m_columnstart;
+172 
+173 &#32;&#32;&#32;&#32;nr&#32;=&#32;source.nr;&#32;nc&#32;=&#32;source.nc;
+174 
+175 
+176 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+177 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1ae64e55e347c3288a357230d8d0d03bed"/>    <section>
+    <title>Row()</title>
+<indexterm><primary>Row</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>Row</secondary></indexterm>
+<computeroutput>template&lt;class V, class I, class S &gt; </computeroutput><para><computeroutput>void <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::Row (I row, const <link linkend="_classArray">Array</link>&lt; V, I &gt; &amp; val)</computeroutput></para><para>
+Definition at line 117 of file Matrix.cc.</para>
+<programlisting>118 {&#32;<emphasis role="comment">//&#32;Replace&#32;row</emphasis>
+119 
+120 &#32;&#32;&#32;&#32;I&#32;i,&#32;j;
+121 &#32;&#32;&#32;&#32;
+122 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;mod&#32;row&quot;</emphasis>;
+123 &#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>(val);
+124 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;y;&#32;std::cin&#32;&gt;&gt;&#32;y;
+125 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Replace&#32;the&#32;row&#32;elements</emphasis>
+126 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i=val.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>(),&#32;j&#32;=&#32;<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>();&#32;i&lt;=val.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;i++,&#32;j++)&#32;m_structure[row][j]=val[i];
+127 }
+</programlisting>    </section><anchor xml:id="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271"/>    <section>
+    <title>Rows()</title>
+<indexterm><primary>Rows</primary><secondary>Matrix&lt; V, I, S &gt;</secondary></indexterm>
+<indexterm><primary>Matrix&lt; V, I, S &gt;</primary><secondary>Rows</secondary></indexterm>
+<computeroutput>template&lt;class V , class I , class S &gt; </computeroutput><para><computeroutput>I <link linkend="_classMatrix">Matrix</link>&lt; V, I, S &gt;::Rows ( ) const</computeroutput></para><para>
+Definition at line 103 of file Matrix.cc.</para>
+<programlisting>104 {&#32;<emphasis role="comment">//&#32;The&#32;number&#32;of&#32;rows</emphasis>
+105 
+106 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nr;
+107 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/Matrix.hhsrc/Matrix.cc</section>
+include/duffy/<link linkend="_Matrix_8hh">Matrix.hh</link>src/<link linkend="_Matrix_8cc">Matrix.cc</link></section>
+</section>

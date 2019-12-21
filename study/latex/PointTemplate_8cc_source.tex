@@ -1,0 +1,116 @@
+\hypertarget{PointTemplate_8cc_source}{}\doxysection{Point\+Template.\+cc}
+\label{PointTemplate_8cc_source}\index{src/PointTemplate.cc@{src/PointTemplate.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Point.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Generic point class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// Last modification dates:}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// DD 2006-\/3-\/5 Kick off and << for print}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifndef PointTemplate\_CC}}
+\DoxyCodeLine{\Hypertarget{PointTemplate_8cc_source_l00012}\mbox{\hyperlink{PointTemplate_8cc_aae2d4c69c6e14264a97f0a062c0511c7}{00012}} \textcolor{preprocessor}{\#define PointTemplate\_CC}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{PointTemplate_8hh}{duffy/PointTemplate.hh}}>}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00019 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{00020 \mbox{\hyperlink{classPoint_a57f56baef4e1d60e9acc406e9518a46f}{Point<TFirst, TSecond>::Point}}()}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022     m\_first = TFirst();}
+\DoxyCodeLine{00023     m\_second = TSecond();}
+\DoxyCodeLine{00024 \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{comment}{// Constructor with coordinates}}
+\DoxyCodeLine{00028 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{\Hypertarget{PointTemplate_8cc_source_l00029}\mbox{\hyperlink{classPoint_a687ea62e55fe6ec8387252fcf822dad8}{00029}} \mbox{\hyperlink{classPoint_a57f56baef4e1d60e9acc406e9518a46f}{Point<TFirst, TSecond>::Point}}(TFirst \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, TSecond \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}})}
+\DoxyCodeLine{00030 \{}
+\DoxyCodeLine{00031     m\_first = \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}};}
+\DoxyCodeLine{00032     m\_second = \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}};}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00036 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{00037 \mbox{\hyperlink{classPoint_a57f56baef4e1d60e9acc406e9518a46f}{Point<TFirst, TSecond>::Point}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& source)}
+\DoxyCodeLine{00038 \{}
+\DoxyCodeLine{00039     m\_first = source.m\_first;}
+\DoxyCodeLine{00040     m\_second = source.m\_second;}
+\DoxyCodeLine{00041 \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043 \textcolor{comment}{// Destructortemplate <class TFirst, class TSecond>}}
+\DoxyCodeLine{00044 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{00045 \mbox{\hyperlink{classPoint_a5cd97348ecafa3c4e1b14ecc7b26e8fb}{Point<TFirst, TSecond>::~Point}}()}
+\DoxyCodeLine{00046 \{}
+\DoxyCodeLine{00047 \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \textcolor{comment}{// Get first coordinates}}
+\DoxyCodeLine{00050 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{\Hypertarget{PointTemplate_8cc_source_l00051}\mbox{\hyperlink{classPoint_aae25ce13a220b16b0d83ddbd8f3b6eb5}{00051}} TFirst \mbox{\hyperlink{classPoint_aae25ce13a220b16b0d83ddbd8f3b6eb5}{Point<TFirst, TSecond>::First}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00052 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} m\_first;}
+\DoxyCodeLine{00054 \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056 \textcolor{comment}{// Get second coordinate}}
+\DoxyCodeLine{00057 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{\Hypertarget{PointTemplate_8cc_source_l00058}\mbox{\hyperlink{classPoint_ae1468ca451216c3341e2b74b5811f30b}{00058}} TSecond \mbox{\hyperlink{classPoint_ae1468ca451216c3341e2b74b5811f30b}{Point<TFirst, TSecond>::Second}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00059 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00060     \textcolor{keywordflow}{return} m\_second;}
+\DoxyCodeLine{00061 \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063 \textcolor{comment}{// Set first coordinate}}
+\DoxyCodeLine{00064 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{\Hypertarget{PointTemplate_8cc_source_l00065}\mbox{\hyperlink{classPoint_a0d070aa1d147e36f23afabc9a16a54ec}{00065}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPoint_aae25ce13a220b16b0d83ddbd8f3b6eb5}{Point<TFirst, TSecond>::First}}(\textcolor{keyword}{const} TFirst\& val)}
+\DoxyCodeLine{00066 \{}
+\DoxyCodeLine{00067     m\_first = val;}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 \textcolor{comment}{// Set second coordinates}}
+\DoxyCodeLine{00071 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{\Hypertarget{PointTemplate_8cc_source_l00072}\mbox{\hyperlink{classPoint_a9303ca8f1f1cd6a123e9e744004f0565}{00072}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPoint_ae1468ca451216c3341e2b74b5811f30b}{Point<TFirst, TSecond>::Second}}(\textcolor{keyword}{const} TSecond\& val)}
+\DoxyCodeLine{00073 \{}
+\DoxyCodeLine{00074     m\_second = val;}
+\DoxyCodeLine{00075 \}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077 \textcolor{comment}{// Calculate distance}}
+\DoxyCodeLine{00078 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{00079 \textcolor{keywordtype}{double} \mbox{\hyperlink{classPoint_a157aafa697fc65028517c431b6c313a2}{Point<TFirst, TSecond>::Distance}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& p)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00080 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00081     \textcolor{comment}{// Get the length of the sides}}
+\DoxyCodeLine{00082     TFirst a = p.m\_first -\/ m\_first;}
+\DoxyCodeLine{00083     TSecond \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = p.m\_second -\/ m\_second;}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \textcolor{comment}{// Use Pythagoras to calculate distance}}
+\DoxyCodeLine{00086     \textcolor{keywordflow}{return} std::sqrt(a*a + \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}*\mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}});}
+\DoxyCodeLine{00087 \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089 \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00090 \textcolor{keyword}{template} <\textcolor{keyword}{class} TFirst, \textcolor{keyword}{class} TSecond>}
+\DoxyCodeLine{00091 \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& \mbox{\hyperlink{classPoint_adc5027a0b925b795c504ac45be9806bb}{Point<TFirst, TSecond>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classPoint}{Point<TFirst, TSecond>}}\& source)}
+\DoxyCodeLine{00092 \{}
+\DoxyCodeLine{00093     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source)}
+\DoxyCodeLine{00094         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     m\_first = source.m\_first;}
+\DoxyCodeLine{00097     m\_second = source.m\_second;}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00100 \}}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102 \textcolor{comment}{// Print}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104 \textcolor{comment}{// template <class TFirst, class TSecond>}}
+\DoxyCodeLine{00105 \textcolor{comment}{// std::ostream\& operator << (std::ostream\& os, const Point<TFirst, TSecond>\& p)}}
+\DoxyCodeLine{00106 \textcolor{comment}{// \{}}
+\DoxyCodeLine{00107 \textcolor{comment}{//  os << "(" << p.m\_first << "," << p.m\_second << ")\(\backslash\)n";}}
+\DoxyCodeLine{00108 \textcolor{comment}{//  return os;}}
+\DoxyCodeLine{00109 \textcolor{comment}{// \}}}
+\DoxyCodeLine{00110 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMultiAssetFactory">
 <title>MultiAssetFactory Class Reference</title>
 <indexterm><primary>MultiAssetFactory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MultiAssetFactory.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for MultiAssetFactory:<para>
     <informalfigure>
         <mediaobject>
@@ -14,12 +17,85 @@ Collaboration diagram for MultiAssetFactory:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classMultiAssetFactory_1af557ef4e09d2fd13505bd932e1c17e78"/>virtual <link linkend="_classMultiAssetPayoffStrategy">MultiAssetPayoffStrategy</link> * <emphasis role="strong">create</emphasis> (int N)</para>
+            <listitem><para><link linkend="_classMultiAssetFactory_1a2a3e41943a6d51f6c56ed746db443a86">MultiAssetFactory</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classMultiAssetFactory_1ac119d81cfec42e83368f632e261e59f1"/>void <emphasis role="strong">display</emphasis> ()</para>
+            <listitem><para>virtual <link linkend="_classMultiAssetPayoffStrategy">MultiAssetPayoffStrategy</link> * <link linkend="_classMultiAssetFactory_1af557ef4e09d2fd13505bd932e1c17e78">create</link> (int <link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classMultiAssetFactory_1ac119d81cfec42e83368f632e261e59f1">display</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 23 of file MultiAssetFactory.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classMultiAssetFactory_1a2a3e41943a6d51f6c56ed746db443a86"/>    <section>
+    <title>MultiAssetFactory()</title>
+<indexterm><primary>MultiAssetFactory</primary><secondary>MultiAssetFactory</secondary></indexterm>
+<indexterm><primary>MultiAssetFactory</primary><secondary>MultiAssetFactory</secondary></indexterm>
+<para><computeroutput>MultiAssetFactory::MultiAssetFactory ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 26 of file MultiAssetFactory.hh.</para>
+<programlisting>27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc&#32;=&#32;std::map&lt;int,&#32;std::string&gt;();
+29 
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(1,&#32;<emphasis role="stringliteral">&quot;Exchange&#32;option\n&quot;</emphasis>));
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(2,&#32;<emphasis role="stringliteral">&quot;Rainbow&#32;option\n&quot;</emphasis>));
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(3,&#32;<emphasis role="stringliteral">&quot;Basket&#32;option\n&quot;</emphasis>));
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(4,&#32;<emphasis role="stringliteral">&quot;BestWorst&#32;option\n&quot;</emphasis>));
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(5,&#32;<emphasis role="stringliteral">&quot;Quotient&#32;option\n&quot;</emphasis>));
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(6,&#32;<emphasis role="stringliteral">&quot;Quanto&#32;option\n&quot;</emphasis>));
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(7,&#32;<emphasis role="stringliteral">&quot;SpreadStrategy&#32;option\n&quot;</emphasis>));
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(8,&#32;<emphasis role="stringliteral">&quot;Dual&#32;Strike&#32;Strategy&#32;option\n&quot;</emphasis>));
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;desc.insert(std::pair&lt;int,&#32;std::string&gt;(9,&#32;<emphasis role="stringliteral">&quot;Out&#32;Perfomance&#32;option\n&quot;</emphasis>));
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classMultiAssetFactory_1af557ef4e09d2fd13505bd932e1c17e78"/>    <section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>MultiAssetFactory</secondary></indexterm>
+<indexterm><primary>MultiAssetFactory</primary><secondary>create</secondary></indexterm>
+<para><computeroutput>virtual <link linkend="_classMultiAssetPayoffStrategy">MultiAssetPayoffStrategy</link>* MultiAssetFactory::create (int N)<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 41 of file MultiAssetFactory.hh.</para>
+<programlisting>42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+43 
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;1)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateExchangeStrategy();
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;2)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateRainbowStrategy();
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;3)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateBasketStrategy();
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;4)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateBestWorstStrategy();
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;5)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateQuotientStrategy();
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;6)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateQuantoStrategy();
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;7)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateSpreadStrategy();
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;8)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateDualStrikeStrategy();
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;==&#32;9)&#32;<emphasis role="keywordflow">return</emphasis>&#32;CreateOutPerformanceStrategy();
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exception</emphasis>
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;&gt;&#32;9&#32;||&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;&lt;&#32;1)
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::string(<emphasis role="stringliteral">&quot;Outside&#32;range\n&quot;</emphasis>);
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classMultiAssetFactory_1ac119d81cfec42e83368f632e261e59f1"/>    <section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>MultiAssetFactory</secondary></indexterm>
+<indexterm><primary>MultiAssetFactory</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>void MultiAssetFactory::display ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 61 of file MultiAssetFactory.hh.</para>
+<programlisting>62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Show&#32;options&#32;for&#32;a&#32;choice</emphasis>
+63 
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::map&lt;int,&#32;std::string&gt;::&#32;const_iterator&#32;it;
+65 
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(it&#32;=&#32;desc.begin();&#32;it&#32;!=&#32;desc.end();&#32;it++)
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*it).first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;(*it).second&#32;&lt;&lt;&#32;std::endl;
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-MultiAssetFactory.hh</section>
+<link linkend="_MultiAssetFactory_8hh">MultiAssetFactory.hh</link></section>
+</section>

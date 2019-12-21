@@ -1,0 +1,90 @@
+\hypertarget{IBVP_8cc_source}{}\doxysection{I\+B\+V\+P.\+cc}
+\label{IBVP_8cc_source}\index{src/IBVP.cc@{src/IBVP.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ibvp.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Modelling PDE as C++ classes. This is a simple model in one space}}
+\DoxyCodeLine{00004 \textcolor{comment}{// dimension where we assume that Dirichlet boundary conditions are in }}
+\DoxyCodeLine{00005 \textcolor{comment}{// force.}}
+\DoxyCodeLine{00006 \textcolor{comment}{// }}
+\DoxyCodeLine{00007 \textcolor{comment}{// In a component environment (e.g. C\#) we could define intefaces and }}
+\DoxyCodeLine{00008 \textcolor{comment}{// abstract base classes.}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{// Last Modification Dates:}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{// 2005-\/9-\/26 DD Kick off}}
+\DoxyCodeLine{00013 \textcolor{comment}{// 2005-\/10-\/26 DD Finish off}}
+\DoxyCodeLine{00014 \textcolor{comment}{// 2005-\/10-\/27 DD new cpp file}}
+\DoxyCodeLine{00015 \textcolor{comment}{// 2005-\/12-\/12 DD for 2d basket option case. No Bridge but inheritance now}}
+\DoxyCodeLine{00016 \textcolor{comment}{//}}
+\DoxyCodeLine{00017 \textcolor{comment}{// (C) Datasim Component Technology BV 2000-\/2006}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{IBVP_8hh}{duffy/IBVP.hh}}>}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 IBVP::IBVP()}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023     xaxis = \mbox{\hyperlink{classRange}{Range<double>}} (0.0, 1.0);}
+\DoxyCodeLine{00024     taxis = \mbox{\hyperlink{classRange}{Range<double>}} (0.0, 1.0);}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00028}\mbox{\hyperlink{classIBVP_a449355041ee520c752ab510137bd41a4}{00028}} IBVP::IBVP (\mbox{\hyperlink{classIBVPImp}{IBVPImp}}\& executor, \textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<double>}}\& xrange, \textcolor{keyword}{const} \mbox{\hyperlink{classRange}{Range<double>}}\& trange)}
+\DoxyCodeLine{00029 \{}
+\DoxyCodeLine{00030     imp = \&executor;}
+\DoxyCodeLine{00031     xaxis = \mbox{\hyperlink{classIBVP_af6b0b31d8fe2020b43a22b8ee673c1a1}{xrange}};}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     taxis = \mbox{\hyperlink{classIBVP_a2bbe956e73b4174303b1a2ba481cb35b}{trange}};}
+\DoxyCodeLine{00034 \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00037}\mbox{\hyperlink{classIBVP_a59a82bedba3a8de65997ce6b64e612b5}{00037}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVP_a59a82bedba3a8de65997ce6b64e612b5}{IBVP::diffusion}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00038 \textcolor{keyword}{}\{ \textcolor{comment}{// Coefficient of second derivative}}
+\DoxyCodeLine{00039     \textcolor{keywordflow}{return} imp-\/>\mbox{\hyperlink{classIBVPImp_a6f66b0583fd3d65ad946650f1ff7ca1e}{diffusion}}(x,t);}
+\DoxyCodeLine{00040 \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00042}\mbox{\hyperlink{classIBVP_a74f384836849c568e26b10bae327ace5}{00042}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVP_a74f384836849c568e26b10bae327ace5}{IBVP::convection}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00043 \textcolor{keyword}{}\{ \textcolor{comment}{// Coefficient of first derivative}}
+\DoxyCodeLine{00044     \textcolor{keywordflow}{return} imp-\/>\mbox{\hyperlink{classIBVPImp_a44d3dc1c2d3b351705d101943c42c880}{convection}}(x,t);}
+\DoxyCodeLine{00045 \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00048}\mbox{\hyperlink{classIBVP_adf8e3d7993a300e7dd5c727d935ad8aa}{00048}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVP_adf8e3d7993a300e7dd5c727d935ad8aa}{IBVP::zeroterm}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00049 \textcolor{keyword}{}\{   \textcolor{comment}{// Coefficient of zero derivative}}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} imp-\/>\mbox{\hyperlink{classIBVPImp_ac6bab43d37b55879c6b29eefa0dad63f}{zeroterm}}(x,t);}
+\DoxyCodeLine{00051 \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00054}\mbox{\hyperlink{classIBVP_abba7e8fa377fb7cc5dbbd0da5922eca5}{00054}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVP_abba7e8fa377fb7cc5dbbd0da5922eca5}{IBVP::RHS}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00055 \textcolor{keyword}{}\{ \textcolor{comment}{// Inhomogeneous forcing term}}
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} imp-\/>\mbox{\hyperlink{classIBVPImp_ae2d0430ad38aa7b6055b1cb622051e67}{RHS}}(x,t);}
+\DoxyCodeLine{00057 \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059 \textcolor{comment}{// Boundary and initial conditions}}
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00060}\mbox{\hyperlink{classIBVP_a06a4841866f3ec0f7f62f67a7e800930}{00060}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVP_a06a4841866f3ec0f7f62f67a7e800930}{IBVP::BCL}}(\textcolor{keywordtype}{double} t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00061 \textcolor{keyword}{}\{ \textcolor{comment}{// Left hand boundary condition}}
+\DoxyCodeLine{00062     \textcolor{keywordflow}{return} imp-\/>\mbox{\hyperlink{classIBVPImp_aeff635ae5363a1858efc57c833500300}{BCL}}(t);}
+\DoxyCodeLine{00063 \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00065}\mbox{\hyperlink{classIBVP_afd987bb4e41ff033ce8d0705818f4cef}{00065}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVP_afd987bb4e41ff033ce8d0705818f4cef}{IBVP::BCR}}(\textcolor{keywordtype}{double} t)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00066 \textcolor{keyword}{}\{ \textcolor{comment}{// Right hand boundary condition}}
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} imp-\/>\mbox{\hyperlink{classIBVPImp_a371a1b065ab843b926b1baf727be09af}{BCR}}(t);}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00070}\mbox{\hyperlink{classIBVP_a06c09ce3034e1e915ef7aba3cfd99832}{00070}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classIBVP_a06c09ce3034e1e915ef7aba3cfd99832}{IBVP::IC}}(\textcolor{keywordtype}{double} x)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00071 \textcolor{keyword}{}\{ \textcolor{comment}{// Initial condition}}
+\DoxyCodeLine{00072     \textcolor{keywordflow}{return} imp-\/>\mbox{\hyperlink{classIBVPImp_ad9cfdc5edfadcf5f18cb4d3a6b64f740}{IC}}(x);}
+\DoxyCodeLine{00073 \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075 \textcolor{comment}{// The domain in which the PDE is 'played'}}
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00076}\mbox{\hyperlink{classIBVP_af6b0b31d8fe2020b43a22b8ee673c1a1}{00076}} \mbox{\hyperlink{classRange}{Range<double>}}\& \mbox{\hyperlink{classIBVP_af6b0b31d8fe2020b43a22b8ee673c1a1}{IBVP::xrange}}() }
+\DoxyCodeLine{00077 \{}
+\DoxyCodeLine{00078     \textcolor{keywordflow}{return} xaxis;}
+\DoxyCodeLine{00079 \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{\Hypertarget{IBVP_8cc_source_l00081}\mbox{\hyperlink{classIBVP_a2bbe956e73b4174303b1a2ba481cb35b}{00081}} \mbox{\hyperlink{classRange}{Range<double>}}\& \mbox{\hyperlink{classIBVP_a2bbe956e73b4174303b1a2ba481cb35b}{IBVP::trange}}() }
+\DoxyCodeLine{00082 \{}
+\DoxyCodeLine{00083     \textcolor{keywordflow}{return} taxis;}
+\DoxyCodeLine{00084 \}}
+
+\end{DoxyCode}

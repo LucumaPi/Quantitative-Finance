@@ -1,0 +1,305 @@
+\hypertarget{SimplePropertySet_8cc_source}{}\doxysection{Simple\+Property\+Set.\+cc}
+\label{SimplePropertySet_8cc_source}\index{src/SimplePropertySet.cc@{src/SimplePropertySet.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// SimplePropertySet.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Composite function class}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{//  7 November 2002 DD Kick-\/of}}
+\DoxyCodeLine{00006 \textcolor{comment}{//  8 December New class}}
+\DoxyCodeLine{00007 \textcolor{comment}{//  10 December 2002 remove() and other list-\/based functions}}
+\DoxyCodeLine{00008 \textcolor{comment}{//  2002-\/12-\/26 DD Set has a name}}
+\DoxyCodeLine{00009 \textcolor{comment}{//  2004-\/4-\/26 DD last check}}
+\DoxyCodeLine{00010 \textcolor{comment}{//  2004-\/6-\/8 DD implement as a map now}}
+\DoxyCodeLine{00011 \textcolor{comment}{//  2004-\/7-\/20 DD optimisitions. more on maps}}
+\DoxyCodeLine{00012 \textcolor{comment}{//  2004-\/7-\/21 DD bugs!!}}
+\DoxyCodeLine{00013 \textcolor{comment}{//  2004-\/7-\/23 DD Prototype and Visitor}}
+\DoxyCodeLine{00014 \textcolor{comment}{//  2004-\/8-\/4 DD rounding off; code review}}
+\DoxyCodeLine{00015 \textcolor{comment}{//  2004-\/9-\/7 DD value function (modifier)}}
+\DoxyCodeLine{00016 \textcolor{comment}{//  2004-\/9-\/19 DD add(key + value)}}
+\DoxyCodeLine{00017 \textcolor{comment}{//  2004-\/9-\/22 DD some methods, return by reference}}
+\DoxyCodeLine{00018 \textcolor{comment}{//  2005-\/3-\/27 DD bug soled value()}}
+\DoxyCodeLine{00019 \textcolor{comment}{//}}
+\DoxyCodeLine{00020 \textcolor{comment}{// (C) Datasim Education BV 2002-\/2004}}
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#ifndef SimplePropertySet\_CC}}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00022}\mbox{\hyperlink{SimplePropertySet_8cc_a28d6f2f759bc4b9b519c84d40b78cf6a}{00022}} \textcolor{preprocessor}{\#define SimplePropertySet\_CC}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{SimplePropertySet_8hh}{duffy/SimplePropertySet.hh}}>}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00027}\mbox{\hyperlink{classSimplePropertySet_a81d6e9ab7aff63f3fe5b5818f5aba24d}{00027}} \mbox{\hyperlink{classSimplePropertySet_a81d6e9ab7aff63f3fe5b5818f5aba24d}{SimplePropertySet<N,V>::SimplePropertySet}}()}
+\DoxyCodeLine{00028 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     nam = \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}();}
+\DoxyCodeLine{00031     sl=std::map<N,V>();}
+\DoxyCodeLine{00032     keys = \mbox{\hyperlink{classSet}{Set<N>}}();}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00036}\mbox{\hyperlink{classSimplePropertySet_a023467dd53d24dc7ef5cb6b4d88aa7ce}{00036}} \mbox{\hyperlink{classSimplePropertySet_a81d6e9ab7aff63f3fe5b5818f5aba24d}{SimplePropertySet<N,V>::SimplePropertySet}}(\textcolor{keyword}{const} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}\& name)}
+\DoxyCodeLine{00037 \{ \textcolor{comment}{// Named property set}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     nam = name;}
+\DoxyCodeLine{00040     sl=std::map<N,V>();}
+\DoxyCodeLine{00041     keys = \mbox{\hyperlink{classSet}{Set<N>}}();}
+\DoxyCodeLine{00042     keys.Insert(name);}
+\DoxyCodeLine{00043 \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00047}\mbox{\hyperlink{classSimplePropertySet_adda400272ff7f24ba0e4c3fab9e39f6b}{00047}} \mbox{\hyperlink{classSimplePropertySet_a81d6e9ab7aff63f3fe5b5818f5aba24d}{SimplePropertySet<N,V>::SimplePropertySet}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<N,V>}}\& source)}
+\DoxyCodeLine{00048 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00049     }
+\DoxyCodeLine{00050     nam = source.nam;}
+\DoxyCodeLine{00051     sl = source.sl;}
+\DoxyCodeLine{00052     keys = source.keys;}
+\DoxyCodeLine{00053 \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00056}\mbox{\hyperlink{classSimplePropertySet_a8b45e771b3efadcf2ccbcc3fdaa12f5e}{00056}} \mbox{\hyperlink{classSimplePropertySet_a81d6e9ab7aff63f3fe5b5818f5aba24d}{SimplePropertySet<N,V>::SimplePropertySet}}(\textcolor{keyword}{const} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<N>}}\& keySet)}
+\DoxyCodeLine{00057 \{ \textcolor{comment}{// Create a property set from a set of attribute defs}}
+\DoxyCodeLine{00058     }
+\DoxyCodeLine{00059     nam = name;}
+\DoxyCodeLine{00060     keys = keySet;}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{comment}{// Now iterate in the keys and do default constructor}}
+\DoxyCodeLine{00063     \textcolor{keyword}{typename} \mbox{\hyperlink{classSet}{Set<N>::iterator}} it;}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \textcolor{keywordflow}{for} (it = keys.\mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{Begin}}(); it != keys.\mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{End}}(); it++)}
+\DoxyCodeLine{00066     \{ }
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068         \mbox{\hyperlink{Vector_8hh_af8ed022403e1f5df6daa9094218a4c0d}{add}}(\mbox{\hyperlink{classProperty}{Property<N,V>}}(*it, V()));}
+\DoxyCodeLine{00069     \}   }
+\DoxyCodeLine{00070 \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00073}\mbox{\hyperlink{classSimplePropertySet_abe51bf32a2816ab01a7bbca3d838f430}{00073}} \mbox{\hyperlink{classSimplePropertySet_abe51bf32a2816ab01a7bbca3d838f430}{SimplePropertySet<N,V>::~SimplePropertySet}}()}
+\DoxyCodeLine{00074 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077 \}}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079 \textcolor{comment}{// Iterator functions}}
+\DoxyCodeLine{00080 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V> \textcolor{keyword}{typename}}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00081}\mbox{\hyperlink{classSimplePropertySet_af0c72b2e6a39f6d2d02ce443afa01de5}{00081}} \mbox{\hyperlink{classSimplePropertySet_ae7e2bc706a3ded16c053d59d7a1343be}{SimplePropertySet<N,V>::iterator}} \mbox{\hyperlink{classSimplePropertySet_af0c72b2e6a39f6d2d02ce443afa01de5}{SimplePropertySet<N,V>::Begin}}()}
+\DoxyCodeLine{00082 \{ \textcolor{comment}{// Return iterator at begin of composite}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{keywordflow}{return} sl.begin();}
+\DoxyCodeLine{00085 \}}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V> \textcolor{keyword}{typename}}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00088}\mbox{\hyperlink{classSimplePropertySet_a6802c214360692877d33fa97de489c81}{00088}} \mbox{\hyperlink{classSimplePropertySet_aab3d4fc3315979035be3d5c64c42d425}{SimplePropertySet<N,V>::const\_iterator}} \mbox{\hyperlink{classSimplePropertySet_af0c72b2e6a39f6d2d02ce443afa01de5}{SimplePropertySet<N,V>::Begin}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00089 \textcolor{keyword}{}\{ \textcolor{comment}{// Return const iterator at begin of composite}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{keywordflow}{return} sl.begin();}
+\DoxyCodeLine{00092 \}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V> \textcolor{keyword}{typename}}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00095}\mbox{\hyperlink{classSimplePropertySet_a6d3c8a051b7c6846508898c8375a2cfd}{00095}} \mbox{\hyperlink{classSimplePropertySet_ae7e2bc706a3ded16c053d59d7a1343be}{SimplePropertySet<N,V>::iterator}} \mbox{\hyperlink{classSimplePropertySet_a6d3c8a051b7c6846508898c8375a2cfd}{SimplePropertySet<N,V>::End}}()}
+\DoxyCodeLine{00096 \{ \textcolor{comment}{// Return iterator after end of composite}}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     \textcolor{keywordflow}{return} sl.end();}
+\DoxyCodeLine{00099 \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V> \textcolor{keyword}{typename}}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00102}\mbox{\hyperlink{classSimplePropertySet_a5d6159e4afdef3815a3caa7840867f3c}{00102}} \mbox{\hyperlink{classSimplePropertySet_aab3d4fc3315979035be3d5c64c42d425}{SimplePropertySet<N,V>::const\_iterator}} \mbox{\hyperlink{classSimplePropertySet_a6d3c8a051b7c6846508898c8375a2cfd}{SimplePropertySet<N,V>::End}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00103 \textcolor{keyword}{}\{ \textcolor{comment}{// Return const iterator after end of composite}}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105     \textcolor{keywordflow}{return} sl.end();}
+\DoxyCodeLine{00106 \}}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00109 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00110}\mbox{\hyperlink{classSimplePropertySet_ab593364b7d18f4fa2639abc75c188d0c}{00110}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classSimplePropertySet_ab593364b7d18f4fa2639abc75c188d0c}{SimplePropertySet<N,V>::Size}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00111 \textcolor{keyword}{}\{ \textcolor{comment}{// Return the number of functions in the composite}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113     \textcolor{keywordflow}{return} keys.Size();}
+\DoxyCodeLine{00114 \}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00117}\mbox{\hyperlink{classSimplePropertySet_adee2b738f8853c056e40c72384a442bf}{00117}}     \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} \mbox{\hyperlink{classSimplePropertySet_adee2b738f8853c056e40c72384a442bf}{SimplePropertySet<N,V>::operator ()}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00118 \textcolor{keyword}{}\{ \textcolor{comment}{// The name of the property set}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120         \textcolor{keywordflow}{return} nam;}
+\DoxyCodeLine{00121 \}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00124}\mbox{\hyperlink{classSimplePropertySet_a7674e0f5c6b6a747aa85d54bc52d1ab7}{00124}}     \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} \mbox{\hyperlink{classSimplePropertySet_a7674e0f5c6b6a747aa85d54bc52d1ab7}{SimplePropertySet<N,V>::name}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00125 \textcolor{keyword}{}\{ \textcolor{comment}{// The name of the property set}}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127         \textcolor{keywordflow}{return} nam;}
+\DoxyCodeLine{00128 \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00131}\mbox{\hyperlink{classSimplePropertySet_a6ba0b7ab8d9122312489ca390c4bf403}{00131}} \mbox{\hyperlink{classSet}{Set<N>}}\& \mbox{\hyperlink{classSimplePropertySet_a6ba0b7ab8d9122312489ca390c4bf403}{SimplePropertySet<N,V>::definingSet}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00132 \textcolor{keyword}{}\{ \textcolor{comment}{// Set of keys}}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134     \textcolor{keywordflow}{return} keys;}
+\DoxyCodeLine{00135 \}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00139}\mbox{\hyperlink{classSimplePropertySet_a1267fc2078252c8f5cde01bc082c7abb}{00139}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSimplePropertySet_a1267fc2078252c8f5cde01bc082c7abb}{SimplePropertySet<N,V>::hasProperty}}(\textcolor{keyword}{const} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}\& \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}})\textcolor{keyword}{ const}}
+\DoxyCodeLine{00140 \textcolor{keyword}{}\{ \textcolor{comment}{// Is the property in the list?}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     \textcolor{keywordflow}{return} keys.Contains(\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}});}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145 \}}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00149 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00150}\mbox{\hyperlink{classSimplePropertySet_ae7b7f24763a55b11e9e21cec05390965}{00150}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSimplePropertySet_adee2b738f8853c056e40c72384a442bf}{SimplePropertySet<N,V>::operator () }}(\textcolor{keyword}{const} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}\& name)}
+\DoxyCodeLine{00151 \{}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153         nam = name;}
+\DoxyCodeLine{00154 \}}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00157}\mbox{\hyperlink{classSimplePropertySet_a10d2ad72a513d2b6727113b4d9ec0f78}{00157}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSimplePropertySet_a10d2ad72a513d2b6727113b4d9ec0f78}{SimplePropertySet<N,V>::ClearAll}}()}
+\DoxyCodeLine{00158 \{   \textcolor{comment}{// Remove all its properties}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160     sl = std::map<N,V>();}
+\DoxyCodeLine{00161 \}}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00164}\mbox{\hyperlink{classSimplePropertySet_a897907f8f6c0d4a68e6fadf6d6538773}{00164}}     V \mbox{\hyperlink{classSimplePropertySet_a897907f8f6c0d4a68e6fadf6d6538773}{SimplePropertySet<N,V>::value}}(\textcolor{keyword}{const} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}\& name)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00165 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167     \textcolor{comment}{// NO exception handling}}
+\DoxyCodeLine{00168     \textcolor{comment}{// if (hasProperty(name) == false)}}
+\DoxyCodeLine{00169         \textcolor{comment}{//return V();}}
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171     \textcolor{comment}{// ;( Sledgehammer, use find!!}}
+\DoxyCodeLine{00172     \textcolor{comment}{// We iterate over the list until we find the value}}
+\DoxyCodeLine{00173     \textcolor{keyword}{typename} std::map<N,V>::const\_iterator it;}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175     \textcolor{keywordflow}{for} (it=sl.begin(); it!=sl.end(); it++)}
+\DoxyCodeLine{00176     \{ }
+\DoxyCodeLine{00177 }
+\DoxyCodeLine{00178         \textcolor{keywordflow}{if} ((*it).first == name)}
+\DoxyCodeLine{00179         \{}
+\DoxyCodeLine{00180             \textcolor{keywordflow}{return} (*it).second;}
+\DoxyCodeLine{00181         \}}
+\DoxyCodeLine{00182     \} }
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184 \textcolor{comment}{//  return sl[name];}}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186 \}}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00189}\mbox{\hyperlink{classSimplePropertySet_a6bf75b5e081e0a8dea7535811349e081}{00189}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSimplePropertySet_a897907f8f6c0d4a68e6fadf6d6538773}{SimplePropertySet<N,V>::value}}(\textcolor{keyword}{const} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}\& name, \textcolor{keyword}{const} V\& value) }
+\DoxyCodeLine{00190 \{   \textcolor{comment}{// Change value of Property, key 'name'}}
+\DoxyCodeLine{00191     }
+\DoxyCodeLine{00192     \textcolor{comment}{// NO exception handling}}
+\DoxyCodeLine{00193     \textcolor{keywordflow}{if} (hasProperty(name) == \textcolor{keyword}{false})}
+\DoxyCodeLine{00194         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196     \textcolor{comment}{// ;( Sledgehammer}}
+\DoxyCodeLine{00197     \textcolor{comment}{// We iterate over the list until we find the value}}
+\DoxyCodeLine{00198     \textcolor{keyword}{typename} std::map<N,V>::iterator it;}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200     \textcolor{keywordflow}{for} (it=sl.begin(); it!=sl.end(); it++)}
+\DoxyCodeLine{00201     \{ }
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203         \textcolor{keywordflow}{if} ((*it).first == name)}
+\DoxyCodeLine{00204         \{}
+\DoxyCodeLine{00205             (*it).second = value;}
+\DoxyCodeLine{00206         \}}
+\DoxyCodeLine{00207     \}}
+\DoxyCodeLine{00208 \}}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00211}\mbox{\hyperlink{classSimplePropertySet_a0416ff1b79646897fc4f6d7019f8ed63}{00211}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSimplePropertySet_a897907f8f6c0d4a68e6fadf6d6538773}{SimplePropertySet<N,V>::value}}(\textcolor{keyword}{const} \mbox{\hyperlink{classProperty}{Property<N,V>}}\& scf)}
+\DoxyCodeLine{00212 \{}
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214     value(scf.\mbox{\hyperlink{classProperty_a61070c4a41dcdbc890c6b27146931e97}{name}}(), scf());}
+\DoxyCodeLine{00215 \}}
+\DoxyCodeLine{00216 }
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219 \textcolor{comment}{// Add functions}}
+\DoxyCodeLine{00220 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00221}\mbox{\hyperlink{classSimplePropertySet_ae25d67b8dc28ce9af587b769bbe1dfe3}{00221}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{SimplePropertySet<N,V>::add}}(\textcolor{keyword}{const} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}\& key, \textcolor{keyword}{const} V\& value)}
+\DoxyCodeLine{00222 \{ \textcolor{comment}{// Add a key+value pair to the list}}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224 }
+\DoxyCodeLine{00225     std::pair<N,V> tmp;}
+\DoxyCodeLine{00226     tmp.first = key;}
+\DoxyCodeLine{00227     tmp.second = value;}
+\DoxyCodeLine{00228 }
+\DoxyCodeLine{00229     sl.insert(tmp); \textcolor{comment}{// Add el. with name + value}}
+\DoxyCodeLine{00230 }
+\DoxyCodeLine{00231     \textcolor{comment}{// Update the key set}}
+\DoxyCodeLine{00232     keys.Insert(key);}
+\DoxyCodeLine{00233 \}}
+\DoxyCodeLine{00234 }
+\DoxyCodeLine{00235 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00236}\mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{00236}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSimplePropertySet_a8663619c5669177f23286672ad49ceca}{SimplePropertySet<N,V>::add}}(\textcolor{keyword}{const} \mbox{\hyperlink{classProperty}{Property<N, V>}}\& pr)}
+\DoxyCodeLine{00237 \{ \textcolor{comment}{// Add a key+value pair to the list}}
+\DoxyCodeLine{00238 }
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00240     std::pair<N,V> tmp;}
+\DoxyCodeLine{00241     tmp.first = pr.\mbox{\hyperlink{classProperty_a61070c4a41dcdbc890c6b27146931e97}{name}}();}
+\DoxyCodeLine{00242     tmp.second = pr();}
+\DoxyCodeLine{00243 }
+\DoxyCodeLine{00244     sl.insert(tmp); \textcolor{comment}{// Add el. with name + value}}
+\DoxyCodeLine{00245 }
+\DoxyCodeLine{00246     \textcolor{comment}{// Update the key set}}
+\DoxyCodeLine{00247     keys.Insert(tmp.first);}
+\DoxyCodeLine{00248 \}}
+\DoxyCodeLine{00249 }
+\DoxyCodeLine{00250 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00251}\mbox{\hyperlink{classSimplePropertySet_ade559928631fd263ac69aef08f4017d2}{00251}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSimplePropertySet_ade559928631fd263ac69aef08f4017d2}{SimplePropertySet<N,V>::remove}}(\textcolor{keyword}{const} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}\& key)}
+\DoxyCodeLine{00252 \{ \textcolor{comment}{// Remove all elements with 'key' O(1)}}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254 }
+\DoxyCodeLine{00255     sl.erase(key);}
+\DoxyCodeLine{00256 \}}
+\DoxyCodeLine{00257 }
+\DoxyCodeLine{00258     }
+\DoxyCodeLine{00259 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00260}\mbox{\hyperlink{classSimplePropertySet_a88c4fef57ef8e5279d28f6a13a10076c}{00260}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSimplePropertySet_ade559928631fd263ac69aef08f4017d2}{SimplePropertySet<N,V>::remove}}(\textcolor{keyword}{const} \mbox{\hyperlink{classProperty}{Property<N, V>}}\& prop)}
+\DoxyCodeLine{00261 \{ \textcolor{comment}{// Remove the given property}}
+\DoxyCodeLine{00262 }
+\DoxyCodeLine{00263     remove(prop.\mbox{\hyperlink{classProperty_a61070c4a41dcdbc890c6b27146931e97}{name}}());}
+\DoxyCodeLine{00264 \}}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00266         }
+\DoxyCodeLine{00267 \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00268 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00269}\mbox{\hyperlink{classSimplePropertySet_a3f605fbec62d086f9d5cd3fd204bb9e9}{00269}}     \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<N,V>}}\& \mbox{\hyperlink{classSimplePropertySet_a3f605fbec62d086f9d5cd3fd204bb9e9}{SimplePropertySet<N,V>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<N,V>}}\& source)}
+\DoxyCodeLine{00270 \{ \textcolor{comment}{// Assignment}}
+\DoxyCodeLine{00271 }
+\DoxyCodeLine{00272     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00273     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275 }
+\DoxyCodeLine{00276     nam = source.nam;}
+\DoxyCodeLine{00277     sl = source.sl;}
+\DoxyCodeLine{00278     keys = source.keys;}
+\DoxyCodeLine{00279 }
+\DoxyCodeLine{00280     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00281 \}}
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283 \textcolor{keyword}{template} <\textcolor{keyword}{class} N, \textcolor{keyword}{class} V>  }
+\DoxyCodeLine{\Hypertarget{SimplePropertySet_8cc_source_l00284}\mbox{\hyperlink{classSimplePropertySet_a5310d09ff2e7065a119dbf1368179cef}{00284}} \mbox{\hyperlink{classPropertyThing}{PropertyThing<N,V>}}* \mbox{\hyperlink{classSimplePropertySet_a5310d09ff2e7065a119dbf1368179cef}{SimplePropertySet<N, V>::Copy}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{00285 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00286 }
+\DoxyCodeLine{00287     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00288 \}}
+\DoxyCodeLine{00289 }
+\DoxyCodeLine{00290 \textcolor{comment}{/*}}
+\DoxyCodeLine{00291 \textcolor{comment}{template <class N, class V>  }}
+\DoxyCodeLine{00292 \textcolor{comment}{void SimplePropertySet<N,V>::accept(PropertyThingVisitor<N,V>\& pv) }}
+\DoxyCodeLine{00293 \textcolor{comment}{\{}}
+\DoxyCodeLine{00294 \textcolor{comment}{}}
+\DoxyCodeLine{00295 \textcolor{comment}{    pv.Visit(*this);}}
+\DoxyCodeLine{00296 \textcolor{comment}{\}}}
+\DoxyCodeLine{00297 \textcolor{comment}{}}
+\DoxyCodeLine{00298 \textcolor{comment}{*/}}
+\DoxyCodeLine{00299 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

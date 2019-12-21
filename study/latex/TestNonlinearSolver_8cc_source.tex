@@ -1,0 +1,93 @@
+\hypertarget{TestNonlinearSolver_8cc_source}{}\doxysection{Test\+Nonlinear\+Solver.\+cc}
+\label{TestNonlinearSolver_8cc_source}\index{tests/TestNonlinearSolver.cc@{tests/TestNonlinearSolver.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestNonlinearSolver.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing Bisection method and Newton Raphson method.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{NonlinearSolver_8hh}{duffy/NonlinearSolver.hh}}>}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{TestNonlinearSolver_8cc_source_l00010}\mbox{\hyperlink{TestNonlinearSolver_8cc_a843a3918b1381a4fe89fc6724199d7b7}{00010}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestNonlinearSolver_8cc_a843a3918b1381a4fe89fc6724199d7b7}{Func1}}(\textcolor{keywordtype}{double} x)}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{double} tmp = 0.5 * x;}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \textcolor{keywordflow}{return} (tmp*tmp) -\/ \mbox{\hyperlink{Complex_8cc_af22660b33d2d25b25b83167ef6cf4c5d}{std::sin}}(x);}
+\DoxyCodeLine{00015 \}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{TestNonlinearSolver_8cc_source_l00017}\mbox{\hyperlink{TestNonlinearSolver_8cc_ad00503aecf167d4637c74f34aea3b74b}{00017}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestNonlinearSolver_8cc_ad00503aecf167d4637c74f34aea3b74b}{DerivativeFunc1}}(\textcolor{keywordtype}{double} x)}
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019     \textcolor{comment}{// Just the derivative, need for Newton's method}}
+\DoxyCodeLine{00020     \textcolor{keywordflow}{return} (0.5 * x) -\/ \mbox{\hyperlink{Complex_8cc_af369383fdcdf6ec5e3a01b215e180c83}{std::cos}}(x);}
+\DoxyCodeLine{00021 \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{\Hypertarget{TestNonlinearSolver_8cc_source_l00024}\mbox{\hyperlink{TestNonlinearSolver_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00024}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestNonlinearSolver_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00025 \{}
+\DoxyCodeLine{00026     \textcolor{comment}{// Tell where to look for solvers, in a namespace}}
+\DoxyCodeLine{00027     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceNS__NonlinearSolver}{NS\_NonlinearSolver}};}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{comment}{// 1. Bisection method}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{comment}{// Initial interval}}
+\DoxyCodeLine{00032     \textcolor{keywordtype}{double} a = 1.52;}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = 2.0;}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{comment}{// In this version all data is public; in a later version}}
+\DoxyCodeLine{00036     \textcolor{comment}{// make it private}}
+\DoxyCodeLine{00037     \mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver}{BisectionSolver}} bs;}
+\DoxyCodeLine{00038     bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}} = \mbox{\hyperlink{TestNonlinearSolver_8cc_a843a3918b1381a4fe89fc6724199d7b7}{Func1}};}
+\DoxyCodeLine{00039     bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a116ed2c5cf4900e25c80fa11a658dd25}{a}} = a; bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_af5fb4bdea0feb69c4929b9f1037b4dfa}{b}} = \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00040     bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}} = 0.0001;}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordtype}{double} result = bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a92b3d483b030f4f4e7014f8097dfd3db}{solve}}();}
+\DoxyCodeLine{00043     std::cout << \textcolor{stringliteral}{"Bisection: "} << result << \textcolor{stringliteral}{", "} << bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a8aa6679debb70886fdfaac7aae6d25aa}{accuracy}}() << std::endl;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     bs.\mbox{\hyperlink{classNS__NonlinearSolver_1_1BisectionSolver_a1bd5e1ca8a817f8443cd4c510fcaf3af}{printStatistics}}();}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{comment}{// Newton Method}}
+\DoxyCodeLine{00048     \textcolor{keywordtype}{double} initialGuess = 1.2;}
+\DoxyCodeLine{00049     \mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver}{NewtonRaphsonSolver}} nr(initialGuess);}
+\DoxyCodeLine{00050     nr.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}} = \mbox{\hyperlink{TestNonlinearSolver_8cc_a843a3918b1381a4fe89fc6724199d7b7}{Func1}};}
+\DoxyCodeLine{00051     nr.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_aabfba87ff6919e8b6e1808e66e0b64d2}{derivative}} = \mbox{\hyperlink{TestNonlinearSolver_8cc_ad00503aecf167d4637c74f34aea3b74b}{DerivativeFunc1}};}
+\DoxyCodeLine{00052     nr.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}} = 0.0001;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{keywordtype}{double} resultNR = nr.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_ac4348d68da383f040c44279233612bd0}{solve}}();}
+\DoxyCodeLine{00055     std::cout << \textcolor{stringliteral}{"Newton Raphson: "} << resultNR << std::endl;}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     nr.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NewtonRaphsonSolver_a5cde6338212acb49f6d3b63448627970}{printStatistics}}();}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{// Secant method}}
+\DoxyCodeLine{00060     \textcolor{keywordtype}{double} initialGuess0 = 1.2;}
+\DoxyCodeLine{00061     \textcolor{keywordtype}{double} initialGuess1 = 1.6;}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver}{SecantMethodSolver}} sm(initialGuess0, initialGuess1, \mbox{\hyperlink{TestNonlinearSolver_8cc_a843a3918b1381a4fe89fc6724199d7b7}{Func1}});}
+\DoxyCodeLine{00064     sm.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}} = 0.0001;}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordtype}{double} resultSM= sm.\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_aa0353904d822a9d68c3c399de5b2a858}{solve}}();}
+\DoxyCodeLine{00067     std::cout << \textcolor{stringliteral}{"Secant Method: "} << resultSM << std::endl;}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     sm.\mbox{\hyperlink{classNS__NonlinearSolver_1_1SecantMethodSolver_a8271bc72f3bc379f5f0846ca462fd221}{printStatistics}}();}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     std::cout << \textcolor{stringliteral}{"Steffensen's method\(\backslash\)n"};}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{comment}{// Steffensen's method}}
+\DoxyCodeLine{00074     \textcolor{keywordtype}{double} guess = 1.4;}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver}{SteffensensSolver}} steff(guess, \mbox{\hyperlink{TestNonlinearSolver_8cc_a843a3918b1381a4fe89fc6724199d7b7}{Func1}});}
+\DoxyCodeLine{00077     steff.\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}} = 0.01;}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     \textcolor{keywordtype}{double} resultST= steff.\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}{solve}}();}
+\DoxyCodeLine{00080     std::cout << \textcolor{stringliteral}{"Steffensen's Method: "} << resultST << std::endl;}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     steff.\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}{printStatistics}}();}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     std::cout << \textcolor{stringliteral}{"Finished\(\backslash\)n"};}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00087 \}}
+
+\end{DoxyCode}

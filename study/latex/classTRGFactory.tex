@@ -2,6 +2,10 @@
 \label{classTRGFactory}\index{TRGFactory@{TRGFactory}}
 
 
+{\ttfamily \#include $<$Lattice\+Factory.\+hh$>$}
+
+
+
 Inheritance diagram for T\+R\+G\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,12 +25,53 @@ Collaboration diagram for T\+R\+G\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classTRGFactory_a01c4def905794c039a8e60b3e5212ae2}\label{classTRGFactory_a01c4def905794c039a8e60b3e5212ae2}} 
-{\bfseries T\+R\+G\+Factory} (double s, double r, double k)
+\mbox{\hyperlink{classTRGFactory_a01c4def905794c039a8e60b3e5212ae2}{T\+R\+G\+Factory}} (double \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}, double \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}, double \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00129}{129}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTRGFactory_a01c4def905794c039a8e60b3e5212ae2}\label{classTRGFactory_a01c4def905794c039a8e60b3e5212ae2}} 
+\index{TRGFactory@{TRGFactory}!TRGFactory@{TRGFactory}}
+\index{TRGFactory@{TRGFactory}!TRGFactory@{TRGFactory}}
+\doxysubsubsection{\texorpdfstring{TRGFactory()}{TRGFactory()}}
+{\footnotesize\ttfamily T\+R\+G\+Factory\+::\+T\+R\+G\+Factory (\begin{DoxyParamCaption}\item[{double}]{s,  }\item[{double}]{r,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00132}{132}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133         : \mbox{\hyperlink{classLatticeFactory_aec3b521318bcaed891fd9d3acb269d7f}{LatticeFactory}}(\mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}}, \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}, \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}})}
+\DoxyCodeLine{00134     \{}
+\DoxyCodeLine{00135     }
+\DoxyCodeLine{00136     \mbox{\hyperlink{classLatticeFactory_a709bb1b3ae7c5976629720ac29a20087}{bType}} = \mbox{\hyperlink{classLatticeFactory_a0ec2e0cbbdc1928d5f75bea6f6593f14aa3552a46dd1f16a919583e05abc557da}{Additive}};}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138     \textcolor{comment}{// Needed for additive method: page 19 formula 2.19 }}
+\DoxyCodeLine{00139     \textcolor{comment}{// "v" is "nu" here, for "v" see  page 17 formula 2.14}}
+\DoxyCodeLine{00140     \textcolor{keywordtype}{double} nu = \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}} -\/ 0.5 * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}};}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142     \textcolor{keywordtype}{double} nudt = nu * \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}};}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144     \textcolor{comment}{// TRG parameters: page 19 formula 2.19}}
+\DoxyCodeLine{00145     \mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}} = std::sqrt( \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * \mbox{\hyperlink{classLatticeFactory_a60d65acca1c40e10105e0b45532a2a30}{s}} * \mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}} + nudt * nudt );}
+\DoxyCodeLine{00146     \mbox{\hyperlink{classLatticeFactory_a99e4419112358eac102e48d31090a79b}{d}} = -\/ \mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}};}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148     \mbox{\hyperlink{classLatticeFactory_a4552002d494824b82c182b6c3b145a8a}{p}} = 0.5 * (1.0 + (nudt/\mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}}) );}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Lattice\+Factory.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{LatticeFactory_8hh}{Lattice\+Factory.\+hh}}\end{DoxyCompactItemize}

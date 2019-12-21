@@ -1,0 +1,107 @@
+\hypertarget{Exception1_8cc}{}\doxysection{tests/\+Exception1.cc File Reference}
+\label{Exception1_8cc}\index{tests/Exception1.cc@{tests/Exception1.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Exception1.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{Exception1_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class V $>$ }\\void \mbox{\hyperlink{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}} (const std\+::vector$<$ V $>$ \&v)
+\item 
+{\footnotesize template$<$class V $>$ }\\V \mbox{\hyperlink{Exception1_8cc_a37185c557354c7e617e677999957a52d}{sum\+Reciprocals}} (const std\+::vector$<$ V $>$ \&array)
+\item 
+int \mbox{\hyperlink{Exception1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Exception1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Exception1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Exception1.cc@{Exception1.cc}!main@{main}}
+\index{main@{main}!Exception1.cc@{Exception1.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Exception1_8cc_source_l00039}{39}} of file \mbox{\hyperlink{Exception1_8cc_source}{Exception1.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040 \{}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{int} size = 10;}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{double} elementsValue = 3.1415;}
+\DoxyCodeLine{00043     std::vector<double> myArray (size, elementsValue);}
+\DoxyCodeLine{00044     myArray[5] = 0.0;}
+\DoxyCodeLine{00045     \mbox{\hyperlink{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(myArray);}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordtype}{double} answer = \mbox{\hyperlink{Exception1_8cc_a37185c557354c7e617e677999957a52d}{sumReciprocals}}(myArray);}
+\DoxyCodeLine{00048     std::cout << \textcolor{stringliteral}{"Sum of reciprocals: "} << answer << std::endl;}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     std::cout << \textcolor{stringliteral}{"Which index change value to new value? "};}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{int} index;}
+\DoxyCodeLine{00052     std::cin >> index;}
+\DoxyCodeLine{00053     myArray[index] = 2.0;}
+\DoxyCodeLine{00054     \mbox{\hyperlink{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(myArray);}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}\label{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}} 
+\index{Exception1.cc@{Exception1.cc}!print@{print}}
+\index{print@{print}!Exception1.cc@{Exception1.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ V $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Exception1_8cc_source_l00013}{13}} of file \mbox{\hyperlink{Exception1_8cc_source}{Exception1.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016     std::cout << \textcolor{stringliteral}{"\(\backslash\)nARR:["};}
+\DoxyCodeLine{00017     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < v.size(); j++)}
+\DoxyCodeLine{00018     \{}
+\DoxyCodeLine{00019         std::cout << v[j] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00020     }
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Exception1_8cc_a37185c557354c7e617e677999957a52d}\label{Exception1_8cc_a37185c557354c7e617e677999957a52d}} 
+\index{Exception1.cc@{Exception1.cc}!sumReciprocals@{sumReciprocals}}
+\index{sumReciprocals@{sumReciprocals}!Exception1.cc@{Exception1.cc}}
+\doxysubsubsection{\texorpdfstring{sumReciprocals()}{sumReciprocals()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+V sum\+Reciprocals (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ V $>$ \&}]{array }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Exception1_8cc_source_l00027}{27}} of file \mbox{\hyperlink{Exception1_8cc_source}{Exception1.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028 \{ \textcolor{comment}{// Sum of reciprocals }}
+\DoxyCodeLine{00029     }
+\DoxyCodeLine{00030         V ans = V(0.0);}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < array.size(); j++)}
+\DoxyCodeLine{00032         \{}
+\DoxyCodeLine{00033             ans += 1.0/array[j];}
+\DoxyCodeLine{00034         \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00037 \} }
+
+\end{DoxyCode}

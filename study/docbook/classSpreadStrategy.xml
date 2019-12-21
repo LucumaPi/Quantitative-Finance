@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSpreadStrategy">
 <title>SpreadStrategy Class Reference</title>
 <indexterm><primary>SpreadStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MultiAssetPayoffStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for SpreadStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,49 @@ Collaboration diagram for SpreadStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classSpreadStrategy_1a61b425f4d974110b6ab6be492955b61f"/><emphasis role="strong">SpreadStrategy</emphasis> (double cp, double strike=0.0, double A=1.0, double <link linkend="_classB">B</link>=-1.0)</para>
+            <listitem><para><link linkend="_classSpreadStrategy_1a61b425f4d974110b6ab6be492955b61f">SpreadStrategy</link> (double cp, double strike=0.0, double A=1.0, double <link linkend="_classB">B</link>=-1.0)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classSpreadStrategy_1a2aa6d1c5c04c165e790771b82d2cceea"/>double <emphasis role="strong">payoff</emphasis> (double S1, double S2) const</para>
+            <listitem><para>double <link linkend="_classSpreadStrategy_1a2aa6d1c5c04c165e790771b82d2cceea">payoff</link> (double S1, double S2) const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 134 of file MultiAssetPayoffStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classSpreadStrategy_1a61b425f4d974110b6ab6be492955b61f"/>    <section>
+    <title>SpreadStrategy()</title>
+<indexterm><primary>SpreadStrategy</primary><secondary>SpreadStrategy</secondary></indexterm>
+<indexterm><primary>SpreadStrategy</primary><secondary>SpreadStrategy</secondary></indexterm>
+<para><computeroutput>SpreadStrategy::SpreadStrategy (double cp, double strike = <computeroutput>0.0</computeroutput>
+, double A = <computeroutput>1.0</computeroutput>
+, double B = <computeroutput>-1.0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 141 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>&#32;=&#32;strike;&#32;w&#32;=&#32;cp;&#32;a&#32;=&#32;A;&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;<link linkend="_classB">B</link>;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classSpreadStrategy_1a2aa6d1c5c04c165e790771b82d2cceea"/>    <section>
+    <title>payoff()</title>
+<indexterm><primary>payoff</primary><secondary>SpreadStrategy</secondary></indexterm>
+<indexterm><primary>SpreadStrategy</primary><secondary>payoff</secondary></indexterm>
+<para><computeroutput>double SpreadStrategy::payoff (double S1, double S2) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMultiAssetPayoffStrategy_1aaf93388a8d1b05f5fae9fefbe156ead8">MultiAssetPayoffStrategy</link>.</para>
+<para>
+Definition at line 143 of file MultiAssetPayoffStrategy.hh.</para>
+<programlisting>144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+145 &#32;&#32;&#32;&#32;
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0">sum</link>&#32;=&#32;a*S1&#32;+&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>*S2;
+147 
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_GenericInequalities_8hh_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link>(w*&#32;(<link linkend="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0">sum</link>&#32;-&#32;<link linkend="_namespacePayoffNamespace_1ab501f4bdb2c74995b98b666056c671fb">K</link>),&#32;0.0);
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-MultiAssetPayoffStrategy.hh</section>
+<link linkend="_MultiAssetPayoffStrategy_8hh">MultiAssetPayoffStrategy.hh</link></section>
+</section>

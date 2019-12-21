@@ -2,6 +2,10 @@
 \label{classSpreadStrategy}\index{SpreadStrategy@{SpreadStrategy}}
 
 
+{\ttfamily \#include $<$Multi\+Asset\+Payoff\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for Spread\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,14 +25,64 @@ Collaboration diagram for Spread\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classSpreadStrategy_a61b425f4d974110b6ab6be492955b61f}\label{classSpreadStrategy_a61b425f4d974110b6ab6be492955b61f}} 
-{\bfseries Spread\+Strategy} (double cp, double strike=0.\+0, double A=1.\+0, double \mbox{\hyperlink{classB}{B}}=-\/1.\+0)
+\mbox{\hyperlink{classSpreadStrategy_a61b425f4d974110b6ab6be492955b61f}{Spread\+Strategy}} (double cp, double strike=0.\+0, double A=1.\+0, double \mbox{\hyperlink{classB}{B}}=-\/1.\+0)
 \item 
-\mbox{\Hypertarget{classSpreadStrategy_a2aa6d1c5c04c165e790771b82d2cceea}\label{classSpreadStrategy_a2aa6d1c5c04c165e790771b82d2cceea}} 
-double {\bfseries payoff} (double S1, double S2) const
+double \mbox{\hyperlink{classSpreadStrategy_a2aa6d1c5c04c165e790771b82d2cceea}{payoff}} (double S1, double S2) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00134}{134}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSpreadStrategy_a61b425f4d974110b6ab6be492955b61f}\label{classSpreadStrategy_a61b425f4d974110b6ab6be492955b61f}} 
+\index{SpreadStrategy@{SpreadStrategy}!SpreadStrategy@{SpreadStrategy}}
+\index{SpreadStrategy@{SpreadStrategy}!SpreadStrategy@{SpreadStrategy}}
+\doxysubsubsection{\texorpdfstring{SpreadStrategy()}{SpreadStrategy()}}
+{\footnotesize\ttfamily Spread\+Strategy\+::\+Spread\+Strategy (\begin{DoxyParamCaption}\item[{double}]{cp,  }\item[{double}]{strike = {\ttfamily 0.0},  }\item[{double}]{A = {\ttfamily 1.0},  }\item[{double}]{B = {\ttfamily -\/1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00141}{141}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142         \{ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = strike; w = cp; a = A; \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = \mbox{\hyperlink{classB}{B}};\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpreadStrategy_a2aa6d1c5c04c165e790771b82d2cceea}\label{classSpreadStrategy_a2aa6d1c5c04c165e790771b82d2cceea}} 
+\index{SpreadStrategy@{SpreadStrategy}!payoff@{payoff}}
+\index{payoff@{payoff}!SpreadStrategy@{SpreadStrategy}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Spread\+Strategy\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S1,  }\item[{double}]{S2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{Multi\+Asset\+Payoff\+Strategy}}.
+
+
+
+Definition at line \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source_l00143}{143}} of file \mbox{\hyperlink{MultiAssetPayoffStrategy_8hh_source}{Multi\+Asset\+Payoff\+Strategy.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144         \{}
+\DoxyCodeLine{00145     }
+\DoxyCodeLine{00146             \textcolor{keywordtype}{double} \mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} = a*S1 + \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}}*S2;}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148             \textcolor{keywordflow}{return} \mbox{\hyperlink{GenericInequalities_8hh_a1b213e274e5aa76fd4c91940e44f4eb5}{Max}}(w* (\mbox{\hyperlink{ArrayMechanisms_8hh_aea32fac5839587550db96af2d9c443a0}{sum}} -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}), 0.0);}
+\DoxyCodeLine{00149         \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Multi\+Asset\+Payoff\+Strategy.\+hh\end{DoxyCompactItemize}
+\mbox{\hyperlink{MultiAssetPayoffStrategy_8hh}{Multi\+Asset\+Payoff\+Strategy.\+hh}}\end{DoxyCompactItemize}

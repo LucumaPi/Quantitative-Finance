@@ -1,0 +1,104 @@
+\hypertarget{BinomialMethod_8cc_source}{}\doxysection{Binomial\+Method.\+cc}
+\label{BinomialMethod_8cc_source}\index{src/BinomialMethod.cc@{src/BinomialMethod.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// BinomialMethod.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// An encapsulation of the Binomial Method. This is}}
+\DoxyCodeLine{00004 \textcolor{comment}{// a kind of Mediator between the underlying data}}
+\DoxyCodeLine{00005 \textcolor{comment}{// stucture (a lattice tree) and the different kinds}}
+\DoxyCodeLine{00006 \textcolor{comment}{// of algorithms for initialising the tree.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// We have kept code inline for convenience only.}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{// Last Modification dates:}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{//  DD 2005-\/2-\/19 New cpp file}}
+\DoxyCodeLine{00013 \textcolor{comment}{//  DD 2005-\/11-\/3 Debugging}}
+\DoxyCodeLine{00014 \textcolor{comment}{//  DD 2006-\/4-\/7 New for get lattice}}
+\DoxyCodeLine{00015 \textcolor{comment}{//}}
+\DoxyCodeLine{00016 \textcolor{comment}{// (C) Datasim Education BV 2004-\/2006}}
+\DoxyCodeLine{00017 \textcolor{comment}{//}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#ifndef BinomialMethod\_CC}}
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8cc_source_l00019}\mbox{\hyperlink{BinomialMethod_8cc_a2effdd4c02f375b21bb71cc1844c96d6}{00019}} \textcolor{preprocessor}{\#define BinomialMethod\_CC}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8cc_source_l00021}\mbox{\hyperlink{BinomialMethod_8cc_af3f9178fa0c974052abfcbf1fbbd2e61}{00021}} \textcolor{keywordtype}{double} \mbox{\hyperlink{BinomialMethod_8cc_af3f9178fa0c974052abfcbf1fbbd2e61}{Max}} (\textcolor{keywordtype}{double} d1, \textcolor{keywordtype}{double} d2)}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023     \textcolor{keywordflow}{if} (d1 > d2)}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{return} d1;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keywordflow}{return} d2;}
+\DoxyCodeLine{00027 \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{BinomialMethod_8hh}{duffy/BinomialMethod.hh}}>}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8cc_source_l00031}\mbox{\hyperlink{classBinomialMethod_a6784aec62cfedac9ccfac10852c8143c}{00031}} \mbox{\hyperlink{classBinomialMethod_a98ef45a14e91d551785c1edfdbfd99a4}{BinomialMethod::BinomialMethod}} (\textcolor{keywordtype}{double} discounting, \mbox{\hyperlink{classBinomialLatticeStrategy}{BinomialLatticeStrategy}}\& strategy, \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}) }
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033     disc = discounting;}
+\DoxyCodeLine{00034     str = \&strategy;}
+\DoxyCodeLine{00035     \mbox{\hyperlink{classBinomialMethod_a31651b3bcaa64a57e7a6e26f9f00ef05}{buildLattice}}(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}});}
+\DoxyCodeLine{00036 \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8cc_source_l00038}\mbox{\hyperlink{classBinomialMethod_a31651b3bcaa64a57e7a6e26f9f00ef05}{00038}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBinomialMethod_a31651b3bcaa64a57e7a6e26f9f00ef05}{BinomialMethod::buildLattice}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}})}
+\DoxyCodeLine{00039 \{}
+\DoxyCodeLine{00040     lattice = \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}, 0.0);}
+\DoxyCodeLine{00041 \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8cc_source_l00043}\mbox{\hyperlink{classBinomialMethod_a232d7301afe8bab7df7ee5633ff841e6}{00043}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBinomialMethod_a232d7301afe8bab7df7ee5633ff841e6}{BinomialMethod::modifyLattice}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}{U}})}
+\DoxyCodeLine{00044 \{}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{double} down = str -\/> downValue();}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{double} up = str -\/> upValue();}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     \textcolor{keywordtype}{int} si = lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}();}
+\DoxyCodeLine{00049     lattice[si][lattice[si].\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}()] = \mbox{\hyperlink{namespaceNSEuropeanOption_a267b938e7da93825e13c6abc6b76ea8a}{U}};}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     \textcolor{comment}{// Loop from the min index to the end index}}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = lattice.MinIndex() + 1; \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} <= lattice.MaxIndex(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++)}
+\DoxyCodeLine{00053     \{}
+\DoxyCodeLine{00054         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}].MinIndex(); i < lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}].MaxIndex(); i++)}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}][i] = down * lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/1][i];}
+\DoxyCodeLine{00057             lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}][i+1] = up * lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/1][i];}
+\DoxyCodeLine{00058         \}}
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060     \textcolor{comment}{// Postcondition: we now have the complete lattice for the underlying asset}}
+\DoxyCodeLine{00061 \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8cc_source_l00063}\mbox{\hyperlink{classBinomialMethod_a62b8aa2bf9779858bbb0f27825af9268}{00063}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classBinomialMethod_a62b8aa2bf9779858bbb0f27825af9268}{BinomialMethod::getPrice}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, int>}}\& RHS)}
+\DoxyCodeLine{00064 \{}
+\DoxyCodeLine{00065     \textcolor{keywordtype}{double} pr = str -\/> probValue();}
+\DoxyCodeLine{00066     \textcolor{comment}{//cout << "Prob value: " << pr << endl;}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordtype}{int} ei = lattice.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}();}
+\DoxyCodeLine{00069     lattice[ei] = RHS;}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{comment}{// Loop from the max index to the start (min) index}}
+\DoxyCodeLine{00072     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = lattice.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}() -\/ 1; \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} >= lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}-\/-\/)}
+\DoxyCodeLine{00073     \{}
+\DoxyCodeLine{00074         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}].MinIndex(); i <= lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}].\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00075         \{}
+\DoxyCodeLine{00076             lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}][i] = disc * (pr * lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}+1][i+1] + (1.0-\/pr) * lattice[\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}+1][i]);}
+\DoxyCodeLine{00077         \}}
+\DoxyCodeLine{00078         \textcolor{comment}{// Now take early exercise into account}}
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{keywordtype}{int} si = lattice.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}();}
+\DoxyCodeLine{00082     \textcolor{keywordflow}{return} lattice[si][lattice[si].\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}()];}
+\DoxyCodeLine{00083 \}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8cc_source_l00085}\mbox{\hyperlink{classBinomialMethod_ab3b69b60ccd9242119c3c5f6befc3690}{00085}} \mbox{\hyperlink{classVector}{Vector<double, int>}} \mbox{\hyperlink{classBinomialMethod_ab3b69b60ccd9242119c3c5f6befc3690}{BinomialMethod::BasePyramidVector}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00086 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00087         \textcolor{keywordflow}{return} lattice.\mbox{\hyperlink{classLattice_a0454fa42ebad2e9fbb71e884f3befaf6}{BasePyramidVector}}();}
+\DoxyCodeLine{00088 \}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090 \textcolor{comment}{// Underlying lattice}}
+\DoxyCodeLine{\Hypertarget{BinomialMethod_8cc_source_l00091}\mbox{\hyperlink{classBinomialMethod_a45f662c73ae8b3d9cf3530a1c500f9ca}{00091}} \textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<double, int, 2>}}\& \mbox{\hyperlink{classBinomialMethod_a45f662c73ae8b3d9cf3530a1c500f9ca}{BinomialMethod::getLattice}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00092 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094     \textcolor{keywordflow}{return} lattice;}
+\DoxyCodeLine{00095 \}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

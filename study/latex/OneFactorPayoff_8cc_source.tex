@@ -1,0 +1,88 @@
+\hypertarget{OneFactorPayoff_8cc_source}{}\doxysection{One\+Factor\+Payoff.\+cc}
+\label{OneFactorPayoff_8cc_source}\index{src/OneFactorPayoff.cc@{src/OneFactorPayoff.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// OneFactorPayoff.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Base class for OneFactorPayoffs.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 5 june 1998  MB  Started}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2005-\/5-\/16 DD Modified from Shape hierarchy}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2005-\/12-\/9 DD Call/put payoff fns here}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 1998 -\/ 2006}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifndef OneFactorPayoff\_CPP}}
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00012}\mbox{\hyperlink{OneFactorPayoff_8cc_a16b9e5d029ba4af16bfc30d57ff21e51}{00012}} \textcolor{preprocessor}{\#define OneFactorPayoff\_CPP}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{OneFactorPayoff_8hh}{duffy/OneFactorPayoff.hh}}>}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{comment}{// Hard-\/coded, handy functions}}
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00017}\mbox{\hyperlink{OneFactorPayoff_8cc_a014348d679f2afcacf81af0e762ad426}{00017}} \textcolor{keywordtype}{double} \mbox{\hyperlink{OneFactorPayoff_8cc_a014348d679f2afcacf81af0e762ad426}{MyCallPayoffFN}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, \textcolor{keywordtype}{double} S) }
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{if} (S > \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}})}
+\DoxyCodeLine{00020             \textcolor{keywordflow}{return} (S -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00021         }
+\DoxyCodeLine{00022         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00026}\mbox{\hyperlink{OneFactorPayoff_8cc_a941b079b8b777eac5fafaf713f67027a}{00026}} \textcolor{keywordtype}{double} \mbox{\hyperlink{OneFactorPayoff_8cc_a941b079b8b777eac5fafaf713f67027a}{MyPutPayoffFN}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, \textcolor{keywordtype}{double} S) }
+\DoxyCodeLine{00027 \{}
+\DoxyCodeLine{00028         \textcolor{comment}{// max (K-\/S, 0)}}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} > S)}
+\DoxyCodeLine{00030             \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} -\/ S);}
+\DoxyCodeLine{00031         }
+\DoxyCodeLine{00032         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \textcolor{comment}{// Constructors and destructor}}
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00037}\mbox{\hyperlink{classOneFactorPayoff_a44063d3104454a543537947dae324f3f}{00037}} \mbox{\hyperlink{classOneFactorPayoff_a44063d3104454a543537947dae324f3f}{OneFactorPayoff::OneFactorPayoff}}()}
+\DoxyCodeLine{00038 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     K = 0.0;}
+\DoxyCodeLine{00041     payoffFN = 0;}
+\DoxyCodeLine{00042 \}}
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00043}\mbox{\hyperlink{classOneFactorPayoff_a87f11b8fefaefd2133752f1fd20b98c6}{00043}} \mbox{\hyperlink{classOneFactorPayoff_a44063d3104454a543537947dae324f3f}{OneFactorPayoff::OneFactorPayoff}}(\textcolor{keywordtype}{double} strike, \textcolor{keywordtype}{double} (*pay)(\textcolor{keywordtype}{double} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, \textcolor{keywordtype}{double} S))}
+\DoxyCodeLine{00044 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     K = strike;}
+\DoxyCodeLine{00047     payoffFN = pay;}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00050}\mbox{\hyperlink{classOneFactorPayoff_afee655aeca9d98b5ac65c467703473e2}{00050}} \mbox{\hyperlink{classOneFactorPayoff_a44063d3104454a543537947dae324f3f}{OneFactorPayoff::OneFactorPayoff}}(\textcolor{keyword}{const} \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}\& source)}
+\DoxyCodeLine{00051 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     K = source.K;}
+\DoxyCodeLine{00054     payoffFN = source.payoffFN;}
+\DoxyCodeLine{00055 \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00057}\mbox{\hyperlink{classOneFactorPayoff_af9f0c1e6b667a81d0ac6cba8c735fba3}{00057}} \mbox{\hyperlink{classOneFactorPayoff_af9f0c1e6b667a81d0ac6cba8c735fba3}{OneFactorPayoff:: ~OneFactorPayoff}}()}
+\DoxyCodeLine{00058 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00059 \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061 \textcolor{comment}{// Operator overloading}}
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00062}\mbox{\hyperlink{classOneFactorPayoff_a9258b40b9fa6772588e464ef3b5f4f16}{00062}} \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}\& \mbox{\hyperlink{classOneFactorPayoff_a9258b40b9fa6772588e464ef3b5f4f16}{OneFactorPayoff::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}}\& source)}
+\DoxyCodeLine{00063 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source)}
+\DoxyCodeLine{00066         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     K = source.K;}
+\DoxyCodeLine{00069     payoffFN = source.payoffFN;}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00072 \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074 \textcolor{comment}{// Not a pure virtual OneFactorPayoff function anymore}}
+\DoxyCodeLine{\Hypertarget{OneFactorPayoff_8cc_source_l00075}\mbox{\hyperlink{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}{00075}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}{OneFactorPayoff::payoff}}(\textcolor{keywordtype}{double} S)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00076 \textcolor{keyword}{}\{ \textcolor{comment}{// For a given spot price}}
+\DoxyCodeLine{00077     }
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     \textcolor{keywordflow}{return} payoffFN(K, S);  \textcolor{comment}{// DELEGATE to strategy}}
+\DoxyCodeLine{00080 \}}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

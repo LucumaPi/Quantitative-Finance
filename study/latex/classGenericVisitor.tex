@@ -2,6 +2,10 @@
 \label{classGenericVisitor}\index{GenericVisitor$<$ Context, Name $>$@{GenericVisitor$<$ Context, Name $>$}}
 
 
+{\ttfamily \#include $<$Generic\+Visitor.\+hh$>$}
+
+
+
 Collaboration diagram for Generic\+Visitor$<$ Context, Name $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,11 +16,49 @@ Collaboration diagram for Generic\+Visitor$<$ Context, Name $>$\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classGenericVisitor_ae3eca0ad04f511b6a38dce9aa8cedc69}\label{classGenericVisitor_ae3eca0ad04f511b6a38dce9aa8cedc69}} 
-void {\bfseries visit} (\mbox{\hyperlink{classGenericComposite}{Generic\+Composite}}$<$ Context $>$ \&context)
+void \mbox{\hyperlink{classGenericVisitor_ae3eca0ad04f511b6a38dce9aa8cedc69}{visit}} (\mbox{\hyperlink{classGenericComposite}{Generic\+Composite}}$<$ Context $>$ \&context)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Context, class Name$>$\newline
+class Generic\+Visitor$<$ Context, Name $>$}
+
+
+
+Definition at line \mbox{\hyperlink{GenericVisitor_8hh_source_l00009}{9}} of file \mbox{\hyperlink{GenericVisitor_8hh_source}{Generic\+Visitor.\+hh}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGenericVisitor_ae3eca0ad04f511b6a38dce9aa8cedc69}\label{classGenericVisitor_ae3eca0ad04f511b6a38dce9aa8cedc69}} 
+\index{GenericVisitor$<$ Context, Name $>$@{GenericVisitor$<$ Context, Name $>$}!visit@{visit}}
+\index{visit@{visit}!GenericVisitor$<$ Context, Name $>$@{GenericVisitor$<$ Context, Name $>$}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily template$<$class Context , class Name $>$ \\
+void \mbox{\hyperlink{classGenericVisitor}{Generic\+Visitor}}$<$ Context, Name $>$\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGenericComposite}{Generic\+Composite}}$<$ Context $>$ \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GenericVisitor_8hh_source_l00012}{12}} of file \mbox{\hyperlink{GenericVisitor_8hh_source}{Generic\+Visitor.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013     \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \mbox{\hyperlink{classGenericComposite}{GenericComposite<Context>::iterator}} it;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{comment}{// Send all shapes in the composite to the visitor}}
+\DoxyCodeLine{00018     \textcolor{keywordflow}{for} (it=sc.Begin(); it!=sc.\mbox{\hyperlink{classGenericComposite_afaad3512b4bba5b4e4a691ec44ed7857}{End}}(); it++)}
+\DoxyCodeLine{00019     \{}
+\DoxyCodeLine{00020         (*it)-\/>\mbox{\hyperlink{classGenericComposite_af30c0539ccf8287db5bc4e93cd8b0688}{accept}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022     }
+\DoxyCodeLine{00023     \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Generic\+Visitor.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{GenericVisitor_8hh}{Generic\+Visitor.\+hh}}\end{DoxyCompactItemize}

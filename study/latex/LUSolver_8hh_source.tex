@@ -14,8 +14,8 @@
 \DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef LUSolver\_HH}}
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#define LUSolver\_HH}}
 \DoxyCodeLine{00012 }
-\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "Vector.hh"}            \textcolor{comment}{// Arrays with mathematical properties}}
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "NumericMatrix.hh"} \textcolor{comment}{// Matrices with numerical properties}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Vector_8hh}{Vector.hh}}"}           \textcolor{comment}{// Arrays with mathematical properties}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{NumericMatrix_8hh}{NumericMatrix.hh}}"} \textcolor{comment}{// Matrices with numerical properties}}
 \DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <cmath>}}
 \DoxyCodeLine{00016 }
 \DoxyCodeLine{\Hypertarget{LUSolver_8hh_source_l00017}\mbox{\hyperlink{classLUTridiagonalSolver}{00017}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keyword}{class }\mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}}
@@ -46,19 +46,19 @@
 \DoxyCodeLine{00042     }
 \DoxyCodeLine{00043 }
 \DoxyCodeLine{00044 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00045     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}();}
-\DoxyCodeLine{00046     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& lower\_A, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& diagonal\_B, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& upper\_C, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& rhs\_R);}
-\DoxyCodeLine{00047     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& source); }
+\DoxyCodeLine{00045     \mbox{\hyperlink{classLUTridiagonalSolver_aceddcd98aa6ec424d5e537f07d87576f}{LUTridiagonalSolver}}();}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classLUTridiagonalSolver_aceddcd98aa6ec424d5e537f07d87576f}{LUTridiagonalSolver}}(\mbox{\hyperlink{classVector}{Vector<V,I>}}\& lower\_A, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& diagonal\_B, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& upper\_C, \mbox{\hyperlink{classVector}{Vector<V,I>}}\& rhs\_R);}
+\DoxyCodeLine{00047     \mbox{\hyperlink{classLUTridiagonalSolver_aceddcd98aa6ec424d5e537f07d87576f}{LUTridiagonalSolver}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& source); }
 \DoxyCodeLine{00048     }
-\DoxyCodeLine{00049     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver}}();}
+\DoxyCodeLine{00049     \textcolor{keyword}{virtual} \mbox{\hyperlink{classLUTridiagonalSolver_a1644f4512162dc3c91f5598dc3b5caad}{~LUTridiagonalSolver}}();}
 \DoxyCodeLine{00050     }
 \DoxyCodeLine{00051     \textcolor{comment}{// Assignment operator }}
-\DoxyCodeLine{00052     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& source);}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& \mbox{\hyperlink{classLUTridiagonalSolver_a2cdb62889b9371224819f07a5daf5df3}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classLUTridiagonalSolver}{LUTridiagonalSolver<V,I>}}\& source);}
 \DoxyCodeLine{00053 }
 \DoxyCodeLine{00054     \textcolor{comment}{// Calculate the (final) solution to Au = r}}
-\DoxyCodeLine{00055     \mbox{\hyperlink{classVector}{Vector<V,I>}} solve();}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classVector}{Vector<V,I>}} \mbox{\hyperlink{classLUTridiagonalSolver_aaa85d72ad1cd651291fee595db3fe1d8}{solve}}();}
 \DoxyCodeLine{00056 }
-\DoxyCodeLine{00057     \textcolor{keywordtype}{bool} diagonallyDominant() \textcolor{keyword}{const};}
+\DoxyCodeLine{00057     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classLUTridiagonalSolver_a4cb24bdf98332a3fd46da775166ced08}{diagonallyDominant}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{00058 }
 \DoxyCodeLine{00059 }
 \DoxyCodeLine{00060 \};}

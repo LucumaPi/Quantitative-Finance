@@ -2,6 +2,10 @@
 \label{classNS__NonlinearSolver_1_1SteffensensSolver}\index{NS\_NonlinearSolver::SteffensensSolver@{NS\_NonlinearSolver::SteffensensSolver}}
 
 
+{\ttfamily \#include $<$Nonlinear\+Solver.\+hh$>$}
+
+
+
 Inheritance diagram for N\+S\+\_\+\+Nonlinear\+Solver\+::Steffensens\+Solver\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,18 +25,106 @@ Collaboration diagram for N\+S\+\_\+\+Nonlinear\+Solver\+::Steffensens\+Solver\+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SteffensensSolver_a558377d506d5fba156a5a05d4e900cbd}\label{classNS__NonlinearSolver_1_1SteffensensSolver_a558377d506d5fba156a5a05d4e900cbd}} 
-{\bfseries Steffensens\+Solver} (double guess, double($\ast$my\+Function)(double x))
+\mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_a558377d506d5fba156a5a05d4e900cbd}{Steffensens\+Solver}} (double guess, double($\ast$my\+Function)(double x))
 \item 
-\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}\label{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}} 
-double {\bfseries solve} ()
+double \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}{solve}} ()
 \item 
-\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}\label{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}} 
-void {\bfseries print\+Statistics} () const
+void \mbox{\hyperlink{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}{print\+Statistics}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{NonlinearSolver_8hh_source_l00233}{233}} of file \mbox{\hyperlink{NonlinearSolver_8hh_source}{Nonlinear\+Solver.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SteffensensSolver_a558377d506d5fba156a5a05d4e900cbd}\label{classNS__NonlinearSolver_1_1SteffensensSolver_a558377d506d5fba156a5a05d4e900cbd}} 
+\index{NS\_NonlinearSolver::SteffensensSolver@{NS\_NonlinearSolver::SteffensensSolver}!SteffensensSolver@{SteffensensSolver}}
+\index{SteffensensSolver@{SteffensensSolver}!NS\_NonlinearSolver::SteffensensSolver@{NS\_NonlinearSolver::SteffensensSolver}}
+\doxysubsubsection{\texorpdfstring{SteffensensSolver()}{SteffensensSolver()}}
+{\footnotesize\ttfamily N\+S\+\_\+\+Nonlinear\+Solver\+::\+Steffensens\+Solver\+::\+Steffensens\+Solver (\begin{DoxyParamCaption}\item[{double}]{guess,  }\item[{double($\ast$)(double x)}]{my\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NonlinearSolver_8hh_source_l00242}{242}} of file \mbox{\hyperlink{NonlinearSolver_8hh_source}{Nonlinear\+Solver.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00243         \{}
+\DoxyCodeLine{00244             x0 = guess; xPrevious = x0;}
+\DoxyCodeLine{00245             \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}} = myFunction;}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}\label{classNS__NonlinearSolver_1_1SteffensensSolver_a14a38fa950c91319a6c0334830dd6c57}} 
+\index{NS\_NonlinearSolver::SteffensensSolver@{NS\_NonlinearSolver::SteffensensSolver}!printStatistics@{printStatistics}}
+\index{printStatistics@{printStatistics}!NS\_NonlinearSolver::SteffensensSolver@{NS\_NonlinearSolver::SteffensensSolver}}
+\doxysubsubsection{\texorpdfstring{printStatistics()}{printStatistics()}}
+{\footnotesize\ttfamily void N\+S\+\_\+\+Nonlinear\+Solver\+::\+Steffensens\+Solver\+::print\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NonlinearSolver_8hh_source_l00272}{272}} of file \mbox{\hyperlink{NonlinearSolver_8hh_source}{Nonlinear\+Solver.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00273         \{}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275             std::cout << \textcolor{stringliteral}{"\(\backslash\)nData pertaining to Steffensen's method\(\backslash\)n"};}
+\DoxyCodeLine{00276             std::cout << \textcolor{stringliteral}{"Value: "} << xCurrent << std::endl;}
+\DoxyCodeLine{00277             std::cout << \textcolor{stringliteral}{"Number of iterations (actual): "} << \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} << std::endl;}
+\DoxyCodeLine{00278         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}\label{classNS__NonlinearSolver_1_1SteffensensSolver_ac3e56e12f820cf138e42ea6f3ed5577b}} 
+\index{NS\_NonlinearSolver::SteffensensSolver@{NS\_NonlinearSolver::SteffensensSolver}!solve@{solve}}
+\index{solve@{solve}!NS\_NonlinearSolver::SteffensensSolver@{NS\_NonlinearSolver::SteffensensSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily double N\+S\+\_\+\+Nonlinear\+Solver\+::\+Steffensens\+Solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_a7336902d70e3ae47194eb92abac04333}{N\+S\+\_\+\+Nonlinear\+Solver\+::\+Nonlinear\+Solver}}.
+
+
+
+Definition at line \mbox{\hyperlink{NonlinearSolver_8hh_source_l00249}{249}} of file \mbox{\hyperlink{NonlinearSolver_8hh_source}{Nonlinear\+Solver.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00250         \{}
+\DoxyCodeLine{00251             \textcolor{keywordtype}{double} tmp;}
+\DoxyCodeLine{00252             \textcolor{keywordtype}{double} hn; }
+\DoxyCodeLine{00253             \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} = 1;}
+\DoxyCodeLine{00254             xPrevious = x0;}
+\DoxyCodeLine{00255 L1:}
+\DoxyCodeLine{00256             tmp = \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xPrevious);}
+\DoxyCodeLine{00257             hn = (\mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_aef2c0d0470384254b4dd2b6c8dd1f6e6}{myF}}(xPrevious + tmp)  -\/ tmp)/ tmp;}
+\DoxyCodeLine{00258             hn = tmp/hn;}
+\DoxyCodeLine{00259             xCurrent = xPrevious -\/ hn;}
+\DoxyCodeLine{00260             xPrevious = xCurrent;}
+\DoxyCodeLine{00261 }
+\DoxyCodeLine{00262             \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}++;}
+\DoxyCodeLine{00263             \textcolor{keywordflow}{if} (::fabs(hn) <= \mbox{\hyperlink{classNS__NonlinearSolver_1_1NonlinearSolver_ac028904a727110ecb0394662a629b6ba}{tol}})}
+\DoxyCodeLine{00264             \{}
+\DoxyCodeLine{00265                 \textcolor{keywordflow}{return} xCurrent;}
+\DoxyCodeLine{00266                 }
+\DoxyCodeLine{00267             \}}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00269             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00270         \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Nonlinear\+Solver.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{NonlinearSolver_8hh}{Nonlinear\+Solver.\+hh}}\end{DoxyCompactItemize}

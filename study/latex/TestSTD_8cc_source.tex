@@ -1,0 +1,80 @@
+\hypertarget{TestSTD_8cc_source}{}\doxysection{Test\+S\+T\+D.\+cc}
+\label{TestSTD_8cc_source}\index{tests/TestSTD.cc@{tests/TestSTD.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestSTD.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// 2005-\/9-\/26 DD new stuff fo IBVP}}
+\DoxyCodeLine{00004 \textcolor{comment}{// 2005-\/10-\/9 DD code for exact solution of heat equation}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 20-\/5-\/12-\/5 DD For heat equation, output in Excel}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{IBVP_8hh}{duffy/IBVP.hh}}>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{STDImp_8hh}{duffy/STDImp.hh}}>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{IBVPSolver_8hh}{duffy/IBVPSolver.hh}}>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{EEulerIBVPSolver_8hh}{duffy/EEulerIBVPSolver.hh}}>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{IEulerIBVPSolver_8hh}{duffy/IEulerIBVPSolver.hh}}>}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ArrayMechanisms_8hh}{duffy/ArrayMechanisms.hh}}>}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{MatrixMechanisms_8hh}{duffy/MatrixMechanisms.hh}}>}}
+\DoxyCodeLine{00014 \textcolor{comment}{//\#include <duffy/ExcelMechanisms.hh>}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{\Hypertarget{TestSTD_8cc_source_l00018}\mbox{\hyperlink{TestSTD_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00018}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestSTD_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// A. The Continuous Problem}}
+\DoxyCodeLine{00022     \textcolor{comment}{// Derived implementation class}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classSTDIBVPImp}{STDIBVPImp}} stdImp;}
+\DoxyCodeLine{00024     }
+\DoxyCodeLine{00025     \textcolor{comment}{// Now the client class IVP}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classIBVPImp}{IBVPImp}}* myImp2 = \&stdImp;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordtype}{double} xmax = 1.0;}
+\DoxyCodeLine{00029     \mbox{\hyperlink{classRange}{Range<double>}} rangeX(0.0, xmax);}
+\DoxyCodeLine{00030     \mbox{\hyperlink{classRange}{Range<double>}} rangeT(0.0, 1.0);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \mbox{\hyperlink{classIBVP}{IBVP}} i2(*myImp2, rangeX, rangeT);}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{comment}{// B. Finite Difference Schemes}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{long} J = 10;}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{long} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = 302;}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     std::cout << \textcolor{stringliteral}{"Number of space divisions: "};}
+\DoxyCodeLine{00039     std::cin >> J;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     std::cout << \textcolor{stringliteral}{"Number of time divisions: "};}
+\DoxyCodeLine{00042     std::cin >> \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}};}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{comment}{// ExplicitEulerIBVP fdm(i2, N, J);}}
+\DoxyCodeLine{00046 \textcolor{comment}{//  print(fdm.result());}}
+\DoxyCodeLine{00047     }
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \mbox{\hyperlink{classImplicitEulerIBVP}{ImplicitEulerIBVP}} fdm2(i2, \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}, J);}
+\DoxyCodeLine{00050 \textcolor{comment}{//  print(fdm2.result());}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{comment}{// Display in Excel}}
+\DoxyCodeLine{00053 \textcolor{comment}{//  std::cout << "calling function " << std::endl;}}
+\DoxyCodeLine{00054 \textcolor{comment}{//  print(fdm2.TValues());}}
+\DoxyCodeLine{00055     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00056     \{}
+\DoxyCodeLine{00057         std::cout << \textcolor{stringliteral}{"..."};}
+\DoxyCodeLine{00058         \textcolor{comment}{//printMatrixInExcel(fdm2.result(), fdm2.TValues(), fdm2.XValues(), }}
+\DoxyCodeLine{00059         \textcolor{comment}{//              std::string("IEuler"));}}
+\DoxyCodeLine{00060     \textcolor{comment}{//  printMatrixInExcel(fdm.result(), fdm.TValues(), fdm.XValues(), }}
+\DoxyCodeLine{00061         \textcolor{comment}{//              std::string("EEuler"));}}
+\DoxyCodeLine{00062     \textcolor{comment}{//  printMatrixDifferenceInExcel(fdm.result(), fdm2.result(), fdm2.TValues(), fdm2.XValues(),}}
+\DoxyCodeLine{00063             \textcolor{comment}{//                      std::string("Diff"));}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \}}
+\DoxyCodeLine{00066     \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::string\& errorString)}
+\DoxyCodeLine{00067     \{}
+\DoxyCodeLine{00068         std::cout << errorString << std::endl;}
+\DoxyCodeLine{00069     \}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     std::cout << \textcolor{stringliteral}{"called function "} << std::endl;}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00074 \}}
+
+\end{DoxyCode}

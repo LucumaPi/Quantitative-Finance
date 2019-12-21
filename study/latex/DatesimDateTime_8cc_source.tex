@@ -1,0 +1,525 @@
+\hypertarget{DatesimDateTime_8cc_source}{}\doxysection{Datesim\+Date\+Time.\+cc}
+\label{DatesimDateTime_8cc_source}\index{src/DatesimDateTime.cc@{src/DatesimDateTime.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// DateTime.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{/****************************************************************}}
+\DoxyCodeLine{00004 \textcolor{comment}{* Prog. Name : DDatasimDate.CXX                                 *}}
+\DoxyCodeLine{00005 \textcolor{comment}{* Copyright  : Datasim b.v. 1990                                *}}
+\DoxyCodeLine{00006 \textcolor{comment}{* Author     : Eric Manshande \& Henri Schenau  14-\/3-\/1990        *}}
+\DoxyCodeLine{00007 \textcolor{comment}{* Descr.     : This file contains the class DatasimDate.        *}}
+\DoxyCodeLine{00008 \textcolor{comment}{*****************************************************************/}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{comment}{// Last modification DatasimDates:}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{//  D Duffy 2003-\/12-\/28 New version (after 13 years!) kick off}}
+\DoxyCodeLine{00013 \textcolor{comment}{//  Many thanks to Eric and Henry; we won't see your kind again}}
+\DoxyCodeLine{00014 \textcolor{comment}{//  2005-\/4-\/15 DD print() function and set\_to\_dtime}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{DatesimDateTime_8hh}{duffy/DatesimDateTime.hh}}>}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{keywordtype}{void} DatasimDateTime::secs\_to\_DatasimDateTime(\textcolor{keywordtype}{int}\& hour, \textcolor{keywordtype}{int}\& minute, \textcolor{keywordtype}{int}\& \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, \textcolor{keywordtype}{long}* over)}
+\DoxyCodeLine{00020 \textcolor{comment}{/*}}
+\DoxyCodeLine{00021 \textcolor{comment}{ *  calculate the time of the day (hour, minute, second) from}}
+\DoxyCodeLine{00022 \textcolor{comment}{ *  the given seconds (which is the number of seconds past midnight).}}
+\DoxyCodeLine{00023 \textcolor{comment}{ *  If the number of seconds is more than seconds in one day, the}}
+\DoxyCodeLine{00024 \textcolor{comment}{ *  parameter 'over' will point to that number of days (seconds div }}
+\DoxyCodeLine{00025 \textcolor{comment}{ *  day\_seconds) if the parameter has been passed (it is a default}}
+\DoxyCodeLine{00026 \textcolor{comment}{ *  argument, default = 0), otherwise it will remain 0 (null pointer).}}
+\DoxyCodeLine{00027 \textcolor{comment}{ */}}
+\DoxyCodeLine{00028 \{}
+\DoxyCodeLine{00029 printf(\textcolor{stringliteral}{"seconds = \%lu\(\backslash\)n"}, seconds);}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{if} (over != 0)          \textcolor{comment}{// parameter has been passed}}
+\DoxyCodeLine{00031         *over = seconds / day\_seconds;  \textcolor{comment}{// number of days in seconds}}
+\DoxyCodeLine{00032 \textcolor{comment}{//  seconds \%= day\_seconds;     // rest seconds}}
+\DoxyCodeLine{00033 printf(\textcolor{stringliteral}{"seconds after days subtr. = \%lu\(\backslash\)n"}, seconds);}
+\DoxyCodeLine{00034     hour = seconds / 3600;      \textcolor{comment}{// calculate hours from midnight}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{int} h = seconds \% 3600;     \textcolor{comment}{// rest}}
+\DoxyCodeLine{00036     minute = h / 60;        \textcolor{comment}{// calc. minutes after 'hour'}}
+\DoxyCodeLine{00037     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}} = h \% 60;      \textcolor{comment}{// calc seconds after 'minute'}}
+\DoxyCodeLine{00038 printf(\textcolor{stringliteral}{"hour = \%d\(\backslash\)nminute = \%d\(\backslash\)nsecond = \%d\(\backslash\)n"}, hour, minute, \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}});}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} DatasimDateTime::secs(\textcolor{keywordtype}{long} hours, \textcolor{keywordtype}{long} minutes, \textcolor{keywordtype}{long} secos)}
+\DoxyCodeLine{00042 \textcolor{comment}{/*}}
+\DoxyCodeLine{00043 \textcolor{comment}{ *  return the number of seconds after midnight (12:00 AM) from}}
+\DoxyCodeLine{00044 \textcolor{comment}{ *  hours, minutes and seconds. If one of them is < 0 then }}
+\DoxyCodeLine{00045 \textcolor{comment}{ *  return 0. (=midnight). The number of hours, minutes and seconds}}
+\DoxyCodeLine{00046 \textcolor{comment}{ *  may be any value (> 0).}}
+\DoxyCodeLine{00047 \textcolor{comment}{ */}}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{if} (hours < 0 \mbox{\hyperlink{DatasimDate_8hh_a3363ca4d6d3cc0230b2804280591c991}{OR}} minutes < 0 \mbox{\hyperlink{DatasimDate_8hh_a3363ca4d6d3cc0230b2804280591c991}{OR}} secos < 0)}
+\DoxyCodeLine{00050         \textcolor{keywordflow}{return}(0);}
+\DoxyCodeLine{00051     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00052         minutes += (secos / 60);    \textcolor{comment}{// \#minutes in seconds}}
+\DoxyCodeLine{00053         secos \%= 60;            \textcolor{comment}{// rest seconds}}
+\DoxyCodeLine{00054         hours += (minutes / 60);    \textcolor{comment}{// \#hours in minutes}}
+\DoxyCodeLine{00055         minutes \%= 60;          \textcolor{comment}{// rest minutes}}
+\DoxyCodeLine{00056         hours \%= 24;            \textcolor{comment}{// discard day-\/limit}}
+\DoxyCodeLine{00057         \textcolor{keywordflow}{return}(hours * 60l * 60l + minutes * 60l + secos);\textcolor{comment}{// total}}
+\DoxyCodeLine{00058                     \textcolor{comment}{// number of seconds after 12:00}}
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061  }
+\DoxyCodeLine{00062  }
+\DoxyCodeLine{00063 \textcolor{keywordtype}{int} DatasimDateTime::hour\_test(\textcolor{keywordtype}{int} hour)}
+\DoxyCodeLine{00064 \textcolor{comment}{/*}}
+\DoxyCodeLine{00065 \textcolor{comment}{ *  test if hours has a valid value. It must be between 0 and 23, }}
+\DoxyCodeLine{00066 \textcolor{comment}{ *  (so 24 is an invalid value). An invalid hour will give a returnvalue}}
+\DoxyCodeLine{00067 \textcolor{comment}{ *  of -\/1, a valid value will be returned.}}
+\DoxyCodeLine{00068 \textcolor{comment}{ */}}
+\DoxyCodeLine{00069 \{}
+\DoxyCodeLine{00070     \textcolor{keywordflow}{if} (hour > 23 \mbox{\hyperlink{DatasimDate_8hh_a3363ca4d6d3cc0230b2804280591c991}{OR}} hour < 0)}
+\DoxyCodeLine{00071         \textcolor{keywordflow}{return}(-\/1);}
+\DoxyCodeLine{00072     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00073         \textcolor{keywordflow}{return}(hour);}
+\DoxyCodeLine{00074 \}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077 \textcolor{keywordtype}{int} DatasimDateTime::min\_test(\textcolor{keywordtype}{int} minutes)}
+\DoxyCodeLine{00078 \textcolor{comment}{/*}}
+\DoxyCodeLine{00079 \textcolor{comment}{ *  test if minutes has a valid value. It must be between 0 and 59, }}
+\DoxyCodeLine{00080 \textcolor{comment}{ *  (so 60 is an invalid value). An invalid value will give a returnvalue}}
+\DoxyCodeLine{00081 \textcolor{comment}{ *  of -\/1, a valid value will be returned.}}
+\DoxyCodeLine{00082 \textcolor{comment}{ */}}
+\DoxyCodeLine{00083 \{}
+\DoxyCodeLine{00084     \textcolor{keywordflow}{if} (minutes > 59 \mbox{\hyperlink{DatasimDate_8hh_a3363ca4d6d3cc0230b2804280591c991}{OR}} minutes < 0)}
+\DoxyCodeLine{00085         \textcolor{keywordflow}{return}(-\/1);}
+\DoxyCodeLine{00086     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00087         \textcolor{keywordflow}{return}(minutes);}
+\DoxyCodeLine{00088 \}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090 \textcolor{keywordtype}{int} DatasimDateTime::sec\_test(\textcolor{keywordtype}{int} secos)}
+\DoxyCodeLine{00091 \textcolor{comment}{/*}}
+\DoxyCodeLine{00092 \textcolor{comment}{ *  test if seconds has a valid value. It must be between 0 and 59, }}
+\DoxyCodeLine{00093 \textcolor{comment}{ *  (so 60 is an invalid value). An invalid value will give a returnvalue}}
+\DoxyCodeLine{00094 \textcolor{comment}{ *  of -\/1, a valid value will be returned.}}
+\DoxyCodeLine{00095 \textcolor{comment}{ */}}
+\DoxyCodeLine{00096 \{}
+\DoxyCodeLine{00097     \textcolor{keywordflow}{if} (secos > 59 \mbox{\hyperlink{DatasimDate_8hh_a3363ca4d6d3cc0230b2804280591c991}{OR}} secos < 0)}
+\DoxyCodeLine{00098         \textcolor{keywordflow}{return}(-\/1);}
+\DoxyCodeLine{00099     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00100         \textcolor{keywordflow}{return}(secos);}
+\DoxyCodeLine{00101 \}}
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00102}\mbox{\hyperlink{classDatasimDateTime_a28c58c2ac02781b7e98ef4f93a9357cb}{00102}} }
+\DoxyCodeLine{00103 \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime::DatasimDateTime}}(\mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} secs, \textcolor{keywordtype}{long}* over)}
+\DoxyCodeLine{00104 \textcolor{comment}{/*}}
+\DoxyCodeLine{00105 \textcolor{comment}{ *  construct a time from a number of seconds. If the number of }}
+\DoxyCodeLine{00106 \textcolor{comment}{ *  seconds passes a day-\/limit and the default argument '*over' has}}
+\DoxyCodeLine{00107 \textcolor{comment}{ *  been passed, *over will be set to the number of days past.}}
+\DoxyCodeLine{00108 \textcolor{comment}{ */}}
+\DoxyCodeLine{00109 \{}
+\DoxyCodeLine{00110     \textcolor{keywordflow}{if} (secs >= day\_seconds \mbox{\hyperlink{DatasimDate_8hh_acd1b97556dfbbac61063a63031d2f91d}{AND}} over != 0)   \textcolor{comment}{// past day-\/limit}}
+\DoxyCodeLine{00111                         \textcolor{comment}{// and par. '*over' passed}}
+\DoxyCodeLine{00112     *over = secs / day\_seconds; \textcolor{comment}{// \#days past}}
+\DoxyCodeLine{00113     secs \%= day\_seconds;            \textcolor{comment}{// rest of seconds}}
+\DoxyCodeLine{00114     seconds = secs;}
+\DoxyCodeLine{00115 \}}
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00116}\mbox{\hyperlink{classDatasimDateTime_a893bd0cd1b267a6bfecc02de44d1563d}{00116}}  }
+\DoxyCodeLine{00117 \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime::DatasimDateTime}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}}\& DatasimDateTime\_2)}
+\DoxyCodeLine{00118 \textcolor{comment}{/*}}
+\DoxyCodeLine{00119 \textcolor{comment}{ *  this constructor is for the copy in initialization. It is not}}
+\DoxyCodeLine{00120 \textcolor{comment}{ *  really necessary to declare this one because a bitwise copy (before}}
+\DoxyCodeLine{00121 \textcolor{comment}{ *  2.00) has the same effect.}}
+\DoxyCodeLine{00122 \textcolor{comment}{ */}}
+\DoxyCodeLine{00123 \{}
+\DoxyCodeLine{00124     seconds = DatasimDateTime\_2.seconds;}
+\DoxyCodeLine{00125 \}}
+\DoxyCodeLine{00126  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00127}\mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{00127}}  }
+\DoxyCodeLine{00128 \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime::DatasimDateTime}}()}
+\DoxyCodeLine{00129 \textcolor{comment}{/*}}
+\DoxyCodeLine{00130 \textcolor{comment}{ *  default constructor. Gives the time at the moment of creation.}}
+\DoxyCodeLine{00131 \textcolor{comment}{ *  because this function uses ANSI structures and function, it }}
+\DoxyCodeLine{00132 \textcolor{comment}{ *  should be machine independant.}}
+\DoxyCodeLine{00133 \textcolor{comment}{ */}}
+\DoxyCodeLine{00134 \{}
+\DoxyCodeLine{00135     time\_t local\_time;              \textcolor{comment}{// type to hold time}}
+\DoxyCodeLine{00136     \textcolor{keyword}{struct }tm *t\_ptr;               \textcolor{comment}{// struct to contain time, date etc}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138     local\_time = time(NULL);        \textcolor{comment}{// get time (and date) from system}}
+\DoxyCodeLine{00139     t\_ptr = localtime(\&local\_time); \textcolor{comment}{// convert to struct }}
+\DoxyCodeLine{00140     \textcolor{keywordtype}{int} hour\_t = hour\_test(t\_ptr-\/>tm\_hour); \textcolor{comment}{// test hour.}}
+\DoxyCodeLine{00141     \textcolor{keywordtype}{int} min\_t = min\_test(t\_ptr-\/>tm\_min);    \textcolor{comment}{// test minute}}
+\DoxyCodeLine{00142     \textcolor{keywordtype}{int} sec\_t = sec\_test(t\_ptr-\/>tm\_sec);    \textcolor{comment}{// test second}}
+\DoxyCodeLine{00143     seconds = secs(hour\_t, min\_t, sec\_t);   \textcolor{comment}{// cal. seconds from midnight}}
+\DoxyCodeLine{00144 \}}
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00145}\mbox{\hyperlink{classDatasimDateTime_a03794573344da99abd33b6b16670219d}{00145}} }
+\DoxyCodeLine{00146 \textcolor{keywordtype}{int} \mbox{\hyperlink{classDatasimDateTime_a03794573344da99abd33b6b16670219d}{DatasimDateTime::ret\_hour}}()}
+\DoxyCodeLine{00147 \textcolor{comment}{/*}}
+\DoxyCodeLine{00148 \textcolor{comment}{ *  return the hour of the day from this DatasimDateTime.}}
+\DoxyCodeLine{00149 \textcolor{comment}{ */}}
+\DoxyCodeLine{00150 \{}
+\DoxyCodeLine{00151     \textcolor{keywordtype}{int} h, m, s;        \textcolor{comment}{// hour, minute and seconds}}
+\DoxyCodeLine{00152     secs\_to\_DatasimDateTime(h, m, s); \textcolor{comment}{// get hour,minute and seconds of day}}
+\DoxyCodeLine{00153     \textcolor{keywordflow}{return}(h);      \textcolor{comment}{// return hour of day}}
+\DoxyCodeLine{00154 \}}
+\DoxyCodeLine{00155  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00156}\mbox{\hyperlink{classDatasimDateTime_a043cd9647f9062d18b652996578afdcf}{00156}}  }
+\DoxyCodeLine{00157 \textcolor{keywordtype}{int} \mbox{\hyperlink{classDatasimDateTime_a043cd9647f9062d18b652996578afdcf}{DatasimDateTime::ret\_minute}}()}
+\DoxyCodeLine{00158 \textcolor{comment}{/*}}
+\DoxyCodeLine{00159 \textcolor{comment}{ *  return the minute (0..59) past last hour from this DatasimDateTime.}}
+\DoxyCodeLine{00160 \textcolor{comment}{ */}}
+\DoxyCodeLine{00161 \{}
+\DoxyCodeLine{00162     \textcolor{keywordtype}{int} h, m, s;        \textcolor{comment}{// hour, minute and seconds}}
+\DoxyCodeLine{00163     secs\_to\_DatasimDateTime(h, m, s); \textcolor{comment}{// get hour,minute and seconds of day}}
+\DoxyCodeLine{00164     \textcolor{keywordflow}{return}(m);      \textcolor{comment}{// return minute}}
+\DoxyCodeLine{00165 \}}
+\DoxyCodeLine{00166  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00167}\mbox{\hyperlink{classDatasimDateTime_a1858e2b56f0bafbbf25ba63e15d7f07d}{00167}}  }
+\DoxyCodeLine{00168 \textcolor{keywordtype}{int} \mbox{\hyperlink{classDatasimDateTime_a1858e2b56f0bafbbf25ba63e15d7f07d}{DatasimDateTime::ret\_second}}()}
+\DoxyCodeLine{00169 \textcolor{comment}{/*}}
+\DoxyCodeLine{00170 \textcolor{comment}{ *  return the second (0..59) past last minute from this DatasimDateTime.}}
+\DoxyCodeLine{00171 \textcolor{comment}{ */}}
+\DoxyCodeLine{00172 \{}
+\DoxyCodeLine{00173     \textcolor{keywordtype}{int} h, m, s;        \textcolor{comment}{// hour, minute and seconds}}
+\DoxyCodeLine{00174     secs\_to\_DatasimDateTime(h, m, s); \textcolor{comment}{// get hour,minute and seconds of day}}
+\DoxyCodeLine{00175     \textcolor{keywordflow}{return}(s);      \textcolor{comment}{// return second}}
+\DoxyCodeLine{00176 \}}
+\DoxyCodeLine{00177  }
+\DoxyCodeLine{00178  }
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00180}\mbox{\hyperlink{classDatasimDateTime_a91df760056052bfce214e56b1b308d57}{00180}}  }
+\DoxyCodeLine{00181 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDateTime_a91df760056052bfce214e56b1b308d57}{DatasimDateTime::operator==}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00182 \textcolor{comment}{/*}}
+\DoxyCodeLine{00183 \textcolor{comment}{ *  compare two DatasimDateTimes. Return true if they are on the same time, }}
+\DoxyCodeLine{00184 \textcolor{comment}{ *  else return false. They need not be the same objects.}}
+\DoxyCodeLine{00185 \textcolor{comment}{ */}}
+\DoxyCodeLine{00186 \{}
+\DoxyCodeLine{00187     \textcolor{keywordflow}{if} (seconds == DatasimDateTime\_2.seconds)}
+\DoxyCodeLine{00188         \textcolor{keywordflow}{return}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00189     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00190         \textcolor{keywordflow}{return}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00191 \};}
+\DoxyCodeLine{00192         }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00193}\mbox{\hyperlink{classDatasimDateTime_a9f272d4518ba235c84e52da7ba52eddc}{00193}}  }
+\DoxyCodeLine{00194 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDateTime_a9f272d4518ba235c84e52da7ba52eddc}{DatasimDateTime::operator!=}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00195 \textcolor{comment}{/*}}
+\DoxyCodeLine{00196 \textcolor{comment}{ *  compare two DatasimDateTimes. Return true if they are not on the same time, }}
+\DoxyCodeLine{00197 \textcolor{comment}{ *  else return false. They need not be the same objects.}}
+\DoxyCodeLine{00198 \textcolor{comment}{ */}}
+\DoxyCodeLine{00199 \{}
+\DoxyCodeLine{00200     \textcolor{keywordflow}{if} (seconds != DatasimDateTime\_2.seconds)}
+\DoxyCodeLine{00201         \textcolor{keywordflow}{return}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00202     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00203         \textcolor{keywordflow}{return}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00204 \}}
+\DoxyCodeLine{00205  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00206}\mbox{\hyperlink{classDatasimDateTime_a9610d34a0ce319bcefb932539b53f783}{00206}}  }
+\DoxyCodeLine{00207 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDateTime_a9610d34a0ce319bcefb932539b53f783}{DatasimDateTime::operator>}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00208 \textcolor{comment}{/*}}
+\DoxyCodeLine{00209 \textcolor{comment}{ *  if this DatasimDateTime is later than DatasimDateTime\_2, return true, else return false.}}
+\DoxyCodeLine{00210 \textcolor{comment}{ */}}
+\DoxyCodeLine{00211 \{}
+\DoxyCodeLine{00212     \textcolor{keywordflow}{if} (seconds > DatasimDateTime\_2.seconds)}
+\DoxyCodeLine{00213         \textcolor{keywordflow}{return}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00214     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00215         \textcolor{keywordflow}{return}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00216 \}}
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00217}\mbox{\hyperlink{classDatasimDateTime_a316134f75182feacfaece1efdbe859c6}{00217}}  }
+\DoxyCodeLine{00218 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDateTime_a316134f75182feacfaece1efdbe859c6}{DatasimDateTime::operator<}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00219 \textcolor{comment}{/*}}
+\DoxyCodeLine{00220 \textcolor{comment}{ *  if this DatasimDateTime is earlier than DatasimDateTime\_2, return true, else return false.}}
+\DoxyCodeLine{00221 \textcolor{comment}{ */}}
+\DoxyCodeLine{00222 \{}
+\DoxyCodeLine{00223     \textcolor{keywordflow}{if} (seconds < DatasimDateTime\_2.seconds)}
+\DoxyCodeLine{00224         \textcolor{keywordflow}{return}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00225     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00226         \textcolor{keywordflow}{return}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00227 \}}
+\DoxyCodeLine{00228  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00229}\mbox{\hyperlink{classDatasimDateTime_a05733ca22e20b17ee08e45dcf6c2093e}{00229}}  }
+\DoxyCodeLine{00230 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDateTime_a05733ca22e20b17ee08e45dcf6c2093e}{DatasimDateTime::operator>=}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00231 \textcolor{comment}{/*}}
+\DoxyCodeLine{00232 \textcolor{comment}{ *  if DatasimDateTime\_2 is earlier than this DatasimDateTime return true, else return false.}}
+\DoxyCodeLine{00233 \textcolor{comment}{ */}}
+\DoxyCodeLine{00234 \{}
+\DoxyCodeLine{00235     \textcolor{keywordflow}{if} (seconds >= DatasimDateTime\_2.seconds)}
+\DoxyCodeLine{00236         \textcolor{keywordflow}{return}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00237     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00238         \textcolor{keywordflow}{return}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00239 \}}
+\DoxyCodeLine{00240  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00241}\mbox{\hyperlink{classDatasimDateTime_a95692ca557f9da8436e7f9765a1822ba}{00241}}  }
+\DoxyCodeLine{00242 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDatasimDateTime_a95692ca557f9da8436e7f9765a1822ba}{DatasimDateTime::operator<=}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00243 \textcolor{comment}{/*}}
+\DoxyCodeLine{00244 \textcolor{comment}{ *  if DatasimDateTime\_2 is later than this DatasimDateTime return true, else return false.}}
+\DoxyCodeLine{00245 \textcolor{comment}{ */}}
+\DoxyCodeLine{00246 \{}
+\DoxyCodeLine{00247     \textcolor{keywordflow}{if} (seconds <= DatasimDateTime\_2.seconds)}
+\DoxyCodeLine{00248         \textcolor{keywordflow}{return}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00249     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00250         \textcolor{keywordflow}{return}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00251 \}}
+\DoxyCodeLine{00252  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00253}\mbox{\hyperlink{classDatasimDateTime_a364611b44f9fcf675788d08957c78dba}{00253}}  }
+\DoxyCodeLine{00254 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a364611b44f9fcf675788d08957c78dba}{DatasimDateTime::operator++}}()}
+\DoxyCodeLine{00255 \textcolor{comment}{/*}}
+\DoxyCodeLine{00256 \textcolor{comment}{ *  add 1 second to this DatasimDateTime and return it. Discard the overflow}}
+\DoxyCodeLine{00257 \textcolor{comment}{ *  fi there is one.}}
+\DoxyCodeLine{00258 \textcolor{comment}{ */}}
+\DoxyCodeLine{00259 \{}
+\DoxyCodeLine{00260     seconds++;              \textcolor{comment}{// one second later}}
+\DoxyCodeLine{00261     seconds \%= day\_seconds;         \textcolor{comment}{// discard overflow}}
+\DoxyCodeLine{00262     \textcolor{keywordflow}{return}(*\textcolor{keyword}{this});              \textcolor{comment}{// return second later}}
+\DoxyCodeLine{00263 \}}
+\DoxyCodeLine{00264  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00265}\mbox{\hyperlink{classDatasimDateTime_a99c7501167024faee62981340da0d116}{00265}}  }
+\DoxyCodeLine{00266 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a99c7501167024faee62981340da0d116}{DatasimDateTime::operator-\/-\/}}()}
+\DoxyCodeLine{00267 \textcolor{comment}{/*}}
+\DoxyCodeLine{00268 \textcolor{comment}{ *  subtract 1 second from this DatasimDateTime and return it. Discard an }}
+\DoxyCodeLine{00269 \textcolor{comment}{ *  underflow if there is one.}}
+\DoxyCodeLine{00270 \textcolor{comment}{ */}}
+\DoxyCodeLine{00271 \{}
+\DoxyCodeLine{00272     seconds = seconds + day\_seconds -\/ 1;    \textcolor{comment}{// one second earlier}}
+\DoxyCodeLine{00273     seconds \%= day\_seconds;         \textcolor{comment}{// discard underflow}}
+\DoxyCodeLine{00274     \textcolor{keywordflow}{return}(*\textcolor{keyword}{this});              \textcolor{comment}{// return second earlier}}
+\DoxyCodeLine{00275 \}}
+\DoxyCodeLine{00276  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00277}\mbox{\hyperlink{classDatasimDateTime_ae9b89102524f49387b466dc2fc9205e9}{00277}}  }
+\DoxyCodeLine{00278 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_ae9b89102524f49387b466dc2fc9205e9}{DatasimDateTime::operator+}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} t2)}
+\DoxyCodeLine{00279 \textcolor{comment}{/*}}
+\DoxyCodeLine{00280 \textcolor{comment}{ *  add two DatasimDateTimes. If the resulting time passes a day-\/limit, discard}}
+\DoxyCodeLine{00281 \textcolor{comment}{ *  the overflow. return the added time.}}
+\DoxyCodeLine{00282 \textcolor{comment}{ */}}
+\DoxyCodeLine{00283 \{}
+\DoxyCodeLine{00284     \mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} tot\_sec = seconds + t2.seconds;  \textcolor{comment}{// total \# seconds}}
+\DoxyCodeLine{00285     tot\_sec \%= day\_seconds;         \textcolor{comment}{// discard overflow}}
+\DoxyCodeLine{00286     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} t(tot\_sec);          \textcolor{comment}{// construct DatasimDateTime from rest}}
+\DoxyCodeLine{00287     \textcolor{keywordflow}{return}(t);              \textcolor{comment}{// return added time}}
+\DoxyCodeLine{00288 \}}
+\DoxyCodeLine{00289 }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00290}\mbox{\hyperlink{classDatasimDateTime_a97964fb63ffaf76f36857bb7e02f92f5}{00290}} }
+\DoxyCodeLine{00291 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_ae9b89102524f49387b466dc2fc9205e9}{DatasimDateTime::operator+}}(\textcolor{keywordtype}{long} secos)}
+\DoxyCodeLine{00292 \textcolor{comment}{/*}}
+\DoxyCodeLine{00293 \textcolor{comment}{ *  return this DatasimDateTime + \#seconds. If the resulting time passes a day-\/limit}}
+\DoxyCodeLine{00294 \textcolor{comment}{ *  discard the overflow. \#seconds May be negative.}}
+\DoxyCodeLine{00295 \textcolor{comment}{ */}}
+\DoxyCodeLine{00296 \{}
+\DoxyCodeLine{00297     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp;}
+\DoxyCodeLine{00298     \textcolor{keywordflow}{if} (secos >= 0)}
+\DoxyCodeLine{00299         tmp = *\textcolor{keyword}{this} + \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime}}(secos);    \textcolor{comment}{// construct DatasimDateTime, discard ovf}}
+\DoxyCodeLine{00300     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00301         tmp = *\textcolor{keyword}{this} + \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime}}(secos * -\/1); \textcolor{comment}{// construct DatasimDateTime}}
+\DoxyCodeLine{00302     \textcolor{keywordflow}{return}(tmp);                \textcolor{comment}{// return DatasimDateTime}}
+\DoxyCodeLine{00303 \}}
+\DoxyCodeLine{00304 }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00305}\mbox{\hyperlink{classDatasimDateTime_a83040c964ad4e6ccb54179a6eba89dba}{00305}} }
+\DoxyCodeLine{00306 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a83040c964ad4e6ccb54179a6eba89dba}{DatasimDateTime::operator-\/}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} t2)}
+\DoxyCodeLine{00307 \textcolor{comment}{/*}}
+\DoxyCodeLine{00308 \textcolor{comment}{ *  subtract DatasimDateTime\_2 from this DatasimDateTime. If the resulting time passes }}
+\DoxyCodeLine{00309 \textcolor{comment}{ *  a day-\/limit, discard the underflow. return the new time.}}
+\DoxyCodeLine{00310 \textcolor{comment}{ */}}
+\DoxyCodeLine{00311 \{}
+\DoxyCodeLine{00312     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp;             \textcolor{comment}{// temporary DatasimDateTime}}
+\DoxyCodeLine{00313     \textcolor{keywordflow}{if} (*\textcolor{keyword}{this} >= t2)            \textcolor{comment}{// result will be pos}}
+\DoxyCodeLine{00314         tmp = \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime}}(seconds -\/ t2.seconds); \textcolor{comment}{// subtract seconds and constr.}}
+\DoxyCodeLine{00315     \textcolor{keywordflow}{else}                    \textcolor{comment}{// result will be negative}}
+\DoxyCodeLine{00316         tmp = \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime}}(day\_seconds -\/ t2.seconds + seconds);}
+\DoxyCodeLine{00317                         \textcolor{comment}{// make positive and construct}}
+\DoxyCodeLine{00318     \textcolor{keywordflow}{return}(tmp);                \textcolor{comment}{// return added time}}
+\DoxyCodeLine{00319 \}}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00321}\mbox{\hyperlink{classDatasimDateTime_a8d047a83a727bee384c4c2b256cacac8}{00321}} }
+\DoxyCodeLine{00322 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a83040c964ad4e6ccb54179a6eba89dba}{DatasimDateTime::operator-\/}}(\textcolor{keywordtype}{long} nr\_secs)}
+\DoxyCodeLine{00323 \textcolor{comment}{/*}}
+\DoxyCodeLine{00324 \textcolor{comment}{ *  return this DatasimDateTime -\/ \#seconds. If the resulting time passes a day-\/limit}}
+\DoxyCodeLine{00325 \textcolor{comment}{ *  discard the underflow. \#seconds May be negative.}}
+\DoxyCodeLine{00326 \textcolor{comment}{ */}}
+\DoxyCodeLine{00327 \{}
+\DoxyCodeLine{00328     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp;}
+\DoxyCodeLine{00329     \textcolor{keywordflow}{if} (nr\_secs >= 0)           \textcolor{comment}{// \#seconds is positive}}
+\DoxyCodeLine{00330         tmp = *\textcolor{keyword}{this} -\/ \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime}}(nr\_secs);  \textcolor{comment}{// construct DatasimDateTime, discard ovf}}
+\DoxyCodeLine{00331     \textcolor{keywordflow}{else}                    \textcolor{comment}{// \#seconds is negative}}
+\DoxyCodeLine{00332         tmp = *\textcolor{keyword}{this} -\/ \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime}}(nr\_secs * -\/1); \textcolor{comment}{// construct DatasimDateTime}}
+\DoxyCodeLine{00333     \textcolor{keywordflow}{return}(tmp);                \textcolor{comment}{// return DatasimDateTime}}
+\DoxyCodeLine{00334 \}}
+\DoxyCodeLine{00335  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00336}\mbox{\hyperlink{classDatasimDateTime_a5737b79c0a0f8392597aaaf9dfed10d0}{00336}}  }
+\DoxyCodeLine{00337 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_ab07a95787f88b6cf0dcade6695638de2}{DatasimDateTime::operator+=}}(\textcolor{keywordtype}{long} secos)}
+\DoxyCodeLine{00338 \textcolor{comment}{/*}}
+\DoxyCodeLine{00339 \textcolor{comment}{ *  add a number of seconds to this DatasimDateTime and return it. If the}}
+\DoxyCodeLine{00340 \textcolor{comment}{ *  DatasimDateTime passes a time limit, discard the overflow. The number}}
+\DoxyCodeLine{00341 \textcolor{comment}{ *  of seconds may be positive or negative.}}
+\DoxyCodeLine{00342 \textcolor{comment}{ */}}
+\DoxyCodeLine{00343 \{}
+\DoxyCodeLine{00344     *\textcolor{keyword}{this} = *\textcolor{keyword}{this} + secos;  \textcolor{comment}{// call operator+, add seconds}}
+\DoxyCodeLine{00345     \textcolor{keywordflow}{return}(*\textcolor{keyword}{this});          \textcolor{comment}{// return new this DatasimDateTime}}
+\DoxyCodeLine{00346 \}}
+\DoxyCodeLine{00347  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00348}\mbox{\hyperlink{classDatasimDateTime_ab07a95787f88b6cf0dcade6695638de2}{00348}}  }
+\DoxyCodeLine{00349 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_ab07a95787f88b6cf0dcade6695638de2}{DatasimDateTime::operator+=}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00350 \textcolor{comment}{/*}}
+\DoxyCodeLine{00351 \textcolor{comment}{ *  add DatasimDateTime\_2 to this DatasimDateTime and return it. If the }}
+\DoxyCodeLine{00352 \textcolor{comment}{ *  DatasimDateTime passes a day-\/limit, the overflow is discarded.}}
+\DoxyCodeLine{00353 \textcolor{comment}{ */}}
+\DoxyCodeLine{00354 \{}
+\DoxyCodeLine{00355     *\textcolor{keyword}{this} = *\textcolor{keyword}{this} + DatasimDateTime\_2;  \textcolor{comment}{// add DatasimDateTime\_2 to this DatasimDateTime}}
+\DoxyCodeLine{00356     \textcolor{keywordflow}{return}(*\textcolor{keyword}{this});          \textcolor{comment}{// return it}}
+\DoxyCodeLine{00357 \}}
+\DoxyCodeLine{00358  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00359}\mbox{\hyperlink{classDatasimDateTime_a44e30c8e8aa02eaeeb9c75c22ebb1fc2}{00359}}  }
+\DoxyCodeLine{00360 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a44e30c8e8aa02eaeeb9c75c22ebb1fc2}{DatasimDateTime::operator-\/=}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00361 \textcolor{comment}{/*}}
+\DoxyCodeLine{00362 \textcolor{comment}{ *  subtract DatasimDateTime\_2 from this DatasimDateTime (so this DatasimDateTime will be changed)}}
+\DoxyCodeLine{00363 \textcolor{comment}{ *  and return it. If the DatasimDateTime passes day-\/limit, the overflow will}}
+\DoxyCodeLine{00364 \textcolor{comment}{ *  be discarded.}}
+\DoxyCodeLine{00365 \textcolor{comment}{ */}}
+\DoxyCodeLine{00366 \{}
+\DoxyCodeLine{00367     *\textcolor{keyword}{this} = *\textcolor{keyword}{this} -\/ DatasimDateTime\_2;  \textcolor{comment}{// call operator-\/, subtract time}}
+\DoxyCodeLine{00368     \textcolor{keywordflow}{return}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00369 \}}
+\DoxyCodeLine{00370  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00371}\mbox{\hyperlink{classDatasimDateTime_a22662f26292fef9f73bc5b081f15dc4f}{00371}}  }
+\DoxyCodeLine{00372 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a44e30c8e8aa02eaeeb9c75c22ebb1fc2}{DatasimDateTime::operator-\/=}}(\textcolor{keywordtype}{long} secos)}
+\DoxyCodeLine{00373 \textcolor{comment}{/*}}
+\DoxyCodeLine{00374 \textcolor{comment}{ *  subtract a number of seconds from this DatasimDateTime (so this DatasimDateTime will}}
+\DoxyCodeLine{00375 \textcolor{comment}{ *  be changed) and return it. when the time passes a day-\/limit, the}}
+\DoxyCodeLine{00376 \textcolor{comment}{ *  underflow will be discarded. The number of secons may be positive}}
+\DoxyCodeLine{00377 \textcolor{comment}{ *  or negative.}}
+\DoxyCodeLine{00378 \textcolor{comment}{ */}}
+\DoxyCodeLine{00379  \{}
+\DoxyCodeLine{00380     *\textcolor{keyword}{this} = *\textcolor{keyword}{this} -\/ secos;  \textcolor{comment}{// call operator-\/, add seconds}}
+\DoxyCodeLine{00381     \textcolor{keywordflow}{return}(*\textcolor{keyword}{this});          \textcolor{comment}{// return new this DatasimDateTime}}
+\DoxyCodeLine{00382 \}}
+\DoxyCodeLine{00383  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00384}\mbox{\hyperlink{classDatasimDateTime_a8d29a8a2e2d585bece6406362f0fcff0}{00384}}  }
+\DoxyCodeLine{00385 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a8d29a8a2e2d585bece6406362f0fcff0}{DatasimDateTime::operator=}}(\mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} DatasimDateTime\_2)}
+\DoxyCodeLine{00386 \textcolor{comment}{/*}}
+\DoxyCodeLine{00387 \textcolor{comment}{ *  assign DatasimDateTime\_2 to this DatasimDateTime. Check ik they are the same objects}}
+\DoxyCodeLine{00388 \textcolor{comment}{ *  (this is not really necessary) and return the new DatasimDateTime (a reference).}}
+\DoxyCodeLine{00389 \textcolor{comment}{ */}}
+\DoxyCodeLine{00390 \{}
+\DoxyCodeLine{00391     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} != \&DatasimDateTime\_2)         \textcolor{comment}{// beware of t = t;}}
+\DoxyCodeLine{00392         seconds = DatasimDateTime\_2.seconds;}
+\DoxyCodeLine{00393     \textcolor{keywordflow}{return}(*\textcolor{keyword}{this});              \textcolor{comment}{// for multiple assignment}}
+\DoxyCodeLine{00394 \}}
+\DoxyCodeLine{00395  }
+\DoxyCodeLine{00396  }
+\DoxyCodeLine{00397 }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00398}\mbox{\hyperlink{classDatasimDateTime_a9bc493467b0748b34f77439f3f8863d6}{00398}}  }
+\DoxyCodeLine{00399 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a9bc493467b0748b34f77439f3f8863d6}{DatasimDateTime::add\_period}}(\mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} secos, \mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} mins, \mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} hours)}
+\DoxyCodeLine{00400 \textcolor{comment}{/*}}
+\DoxyCodeLine{00401 \textcolor{comment}{ *  add a period of time to this DatasimDateTime. The number of seconds can be}}
+\DoxyCodeLine{00402 \textcolor{comment}{ *  any value (may be > 59), the number of minutes can be any value}}
+\DoxyCodeLine{00403 \textcolor{comment}{ *  (may be > 59) and also the number of hours can be any value (may}}
+\DoxyCodeLine{00404 \textcolor{comment}{ *  be > 23). If a day-\/limit is passed, the overflow will be discarded.}}
+\DoxyCodeLine{00405 \textcolor{comment}{ */}}
+\DoxyCodeLine{00406 \{}
+\DoxyCodeLine{00407     }
+\DoxyCodeLine{00408     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp = \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime}}( secs(secos, mins, hours) ); \textcolor{comment}{// construct DatasimDateTime}}
+\DoxyCodeLine{00409     tmp = *\textcolor{keyword}{this} + tmp;          \textcolor{comment}{// add DatasimDateTimes}}
+\DoxyCodeLine{00410     \textcolor{keywordflow}{return}(tmp);                \textcolor{comment}{// return new time}}
+\DoxyCodeLine{00411 \}}
+\DoxyCodeLine{00412  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00413}\mbox{\hyperlink{classDatasimDateTime_a0f537d8771a9ac4c0fec01897703c452}{00413}}  }
+\DoxyCodeLine{00414 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a0f537d8771a9ac4c0fec01897703c452}{DatasimDateTime::sub\_period}}(\mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} secos, \mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} mins, \mbox{\hyperlink{DatesimDateTime_8hh_a3fe0acc26bd6a1dc8b4cb3b1d4bed7fe}{secTy}} hours)}
+\DoxyCodeLine{00415 \textcolor{comment}{/*}}
+\DoxyCodeLine{00416 \textcolor{comment}{ *  subtract a period of time from this DatasimDateTime. The number of seconds can be}}
+\DoxyCodeLine{00417 \textcolor{comment}{ *  any value (may be > 59), the number of minutes can be any value}}
+\DoxyCodeLine{00418 \textcolor{comment}{ *  (may be > 59) and also the number of hours can be any value (may}}
+\DoxyCodeLine{00419 \textcolor{comment}{ *  be > 23). If a day-\/limit is passed, the underrflow will be discarded.}}
+\DoxyCodeLine{00420 \textcolor{comment}{ */}}
+\DoxyCodeLine{00421 \{}
+\DoxyCodeLine{00422     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp = \mbox{\hyperlink{classDatasimDateTime_a6bba814ffc42155f7ced0830a12106b9}{DatasimDateTime}}( secs(secos, mins, hours) ); \textcolor{comment}{// construct DatasimDateTime}}
+\DoxyCodeLine{00423     tmp = *\textcolor{keyword}{this} -\/ tmp;          \textcolor{comment}{// subtract DatasimDateTime}}
+\DoxyCodeLine{00424     \textcolor{keywordflow}{return}(tmp);                \textcolor{comment}{// return new time}}
+\DoxyCodeLine{00425 \}}
+\DoxyCodeLine{00426     }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00427}\mbox{\hyperlink{classDatasimDateTime_a5778524ddd106e457c5d70540d395eee}{00427}}     }
+\DoxyCodeLine{00428 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a5778524ddd106e457c5d70540d395eee}{DatasimDateTime::add\_hours}}(\textcolor{keywordtype}{long} hours)}
+\DoxyCodeLine{00429 \textcolor{comment}{/*}}
+\DoxyCodeLine{00430 \textcolor{comment}{ *  return a number of hours added to this DatasimDateTime. If the DatasimDateTime passes}}
+\DoxyCodeLine{00431 \textcolor{comment}{ *  a day-\/limit, the overflow will be discarded. The number of hours}}
+\DoxyCodeLine{00432 \textcolor{comment}{ *  may be positive or negative.}}
+\DoxyCodeLine{00433 \textcolor{comment}{ */}}
+\DoxyCodeLine{00434 \{ }
+\DoxyCodeLine{00435     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp;         \textcolor{comment}{// for temporary result}}
+\DoxyCodeLine{00436     \textcolor{keywordflow}{if} (hours >= 0)         \textcolor{comment}{// add positive \#hours}}
+\DoxyCodeLine{00437         tmp = \mbox{\hyperlink{classDatasimDateTime_a9bc493467b0748b34f77439f3f8863d6}{add\_period}}(0, 0, hours);    \textcolor{comment}{// add hours}}
+\DoxyCodeLine{00438     \textcolor{keywordflow}{else}                \textcolor{comment}{// add negative \#hours}}
+\DoxyCodeLine{00439         tmp = \mbox{\hyperlink{classDatasimDateTime_a0f537d8771a9ac4c0fec01897703c452}{sub\_period}}(0, 0, hours * -\/1); \textcolor{comment}{// subtract hours}}
+\DoxyCodeLine{00440     \textcolor{keywordflow}{return}(tmp);            \textcolor{comment}{// return result}}
+\DoxyCodeLine{00441 \}}
+\DoxyCodeLine{00442  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00443}\mbox{\hyperlink{classDatasimDateTime_a97e61d7bb8be7df31096eaa240865ca0}{00443}}  }
+\DoxyCodeLine{00444 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a97e61d7bb8be7df31096eaa240865ca0}{DatasimDateTime::sub\_hours}}(\textcolor{keywordtype}{long} hours)}
+\DoxyCodeLine{00445 \textcolor{comment}{/*}}
+\DoxyCodeLine{00446 \textcolor{comment}{ *  return a number of hours subtracted from this DatasimDateTime. If the DatasimDateTime }}
+\DoxyCodeLine{00447 \textcolor{comment}{ *  passes a day-\/limit, the overflow will be discarded. The number of hours}}
+\DoxyCodeLine{00448 \textcolor{comment}{ *  may be positive or negative.}}
+\DoxyCodeLine{00449 \textcolor{comment}{ */}}
+\DoxyCodeLine{00450 \{ }
+\DoxyCodeLine{00451     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp;         \textcolor{comment}{// for temporary result}}
+\DoxyCodeLine{00452     \textcolor{keywordflow}{if} (hours >= 0)         \textcolor{comment}{// subtract positive \#hours}}
+\DoxyCodeLine{00453         tmp = \mbox{\hyperlink{classDatasimDateTime_a0f537d8771a9ac4c0fec01897703c452}{sub\_period}}(0, 0, hours);    \textcolor{comment}{// subtract \#hours}}
+\DoxyCodeLine{00454     \textcolor{keywordflow}{else}                \textcolor{comment}{// subtract negative \#hours}}
+\DoxyCodeLine{00455         tmp = \mbox{\hyperlink{classDatasimDateTime_a9bc493467b0748b34f77439f3f8863d6}{add\_period}}(0, 0, hours * -\/1); \textcolor{comment}{// add \#hours}}
+\DoxyCodeLine{00456     \textcolor{keywordflow}{return}(tmp);            \textcolor{comment}{// return result}}
+\DoxyCodeLine{00457 \}}
+\DoxyCodeLine{00458  }
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00459}\mbox{\hyperlink{classDatasimDateTime_a62014e665a05ebb1a3300acc4f57c4f2}{00459}}  }
+\DoxyCodeLine{00460 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a62014e665a05ebb1a3300acc4f57c4f2}{DatasimDateTime::add\_minutes}}(\textcolor{keywordtype}{long} minutes)}
+\DoxyCodeLine{00461 \textcolor{comment}{/*}}
+\DoxyCodeLine{00462 \textcolor{comment}{ *  return a number of minutes added to this DatasimDateTime. If the DatasimDateTime passes}}
+\DoxyCodeLine{00463 \textcolor{comment}{ *  a day-\/limit, the overflow will be discarded. The number of minutes}}
+\DoxyCodeLine{00464 \textcolor{comment}{ *  may be positive or negative.}}
+\DoxyCodeLine{00465 \textcolor{comment}{ */}}
+\DoxyCodeLine{00466 \{ }
+\DoxyCodeLine{00467     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp;         \textcolor{comment}{// for temporary result}}
+\DoxyCodeLine{00468     \textcolor{keywordflow}{if} (minutes >= 0)           \textcolor{comment}{// add positive \#minutes}}
+\DoxyCodeLine{00469         tmp = \mbox{\hyperlink{classDatasimDateTime_a9bc493467b0748b34f77439f3f8863d6}{add\_period}}(0, minutes); \textcolor{comment}{// add \#minutes}}
+\DoxyCodeLine{00470     \textcolor{keywordflow}{else}                \textcolor{comment}{// add negative \#minutes}}
+\DoxyCodeLine{00471         tmp = \mbox{\hyperlink{classDatasimDateTime_a0f537d8771a9ac4c0fec01897703c452}{sub\_period}}(0, minutes * -\/1); \textcolor{comment}{// subtract minutes}}
+\DoxyCodeLine{00472     \textcolor{keywordflow}{return}(tmp);            \textcolor{comment}{// return result}}
+\DoxyCodeLine{00473 \}}
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00474}\mbox{\hyperlink{classDatasimDateTime_a60b8878b21a7d117dc7c4a225f7e0d41}{00474}} }
+\DoxyCodeLine{00475 \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} \mbox{\hyperlink{classDatasimDateTime_a60b8878b21a7d117dc7c4a225f7e0d41}{DatasimDateTime::sub\_minutes}}(\textcolor{keywordtype}{long} minutes)}
+\DoxyCodeLine{00476 \textcolor{comment}{/*}}
+\DoxyCodeLine{00477 \textcolor{comment}{ *  return a number of minutes subtracted from this DatasimDateTime. If the DatasimDateTime }}
+\DoxyCodeLine{00478 \textcolor{comment}{ *  passes a day-\/limit, the overflow will be discarded. The number of}}
+\DoxyCodeLine{00479 \textcolor{comment}{ *  minutes may be positive or negative.}}
+\DoxyCodeLine{00480 \textcolor{comment}{ */}}
+\DoxyCodeLine{00481 \{ }
+\DoxyCodeLine{00482     \mbox{\hyperlink{classDatasimDateTime}{DatasimDateTime}} tmp;             \textcolor{comment}{// for temporary result}}
+\DoxyCodeLine{00483     \textcolor{keywordflow}{if} (minutes >= 0)           \textcolor{comment}{// subtract positive \#minutes}}
+\DoxyCodeLine{00484         tmp = \mbox{\hyperlink{classDatasimDateTime_a0f537d8771a9ac4c0fec01897703c452}{sub\_period}}(0, minutes); \textcolor{comment}{// subtract \#minutes}}
+\DoxyCodeLine{00485     \textcolor{keywordflow}{else}                    \textcolor{comment}{// subtract negative \#minutes}}
+\DoxyCodeLine{00486         tmp = \mbox{\hyperlink{classDatasimDateTime_a9bc493467b0748b34f77439f3f8863d6}{add\_period}}(0, minutes * -\/1); \textcolor{comment}{// subtract \#minutes}}
+\DoxyCodeLine{00487     \textcolor{keywordflow}{return}(tmp);                \textcolor{comment}{// return result}}
+\DoxyCodeLine{00488 \}}
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00489}\mbox{\hyperlink{classDatasimDateTime_ac0773e399f2fd8984fc7fcd322e28dae}{00489}} }
+\DoxyCodeLine{00490 \textcolor{keywordtype}{void} \mbox{\hyperlink{classDatasimDateTime_ac0773e399f2fd8984fc7fcd322e28dae}{DatasimDateTime::print}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00491 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00492     \textcolor{comment}{// dtime::delim = ':';}}
+\DoxyCodeLine{00493     \textcolor{keywordtype}{char} delim = \textcolor{charliteral}{':'};}
+\DoxyCodeLine{00494     \textcolor{keywordtype}{int} hour = 0, min = 0, sec = 0;}
+\DoxyCodeLine{00495     \mbox{\hyperlink{classDatasimDateTime_a9b6a86a41c4994e79fa02369df95589d}{secs\_to\_dtime}}(hour, min, sec);}
+\DoxyCodeLine{00496     printf(\textcolor{stringliteral}{"\%02d\%c\%02d\%c\%02d"}, hour, delim, min, delim, sec);}
+\DoxyCodeLine{00497 \}}
+\DoxyCodeLine{\Hypertarget{DatesimDateTime_8cc_source_l00498}\mbox{\hyperlink{classDatasimDateTime_a9b6a86a41c4994e79fa02369df95589d}{00498}} }
+\DoxyCodeLine{00499 \textcolor{keywordtype}{void} \mbox{\hyperlink{classDatasimDateTime_a9b6a86a41c4994e79fa02369df95589d}{DatasimDateTime::secs\_to\_dtime}}(\textcolor{keywordtype}{int}\& hour, \textcolor{keywordtype}{int}\& minute, \textcolor{keywordtype}{int}\& \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, \textcolor{keywordtype}{long}* over) \textcolor{keyword}{const}}
+\DoxyCodeLine{00500 \textcolor{comment}{/*}}
+\DoxyCodeLine{00501 \textcolor{comment}{ *  calculate the time of the day (hour, minute, second) from}}
+\DoxyCodeLine{00502 \textcolor{comment}{ *  the given seconds (which is the number of seconds past midnight).}}
+\DoxyCodeLine{00503 \textcolor{comment}{ *  If the number of seconds is more than seconds in one day, the}}
+\DoxyCodeLine{00504 \textcolor{comment}{ *  parameter 'over' will point to that number of days (seconds div }}
+\DoxyCodeLine{00505 \textcolor{comment}{ *  day\_seconds) if the parameter has been passed (it is a default}}
+\DoxyCodeLine{00506 \textcolor{comment}{ *  argument, default = 0), otherwise it will remain 0 (null pointer).}}
+\DoxyCodeLine{00507 \textcolor{comment}{ */}}
+\DoxyCodeLine{00508 \{}
+\DoxyCodeLine{00509 \textcolor{comment}{//printf("seconds = \%lu\(\backslash\)n", seconds);}}
+\DoxyCodeLine{00510     \textcolor{keywordflow}{if} (over != 0)          \textcolor{comment}{// parameter has been passed}}
+\DoxyCodeLine{00511         *over = seconds / day\_seconds;  \textcolor{comment}{// number of days in seconds}}
+\DoxyCodeLine{00512 \textcolor{comment}{//  seconds \%= day\_seconds;     // rest seconds}}
+\DoxyCodeLine{00513 \textcolor{comment}{//printf("seconds after days subtr. = \%lu\(\backslash\)n", seconds);}}
+\DoxyCodeLine{00514     hour = seconds / 3600;      \textcolor{comment}{// calculate hours from midnight}}
+\DoxyCodeLine{00515     \textcolor{keywordtype}{int} h = seconds \% 3600;     \textcolor{comment}{// rest}}
+\DoxyCodeLine{00516     minute = h / 60;        \textcolor{comment}{// calc. minutes after 'hour'}}
+\DoxyCodeLine{00517     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}} = h \% 60;      \textcolor{comment}{// calc seconds after 'minute'}}
+\DoxyCodeLine{00518 \textcolor{comment}{//printf("hour = \%d\(\backslash\)nminute = \%d\(\backslash\)nsecond = \%d\(\backslash\)n", hour, minute, second);}}
+\DoxyCodeLine{00519 \}}
+
+\end{DoxyCode}

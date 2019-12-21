@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_Example1_8cc">
+<title>tests/Example1.cc File Reference</title>
+<indexterm><primary>tests/Example1.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;typeinfo&gt;
+</programlisting>Include dependency graph for Example1.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="Example1_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classBase">Base</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classD1">D1</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classD2">D2</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_Example1_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_Example1_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>Example1.cc</secondary></indexterm>
+<indexterm><primary>Example1.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 57 of file Example1.cc.</para>
+<programlisting>58 {
+59 
+60 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Part&#32;I:&#32;typeinfo</emphasis>
+61 
+62 &#32;&#32;&#32;&#32;<link linkend="_classD1">D1</link>&#32;d1,&#32;d11;
+63 &#32;&#32;&#32;&#32;<link linkend="_classD2">D2</link>&#32;d2;
+64 
+65 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Define&#32;a&#32;reference&#32;to&#32;type</emphasis>
+66 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::type_info&amp;&#32;myRef&#32;=&#32;<emphasis role="keyword">typeid</emphasis>(d1);
+67 &#32;&#32;&#32;&#32;
+68 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Human-readable&#32;name:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;myRef.name()&#32;&lt;&lt;&#32;std::endl;
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Test&#32;if&#32;two&#32;objects&#32;have&#32;same&#32;type&#32;or&#32;not</emphasis>
+71 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">typeid</emphasis>(d1)&#32;==&#32;<emphasis role="keyword">typeid</emphasis>(d11))
+72 &#32;&#32;&#32;&#32;{
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Types&#32;are&#32;the&#32;same\n&quot;</emphasis>;
+74 &#32;&#32;&#32;&#32;}
+75 
+76 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">typeid</emphasis>(d1)&#32;!=&#32;<emphasis role="keyword">typeid</emphasis>(d2))
+77 &#32;&#32;&#32;&#32;{
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Types&#32;are&#32;NOT&#32;the&#32;same\n&quot;</emphasis>;
+79 &#32;&#32;&#32;&#32;}
+80 
+81 
+82 &#32;&#32;&#32;&#32;<link linkend="_classBase">Base</link>*&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;=&#32;&amp;d1;
+83 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::type_info&amp;&#32;myRef2&#32;=&#32;<emphasis role="keyword">typeid</emphasis>(*b);
+84 
+85 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Human-readable&#32;name:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;myRef2.name()&#32;&lt;&lt;&#32;std::endl;
+86 
+87 
+88 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;an&#32;array&#32;of&#32;Base&#32;class&#32;pointers</emphasis>
+89 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;size&#32;=&#32;10;
+90 &#32;&#32;&#32;&#32;<link linkend="_classBase">Base</link>*&#32;myArr[10];&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;An&#32;array&#32;of&#32;pointers!</emphasis>
+91 
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;6;&#32;j++)
+93 &#32;&#32;&#32;&#32;{
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myArr[j]&#32;=&#32;&amp;d1;
+95 &#32;&#32;&#32;&#32;}
+96 
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;k&#32;=&#32;6;&#32;k&#32;&lt;&#32;size;&#32;k++)
+98 &#32;&#32;&#32;&#32;{
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myArr[k]&#32;=&#32;&amp;d2;
+100 &#32;&#32;&#32;&#32;}
+101 
+102 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;&apos;filter&apos;&#32;the&#32;real&#32;types.&#32;We&#32;have&#32;D1&#32;and&#32;D2&#32;types!</emphasis>
+103 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;counterD1&#32;=&#32;0;
+104 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;counterD2&#32;=&#32;0;
+105 
+106 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;size;&#32;i++)
+107 &#32;&#32;&#32;&#32;{
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">typeid</emphasis>(*myArr[i])&#32;==&#32;<emphasis role="keyword">typeid</emphasis>(<link linkend="_classD1">D1</link>))
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;We&#32;have&#32;a&#32;D1\n&quot;</emphasis>;&#32;counterD1++;
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+112 
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">typeid</emphasis>(*myArr[i])&#32;==&#32;<emphasis role="keyword">typeid</emphasis>(<link linkend="_classD2">D2</link>))
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;We&#32;have&#32;a&#32;D2\n&quot;</emphasis>;&#32;counterD2++;
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+117 
+118 &#32;&#32;&#32;&#32;}
+119 
+120 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Print&#32;final&#32;counts</emphasis>
+121 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;D1s:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;counterD1&#32;&lt;&lt;&#32;std::endl;
+122 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;D2s:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;counterD2&#32;&lt;&lt;&#32;std::endl;
+123 
+124 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Part&#32;II:&#32;dynamic&#32;casting</emphasis>
+125 
+126 &#32;&#32;&#32;&#32;<link linkend="_classD1">D1</link>&#32;d1A;
+127 &#32;&#32;&#32;&#32;<link linkend="_classBase">Base</link>*&#32;base2&#32;=&#32;&amp;d1A;
+128 
+129 &#32;&#32;&#32;&#32;<link linkend="_classD1">D1</link>*&#32;d1Cast&#32;=&#32;dynamic_cast&lt;D1*&gt;&#32;(base2);
+130 
+131 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(d1Cast&#32;==&#32;0)
+132 &#32;&#32;&#32;&#32;{
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Cast&#32;not&#32;possible:\n&quot;</emphasis>;
+134 &#32;&#32;&#32;&#32;}
+135 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+136 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;This&#32;function&#32;gets&#32;called</emphasis>
+137 
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Cast&#32;is&#32;possible:&#32;&quot;</emphasis>;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;d1Cast&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+140 &#32;&#32;&#32;&#32;}
+141 
+142 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;cast&#32;a&#32;D1&#32;to&#32;a&#32;D2&#32;(not&#32;possible)</emphasis>
+143 &#32;&#32;&#32;&#32;<link linkend="_classD2">D2</link>*&#32;d2Cast&#32;=&#32;dynamic_cast&lt;D2*&gt;&#32;(base2);
+144 
+145 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(d2Cast&#32;==&#32;0)
+146 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;This&#32;function&#32;gets&#32;called</emphasis>
+147 
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Cast&#32;not&#32;possible:\n&quot;</emphasis>;
+149 &#32;&#32;&#32;&#32;}
+150 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+151 &#32;&#32;&#32;&#32;{
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Cast&#32;is&#32;possible:\n&quot;</emphasis>;
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;d2Cast&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+154 &#32;&#32;&#32;&#32;}
+155 
+156 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Upcasting</emphasis>
+157 &#32;&#32;&#32;&#32;<link linkend="_classD1">D1</link>*&#32;dd&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classD1">D1</link>;
+158 &#32;&#32;&#32;&#32;<link linkend="_classBase">Base</link>*&#32;b3&#32;=&#32;dynamic_cast&lt;Base*&gt;&#32;(dd);
+159 
+160 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(b3&#32;==&#32;0)
+161 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;This&#32;function&#32;gets&#32;called</emphasis>
+162 
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Cast&#32;not&#32;possible:\n&quot;</emphasis>;
+164 &#32;&#32;&#32;&#32;}
+165 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+166 &#32;&#32;&#32;&#32;{
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Cast&#32;is&#32;possible:\n&quot;</emphasis>;
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;b3&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;b3&#32;-&gt;&#32;doIt();
+170 &#32;&#32;&#32;&#32;}
+171 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;dd;
+172 
+173 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Static&#32;casting</emphasis>
+174 &#32;&#32;&#32;&#32;<link linkend="_classBase">Base</link>*&#32;bA&#32;=&#32;&amp;d1;
+175 &#32;&#32;&#32;&#32;<link linkend="_classBase">Base</link>*&#32;bB&#32;=&#32;&amp;d2;
+176 
+177 &#32;&#32;&#32;&#32;<link linkend="_classD1">D1</link>*&#32;dA&#32;=&#32;static_cast&lt;D1*&gt;&#32;(bA);
+178 
+179 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Unsafe&#32;static&#32;cast</emphasis>
+180 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Unsafe&#32;cast&#32;...\n&quot;</emphasis>;
+181 &#32;&#32;&#32;&#32;<link linkend="_classD1">D1</link>*&#32;dB&#32;=&#32;static_cast&lt;D1*&gt;&#32;(bB);
+182 &#32;&#32;&#32;&#32;dB&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+183 
+184 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Const&#32;Cast</emphasis>
+185 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&#32;const&#32;cast&#32;stuff\n&quot;</emphasis>;
+186 &#32;&#32;&#32;&#32;<link linkend="_classD1">D1</link>&#32;dAny;
+187 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classBase">Base</link>*&#32;bConst&#32;=&#32;&amp;dAny;
+188 &#32;&#32;&#32;&#32;bConst&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+189 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Base*&#32;bNonConst&#32;=&#32;bConst;&#32;DOES&#32;NOT&#32;WORK</emphasis>
+190 &#32;&#32;&#32;&#32;<link linkend="_classBase">Base</link>*&#32;bNonConst&#32;=&#32;const_cast&lt;Base*&gt;&#32;(bConst);
+191 &#32;&#32;&#32;&#32;bNonConst&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+192 
+193 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;following&#32;conversions&#32;do&#32;not&#32;work</emphasis>
+194 <emphasis role="comment">//&#32;&#32;Base*&#32;bNonConst1&#32;=&#32;static_cast&lt;Base*&gt;&#32;(bConst);</emphasis>
+195 <emphasis role="comment">//&#32;&#32;Base*&#32;bNonConst2&#32;=&#32;dynamic_cast&lt;Base*&gt;&#32;(bConst);</emphasis>
+196 <emphasis role="comment">//&#32;&#32;Base*&#32;bNonConst3&#32;=&#32;reinterpret_cast&lt;Base*&gt;&#32;(bConst);</emphasis>
+197 
+198 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Reinterpret&#32;Cast</emphasis>
+199 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nReinterpret&#32;cast&#32;stuff\n&quot;</emphasis>;
+200 
+201 &#32;&#32;&#32;&#32;<link linkend="_classD2">D2</link>&#32;d2Any;
+202 &#32;&#32;&#32;&#32;<link linkend="_classBase">Base</link>*&#32;bb&#32;=&#32;reinterpret_cast&lt;Base*&gt;(&amp;d2Any);
+203 &#32;&#32;&#32;&#32;bb&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+204 
+205 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+206 }
+</programlisting></section>
+</section>
+</section>

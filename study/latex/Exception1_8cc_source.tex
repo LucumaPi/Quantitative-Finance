@@ -1,0 +1,64 @@
+\hypertarget{Exception1_8cc_source}{}\doxysection{Exception1.\+cc}
+\label{Exception1_8cc_source}\index{tests/Exception1.cc@{tests/Exception1.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Exception1.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Some simple examples of using the exception handling}}
+\DoxyCodeLine{00004 \textcolor{comment}{// mechanism.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2005.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{comment}{// Useful proceduare for printing vector on Console}}
+\DoxyCodeLine{\Hypertarget{Exception1_8cc_source_l00013}\mbox{\hyperlink{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}{00013}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V> \textcolor{keywordtype}{void} \mbox{\hyperlink{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(\textcolor{keyword}{const} std::vector<V>\& v)}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016     std::cout << \textcolor{stringliteral}{"\(\backslash\)nARR:["};}
+\DoxyCodeLine{00017     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < v.size(); j++)}
+\DoxyCodeLine{00018     \{}
+\DoxyCodeLine{00019         std::cout << v[j] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00020     }
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00024 \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \textcolor{keyword}{template} <\textcolor{keyword}{class} V> }
+\DoxyCodeLine{\Hypertarget{Exception1_8cc_source_l00027}\mbox{\hyperlink{Exception1_8cc_a37185c557354c7e617e677999957a52d}{00027}} V \mbox{\hyperlink{Exception1_8cc_a37185c557354c7e617e677999957a52d}{sumReciprocals}}(\textcolor{keyword}{const} std::vector<V>\& array) }
+\DoxyCodeLine{00028 \{ \textcolor{comment}{// Sum of reciprocals }}
+\DoxyCodeLine{00029     }
+\DoxyCodeLine{00030         V ans = V(0.0);}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < array.size(); j++)}
+\DoxyCodeLine{00032         \{}
+\DoxyCodeLine{00033             ans += 1.0/array[j];}
+\DoxyCodeLine{00034         \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00037 \} }
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{\Hypertarget{Exception1_8cc_source_l00039}\mbox{\hyperlink{Exception1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00039}} \textcolor{keywordtype}{int} \mbox{\hyperlink{Exception1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00040 \{}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{int} size = 10;}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{double} elementsValue = 3.1415;}
+\DoxyCodeLine{00043     std::vector<double> myArray (size, elementsValue);}
+\DoxyCodeLine{00044     myArray[5] = 0.0;}
+\DoxyCodeLine{00045     \mbox{\hyperlink{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(myArray);}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordtype}{double} answer = \mbox{\hyperlink{Exception1_8cc_a37185c557354c7e617e677999957a52d}{sumReciprocals}}(myArray);}
+\DoxyCodeLine{00048     std::cout << \textcolor{stringliteral}{"Sum of reciprocals: "} << answer << std::endl;}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     std::cout << \textcolor{stringliteral}{"Which index change value to new value? "};}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{int} index;}
+\DoxyCodeLine{00052     std::cin >> index;}
+\DoxyCodeLine{00053     myArray[index] = 2.0;}
+\DoxyCodeLine{00054     \mbox{\hyperlink{Exception1_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(myArray);}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 \}}
+
+\end{DoxyCode}

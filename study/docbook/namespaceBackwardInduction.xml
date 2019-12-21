@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceBackwardInduction">
+<title>BackwardInduction Namespace Reference</title>
+<indexterm><primary>BackwardInduction</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceBackwardInduction_1a2ee4a25bb369ca52d0d7fe553f4ae502">taverse</link> (const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp;lattice)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classVector">Vector</link>&lt; double, int &gt;(* <link linkend="_namespaceBackwardInduction_1a0f1c3dce9e5b1a3c659c0014d7eede07">createTerminalVector</link> )(const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp;lattice)</para>
+</listitem>
+            <listitem><para>double(* <link linkend="_namespaceBackwardInduction_1a7dda378748f91b6c14847031ab129606">nodeValue</link> )(double, upper, double lower)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceBackwardInduction_1a2ee4a25bb369ca52d0d7fe553f4ae502"/>    <section>
+    <title>taverse()</title>
+<indexterm><primary>taverse</primary><secondary>BackwardInduction</secondary></indexterm>
+<indexterm><primary>BackwardInduction</primary><secondary>taverse</secondary></indexterm>
+<para><computeroutput>double BackwardInduction::taverse (const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp; lattice)</computeroutput></para><para>
+Definition at line 26 of file TestLatticeBackwardInduction.cc.</para>
+<programlisting>27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+28 
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;ei&#32;=&#32;lattice.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>();
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lattice[ei]&#32;=&#32;<link linkend="_namespaceBackwardInduction_1a0f1c3dce9e5b1a3c659c0014d7eede07">createTerminalVector</link>(lattice);
+31 
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;from&#32;the&#32;max&#32;index&#32;to&#32;the&#32;start&#32;(min)&#32;index</emphasis>
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;lattice.<link linkend="_classLattice_1a5cac27496a08f2a14d8e1d65732a4c34">MaxIndex</link>()&#32;-&#32;1;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&gt;=&#32;lattice.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>--)
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+35 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;std::copy[j].MinIndex();&#32;i&#32;&lt;=&#32;std::copy[j].MaxIndex();&#32;i++)
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;copy[n][i]&#32;=&#32;discounting&#32;*&#32;(p&#32;*&#32;copy[n+1][i+1]&#32;+&#32;(1.0-p)&#32;*&#32;copy[n+1][i]);</emphasis>
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lattice[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>][i]&#32;=&#32;<link linkend="_namespaceBackwardInduction_1a7dda378748f91b6c14847031ab129606">nodeValue</link>(std::copy[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>+1][i+1],&#32;std::copy[<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>+1][i])
+41 
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+43 
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;si&#32;=&#32;lattice.<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>();
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;lattice[si][lattice[si].<link linkend="_classLattice_1a07442df63222c6627f46efc4ae91acf9">MinIndex</link>()];
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespaceBackwardInduction_1a0f1c3dce9e5b1a3c659c0014d7eede07"/>    <section>
+    <title>createTerminalVector</title>
+<indexterm><primary>createTerminalVector</primary><secondary>BackwardInduction</secondary></indexterm>
+<indexterm><primary>BackwardInduction</primary><secondary>createTerminalVector</secondary></indexterm>
+<para><computeroutput><link linkend="_classVector">Vector</link>&lt;double, int&gt;(* BackwardInduction::createTerminalVector) (const <link linkend="_classLattice">Lattice</link>&lt; double, int, 2 &gt; &amp;lattice)</computeroutput></para><para>
+Definition at line 19 of file TestLatticeBackwardInduction.cc.</para>
+    </section><anchor xml:id="_namespaceBackwardInduction_1a7dda378748f91b6c14847031ab129606"/>    <section>
+    <title>nodeValue</title>
+<indexterm><primary>nodeValue</primary><secondary>BackwardInduction</secondary></indexterm>
+<indexterm><primary>BackwardInduction</primary><secondary>nodeValue</secondary></indexterm>
+<para><computeroutput>double(* BackwardInduction::nodeValue) (double, upper, double lower)</computeroutput></para><para>
+Definition at line 22 of file TestLatticeBackwardInduction.cc.</para>
+</section>
+</section>
+</section>

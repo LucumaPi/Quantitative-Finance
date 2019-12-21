@@ -1,0 +1,77 @@
+\hypertarget{TestFunctionPointer_8cc_source}{}\doxysection{Test\+Function\+Pointer.\+cc}
+\label{TestFunctionPointer_8cc_source}\index{tests/TestFunctionPointer.cc@{tests/TestFunctionPointer.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testFunctionPointer.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Simple test program to show how to define and use}}
+\DoxyCodeLine{00004 \textcolor{comment}{// function pointers. The functions are templated.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// (C) Datasim Education BV 2003-\/2005}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Complex_8hh}{duffy/Complex.hh}}>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{TestFunctionPointer_8cc_source_l00012}\mbox{\hyperlink{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}{00012}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V> V \mbox{\hyperlink{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}{add}}(V x, V y)}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     std::cout << \textcolor{stringliteral}{"** Adding two numbers: "} << x << \textcolor{stringliteral}{", "} << y << std::endl;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keywordflow}{return} x + y;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{TestFunctionPointer_8cc_source_l00021}\mbox{\hyperlink{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}{00021}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V> V \mbox{\hyperlink{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}{multiply}}(V x, V y)}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     std::cout << \textcolor{stringliteral}{"** Multiplying two numbers: "} << x << \textcolor{stringliteral}{", "} << y << std::endl;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keywordflow}{return} x * y;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{\Hypertarget{TestFunctionPointer_8cc_source_l00030}\mbox{\hyperlink{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}{00030}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V> V \mbox{\hyperlink{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}{subtract}}(V x, V y)}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     std::cout << \textcolor{stringliteral}{"** Subtracting two numbers: "} << x << \textcolor{stringliteral}{", "} << y << std::endl;}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{return} x -\/ y;}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 \textcolor{keyword}{template} <\textcolor{keyword}{class} V>}
+\DoxyCodeLine{\Hypertarget{TestFunctionPointer_8cc_source_l00040}\mbox{\hyperlink{TestFunctionPointer_8cc_a24ab3b71e1a0398e492a327c48bcaa8f}{00040}} \textcolor{keywordtype}{void} \mbox{\hyperlink{TestFunctionPointer_8cc_a24ab3b71e1a0398e492a327c48bcaa8f}{genericFunction}} (V myX, V myY, V (*f) (V  x, V y))}
+\DoxyCodeLine{00041 \{ \textcolor{comment}{// A function that delivers two variables myX and MyY to the function pointer 'f'}}
+\DoxyCodeLine{00042   \textcolor{comment}{// This is a potentially reusable function}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{comment}{// Call the function with myX and myY}}
+\DoxyCodeLine{00045     V result = (*f)(myX, myY);}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     std::cout << \textcolor{stringliteral}{"Result is: "} << result << std::endl;}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{\Hypertarget{TestFunctionPointer_8cc_source_l00051}\mbox{\hyperlink{TestFunctionPointer_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00051}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestFunctionPointer_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00052 \{}
+\DoxyCodeLine{00053     \{}
+\DoxyCodeLine{00054         \textcolor{keywordtype}{double} x = 3.0;}
+\DoxyCodeLine{00055         \textcolor{keywordtype}{double} y = 2.0;}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057         genericFunction<double>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}{add}});}
+\DoxyCodeLine{00058         genericFunction<double>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}{multiply}});}
+\DoxyCodeLine{00059         genericFunction<double>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}{subtract}});}
+\DoxyCodeLine{00060     \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \mbox{\hyperlink{classComplex}{Complex}} x(3.0, 2.0);}
+\DoxyCodeLine{00063     \mbox{\hyperlink{classComplex}{Complex}} y(2.0, -\/4.9);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     genericFunction<Complex>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}{add}});}
+\DoxyCodeLine{00066     genericFunction<Complex>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}{multiply}});}
+\DoxyCodeLine{00067     genericFunction<Complex>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}{subtract}});}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00071 \}}
+
+\end{DoxyCode}

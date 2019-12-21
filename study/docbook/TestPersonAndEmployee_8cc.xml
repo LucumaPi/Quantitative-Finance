@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestPersonAndEmployee_8cc">
+<title>tests/TestPersonAndEmployee.cc File Reference</title>
+<indexterm><primary>tests/TestPersonAndEmployee.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/PersonAndEmployee.hh&gt;
+</programlisting>Include dependency graph for TestPersonAndEmployee.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestPersonAndEmployee_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_TestPersonAndEmployee_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestPersonAndEmployee_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestPersonAndEmployee.cc</secondary></indexterm>
+<indexterm><primary>TestPersonAndEmployee.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 10 of file TestPersonAndEmployee.cc.</para>
+<programlisting>11 {
+12 
+13 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;myBirthday(29,&#32;8,&#32;1952);
+14 &#32;&#32;&#32;&#32;std::string&#32;myName&#32;(<emphasis role="stringliteral">&quot;Daniel&#32;J.&#32;Duffy&quot;</emphasis>);
+15 &#32;&#32;&#32;&#32;<link linkend="_classPerson">Person</link>&#32;dd(myName,&#32;myBirthday);
+16 &#32;&#32;&#32;&#32;dd.print();
+17 
+18 &#32;&#32;&#32;&#32;<link linkend="_classDatasimDate">DatasimDate</link>&#32;bBirthday(06,&#32;8,&#32;1994);
+19 &#32;&#32;&#32;&#32;std::string&#32;bName&#32;(<emphasis role="stringliteral">&quot;Brendan&#32;Duffy&quot;</emphasis>);
+20 &#32;&#32;&#32;&#32;<link linkend="_classPerson">Person</link>&#32;bd(bName,&#32;bBirthday);
+21 &#32;&#32;&#32;&#32;bd.print();
+22 &#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;<link linkend="_classEmployee">Employee</link>&#32;dde&#32;(myName,&#32;myBirthday,&#32;std::string(<emphasis role="stringliteral">&quot;Cuchulainn&#32;Chief&quot;</emphasis>),&#32;0.01,&#32;65);
+24 &#32;&#32;&#32;&#32;dde.print();
+25 
+26 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Working&#32;with&#32;pointers&#32;I\n&quot;</emphasis>;&#32;<emphasis role="comment">//&#32;Non-polymorphic&#32;function</emphasis>
+27 &#32;&#32;&#32;&#32;<link linkend="_classPerson">Person</link>*&#32;p&#32;=&#32;&amp;dde;
+28 &#32;&#32;&#32;&#32;p&#32;-&gt;&#32;<link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>();
+29 
+30 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Working&#32;with&#32;pointers&#32;II\n&quot;</emphasis>;&#32;<emphasis role="comment">//&#32;Polymorphic&#32;function</emphasis>
+31 &#32;&#32;&#32;&#32;p&#32;-&gt;&#32;DeepPrint();
+32 
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+34 }
+</programlisting></section>
+</section>
+</section>

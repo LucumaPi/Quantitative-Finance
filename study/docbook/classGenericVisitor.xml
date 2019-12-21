@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classGenericVisitor">
 <title>GenericVisitor&lt; Context, Name &gt; Class Template Reference</title>
 <indexterm><primary>GenericVisitor&lt; Context, Name &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;GenericVisitor.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for GenericVisitor&lt; Context, Name &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -14,10 +17,39 @@ Collaboration diagram for GenericVisitor&lt; Context, Name &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classGenericVisitor_1ae3eca0ad04f511b6a38dce9aa8cedc69"/>void <emphasis role="strong">visit</emphasis> (<link linkend="_classGenericComposite">GenericComposite</link>&lt; Context &gt; &amp;context)</para>
+            <listitem><para>void <link linkend="_classGenericVisitor_1ae3eca0ad04f511b6a38dce9aa8cedc69">visit</link> (<link linkend="_classGenericComposite">GenericComposite</link>&lt; Context &gt; &amp;context)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class Context, class Name&gt;
+class GenericVisitor&lt; Context, Name &gt;</title></simplesect>
+
+<para>
+Definition at line 9 of file GenericVisitor.hh.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classGenericVisitor_1ae3eca0ad04f511b6a38dce9aa8cedc69"/>    <section>
+    <title>visit()</title>
+<indexterm><primary>visit</primary><secondary>GenericVisitor&lt; Context, Name &gt;</secondary></indexterm>
+<indexterm><primary>GenericVisitor&lt; Context, Name &gt;</primary><secondary>visit</secondary></indexterm>
+<computeroutput>template&lt;class Context , class Name &gt; </computeroutput><para><computeroutput>void <link linkend="_classGenericVisitor">GenericVisitor</link>&lt; Context, Name &gt;::visit (<link linkend="_classGenericComposite">GenericComposite</link>&lt; Context &gt; &amp; context)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 12 of file GenericVisitor.hh.</para>
+<programlisting>13 &#32;&#32;&#32;&#32;{
+14 
+15 &#32;&#32;&#32;&#32;<link linkend="_classGenericComposite">GenericComposite&lt;Context&gt;::iterator</link>&#32;it;
+16 
+17 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Send&#32;all&#32;shapes&#32;in&#32;the&#32;composite&#32;to&#32;the&#32;visitor</emphasis>
+18 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(it=sc.Begin();&#32;it!=sc.<link linkend="_classGenericComposite_1afaad3512b4bba5b4e4a691ec44ed7857">End</link>();&#32;it++)
+19 &#32;&#32;&#32;&#32;{
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(*it)-&gt;<link linkend="_classGenericComposite_1af30c0539ccf8287db5bc4e93cd8b0688">accept</link>(*<emphasis role="keyword">this</emphasis>);
+21 &#32;&#32;&#32;&#32;}
+22 &#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/GenericVisitor.hh</section>
+include/duffy/<link linkend="_GenericVisitor_8hh">GenericVisitor.hh</link></section>
+</section>

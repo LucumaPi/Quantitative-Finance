@@ -1,0 +1,134 @@
+\hypertarget{MathErr_8cc_source}{}\doxysection{Math\+Err.\+cc}
+\label{MathErr_8cc_source}\index{src/MathErr.cc@{src/MathErr.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// MathErr.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// C++ exception hierarchy (sample) to show }}
+\DoxyCodeLine{00004 \textcolor{comment}{// how to model exceptions.}}
+\DoxyCodeLine{00005 \textcolor{comment}{// We have modelled the exceptions based on the}}
+\DoxyCodeLine{00006 \textcolor{comment}{// .NET way of treating exceptions.}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00015}\mbox{\hyperlink{classMathErr}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{classMathErr}{MathErr}}}
+\DoxyCodeLine{00016 \{ \textcolor{comment}{// Base class for my current exceptions}}
+\DoxyCodeLine{00017 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018         std::string mess;   \textcolor{comment}{// The error message}}
+\DoxyCodeLine{00019         std::string meth;   \textcolor{comment}{// The method that threw the exception}}
+\DoxyCodeLine{00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00021}\mbox{\hyperlink{classMathErr_a92ae6f6640c3979720b743a62f106d95}{00021}}         \mbox{\hyperlink{classMathErr_a92ae6f6640c3979720b743a62f106d95}{MathErr}}()}
+\DoxyCodeLine{00022         \{}
+\DoxyCodeLine{00023             mess = meth = std::string();}
+\DoxyCodeLine{00024         \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00026}\mbox{\hyperlink{classMathErr_a2be93a878a77577c7c1ea9ec4f13e802}{00026}}         \mbox{\hyperlink{classMathErr_a2be93a878a77577c7c1ea9ec4f13e802}{MathErr}} (\textcolor{keyword}{const} std::string\& message, \textcolor{keyword}{const} std::string\& method)}
+\DoxyCodeLine{00027         \{}
+\DoxyCodeLine{00028             mess = message;}
+\DoxyCodeLine{00029             meth = method;}
+\DoxyCodeLine{00030         \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00032}\mbox{\hyperlink{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}{00032}}         std::string \mbox{\hyperlink{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}{Message}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mess; \}}
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00033}\mbox{\hyperlink{classMathErr_a63e28b64f06194252a7723ef7d349148}{00033}}         std::string \mbox{\hyperlink{classMathErr_a63e28b64f06194252a7723ef7d349148}{Method}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} meth; \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         \textcolor{keyword}{virtual} std::vector<std::string> \mbox{\hyperlink{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}{MessageDump}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00036     }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00037}\mbox{\hyperlink{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}{00037}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}{print}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00038 \textcolor{keyword}{        }\{ }
+\DoxyCodeLine{00039             \textcolor{comment}{// This uses a Template method pattern}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041             \textcolor{comment}{// Variant part}}
+\DoxyCodeLine{00042             std::vector<std::string> \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = \mbox{\hyperlink{classMathErr_a420f29972f9a21d2a9d8d3a90d0c844a}{MessageDump}}();}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \textcolor{comment}{// Invariant part}}
+\DoxyCodeLine{00045             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}.size(); j++)}
+\DoxyCodeLine{00046             \{}
+\DoxyCodeLine{00047                 std::cout << \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[j] << std::endl;}
+\DoxyCodeLine{00048             \}}
+\DoxyCodeLine{00049         \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051 \};}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00054}\mbox{\hyperlink{classZeroDivide}{00054}} \textcolor{keyword}{class }\mbox{\hyperlink{classZeroDivide}{ZeroDivide}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMathErr}{MathErr}}}
+\DoxyCodeLine{00055 \{}
+\DoxyCodeLine{00056 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         std::string mess;   \textcolor{comment}{// Extra information}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00061}\mbox{\hyperlink{classZeroDivide_a4ef0fccc373f2767c79febd8b2500c61}{00061}}         \mbox{\hyperlink{classZeroDivide_a4ef0fccc373f2767c79febd8b2500c61}{ZeroDivide}}() : \mbox{\hyperlink{classMathErr}{MathErr}}()}
+\DoxyCodeLine{00062         \{}
+\DoxyCodeLine{00063             mess = std::string();}
+\DoxyCodeLine{00064         \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00066}\mbox{\hyperlink{classZeroDivide_ab77784ee863d55e39c8391fdd657b3e2}{00066}}         \mbox{\hyperlink{classZeroDivide_ab77784ee863d55e39c8391fdd657b3e2}{ZeroDivide}}(\textcolor{keyword}{const} std::string\& message,\textcolor{keyword}{const} std::string\& method, \textcolor{keyword}{const} std::string\& annotation ) }
+\DoxyCodeLine{00067             : \mbox{\hyperlink{classMathErr}{MathErr}} (message, method)}
+\DoxyCodeLine{00068         \{}
+\DoxyCodeLine{00069             mess = annotation;}
+\DoxyCodeLine{00070         \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00072}\mbox{\hyperlink{classZeroDivide_a0281c677520a3f336cd811c13c4ab17c}{00072}}         std::vector<std::string> \mbox{\hyperlink{classZeroDivide_a0281c677520a3f336cd811c13c4ab17c}{MessageDump}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00073 \textcolor{keyword}{        }\{ \textcolor{comment}{// Full message}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075             std::vector<std::string> result(3);}
+\DoxyCodeLine{00076             result[0] = \mbox{\hyperlink{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}{Message}}();}
+\DoxyCodeLine{00077             result[1] = \mbox{\hyperlink{classMathErr_a63e28b64f06194252a7723ef7d349148}{Method}}();}
+\DoxyCodeLine{00078             result[2] = mess;}
+\DoxyCodeLine{00079             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00080         \}}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082 \};}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00084}\mbox{\hyperlink{classOutOfBounds}{00084}} \textcolor{keyword}{class }\mbox{\hyperlink{classOutOfBounds}{OutOfBounds}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMathErr}{MathErr}}}
+\DoxyCodeLine{00085 \{}
+\DoxyCodeLine{00086 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087             \textcolor{keywordtype}{int} ind;}
+\DoxyCodeLine{00088 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00089}\mbox{\hyperlink{classOutOfBounds_ade339f779e69df8afe2449400062e4c4}{00089}}         \mbox{\hyperlink{classOutOfBounds_ade339f779e69df8afe2449400062e4c4}{OutOfBounds}}() : \mbox{\hyperlink{classMathErr}{MathErr}}()}
+\DoxyCodeLine{00090         \{}
+\DoxyCodeLine{00091         \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00093}\mbox{\hyperlink{classOutOfBounds_a2f04ca8596a7b3feaf50749028dd3934}{00093}}         \mbox{\hyperlink{classOutOfBounds_a2f04ca8596a7b3feaf50749028dd3934}{OutOfBounds}}(\textcolor{keyword}{const} std::string\& message, \textcolor{keyword}{const} std::string\& method, \textcolor{keywordtype}{int} index) }
+\DoxyCodeLine{00094             : \mbox{\hyperlink{classMathErr}{MathErr}} (message, method)}
+\DoxyCodeLine{00095         \{}
+\DoxyCodeLine{00096             ind = index;}
+\DoxyCodeLine{00097         \}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00099}\mbox{\hyperlink{classOutOfBounds_ae7584b5f1d6061276372e1827859ecc3}{00099}}         \textcolor{keywordtype}{int} \mbox{\hyperlink{classOutOfBounds_ae7584b5f1d6061276372e1827859ecc3}{offendingIndex}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} ind;\}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00101}\mbox{\hyperlink{classOutOfBounds_a7cf4254b246eb938886b6e9a549a5a00}{00101}}         std::vector<std::string> \mbox{\hyperlink{classOutOfBounds_a7cf4254b246eb938886b6e9a549a5a00}{MessageDump}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00102 \textcolor{keyword}{        }\{ \textcolor{comment}{// Full message}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104             std::vector<std::string> result(3);}
+\DoxyCodeLine{00105             result[0] = \mbox{\hyperlink{classMathErr_a02dab9085b81ab4ad1e1dd6ce3179e74}{Message}}();}
+\DoxyCodeLine{00106             result[1] = \mbox{\hyperlink{classMathErr_a63e28b64f06194252a7723ef7d349148}{Method}}();}
+\DoxyCodeLine{00107         \textcolor{comment}{//  result[2] = ind;}}
+\DoxyCodeLine{00108             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00109         \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111 \};}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00113}\mbox{\hyperlink{classGeneralMathErr}{00113}} \textcolor{keyword}{class }\mbox{\hyperlink{classGeneralMathErr}{GeneralMathErr}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMathErr}{MathErr}}}
+\DoxyCodeLine{00114 \{ \textcolor{comment}{// Kind of 'catch all' exception object}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00119}\mbox{\hyperlink{classGeneralMathErr_ae1aac0a11ba4d6e8e774a11ba4c18586}{00119}}         \mbox{\hyperlink{classGeneralMathErr_ae1aac0a11ba4d6e8e774a11ba4c18586}{GeneralMathErr}}() : \mbox{\hyperlink{classMathErr}{MathErr}}()}
+\DoxyCodeLine{00120         \{}
+\DoxyCodeLine{00121             }
+\DoxyCodeLine{00122         \}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{\Hypertarget{MathErr_8cc_source_l00124}\mbox{\hyperlink{classGeneralMathErr_a9a13caf81d2fded4d6eaf3a07974f314}{00124}}         \mbox{\hyperlink{classGeneralMathErr_a9a13caf81d2fded4d6eaf3a07974f314}{GeneralMathErr}}(\textcolor{keyword}{const} std::string\& message, \textcolor{keyword}{const} std::string\& method) }
+\DoxyCodeLine{00125             : \mbox{\hyperlink{classMathErr}{MathErr}} (message, method)}
+\DoxyCodeLine{00126         \{\}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128 \};}
+
+\end{DoxyCode}

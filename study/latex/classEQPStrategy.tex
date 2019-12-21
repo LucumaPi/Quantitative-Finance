@@ -2,6 +2,10 @@
 \label{classEQPStrategy}\index{EQPStrategy@{EQPStrategy}}
 
 
+{\ttfamily \#include $<$Binomial\+Lattice\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for E\+Q\+P\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,13 +25,54 @@ Collaboration diagram for E\+Q\+P\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classEQPStrategy_a6fb4f5ab383d1cdf3a32e6689704bdeb}\label{classEQPStrategy_a6fb4f5ab383d1cdf3a32e6689704bdeb}} 
-{\bfseries E\+Q\+P\+Strategy} (double vol, double interest, double delta)
+\mbox{\hyperlink{classEQPStrategy_a6fb4f5ab383d1cdf3a32e6689704bdeb}{E\+Q\+P\+Strategy}} (double vol, double interest, double delta)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{BinomialLatticeStrategy_8hh_source_l00078}{78}} of file \mbox{\hyperlink{BinomialLatticeStrategy_8hh_source}{Binomial\+Lattice\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEQPStrategy_a6fb4f5ab383d1cdf3a32e6689704bdeb}\label{classEQPStrategy_a6fb4f5ab383d1cdf3a32e6689704bdeb}} 
+\index{EQPStrategy@{EQPStrategy}!EQPStrategy@{EQPStrategy}}
+\index{EQPStrategy@{EQPStrategy}!EQPStrategy@{EQPStrategy}}
+\doxysubsubsection{\texorpdfstring{EQPStrategy()}{EQPStrategy()}}
+{\footnotesize\ttfamily E\+Q\+P\+Strategy\+::\+E\+Q\+P\+Strategy (\begin{DoxyParamCaption}\item[{double}]{vol,  }\item[{double}]{interest,  }\item[{double}]{delta }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{BinomialLatticeStrategy_8cc_source_l00135}{135}} of file \mbox{\hyperlink{BinomialLatticeStrategy_8cc_source}{Binomial\+Lattice\+Strategy.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136         : \mbox{\hyperlink{classBinomialLatticeStrategy_a30116db67055ec31490b298ad9fda14a}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00137 \{}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139     \mbox{\hyperlink{classBinomialLatticeStrategy_a2c17c2472572ea3ae463c7dd079c3035}{bType}} = \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c}{Additive}};}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141     \textcolor{comment}{// Needed for additive method: page 19 Clewlow/Strickland formula 2.17 }}
+\DoxyCodeLine{00142     \textcolor{comment}{// "v" is "nu" here, for "v" see  page 19 formula 2.14}}
+\DoxyCodeLine{00143     \textcolor{keywordtype}{double} nu = \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}};}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \textcolor{keywordtype}{double} a = nu * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}};}
+\DoxyCodeLine{00146     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = 0.5 * std::sqrt( (4.0 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}}) -\/ (3.0 * nu * nu * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}}) );}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148     \textcolor{comment}{// EQP parameters: page 19 formula 2.17}}
+\DoxyCodeLine{00149     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = 0.5 * a + \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00150     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = 1.5 * a -\/ \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}};}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5;}
+\DoxyCodeLine{00153 \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Binomial\+Lattice\+Strategy.\+hh\item 
-src/Binomial\+Lattice\+Strategy.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{BinomialLatticeStrategy_8hh}{Binomial\+Lattice\+Strategy.\+hh}}\item 
+src/\mbox{\hyperlink{BinomialLatticeStrategy_8cc}{Binomial\+Lattice\+Strategy.\+cc}}\end{DoxyCompactItemize}

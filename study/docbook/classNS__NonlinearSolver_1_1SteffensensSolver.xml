@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classNS__NonlinearSolver_1_1SteffensensSolver">
 <title>NS_NonlinearSolver::SteffensensSolver Class Reference</title>
 <indexterm><primary>NS_NonlinearSolver::SteffensensSolver</primary></indexterm>
+<para>
+<computeroutput>#include &lt;NonlinearSolver.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for NS_NonlinearSolver::SteffensensSolver:<para>
     <informalfigure>
         <mediaobject>
@@ -23,16 +26,82 @@ Collaboration diagram for NS_NonlinearSolver::SteffensensSolver:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1SteffensensSolver_1a558377d506d5fba156a5a05d4e900cbd"/><emphasis role="strong">SteffensensSolver</emphasis> (double guess, double(*myFunction)(double x))</para>
+            <listitem><para><link linkend="_classNS__NonlinearSolver_1_1SteffensensSolver_1a558377d506d5fba156a5a05d4e900cbd">SteffensensSolver</link> (double guess, double(*myFunction)(double x))</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1SteffensensSolver_1ac3e56e12f820cf138e42ea6f3ed5577b"/>double <emphasis role="strong">solve</emphasis> ()</para>
+            <listitem><para>double <link linkend="_classNS__NonlinearSolver_1_1SteffensensSolver_1ac3e56e12f820cf138e42ea6f3ed5577b">solve</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1SteffensensSolver_1a14a38fa950c91319a6c0334830dd6c57"/>void <emphasis role="strong">printStatistics</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classNS__NonlinearSolver_1_1SteffensensSolver_1a14a38fa950c91319a6c0334830dd6c57">printStatistics</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 233 of file NonlinearSolver.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1SteffensensSolver_1a558377d506d5fba156a5a05d4e900cbd"/>    <section>
+    <title>SteffensensSolver()</title>
+<indexterm><primary>SteffensensSolver</primary><secondary>NS_NonlinearSolver::SteffensensSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::SteffensensSolver</primary><secondary>SteffensensSolver</secondary></indexterm>
+<para><computeroutput>NS_NonlinearSolver::SteffensensSolver::SteffensensSolver (double guess, double(*)(double x) myFunction)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 242 of file NonlinearSolver.hh.</para>
+<programlisting>243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x0&#32;=&#32;guess;&#32;xPrevious&#32;=&#32;x0;
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>&#32;=&#32;myFunction;
+246 
+247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1SteffensensSolver_1a14a38fa950c91319a6c0334830dd6c57"/>    <section>
+    <title>printStatistics()</title>
+<indexterm><primary>printStatistics</primary><secondary>NS_NonlinearSolver::SteffensensSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::SteffensensSolver</primary><secondary>printStatistics</secondary></indexterm>
+<para><computeroutput>void NS_NonlinearSolver::SteffensensSolver::printStatistics ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 272 of file NonlinearSolver.hh.</para>
+<programlisting>273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+274 
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nData&#32;pertaining&#32;to&#32;Steffensen&apos;s&#32;method\n&quot;</emphasis>;
+276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Value:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;xCurrent&#32;&lt;&lt;&#32;std::endl;
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;iterations&#32;(actual):&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&lt;&lt;&#32;std::endl;
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classNS__NonlinearSolver_1_1SteffensensSolver_1ac3e56e12f820cf138e42ea6f3ed5577b"/>    <section>
+    <title>solve()</title>
+<indexterm><primary>solve</primary><secondary>NS_NonlinearSolver::SteffensensSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::SteffensensSolver</primary><secondary>solve</secondary></indexterm>
+<para><computeroutput>double NS_NonlinearSolver::SteffensensSolver::solve ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1a7336902d70e3ae47194eb92abac04333">NS_NonlinearSolver::NonlinearSolver</link>.</para>
+<para>
+Definition at line 249 of file NonlinearSolver.hh.</para>
+<programlisting>250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;tmp;
+252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;hn;&#32;
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;1;
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xPrevious&#32;=&#32;x0;
+255 L1:
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(xPrevious);
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hn&#32;=&#32;(<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(xPrevious&#32;+&#32;tmp)&#32;&#32;-&#32;tmp)/&#32;tmp;
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hn&#32;=&#32;tmp/hn;
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xCurrent&#32;=&#32;xPrevious&#32;-&#32;hn;
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xPrevious&#32;=&#32;xCurrent;
+261 
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>++;
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(::fabs(hn)&#32;&lt;=&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba">tol</link>)
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;xCurrent;
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+268 
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/NonlinearSolver.hh</section>
+include/duffy/<link linkend="_NonlinearSolver_8hh">NonlinearSolver.hh</link></section>
+</section>

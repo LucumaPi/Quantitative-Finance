@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_GenericInequalities_8cc">
+<title>src/GenericInequalities.cc File Reference</title>
+<indexterm><primary>src/GenericInequalities.cc</primary></indexterm>
+<programlisting>#include &lt;duffy/GenericInequalities.hh&gt;
+</programlisting>Include dependency graph for GenericInequalities.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="GenericInequalities_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="GenericInequalities_8cc__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_GenericInequalities_8cc_1a58ce205338bf1c80a09edb5141a2ece4">GenericInequalities_CC</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class Numeric &gt; </para><para>Numeric <link linkend="_GenericInequalities_8cc_1a1b213e274e5aa76fd4c91940e44f4eb5">Max</link> (const Numeric &amp;x, const Numeric &amp;y)</para>
+</listitem>
+            <listitem><para>template&lt;class Numeric &gt; </para><para>Numeric <link linkend="_GenericInequalities_8cc_1adb69bfcb34a8cdf14dcb3fc08f9687c0">Min</link> (const Numeric &amp;x, const Numeric &amp;y)</para>
+</listitem>
+            <listitem><para>template&lt;class Numeric &gt; </para><para>Numeric <link linkend="_GenericInequalities_8cc_1ae11321548cc6361940452613ca59ebba">Max</link> (const Numeric &amp;x, const Numeric &amp;y, const Numeric &amp;z)</para>
+</listitem>
+            <listitem><para>template&lt;class Numeric &gt; </para><para>Numeric <link linkend="_GenericInequalities_8cc_1a1cbb426c5b2fca977f1582103f5f6073">Min</link> (const Numeric &amp;x, const Numeric &amp;y, const Numeric &amp;z)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_GenericInequalities_8cc_1a58ce205338bf1c80a09edb5141a2ece4"/>    <section>
+    <title>GenericInequalities_CC</title>
+<indexterm><primary>GenericInequalities_CC</primary><secondary>GenericInequalities.cc</secondary></indexterm>
+<indexterm><primary>GenericInequalities.cc</primary><secondary>GenericInequalities_CC</secondary></indexterm>
+<para><computeroutput>#define GenericInequalities_CC</computeroutput></para><para>
+Definition at line 14 of file GenericInequalities.cc.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_GenericInequalities_8cc_1a1b213e274e5aa76fd4c91940e44f4eb5"/>    <section>
+    <title>Max()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Max</primary><secondary>GenericInequalities.cc</secondary></indexterm>
+<indexterm><primary>GenericInequalities.cc</primary><secondary>Max</secondary></indexterm>
+<computeroutput>template&lt;class Numeric &gt; </computeroutput><para><computeroutput>Numeric Max (const Numeric &amp; x, const Numeric &amp; y)</computeroutput></para><para>
+Definition at line 22 of file GenericInequalities.cc.</para>
+<programlisting>23 {
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x&#32;&gt;&#32;y)
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x;
+26 
+27 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;y;
+28 }
+</programlisting>    </section><anchor xml:id="_GenericInequalities_8cc_1ae11321548cc6361940452613ca59ebba"/>    <section>
+    <title>Max()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Max</primary><secondary>GenericInequalities.cc</secondary></indexterm>
+<indexterm><primary>GenericInequalities.cc</primary><secondary>Max</secondary></indexterm>
+<computeroutput>template&lt;class Numeric &gt; </computeroutput><para><computeroutput>Numeric Max (const Numeric &amp; x, const Numeric &amp; y, const Numeric &amp; z)</computeroutput></para><para>
+Definition at line 41 of file GenericInequalities.cc.</para>
+<programlisting>42 {
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Max&lt;Numeric&gt;(Max&lt;Numeric&gt;(x,y),&#32;z);
+44 }
+</programlisting>    </section><anchor xml:id="_GenericInequalities_8cc_1adb69bfcb34a8cdf14dcb3fc08f9687c0"/>    <section>
+    <title>Min()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Min</primary><secondary>GenericInequalities.cc</secondary></indexterm>
+<indexterm><primary>GenericInequalities.cc</primary><secondary>Min</secondary></indexterm>
+<computeroutput>template&lt;class Numeric &gt; </computeroutput><para><computeroutput>Numeric Min (const Numeric &amp; x, const Numeric &amp; y)</computeroutput></para><para>
+Definition at line 31 of file GenericInequalities.cc.</para>
+<programlisting>32 {
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x&#32;&lt;&#32;y)
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x;
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;y;
+37 }
+</programlisting>    </section><anchor xml:id="_GenericInequalities_8cc_1a1cbb426c5b2fca977f1582103f5f6073"/>    <section>
+    <title>Min()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Min</primary><secondary>GenericInequalities.cc</secondary></indexterm>
+<indexterm><primary>GenericInequalities.cc</primary><secondary>Min</secondary></indexterm>
+<computeroutput>template&lt;class Numeric &gt; </computeroutput><para><computeroutput>Numeric Min (const Numeric &amp; x, const Numeric &amp; y, const Numeric &amp; z)</computeroutput></para><para>
+Definition at line 47 of file GenericInequalities.cc.</para>
+<programlisting>48 {
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Min&lt;Numeric&gt;(Min&lt;Numeric&gt;(x,y),&#32;z);
+50 }
+</programlisting></section>
+</section>
+</section>

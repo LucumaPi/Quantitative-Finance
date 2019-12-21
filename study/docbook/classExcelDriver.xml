@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classExcelDriver">
 <title>ExcelDriver Class Reference</title>
 <indexterm><primary>ExcelDriver</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ExcelDriver.hh&gt;</computeroutput>
+</para>
 Collaboration diagram for ExcelDriver:<para>
     <informalfigure>
         <mediaobject>
@@ -14,29 +17,228 @@ Collaboration diagram for ExcelDriver:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4"/>void <emphasis role="strong">CreateChart</emphasis> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, const std::list&lt; std::string &gt; &amp;labels, const std::list&lt; <link linkend="_classVector">Vector</link>&lt; double, long &gt; &gt; &amp;vectorList, const std::string &amp;chartTitle, const std::string &amp;xTitle=&quot;X&quot;, const std::string &amp;yTitle=&quot;Y&quot;)</para>
+            <listitem><para><link linkend="_classExcelDriver_1a9dbf535e7ef5053210dd2cdbeaa9e76c">ExcelDriver</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classExcelDriver_1afdeb32319d1437b249fc5727a5420fc7"/>void <emphasis role="strong">CreateChart</emphasis> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;y, const std::string &amp;chartTitle, const std::string &amp;xTitle=&quot;X&quot;, const std::string &amp;yTitle=&quot;Y&quot;)</para>
+            <listitem><para>virtual <link linkend="_classExcelDriver_1a111f747fcefaa4b38d986c5c72e742b2">~ExcelDriver</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classExcelDriver_1a63753818c5895ff1ed84dad214de4332"/>void <emphasis role="strong">AddMatrix</emphasis> (const std::string &amp;sheetName, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;matrix, const std::list&lt; std::string &gt; &amp;rowLabels, const std::list&lt; std::string &gt; &amp;columnLabels)</para>
+            <listitem><para>void <link linkend="_classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4">CreateChart</link> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, const std::list&lt; std::string &gt; &amp;labels, const std::list&lt; <link linkend="_classVector">Vector</link>&lt; double, long &gt; &gt; &amp;vectorList, const std::string &amp;chartTitle, const std::string &amp;xTitle=&quot;X&quot;, const std::string &amp;yTitle=&quot;Y&quot;)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classExcelDriver_1a3af0bbb50e01ade900e974ea6d2a15ff"/>void <emphasis role="strong">AddMatrix</emphasis> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;matrix, const std::string &amp;SheetName=&quot;Matrix&quot;)</para>
+            <listitem><para>void <link linkend="_classExcelDriver_1afdeb32319d1437b249fc5727a5420fc7">CreateChart</link> (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;x, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp;y, const std::string &amp;chartTitle, const std::string &amp;xTitle=&quot;X&quot;, const std::string &amp;yTitle=&quot;Y&quot;)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b"/>void <emphasis role="strong">MakeVisible</emphasis> (bool b)</para>
+            <listitem><para>void <link linkend="_classExcelDriver_1a63753818c5895ff1ed84dad214de4332">AddMatrix</link> (const std::string &amp;sheetName, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;matrix, const std::list&lt; std::string &gt; &amp;rowLabels, const std::list&lt; std::string &gt; &amp;columnLabels)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classExcelDriver_1afa7a45b8d3499de788e722c75627e284"/>void <emphasis role="strong">printStringInExcel</emphasis> (const std::string &amp;s, long rowNumber, long colNumber, const std::string &amp;sheetName)</para>
+            <listitem><para>void <link linkend="_classExcelDriver_1a3af0bbb50e01ade900e974ea6d2a15ff">AddMatrix</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp;matrix, const std::string &amp;SheetName=&quot;Matrix&quot;)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classExcelDriver_1a5ad2471080decc9d3681f164a4b2746c"/>void <emphasis role="strong">printStringInExcel</emphasis> (const std::list&lt; std::string &gt; &amp;s, long rowNumber, long colNumber, const std::string &amp;sheetName)</para>
+            <listitem><para>void <link linkend="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b">MakeVisible</link> (bool b)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classExcelDriver_1afa7a45b8d3499de788e722c75627e284">printStringInExcel</link> (const std::string &amp;s, long rowNumber, long colNumber, const std::string &amp;sheetName)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classExcelDriver_1a5ad2471080decc9d3681f164a4b2746c">printStringInExcel</link> (const std::list&lt; std::string &gt; &amp;s, long rowNumber, long colNumber, const std::string &amp;sheetName)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Static Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8"/>static <link linkend="_classExcelDriver">ExcelDriver</link> &amp; <emphasis role="strong">Instance</emphasis> ()</para>
+            <listitem><para>static <link linkend="_classExcelDriver">ExcelDriver</link> &amp; <link linkend="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8">Instance</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 26 of file ExcelDriver.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classExcelDriver_1a9dbf535e7ef5053210dd2cdbeaa9e76c"/>    <section>
+    <title>ExcelDriver()</title>
+<indexterm><primary>ExcelDriver</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>ExcelDriver</secondary></indexterm>
+<para><computeroutput>ExcelDriver::ExcelDriver ( )</computeroutput></para><para>
+Definition at line 102 of file ExcelDriver.cc.</para>
+<programlisting>102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;curDataColumn(1)
+103 {
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initialize&#32;COM&#32;Runtime&#32;Libraries.</emphasis>
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CoInitialize(NULL);
+108 
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Start&#32;excel&#32;application.</emphasis>
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xl.CreateInstance(L<emphasis role="stringliteral">&quot;Excel.Application&quot;</emphasis>);
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xl-&gt;Workbooks-&gt;Add((<emphasis role="keywordtype">long</emphasis>)&#32;Excel::xlWorksheet);
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;xl-&gt;Workbooks-&gt;OpenFile(&quot;D:\Documents&#32;and&#32;Settings\dduffy\My&#32;Documents\Testje.xls&quot;);</emphasis>
+113 
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Rename&#32;&quot;Sheet1&quot;&#32;to&#32;&quot;Chart&#32;Data&quot;.</emphasis>
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::_WorkbookPtr&#32;pWorkbook&#32;=&#32;xl-&gt;ActiveWorkbook;
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::_WorksheetPtr&#32;pSheet&#32;=&#32;pWorkbook-&gt;Worksheets-&gt;GetItem(<emphasis role="stringliteral">&quot;Sheet1&quot;</emphasis>);
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pSheet-&gt;Name&#32;=&#32;<emphasis role="stringliteral">&quot;Chart&#32;Data&quot;</emphasis>;
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>(&#32;_com_error&#32;&amp;&#32;error&#32;)
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ThrowAsString(error);
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+123 }
+</programlisting>    </section><anchor xml:id="_classExcelDriver_1a111f747fcefaa4b38d986c5c72e742b2"/>    <section>
+    <title>~ExcelDriver()</title>
+<indexterm><primary>~ExcelDriver</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>~ExcelDriver</secondary></indexterm>
+<para><computeroutput>ExcelDriver::~ExcelDriver ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line 126 of file ExcelDriver.cc.</para>
+<programlisting>127 {
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Undo&#32;initialization&#32;of&#32;COM&#32;Runtime&#32;Libraries.</emphasis>
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CoUninitialize();
+130 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classExcelDriver_1a3af0bbb50e01ade900e974ea6d2a15ff"/>    <section>
+    <title>AddMatrix()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>AddMatrix</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>AddMatrix</secondary></indexterm>
+<para><computeroutput>void ExcelDriver::AddMatrix (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; matrix, const std::string &amp; SheetName = <computeroutput>&quot;Matrix&quot;</computeroutput>
+)</computeroutput></para><para>
+Definition at line 280 of file ExcelDriver.cc.</para>
+<programlisting>282 &#32;&#32;&#32;&#32;{
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;sheet.</emphasis>
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::_WorkbookPtr&#32;pWorkbook&#32;=&#32;xl-&gt;ActiveWorkbook;
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::_WorksheetPtr&#32;pSheet&#32;=&#32;pWorkbook-&gt;Worksheets-&gt;Add();
+287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pSheet-&gt;Name&#32;=&#32;name.c_str();
+288 
+289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Current&#32;indeces&#32;in&#32;spreadsheet.</emphasis>
+290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;sheetRow&#32;=&#32;1;
+291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;sheetColumn&#32;=&#32;1;
+292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;empty&#32;row&#32;labels.&#32;Can&#32;latr&#32;make&#32;it&#32;more&#32;general</emphasis>
+295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;rowLabels;
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(&#32;<emphasis role="keywordtype">long</emphasis>&#32;r2&#32;=&#32;matrix.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;r2&#32;&lt;=&#32;matrix.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;r2++&#32;)
+297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rowLabels.push_back(std::string(<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>));
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+300 
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;row&#32;labels&#32;+&#32;values.</emphasis>
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sheetColumn&#32;=&#32;1;
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sheetRow&#32;=&#32;2;
+304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::list&lt;std::string&gt;::const_iterator&#32;rowLabelIt&#32;=&#32;rowLabels.begin();
+305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;matrix.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;&lt;=&#32;matrix.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>++&#32;)
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;&#32;&#32;&#32;row&#32;=&#32;<link linkend="_ExcelDriver_8cc_1a1b724dd4e99548501ed8e37c192d9eca">createVector</link>(matrix,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ToSheetHorizontal(pSheet,&#32;sheetRow,&#32;sheetColumn,&#32;*rowLabelIt,&#32;row);
+309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rowLabelIt++;
+310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sheetRow++;
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+312 }
+</programlisting>    </section><anchor xml:id="_classExcelDriver_1a63753818c5895ff1ed84dad214de4332"/>    <section>
+    <title>AddMatrix()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>AddMatrix</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>AddMatrix</secondary></indexterm>
+<para><computeroutput>void ExcelDriver::AddMatrix (const std::string &amp; sheetName, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; double, long &gt; &amp; matrix, const std::list&lt; std::string &gt; &amp; rowLabels, const std::list&lt; std::string &gt; &amp; columnLabels)</computeroutput></para><para>
+Definition at line 238 of file ExcelDriver.cc.</para>
+<programlisting>241 &#32;&#32;&#32;&#32;{
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;sheet.</emphasis>
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::_WorkbookPtr&#32;pWorkbook&#32;=&#32;xl-&gt;ActiveWorkbook;
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::_WorksheetPtr&#32;pSheet&#32;=&#32;pWorkbook-&gt;Worksheets-&gt;Add();
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pSheet-&gt;Name&#32;=&#32;name.c_str();
+247 
+248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Current&#32;indeces&#32;in&#32;spreadsheet.</emphasis>
+249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;sheetRow&#32;=&#32;1;
+250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;sheetColumn&#32;=&#32;1;
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;column&#32;labels&#32;starting&#32;at&#32;column&#32;2.</emphasis>
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sheetColumn&#32;=&#32;2;
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::RangePtr&#32;pRange=pSheet-&gt;Cells;
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::list&lt;std::string&gt;::const_iterator&#32;columnLabelIt;
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(columnLabelIt&#32;=&#32;columnLabels.begin();&#32;columnLabelIt&#32;!=&#32;columnLabels.end();&#32;
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;columnLabelIt++)
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::RangePtr&#32;item&#32;=&#32;pRange-&gt;Item[sheetRow][sheetColumn];
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;item-&gt;Value&#32;=&#32;columnLabelIt-&gt;c_str();</emphasis>
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;item-&gt;Value2&#32;=&#32;columnLabelIt-&gt;c_str();
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sheetColumn++;
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+265 
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;row&#32;labels&#32;+&#32;values.</emphasis>
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sheetColumn&#32;=&#32;1;
+268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sheetRow&#32;=&#32;2;
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::list&lt;std::string&gt;::const_iterator&#32;rowLabelIt&#32;=&#32;rowLabels.begin();
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;=&#32;matrix.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;&lt;=&#32;matrix.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>++&#32;)
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;double, long&gt;</link>&#32;&#32;&#32;&#32;row&#32;=&#32;<link linkend="_ExcelDriver_8cc_1a1b724dd4e99548501ed8e37c192d9eca">createVector</link>(matrix,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ToSheetHorizontal(pSheet,&#32;sheetRow,&#32;sheetColumn,&#32;*rowLabelIt,&#32;row);
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rowLabelIt++;
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sheetRow++;
+276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+277 }
+</programlisting>    </section><anchor xml:id="_classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4"/>    <section>
+    <title>CreateChart()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>CreateChart</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>CreateChart</secondary></indexterm>
+<para><computeroutput>void ExcelDriver::CreateChart (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; x, const std::list&lt; std::string &gt; &amp; labels, const std::list&lt; <link linkend="_classVector">Vector</link>&lt; double, long &gt; &gt; &amp; vectorList, const std::string &amp; chartTitle, const std::string &amp; xTitle = <computeroutput>&quot;X&quot;</computeroutput>
+, const std::string &amp; yTitle = <computeroutput>&quot;Y&quot;</computeroutput>
+)</computeroutput></para>    </section><anchor xml:id="_classExcelDriver_1afdeb32319d1437b249fc5727a5420fc7"/>    <section>
+    <title>CreateChart()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>CreateChart</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>CreateChart</secondary></indexterm>
+<para><computeroutput>void ExcelDriver::CreateChart (const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; x, const <link linkend="_classVector">Vector</link>&lt; double, long &gt; &amp; y, const std::string &amp; chartTitle, const std::string &amp; xTitle = <computeroutput>&quot;X&quot;</computeroutput>
+, const std::string &amp; yTitle = <computeroutput>&quot;Y&quot;</computeroutput>
+)</computeroutput></para><para>
+Definition at line 226 of file ExcelDriver.cc.</para>
+<programlisting>228 {&#32;
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;list&#32;with&#32;single&#32;function&#32;and&#32;single&#32;label.</emphasis>
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::list&lt;Vector&lt;double,&#32;long&gt;&#32;&gt;&#32;functions;
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::list&lt;std::string&gt;&#32;labels;
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;functions.push_back(y);
+233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;labels.push_back(chartTitle);
+234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4">CreateChart</link>(x,&#32;labels,&#32;functions,&#32;chartTitle,&#32;xTitle,&#32;yTitle);
+235 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8"/>    <section>
+    <title>Instance()</title>
+<indexterm><primary>Instance</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>Instance</secondary></indexterm>
+<para><computeroutput><link linkend="_classExcelDriver">ExcelDriver</link> &amp; ExcelDriver::Instance ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line 133 of file ExcelDriver.cc.</para>
+<programlisting>134 {
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_classExcelDriver">ExcelDriver</link>&#32;singleton;
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;singleton;
+137 }
+</programlisting>    </section><anchor xml:id="_classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b"/>    <section>
+    <title>MakeVisible()</title>
+<indexterm><primary>MakeVisible</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>MakeVisible</secondary></indexterm>
+<para><computeroutput>void ExcelDriver::MakeVisible (bool b)</computeroutput></para><para>
+Definition at line 315 of file ExcelDriver.cc.</para>
+<programlisting>316 {
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;excel&#32;visible.</emphasis>
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xl-&gt;Visible&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff">b</link>&#32;?&#32;VARIANT_TRUE&#32;:&#32;VARIANT_FALSE;
+319 }
+</programlisting>    </section><anchor xml:id="_classExcelDriver_1a5ad2471080decc9d3681f164a4b2746c"/>    <section>
+    <title>printStringInExcel()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>printStringInExcel</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>printStringInExcel</secondary></indexterm>
+<para><computeroutput>void ExcelDriver::printStringInExcel (const std::list&lt; std::string &gt; &amp; s, long rowNumber, long colNumber, const std::string &amp; sheetName)</computeroutput></para>    </section><anchor xml:id="_classExcelDriver_1afa7a45b8d3499de788e722c75627e284"/>    <section>
+    <title>printStringInExcel()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>printStringInExcel</primary><secondary>ExcelDriver</secondary></indexterm>
+<indexterm><primary>ExcelDriver</primary><secondary>printStringInExcel</secondary></indexterm>
+<para><computeroutput>void ExcelDriver::printStringInExcel (const std::string &amp; s, long rowNumber, long colNumber, const std::string &amp; sheetName)</computeroutput></para><para>
+Definition at line 335 of file ExcelDriver.cc.</para>
+<programlisting>337 {&#32;<emphasis role="comment">//&#32;Mainly&#32;for&#32;debugging</emphasis>
+338 
+339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;sheet.</emphasis>
+340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::_WorkbookPtr&#32;pWorkbook&#32;=&#32;xl-&gt;ActiveWorkbook;
+341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::_WorksheetPtr&#32;pSheet&#32;=&#32;pWorkbook-&gt;Worksheets-&gt;Add();
+342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pSheet-&gt;Name&#32;=&#32;sheetName.c_str();
+343 
+344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;properties&#32;to&#32;cells.</emphasis>
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excel::RangePtr&#32;pRange&#32;=&#32;pSheet-&gt;Cells;
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pRange-&gt;Item[rowNumber][colNumber]&#32;=&#32;s.c_str();
+347 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/ExcelDriver.hhsrc/ExcelDriver.cc</section>
+include/duffy/<link linkend="_ExcelDriver_8hh">ExcelDriver.hh</link>src/<link linkend="_ExcelDriver_8cc">ExcelDriver.cc</link></section>
+</section>

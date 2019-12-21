@@ -6,44 +6,76 @@
     <includes refid="InstrumentOld_8hh" local="no">duffy/InstrumentOld.hh</includes>
     <includes refid="SimplePropertySet_8hh" local="no">duffy/SimplePropertySet.hh</includes>
     <incdepgraph>
-      <node id="11">
+      <node id="13">
         <label>list</label>
       </node>
       <node id="6">
         <label>Property.hh</label>
-        <link refid="Property_8hh_source"/>
+        <link refid="Property_8hh"/>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="9">
-        <label>Set.hh</label>
-        <link refid="Set_8hh_source"/>
-        <childnode refid="10" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+      </node>
+      <node id="11">
+        <label>Set.hh</label>
+        <link refid="Set_8hh"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../../src/PropertyThing.cc</label>
+        <link refid="PropertyThing_8cc"/>
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>duffy/SimplePropertySet.hh</label>
-        <link refid="SimplePropertySet_8hh_source"/>
+        <link refid="SimplePropertySet_8hh"/>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../../src/Property.cc</label>
+        <link refid="Property_8cc"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="2">
         <label>string</label>
       </node>
-      <node id="8">
+      <node id="10">
         <label>map</label>
+      </node>
+      <node id="16">
+        <label>../../src/SimplePropertySet.cc</label>
+        <link refid="SimplePropertySet_8cc"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>tests/TestHeteroProperty.cc</label>
@@ -57,21 +89,26 @@
       </node>
       <node id="7">
         <label>PropertyThing.hh</label>
-        <link refid="PropertyThing_8hh_source"/>
+        <link refid="PropertyThing_8hh"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>duffy/InstrumentOld.hh</label>
-        <link refid="InstrumentOld_8hh_source"/>
+        <link refid="InstrumentOld_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>iostream</label>
       </node>
-      <node id="10">
+      <node id="12">
         <label>set</label>
+      </node>
+      <node id="15">
+        <label>algorithm</label>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -103,31 +140,31 @@
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Standard<sp/>string<sp/>class<sp/>in<sp/>C++</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/InstrumentOld.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/SimplePropertySet.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="InstrumentOld_8hh" kindref="compound">duffy/InstrumentOld.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="SimplePropertySet_8hh" kindref="compound">duffy/SimplePropertySet.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="13" refid="TestHeteroProperty_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="TestHeteroProperty_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSimplePropertySet" kindref="compound">SimplePropertySet&lt;std::string, Instrument*&gt;</ref><sp/>myPortfolio;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>number<sp/>of<sp/>specific<sp/>instruments<sp/>and<sp/>add<sp/>to<sp/>portfolio</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classOption" kindref="compound">Option</ref><sp/>myOpt;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBond" kindref="compound">Bond</ref><sp/>myBond;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSwap" kindref="compound">Swap</ref><sp/>mySwap;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSwap" kindref="compound">Swap</ref><sp/><ref refid="TestSwap_8cc_1a25424f68584552ee5e1a153c80f95201" kindref="member">mySwap</ref>;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>add<sp/>components<sp/>to<sp/>PSet</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>myPortfolio.add(std::string(</highlight><highlight class="stringliteral">&quot;O&quot;</highlight><highlight class="normal">),<sp/>&amp;myOpt);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>myPortfolio.add(std::string(</highlight><highlight class="stringliteral">&quot;B&quot;</highlight><highlight class="normal">),<sp/>&amp;myBond);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>myPortfolio.add(std::string(</highlight><highlight class="stringliteral">&quot;S&quot;</highlight><highlight class="normal">),<sp/>&amp;mySwap);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>myPortfolio.<ref refid="classSimplePropertySet_1a8663619c5669177f23286672ad49ceca" kindref="member">add</ref>(std::string(</highlight><highlight class="stringliteral">&quot;O&quot;</highlight><highlight class="normal">),<sp/>&amp;myOpt);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>myPortfolio.<ref refid="classSimplePropertySet_1a8663619c5669177f23286672ad49ceca" kindref="member">add</ref>(std::string(</highlight><highlight class="stringliteral">&quot;B&quot;</highlight><highlight class="normal">),<sp/>&amp;myBond);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>myPortfolio.<ref refid="classSimplePropertySet_1a8663619c5669177f23286672ad49ceca" kindref="member">add</ref>(std::string(</highlight><highlight class="stringliteral">&quot;S&quot;</highlight><highlight class="normal">),<sp/>&amp;<ref refid="TestSwap_8cc_1a25424f68584552ee5e1a153c80f95201" kindref="member">mySwap</ref>);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>out<sp/>the<sp/>PSet</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>SimplePropertySet&lt;std::string,<sp/>Instrument*&gt;::const_iterator<sp/>it;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSimplePropertySet_1aab3d4fc3315979035be3d5c64c42d425" kindref="member">SimplePropertySet&lt;std::string, Instrument*&gt;::const_iterator</ref><sp/>it;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(it<sp/>=<sp/>myPortfolio.Begin();<sp/>it<sp/>!=<sp/>myPortfolio.End();<sp/>it++)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(it<sp/>=<sp/>myPortfolio.<ref refid="classSimplePropertySet_1af0c72b2e6a39f6d2d02ce443afa01de5" kindref="member">Begin</ref>();<sp/>it<sp/>!=<sp/>myPortfolio.<ref refid="classSimplePropertySet_1a6d3c8a051b7c6846508898c8375a2cfd" kindref="member">End</ref>();<sp/>it++)</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>tmp<sp/>=<sp/>it-&gt;first;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>tmp.c_str()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(it-&gt;second)-&gt;print();<sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(it-&gt;second)-&gt;<ref refid="ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402" kindref="member">print</ref>();<sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>

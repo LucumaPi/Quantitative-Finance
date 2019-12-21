@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestSetGroup_8cc">
+<title>tests/TestSetGroup.cc File Reference</title>
+<indexterm><primary>tests/TestSetGroup.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
+#include &lt;duffy/Set.hh&gt;
+</programlisting>Include dependency graph for TestSetGroup.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestSetGroup_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class T &gt; </para><para>void <link linkend="_TestSetGroup_8cc_1afc656eda04a46b44b586d145450e773c">print</link> (const <link linkend="_classSet">Set</link>&lt; T &gt; &amp;l, const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestSetGroup_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestSetGroup_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestSetGroup.cc</secondary></indexterm>
+<indexterm><primary>TestSetGroup.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 31 of file TestSetGroup.cc.</para>
+<programlisting>32 {
+33 
+34 &#32;&#32;&#32;&#32;std::map&lt;std::string,&#32;Set&lt;int&gt;&#32;&gt;&#32;group;&#32;
+35 &#32;&#32;&#32;&#32;
+36 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;int&gt;</link>&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;constructor</emphasis>
+37 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(1);
+38 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(2);
+39 &#32;&#32;&#32;&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>.Insert(3);
+40 
+41 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;int&gt;</link>&#32;s11;
+42 &#32;&#32;&#32;&#32;s11.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(2);
+43 &#32;&#32;&#32;&#32;s11.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(3);
+44 
+45 &#32;&#32;&#32;&#32;<link linkend="_classSet">Set&lt;int&gt;</link>&#32;s12;
+46 &#32;&#32;&#32;&#32;s12.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(8);
+47 &#32;&#32;&#32;&#32;s12.<link linkend="_classSet_1a25791eed3b7ef4be9af5059cf09767f2">Insert</link>(9);
+48 
+49 
+50 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Using&#32;indexing&#32;to&#32;define&#32;the&#32;keys&#32;in&#32;the&#32;map</emphasis>
+51 &#32;&#32;&#32;&#32;group[<emphasis role="stringliteral">&quot;a&quot;</emphasis>]&#32;&#32;=&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+52 &#32;&#32;&#32;&#32;group[<emphasis role="stringliteral">&quot;b&quot;</emphasis>]&#32;&#32;=&#32;s11;&#32;&#32;
+53 &#32;&#32;&#32;&#32;group[<emphasis role="stringliteral">&quot;c&quot;</emphasis>]&#32;&#32;=&#32;s12;&#32;&#32;&#32;&#32;&#32;&#32;
+54 &#32;&#32;&#32;&#32;group[<emphasis role="stringliteral">&quot;d&quot;</emphasis>]&#32;&#32;=&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">first</link>;&#32;&#32;&#32;&#32;
+55 &#32;&#32;&#32;&#32;group[<emphasis role="stringliteral">&quot;e&quot;</emphasis>]&#32;&#32;=&#32;s11;&#32;&#32;
+56 
+57 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Size&#32;of&#32;map:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;group.size()&#32;&lt;&lt;&#32;std::endl;
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterating&#32;in&#32;the&#32;map</emphasis>
+60 &#32;&#32;&#32;&#32;std::map&lt;std::string,&#32;Set&lt;int&gt;&#32;&gt;::iterator&#32;i&#32;=&#32;group.begin();
+61 
+62 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;group.end())
+63 &#32;&#32;&#32;&#32;{&#32;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestSetGroup_8cc_1afc656eda04a46b44b586d145450e773c">print</link>((*i).second,&#32;(*i).first);
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+66 &#32;&#32;&#32;&#32;}
+67 
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+69 }
+</programlisting>    </section><anchor xml:id="_TestSetGroup_8cc_1afc656eda04a46b44b586d145450e773c"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>TestSetGroup.cc</secondary></indexterm>
+<indexterm><primary>TestSetGroup.cc</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classSet">Set</link>&lt; T &gt; &amp; l, const std::string &amp; name)</computeroutput></para><para>
+Definition at line 15 of file TestSetGroup.cc.</para>
+<programlisting>16 {&#32;&#32;<emphasis role="comment">//&#32;Print&#32;the&#32;contents&#32;of&#32;a&#32;Set.&#32;Notice&#32;the&#32;presence&#32;of&#32;a&#32;constant&#32;iterator.</emphasis>
+17 &#32;&#32;&#32;&#32;
+18 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl&#32;&lt;&lt;&#32;name&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;size&#32;of&#32;set&#32;is&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;l.<link linkend="_classSet_1aec2bedbb313cfc25c7100c6984760dd3">Size</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&#32;&quot;</emphasis>;
+19 
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::set&lt;T&gt;::const_iterator&#32;i;
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;l.<link linkend="_classSet_1a3ca47221f02ee54c6b627ff73a9b5b98">Begin</link>();&#32;i&#32;!=&#32;l.<link linkend="_classSet_1aeb4a4b2026eb040a24e9b251e0c49dec">End</link>();&#32;++i)
+23 &#32;&#32;&#32;&#32;{
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;*i&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+25 
+26 &#32;&#32;&#32;&#32;}
+27 
+28 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]\n&quot;</emphasis>;
+29 }
+</programlisting></section>
+</section>
+</section>

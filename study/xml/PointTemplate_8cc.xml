@@ -22,12 +22,18 @@
       </node>
       <node id="2">
         <label>duffy/PointTemplate.hh</label>
-        <link refid="PointTemplate_8hh_source"/>
+        <link refid="PointTemplate_8hh"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>tests/TestGeneric.cc</label>
+        <link refid="TestGeneric_8cc"/>
+      </node>
       <node id="1">
         <label>src/PointTemplate.cc</label>
         <link refid="PointTemplate_8cc"/>
@@ -36,7 +42,11 @@
       </node>
       <node id="2">
         <label>include/duffy/PointTemplate.hh</label>
-        <link refid="PointTemplate_8hh_source"/>
+        <link refid="PointTemplate_8hh"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
@@ -67,15 +77,15 @@
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>2006</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PointTemplate_CC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PointTemplate_CC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="PointTemplate_8cc_1aae2d4c69c6e14264a97f0a062c0511c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PointTemplate_CC</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/PointTemplate.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="PointTemplate_8hh" kindref="compound">duffy/PointTemplate.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::Point</ref>()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="classPoint_1a57f56baef4e1d60e9acc406e9518a46f" kindref="member">Point&lt;TFirst, TSecond&gt;::Point</ref>()</highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>m_first<sp/>=<sp/>TFirst();</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>m_second<sp/>=<sp/>TSecond();</highlight></codeline>
@@ -84,15 +94,15 @@
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constructor<sp/>with<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::Point</ref>(TFirst<sp/>first,<sp/>TSecond<sp/>second)</highlight></codeline>
+<codeline lineno="29" refid="classPoint_1a687ea62e55fe6ec8387252fcf822dad8" refkind="member"><highlight class="normal"><ref refid="classPoint_1a57f56baef4e1d60e9acc406e9518a46f" kindref="member">Point&lt;TFirst, TSecond&gt;::Point</ref>(TFirst<sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>,<sp/>TSecond<sp/><ref refid="namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6" kindref="member">second</ref>)</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>m_first<sp/>=<sp/>first;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>m_second<sp/>=<sp/>second;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>m_first<sp/>=<sp/><ref refid="namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1" kindref="member">first</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>m_second<sp/>=<sp/><ref refid="namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6" kindref="member">second</ref>;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::Point</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;</ref>&amp;<sp/>source)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><ref refid="classPoint_1a57f56baef4e1d60e9acc406e9518a46f" kindref="member">Point&lt;TFirst, TSecond&gt;::Point</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;</ref>&amp;<sp/>source)</highlight></codeline>
 <codeline lineno="38"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>m_first<sp/>=<sp/>source.m_first;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>m_second<sp/>=<sp/>source.m_second;</highlight></codeline>
@@ -100,53 +110,53 @@
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Destructortemplate<sp/>&lt;class<sp/>TFirst,<sp/>class<sp/>TSecond&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::~Point</ref>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="classPoint_1a5cd97348ecafa3c4e1b14ecc7b26e8fb" kindref="member">Point&lt;TFirst, TSecond&gt;::~Point</ref>()</highlight></codeline>
 <codeline lineno="46"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="47"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>first<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal">TFirst<sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::First</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="51" refid="classPoint_1aae25ce13a220b16b0d83ddbd8f3b6eb5" refkind="member"><highlight class="normal">TFirst<sp/><ref refid="classPoint_1aae25ce13a220b16b0d83ddbd8f3b6eb5" kindref="member">Point&lt;TFirst, TSecond&gt;::First</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="52"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_first;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>second<sp/>coordinate</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal">TSecond<sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::Second</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="58" refid="classPoint_1ae1468ca451216c3341e2b74b5811f30b" refkind="member"><highlight class="normal">TSecond<sp/><ref refid="classPoint_1ae1468ca451216c3341e2b74b5811f30b" kindref="member">Point&lt;TFirst, TSecond&gt;::Second</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="59"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_second;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>first<sp/>coordinate</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::First</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TFirst&amp;<sp/>val)</highlight></codeline>
+<codeline lineno="65" refid="classPoint_1a0d070aa1d147e36f23afabc9a16a54ec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPoint_1aae25ce13a220b16b0d83ddbd8f3b6eb5" kindref="member">Point&lt;TFirst, TSecond&gt;::First</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TFirst&amp;<sp/>val)</highlight></codeline>
 <codeline lineno="66"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>m_first<sp/>=<sp/>val;</highlight></codeline>
 <codeline lineno="68"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>second<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::Second</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TSecond&amp;<sp/>val)</highlight></codeline>
+<codeline lineno="72" refid="classPoint_1a9303ca8f1f1cd6a123e9e744004f0565" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPoint_1ae1468ca451216c3341e2b74b5811f30b" kindref="member">Point&lt;TFirst, TSecond&gt;::Second</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TSecond&amp;<sp/>val)</highlight></codeline>
 <codeline lineno="73"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>m_second<sp/>=<sp/>val;</highlight></codeline>
 <codeline lineno="75"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Calculate<sp/>distance</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::Distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;</ref>&amp;<sp/>p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classPoint_1a157aafa697fc65028517c431b6c313a2" kindref="member">Point&lt;TFirst, TSecond&gt;::Distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;</ref>&amp;<sp/>p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="80"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>length<sp/>of<sp/>the<sp/>sides</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>TFirst<sp/>a<sp/>=<sp/>p.m_first<sp/>-<sp/>m_first;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>TSecond<sp/>b<sp/>=<sp/>p.m_second<sp/>-<sp/>m_second;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>TSecond<sp/><ref refid="namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff" kindref="member">b</ref><sp/>=<sp/>p.m_second<sp/>-<sp/>m_second;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>Pythagoras<sp/>to<sp/>calculate<sp/>distance</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::sqrt(a*a<sp/>+<sp/>b*b);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::sqrt(a*a<sp/>+<sp/><ref refid="namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff" kindref="member">b</ref>*<ref refid="namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff" kindref="member">b</ref>);</highlight></codeline>
 <codeline lineno="87"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Assignment<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TFirst,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>TSecond&gt;</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;</ref>&amp;<sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;::operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;</ref>&amp;<sp/>source)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;</ref>&amp;<sp/><ref refid="classPoint_1adc5027a0b925b795c504ac45be9806bb" kindref="member">Point&lt;TFirst, TSecond&gt;::operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point&lt;TFirst, TSecond&gt;</ref>&amp;<sp/>source)</highlight></codeline>
 <codeline lineno="92"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>&amp;source)</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>

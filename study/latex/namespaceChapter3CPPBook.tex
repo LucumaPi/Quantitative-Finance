@@ -1,0 +1,216 @@
+\hypertarget{namespaceChapter3CPPBook}{}\doxysection{Chapter3\+C\+P\+P\+Book Namespace Reference}
+\label{namespaceChapter3CPPBook}\index{Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{namespaceChapter3CPPBook_a4e4f0b17aee4dc6f9d06c5d648650b62}{Vector}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}} (double d, long \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}})
+\item 
+double \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{Future\+Value}} (double P0, long n\+Periods, double r)
+\item 
+double \mbox{\hyperlink{namespaceChapter3CPPBook_ab73644db84be670d7c7aabdac2ca01b3}{Future\+Value}} (double P0, long n\+Periods, double r, long m)
+\item 
+double \mbox{\hyperlink{namespaceChapter3CPPBook_a7a6cebaf5369ebd4c06b3747e9b5491f}{Future\+Value\+Continuous}} (double P0, long n\+Periods, double r)
+\item 
+double \mbox{\hyperlink{namespaceChapter3CPPBook_a80457755c62c5cc27b0c679524f04896}{Ordinary\+Annuity}} (double A, long n\+Periods, double r)
+\item 
+double \mbox{\hyperlink{namespaceChapter3CPPBook_a18478ac60c06346fe86d2022fabefa07}{Present\+Value}} (double Pn, long n\+Periods, double r)
+\item 
+double \mbox{\hyperlink{namespaceChapter3CPPBook_a152c2df09775396d9d4252fcb0f58213}{Present\+Value}} (const \mbox{\hyperlink{namespaceChapter3CPPBook_a4e4f0b17aee4dc6f9d06c5d648650b62}{Vector}} \&prices, long n\+Periods, double r)
+\item 
+double \mbox{\hyperlink{namespaceChapter3CPPBook_a73378b5ee752acf087d6005aca68cc4e}{Present\+Value\+Ordinary\+Annuity}} (double A, long n\+Periods, double r)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_a4e4f0b17aee4dc6f9d06c5d648650b62}\label{namespaceChapter3CPPBook_a4e4f0b17aee4dc6f9d06c5d648650b62}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!Vector@{Vector}}
+\index{Vector@{Vector}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{Vector}{Vector}}
+{\footnotesize\ttfamily typedef std\+::vector$<$double$>$ \mbox{\hyperlink{namespaceChapter3CPPBook_a4e4f0b17aee4dc6f9d06c5d648650b62}{Chapter3\+C\+P\+P\+Book\+::\+Vector}}}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8hh_source_l00019}{19}} of file \mbox{\hyperlink{SimpleBondPricing_8hh_source}{Simple\+Bond\+Pricing.\+hh}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}\label{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!FutureValue@{FutureValue}}
+\index{FutureValue@{FutureValue}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{FutureValue()}{FutureValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Chapter3\+C\+P\+P\+Book\+::\+Future\+Value (\begin{DoxyParamCaption}\item[{double}]{P0,  }\item[{long}]{n\+Periods,  }\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8cc_source_l00039}{39}} of file \mbox{\hyperlink{SimpleBondPricing_8cc_source}{Simple\+Bond\+Pricing.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00043         \textcolor{keywordflow}{return} P0 * \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, nPeriods);}
+\DoxyCodeLine{00044     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_ab73644db84be670d7c7aabdac2ca01b3}\label{namespaceChapter3CPPBook_ab73644db84be670d7c7aabdac2ca01b3}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!FutureValue@{FutureValue}}
+\index{FutureValue@{FutureValue}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{FutureValue()}{FutureValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Chapter3\+C\+P\+P\+Book\+::\+Future\+Value (\begin{DoxyParamCaption}\item[{double}]{P0,  }\item[{long}]{n\+Periods,  }\item[{double}]{r,  }\item[{long}]{m }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8cc_source_l00048}{48}} of file \mbox{\hyperlink{SimpleBondPricing_8cc_source}{Simple\+Bond\+Pricing.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049     \{}
+\DoxyCodeLine{00050         \textcolor{keywordtype}{double} R = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} / double(m);}
+\DoxyCodeLine{00051         \textcolor{keywordtype}{long} newPeriods = m * nPeriods;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{FutureValue}}(P0, newPeriods, R);}
+\DoxyCodeLine{00054     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_a7a6cebaf5369ebd4c06b3747e9b5491f}\label{namespaceChapter3CPPBook_a7a6cebaf5369ebd4c06b3747e9b5491f}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!FutureValueContinuous@{FutureValueContinuous}}
+\index{FutureValueContinuous@{FutureValueContinuous}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{FutureValueContinuous()}{FutureValueContinuous()}}
+{\footnotesize\ttfamily double Chapter3\+C\+P\+P\+Book\+::\+Future\+Value\+Continuous (\begin{DoxyParamCaption}\item[{double}]{P0,  }\item[{long}]{n\+Periods,  }\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8cc_source_l00057}{57}} of file \mbox{\hyperlink{SimpleBondPricing_8cc_source}{Simple\+Bond\+Pricing.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058     \{}
+\DoxyCodeLine{00059                     }
+\DoxyCodeLine{00060         \textcolor{keywordtype}{double} growthFactor = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} * \textcolor{keywordtype}{double}(nPeriods) );}
+\DoxyCodeLine{00061         }
+\DoxyCodeLine{00062         \textcolor{keywordflow}{return} P0 * growthFactor;}
+\DoxyCodeLine{00063     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_a80457755c62c5cc27b0c679524f04896}\label{namespaceChapter3CPPBook_a80457755c62c5cc27b0c679524f04896}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!OrdinaryAnnuity@{OrdinaryAnnuity}}
+\index{OrdinaryAnnuity@{OrdinaryAnnuity}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{OrdinaryAnnuity()}{OrdinaryAnnuity()}}
+{\footnotesize\ttfamily double Chapter3\+C\+P\+P\+Book\+::\+Ordinary\+Annuity (\begin{DoxyParamCaption}\item[{double}]{A,  }\item[{long}]{n\+Periods,  }\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8cc_source_l00066}{66}} of file \mbox{\hyperlink{SimpleBondPricing_8cc_source}{Simple\+Bond\+Pricing.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067     \{}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00070         \textcolor{keywordflow}{return} A * ((\mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, nPeriods) -\/ 1.0)/\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00071     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}\label{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!power@{power}}
+\index{power@{power}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{power()}{power()}}
+{\footnotesize\ttfamily double Chapter3\+C\+P\+P\+Book\+::power (\begin{DoxyParamCaption}\item[{double}]{d,  }\item[{long}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8cc_source_l00023}{23}} of file \mbox{\hyperlink{SimpleBondPricing_8cc_source}{Simple\+Bond\+Pricing.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024     \{}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} == 0) \textcolor{keywordflow}{return} 1.0;}
+\DoxyCodeLine{00026         \textcolor{keywordflow}{if} (\mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}} == 1) \textcolor{keywordflow}{return} d;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \textcolor{keywordtype}{double} result = d;}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} j = 1; j < \mbox{\hyperlink{TestImpliedVolatility_8cc_a927694c350b26693c65f7c8b73b3dba3}{n}}; j++)}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             result *= d;}
+\DoxyCodeLine{00032         \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_a152c2df09775396d9d4252fcb0f58213}\label{namespaceChapter3CPPBook_a152c2df09775396d9d4252fcb0f58213}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!PresentValue@{PresentValue}}
+\index{PresentValue@{PresentValue}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{PresentValue()}{PresentValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Chapter3\+C\+P\+P\+Book\+::\+Present\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceChapter3CPPBook_a4e4f0b17aee4dc6f9d06c5d648650b62}{Vector}} \&}]{prices,  }\item[{long}]{n\+Periods,  }\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8cc_source_l00082}{82}} of file \mbox{\hyperlink{SimpleBondPricing_8cc_source}{Simple\+Bond\+Pricing.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083     \{}
+\DoxyCodeLine{00084         \textcolor{comment}{// Number of periods MUST == size of the vector}}
+\DoxyCodeLine{00085         assert (nPeriods == prices.size());}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089         \textcolor{keywordtype}{double} PV = 0.0;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} t = 0; t < nPeriods; t++)}
+\DoxyCodeLine{00092         \{}
+\DoxyCodeLine{00093             PV += prices[t] / \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, t+1);}
+\DoxyCodeLine{00094         \}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096         \textcolor{keywordflow}{return} PV;}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_a18478ac60c06346fe86d2022fabefa07}\label{namespaceChapter3CPPBook_a18478ac60c06346fe86d2022fabefa07}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!PresentValue@{PresentValue}}
+\index{PresentValue@{PresentValue}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{PresentValue()}{PresentValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Chapter3\+C\+P\+P\+Book\+::\+Present\+Value (\begin{DoxyParamCaption}\item[{double}]{Pn,  }\item[{long}]{n\+Periods,  }\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8cc_source_l00074}{74}} of file \mbox{\hyperlink{SimpleBondPricing_8cc_source}{Simple\+Bond\+Pricing.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075     \{}
+\DoxyCodeLine{00076         }
+\DoxyCodeLine{00077         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00078         \textcolor{keywordflow}{return} Pn * (1.0 / \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, nPeriods));}
+\DoxyCodeLine{00079     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceChapter3CPPBook_a73378b5ee752acf087d6005aca68cc4e}\label{namespaceChapter3CPPBook_a73378b5ee752acf087d6005aca68cc4e}} 
+\index{Chapter3CPPBook@{Chapter3CPPBook}!PresentValueOrdinaryAnnuity@{PresentValueOrdinaryAnnuity}}
+\index{PresentValueOrdinaryAnnuity@{PresentValueOrdinaryAnnuity}!Chapter3CPPBook@{Chapter3CPPBook}}
+\doxysubsubsection{\texorpdfstring{PresentValueOrdinaryAnnuity()}{PresentValueOrdinaryAnnuity()}}
+{\footnotesize\ttfamily double Chapter3\+C\+P\+P\+Book\+::\+Present\+Value\+Ordinary\+Annuity (\begin{DoxyParamCaption}\item[{double}]{A,  }\item[{long}]{n\+Periods,  }\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SimpleBondPricing_8cc_source_l00102}{102}} of file \mbox{\hyperlink{SimpleBondPricing_8cc_source}{Simple\+Bond\+Pricing.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103     \{}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105         \textcolor{keywordtype}{double} factor = 1.0 + \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00106         \textcolor{keywordtype}{double} numerator = 1.0 -\/ (1.0 / \mbox{\hyperlink{namespaceChapter3CPPBook_a5f216409d130f616335296ddc6853ee1}{power}}(factor, nPeriods));}
+\DoxyCodeLine{00107         \textcolor{keywordflow}{return} (A * numerator ) / \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00108     \}}
+
+\end{DoxyCode}

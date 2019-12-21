@@ -2,6 +2,10 @@
 \label{classOneFactorPayoff}\index{OneFactorPayoff@{OneFactorPayoff}}
 
 
+{\ttfamily \#include $<$One\+Factor\+Payoff.\+hh$>$}
+
+
+
 Collaboration diagram for One\+Factor\+Payoff\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,21 +16,150 @@ Collaboration diagram for One\+Factor\+Payoff\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classOneFactorPayoff_a87f11b8fefaefd2133752f1fd20b98c6}\label{classOneFactorPayoff_a87f11b8fefaefd2133752f1fd20b98c6}} 
-{\bfseries One\+Factor\+Payoff} (double strike, double($\ast$pay)(double K, double S))
+\mbox{\hyperlink{classOneFactorPayoff_a44063d3104454a543537947dae324f3f}{One\+Factor\+Payoff}} ()
 \item 
-\mbox{\Hypertarget{classOneFactorPayoff_afee655aeca9d98b5ac65c467703473e2}\label{classOneFactorPayoff_afee655aeca9d98b5ac65c467703473e2}} 
-{\bfseries One\+Factor\+Payoff} (const \mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \&source)
+\mbox{\hyperlink{classOneFactorPayoff_a87f11b8fefaefd2133752f1fd20b98c6}{One\+Factor\+Payoff}} (double strike, double($\ast$pay)(double K, double S))
 \item 
-\mbox{\Hypertarget{classOneFactorPayoff_a9258b40b9fa6772588e464ef3b5f4f16}\label{classOneFactorPayoff_a9258b40b9fa6772588e464ef3b5f4f16}} 
-\mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \& {\bfseries operator=} (const \mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \&source)
+\mbox{\hyperlink{classOneFactorPayoff_afee655aeca9d98b5ac65c467703473e2}{One\+Factor\+Payoff}} (const \mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \&source)
 \item 
-\mbox{\Hypertarget{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}\label{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}} 
-double {\bfseries payoff} (double S) const
+virtual \mbox{\hyperlink{classOneFactorPayoff_af9f0c1e6b667a81d0ac6cba8c735fba3}{$\sim$\+One\+Factor\+Payoff}} ()
+\item 
+\mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \& \mbox{\hyperlink{classOneFactorPayoff_a9258b40b9fa6772588e464ef3b5f4f16}{operator=}} (const \mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \&source)
+\item 
+double \mbox{\hyperlink{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}{payoff}} (double S) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8hh_source_l00016}{16}} of file \mbox{\hyperlink{OneFactorPayoff_8hh_source}{One\+Factor\+Payoff.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOneFactorPayoff_a44063d3104454a543537947dae324f3f}\label{classOneFactorPayoff_a44063d3104454a543537947dae324f3f}} 
+\index{OneFactorPayoff@{OneFactorPayoff}!OneFactorPayoff@{OneFactorPayoff}}
+\index{OneFactorPayoff@{OneFactorPayoff}!OneFactorPayoff@{OneFactorPayoff}}
+\doxysubsubsection{\texorpdfstring{OneFactorPayoff()}{OneFactorPayoff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily One\+Factor\+Payoff\+::\+One\+Factor\+Payoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00037}{37}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = 0.0;}
+\DoxyCodeLine{00041     payoffFN = 0;}
+\DoxyCodeLine{00042 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOneFactorPayoff_a87f11b8fefaefd2133752f1fd20b98c6}\label{classOneFactorPayoff_a87f11b8fefaefd2133752f1fd20b98c6}} 
+\index{OneFactorPayoff@{OneFactorPayoff}!OneFactorPayoff@{OneFactorPayoff}}
+\index{OneFactorPayoff@{OneFactorPayoff}!OneFactorPayoff@{OneFactorPayoff}}
+\doxysubsubsection{\texorpdfstring{OneFactorPayoff()}{OneFactorPayoff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily One\+Factor\+Payoff\+::\+One\+Factor\+Payoff (\begin{DoxyParamCaption}\item[{double}]{strike,  }\item[{double($\ast$)(double K, double S)}]{pay }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00043}{43}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = strike;}
+\DoxyCodeLine{00047     payoffFN = pay;}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOneFactorPayoff_afee655aeca9d98b5ac65c467703473e2}\label{classOneFactorPayoff_afee655aeca9d98b5ac65c467703473e2}} 
+\index{OneFactorPayoff@{OneFactorPayoff}!OneFactorPayoff@{OneFactorPayoff}}
+\index{OneFactorPayoff@{OneFactorPayoff}!OneFactorPayoff@{OneFactorPayoff}}
+\doxysubsubsection{\texorpdfstring{OneFactorPayoff()}{OneFactorPayoff()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily One\+Factor\+Payoff\+::\+One\+Factor\+Payoff (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00050}{50}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = source.K;}
+\DoxyCodeLine{00054     payoffFN = source.payoffFN;}
+\DoxyCodeLine{00055 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOneFactorPayoff_af9f0c1e6b667a81d0ac6cba8c735fba3}\label{classOneFactorPayoff_af9f0c1e6b667a81d0ac6cba8c735fba3}} 
+\index{OneFactorPayoff@{OneFactorPayoff}!````~OneFactorPayoff@{$\sim$OneFactorPayoff}}
+\index{````~OneFactorPayoff@{$\sim$OneFactorPayoff}!OneFactorPayoff@{OneFactorPayoff}}
+\doxysubsubsection{\texorpdfstring{$\sim$OneFactorPayoff()}{~OneFactorPayoff()}}
+{\footnotesize\ttfamily One\+Factor\+Payoff\+::$\sim$\+One\+Factor\+Payoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00057}{57}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00059 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOneFactorPayoff_a9258b40b9fa6772588e464ef3b5f4f16}\label{classOneFactorPayoff_a9258b40b9fa6772588e464ef3b5f4f16}} 
+\index{OneFactorPayoff@{OneFactorPayoff}!operator=@{operator=}}
+\index{operator=@{operator=}!OneFactorPayoff@{OneFactorPayoff}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \& One\+Factor\+Payoff\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classOneFactorPayoff}{One\+Factor\+Payoff}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00062}{62}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source)}
+\DoxyCodeLine{00066         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = source.K;}
+\DoxyCodeLine{00069     payoffFN = source.payoffFN;}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00072 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}\label{classOneFactorPayoff_a5f74e477eb39f7d3cc01211e4c8944ac}} 
+\index{OneFactorPayoff@{OneFactorPayoff}!payoff@{payoff}}
+\index{payoff@{payoff}!OneFactorPayoff@{OneFactorPayoff}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double One\+Factor\+Payoff\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{OneFactorPayoff_8cc_source_l00075}{75}} of file \mbox{\hyperlink{OneFactorPayoff_8cc_source}{One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076 \{ \textcolor{comment}{// For a given spot price}}
+\DoxyCodeLine{00077     }
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     \textcolor{keywordflow}{return} payoffFN(\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}}, S); \textcolor{comment}{// DELEGATE to strategy}}
+\DoxyCodeLine{00080 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/One\+Factor\+Payoff.\+hh\item 
-src/One\+Factor\+Payoff.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{OneFactorPayoff_8hh}{One\+Factor\+Payoff.\+hh}}\item 
+src/\mbox{\hyperlink{OneFactorPayoff_8cc}{One\+Factor\+Payoff.\+cc}}\end{DoxyCompactItemize}

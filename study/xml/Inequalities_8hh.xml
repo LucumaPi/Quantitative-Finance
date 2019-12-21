@@ -6,13 +6,17 @@
     <includedby refid="Inequalities_8cc" local="no">src/Inequalities.cc</includedby>
     <includedby refid="TestInequalities_8cc" local="no">tests/TestInequalities.cc</includedby>
     <invincdepgraph>
+      <node id="6">
+        <label>tests/TestInequalities.cc</label>
+        <link refid="TestInequalities_8cc"/>
+      </node>
       <node id="4">
         <label>MultiAssetPayoff.hh</label>
-        <link refid="MultiAssetPayoff_8hh_source"/>
+        <link refid="MultiAssetPayoff_8hh"/>
       </node>
       <node id="2">
         <label>MultiAssetPayoffStrategy.hh</label>
-        <link refid="MultiAssetPayoffStrategy_8hh_source"/>
+        <link refid="MultiAssetPayoffStrategy_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -20,12 +24,20 @@
       </node>
       <node id="3">
         <label>MultiAssetFactory.hh</label>
-        <link refid="MultiAssetFactory_8hh_source"/>
+        <link refid="MultiAssetFactory_8hh"/>
+      </node>
+      <node id="5">
+        <label>src/Inequalities.cc</label>
+        <link refid="Inequalities_8cc"/>
       </node>
       <node id="1">
         <label>include/duffy/Inequalities.hh</label>
         <link refid="Inequalities_8hh"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -142,12 +154,12 @@
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Max<sp/>and<sp/>Min<sp/>of<sp/>two<sp/>numbers</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Max(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Min(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Inequalities_8hh_1a2e4e9c2ed4461e71f756577324ba5a28" kindref="member">Max</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Inequalities_8hh_1a206648ed763cf95236bee61ee1ec9440" kindref="member">Min</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Max<sp/>and<sp/>Min<sp/>of<sp/>three<sp/>numbers</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Max(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Min(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Inequalities_8hh_1a2e4e9c2ed4461e71f756577324ba5a28" kindref="member">Max</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Inequalities_8hh_1a206648ed763cf95236bee61ee1ec9440" kindref="member">Min</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

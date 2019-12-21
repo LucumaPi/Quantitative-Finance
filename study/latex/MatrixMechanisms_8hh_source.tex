@@ -23,67 +23,67 @@
 \DoxyCodeLine{00019 \textcolor{preprocessor}{\#define MatrixMechanisms\_HH}}
 \DoxyCodeLine{00020 }
 \DoxyCodeLine{00021 }
-\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include "NumericMatrix.hh"}}
-\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include "ArrayMechanisms.hh"}}
+\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{NumericMatrix_8hh}{NumericMatrix.hh}}"}}
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{ArrayMechanisms_8hh}{ArrayMechanisms.hh}}"}}
 \DoxyCodeLine{00024 }
 \DoxyCodeLine{00025 \textcolor{comment}{// Properties}}
 \DoxyCodeLine{00026 }
 \DoxyCodeLine{00027 \textcolor{comment}{// Sum of absolute values of row and column}}
-\DoxyCodeLine{00028 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V sumAbsRow(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m, \textcolor{keyword}{const} I\& i);}
-\DoxyCodeLine{00029 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V sumAbsColumn(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m, \textcolor{keyword}{const} I\& j);}
+\DoxyCodeLine{00028 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8hh_ab00f24d33b315b3567881ca4f9ae13aa}{sumAbsRow}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m, \textcolor{keyword}{const} I\& i);}
+\DoxyCodeLine{00029 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8hh_a4d1479b88b531287426c66badbcd18cf}{sumAbsColumn}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m, \textcolor{keyword}{const} I\& j);}
 \DoxyCodeLine{00030 }
 \DoxyCodeLine{00031 \textcolor{comment}{// Now Abs sume of rows and columns for all indices}}
-\DoxyCodeLine{00032 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V,I>}} sumAbsRow(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m);}
-\DoxyCodeLine{00033 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V,I>}} sumAbsColumn(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m);}
+\DoxyCodeLine{00032 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V,I>}} \mbox{\hyperlink{MatrixMechanisms_8hh_ab00f24d33b315b3567881ca4f9ae13aa}{sumAbsRow}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m);}
+\DoxyCodeLine{00033 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classVector}{Vector<V,I>}} \mbox{\hyperlink{MatrixMechanisms_8hh_a4d1479b88b531287426c66badbcd18cf}{sumAbsColumn}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& m);}
 \DoxyCodeLine{00034 }
 \DoxyCodeLine{00035 \textcolor{comment}{// Norms}}
-\DoxyCodeLine{00036 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V llNorm(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix);}
-\DoxyCodeLine{00037 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V FrobeniusNorm(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix); \textcolor{comment}{// Euclidean norm}}
-\DoxyCodeLine{00038 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V lInfinityNorm(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix);}
+\DoxyCodeLine{00036 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8hh_ae75fb91cf4b7afa603a41eb07f52a6bb}{llNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix);}
+\DoxyCodeLine{00037 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8hh_ad97ba861ea28d23de371ca12e82dbfbd}{FrobeniusNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix); \textcolor{comment}{// Euclidean norm}}
+\DoxyCodeLine{00038 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8hh_a70cd51362f5af358d655ed9c0c7d0fea}{lInfinityNorm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& matrix);}
 \DoxyCodeLine{00039 }
-\DoxyCodeLine{00040 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} allNorms(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
+\DoxyCodeLine{00040 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classSimplePropertySet}{SimplePropertySet<std::string, double>}} \mbox{\hyperlink{MatrixMechanisms_8hh_ad19d9c702f4a2500fc5e496d7d9a4b32}{allNorms}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
 \DoxyCodeLine{00041 }
 \DoxyCodeLine{00042 \textcolor{comment}{// All diagonal elements get the value v}}
 \DoxyCodeLine{00043 \textcolor{comment}{//template <class V, class I> setDiagonal(Matrix<V,I>\& m, const V\& v);}}
 \DoxyCodeLine{00044 }
 \DoxyCodeLine{00045 \textcolor{comment}{// All elements get the value v}}
-\DoxyCodeLine{00046 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} initMatrix(\mbox{\hyperlink{classMatrix}{Matrix<V,I>}}\& m, \textcolor{keyword}{const} V\& v);}
+\DoxyCodeLine{00046 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{MatrixMechanisms_8hh_ab756c3f1b13fec78f42862639fb98f7c}{initMatrix}}(\mbox{\hyperlink{classMatrix}{Matrix<V,I>}}\& m, \textcolor{keyword}{const} V\& v);}
 \DoxyCodeLine{00047 }
 \DoxyCodeLine{00048 }
 \DoxyCodeLine{00049 \textcolor{comment}{// Create a matrix based on the diagonal elements of a tridiagonal matrix; bit wasteful of}}
 \DoxyCodeLine{00050 \textcolor{comment}{// space but who cares! I've got a Pentium with a giga of memory}}
-\DoxyCodeLine{00051 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}} createMatrix(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& lower, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& diagonal, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& upper);}
+\DoxyCodeLine{00051 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}} \mbox{\hyperlink{MatrixMechanisms_8hh_a6f970bd30a1ac58d6f56b0737ecdb2f4}{createMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& lower, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& diagonal, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& upper);}
 \DoxyCodeLine{00052 }
 \DoxyCodeLine{00053 }
 \DoxyCodeLine{00054 \textcolor{comment}{// Comparison operatins with matrices}}
-\DoxyCodeLine{00055 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator < (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
-\DoxyCodeLine{00056 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator <= (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
-\DoxyCodeLine{00057 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator > (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
-\DoxyCodeLine{00058 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator >= (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
-\DoxyCodeLine{00059 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator == (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
-\DoxyCodeLine{00060 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} operator != (\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
+\DoxyCodeLine{00055 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_a6fa2271be30569c2b0ad6c2c850d794e}{operator < }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
+\DoxyCodeLine{00056 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_acd0d84ddee6f504fb2fb9d83281da2b6}{operator <= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
+\DoxyCodeLine{00057 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_a6539ab5ef7bffef5715b2e142298d70c}{operator > }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
+\DoxyCodeLine{00058 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_a8118170f2dfd63e4c8c666134b79396d}{operator >= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
+\DoxyCodeLine{00059 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_a8937199c2ef00f8623db12cfc5a59aae}{operator == }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
+\DoxyCodeLine{00060 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_a7d7ac569cc9e63d0a2bf2559a8e9997d}{operator != }}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v1, \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& v2);}
 \DoxyCodeLine{00061 }
 \DoxyCodeLine{00062 \textcolor{comment}{// Are all elements of a matrix positive?}}
-\DoxyCodeLine{00063 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} positive(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
-\DoxyCodeLine{00064 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} negative(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
+\DoxyCodeLine{00063 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_a0f7651a9e9206b9c8819729e5c571f90}{positive}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
+\DoxyCodeLine{00064 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_aca20512a1e8b7a2f9ac0e6aa6cb7052a}{negative}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
 \DoxyCodeLine{00065 }
 \DoxyCodeLine{00066 }
 \DoxyCodeLine{00067 \textcolor{comment}{// Special functions for Numerical Linear Algebra}}
-\DoxyCodeLine{00068 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} diagonallyDominant(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
+\DoxyCodeLine{00068 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{bool} \mbox{\hyperlink{MatrixMechanisms_8hh_a12ccb5c0bda61683615a95fcdd34c59d}{diagonallyDominant}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
 \DoxyCodeLine{00069 }
 \DoxyCodeLine{00070 \textcolor{comment}{// Gerschgorin's circle theorem: n eigenvalues of a matrix in a nX2 matrix of}}
 \DoxyCodeLine{00071 \textcolor{comment}{// lower and upper bounds}}
-\DoxyCodeLine{00072 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}} eigenvalueBounds(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
+\DoxyCodeLine{00072 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}} \mbox{\hyperlink{MatrixMechanisms_8hh_a772b0290fcb1ca2b13da74f2e2e75e86}{eigenvalueBounds}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& x);}
 \DoxyCodeLine{00073 }
 \DoxyCodeLine{00074 \textcolor{comment}{// Other results for vectors and matrices}}
-\DoxyCodeLine{00075 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V quadraticForm(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& A, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
-\DoxyCodeLine{00076 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V RayleighQuotient(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& A, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00075 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8hh_a5c3e43780b81dc05928fe7188e3f2ea9}{quadraticForm}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& A, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
+\DoxyCodeLine{00076 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8hh_a066bb3002419c7b680967d9ca5d4d259}{RayleighQuotient}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& A, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& x);}
 \DoxyCodeLine{00077 \textcolor{comment}{// Calculate largest eigenvalue by Power method}}
-\DoxyCodeLine{00078 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V dominantEigenvalue(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& A, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& startVec,}
+\DoxyCodeLine{00078 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> V \mbox{\hyperlink{MatrixMechanisms_8hh_aa6aefb3af5d04fbb310d2b827b11bd13}{dominantEigenvalue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V,I>}}\& A, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<V,I>}}\& startVec,}
 \DoxyCodeLine{00079                                                  \textcolor{keyword}{const} V\& tolerance);}
 \DoxyCodeLine{00080 }
 \DoxyCodeLine{00081 }
-\DoxyCodeLine{00083 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} print(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V,I>}}\& v);}
+\DoxyCodeLine{00083 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I> \textcolor{keywordtype}{void} \mbox{\hyperlink{MatrixMechanisms_8hh_a5c3f3bcd8d5077944631817a944f9ff9}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrix}{Matrix<V,I>}}\& v);}
 \DoxyCodeLine{00084 \textcolor{preprocessor}{\#include "../../src/MatrixMechanisms.cc"}}
 \DoxyCodeLine{00085 \textcolor{preprocessor}{\#endif}}
 

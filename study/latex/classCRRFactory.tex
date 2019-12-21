@@ -2,6 +2,10 @@
 \label{classCRRFactory}\index{CRRFactory@{CRRFactory}}
 
 
+{\ttfamily \#include $<$Lattice\+Factory.\+hh$>$}
+
+
+
 Inheritance diagram for C\+R\+R\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,12 +25,48 @@ Collaboration diagram for C\+R\+R\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classCRRFactory_a8f194a6375c6d8e885ea8ab8a9d1ce14}\label{classCRRFactory_a8f194a6375c6d8e885ea8ab8a9d1ce14}} 
-{\bfseries C\+R\+R\+Factory} (double vol, double interest, double delta)
+\mbox{\hyperlink{classCRRFactory_a8f194a6375c6d8e885ea8ab8a9d1ce14}{C\+R\+R\+Factory}} (double vol, double interest, double delta)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00063}{63}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCRRFactory_a8f194a6375c6d8e885ea8ab8a9d1ce14}\label{classCRRFactory_a8f194a6375c6d8e885ea8ab8a9d1ce14}} 
+\index{CRRFactory@{CRRFactory}!CRRFactory@{CRRFactory}}
+\index{CRRFactory@{CRRFactory}!CRRFactory@{CRRFactory}}
+\doxysubsubsection{\texorpdfstring{CRRFactory()}{CRRFactory()}}
+{\footnotesize\ttfamily C\+R\+R\+Factory\+::\+C\+R\+R\+Factory (\begin{DoxyParamCaption}\item[{double}]{vol,  }\item[{double}]{interest,  }\item[{double}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{LatticeFactory_8hh_source_l00066}{66}} of file \mbox{\hyperlink{LatticeFactory_8hh_source}{Lattice\+Factory.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067         : \mbox{\hyperlink{classLatticeFactory_aec3b521318bcaed891fd9d3acb269d7f}{LatticeFactory}}(vol, interest, delta)}
+\DoxyCodeLine{00068     \{}
+\DoxyCodeLine{00069         \textcolor{keywordtype}{double} e = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}((\mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}})*\mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}});}
+\DoxyCodeLine{00070         \textcolor{keywordtype}{double} sr = std::sqrt(\mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(vol*vol*\mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}}) -\/ 1.0);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073         \mbox{\hyperlink{classLatticeFactory_a7183c1217f75a45b5951dbcc1115782b}{u}} = e * (1.0 + sr);}
+\DoxyCodeLine{00074         \mbox{\hyperlink{classLatticeFactory_a99e4419112358eac102e48d31090a79b}{d}} = e * (1.0 -\/ sr);}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         \textcolor{keywordtype}{double} discounting = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{std::exp}}(-\/ \mbox{\hyperlink{classLatticeFactory_ae5b47a8cf4ef7e20c0297615837bb592}{r}}*\mbox{\hyperlink{classLatticeFactory_a418f424cf85a82bf52cd7cfcebc677d3}{k}});}
+\DoxyCodeLine{00077     }
+\DoxyCodeLine{00078         \mbox{\hyperlink{classLatticeFactory_a4552002d494824b82c182b6c3b145a8a}{p}} = 0.5;}
+\DoxyCodeLine{00079     \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Lattice\+Factory.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{LatticeFactory_8hh}{Lattice\+Factory.\+hh}}\end{DoxyCompactItemize}

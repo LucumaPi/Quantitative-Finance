@@ -1,0 +1,40 @@
+\hypertarget{TestPersonAndEmployee_8cc_source}{}\doxysection{Test\+Person\+And\+Employee.\+cc}
+\label{TestPersonAndEmployee_8cc_source}\index{tests/TestPersonAndEmployee.cc@{tests/TestPersonAndEmployee.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestPersonAndEmployee.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// 'Hello World' Inheritance Example}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{PersonAndEmployee_8hh}{duffy/PersonAndEmployee.hh}}>}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{TestPersonAndEmployee_8cc_source_l00010}\mbox{\hyperlink{TestPersonAndEmployee_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00010}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestPersonAndEmployee_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} myBirthday(29, 8, 1952);}
+\DoxyCodeLine{00014     std::string myName (\textcolor{stringliteral}{"Daniel J. Duffy"});}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classPerson}{Person}} dd(myName, myBirthday);}
+\DoxyCodeLine{00016     dd.\mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{print}}();}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} bBirthday(06, 8, 1994);}
+\DoxyCodeLine{00019     std::string bName (\textcolor{stringliteral}{"Brendan Duffy"});}
+\DoxyCodeLine{00020     \mbox{\hyperlink{classPerson}{Person}} bd(bName, bBirthday);}
+\DoxyCodeLine{00021     bd.\mbox{\hyperlink{classPerson_aaf046d78d4c4dff5130fc25727932345}{print}}();}
+\DoxyCodeLine{00022     }
+\DoxyCodeLine{00023     \mbox{\hyperlink{classEmployee}{Employee}} dde (myName, myBirthday, std::string(\textcolor{stringliteral}{"Cuchulainn Chief"}), 0.01, 65);}
+\DoxyCodeLine{00024     dde.\mbox{\hyperlink{classEmployee_aa2c5fe7f5ba6cbef162ddf12f8a20852}{print}}();}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     std::cout << \textcolor{stringliteral}{"Working with pointers I\(\backslash\)n"}; \textcolor{comment}{// Non-\/polymorphic function}}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classPerson}{Person}}* p = \&dde;}
+\DoxyCodeLine{00028     p -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     std::cout << \textcolor{stringliteral}{"Working with pointers II\(\backslash\)n"}; \textcolor{comment}{// Polymorphic function}}
+\DoxyCodeLine{00031     p -\/> DeepPrint();}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}

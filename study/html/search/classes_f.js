@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['quantostrategy_310',['QuantoStrategy',['../classQuantoStrategy.html',1,'']]],
-  ['quotientstrategy_311',['QuotientStrategy',['../classQuotientStrategy.html',1,'']]]
+  ['quantostrategy_1076',['QuantoStrategy',['../classQuantoStrategy.html',1,'']]],
+  ['quotientstrategy_1077',['QuotientStrategy',['../classQuotientStrategy.html',1,'']]]
 ];

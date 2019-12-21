@@ -1,0 +1,330 @@
+\hypertarget{ExcelMechanisms_8cc_source}{}\doxysection{Excel\+Mechanisms.\+cc}
+\label{ExcelMechanisms_8cc_source}\index{src/ExcelMechanisms.cc@{src/ExcelMechanisms.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// ExcelMechanisms.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Useful functions for use with Excel.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 2005-\/11-\/29 DD kick-\/off}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2005-\/12-\/16 DD Introduce exception handling (in about functions)}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2006-\/2-\/2 DD print a tensor's matrices at intervals}}
+\DoxyCodeLine{00008 \textcolor{comment}{// 2006-\/6-\/14 DD Bug fix PrintInExcel}}
+\DoxyCodeLine{00009 \textcolor{comment}{//}}
+\DoxyCodeLine{00010 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#ifndef ExcelMechanisms\_CC}}
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00014}\mbox{\hyperlink{ExcelMechanisms_8cc_afd5fa53bb4e76a3ca86d8958f474b8b0}{00014}} \textcolor{preprocessor}{\#define ExcelMechanisms\_CC}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ExcelMechanisms_8hh}{duffy/ExcelMechanisms.hh}}>}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{DatasimException_8hh}{duffy/DatasimException.hh}}>}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ExcelDriver_8hh}{duffy/ExcelDriver.hh}}>}}
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{MatrixMechanisms_8hh}{duffy/MatrixMechanisms.hh}}>}}
+\DoxyCodeLine{00021 \textcolor{comment}{//\#include "Matrixcheckers.cpp" // Checking aligned data structures}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{comment}{// Hard-\/coded strings}}
+\DoxyCodeLine{00024 \textcolor{keyword}{const} std::string \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}}(\textcolor{stringliteral}{", "});}
+\DoxyCodeLine{00025 \textcolor{keyword}{const} std::string \mbox{\hyperlink{ExcelMechanisms_8cc_ae7f29803a022e2b09ff177e1d4d317ba}{bracketL}}(\textcolor{stringliteral}{"["});}
+\DoxyCodeLine{00026 \textcolor{keyword}{const} std::string \mbox{\hyperlink{ExcelMechanisms_8cc_afe78097e7e8ceef40f1540c81b31e046}{bracketR}}(\textcolor{stringliteral}{"]"});}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00028}\mbox{\hyperlink{ExcelMechanisms_8cc_a12ea9eaf7398a6bb8d5546b0d428c74e}{00028}} \textcolor{keywordtype}{void} \mbox{\hyperlink{ExcelMechanisms_8cc_a12ea9eaf7398a6bb8d5546b0d428c74e}{printOneExcel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& x,                      }
+\DoxyCodeLine{00029                     \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& functionResult,}
+\DoxyCodeLine{00030                     \textcolor{keyword}{const} std::string\& title,}
+\DoxyCodeLine{00031                     \textcolor{keyword}{const} std::string\& horizontal, }
+\DoxyCodeLine{00032                     \textcolor{keyword}{const} std::string\& vertical,}
+\DoxyCodeLine{00033                     \textcolor{keyword}{const} std::string\& legend)}
+\DoxyCodeLine{00034 \{ }
+\DoxyCodeLine{00035     \textcolor{comment}{// N.B. Excel has a limit of 8 charts; after that you get a run-\/time error}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{// PREC: Type I}}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{if} (x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != functionResult.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}())}
+\DoxyCodeLine{00039     \{}
+\DoxyCodeLine{00040         }
+\DoxyCodeLine{00041         std::string tmp = std::string(\textcolor{stringliteral}{"Sizes of vectors are X, Y: "}) + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + std::string(\mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}}) + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(functionResult.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}());}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classDatasimException}{DatasimException}}(std::string(\textcolor{stringliteral}{"Size mismatch of two vectors"}), std::string(\textcolor{stringliteral}{"PrintOneExcel"}),}
+\DoxyCodeLine{00044             tmp);}
+\DoxyCodeLine{00045     \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048     std::cout << \textcolor{stringliteral}{"Starting Excel\(\backslash\)n"};}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& excel = \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{ExcelDriver::Instance}}();}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     excel.\mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{MakeVisible}}(\textcolor{keyword}{true});     \textcolor{comment}{// Default is INVISIBLE!}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{comment}{// Workaround}}
+\DoxyCodeLine{00055     std::list<std::string> legendList; legendList.push\_back(legend);}
+\DoxyCodeLine{00056     std::list<Vector<double, long> > functionResultList; functionResultList.push\_back(functionResult);}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     excel.\mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{CreateChart}}(x, legendList, functionResultList, title, horizontal, vertical);}
+\DoxyCodeLine{00059     }
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00062}\mbox{\hyperlink{ExcelMechanisms_8cc_a080c747b42a2f36d70cabb9c9b9d793f}{00062}} \textcolor{keywordtype}{void} \mbox{\hyperlink{ExcelMechanisms_8cc_a080c747b42a2f36d70cabb9c9b9d793f}{printInExcel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& x,        \textcolor{comment}{// X array}}
+\DoxyCodeLine{00063                     \textcolor{keyword}{const} std::list<std::string>\& labels,                   \textcolor{comment}{// Names of each vector}}
+\DoxyCodeLine{00064                     \textcolor{keyword}{const} std::list<\mbox{\hyperlink{classVector}{Vector<double, long>}} >\& functionResult, \textcolor{comment}{// The list of Y values}}
+\DoxyCodeLine{00065                     \textcolor{keyword}{const} std::string\& title,}
+\DoxyCodeLine{00066                     \textcolor{keyword}{const} std::string\& horizontal, }
+\DoxyCodeLine{00067                     \textcolor{keyword}{const} std::string\& vertical)}
+\DoxyCodeLine{00068 \{ \textcolor{comment}{// Print a list of Vectors in Excel. Each vector is the output of}}
+\DoxyCodeLine{00069   \textcolor{comment}{// a finite difference scheme for a scalar IVP}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{comment}{// PREC: Type I}}
+\DoxyCodeLine{00072 \textcolor{comment}{//  if (x.Size() != labels.size() || x.Size() != functionResult.size())}}
+\DoxyCodeLine{00073     \textcolor{comment}{// No cheque of x array size}}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{if} (labels.size() != functionResult.size())}
+\DoxyCodeLine{00075     \{}
+\DoxyCodeLine{00076         std::string tmp = \textcolor{stringliteral}{"Sizes of vectors are X, Y, Label: "} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(x.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} +}
+\DoxyCodeLine{00077             \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(functionResult.size()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(labels.size());}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classDatasimException}{DatasimException}}(std::string(\textcolor{stringliteral}{"Size mismatch of vectors and labels"}), std::string(\textcolor{stringliteral}{"PrintInExcel"}),}
+\DoxyCodeLine{00080             tmp);}
+\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     std::cout << \textcolor{stringliteral}{"Starting Excel\(\backslash\)n"};}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& excel = \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{ExcelDriver::Instance}}();}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     excel.\mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{MakeVisible}}(\textcolor{keyword}{true});     \textcolor{comment}{// Default is INVISIBLE!}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     excel.\mbox{\hyperlink{classExcelDriver_acecbf115d498691f0637a58ce6bffbf4}{CreateChart}}(x, labels, functionResult, title, horizontal, vertical);}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093 \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095 \textcolor{comment}{// Print a two-\/dimensional array (typically, one time level)}}
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00096}\mbox{\hyperlink{ExcelMechanisms_8cc_aac6ffa2b45a155a9ab9c33ea6a70c8e7}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{ExcelMechanisms_8cc_aac6ffa2b45a155a9ab9c33ea6a70c8e7}{printMatrixInExcel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix,}
+\DoxyCodeLine{00097                  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& xarr, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& yarr, }
+\DoxyCodeLine{00098                  \textcolor{keyword}{const} std::string\& SheetName)}
+\DoxyCodeLine{00099 \{}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{comment}{// PREC: Type II, III}}
+\DoxyCodeLine{00102     \textcolor{keywordflow}{if} (xarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != matrix.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}() || yarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != matrix.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}())}
+\DoxyCodeLine{00103     \{}
+\DoxyCodeLine{00104         std::string tmp = \textcolor{stringliteral}{"Vectors X, Y, matrix M: "} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(xarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(yarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}())}
+\DoxyCodeLine{00105             + \mbox{\hyperlink{ExcelMechanisms_8cc_ae7f29803a022e2b09ff177e1d4d317ba}{bracketL}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(matrix.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(matrix.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_afe78097e7e8ceef40f1540c81b31e046}{bracketR}};}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classDatasimException}{DatasimException}}(std::string(\textcolor{stringliteral}{"Size mismatch of vector(s) and matrix"}), std::string(\textcolor{stringliteral}{"PrintMatrixInExcel"}),}
+\DoxyCodeLine{00108             tmp);}
+\DoxyCodeLine{00109     \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& excel = \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{ExcelDriver::Instance}}();}
+\DoxyCodeLine{00112     excel.\mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{MakeVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00113     \textcolor{comment}{// Print a matrix showing the x and y positions}}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{comment}{// We need to convert the double arrays to lists of strings}}
+\DoxyCodeLine{00116     std::cout << \textcolor{stringliteral}{"Starting Excel"};}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118     std::list<std::string> rowlabels = \mbox{\hyperlink{StringConversions_8hh_aa9803942566e177490d69f756e68a138}{convertToString}}(xarr);}
+\DoxyCodeLine{00119     std::list<std::string> columnlabels = \mbox{\hyperlink{StringConversions_8hh_aa9803942566e177490d69f756e68a138}{convertToString}}(yarr);}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     std::cout << \textcolor{stringliteral}{"Staring Excel"};}
+\DoxyCodeLine{00122     }
+\DoxyCodeLine{00123     excel.\mbox{\hyperlink{classExcelDriver_a63753818c5895ff1ed84dad214de4332}{AddMatrix}}(SheetName, matrix, rowlabels, columnlabels);}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125 \}}
+\DoxyCodeLine{00126 \textcolor{comment}{// Print a matrix's rows as line graphs}}
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00127}\mbox{\hyperlink{ExcelMechanisms_8cc_a6d9f2b005d927a315bd5127c88317ce4}{00127}} \textcolor{keywordtype}{void} \mbox{\hyperlink{ExcelMechanisms_8cc_a6d9f2b005d927a315bd5127c88317ce4}{printMatrixChartsInExcel}}(\textcolor{keywordtype}{int} freq, \textcolor{comment}{// Selective printing}}
+\DoxyCodeLine{00128                  \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix,}
+\DoxyCodeLine{00129                  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& rowArr, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& colArr,}
+\DoxyCodeLine{00130                  \textcolor{keyword}{const} std::string\& SheetName)}
+\DoxyCodeLine{00131 \{}
+\DoxyCodeLine{00132     \textcolor{comment}{// PREC: Type II, III}}
+\DoxyCodeLine{00133     \textcolor{keywordflow}{if} (rowArr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != matrix.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}() || colArr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != matrix.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}())}
+\DoxyCodeLine{00134     \{}
+\DoxyCodeLine{00135         std::string tmp = std::string(\textcolor{stringliteral}{"Vectors X, Y, matrix M: "}) + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(rowArr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(colArr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}())}
+\DoxyCodeLine{00136              + \mbox{\hyperlink{ExcelMechanisms_8cc_ae7f29803a022e2b09ff177e1d4d317ba}{bracketL}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(matrix.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(matrix.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_afe78097e7e8ceef40f1540c81b31e046}{bracketR}};}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classDatasimException}{DatasimException}}(std::string(\textcolor{stringliteral}{"Size mismatch of vector(s) and matrix"}), std::string(\textcolor{stringliteral}{"PrintMatrixChartsInExcel"}),}
+\DoxyCodeLine{00139             tmp);}
+\DoxyCodeLine{00140     \}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     std::string title;}
+\DoxyCodeLine{00144     \mbox{\hyperlink{classVector}{Vector<double, long>}} tmp(matrix.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}(), matrix.\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}());}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = matrix.\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}(); \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} <= matrix.\mbox{\hyperlink{classMatrix_abd8766ab01ecf06e70cdce889afba641}{MaxRowIndex}}(); \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}++)}
+\DoxyCodeLine{00147     \{}
+\DoxyCodeLine{00148         title = \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00149         tmp = \mbox{\hyperlink{ExcelDriver_8hh_a1b724dd4e99548501ed8e37c192d9eca}{createVector}}(matrix, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}); \textcolor{comment}{// Can optimise (later)}}
+\DoxyCodeLine{00150         \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(tmp);}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152         \textcolor{keywordflow}{if} ((\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}/freq)*freq == \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00153         \{}
+\DoxyCodeLine{00154             \mbox{\hyperlink{ExcelMechanisms_8cc_a12ea9eaf7398a6bb8d5546b0d428c74e}{printOneExcel}}(colArr, tmp, title); }
+\DoxyCodeLine{00155         \}}
+\DoxyCodeLine{00156     \}}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158     }
+\DoxyCodeLine{00159 \}}
+\DoxyCodeLine{00160 \textcolor{comment}{/*}}
+\DoxyCodeLine{00161 \textcolor{comment}{// Print the vector that is the difference of two vectors}}
+\DoxyCodeLine{00162 \textcolor{comment}{void printDifferenceInExcel(const Vector<double, long>\& x,  const Vector<double, long>\& y1,                 }}
+\DoxyCodeLine{00163 \textcolor{comment}{                    const Vector<double, long>\& y2,}}
+\DoxyCodeLine{00164 \textcolor{comment}{                    const std::string\& title, }}
+\DoxyCodeLine{00165 \textcolor{comment}{                    const std::string\& horizontal, }}
+\DoxyCodeLine{00166 \textcolor{comment}{                    const std::string\& vertical,}}
+\DoxyCodeLine{00167 \textcolor{comment}{                    const std::string\& legend)}}
+\DoxyCodeLine{00168 \textcolor{comment}{\{}}
+\DoxyCodeLine{00169 \textcolor{comment}{}}
+\DoxyCodeLine{00170 \textcolor{comment}{    // PREC: Type IA}}
+\DoxyCodeLine{00171 \textcolor{comment}{    if (x.Size() != y1.Size() || x.Size() != y2.Size())}}
+\DoxyCodeLine{00172 \textcolor{comment}{    \{}}
+\DoxyCodeLine{00173 \textcolor{comment}{        std::string tmp = "Sizes vectors X,Y1,Y2: " + getString(x.Size()) + comma + getString(y1.Size()) }}
+\DoxyCodeLine{00174 \textcolor{comment}{                            + comma + getString(y2.Size());}}
+\DoxyCodeLine{00175 \textcolor{comment}{}}
+\DoxyCodeLine{00176 \textcolor{comment}{        throw DatasimException(string("Size mismatch of 3 vectors"), std::string("PrintDifferenceInExcel"),}}
+\DoxyCodeLine{00177 \textcolor{comment}{            tmp);}}
+\DoxyCodeLine{00178 \textcolor{comment}{    \}}}
+\DoxyCodeLine{00179 \textcolor{comment}{}}
+\DoxyCodeLine{00180 \textcolor{comment}{}}
+\DoxyCodeLine{00181 \textcolor{comment}{    Vector<double, long> diffVector = y1 -\/ y2;}}
+\DoxyCodeLine{00182 \textcolor{comment}{}}
+\DoxyCodeLine{00183 \textcolor{comment}{    printOneExcel(x, diffVector, title, horizontal, vertical, legend);}}
+\DoxyCodeLine{00184 \textcolor{comment}{    }}
+\DoxyCodeLine{00185 \textcolor{comment}{}}
+\DoxyCodeLine{00186 \textcolor{comment}{\}}}
+\DoxyCodeLine{00187 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00188}\mbox{\hyperlink{ExcelMechanisms_8cc_a90a4d89d2d56331257a8f262911446fc}{00188}} \textcolor{keywordtype}{void} \mbox{\hyperlink{ExcelMechanisms_8cc_a90a4d89d2d56331257a8f262911446fc}{printMatrixDifferenceInExcel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix1,}
+\DoxyCodeLine{00189                                   \textcolor{keyword}{const} \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}}\& matrix2,}
+\DoxyCodeLine{00190                  \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& xarr, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& yarr, }
+\DoxyCodeLine{00191                  \textcolor{keyword}{const} std::string\& SheetName)}
+\DoxyCodeLine{00192 \{}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194     \textcolor{comment}{// PREC: Type IV m1, m2 have same 'shape'}}
+\DoxyCodeLine{00195     \textcolor{keywordflow}{if} (matrix1.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}() != matrix2.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}() || matrix1.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}() != matrix2.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}())}
+\DoxyCodeLine{00196     \{}
+\DoxyCodeLine{00197         std::string tmp1 = std::string(\textcolor{stringliteral}{", x and y arrays: "}) + \mbox{\hyperlink{ExcelMechanisms_8cc_ae7f29803a022e2b09ff177e1d4d317ba}{bracketL}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(xarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(yarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_afe78097e7e8ceef40f1540c81b31e046}{bracketR}};}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199         std::string tmp = \textcolor{stringliteral}{"Incompatible matrices: ["} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(matrix1.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(matrix1.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_afe78097e7e8ceef40f1540c81b31e046}{bracketR}} + }
+\DoxyCodeLine{00200                         \mbox{\hyperlink{ExcelMechanisms_8cc_ae7f29803a022e2b09ff177e1d4d317ba}{bracketL}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(matrix2.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(matrix2.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_afe78097e7e8ceef40f1540c81b31e046}{bracketR}};}
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202         tmp += tmp1;}
+\DoxyCodeLine{00203 }
+\DoxyCodeLine{00204         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classDatasimException}{DatasimException}}(std::string(\textcolor{stringliteral}{"Size mismatch of matrices"}), std::string(\textcolor{stringliteral}{"PrintMatrixDifferenceInExcel"}),tmp);}
+\DoxyCodeLine{00205     \}}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<double, long>}} m2 = matrix1 -\/ matrix2;}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210     \textcolor{comment}{// PREC: Type II, III}}
+\DoxyCodeLine{00211     \textcolor{keywordflow}{if} (xarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != m2.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}() || yarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != m2.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}())}
+\DoxyCodeLine{00212     \{}
+\DoxyCodeLine{00213         std::string tmp = \textcolor{stringliteral}{"Vectors X, Y, matrix M: "} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(xarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(yarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + }
+\DoxyCodeLine{00214                         \mbox{\hyperlink{ExcelMechanisms_8cc_ae7f29803a022e2b09ff177e1d4d317ba}{bracketL}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(m2.\mbox{\hyperlink{classMatrix_a137b54c61fa1a897a903ea3c466dd271}{Rows}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(m2.\mbox{\hyperlink{classMatrix_a7e137fcf687b490b80b47269ba8c4ae6}{Columns}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_afe78097e7e8ceef40f1540c81b31e046}{bracketR}};}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classDatasimException}{DatasimException}}(std::string(\textcolor{stringliteral}{"Size mismatch of vector(s) and matrix"}), std::string(\textcolor{stringliteral}{"PrintMatrixDifferenceInExcel"}),}
+\DoxyCodeLine{00217             tmp);}
+\DoxyCodeLine{00218     \}}
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00220     \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}(m2);}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222     \mbox{\hyperlink{ExcelMechanisms_8cc_aac6ffa2b45a155a9ab9c33ea6a70c8e7}{printMatrixInExcel}}(m2, xarr, yarr, SheetName);}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224 \}}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{00226 \textcolor{comment}{// Print an array of matrices}}
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00227}\mbox{\hyperlink{ExcelMechanisms_8cc_a313f9f1c180fe0a21e71c17255702a54}{00227}} \textcolor{keywordtype}{void} \mbox{\hyperlink{ExcelMechanisms_8cc_a313f9f1c180fe0a21e71c17255702a54}{printTensorInExcel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<double, long>}}\& tensor, \textcolor{keywordtype}{long} freq)}
+\DoxyCodeLine{00228 \{}
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230     \textcolor{comment}{// PREC: None needed, always works}}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& excel = \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{ExcelDriver::Instance}}();}
+\DoxyCodeLine{00233     excel.\mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{MakeVisible}}(\textcolor{keyword}{true}); }
+\DoxyCodeLine{00234 }
+\DoxyCodeLine{00235     \textcolor{comment}{//  Use: excel.AddMatrix(sheetName, matrix, rowlabels, columnlabels);}}
+\DoxyCodeLine{00236 }
+\DoxyCodeLine{00237     std::list<std::string> rowlabels(tensor.\mbox{\hyperlink{classTensor_aef9f18eee21230b69a12c03ddf765abc}{MaxFirstIndex}}());}
+\DoxyCodeLine{00238     std::list<std::string> columnlabels(tensor.\mbox{\hyperlink{classTensor_aa7a13e524f1fbbfdf0bdf68192e034b4}{MaxSecondIndex}}());}
+\DoxyCodeLine{00239     std::string name;}
+\DoxyCodeLine{00240 }
+\DoxyCodeLine{00241     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = tensor.\mbox{\hyperlink{classTensor_aa95268c48800c8ca1dd6243b59a09543}{MinThirdIndex}}(); i <= tensor.\mbox{\hyperlink{classTensor_a6266f47513cc5b5924573ac58390b7cb}{MaxThirdIndex}}(); i++)}
+\DoxyCodeLine{00242     \{}
+\DoxyCodeLine{00243         name = \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(i);}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{00245         \textcolor{keywordflow}{if} ((i/freq)*freq == i || i == tensor.\mbox{\hyperlink{classTensor_aa95268c48800c8ca1dd6243b59a09543}{MinThirdIndex}}())}
+\DoxyCodeLine{00246         \{}
+\DoxyCodeLine{00247             excel.\mbox{\hyperlink{classExcelDriver_a63753818c5895ff1ed84dad214de4332}{AddMatrix}}(name, tensor[i], rowlabels, columnlabels);}
+\DoxyCodeLine{00248         \}}
+\DoxyCodeLine{00249 }
+\DoxyCodeLine{00250     \}}
+\DoxyCodeLine{00251 }
+\DoxyCodeLine{00252 \}}
+\DoxyCodeLine{00253 \textcolor{comment}{// Print an array of matrices}}
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00254}\mbox{\hyperlink{ExcelMechanisms_8cc_a72a0696bb629d417f41692f188717153}{00254}} \textcolor{keywordtype}{void} \mbox{\hyperlink{ExcelMechanisms_8cc_a313f9f1c180fe0a21e71c17255702a54}{printTensorInExcel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTensor}{Tensor<double, long>}}\& tensor,}
+\DoxyCodeLine{00255                 \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& xarr, \textcolor{keyword}{const} \mbox{\hyperlink{classVector}{Vector<double, long>}}\& yarr, }
+\DoxyCodeLine{00256                 \textcolor{keyword}{const} std::string\& SheetName, \textcolor{keywordtype}{long} freq)}
+\DoxyCodeLine{00257 \{}
+\DoxyCodeLine{00258 }
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260     \textcolor{comment}{// PREC: Type II, III}}
+\DoxyCodeLine{00261     \textcolor{keywordflow}{if} (xarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != tensor.\mbox{\hyperlink{classTensor_a1d19abc6ebc88dcd1e31a9035d4f42f1}{Rows}}() || yarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}() != tensor.\mbox{\hyperlink{classTensor_acb5f71b7416a3361164821b624933dd3}{Columns}}())}
+\DoxyCodeLine{00262     \{}
+\DoxyCodeLine{00263         std::string tmp = std::string(\textcolor{stringliteral}{"Vectors X, Y, tensor M: "}) + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(xarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(yarr.\mbox{\hyperlink{classArray_a69342621906b355e8244466f9eeece71}{Size}}()) + }
+\DoxyCodeLine{00264                         \mbox{\hyperlink{ExcelMechanisms_8cc_ae7f29803a022e2b09ff177e1d4d317ba}{bracketL}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(tensor.\mbox{\hyperlink{classTensor_a1d19abc6ebc88dcd1e31a9035d4f42f1}{Rows}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_aabafce4ba408fc2e6b3a9ae23264c15b}{comma}} + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(tensor.\mbox{\hyperlink{classTensor_acb5f71b7416a3361164821b624933dd3}{Columns}}()) + \mbox{\hyperlink{ExcelMechanisms_8cc_afe78097e7e8ceef40f1540c81b31e046}{bracketR}};}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00266         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classDatasimException}{DatasimException}}(std::string(\textcolor{stringliteral}{"Size mismatch of vector(s) and tensor"}), std::string(\textcolor{stringliteral}{"PrintTensorInExcel"}),}
+\DoxyCodeLine{00267             tmp);}
+\DoxyCodeLine{00268     \}}
+\DoxyCodeLine{00269 }
+\DoxyCodeLine{00270     std::list<std::string> rowlabels = \mbox{\hyperlink{StringConversions_8hh_aa9803942566e177490d69f756e68a138}{convertToString}}(xarr);}
+\DoxyCodeLine{00271     std::list<std::string> columnlabels = \mbox{\hyperlink{StringConversions_8hh_aa9803942566e177490d69f756e68a138}{convertToString}}(yarr);}
+\DoxyCodeLine{00272 }
+\DoxyCodeLine{00273     \mbox{\hyperlink{classExcelDriver}{ExcelDriver}}\& excel = \mbox{\hyperlink{classExcelDriver_a6134831444a75b0ddc0bbf7fb949b1f8}{ExcelDriver::Instance}}();}
+\DoxyCodeLine{00274     excel.\mbox{\hyperlink{classExcelDriver_ade5ecc043b7700ef93014799f278ae9b}{MakeVisible}}(\textcolor{keyword}{true}); }
+\DoxyCodeLine{00275 }
+\DoxyCodeLine{00276     std::string tmp;}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = tensor.\mbox{\hyperlink{classTensor_aa95268c48800c8ca1dd6243b59a09543}{MinThirdIndex}}(); i <= tensor.\mbox{\hyperlink{classTensor_a6266f47513cc5b5924573ac58390b7cb}{MaxThirdIndex}}(); i++)}
+\DoxyCodeLine{00279     \{}
+\DoxyCodeLine{00280         tmp = SheetName + \mbox{\hyperlink{StringConversions_8hh_a213a07386067dc8dfe4aa69843afd183}{getString}}(i);}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00282         \textcolor{keywordflow}{if} ((i/freq)*freq == i || i == tensor.\mbox{\hyperlink{classTensor_aa95268c48800c8ca1dd6243b59a09543}{MinThirdIndex}}())}
+\DoxyCodeLine{00283         \{}
+\DoxyCodeLine{00284             excel.\mbox{\hyperlink{classExcelDriver_a63753818c5895ff1ed84dad214de4332}{AddMatrix}}(tmp, tensor[i], rowlabels, columnlabels);}
+\DoxyCodeLine{00285         \}}
+\DoxyCodeLine{00286 }
+\DoxyCodeLine{00287     \}}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289 \}}
+\DoxyCodeLine{00290 }
+\DoxyCodeLine{00291 \textcolor{comment}{// Print discrete values of a continuous function on interval [A,B]}}
+\DoxyCodeLine{\Hypertarget{ExcelMechanisms_8cc_source_l00292}\mbox{\hyperlink{ExcelMechanisms_8cc_a4d6e83cb634939b5c6f7253db0416a6a}{00292}} \textcolor{keywordtype}{void} \mbox{\hyperlink{ExcelMechanisms_8cc_a4d6e83cb634939b5c6f7253db0416a6a}{printDiscreteFunctionValues}}(\textcolor{keywordtype}{double} (*f) (\textcolor{keywordtype}{double} x), \textcolor{keywordtype}{double} A, \textcolor{keywordtype}{double} \mbox{\hyperlink{classB}{B}}, \textcolor{keywordtype}{long} nSteps,}
+\DoxyCodeLine{00293                     \textcolor{keyword}{const} std::string\& title, }
+\DoxyCodeLine{00294                     \textcolor{keyword}{const} std::string\& horizontal, }
+\DoxyCodeLine{00295                     \textcolor{keyword}{const} std::string\& vertical,}
+\DoxyCodeLine{00296                     \textcolor{keyword}{const} std::string\& legend)}
+\DoxyCodeLine{00297 \{    }
+\DoxyCodeLine{00298 }
+\DoxyCodeLine{00299     \textcolor{comment}{// Create discrete x and y arrays}}
+\DoxyCodeLine{00300     \textcolor{keywordtype}{double} h = (\mbox{\hyperlink{classB}{B}} -\/ A) / \textcolor{keywordtype}{double} (nSteps);}
+\DoxyCodeLine{00301 }
+\DoxyCodeLine{00302     \mbox{\hyperlink{classVector}{Vector<double, long>}} mesh(nSteps + 1, 1);}
+\DoxyCodeLine{00303 }
+\DoxyCodeLine{00304     \textcolor{keywordtype}{double} val = A;}
+\DoxyCodeLine{00305 }
+\DoxyCodeLine{00306     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i = 1; i <= nSteps + 1; i++)  }
+\DoxyCodeLine{00307     \{}
+\DoxyCodeLine{00308         mesh[i] = val;}
+\DoxyCodeLine{00309         val += h;}
+\DoxyCodeLine{00310     \}}
+\DoxyCodeLine{00311 }
+\DoxyCodeLine{00312     \textcolor{comment}{// Now array of values}}
+\DoxyCodeLine{00313     \mbox{\hyperlink{classVector}{Vector<double, long>}} result(nSteps + 1, 1);}
+\DoxyCodeLine{00314 }
+\DoxyCodeLine{00315     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i2 = 1; i2 <= nSteps + 1; i2++)   }
+\DoxyCodeLine{00316     \{}
+\DoxyCodeLine{00317         result[i2] = (*f)(mesh[i2]);}
+\DoxyCodeLine{00318     }
+\DoxyCodeLine{00319     \}}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{00321     \mbox{\hyperlink{ExcelMechanisms_8cc_a12ea9eaf7398a6bb8d5546b0d428c74e}{printOneExcel}}(mesh, result, title, horizontal, vertical, legend);}
+\DoxyCodeLine{00322 \}}
+\DoxyCodeLine{00323 }
+\DoxyCodeLine{00324 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

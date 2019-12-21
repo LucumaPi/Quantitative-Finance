@@ -1,0 +1,150 @@
+\hypertarget{TestFunctionPointer_8cc}{}\doxysection{tests/\+Test\+Function\+Pointer.cc File Reference}
+\label{TestFunctionPointer_8cc}\index{tests/TestFunctionPointer.cc@{tests/TestFunctionPointer.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$duffy/\+Complex.\+hh$>$}\newline
+Include dependency graph for Test\+Function\+Pointer.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{TestFunctionPointer_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class V $>$ }\\V \mbox{\hyperlink{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}{add}} (V x, V y)
+\item 
+{\footnotesize template$<$class V $>$ }\\V \mbox{\hyperlink{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}{multiply}} (V x, V y)
+\item 
+{\footnotesize template$<$class V $>$ }\\V \mbox{\hyperlink{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}{subtract}} (V x, V y)
+\item 
+{\footnotesize template$<$class V $>$ }\\void \mbox{\hyperlink{TestFunctionPointer_8cc_a24ab3b71e1a0398e492a327c48bcaa8f}{generic\+Function}} (V myX, V myY, V($\ast$f)(V x, V y))
+\item 
+int \mbox{\hyperlink{TestFunctionPointer_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}\label{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}} 
+\index{TestFunctionPointer.cc@{TestFunctionPointer.cc}!add@{add}}
+\index{add@{add}!TestFunctionPointer.cc@{TestFunctionPointer.cc}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+V add (\begin{DoxyParamCaption}\item[{V}]{x,  }\item[{V}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestFunctionPointer_8cc_source_l00012}{12}} of file \mbox{\hyperlink{TestFunctionPointer_8cc_source}{Test\+Function\+Pointer.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     std::cout << \textcolor{stringliteral}{"** Adding two numbers: "} << x << \textcolor{stringliteral}{", "} << y << std::endl;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keywordflow}{return} x + y;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestFunctionPointer_8cc_a24ab3b71e1a0398e492a327c48bcaa8f}\label{TestFunctionPointer_8cc_a24ab3b71e1a0398e492a327c48bcaa8f}} 
+\index{TestFunctionPointer.cc@{TestFunctionPointer.cc}!genericFunction@{genericFunction}}
+\index{genericFunction@{genericFunction}!TestFunctionPointer.cc@{TestFunctionPointer.cc}}
+\doxysubsubsection{\texorpdfstring{genericFunction()}{genericFunction()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+void generic\+Function (\begin{DoxyParamCaption}\item[{V}]{myX,  }\item[{V}]{myY,  }\item[{V($\ast$)(V x, V y)}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestFunctionPointer_8cc_source_l00040}{40}} of file \mbox{\hyperlink{TestFunctionPointer_8cc_source}{Test\+Function\+Pointer.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041 \{ \textcolor{comment}{// A function that delivers two variables myX and MyY to the function pointer 'f'}}
+\DoxyCodeLine{00042   \textcolor{comment}{// This is a potentially reusable function}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{comment}{// Call the function with myX and myY}}
+\DoxyCodeLine{00045     V result = (*f)(myX, myY);}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     std::cout << \textcolor{stringliteral}{"Result is: "} << result << std::endl;}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestFunctionPointer_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestFunctionPointer_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestFunctionPointer.cc@{TestFunctionPointer.cc}!main@{main}}
+\index{main@{main}!TestFunctionPointer.cc@{TestFunctionPointer.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestFunctionPointer_8cc_source_l00051}{51}} of file \mbox{\hyperlink{TestFunctionPointer_8cc_source}{Test\+Function\+Pointer.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052 \{}
+\DoxyCodeLine{00053     \{}
+\DoxyCodeLine{00054         \textcolor{keywordtype}{double} x = 3.0;}
+\DoxyCodeLine{00055         \textcolor{keywordtype}{double} y = 2.0;}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057         genericFunction<double>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}{add}});}
+\DoxyCodeLine{00058         genericFunction<double>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}{multiply}});}
+\DoxyCodeLine{00059         genericFunction<double>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}{subtract}});}
+\DoxyCodeLine{00060     \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \mbox{\hyperlink{classComplex}{Complex}} x(3.0, 2.0);}
+\DoxyCodeLine{00063     \mbox{\hyperlink{classComplex}{Complex}} y(2.0, -\/4.9);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     genericFunction<Complex>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_ab765a37b9080d5c03ea3a60b12f8b42e}{add}});}
+\DoxyCodeLine{00066     genericFunction<Complex>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}{multiply}});}
+\DoxyCodeLine{00067     genericFunction<Complex>(x, y, \mbox{\hyperlink{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}{subtract}});}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00071 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}\label{TestFunctionPointer_8cc_aa6be4cf7079c0514c5a68e575c567067}} 
+\index{TestFunctionPointer.cc@{TestFunctionPointer.cc}!multiply@{multiply}}
+\index{multiply@{multiply}!TestFunctionPointer.cc@{TestFunctionPointer.cc}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+V multiply (\begin{DoxyParamCaption}\item[{V}]{x,  }\item[{V}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestFunctionPointer_8cc_source_l00021}{21}} of file \mbox{\hyperlink{TestFunctionPointer_8cc_source}{Test\+Function\+Pointer.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     std::cout << \textcolor{stringliteral}{"** Multiplying two numbers: "} << x << \textcolor{stringliteral}{", "} << y << std::endl;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keywordflow}{return} x * y;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}\label{TestFunctionPointer_8cc_afb04cfed572cc0cc4fcd2536ee927423}} 
+\index{TestFunctionPointer.cc@{TestFunctionPointer.cc}!subtract@{subtract}}
+\index{subtract@{subtract}!TestFunctionPointer.cc@{TestFunctionPointer.cc}}
+\doxysubsubsection{\texorpdfstring{subtract()}{subtract()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+V subtract (\begin{DoxyParamCaption}\item[{V}]{x,  }\item[{V}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestFunctionPointer_8cc_source_l00030}{30}} of file \mbox{\hyperlink{TestFunctionPointer_8cc_source}{Test\+Function\+Pointer.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     std::cout << \textcolor{stringliteral}{"** Subtracting two numbers: "} << x << \textcolor{stringliteral}{", "} << y << std::endl;}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{return} x -\/ y;}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 \}}
+
+\end{DoxyCode}

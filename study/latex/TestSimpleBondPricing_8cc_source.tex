@@ -1,0 +1,89 @@
+\hypertarget{TestSimpleBondPricing_8cc_source}{}\doxysection{Test\+Simple\+Bond\+Pricing.\+cc}
+\label{TestSimpleBondPricing_8cc_source}\index{tests/TestSimpleBondPricing.cc@{tests/TestSimpleBondPricing.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestSimpleBondPricing.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// (C) Datasim Education BV 2006}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{SimpleBondPricing_8hh}{duffy/SimpleBondPricing.hh}}>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{\Hypertarget{TestSimpleBondPricing_8cc_source_l00009}\mbox{\hyperlink{TestSimpleBondPricing_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00009}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestSimpleBondPricing_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00010 \{}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012     \textcolor{comment}{// Future value of a sum of money invested today}}
+\DoxyCodeLine{00013     \textcolor{keywordtype}{long} nPeriods = 6;              \textcolor{comment}{// 6 years}}
+\DoxyCodeLine{00014     \textcolor{keywordtype}{double} P = 10000000;    \textcolor{comment}{// Amount invested now}}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.092;      \textcolor{comment}{// 9.2\% interest}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keywordtype}{double} fv = \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{Chapter3CPPBook::FutureValue}}(P, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     std::cout.setf(std::ios\_base::fixed, std::ios\_base::floatfield);}
+\DoxyCodeLine{00020     std::cout << \textcolor{stringliteral}{"Future Value: "} << fv << std::endl;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordtype}{long} frequency = 2;}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{double} fv2 = \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{Chapter3CPPBook::FutureValue}}(P, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, frequency);}
+\DoxyCodeLine{00024 \textcolor{comment}{//  cout.setf(0, ios\_base::floatfield);}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     std::cout << \textcolor{stringliteral}{"Future Value, 2 periods: "} << fv2 << std::endl;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{comment}{// Future value of a sum of money invested today, m periods }}
+\DoxyCodeLine{00029     \textcolor{comment}{// per year. r is annual interest rate}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{comment}{// Using: means that we search in NS for the functions}}
+\DoxyCodeLine{00032     \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceChapter3CPPBook}{Chapter3CPPBook}};}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordtype}{double} P0 = 10000000; \textcolor{comment}{// 10 million}}
+\DoxyCodeLine{00035     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.092;}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{long} m = 2; \textcolor{comment}{// Twice per year}}
+\DoxyCodeLine{00037     nPeriods = 6;}
+\DoxyCodeLine{00038     std::cout << \textcolor{stringliteral}{"**Future with "} << m << \textcolor{stringliteral}{" periods: "} << \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{FutureValue}}(P0, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, m) << std::endl;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{comment}{// Future value of an ordinary annuity}}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{double} A = 2000000;}
+\DoxyCodeLine{00042     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.08;}
+\DoxyCodeLine{00043     nPeriods = 15;  \textcolor{comment}{// 15 years}}
+\DoxyCodeLine{00044     std::cout << \textcolor{stringliteral}{"**Ordinary Annuity; "} << \mbox{\hyperlink{namespaceChapter3CPPBook_a80457755c62c5cc27b0c679524f04896}{OrdinaryAnnuity}}(A, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})  << std::endl;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{comment}{// Present Value}}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{double} Pn = 5000000;}
+\DoxyCodeLine{00048     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.10;}
+\DoxyCodeLine{00049     nPeriods = 7;}
+\DoxyCodeLine{00050     std::cout << \textcolor{stringliteral}{"**Present value: "} << \mbox{\hyperlink{namespaceChapter3CPPBook_a18478ac60c06346fe86d2022fabefa07}{PresentValue}}(Pn, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}) << std::endl;}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{comment}{// Present Value of a series of future values}}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classVector}{Vector}} futureValues(5); \textcolor{comment}{// For five years}}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} j = 0; j < 4; j++)}
+\DoxyCodeLine{00055     \{ \textcolor{comment}{// The first 4 years}}
+\DoxyCodeLine{00056         futureValues[j] = 100.0;}
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058     futureValues[4] = 1100.0;}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     nPeriods = 5; \textcolor{comment}{// Redundant in a sense since this is in the vector}}
+\DoxyCodeLine{00061     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.0625;}
+\DoxyCodeLine{00062     std::cout << \textcolor{stringliteral}{"**Present value, series: "} << \mbox{\hyperlink{namespaceChapter3CPPBook_a18478ac60c06346fe86d2022fabefa07}{PresentValue}}(futureValues, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}) << std::endl;}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{comment}{// Present Value of an ordinary annuity}}
+\DoxyCodeLine{00065     A = 100.0;}
+\DoxyCodeLine{00066     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.09;}
+\DoxyCodeLine{00067     nPeriods = 8;}
+\DoxyCodeLine{00068     std::cout << \textcolor{stringliteral}{"**PV, ordinary annuity: "} << \mbox{\hyperlink{namespaceChapter3CPPBook_a73378b5ee752acf087d6005aca68cc4e}{PresentValueOrdinaryAnnuity}}(A, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}) << std::endl;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{comment}{// Now test periodic testing with continuous compounding}}
+\DoxyCodeLine{00071     P0 = 10000000;}
+\DoxyCodeLine{00072     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = 0.092;}
+\DoxyCodeLine{00073     nPeriods = 6;}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} mm = 1; mm <= 10000000; mm *=12)}
+\DoxyCodeLine{00075     \{}
+\DoxyCodeLine{00076         std::cout << \textcolor{stringliteral}{"Periodic: "} << mm << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{namespaceChapter3CPPBook_abe690d1487ddab992c08d7c68c53f3bc}{FutureValue}}(P0, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}, mm) << std::endl;}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     std::cout << \textcolor{stringliteral}{"Continuous Compounding: "} << \mbox{\hyperlink{namespaceChapter3CPPBook_a7a6cebaf5369ebd4c06b3747e9b5491f}{FutureValueContinuous}}(P0, nPeriods, \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00083 \}}
+
+\end{DoxyCode}

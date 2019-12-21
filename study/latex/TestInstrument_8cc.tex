@@ -1,0 +1,68 @@
+\hypertarget{TestInstrument_8cc}{}\doxysection{tests/\+Test\+Instrument.cc File Reference}
+\label{TestInstrument_8cc}\index{tests/TestInstrument.cc@{tests/TestInstrument.cc}}
+{\ttfamily \#include $<$duffy/\+Instrument.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+B\+S\+I\+B\+V\+P\+Imp.\+hh$>$}\newline
+Include dependency graph for Test\+Instrument.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestInstrument_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInstrumentFactory}{Instrument\+Factory}} $\ast$ \mbox{\hyperlink{TestInstrument_8cc_a944b59805882970c6620c319340c3d0d}{Get\+Instrument\+Factory}} ()
+\item 
+int \mbox{\hyperlink{TestInstrument_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestInstrument_8cc_a944b59805882970c6620c319340c3d0d}\label{TestInstrument_8cc_a944b59805882970c6620c319340c3d0d}} 
+\index{TestInstrument.cc@{TestInstrument.cc}!GetInstrumentFactory@{GetInstrumentFactory}}
+\index{GetInstrumentFactory@{GetInstrumentFactory}!TestInstrument.cc@{TestInstrument.cc}}
+\doxysubsubsection{\texorpdfstring{GetInstrumentFactory()}{GetInstrumentFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classInstrumentFactory}{Instrument\+Factory}}$\ast$ Get\+Instrument\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestInstrument_8cc_source_l00005}{5}} of file \mbox{\hyperlink{TestInstrument_8cc_source}{Test\+Instrument.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classConsoleInstrumentFactory}{ConsoleInstrumentFactory}};}
+\DoxyCodeLine{00008 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestInstrument_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestInstrument_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestInstrument.cc@{TestInstrument.cc}!main@{main}}
+\index{main@{main}!TestInstrument.cc@{TestInstrument.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestInstrument_8cc_source_l00010}{10}} of file \mbox{\hyperlink{TestInstrument_8cc_source}{Test\+Instrument.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012     \mbox{\hyperlink{classInstrumentFactory}{InstrumentFactory}}* myFactory = \mbox{\hyperlink{TestInstrument_8cc_a944b59805882970c6620c319340c3d0d}{GetInstrumentFactory}}();}
+\DoxyCodeLine{00013     \mbox{\hyperlink{classOption}{Option}}* myOption = myFactory -\/>\mbox{\hyperlink{classInstrumentFactory_acc735ba0c9d3b8c36269d3553c1cb401}{CreateOption}}();}
+\DoxyCodeLine{00014     \textcolor{comment}{// class IBVPImp \{ \};}}
+\DoxyCodeLine{00015     \textcolor{comment}{// class BSImp : public IBVPImp}}
+\DoxyCodeLine{00016     \textcolor{comment}{// \{}}
+\DoxyCodeLine{00017     \textcolor{comment}{// public:}}
+\DoxyCodeLine{00018     \textcolor{comment}{//  Option* opt;}}
+\DoxyCodeLine{00019     \textcolor{comment}{//  BSImp() \{\}}}
+\DoxyCodeLine{00020     \textcolor{comment}{// \};}}
+\DoxyCodeLine{00021     \textcolor{comment}{// Derived implementation class}}
+\DoxyCodeLine{00022     \mbox{\hyperlink{classBSIBVPImp}{BSIBVPImp}} bs (*myOption);}
+\DoxyCodeLine{00023     bs.opt = myOption;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00026 \}}
+
+\end{DoxyCode}

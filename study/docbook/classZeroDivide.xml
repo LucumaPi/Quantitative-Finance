@@ -23,12 +23,63 @@ Collaboration diagram for ZeroDivide:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classZeroDivide_1ab77784ee863d55e39c8391fdd657b3e2"/><emphasis role="strong">ZeroDivide</emphasis> (const std::string &amp;message, const std::string &amp;method, const std::string &amp;annotation)</para>
+            <listitem><para><link linkend="_classZeroDivide_1a4ef0fccc373f2767c79febd8b2500c61">ZeroDivide</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classZeroDivide_1a0281c677520a3f336cd811c13c4ab17c"/>std::vector&lt; std::string &gt; <emphasis role="strong">MessageDump</emphasis> () const</para>
+            <listitem><para><link linkend="_classZeroDivide_1ab77784ee863d55e39c8391fdd657b3e2">ZeroDivide</link> (const std::string &amp;message, const std::string &amp;method, const std::string &amp;annotation)</para>
+</listitem>
+            <listitem><para>std::vector&lt; std::string &gt; <link linkend="_classZeroDivide_1a0281c677520a3f336cd811c13c4ab17c">MessageDump</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 54 of file MathErr.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classZeroDivide_1a4ef0fccc373f2767c79febd8b2500c61"/>    <section>
+    <title>ZeroDivide()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>ZeroDivide</primary><secondary>ZeroDivide</secondary></indexterm>
+<indexterm><primary>ZeroDivide</primary><secondary>ZeroDivide</secondary></indexterm>
+<para><computeroutput>ZeroDivide::ZeroDivide ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 61 of file MathErr.cc.</para>
+<programlisting>61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classMathErr_1a92ae6f6640c3979720b743a62f106d95">MathErr</link>()
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mess&#32;=&#32;std::string();
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classZeroDivide_1ab77784ee863d55e39c8391fdd657b3e2"/>    <section>
+    <title>ZeroDivide()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>ZeroDivide</primary><secondary>ZeroDivide</secondary></indexterm>
+<indexterm><primary>ZeroDivide</primary><secondary>ZeroDivide</secondary></indexterm>
+<para><computeroutput>ZeroDivide::ZeroDivide (const std::string &amp; message, const std::string &amp; method, const std::string &amp; annotation)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 66 of file MathErr.cc.</para>
+<programlisting>67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classMathErr_1a92ae6f6640c3979720b743a62f106d95">MathErr</link>&#32;(message,&#32;method)
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mess&#32;=&#32;annotation;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classZeroDivide_1a0281c677520a3f336cd811c13c4ab17c"/>    <section>
+    <title>MessageDump()</title>
+<indexterm><primary>MessageDump</primary><secondary>ZeroDivide</secondary></indexterm>
+<indexterm><primary>ZeroDivide</primary><secondary>MessageDump</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::string&gt; ZeroDivide::MessageDump ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classMathErr_1a420f29972f9a21d2a9d8d3a90d0c844a">MathErr</link>.</para>
+<para>
+Definition at line 72 of file MathErr.cc.</para>
+<programlisting>73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;Full&#32;message</emphasis>
+74 
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::string&gt;&#32;result(3);
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[0]&#32;=&#32;<link linkend="_classMathErr_1a02dab9085b81ab4ad1e1dd6ce3179e74">Message</link>();
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[1]&#32;=&#32;<link linkend="_classMathErr_1a63e28b64f06194252a7723ef7d349148">Method</link>();
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[2]&#32;=&#32;mess;
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-src/MathErr.cc</section>
+src/<link linkend="_MathErr_8cc">MathErr.cc</link></section>
+</section>

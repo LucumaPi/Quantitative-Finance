@@ -1,0 +1,116 @@
+\hypertarget{TestSet1_8cc}{}\doxysection{tests/\+Test\+Set1.cc File Reference}
+\label{TestSet1_8cc}\index{tests/TestSet1.cc@{tests/TestSet1.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Test\+Set1.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{TestSet1_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}{print}} (const std\+::set$<$ T $>$ \&my\+Set, const std\+::string \&name)
+\item 
+int \mbox{\hyperlink{TestSet1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestSet1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestSet1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestSet1.cc@{TestSet1.cc}!main@{main}}
+\index{main@{main}!TestSet1.cc@{TestSet1.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSet1_8cc_source_l00032}{32}} of file \mbox{\hyperlink{TestSet1_8cc_source}{Test\+Set1.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033 \{}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     std::set<std::string> \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}};               \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{// Only unique (new elements) added}}
+\DoxyCodeLine{00038     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.insert(\textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{00039     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.insert(\textcolor{stringliteral}{"T"});}
+\DoxyCodeLine{00040     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.insert(\textcolor{stringliteral}{"sigma"});}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     std::cout << \textcolor{stringliteral}{"First Size: "} << \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.size() << std::endl;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     std::set<std::string> \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}} (\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}});    \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{comment}{// Add extra elements to second set}}
+\DoxyCodeLine{00047     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.insert(\textcolor{stringliteral}{"r"});   \textcolor{comment}{// "Interest rate"}}
+\DoxyCodeLine{00048     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.insert(\textcolor{stringliteral}{"K"});   \textcolor{comment}{// "Strike price"}}
+\DoxyCodeLine{00049     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.insert(\textcolor{stringliteral}{"S"});   \textcolor{comment}{// "Current underlying price"}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.insert(\textcolor{stringliteral}{"b"});   \textcolor{comment}{// "Cost of carry"}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \mbox{\hyperlink{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}{print}}(\mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, \textcolor{stringliteral}{"Second set"}); }
+\DoxyCodeLine{00053     \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.erase(\textcolor{stringliteral}{"K"});}
+\DoxyCodeLine{00054     \mbox{\hyperlink{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}{print}}(\mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, \textcolor{stringliteral}{"Second set"});}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     std::cout << \textcolor{stringliteral}{"Second Size: "} << \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}.size() << std::endl;}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{comment}{// Are the sets the same?}}
+\DoxyCodeLine{00059     \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}} == \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}})}
+\DoxyCodeLine{00060         std::cout << \textcolor{stringliteral}{"Sets have same elements\(\backslash\)n"};}
+\DoxyCodeLine{00061     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00062         std::cout << \textcolor{stringliteral}{"Not same elements\(\backslash\)n"};}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{comment}{// A bit of swapping}}
+\DoxyCodeLine{00065     swap(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}});}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{comment}{// Assignment}}
+\DoxyCodeLine{00068     std::set<std::string> third = \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}};}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{comment}{// Now print the sets }}
+\DoxyCodeLine{00072     \mbox{\hyperlink{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}{print}}(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \textcolor{stringliteral}{"First set"});}
+\DoxyCodeLine{00073     \mbox{\hyperlink{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}{print}}(\mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}}, \textcolor{stringliteral}{"Second set"});}
+\DoxyCodeLine{00074     \mbox{\hyperlink{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}{print}}(third, \textcolor{stringliteral}{"Third set"});}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{comment}{// Now creat a set representing Executive options}}
+\DoxyCodeLine{00078     std::set<std::string> execOption(\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}});}
+\DoxyCodeLine{00079     execOption.insert(\textcolor{stringliteral}{"lambda"});        \textcolor{comment}{// The jump rate, see Haug 1998}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \mbox{\hyperlink{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}{print}}(execOption, \textcolor{stringliteral}{"An Executive Option"});}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}\label{TestSet1_8cc_a1279cd779f5c62d5b1506dcb120f3019}} 
+\index{TestSet1.cc@{TestSet1.cc}!print@{print}}
+\index{print@{print}!TestSet1.cc@{TestSet1.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{my\+Set,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSet1_8cc_source_l00016}{16}} of file \mbox{\hyperlink{TestSet1_8cc_source}{Test\+Set1.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017 \{  \textcolor{comment}{// Print the contents of a set. Notice the presence of a const iterator.}}
+\DoxyCodeLine{00018     }
+\DoxyCodeLine{00019     std::cout << std::endl << name << \textcolor{stringliteral}{", size of set is "} << mySet.size() << \textcolor{stringliteral}{"\(\backslash\)n["};}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{keyword}{typename} std::set<T>::const\_iterator i;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keywordflow}{for} (i = mySet.begin(); i != mySet.end(); ++i)}
+\DoxyCodeLine{00024     \{}
+\DoxyCodeLine{00025             std::cout << (*i) << \textcolor{stringliteral}{","};}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     std::cout << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}

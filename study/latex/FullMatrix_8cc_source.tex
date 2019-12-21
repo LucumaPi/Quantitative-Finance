@@ -1,0 +1,97 @@
+\hypertarget{FullMatrix_8cc_source}{}\doxysection{Full\+Matrix.\+cc}
+\label{FullMatrix_8cc_source}\index{src/FullMatrix.cc@{src/FullMatrix.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// FullMatrix.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Template class for normal matrices.}}
+\DoxyCodeLine{00004 \textcolor{comment}{// A size\_t is used for indexing. Indexing starts at 1.}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2002-\/4-\/8 DD Another possibility FArray<FArray <TValue> >; Use or redundant values nr, nc}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Component Technology 1999}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef FullMatrix\_CC}}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00011}\mbox{\hyperlink{FullMatrix_8cc_a4fc9f18c40d8a8fc957a27ceb67de86f}{00011}} \textcolor{preprocessor}{\#define FullMatrix\_CC}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{FullMatrix_8hh}{duffy/FullMatrix.hh}}>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00016 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00017}\mbox{\hyperlink{classFullMatrix_a752d914154ab281d1ae08b78408516a1}{00017}} \mbox{\hyperlink{classFullMatrix_a752d914154ab281d1ae08b78408516a1}{FullMatrix<V, TA>::FullMatrix}}(): \mbox{\hyperlink{classMatrixStructure}{MatrixStructure}}<V>()}
+\DoxyCodeLine{00018 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00019     m\_structure = \mbox{\hyperlink{classFullArray}{FullArray<FullArray<V, TA>}}, std::allocator<FullArray<V, TA> > >();}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     nr = nc = 1;}
+\DoxyCodeLine{00022 \}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00025}\mbox{\hyperlink{classFullMatrix_accfbf4f02da561a51dc82fdddaca6b22}{00025}} \mbox{\hyperlink{classFullMatrix_a752d914154ab281d1ae08b78408516a1}{FullMatrix<V, TA>::FullMatrix}}(std::size\_t rows, std::size\_t columns): \mbox{\hyperlink{classMatrixStructure}{MatrixStructure}}<V>()}
+\DoxyCodeLine{00026 \{ \textcolor{comment}{// Constructor with size}}
+\DoxyCodeLine{00027     \textcolor{comment}{// Create the rows}}
+\DoxyCodeLine{00028     m\_structure = \mbox{\hyperlink{classFullArray}{FullArray<FullArray<V, TA>}}, std::allocator<FullArray<V, TA> > >(rows);}
+\DoxyCodeLine{00029     \textcolor{comment}{// Add the columns to the rows}}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{for} (std::size\_t i=1; i<=m\_structure.\mbox{\hyperlink{classFullArray_ae9a91c66741570e20758d54664676db8}{Size}}(); i++) m\_structure[i]=\mbox{\hyperlink{classFullArray}{FullArray<V, TA>}}(columns);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     nr = rows; nc = columns;}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00036}\mbox{\hyperlink{classFullMatrix_a172dc8750fab16c65e0442f864193176}{00036}} \mbox{\hyperlink{classFullMatrix_a752d914154ab281d1ae08b78408516a1}{FullMatrix<V, TA>::FullMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classFullMatrix}{FullMatrix<V, TA>}}\& source): \mbox{\hyperlink{classMatrixStructure}{MatrixStructure}}<V>(source)}
+\DoxyCodeLine{00037 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00038     m\_structure = source.m\_structure;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     nr = source.nr; nc = source.nc;}
+\DoxyCodeLine{00041 \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00044}\mbox{\hyperlink{classFullMatrix_a0cdc89fd0c146b85ab72234c10f6bde0}{00044}} \mbox{\hyperlink{classFullMatrix_a0cdc89fd0c146b85ab72234c10f6bde0}{FullMatrix<V, TA>::~FullMatrix}}()}
+\DoxyCodeLine{00045 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00046 \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00049 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00050}\mbox{\hyperlink{classFullMatrix_a1fb7853dc531966114d01cf5720dd6aa}{00050}} std::size\_t \mbox{\hyperlink{classFullMatrix_a1fb7853dc531966114d01cf5720dd6aa}{FullMatrix<V, TA>::Rows}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00051 \textcolor{keyword}{}\{ \textcolor{comment}{// Number of rows}}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{return} nr;}
+\DoxyCodeLine{00053 \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00056}\mbox{\hyperlink{classFullMatrix_a6d02c0f09e188825938f9af6ae708614}{00056}} std::size\_t \mbox{\hyperlink{classFullMatrix_a6d02c0f09e188825938f9af6ae708614}{FullMatrix<V, TA>::Columns}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00057 \textcolor{keyword}{}\{ \textcolor{comment}{// Number of columns}}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{return} nc;}
+\DoxyCodeLine{00059 \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00062 \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00063 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00064}\mbox{\hyperlink{classFullMatrix_abd4a9ea33b2b38aef74bffb0a37f689b}{00064}} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<V>}}\& \mbox{\hyperlink{classFullMatrix_abd4a9ea33b2b38aef74bffb0a37f689b}{FullMatrix<V, TA>::operator[] }}(std::size\_t row)}
+\DoxyCodeLine{00065 \{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00066     \textcolor{keywordflow}{return} m\_structure[row];}
+\DoxyCodeLine{00067 \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00070}\mbox{\hyperlink{classFullMatrix_a3a3450231c70f9cf1cac99b6abe242ea}{00070}} \textcolor{keyword}{const} \mbox{\hyperlink{classArrayStructure}{ArrayStructure<V>}}\& \mbox{\hyperlink{classFullMatrix_abd4a9ea33b2b38aef74bffb0a37f689b}{FullMatrix<V, TA>::operator[] }}(std::size\_t row)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00071 \textcolor{keyword}{}\{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00072     \textcolor{keywordflow}{return} m\_structure[row];}
+\DoxyCodeLine{00073 \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullMatrix_8cc_source_l00076}\mbox{\hyperlink{classFullMatrix_a27f85bb35d5ae4e346524707eb94674d}{00076}} \mbox{\hyperlink{classFullMatrix}{FullMatrix<V, TA>}}\& \mbox{\hyperlink{classFullMatrix_a27f85bb35d5ae4e346524707eb94674d}{FullMatrix<V, TA>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classFullMatrix}{FullMatrix<V, TA>}}\& source)}
+\DoxyCodeLine{00077 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00080     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{comment}{// Call base class assignment}}
+\DoxyCodeLine{00083     \mbox{\hyperlink{classMatrixStructure_a1d17ffed41cc515e70f90208b999191e}{MatrixStructure<V>::operator = }}(source);}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     m\_structure = source.m\_structure;}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     nr = source.nr; nc = source.nc;}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00090 \}}
+\DoxyCodeLine{00091 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

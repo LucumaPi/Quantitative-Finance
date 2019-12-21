@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classNS__NonlinearSolver_1_1SecantMethodSolver">
 <title>NS_NonlinearSolver::SecantMethodSolver Class Reference</title>
 <indexterm><primary>NS_NonlinearSolver::SecantMethodSolver</primary></indexterm>
+<para>
+<computeroutput>#include &lt;NonlinearSolver.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for NS_NonlinearSolver::SecantMethodSolver:<para>
     <informalfigure>
         <mediaobject>
@@ -23,16 +26,87 @@ Collaboration diagram for NS_NonlinearSolver::SecantMethodSolver:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1SecantMethodSolver_1a3efbb4b75f28b61edcd72dcc9d6a0906"/><emphasis role="strong">SecantMethodSolver</emphasis> (double guessZero, double guessOne, double(*myFunction)(double x))</para>
+            <listitem><para><link linkend="_classNS__NonlinearSolver_1_1SecantMethodSolver_1a3efbb4b75f28b61edcd72dcc9d6a0906">SecantMethodSolver</link> (double guessZero, double guessOne, double(*myFunction)(double x))</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1SecantMethodSolver_1aa0353904d822a9d68c3c399de5b2a858"/>double <emphasis role="strong">solve</emphasis> ()</para>
+            <listitem><para>double <link linkend="_classNS__NonlinearSolver_1_1SecantMethodSolver_1aa0353904d822a9d68c3c399de5b2a858">solve</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classNS__NonlinearSolver_1_1SecantMethodSolver_1a8271bc72f3bc379f5f0846ca462fd221"/>void <emphasis role="strong">printStatistics</emphasis> () const</para>
+            <listitem><para>void <link linkend="_classNS__NonlinearSolver_1_1SecantMethodSolver_1a8271bc72f3bc379f5f0846ca462fd221">printStatistics</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 173 of file NonlinearSolver.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1SecantMethodSolver_1a3efbb4b75f28b61edcd72dcc9d6a0906"/>    <section>
+    <title>SecantMethodSolver()</title>
+<indexterm><primary>SecantMethodSolver</primary><secondary>NS_NonlinearSolver::SecantMethodSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::SecantMethodSolver</primary><secondary>SecantMethodSolver</secondary></indexterm>
+<para><computeroutput>NS_NonlinearSolver::SecantMethodSolver::SecantMethodSolver (double guessZero, double guessOne, double(*)(double x) myFunction)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 187 of file NonlinearSolver.hh.</para>
+<programlisting>189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x0&#32;=&#32;guessZero;
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x1&#32;=&#32;guessOne;
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>&#32;=&#32;myFunction;
+193 
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xOld&#32;=&#32;x0;&#32;xNew&#32;=&#32;x1;&#32;xCurrent&#32;=&#32;xNew;
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fOld&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(xOld);&#32;fNew&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(xNew);
+196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classNS__NonlinearSolver_1_1SecantMethodSolver_1a8271bc72f3bc379f5f0846ca462fd221"/>    <section>
+    <title>printStatistics()</title>
+<indexterm><primary>printStatistics</primary><secondary>NS_NonlinearSolver::SecantMethodSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::SecantMethodSolver</primary><secondary>printStatistics</secondary></indexterm>
+<para><computeroutput>void NS_NonlinearSolver::SecantMethodSolver::printStatistics ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 223 of file NonlinearSolver.hh.</para>
+<programlisting>224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+225 
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nData&#32;pertaining&#32;to&#32;Secant&#32;method\n&quot;</emphasis>;
+227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Value:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;xCurrent&#32;&lt;&lt;&#32;std::endl;
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Number&#32;of&#32;iterations&#32;(actual):&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;&lt;&lt;&#32;std::endl;
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_classNS__NonlinearSolver_1_1SecantMethodSolver_1aa0353904d822a9d68c3c399de5b2a858"/>    <section>
+    <title>solve()</title>
+<indexterm><primary>solve</primary><secondary>NS_NonlinearSolver::SecantMethodSolver</secondary></indexterm>
+<indexterm><primary>NS_NonlinearSolver::SecantMethodSolver</primary><secondary>solve</secondary></indexterm>
+<para><computeroutput>double NS_NonlinearSolver::SecantMethodSolver::solve ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1a7336902d70e3ae47194eb92abac04333">NS_NonlinearSolver::NonlinearSolver</link>.</para>
+<para>
+Definition at line 198 of file NonlinearSolver.hh.</para>
+<programlisting>199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;diff;
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;hn;&#32;
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;=&#32;1;
+203 L1:
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(fOld&#32;!=&#32;fNew);
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diff&#32;=&#32;(xNew&#32;-&#32;xOld)/(fNew&#32;-&#32;fOld);&#32;<emphasis role="comment">//&#32;divide&#32;by&#32;zero?</emphasis>
+206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hn&#32;=&#32;-&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(xNew)&#32;*&#32;diff;
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xCurrent&#32;=&#32;xNew&#32;+&#32;hn;
+208 
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>++;
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(::fabs(hn)&#32;&lt;=&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1ac028904a727110ecb0394662a629b6ba">tol</link>)
+211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+212 
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;xCurrent;
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+215 
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Update&#32;all&#32;registers</emphasis>
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xOld&#32;=&#32;xNew;&#32;xNew&#32;=&#32;xCurrent;&#32;
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fOld&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(xOld);&#32;fNew&#32;=&#32;<link linkend="_classNS__NonlinearSolver_1_1NonlinearSolver_1aef2c0d0470384254b4dd2b6c8dd1f6e6">myF</link>(xNew);
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-include/duffy/NonlinearSolver.hh</section>
+include/duffy/<link linkend="_NonlinearSolver_8hh">NonlinearSolver.hh</link></section>
+</section>

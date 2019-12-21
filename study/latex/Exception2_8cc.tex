@@ -1,0 +1,135 @@
+\hypertarget{Exception2_8cc}{}\doxysection{tests/\+Exception2.cc File Reference}
+\label{Exception2_8cc}\index{tests/Exception2.cc@{tests/Exception2.cc}}
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}../src/\+Math\+Err.\+cc\char`\"{}}\newline
+Include dependency graph for Exception2.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{Exception2_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class V $>$ }\\void \mbox{\hyperlink{Exception2_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}} (const std\+::vector$<$ V $>$ \&v)
+\item 
+{\footnotesize template$<$class V $>$ }\\V \mbox{\hyperlink{Exception2_8cc_a37185c557354c7e617e677999957a52d}{sum\+Reciprocals}} (const std\+::vector$<$ V $>$ \&array)
+\item 
+int \mbox{\hyperlink{Exception2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Exception2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Exception2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Exception2.cc@{Exception2.cc}!main@{main}}
+\index{main@{main}!Exception2.cc@{Exception2.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Exception2_8cc_source_l00044}{44}} of file \mbox{\hyperlink{Exception2_8cc_source}{Exception2.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045 \{}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{int} size = 10;}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{double} elementsValue = 3.1415;}
+\DoxyCodeLine{00048     std::vector<double> myArray (size, elementsValue);}
+\DoxyCodeLine{00049     myArray[5] = 0.0;}
+\DoxyCodeLine{00050     \mbox{\hyperlink{Exception2_8cc_a5505649500f56eb117210d7ffa7fa45b}{print}}(myArray);}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{comment}{// Now create a try/catch block}}
+\DoxyCodeLine{00053     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00054     \{}
+\DoxyCodeLine{00055         \textcolor{keywordtype}{double} answer = \mbox{\hyperlink{Exception2_8cc_a37185c557354c7e617e677999957a52d}{sumReciprocals}}(myArray);}
+\DoxyCodeLine{00056         std::cout << \textcolor{stringliteral}{"Sum of reciprocals: "} << answer << std::endl;}
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classZeroDivide}{ZeroDivide}}\& exception)}
+\DoxyCodeLine{00059     \{}
+\DoxyCodeLine{00060         exception.\mbox{\hyperlink{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}{print}}();}
+\DoxyCodeLine{00061     \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063 Lab1:   \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00064         \{}
+\DoxyCodeLine{00065             std::cout << \textcolor{stringliteral}{"\(\backslash\)nGive a new value for index number 5:"};}
+\DoxyCodeLine{00066             \textcolor{keywordtype}{double} val;}
+\DoxyCodeLine{00067             std::cin >> val;}
+\DoxyCodeLine{00068             myArray[5] = val;}
+\DoxyCodeLine{00069             \textcolor{keywordflow}{if} (val == 999.0)}
+\DoxyCodeLine{00070             \{}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{return} 1; \textcolor{comment}{// Exit the program}}
+\DoxyCodeLine{00072             \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074             \textcolor{keywordtype}{double} answer = \mbox{\hyperlink{Exception2_8cc_a37185c557354c7e617e677999957a52d}{sumReciprocals}}(myArray);}
+\DoxyCodeLine{00075             std::cout << \textcolor{stringliteral}{"Sum of reciprocals: "} << answer << std::endl;}
+\DoxyCodeLine{00076         \}}
+\DoxyCodeLine{00077         \textcolor{keywordflow}{catch} (\mbox{\hyperlink{classZeroDivide}{ZeroDivide}}\& exception)}
+\DoxyCodeLine{00078         \{}
+\DoxyCodeLine{00079             exception.\mbox{\hyperlink{classMathErr_a08430e27bd7a6a09cfc5debdef3e8a65}{print}}();}
+\DoxyCodeLine{00080             \textcolor{keywordflow}{goto} Lab1;}
+\DoxyCodeLine{00081         \}}
+\DoxyCodeLine{00082     }
+\DoxyCodeLine{00083     }
+\DoxyCodeLine{00084         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Exception2_8cc_a5505649500f56eb117210d7ffa7fa45b}\label{Exception2_8cc_a5505649500f56eb117210d7ffa7fa45b}} 
+\index{Exception2.cc@{Exception2.cc}!print@{print}}
+\index{print@{print}!Exception2.cc@{Exception2.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ V $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Exception2_8cc_source_l00013}{13}} of file \mbox{\hyperlink{Exception2_8cc_source}{Exception2.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016     std::cout << \textcolor{stringliteral}{"\(\backslash\)nARR:["};}
+\DoxyCodeLine{00017     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < v.size(); j++)}
+\DoxyCodeLine{00018     \{}
+\DoxyCodeLine{00019         std::cout << v[j] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00020     }
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     std::cout << \textcolor{stringliteral}{"]"} << std::endl;}
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Exception2_8cc_a37185c557354c7e617e677999957a52d}\label{Exception2_8cc_a37185c557354c7e617e677999957a52d}} 
+\index{Exception2.cc@{Exception2.cc}!sumReciprocals@{sumReciprocals}}
+\index{sumReciprocals@{sumReciprocals}!Exception2.cc@{Exception2.cc}}
+\doxysubsubsection{\texorpdfstring{sumReciprocals()}{sumReciprocals()}}
+{\footnotesize\ttfamily template$<$class V $>$ \\
+V sum\+Reciprocals (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ V $>$ \&}]{array }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Exception2_8cc_source_l00027}{27}} of file \mbox{\hyperlink{Exception2_8cc_source}{Exception2.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028 \{ \textcolor{comment}{// Sum of reciprocals }}
+\DoxyCodeLine{00029     }
+\DoxyCodeLine{00030         V ans = V(0.0);}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < array.size(); j++)}
+\DoxyCodeLine{00032         \{}
+\DoxyCodeLine{00033             \textcolor{keywordflow}{if} (fabs(array[j] < 0.001)) \textcolor{comment}{// Magic number, for convenience}}
+\DoxyCodeLine{00034             \{}
+\DoxyCodeLine{00035                 \textcolor{keywordflow}{throw} \mbox{\hyperlink{classZeroDivide}{ZeroDivide}}(\textcolor{stringliteral}{"divide by zero"},\textcolor{stringliteral}{"sumReciprocals"}, std::string());}
+\DoxyCodeLine{00036             \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038             ans += 1.0/array[j];}
+\DoxyCodeLine{00039         \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00042 \} }
+
+\end{DoxyCode}

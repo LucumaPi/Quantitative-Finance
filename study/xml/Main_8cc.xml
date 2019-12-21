@@ -11,25 +11,27 @@
       </node>
       <node id="5">
         <label>duffy/GenericComposite.hh</label>
-        <link refid="GenericComposite_8hh_source"/>
+        <link refid="GenericComposite_8hh"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
       <node id="6">
         <label>Shape.hh</label>
-        <link refid="Shape_8hh_source"/>
+        <link refid="Shape_8hh"/>
       </node>
       <node id="2">
         <label>duffy/Point.hh</label>
-        <link refid="Point_8hh_source"/>
+        <link refid="Point_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>duffy/Line.hh</label>
-        <link refid="Line_8hh_source"/>
+        <link refid="Line_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
@@ -47,6 +49,12 @@
       </node>
       <node id="3">
         <label>iostream</label>
+      </node>
+      <node id="8">
+        <label>../../src/GenericComposite.cc</label>
+        <link refid="GenericComposite_8cc"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -93,17 +101,17 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(C)<sp/>Datasim<sp/>Education<sp/>BV<sp/>1998</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Point.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/Line.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/GenericComposite.hh&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>New!!<sp/>template<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Point_8hh" kindref="compound">duffy/Point.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Line_8hh" kindref="compound">duffy/Line.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="GenericComposite_8hh" kindref="compound">duffy/GenericComposite.hh</ref>&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>New!!<sp/>template<sp/>class</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;GenericVisitor.hpp&quot;<sp/>//<sp/>New!!<sp/>template<sp/>class</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>print(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classGenericComposite" kindref="compound">GenericComposite&lt;Shape&gt;</ref>&amp;<sp/>sc)</highlight></codeline>
+<codeline lineno="13" refid="Main_8cc_1ae5bec601d1dd6d089d2ec6a82eae5ba4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Main_8cc_1ae5bec601d1dd6d089d2ec6a82eae5ba4" kindref="member">print</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classGenericComposite" kindref="compound">GenericComposite&lt;Shape&gt;</ref>&amp;<sp/>sc)</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Print<sp/>the<sp/>shape<sp/>composite</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGenericComposite" kindref="compound">GenericComposite&lt;Shape&gt;::const_iterator</ref><sp/>i;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=sc.Begin();<sp/>i!=sc.End();<sp/>i++)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=sc.<ref refid="classGenericComposite_1ac98912eb4aaca339cf023b30fa5c6cdf" kindref="member">Begin</ref>();<sp/>i!=sc.<ref refid="classGenericComposite_1afaad3512b4bba5b4e4a691ec44ed7857" kindref="member">End</ref>();<sp/>i++)</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::type_info&amp;<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">typeid</highlight><highlight class="normal">(*i);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>pp.name()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
@@ -112,35 +120,35 @@
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="27" refid="Main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Main_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGenericComposite" kindref="compound">GenericComposite&lt;Shape&gt;</ref><sp/>sc;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>composite:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.Count()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>print(sc);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>composite:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.<ref refid="classGenericComposite_1a0ffc53805f90516d303a8caa69f09d5b" kindref="member">Count</ref>()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Main_8cc_1ae5bec601d1dd6d089d2ec6a82eae5ba4" kindref="member">print</ref>(sc);</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape" kindref="compound">Shape</ref>*<sp/>s<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classPoint" kindref="compound">Point</ref>(1.0,<sp/>3.0);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.AddBack(*s);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;1<sp/>shape:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.Count()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>print(sc);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.<ref refid="classGenericComposite_1a60c8ad8f14bb1977d6a7dd6e739a9ed3" kindref="member">AddBack</ref>(*s);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;1<sp/>shape:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.<ref refid="classGenericComposite_1a0ffc53805f90516d303a8caa69f09d5b" kindref="member">Count</ref>()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Main_8cc_1ae5bec601d1dd6d089d2ec6a82eae5ba4" kindref="member">print</ref>(sc);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape" kindref="compound">Shape</ref>*<sp/>s1<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classLine" kindref="compound">Line</ref>(<ref refid="classPoint" kindref="compound">Point</ref>(),<sp/><ref refid="classPoint" kindref="compound">Point</ref>());</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.AddBack(*s1);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;2<sp/>shapes:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.Count()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>print(sc);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.<ref refid="classGenericComposite_1a60c8ad8f14bb1977d6a7dd6e739a9ed3" kindref="member">AddBack</ref>(*s1);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;2<sp/>shapes:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.<ref refid="classGenericComposite_1a0ffc53805f90516d303a8caa69f09d5b" kindref="member">Count</ref>()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Main_8cc_1ae5bec601d1dd6d089d2ec6a82eae5ba4" kindref="member">print</ref>(sc);</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShape" kindref="compound">Shape</ref>*<sp/>s2<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classLine" kindref="compound">Line</ref>(<ref refid="classPoint" kindref="compound">Point</ref>(1,1),<sp/><ref refid="classPoint" kindref="compound">Point</ref>(1,2));</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.AddFront(*s2);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;3<sp/>shapes:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.Count()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>print(sc);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.<ref refid="classGenericComposite_1a6fce8da197eeb5543ccf2ab7a914d414" kindref="member">AddFront</ref>(*s2);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;3<sp/>shapes:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.<ref refid="classGenericComposite_1a0ffc53805f90516d303a8caa69f09d5b" kindref="member">Count</ref>()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Main_8cc_1ae5bec601d1dd6d089d2ec6a82eae5ba4" kindref="member">print</ref>(sc);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.RemoveLast();</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Remove<sp/>last:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.Count()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>print(sc);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.<ref refid="classGenericComposite_1a04c208f2363ead79d638fd590d7ebf24" kindref="member">RemoveLast</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Remove<sp/>last:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.<ref refid="classGenericComposite_1a0ffc53805f90516d303a8caa69f09d5b" kindref="member">Count</ref>()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Main_8cc_1ae5bec601d1dd6d089d2ec6a82eae5ba4" kindref="member">print</ref>(sc);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.RemoveAll();</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Remove<sp/>all:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.Count()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>print(sc);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>sc.<ref refid="classGenericComposite_1adbefe400c6e574f2f3a7b4b02b8fee8e" kindref="member">RemoveAll</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Remove<sp/>all:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sc.<ref refid="classGenericComposite_1a0ffc53805f90516d303a8caa69f09d5b" kindref="member">Count</ref>()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Main_8cc_1ae5bec601d1dd6d089d2ec6a82eae5ba4" kindref="member">print</ref>(sc);</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="58"><highlight class="normal">}</highlight></codeline>

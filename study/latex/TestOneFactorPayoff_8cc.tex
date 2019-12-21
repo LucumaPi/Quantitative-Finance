@@ -1,0 +1,101 @@
+\hypertarget{TestOneFactorPayoff_8cc}{}\doxysection{tests/\+Test\+One\+Factor\+Payoff.cc File Reference}
+\label{TestOneFactorPayoff_8cc}\index{tests/TestOneFactorPayoff.cc@{tests/TestOneFactorPayoff.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$duffy/\+One\+Factor\+Payoff.\+hh$>$}\newline
+Include dependency graph for Test\+One\+Factor\+Payoff.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{TestOneFactorPayoff_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{TestOneFactorPayoff_8cc_ab84c0aa14f70797b64f551782767424e}{Call\+Payoff\+FN}} (double K, double S)
+\item 
+double \mbox{\hyperlink{TestOneFactorPayoff_8cc_a3fddf5d8e03a6a02f4bdc6f46965ae8d}{Put\+Payoff\+FN}} (double K, double S)
+\item 
+int \mbox{\hyperlink{TestOneFactorPayoff_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestOneFactorPayoff_8cc_ab84c0aa14f70797b64f551782767424e}\label{TestOneFactorPayoff_8cc_ab84c0aa14f70797b64f551782767424e}} 
+\index{TestOneFactorPayoff.cc@{TestOneFactorPayoff.cc}!CallPayoffFN@{CallPayoffFN}}
+\index{CallPayoffFN@{CallPayoffFN}!TestOneFactorPayoff.cc@{TestOneFactorPayoff.cc}}
+\doxysubsubsection{\texorpdfstring{CallPayoffFN()}{CallPayoffFN()}}
+{\footnotesize\ttfamily double Call\+Payoff\+FN (\begin{DoxyParamCaption}\item[{double}]{K,  }\item[{double}]{S }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestOneFactorPayoff_8cc_source_l00016}{16}} of file \mbox{\hyperlink{TestOneFactorPayoff_8cc_source}{Test\+One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018         \textcolor{keywordflow}{if} (S > \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}})}
+\DoxyCodeLine{00019             \textcolor{keywordflow}{return} (S -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00020         }
+\DoxyCodeLine{00021         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestOneFactorPayoff_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestOneFactorPayoff_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestOneFactorPayoff.cc@{TestOneFactorPayoff.cc}!main@{main}}
+\index{main@{main}!TestOneFactorPayoff.cc@{TestOneFactorPayoff.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestOneFactorPayoff_8cc_source_l00035}{35}} of file \mbox{\hyperlink{TestOneFactorPayoff_8cc_source}{Test\+One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}} pay1(20.0, \mbox{\hyperlink{TestOneFactorPayoff_8cc_ab84c0aa14f70797b64f551782767424e}{CallPayoffFN}});}
+\DoxyCodeLine{00039     }
+\DoxyCodeLine{00040     std::cout << \textcolor{stringliteral}{"Give a stock price (plain Call): "};}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{double} S;}
+\DoxyCodeLine{00042     std::cin >> S;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     std::cout << \textcolor{stringliteral}{"Call Payoff is: "} << pay1.payoff(S) << std::endl;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \mbox{\hyperlink{classOneFactorPayoff}{OneFactorPayoff}} pay2(20.0, \mbox{\hyperlink{TestOneFactorPayoff_8cc_a3fddf5d8e03a6a02f4bdc6f46965ae8d}{PutPayoffFN}});}
+\DoxyCodeLine{00047     }
+\DoxyCodeLine{00048     std::cout << \textcolor{stringliteral}{"Give a stock price (plain Put): "};}
+\DoxyCodeLine{00049     std::cin >> S;}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     std::cout << \textcolor{stringliteral}{"Put Payoff is: "} << pay2.payoff(S) << std::endl;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     }
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00056 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestOneFactorPayoff_8cc_a3fddf5d8e03a6a02f4bdc6f46965ae8d}\label{TestOneFactorPayoff_8cc_a3fddf5d8e03a6a02f4bdc6f46965ae8d}} 
+\index{TestOneFactorPayoff.cc@{TestOneFactorPayoff.cc}!PutPayoffFN@{PutPayoffFN}}
+\index{PutPayoffFN@{PutPayoffFN}!TestOneFactorPayoff.cc@{TestOneFactorPayoff.cc}}
+\doxysubsubsection{\texorpdfstring{PutPayoffFN()}{PutPayoffFN()}}
+{\footnotesize\ttfamily double Put\+Payoff\+FN (\begin{DoxyParamCaption}\item[{double}]{K,  }\item[{double}]{S }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestOneFactorPayoff_8cc_source_l00025}{25}} of file \mbox{\hyperlink{TestOneFactorPayoff_8cc_source}{Test\+One\+Factor\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027         \textcolor{comment}{// max (K-\/S, 0)}}
+\DoxyCodeLine{00028         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} > S)}
+\DoxyCodeLine{00029             \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} -\/ S);}
+\DoxyCodeLine{00030         }
+\DoxyCodeLine{00031         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033 \}}
+
+\end{DoxyCode}

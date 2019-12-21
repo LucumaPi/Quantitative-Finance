@@ -1,0 +1,66 @@
+\hypertarget{TestWrapper_8cc}{}\doxysection{tests/\+Test\+Wrapper.cc File Reference}
+\label{TestWrapper_8cc}\index{tests/TestWrapper.cc@{tests/TestWrapper.cc}}
+{\ttfamily \#include $<$duffy/\+Datasim\+Date.\+hh$>$}\newline
+{\ttfamily \#include $<$duffy/\+Datesim\+Date\+Time.\+hh$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}../src/\+Wrapper.\+cc\char`\"{}}\newline
+{\ttfamily \#include $<$duffy/\+Simple\+Property\+Set.\+hh$>$}\newline
+Include dependency graph for Test\+Wrapper.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestWrapper_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPerson}{Person}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestWrapper_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestWrapper.cc@{TestWrapper.cc}!main@{main}}
+\index{main@{main}!TestWrapper.cc@{TestWrapper.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestWrapper_8cc_source_l00059}{59}} of file \mbox{\hyperlink{TestWrapper_8cc_source}{Test\+Wrapper.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060 \{}
+\DoxyCodeLine{00061     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} myBirthday(29, 8, 1952);}
+\DoxyCodeLine{00062     std::string myName (\textcolor{stringliteral}{"Daniel J. Duffy"});}
+\DoxyCodeLine{00063     \mbox{\hyperlink{classPerson}{Person}} dd(myName, myBirthday);}
+\DoxyCodeLine{00064     dd.print();}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \mbox{\hyperlink{classDatasimDate}{DatasimDate}} bBirthday(06, 8, 1994);}
+\DoxyCodeLine{00067     std::string bName (\textcolor{stringliteral}{"Brendan Duffy"});}
+\DoxyCodeLine{00068     \mbox{\hyperlink{classPerson}{Person}} bd(bName, bBirthday);}
+\DoxyCodeLine{00069     bd.print();}
+\DoxyCodeLine{00070     }
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \mbox{\hyperlink{classWrapper}{Wrapper<std::string>}} w1;}
+\DoxyCodeLine{00073     \mbox{\hyperlink{classWrapper}{Wrapper<std::string>}} w2;}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{if} (w1.\mbox{\hyperlink{classWrapper_a722618937323f1c2ae417b77021cf381}{sameType}}(w2) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00075     \{}
+\DoxyCodeLine{00076         std::cout << \textcolor{stringliteral}{"Same type\(\backslash\)n"};}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00079     \{}
+\DoxyCodeLine{00080         std::cout << \textcolor{stringliteral}{"Not Same type\(\backslash\)n"};}
+\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00084 \}}
+
+\end{DoxyCode}

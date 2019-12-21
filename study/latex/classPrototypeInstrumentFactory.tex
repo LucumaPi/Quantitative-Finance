@@ -2,6 +2,10 @@
 \label{classPrototypeInstrumentFactory}\index{PrototypeInstrumentFactory@{PrototypeInstrumentFactory}}
 
 
+{\ttfamily \#include $<$Instrument\+New.\+hh$>$}
+
+
+
 Inheritance diagram for Prototype\+Instrument\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,11 +25,71 @@ Collaboration diagram for Prototype\+Instrument\+Factory\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPrototypeInstrumentFactory_a3d5d8d9d3b5d1684e8b45b0fb488a43a}\label{classPrototypeInstrumentFactory_a3d5d8d9d3b5d1684e8b45b0fb488a43a}} 
-\mbox{\hyperlink{classTwoFactorOptionData}{Two\+Factor\+Option\+Data}} $\ast$ {\bfseries Create\+Option} () const
+\mbox{\hyperlink{classTwoFactorOptionData}{Two\+Factor\+Option\+Data}} $\ast$ \mbox{\hyperlink{classPrototypeInstrumentFactory_a3d5d8d9d3b5d1684e8b45b0fb488a43a}{Create\+Option}} () const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{InstrumentNew_8hh_source_l00224}{224}} of file \mbox{\hyperlink{InstrumentNew_8hh_source}{Instrument\+New.\+hh}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrototypeInstrumentFactory_a3d5d8d9d3b5d1684e8b45b0fb488a43a}\label{classPrototypeInstrumentFactory_a3d5d8d9d3b5d1684e8b45b0fb488a43a}} 
+\index{PrototypeInstrumentFactory@{PrototypeInstrumentFactory}!CreateOption@{CreateOption}}
+\index{CreateOption@{CreateOption}!PrototypeInstrumentFactory@{PrototypeInstrumentFactory}}
+\doxysubsubsection{\texorpdfstring{CreateOption()}{CreateOption()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTwoFactorOptionData}{Two\+Factor\+Option\+Data}}$\ast$ Prototype\+Instrument\+Factory\+::\+Create\+Option (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classInstrumentFactory_acc735ba0c9d3b8c36269d3553c1cb401}{Instrument\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{InstrumentNew_8hh_source_l00229}{229}} of file \mbox{\hyperlink{InstrumentNew_8hh_source}{Instrument\+New.\+hh}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00230     \{}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232         \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}}* result = \textcolor{keyword}{new} \mbox{\hyperlink{classTwoFactorOptionData}{TwoFactorOptionData}};}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234         \textcolor{comment}{// Results take from Topper 2005}}
+\DoxyCodeLine{00235         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a25052f44d08faa7a22a3c27fa2340272}{r}}      = 0.0;  \textcolor{comment}{// Percentage}}
+\DoxyCodeLine{00236         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a4b9b46a69bf26cc011046b29d1beec66}{sig1}}    = 0.2;}
+\DoxyCodeLine{00237         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a7f147d9543ea7775009b8c959ee33e6b}{sig2}}    = 0.2;}
+\DoxyCodeLine{00238         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a84b0c9fc08aca003ed163f35e6ddd8bc}{rho}}      = -\/0.9;}
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00240         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_afa527e63f712230bcd06dde13bf41a94}{D1}}        = 0.0;}
+\DoxyCodeLine{00241         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_ae314dc85a263e11020ac4bfe69005333}{D2}}        = 0.0;}
+\DoxyCodeLine{00242     }
+\DoxyCodeLine{00243         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a1e4be0455ac266930ca0226726d98c24}{K}}      = 4.0;}
+\DoxyCodeLine{00244         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a0541afde0972d35c6b6cb62fedcda914}{T}}      = 2.5;}
+\DoxyCodeLine{00245         \textcolor{comment}{//result-\/>SMax1 = result-\/>K * 2.0;}}
+\DoxyCodeLine{00246         \textcolor{comment}{//result-\/>SMax2 = result-\/>K * 2.0;}}
+\DoxyCodeLine{00247 }
+\DoxyCodeLine{00248         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a0acb7ed41b7e485ae6cc3f6ffc518616}{SMax1}}  = 40.0;}
+\DoxyCodeLine{00249         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a4368573d6a2f01f49c58d50d1a8ccf7d}{SMax2}}  = 40.0;}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a7c3239018650cc024d625cbf38d6b677}{type}}    = -\/1;   \textcolor{comment}{// Put, temp}}
+\DoxyCodeLine{00252     }
+\DoxyCodeLine{00253         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a09861cf6a9d6cf5815f2ffd278059ce0}{w1}}        = 1.0; \textcolor{comment}{// Topper}}
+\DoxyCodeLine{00254         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a490f9fe97fe78fbc99af91fa8a8da86b}{w2}}        = 1.0;}
+\DoxyCodeLine{00255     }
+\DoxyCodeLine{00256         \textcolor{comment}{// Now assign the payoff function}}
+\DoxyCodeLine{00257         result-\/>\mbox{\hyperlink{classTwoFactorOptionData_ad373a006f81f791e0d87b7ce5352025f}{pay}} = \mbox{\hyperlink{classBasketStrategy}{BasketStrategy}}(result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a1e4be0455ac266930ca0226726d98c24}{K}}, result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a7c3239018650cc024d625cbf38d6b677}{type}}, result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a09861cf6a9d6cf5815f2ffd278059ce0}{w1}}, result-\/>\mbox{\hyperlink{classTwoFactorOptionData_a490f9fe97fe78fbc99af91fa8a8da86b}{w2}});}
+\DoxyCodeLine{00258 }
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00261 }
+\DoxyCodeLine{00262     \}   }
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Instrument\+New.\+hh\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{InstrumentNew_8hh}{Instrument\+New.\+hh}}\end{DoxyCompactItemize}

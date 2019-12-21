@@ -1,0 +1,59 @@
+\hypertarget{TestAliasNamespace_8cc_source}{}\doxysection{Test\+Alias\+Namespace.\+cc}
+\label{TestAliasNamespace_8cc_source}\index{tests/TestAliasNamespace.cc@{tests/TestAliasNamespace.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testAliasNamespace.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Program to test aliases in namespaces. This is a }}
+\DoxyCodeLine{00004 \textcolor{comment}{// good way to program the Template Method pattern without}}
+\DoxyCodeLine{00005 \textcolor{comment}{// need for classes.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2005-\/1-\/4 DD kick-\/off code}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 2005}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 \textcolor{comment}{//}}
+\DoxyCodeLine{00012 \textcolor{comment}{// Idea is to define an algorithm whose body consists of INVARIANT and}}
+\DoxyCodeLine{00013 \textcolor{comment}{// VARIANT parts.}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{\Hypertarget{TestAliasNamespace_8cc_source_l00018}\mbox{\hyperlink{namespaceDatasimFunctions}{00018}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceDatasimFunctions}{DatasimFunctions}}}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{\Hypertarget{TestAliasNamespace_8cc_source_l00020}\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{00020}}     double (*\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}})();}
+\DoxyCodeLine{\Hypertarget{TestAliasNamespace_8cc_source_l00021}\mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{00021}}     double (*\mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{second}})();}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{TestAliasNamespace_8cc_source_l00025}\mbox{\hyperlink{TestAliasNamespace_8cc_a1446b168038e850e8a9ed771998ae16d}{00025}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TestAliasNamespace_8cc_a1446b168038e850e8a9ed771998ae16d}{algorithm}}()}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027     }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{DatasimFunctions::first}}() + \mbox{\hyperlink{namespaceDatasimFunctions_a1619972125d80d0f434b543acca662e6}{DatasimFunctions::second}}();}
+\DoxyCodeLine{00029 \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{TestAliasNamespace_8cc_source_l00032}\mbox{\hyperlink{namespacemyFunctions}{00032}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemyFunctions}{myFunctions}}}
+\DoxyCodeLine{00033 \{}
+\DoxyCodeLine{\Hypertarget{TestAliasNamespace_8cc_source_l00034}\mbox{\hyperlink{namespacemyFunctions_a043870b92253dd0fc566168f21eca13f}{00034}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacemyFunctions_a043870b92253dd0fc566168f21eca13f}{first}}() \{\textcolor{keywordflow}{return} 2.0;\}}
+\DoxyCodeLine{\Hypertarget{TestAliasNamespace_8cc_source_l00035}\mbox{\hyperlink{namespacemyFunctions_a03fb4c33a9d547e52ca6be71c95029d5}{00035}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacemyFunctions_a03fb4c33a9d547e52ca6be71c95029d5}{second}}()\{\textcolor{keywordflow}{return} 4.0;\}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{\Hypertarget{TestAliasNamespace_8cc_source_l00040}\mbox{\hyperlink{TestAliasNamespace_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00040}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestAliasNamespace_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00041 \{}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{keyword}{namespace }DS = \mbox{\hyperlink{namespaceDatasimFunctions}{DatasimFunctions}};    \textcolor{comment}{// Shorthand, alias}}
+\DoxyCodeLine{00044     \textcolor{keyword}{namespace }MF = \mbox{\hyperlink{namespacemyFunctions}{myFunctions}};          \textcolor{comment}{// Shorthand, alias}}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046     \mbox{\hyperlink{namespacemyFunctions_a043870b92253dd0fc566168f21eca13f}{DS::first}}= \mbox{\hyperlink{namespacemyFunctions_a043870b92253dd0fc566168f21eca13f}{MF::first}};}
+\DoxyCodeLine{00047     \mbox{\hyperlink{namespacemyFunctions_a03fb4c33a9d547e52ca6be71c95029d5}{DS::second}}= \mbox{\hyperlink{namespacemyFunctions_a03fb4c33a9d547e52ca6be71c95029d5}{MF::second}};}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{keywordtype}{double} d = \mbox{\hyperlink{TestAliasNamespace_8cc_a1446b168038e850e8a9ed771998ae16d}{algorithm}}();}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     std::cout << d << std::endl;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \}}
+
+\end{DoxyCode}

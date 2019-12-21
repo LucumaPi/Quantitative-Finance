@@ -2,6 +2,10 @@
 \label{classRelation}\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
 
 
+{\ttfamily \#include $<$Relation.\+hh$>$}
+
+
+
 Collaboration diagram for Relation$<$ D, R $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,99 +16,776 @@ Collaboration diagram for Relation$<$ D, R $>$\+:\nopagebreak
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classRelation_af68e62c9cf16d7e2dff81950298dc778}\label{classRelation_af68e62c9cf16d7e2dff81950298dc778}} 
-typedef std\+::multimap$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::iterator {\bfseries iterator}
+typedef std\+::multimap$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}}
 \item 
-\mbox{\Hypertarget{classRelation_a281fd0ec83966c0c8ba00e59364c3152}\label{classRelation_a281fd0ec83966c0c8ba00e59364c3152}} 
-typedef std\+::multimap$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+typedef std\+::multimap$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}} \mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}}
 \item 
-\mbox{\Hypertarget{classRelation_a3377b326df68d54e890873e4800ac522}\label{classRelation_a3377b326df68d54e890873e4800ac522}} 
-typedef std\+::multimap$<$ R, \mbox{\hyperlink{classD}{D}} $>$\+::iterator {\bfseries iterator\+Inv}
+typedef std\+::multimap$<$ R, \mbox{\hyperlink{classD}{D}} $>$\+::\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iterator\+Inv}}
 \item 
-\mbox{\Hypertarget{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}\label{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}} 
-typedef std\+::multimap$<$ R, \mbox{\hyperlink{classD}{D}} $>$\+::const\+\_\+iterator {\bfseries const\+\_\+iterator\+Inv}
+typedef std\+::multimap$<$ R, \mbox{\hyperlink{classD}{D}} $>$\+::\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}} \mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\+\_\+iterator\+Inv}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classRelation_aae3172d175b898c286d82916f191174c}\label{classRelation_aae3172d175b898c286d82916f191174c}} 
-{\bfseries Relation} (const \mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \&domain\+Set, const \mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \&range\+Set)
+\mbox{\hyperlink{classRelation_a36145dd40aa468c579ac6e531b0ac588}{Relation}} ()
 \item 
-\mbox{\Hypertarget{classRelation_af344472b21613144a5db861d5d7f1437}\label{classRelation_af344472b21613144a5db861d5d7f1437}} 
-{\bfseries Relation} (const \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \&r2)
+\mbox{\hyperlink{classRelation_aae3172d175b898c286d82916f191174c}{Relation}} (const \mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \&domain\+Set, const \mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \&range\+Set)
 \item 
-\mbox{\Hypertarget{classRelation_a3850e9c9495624d27e7813cc6e0dc763}\label{classRelation_a3850e9c9495624d27e7813cc6e0dc763}} 
-void {\bfseries add\+Domain\+Element} (const \mbox{\hyperlink{classD}{D}} \&d)
+\mbox{\hyperlink{classRelation_af344472b21613144a5db861d5d7f1437}{Relation}} (const \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \&r2)
 \item 
-\mbox{\Hypertarget{classRelation_a8bbc53597b97db93008a82d5b7ff54cb}\label{classRelation_a8bbc53597b97db93008a82d5b7ff54cb}} 
-void {\bfseries add\+Range\+Element} (const R \&r)
+void \mbox{\hyperlink{classRelation_a3850e9c9495624d27e7813cc6e0dc763}{add\+Domain\+Element}} (const \mbox{\hyperlink{classD}{D}} \&d)
 \item 
-\mbox{\Hypertarget{classRelation_a30b7ecfff53dda24b5661215e63b3aeb}\label{classRelation_a30b7ecfff53dda24b5661215e63b3aeb}} 
-void {\bfseries remove\+Domain\+Element} (const \mbox{\hyperlink{classD}{D}} \&d)
+void \mbox{\hyperlink{classRelation_a8bbc53597b97db93008a82d5b7ff54cb}{add\+Range\+Element}} (const R \&r)
 \item 
-\mbox{\Hypertarget{classRelation_adf2bd0433cf8eb255e0b595d8502afad}\label{classRelation_adf2bd0433cf8eb255e0b595d8502afad}} 
-void {\bfseries remove\+Range\+Element} (const R \&r)
+void \mbox{\hyperlink{classRelation_a30b7ecfff53dda24b5661215e63b3aeb}{remove\+Domain\+Element}} (const \mbox{\hyperlink{classD}{D}} \&d)
 \item 
-\mbox{\Hypertarget{classRelation_a0d4bdc5ed486ffbef37ae2e489166834}\label{classRelation_a0d4bdc5ed486ffbef37ae2e489166834}} 
-void {\bfseries add\+Relation} (const \mbox{\hyperlink{classD}{D}} \&d, const R \&r)
+void \mbox{\hyperlink{classRelation_adf2bd0433cf8eb255e0b595d8502afad}{remove\+Range\+Element}} (const R \&r)
 \item 
-\mbox{\Hypertarget{classRelation_a6fe1980b85fd0a4d59ed6ca3dbb52a2a}\label{classRelation_a6fe1980b85fd0a4d59ed6ca3dbb52a2a}} 
-void {\bfseries remove\+Relation} (const \mbox{\hyperlink{classD}{D}} \&d)
+void \mbox{\hyperlink{classRelation_a0d4bdc5ed486ffbef37ae2e489166834}{add\+Relation}} (const \mbox{\hyperlink{classD}{D}} \&d, const R \&r)
 \item 
-\mbox{\Hypertarget{classRelation_aac3d30ad0639de420ec0d496ca78696f}\label{classRelation_aac3d30ad0639de420ec0d496ca78696f}} 
-void {\bfseries Clear\+All} ()
+void \mbox{\hyperlink{classRelation_a6fe1980b85fd0a4d59ed6ca3dbb52a2a}{remove\+Relation}} (const \mbox{\hyperlink{classD}{D}} \&d)
 \item 
-\mbox{\Hypertarget{classRelation_a401a214a659d7005d830e1d5573075ed}\label{classRelation_a401a214a659d7005d830e1d5573075ed}} 
-void {\bfseries Clear\+Links} ()
+void \mbox{\hyperlink{classRelation_aac3d30ad0639de420ec0d496ca78696f}{Clear\+All}} ()
 \item 
-\mbox{\Hypertarget{classRelation_a97ba3b83f8b68901191248b72b4d2a14}\label{classRelation_a97ba3b83f8b68901191248b72b4d2a14}} 
-iterator {\bfseries Begin} ()
+void \mbox{\hyperlink{classRelation_a401a214a659d7005d830e1d5573075ed}{Clear\+Links}} ()
 \item 
-\mbox{\Hypertarget{classRelation_a8c1e8ca4826fced1256829a4779d9d8c}\label{classRelation_a8c1e8ca4826fced1256829a4779d9d8c}} 
-const\+\_\+iterator {\bfseries Begin} () const
+\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation_a97ba3b83f8b68901191248b72b4d2a14}{Begin}} ()
 \item 
-\mbox{\Hypertarget{classRelation_a068ca856b6e3b6bffd24117b405c01ae}\label{classRelation_a068ca856b6e3b6bffd24117b405c01ae}} 
-iterator {\bfseries End} ()
+\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}} \mbox{\hyperlink{classRelation_a8c1e8ca4826fced1256829a4779d9d8c}{Begin}} () const
 \item 
-\mbox{\Hypertarget{classRelation_ab5fee537bbc5a9748881a6bbe25bbdd2}\label{classRelation_ab5fee537bbc5a9748881a6bbe25bbdd2}} 
-const\+\_\+iterator {\bfseries End} () const
+\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation_a068ca856b6e3b6bffd24117b405c01ae}{End}} ()
 \item 
-\mbox{\Hypertarget{classRelation_ae76135e50d636a11e65658f44ffa0551}\label{classRelation_ae76135e50d636a11e65658f44ffa0551}} 
-iterator\+Inv {\bfseries Begin\+Inv} ()
+\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}} \mbox{\hyperlink{classRelation_ab5fee537bbc5a9748881a6bbe25bbdd2}{End}} () const
 \item 
-\mbox{\Hypertarget{classRelation_ad8fc7581e55ca1f3ae7c174e928d0bd8}\label{classRelation_ad8fc7581e55ca1f3ae7c174e928d0bd8}} 
-const\+\_\+iterator\+Inv {\bfseries Begin\+Inv} () const
+\mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iterator\+Inv}} \mbox{\hyperlink{classRelation_ae76135e50d636a11e65658f44ffa0551}{Begin\+Inv}} ()
 \item 
-\mbox{\Hypertarget{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}\label{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}} 
-iterator\+Inv {\bfseries End\+Inv} ()
+\mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\+\_\+iterator\+Inv}} \mbox{\hyperlink{classRelation_ad8fc7581e55ca1f3ae7c174e928d0bd8}{Begin\+Inv}} () const
 \item 
-\mbox{\Hypertarget{classRelation_ada45ef3553ea10f6ffeb01429d41112c}\label{classRelation_ada45ef3553ea10f6ffeb01429d41112c}} 
-const\+\_\+iterator\+Inv {\bfseries End\+Inv} () const
+\mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iterator\+Inv}} \mbox{\hyperlink{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}{End\+Inv}} ()
 \item 
-\mbox{\Hypertarget{classRelation_a6df4cdb10cd950968cf21fafdec4bb83}\label{classRelation_a6df4cdb10cd950968cf21fafdec4bb83}} 
-const \mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \& {\bfseries Domain\+Set} ()
+\mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\+\_\+iterator\+Inv}} \mbox{\hyperlink{classRelation_ada45ef3553ea10f6ffeb01429d41112c}{End\+Inv}} () const
 \item 
-\mbox{\Hypertarget{classRelation_ae7d89135038109b9ff7ef4c6590a112e}\label{classRelation_ae7d89135038109b9ff7ef4c6590a112e}} 
-const \mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \& {\bfseries Range\+Set} ()
+const \mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \& \mbox{\hyperlink{classRelation_a6df4cdb10cd950968cf21fafdec4bb83}{Domain\+Set}} ()
 \item 
-\mbox{\Hypertarget{classRelation_ab946892376f95ed757414e3fadc36f6d}\label{classRelation_ab946892376f95ed757414e3fadc36f6d}} 
-\mbox{\hyperlink{classSet}{Set}}$<$ R $>$ {\bfseries range} (const \mbox{\hyperlink{classD}{D}} \&d)
+const \mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \& \mbox{\hyperlink{classRelation_ae7d89135038109b9ff7ef4c6590a112e}{Range\+Set}} ()
 \item 
-\mbox{\Hypertarget{classRelation_a0ff46cfb436345dab2707b36b94a152a}\label{classRelation_a0ff46cfb436345dab2707b36b94a152a}} 
-\mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ {\bfseries domain} (const R \&r)
+\mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \mbox{\hyperlink{classRelation_ab946892376f95ed757414e3fadc36f6d}{range}} (const \mbox{\hyperlink{classD}{D}} \&d)
 \item 
-\mbox{\Hypertarget{classRelation_af7602723b04b55522372eae5d70fff52}\label{classRelation_af7602723b04b55522372eae5d70fff52}} 
-bool {\bfseries in\+Domain} (const \mbox{\hyperlink{classD}{D}} \&d) const
+\mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \mbox{\hyperlink{classRelation_a0ff46cfb436345dab2707b36b94a152a}{domain}} (const R \&r)
 \item 
-\mbox{\Hypertarget{classRelation_a8dd9f0681135740849f9dd20ae4ee13a}\label{classRelation_a8dd9f0681135740849f9dd20ae4ee13a}} 
-bool {\bfseries in\+Range} (const \mbox{\hyperlink{classD}{D}} \&r) const
+bool \mbox{\hyperlink{classRelation_af7602723b04b55522372eae5d70fff52}{in\+Domain}} (const \mbox{\hyperlink{classD}{D}} \&d) const
 \item 
-\mbox{\Hypertarget{classRelation_ae4668d138c1cc9cfc607729a32b2772e}\label{classRelation_ae4668d138c1cc9cfc607729a32b2772e}} 
-\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \&r2)
+bool \mbox{\hyperlink{classRelation_a8dd9f0681135740849f9dd20ae4ee13a}{in\+Range}} (const \mbox{\hyperlink{classD}{D}} \&r) const
+\item 
+virtual \mbox{\hyperlink{classRelation_acc3976a5e2e72dd33d7d05bee2b286fe}{$\sim$\+Relation}} ()
+\item 
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \& \mbox{\hyperlink{classRelation_ae4668d138c1cc9cfc607729a32b2772e}{operator=}} (const \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \&r2)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class D, class R$>$\newline
+class Relation$<$ D, R $>$}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8hh_source_l00039}{39}} of file \mbox{\hyperlink{Relation_8hh_source}{Relation.\+hh}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classRelation_a281fd0ec83966c0c8ba00e59364c3152}\label{classRelation_a281fd0ec83966c0c8ba00e59364c3152}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$class D, class R$>$ \\
+typedef std\+::multimap$<$\mbox{\hyperlink{classD}{D}}, R$>$\+::\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}}}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8hh_source_l00077}{77}} of file \mbox{\hyperlink{Relation_8hh_source}{Relation.\+hh}}.
+
+\mbox{\Hypertarget{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}\label{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!const\_iteratorInv@{const\_iteratorInv}}
+\index{const\_iteratorInv@{const\_iteratorInv}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iteratorInv}{const\_iteratorInv}}
+{\footnotesize\ttfamily template$<$class D, class R$>$ \\
+typedef std\+::multimap$<$R, \mbox{\hyperlink{classD}{D}}$>$\+::\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\+\_\+iterator\+Inv}}}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8hh_source_l00086}{86}} of file \mbox{\hyperlink{Relation_8hh_source}{Relation.\+hh}}.
+
+\mbox{\Hypertarget{classRelation_af68e62c9cf16d7e2dff81950298dc778}\label{classRelation_af68e62c9cf16d7e2dff81950298dc778}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$class D, class R$>$ \\
+typedef std\+::multimap$<$\mbox{\hyperlink{classD}{D}}, R$>$\+::\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}}}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8hh_source_l00076}{76}} of file \mbox{\hyperlink{Relation_8hh_source}{Relation.\+hh}}.
+
+\mbox{\Hypertarget{classRelation_a3377b326df68d54e890873e4800ac522}\label{classRelation_a3377b326df68d54e890873e4800ac522}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!iteratorInv@{iteratorInv}}
+\index{iteratorInv@{iteratorInv}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{iteratorInv}{iteratorInv}}
+{\footnotesize\ttfamily template$<$class D, class R$>$ \\
+typedef std\+::multimap$<$R, \mbox{\hyperlink{classD}{D}}$>$\+::\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iterator\+Inv}}}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8hh_source_l00085}{85}} of file \mbox{\hyperlink{Relation_8hh_source}{Relation.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRelation_a36145dd40aa468c579ac6e531b0ac588}\label{classRelation_a36145dd40aa468c579ac6e531b0ac588}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!Relation@{Relation}}
+\index{Relation@{Relation}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{Relation()}{Relation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation}{Relation}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00053}{53}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054 \{}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     s1 = \mbox{\hyperlink{classSet}{Set<D>}}();}
+\DoxyCodeLine{00057     s2 = \mbox{\hyperlink{classSet}{Set<R>}}();}
+\DoxyCodeLine{00058     f = std::multimap<D,R>();}
+\DoxyCodeLine{00059     finv = std::multimap<R, D>();}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_aae3172d175b898c286d82916f191174c}\label{classRelation_aae3172d175b898c286d82916f191174c}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!Relation@{Relation}}
+\index{Relation@{Relation}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{Relation()}{Relation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class D, class R$>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation}{Relation}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \&}]{domain\+Set,  }\item[{const \mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \&}]{range\+Set }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00064}{64}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065 \{}
+\DoxyCodeLine{00066     s1 = domainSet;}
+\DoxyCodeLine{00067     s2 = rangeSet;}
+\DoxyCodeLine{00068     f = std::multimap<D,R>();}
+\DoxyCodeLine{00069     finv = std::multimap<R, D>();}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_af344472b21613144a5db861d5d7f1437}\label{classRelation_af344472b21613144a5db861d5d7f1437}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!Relation@{Relation}}
+\index{Relation@{Relation}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{Relation()}{Relation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class D, class R$>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation}{Relation}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \&}]{r2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00074}{74}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075 \{}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     s1 = r2.s1;}
+\DoxyCodeLine{00078     s2 = r2.s2;}
+\DoxyCodeLine{00079     f = r2.f;}
+\DoxyCodeLine{00080     finv = r2.finv;}
+\DoxyCodeLine{00081 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_acc3976a5e2e72dd33d7d05bee2b286fe}\label{classRelation_acc3976a5e2e72dd33d7d05bee2b286fe}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!````~Relation@{$\sim$Relation}}
+\index{````~Relation@{$\sim$Relation}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Relation()}{~Relation()}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::$\sim$\mbox{\hyperlink{classRelation}{Relation}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00084}{84}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085 \{}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRelation_a3850e9c9495624d27e7813cc6e0dc763}\label{classRelation_a3850e9c9495624d27e7813cc6e0dc763}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!addDomainElement@{addDomainElement}}
+\index{addDomainElement@{addDomainElement}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{addDomainElement()}{addDomainElement()}}
+{\footnotesize\ttfamily template$<$class D, class R $>$ \\
+void \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::add\+Domain\+Element (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classD}{D}} \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00109}{109}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110 \{}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(d);}
+\DoxyCodeLine{00113 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a8bbc53597b97db93008a82d5b7ff54cb}\label{classRelation_a8bbc53597b97db93008a82d5b7ff54cb}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!addRangeElement@{addRangeElement}}
+\index{addRangeElement@{addRangeElement}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{addRangeElement()}{addRangeElement()}}
+{\footnotesize\ttfamily template$<$class D , class R$>$ \\
+void \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::add\+Range\+Element (\begin{DoxyParamCaption}\item[{const R \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00117}{117}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118 \{}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00121 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a0d4bdc5ed486ffbef37ae2e489166834}\label{classRelation_a0d4bdc5ed486ffbef37ae2e489166834}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!addRelation@{addRelation}}
+\index{addRelation@{addRelation}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{addRelation()}{addRelation()}}
+{\footnotesize\ttfamily template$<$class D, class R$>$ \\
+void \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::add\+Relation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classD}{D}} \&}]{d,  }\item[{const R \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00193}{193}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00194 \{}
+\DoxyCodeLine{00195     \textcolor{comment}{// Prec: d and r must be in the sets}}
+\DoxyCodeLine{00196     \textcolor{keywordflow}{if} (s1.\mbox{\hyperlink{classSet_a685c7dec3d054d0d9972457f13873568}{Contains}}(d) == \textcolor{keyword}{false})}
+\DoxyCodeLine{00197         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00198     \textcolor{keywordflow}{if} (s2.\mbox{\hyperlink{classSet_a685c7dec3d054d0d9972457f13873568}{Contains}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}) == \textcolor{keyword}{false})}
+\DoxyCodeLine{00199         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00200 }
+\DoxyCodeLine{00201     \textcolor{comment}{// Add a link between d and r}}
+\DoxyCodeLine{00202     std::pair<D, R> p;}
+\DoxyCodeLine{00203     p.first = d;}
+\DoxyCodeLine{00204     p.second = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00205     f.insert(p);}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207     \textcolor{comment}{// Add a link between r and d}}
+\DoxyCodeLine{00208     std::pair<R, D> pinv;}
+\DoxyCodeLine{00209     pinv.first = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}};}
+\DoxyCodeLine{00210     pinv.second = d;}
+\DoxyCodeLine{00211     finv.insert(pinv);}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a97ba3b83f8b68901191248b72b4d2a14}\label{classRelation_a97ba3b83f8b68901191248b72b4d2a14}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!Begin@{Begin}}
+\index{Begin@{Begin}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00318}{318}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00319 \{ \textcolor{comment}{// Return iterator at begin of relation}}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{00321     \textcolor{keywordflow}{return} f.begin();}
+\DoxyCodeLine{00322 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a8c1e8ca4826fced1256829a4779d9d8c}\label{classRelation_a8c1e8ca4826fced1256829a4779d9d8c}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!Begin@{Begin}}
+\index{Begin@{Begin}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00325}{325}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00326 \{ \textcolor{comment}{// Return const iterator at begin of relation}}
+\DoxyCodeLine{00327 }
+\DoxyCodeLine{00328     \textcolor{keywordflow}{return} f.begin();}
+\DoxyCodeLine{00329 }
+\DoxyCodeLine{00330 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_ae76135e50d636a11e65658f44ffa0551}\label{classRelation_ae76135e50d636a11e65658f44ffa0551}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!BeginInv@{BeginInv}}
+\index{BeginInv@{BeginInv}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{BeginInv()}{BeginInv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iterator\+Inv}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::Begin\+Inv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00350}{350}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00351 \{ \textcolor{comment}{// Return iterator at begin of relation}}
+\DoxyCodeLine{00352 }
+\DoxyCodeLine{00353     \textcolor{keywordflow}{return} finv.begin();}
+\DoxyCodeLine{00354 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_ad8fc7581e55ca1f3ae7c174e928d0bd8}\label{classRelation_ad8fc7581e55ca1f3ae7c174e928d0bd8}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!BeginInv@{BeginInv}}
+\index{BeginInv@{BeginInv}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{BeginInv()}{BeginInv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\+\_\+iterator\+Inv}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::Begin\+Inv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00357}{357}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00358 \{ \textcolor{comment}{// Return const iterator at begin of relation}}
+\DoxyCodeLine{00359 }
+\DoxyCodeLine{00360     \textcolor{keywordflow}{return} finv.begin();}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_aac3d30ad0639de420ec0d496ca78696f}\label{classRelation_aac3d30ad0639de420ec0d496ca78696f}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!ClearAll@{ClearAll}}
+\index{ClearAll@{ClearAll}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{ClearAll()}{ClearAll()}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+void \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::Clear\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00225}{225}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00226 \{ \textcolor{comment}{// Break all links and set elements}}
+\DoxyCodeLine{00227 }
+\DoxyCodeLine{00228     f.erase(f.begin(), f.end());}
+\DoxyCodeLine{00229     finv.erase(finv.begin(), finv.end());}
+\DoxyCodeLine{00230     s1.\mbox{\hyperlink{classSet_af4c48c3aca006588ac6d572c7e1f984c}{Clear}}();}
+\DoxyCodeLine{00231     s2.\mbox{\hyperlink{classSet_af4c48c3aca006588ac6d572c7e1f984c}{Clear}}();}
+\DoxyCodeLine{00232 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a401a214a659d7005d830e1d5573075ed}\label{classRelation_a401a214a659d7005d830e1d5573075ed}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!ClearLinks@{ClearLinks}}
+\index{ClearLinks@{ClearLinks}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{ClearLinks()}{ClearLinks()}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+void \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::Clear\+Links (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00235}{235}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00236 \{ \textcolor{comment}{// Break all links}}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238     f.erase(f.begin(), f.end());}
+\DoxyCodeLine{00239     finv.erase(finv.begin(), finv.end());}
+\DoxyCodeLine{00240 }
+\DoxyCodeLine{00241 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a0ff46cfb436345dab2707b36b94a152a}\label{classRelation_a0ff46cfb436345dab2707b36b94a152a}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!domain@{domain}}
+\index{domain@{domain}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{domain()}{domain()}}
+{\footnotesize\ttfamily template$<$class D , class R$>$ \\
+\mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::domain (\begin{DoxyParamCaption}\item[{const R \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00281}{281}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00282 \{ \textcolor{comment}{// Set of d for an r}}
+\DoxyCodeLine{00283 }
+\DoxyCodeLine{00284     \mbox{\hyperlink{classSet}{Set<D>}} result;}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286     \textcolor{keyword}{typename} std::multimap<R, D>::const\_iterator it;}
+\DoxyCodeLine{00287 }
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289     \textcolor{keywordflow}{for} (it = finv.begin(); it != finv.end(); it++)}
+\DoxyCodeLine{00290     \{}
+\DoxyCodeLine{00291         \textcolor{keywordflow}{if} ((*it).first == \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00292         \{}
+\DoxyCodeLine{00293             result.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}((*it).second);}
+\DoxyCodeLine{00294         \}}
+\DoxyCodeLine{00295     \}}
+\DoxyCodeLine{00296 }
+\DoxyCodeLine{00297     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00298 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a6df4cdb10cd950968cf21fafdec4bb83}\label{classRelation_a6df4cdb10cd950968cf21fafdec4bb83}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!DomainSet@{DomainSet}}
+\index{DomainSet@{DomainSet}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{DomainSet()}{DomainSet()}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+const \mbox{\hyperlink{classSet}{Set}}$<$ \mbox{\hyperlink{classD}{D}} $>$ \& \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::Domain\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00245}{245}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00246 \{}
+\DoxyCodeLine{00247     \textcolor{keywordflow}{return} s1;}
+\DoxyCodeLine{00248 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a068ca856b6e3b6bffd24117b405c01ae}\label{classRelation_a068ca856b6e3b6bffd24117b405c01ae}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!End@{End}}
+\index{End@{End}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00333}{333}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00334 \{ \textcolor{comment}{// Return iterator after end of relation}}
+\DoxyCodeLine{00335 }
+\DoxyCodeLine{00336     \textcolor{keywordflow}{return} f.end();}
+\DoxyCodeLine{00337 }
+\DoxyCodeLine{00338 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_ab5fee537bbc5a9748881a6bbe25bbdd2}\label{classRelation_ab5fee537bbc5a9748881a6bbe25bbdd2}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!End@{End}}
+\index{End@{End}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\+\_\+iterator}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00341}{341}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00342 \{ \textcolor{comment}{// Return const iterator after end of relation}}
+\DoxyCodeLine{00343 }
+\DoxyCodeLine{00344     \textcolor{keywordflow}{return} f.end();}
+\DoxyCodeLine{00345 }
+\DoxyCodeLine{00346 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}\label{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!EndInv@{EndInv}}
+\index{EndInv@{EndInv}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{EndInv()}{EndInv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iterator\+Inv}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::End\+Inv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00365}{365}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00366 \{ \textcolor{comment}{// Return iterator after end of relation}}
+\DoxyCodeLine{00367 }
+\DoxyCodeLine{00368     \textcolor{keywordflow}{return} finv.end();}
+\DoxyCodeLine{00369 }
+\DoxyCodeLine{00370 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_ada45ef3553ea10f6ffeb01429d41112c}\label{classRelation_ada45ef3553ea10f6ffeb01429d41112c}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!EndInv@{EndInv}}
+\index{EndInv@{EndInv}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{EndInv()}{EndInv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::\mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\+\_\+iterator\+Inv}} \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::End\+Inv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00373}{373}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00374 \{ \textcolor{comment}{// Return const iterator after end of relation}}
+\DoxyCodeLine{00375 }
+\DoxyCodeLine{00376     \textcolor{keywordflow}{return} finv.end();}
+\DoxyCodeLine{00377 }
+\DoxyCodeLine{00378 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_af7602723b04b55522372eae5d70fff52}\label{classRelation_af7602723b04b55522372eae5d70fff52}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!inDomain@{inDomain}}
+\index{inDomain@{inDomain}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{inDomain()}{inDomain()}}
+{\footnotesize\ttfamily template$<$class D, class R $>$ \\
+bool \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::in\+Domain (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classD}{D}} \&}]{d }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00301}{301}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00302 \{ \textcolor{comment}{// Is an element in domain?}}
+\DoxyCodeLine{00303 }
+\DoxyCodeLine{00304     \textcolor{keywordflow}{return} s1.\mbox{\hyperlink{classSet_a685c7dec3d054d0d9972457f13873568}{Contains}}(d);}
+\DoxyCodeLine{00305 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a8dd9f0681135740849f9dd20ae4ee13a}\label{classRelation_a8dd9f0681135740849f9dd20ae4ee13a}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!inRange@{inRange}}
+\index{inRange@{inRange}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{inRange()}{inRange()}}
+{\footnotesize\ttfamily template$<$class D, class R $>$ \\
+bool \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::in\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classD}{D}} \&}]{r }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00308}{308}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00309 \{ \textcolor{comment}{// Is an element in range?}}
+\DoxyCodeLine{00310 }
+\DoxyCodeLine{00311     \textcolor{keywordflow}{return} s2.\mbox{\hyperlink{classSet_a685c7dec3d054d0d9972457f13873568}{Contains}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00312 }
+\DoxyCodeLine{00313 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_ae4668d138c1cc9cfc607729a32b2772e}\label{classRelation_ae4668d138c1cc9cfc607729a32b2772e}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class D, class R$>$ \\
+\mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \& \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$ \&}]{r2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00090}{90}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091 \{}
+\DoxyCodeLine{00092     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&r2)}
+\DoxyCodeLine{00093         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     s1 = r2.s1;}
+\DoxyCodeLine{00096     s2 = r2.s2;}
+\DoxyCodeLine{00097     f = r2.f;}
+\DoxyCodeLine{00098     finv = r2.finv;}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_ab946892376f95ed757414e3fadc36f6d}\label{classRelation_ab946892376f95ed757414e3fadc36f6d}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!range@{range}}
+\index{range@{range}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{range()}{range()}}
+{\footnotesize\ttfamily template$<$class D, class R $>$ \\
+\mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classD}{D}} \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00257}{257}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00258 \{ \textcolor{comment}{// Set of r for a d}}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260     \mbox{\hyperlink{classSet}{Set<R>}} result;}
+\DoxyCodeLine{00261 }
+\DoxyCodeLine{00262     \textcolor{comment}{// Simple but understandable solution}}
+\DoxyCodeLine{00263     \textcolor{keyword}{typename} std::multimap<D,R>::const\_iterator it;}
+\DoxyCodeLine{00264 }
+\DoxyCodeLine{00265     \textcolor{keywordflow}{for} (it = f.begin(); it != f.end(); it++)}
+\DoxyCodeLine{00266     \{}
+\DoxyCodeLine{00267         std::cout << \textcolor{stringliteral}{"*"} << (*it).first << (*it).second;}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00269         \textcolor{keywordflow}{if} ((*it).first == d)}
+\DoxyCodeLine{00270         \{}
+\DoxyCodeLine{00271             result.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}((*it).second);}
+\DoxyCodeLine{00272         \}}
+\DoxyCodeLine{00273     \}}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00276 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_ae7d89135038109b9ff7ef4c6590a112e}\label{classRelation_ae7d89135038109b9ff7ef4c6590a112e}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!RangeSet@{RangeSet}}
+\index{RangeSet@{RangeSet}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{RangeSet()}{RangeSet()}}
+{\footnotesize\ttfamily template$<$class D , class R $>$ \\
+const \mbox{\hyperlink{classSet}{Set}}$<$ R $>$ \& \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::Range\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00251}{251}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00252 \{}
+\DoxyCodeLine{00253     \textcolor{keywordflow}{return} s2;}
+\DoxyCodeLine{00254 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a30b7ecfff53dda24b5661215e63b3aeb}\label{classRelation_a30b7ecfff53dda24b5661215e63b3aeb}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!removeDomainElement@{removeDomainElement}}
+\index{removeDomainElement@{removeDomainElement}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{removeDomainElement()}{removeDomainElement()}}
+{\footnotesize\ttfamily template$<$class D, class R $>$ \\
+void \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::remove\+Domain\+Element (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classD}{D}} \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00125}{125}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126 \{}
+\DoxyCodeLine{00127     \textcolor{comment}{// Remove all references to Domain element d ??}}
+\DoxyCodeLine{00128     f.erase(d);}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130     \textcolor{comment}{// Remove all references in inverse map}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132     \textcolor{keyword}{typename} std::multimap<R, D>::iterator it, it2;}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134     it2 = finv.begin();}
+\DoxyCodeLine{00135     it = it2;}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137 L1:}
+\DoxyCodeLine{00138     \{}
+\DoxyCodeLine{00139         \textcolor{keywordflow}{if} ((*it).second == d)}
+\DoxyCodeLine{00140         \{}
+\DoxyCodeLine{00141             it2 = finv.erase(it);   }
+\DoxyCodeLine{00142             it = it2;}
+\DoxyCodeLine{00143         \}}
+\DoxyCodeLine{00144         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00145         \{}
+\DoxyCodeLine{00146             it++;}
+\DoxyCodeLine{00147         \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149         \textcolor{keywordflow}{if} (it != finv.end())}
+\DoxyCodeLine{00150             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152     \}}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155     s1.\mbox{\hyperlink{classSet_a7c93429f1d8f232c421a6fde25cb982b}{Remove}}(d);}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_adf2bd0433cf8eb255e0b595d8502afad}\label{classRelation_adf2bd0433cf8eb255e0b595d8502afad}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!removeRangeElement@{removeRangeElement}}
+\index{removeRangeElement@{removeRangeElement}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{removeRangeElement()}{removeRangeElement()}}
+{\footnotesize\ttfamily template$<$class D , class R$>$ \\
+void \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::remove\+Range\+Element (\begin{DoxyParamCaption}\item[{const R \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00160}{160}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00161 \{}
+\DoxyCodeLine{00162     \textcolor{comment}{// Remove all references to Range element r}}
+\DoxyCodeLine{00163     finv.erase(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00164     }
+\DoxyCodeLine{00165     \textcolor{comment}{// Remove all references in forward map}}
+\DoxyCodeLine{00166     \textcolor{keyword}{typename} std::multimap<D,R>::iterator it, it2;}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168     it2 = f.begin();}
+\DoxyCodeLine{00169     it = it2;}
+\DoxyCodeLine{00170 L1:}
+\DoxyCodeLine{00171     \{}
+\DoxyCodeLine{00172         \textcolor{keywordflow}{if} ((*it).second == \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}})}
+\DoxyCodeLine{00173         \{}
+\DoxyCodeLine{00174             it2 = f.erase(it);  }
+\DoxyCodeLine{00175             it = it2;}
+\DoxyCodeLine{00176         \}}
+\DoxyCodeLine{00177         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00178         \{}
+\DoxyCodeLine{00179             it++;}
+\DoxyCodeLine{00180         \}}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182         \textcolor{keywordflow}{if} (it != f.end())}
+\DoxyCodeLine{00183             \textcolor{keywordflow}{goto} L1;}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185     \}}
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187     s2.\mbox{\hyperlink{classSet_a7c93429f1d8f232c421a6fde25cb982b}{Remove}}(\mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRelation_a6fe1980b85fd0a4d59ed6ca3dbb52a2a}\label{classRelation_a6fe1980b85fd0a4d59ed6ca3dbb52a2a}} 
+\index{Relation$<$ D, R $>$@{Relation$<$ D, R $>$}!removeRelation@{removeRelation}}
+\index{removeRelation@{removeRelation}!Relation$<$ D, R $>$@{Relation$<$ D, R $>$}}
+\doxysubsubsection{\texorpdfstring{removeRelation()}{removeRelation()}}
+{\footnotesize\ttfamily template$<$class D, class R $>$ \\
+void \mbox{\hyperlink{classRelation}{Relation}}$<$ \mbox{\hyperlink{classD}{D}}, R $>$\+::remove\+Relation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classD}{D}} \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Relation_8cc_source_l00216}{216}} of file \mbox{\hyperlink{Relation_8cc_source}{Relation.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00217 \{}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219     \textcolor{comment}{// Remove link between d and ALL r ??}}
+\DoxyCodeLine{00220     f.erase(d);}
+\DoxyCodeLine{00221 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Relation.\+hh\item 
-src/Relation.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{Relation_8hh}{Relation.\+hh}}\item 
+src/\mbox{\hyperlink{Relation_8cc}{Relation.\+cc}}\end{DoxyCompactItemize}

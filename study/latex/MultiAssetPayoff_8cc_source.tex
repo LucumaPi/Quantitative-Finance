@@ -1,0 +1,52 @@
+\hypertarget{MultiAssetPayoff_8cc_source}{}\doxysection{Multi\+Asset\+Payoff.\+cc}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// MultiAssetPayoff.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Base class for MultiAssetPayoffs.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 5 june 1998  MB  Started}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2005-\/5-\/16 DD Modified from Shape hierarchy}}
+\DoxyCodeLine{00007 \textcolor{comment}{// 2005-\/7-\/16 DD Modified for 2-\/asset Correlation assets}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 1998 -\/ 2005}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <duffy/MultiAssetPayoff.hh>}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{comment}{// Constructors and destructor}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoff_8cc_source_l00014}\mbox{\hyperlink{classMultiAssetPayoff_a57df16c0a7320254c71e902d7c4c2aeb}{00014}} \mbox{\hyperlink{classMultiAssetPayoff_a57df16c0a7320254c71e902d7c4c2aeb}{MultiAssetPayoff::MultiAssetPayoff}}(\mbox{\hyperlink{classMultiAssetPayoffStrategy}{MultiAssetPayoffStrategy}}\& pstrat)}
+\DoxyCodeLine{00015 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     ps = \&pstrat;}
+\DoxyCodeLine{00018 \}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoff_8cc_source_l00020}\mbox{\hyperlink{classMultiAssetPayoff_a5bc9e443f16024a235224cf7a07fc5cf}{00020}} \mbox{\hyperlink{classMultiAssetPayoff_a57df16c0a7320254c71e902d7c4c2aeb}{MultiAssetPayoff::MultiAssetPayoff}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMultiAssetPayoff}{MultiAssetPayoff}}\& source)}
+\DoxyCodeLine{00021 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     ps = source.ps;}
+\DoxyCodeLine{00024 \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoff_8cc_source_l00026}\mbox{\hyperlink{classMultiAssetPayoff_a4ceb8ca5e2e4c0bab356f461217ab2f2}{00026}} \mbox{\hyperlink{classMultiAssetPayoff_a4ceb8ca5e2e4c0bab356f461217ab2f2}{MultiAssetPayoff:: ~MultiAssetPayoff}}()}
+\DoxyCodeLine{00027 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00028 \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030 \textcolor{comment}{// Operator overloading}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoff_8cc_source_l00031}\mbox{\hyperlink{classMultiAssetPayoff_a4b13a7823b6fd62247b8d4c6a7eccbf2}{00031}} \mbox{\hyperlink{classMultiAssetPayoff}{MultiAssetPayoff}}\& \mbox{\hyperlink{classMultiAssetPayoff_a4b13a7823b6fd62247b8d4c6a7eccbf2}{MultiAssetPayoff::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classMultiAssetPayoff}{MultiAssetPayoff}}\& source)}
+\DoxyCodeLine{00032 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&source)}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     ps = source.ps;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00040 \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042 \textcolor{comment}{// Not a pure virtual MultiAssetPayoff function anymore}}
+\DoxyCodeLine{\Hypertarget{MultiAssetPayoff_8cc_source_l00043}\mbox{\hyperlink{classMultiAssetPayoff_a5c152db2417d285484ef94ba0c5c0694}{00043}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classMultiAssetPayoff_a5c152db2417d285484ef94ba0c5c0694}{MultiAssetPayoff::Payoff}}(\textcolor{keywordtype}{double} S1, \textcolor{keywordtype}{double} S2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00044 \textcolor{keyword}{}\{ \textcolor{comment}{// For a given spot price}}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046     \textcolor{keywordflow}{return} ps-\/>\mbox{\hyperlink{classMultiAssetPayoffStrategy_aaf93388a8d1b05f5fae9fefbe156ead8}{payoff}}(S1, S2);    \textcolor{comment}{// DELEGATE to strategy}}
+\DoxyCodeLine{00047 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestFunctionPointer_8cc">
+<title>tests/TestFunctionPointer.cc File Reference</title>
+<indexterm><primary>tests/TestFunctionPointer.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;duffy/Complex.hh&gt;
+</programlisting>Include dependency graph for TestFunctionPointer.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestFunctionPointer_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V &gt; </para><para>V <link linkend="_TestFunctionPointer_8cc_1ab765a37b9080d5c03ea3a60b12f8b42e">add</link> (V x, V y)</para>
+</listitem>
+            <listitem><para>template&lt;class V &gt; </para><para>V <link linkend="_TestFunctionPointer_8cc_1aa6be4cf7079c0514c5a68e575c567067">multiply</link> (V x, V y)</para>
+</listitem>
+            <listitem><para>template&lt;class V &gt; </para><para>V <link linkend="_TestFunctionPointer_8cc_1afb04cfed572cc0cc4fcd2536ee927423">subtract</link> (V x, V y)</para>
+</listitem>
+            <listitem><para>template&lt;class V &gt; </para><para>void <link linkend="_TestFunctionPointer_8cc_1a24ab3b71e1a0398e492a327c48bcaa8f">genericFunction</link> (V myX, V myY, V(*f)(V x, V y))</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestFunctionPointer_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestFunctionPointer_8cc_1ab765a37b9080d5c03ea3a60b12f8b42e"/>    <section>
+    <title>add()</title>
+<indexterm><primary>add</primary><secondary>TestFunctionPointer.cc</secondary></indexterm>
+<indexterm><primary>TestFunctionPointer.cc</primary><secondary>add</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>V add (V x, V y)</computeroutput></para><para>
+Definition at line 12 of file TestFunctionPointer.cc.</para>
+<programlisting>13 {
+14 
+15 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**&#32;Adding&#32;two&#32;numbers:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;x&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;y&#32;&lt;&lt;&#32;std::endl;
+16 
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x&#32;+&#32;y;
+18 
+19 }
+</programlisting>    </section><anchor xml:id="_TestFunctionPointer_8cc_1a24ab3b71e1a0398e492a327c48bcaa8f"/>    <section>
+    <title>genericFunction()</title>
+<indexterm><primary>genericFunction</primary><secondary>TestFunctionPointer.cc</secondary></indexterm>
+<indexterm><primary>TestFunctionPointer.cc</primary><secondary>genericFunction</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>void genericFunction (V myX, V myY, V(*)(V x, V y) f)</computeroutput></para><para>
+Definition at line 40 of file TestFunctionPointer.cc.</para>
+<programlisting>41 {&#32;<emphasis role="comment">//&#32;A&#32;function&#32;that&#32;delivers&#32;two&#32;variables&#32;myX&#32;and&#32;MyY&#32;to&#32;the&#32;function&#32;pointer&#32;&apos;f&apos;</emphasis>
+42 &#32;&#32;<emphasis role="comment">//&#32;This&#32;is&#32;a&#32;potentially&#32;reusable&#32;function</emphasis>
+43 
+44 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Call&#32;the&#32;function&#32;with&#32;myX&#32;and&#32;myY</emphasis>
+45 &#32;&#32;&#32;&#32;V&#32;result&#32;=&#32;(*f)(myX,&#32;myY);
+46 
+47 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Result&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;result&#32;&lt;&lt;&#32;std::endl;
+48 }
+</programlisting>    </section><anchor xml:id="_TestFunctionPointer_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestFunctionPointer.cc</secondary></indexterm>
+<indexterm><primary>TestFunctionPointer.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 51 of file TestFunctionPointer.cc.</para>
+<programlisting>52 {
+53 &#32;&#32;&#32;&#32;{
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;x&#32;=&#32;3.0;
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;y&#32;=&#32;2.0;
+56 
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;genericFunction&lt;double&gt;(x,&#32;y,&#32;<link linkend="_TestFunctionPointer_8cc_1ab765a37b9080d5c03ea3a60b12f8b42e">add</link>);
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;genericFunction&lt;double&gt;(x,&#32;y,&#32;<link linkend="_TestFunctionPointer_8cc_1aa6be4cf7079c0514c5a68e575c567067">multiply</link>);
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;genericFunction&lt;double&gt;(x,&#32;y,&#32;<link linkend="_TestFunctionPointer_8cc_1afb04cfed572cc0cc4fcd2536ee927423">subtract</link>);
+60 &#32;&#32;&#32;&#32;}
+61 
+62 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;x(3.0,&#32;2.0);
+63 &#32;&#32;&#32;&#32;<link linkend="_classComplex">Complex</link>&#32;y(2.0,&#32;-4.9);
+64 
+65 &#32;&#32;&#32;&#32;genericFunction&lt;Complex&gt;(x,&#32;y,&#32;<link linkend="_TestFunctionPointer_8cc_1ab765a37b9080d5c03ea3a60b12f8b42e">add</link>);
+66 &#32;&#32;&#32;&#32;genericFunction&lt;Complex&gt;(x,&#32;y,&#32;<link linkend="_TestFunctionPointer_8cc_1aa6be4cf7079c0514c5a68e575c567067">multiply</link>);
+67 &#32;&#32;&#32;&#32;genericFunction&lt;Complex&gt;(x,&#32;y,&#32;<link linkend="_TestFunctionPointer_8cc_1afb04cfed572cc0cc4fcd2536ee927423">subtract</link>);
+68 
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+71 }
+</programlisting>    </section><anchor xml:id="_TestFunctionPointer_8cc_1aa6be4cf7079c0514c5a68e575c567067"/>    <section>
+    <title>multiply()</title>
+<indexterm><primary>multiply</primary><secondary>TestFunctionPointer.cc</secondary></indexterm>
+<indexterm><primary>TestFunctionPointer.cc</primary><secondary>multiply</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>V multiply (V x, V y)</computeroutput></para><para>
+Definition at line 21 of file TestFunctionPointer.cc.</para>
+<programlisting>22 {
+23 
+24 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**&#32;Multiplying&#32;two&#32;numbers:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;x&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;y&#32;&lt;&lt;&#32;std::endl;
+25 
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x&#32;*&#32;y;
+27 
+28 }
+</programlisting>    </section><anchor xml:id="_TestFunctionPointer_8cc_1afb04cfed572cc0cc4fcd2536ee927423"/>    <section>
+    <title>subtract()</title>
+<indexterm><primary>subtract</primary><secondary>TestFunctionPointer.cc</secondary></indexterm>
+<indexterm><primary>TestFunctionPointer.cc</primary><secondary>subtract</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>V subtract (V x, V y)</computeroutput></para><para>
+Definition at line 30 of file TestFunctionPointer.cc.</para>
+<programlisting>31 {
+32 
+33 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;**&#32;Subtracting&#32;two&#32;numbers:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;x&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;y&#32;&lt;&lt;&#32;std::endl;
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x&#32;-&#32;y;
+36 
+37 }
+</programlisting></section>
+</section>
+</section>

@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceChapter3CPPBook">
+<title>Chapter3CPPBook Namespace Reference</title>
+<indexterm><primary>Chapter3CPPBook</primary></indexterm>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef std::vector&lt; double &gt; <link linkend="_namespaceChapter3CPPBook_1a4e4f0b17aee4dc6f9d06c5d648650b62">Vector</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceChapter3CPPBook_1a5f216409d130f616335296ddc6853ee1">power</link> (double d, long <link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceChapter3CPPBook_1abe690d1487ddab992c08d7c68c53f3bc">FutureValue</link> (double P0, long nPeriods, double r)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceChapter3CPPBook_1ab73644db84be670d7c7aabdac2ca01b3">FutureValue</link> (double P0, long nPeriods, double r, long m)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceChapter3CPPBook_1a7a6cebaf5369ebd4c06b3747e9b5491f">FutureValueContinuous</link> (double P0, long nPeriods, double r)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceChapter3CPPBook_1a80457755c62c5cc27b0c679524f04896">OrdinaryAnnuity</link> (double A, long nPeriods, double r)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceChapter3CPPBook_1a18478ac60c06346fe86d2022fabefa07">PresentValue</link> (double Pn, long nPeriods, double r)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceChapter3CPPBook_1a152c2df09775396d9d4252fcb0f58213">PresentValue</link> (const <link linkend="_namespaceChapter3CPPBook_1a4e4f0b17aee4dc6f9d06c5d648650b62">Vector</link> &amp;prices, long nPeriods, double r)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceChapter3CPPBook_1a73378b5ee752acf087d6005aca68cc4e">PresentValueOrdinaryAnnuity</link> (double A, long nPeriods, double r)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_namespaceChapter3CPPBook_1a4e4f0b17aee4dc6f9d06c5d648650b62"/>    <section>
+    <title>Vector</title>
+<indexterm><primary>Vector</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>Vector</secondary></indexterm>
+<para><computeroutput>typedef std::vector&lt;double&gt; <link linkend="_namespaceChapter3CPPBook_1a4e4f0b17aee4dc6f9d06c5d648650b62">Chapter3CPPBook::Vector</link></computeroutput></para><para>
+Definition at line 19 of file SimpleBondPricing.hh.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceChapter3CPPBook_1abe690d1487ddab992c08d7c68c53f3bc"/>    <section>
+    <title>FutureValue()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>FutureValue</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>FutureValue</secondary></indexterm>
+<para><computeroutput>double Chapter3CPPBook::FutureValue (double P0, long nPeriods, double r)</computeroutput></para><para>
+Definition at line 39 of file SimpleBondPricing.cc.</para>
+<programlisting>40 &#32;&#32;&#32;&#32;{
+41 
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;factor&#32;=&#32;1.0&#32;+&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;P0&#32;*&#32;<link linkend="_namespaceChapter3CPPBook_1a5f216409d130f616335296ddc6853ee1">power</link>(factor,&#32;nPeriods);
+44 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_namespaceChapter3CPPBook_1ab73644db84be670d7c7aabdac2ca01b3"/>    <section>
+    <title>FutureValue()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>FutureValue</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>FutureValue</secondary></indexterm>
+<para><computeroutput>double Chapter3CPPBook::FutureValue (double P0, long nPeriods, double r, long m)</computeroutput></para><para>
+Definition at line 48 of file SimpleBondPricing.cc.</para>
+<programlisting>49 &#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;R&#32;=&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;/&#32;double(m);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;newPeriods&#32;=&#32;m&#32;*&#32;nPeriods;
+52 
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_namespaceChapter3CPPBook_1abe690d1487ddab992c08d7c68c53f3bc">FutureValue</link>(P0,&#32;newPeriods,&#32;R);
+54 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_namespaceChapter3CPPBook_1a7a6cebaf5369ebd4c06b3747e9b5491f"/>    <section>
+    <title>FutureValueContinuous()</title>
+<indexterm><primary>FutureValueContinuous</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>FutureValueContinuous</secondary></indexterm>
+<para><computeroutput>double Chapter3CPPBook::FutureValueContinuous (double P0, long nPeriods, double r)</computeroutput></para><para>
+Definition at line 57 of file SimpleBondPricing.cc.</para>
+<programlisting>58 &#32;&#32;&#32;&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;growthFactor&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>&#32;*&#32;<emphasis role="keywordtype">double</emphasis>(nPeriods)&#32;);
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;P0&#32;*&#32;growthFactor;
+63 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_namespaceChapter3CPPBook_1a80457755c62c5cc27b0c679524f04896"/>    <section>
+    <title>OrdinaryAnnuity()</title>
+<indexterm><primary>OrdinaryAnnuity</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>OrdinaryAnnuity</secondary></indexterm>
+<para><computeroutput>double Chapter3CPPBook::OrdinaryAnnuity (double A, long nPeriods, double r)</computeroutput></para><para>
+Definition at line 66 of file SimpleBondPricing.cc.</para>
+<programlisting>67 &#32;&#32;&#32;&#32;{
+68 
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;factor&#32;=&#32;1.0&#32;+&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;A&#32;*&#32;((<link linkend="_namespaceChapter3CPPBook_1a5f216409d130f616335296ddc6853ee1">power</link>(factor,&#32;nPeriods)&#32;-&#32;1.0)/<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+71 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_namespaceChapter3CPPBook_1a5f216409d130f616335296ddc6853ee1"/>    <section>
+    <title>power()</title>
+<indexterm><primary>power</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>power</secondary></indexterm>
+<para><computeroutput>double Chapter3CPPBook::power (double d, long n)</computeroutput></para><para>
+Definition at line 23 of file SimpleBondPricing.cc.</para>
+<programlisting>24 &#32;&#32;&#32;&#32;{
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;==&#32;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;1.0;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>&#32;==&#32;1)&#32;<emphasis role="keywordflow">return</emphasis>&#32;d;
+27 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;result&#32;=&#32;d;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;j&#32;=&#32;1;&#32;j&#32;&lt;&#32;<link linkend="_TestImpliedVolatility_8cc_1a927694c350b26693c65f7c8b73b3dba3">n</link>;&#32;j++)
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;*=&#32;d;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+33 
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+35 
+36 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_namespaceChapter3CPPBook_1a152c2df09775396d9d4252fcb0f58213"/>    <section>
+    <title>PresentValue()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>PresentValue</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>PresentValue</secondary></indexterm>
+<para><computeroutput>double Chapter3CPPBook::PresentValue (const <link linkend="_namespaceChapter3CPPBook_1a4e4f0b17aee4dc6f9d06c5d648650b62">Vector</link> &amp; prices, long nPeriods, double r)</computeroutput></para><para>
+Definition at line 82 of file SimpleBondPricing.cc.</para>
+<programlisting>83 &#32;&#32;&#32;&#32;{
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Number&#32;of&#32;periods&#32;MUST&#32;==&#32;size&#32;of&#32;the&#32;vector</emphasis>
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert&#32;(nPeriods&#32;==&#32;prices.size());
+86 
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;factor&#32;=&#32;1.0&#32;+&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+88 
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;PV&#32;=&#32;0.0;
+90 
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;t&#32;=&#32;0;&#32;t&#32;&lt;&#32;nPeriods;&#32;t++)
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PV&#32;+=&#32;prices[t]&#32;/&#32;<link linkend="_namespaceChapter3CPPBook_1a5f216409d130f616335296ddc6853ee1">power</link>(factor,&#32;t+1);
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+95 
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;PV;
+97 
+98 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_namespaceChapter3CPPBook_1a18478ac60c06346fe86d2022fabefa07"/>    <section>
+    <title>PresentValue()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>PresentValue</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>PresentValue</secondary></indexterm>
+<para><computeroutput>double Chapter3CPPBook::PresentValue (double Pn, long nPeriods, double r)</computeroutput></para><para>
+Definition at line 74 of file SimpleBondPricing.cc.</para>
+<programlisting>75 &#32;&#32;&#32;&#32;{
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;factor&#32;=&#32;1.0&#32;+&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Pn&#32;*&#32;(1.0&#32;/&#32;<link linkend="_namespaceChapter3CPPBook_1a5f216409d130f616335296ddc6853ee1">power</link>(factor,&#32;nPeriods));
+79 &#32;&#32;&#32;&#32;}
+</programlisting>    </section><anchor xml:id="_namespaceChapter3CPPBook_1a73378b5ee752acf087d6005aca68cc4e"/>    <section>
+    <title>PresentValueOrdinaryAnnuity()</title>
+<indexterm><primary>PresentValueOrdinaryAnnuity</primary><secondary>Chapter3CPPBook</secondary></indexterm>
+<indexterm><primary>Chapter3CPPBook</primary><secondary>PresentValueOrdinaryAnnuity</secondary></indexterm>
+<para><computeroutput>double Chapter3CPPBook::PresentValueOrdinaryAnnuity (double A, long nPeriods, double r)</computeroutput></para><para>
+Definition at line 102 of file SimpleBondPricing.cc.</para>
+<programlisting>103 &#32;&#32;&#32;&#32;{
+104 
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;factor&#32;=&#32;1.0&#32;+&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;numerator&#32;=&#32;1.0&#32;-&#32;(1.0&#32;/&#32;<link linkend="_namespaceChapter3CPPBook_1a5f216409d130f616335296ddc6853ee1">power</link>(factor,&#32;nPeriods));
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(A&#32;*&#32;numerator&#32;)&#32;/&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>;
+108 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+</section>

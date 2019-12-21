@@ -1,0 +1,73 @@
+\hypertarget{Delegation_8cc_source}{}\doxysection{Delegation.\+cc}
+\label{Delegation_8cc_source}\index{tests/Delegation.cc@{tests/Delegation.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Delegation.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Show use of Composition and Delegation}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 2005-\/2006}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00009}\mbox{\hyperlink{classB}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{classB}{B}}}
+\DoxyCodeLine{00010 \{ \textcolor{comment}{// Base class for Delegation}}
+\DoxyCodeLine{00011 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012         }
+\DoxyCodeLine{00013 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00014}\mbox{\hyperlink{classB_a9532a74021f7efb003dffbc9d4145e65}{00014}}     \mbox{\hyperlink{classB_a9532a74021f7efb003dffbc9d4145e65}{B}}() \{\}}
+\DoxyCodeLine{00015     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classB_a63badaaed2bfb7ac7756c13fe57fcbd9}{getValue}}() = 0;}
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00016}\mbox{\hyperlink{classB_aae47aa88befb57e1a716e8463097cc6d}{00016}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{classB_aae47aa88befb57e1a716e8463097cc6d}{~B}}() \{ \}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018 \};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00020}\mbox{\hyperlink{classD}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classD}{D}} : \textcolor{keyword}{public} \mbox{\hyperlink{classB}{B}}}
+\DoxyCodeLine{00021 \{ \textcolor{comment}{// Derived class}}
+\DoxyCodeLine{00022 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023         \textcolor{keywordtype}{int}* iarr;}
+\DoxyCodeLine{00024         \textcolor{keywordtype}{int} size;}
+\DoxyCodeLine{00025 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00026}\mbox{\hyperlink{classD_a6649b4477d56114c1077de910a8b82aa}{00026}}     \mbox{\hyperlink{classD_a6649b4477d56114c1077de910a8b82aa}{D}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}) : \mbox{\hyperlink{classB}{B}}() }
+\DoxyCodeLine{00027     \{ }
+\DoxyCodeLine{00028         size = \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}};}
+\DoxyCodeLine{00029         iarr = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[size];}
+\DoxyCodeLine{00030         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}; j++)}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             iarr[j] = double(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}-\/j);}
+\DoxyCodeLine{00033         \}}
+\DoxyCodeLine{00034     \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00036}\mbox{\hyperlink{classD_a30083bc921f2ca1a443011d4798d6765}{00036}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classD_a30083bc921f2ca1a443011d4798d6765}{getValue}}() \{\textcolor{keywordflow}{return} iarr[0]/double(size);\}}
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00037}\mbox{\hyperlink{classD_adca443258ee35f72ee59a0f3b30f358d}{00037}}     \mbox{\hyperlink{classD_adca443258ee35f72ee59a0f3b30f358d}{~D}}() \{ \textcolor{keyword}{delete} [] iarr; \}}
+\DoxyCodeLine{00038 \};}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00040}\mbox{\hyperlink{classClient}{00040}} \textcolor{keyword}{class }\mbox{\hyperlink{classClient}{Client}}}
+\DoxyCodeLine{00041 \{}
+\DoxyCodeLine{00042 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043         \mbox{\hyperlink{classB}{B}}* b;}
+\DoxyCodeLine{00044 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00045}\mbox{\hyperlink{classClient_a8a529313d0b2a2b38afc062131ad8be2}{00045}}     \mbox{\hyperlink{classClient_a8a529313d0b2a2b38afc062131ad8be2}{Client}}(\mbox{\hyperlink{classB}{B}}\& delegate) \{ b = \&delegate; \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{comment}{// The function that delegates}}
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00048}\mbox{\hyperlink{classClient_aefa39b4806f923f2a4a4fa0b7020007a}{00048}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classClient_aefa39b4806f923f2a4a4fa0b7020007a}{clientValue}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00049 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{00050         \textcolor{keywordtype}{double} tmp = b -\/> \mbox{\hyperlink{TestOtherExceptions_8cc_a5d6745a4ce55928507e360ba8b8f54d2}{getValue}}();}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052         \textcolor{comment}{// Modify for current situation}}
+\DoxyCodeLine{00053         \textcolor{keywordflow}{return} tmp * 100.0;}
+\DoxyCodeLine{00054     \}}
+\DoxyCodeLine{00055 \};}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{\Hypertarget{Delegation_8cc_source_l00057}\mbox{\hyperlink{Delegation_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00057}} \textcolor{keywordtype}{int} \mbox{\hyperlink{Delegation_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00058 \{}
+\DoxyCodeLine{00059     \textcolor{keywordtype}{int} arraySize = 10;}
+\DoxyCodeLine{00060     \mbox{\hyperlink{classD}{D}} myDerived(arraySize);}
+\DoxyCodeLine{00061     }
+\DoxyCodeLine{00062     \mbox{\hyperlink{classClient}{Client}} myClient(myDerived);}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     std::cout << \textcolor{stringliteral}{"Client value: "} << myClient.\mbox{\hyperlink{classClient_aefa39b4806f923f2a4a4fa0b7020007a}{clientValue}}() << std::endl;}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00067 \}}
+
+\end{DoxyCode}

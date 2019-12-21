@@ -1,0 +1,40 @@
+\hypertarget{LatticeMechanisms_8cc_source}{}\doxysection{Lattice\+Mechanisms.\+cc}
+\label{LatticeMechanisms_8cc_source}\index{src/LatticeMechanisms.cc@{src/LatticeMechanisms.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// latticemechanisms.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing the Latice class (basis for binomial and trinomial}}
+\DoxyCodeLine{00004 \textcolor{comment}{// trees)}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// In this version we have one class for both binomial and trinomial}}
+\DoxyCodeLine{00007 \textcolor{comment}{// trees.}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 2003-\/2006}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#ifndef LatticeMechanisms\_CC}}
+\DoxyCodeLine{\Hypertarget{LatticeMechanisms_8cc_source_l00013}\mbox{\hyperlink{LatticeMechanisms_8cc_ae4f004b555f8327266ad41c00c220545}{00013}} \textcolor{preprocessor}{\#define LatticeMechanisms\_CC}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Lattice_8hh}{duffy/Lattice.hh}}>}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Matrix_8hh}{duffy/Matrix.hh}}>}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{MatrixMechanisms_8hh}{duffy/MatrixMechanisms.hh}}>}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{LatticeMechanisms_8cc_source_l00021}\mbox{\hyperlink{LatticeMechanisms_8cc_a4f588b04e89a733e6e27ba312ce437d3}{00021}} \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} I, \textcolor{keywordtype}{int} NumberNodes> \textcolor{keywordtype}{void} \mbox{\hyperlink{LatticeMechanisms_8cc_a4f588b04e89a733e6e27ba312ce437d3}{print}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLattice}{Lattice<V, I, NumberNodes>}}\& source)}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023     \textcolor{keywordflow}{for} (I j = source.\mbox{\hyperlink{classLattice_a07442df63222c6627f46efc4ae91acf9}{MinIndex}}(); j <= source.\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); j++)}
+\DoxyCodeLine{00024     \{}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026         std::cout << \textcolor{stringliteral}{"\(\backslash\)nBranch Number "} << j << \textcolor{stringliteral}{": ["};}
+\DoxyCodeLine{00027         \textcolor{keywordflow}{for} (I i = source[j].MinIndex(); i <= source[j].\mbox{\hyperlink{classLattice_a5cac27496a08f2a14d8e1d65732a4c34}{MaxIndex}}(); i++)}
+\DoxyCodeLine{00028         \{}
+\DoxyCodeLine{00029             std::cout << source[j][i] << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{00030         \}}
+\DoxyCodeLine{00031         std::cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

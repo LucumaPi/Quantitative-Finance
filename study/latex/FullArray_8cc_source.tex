@@ -1,0 +1,91 @@
+\hypertarget{FullArray_8cc_source}{}\doxysection{Full\+Array.\+cc}
+\label{FullArray_8cc_source}\index{src/FullArray.cc@{src/FullArray.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// FullArray.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Template class for a normal arrays.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 28 january 1999  RD  Started}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2002-\/1-\/21 Indexes starting at 1}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Component Technology 1999}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#ifndef FullArray\_CC}}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00011}\mbox{\hyperlink{FullArray_8cc_a5dfbd8c61279b06f43d31a1bcb4265a2}{00011}} \textcolor{preprocessor}{\#define FullArray\_CC}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{FullArray_8hh}{duffy/FullArray.hh}}>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{comment}{// Constructors \& destructor}}
+\DoxyCodeLine{00016 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00017}\mbox{\hyperlink{classFullArray_aa964a473d16b89f8380a03e252f24d1c}{00017}} \mbox{\hyperlink{classFullArray_aa964a473d16b89f8380a03e252f24d1c}{FullArray<V, TA>::FullArray}}(): \mbox{\hyperlink{classArrayStructure}{ArrayStructure}}<V>()}
+\DoxyCodeLine{00018 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     m\_vector=std::vector<V, TA>(1); \textcolor{comment}{// vector object with 1 element}}
+\DoxyCodeLine{00021 \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00024}\mbox{\hyperlink{classFullArray_a89c2fe9944639ae1ea069bf5c69117cc}{00024}} \mbox{\hyperlink{classFullArray_aa964a473d16b89f8380a03e252f24d1c}{FullArray<V, TA>::FullArray}}(std::size\_t size): \mbox{\hyperlink{classArrayStructure}{ArrayStructure}}<V>()}
+\DoxyCodeLine{00025 \{ \textcolor{comment}{// Constructor with size}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     m\_vector=std::vector<V, TA>(size);}
+\DoxyCodeLine{00028 \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00031}\mbox{\hyperlink{classFullArray_afe445599c77bc8ecd849f982616960df}{00031}} \mbox{\hyperlink{classFullArray_aa964a473d16b89f8380a03e252f24d1c}{FullArray<V, TA>::FullArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classFullArray}{FullArray<V, TA>}}\& source): \mbox{\hyperlink{classArrayStructure}{ArrayStructure}}<V>(source)}
+\DoxyCodeLine{00032 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     m\_vector=source.m\_vector;}
+\DoxyCodeLine{00035 \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00038}\mbox{\hyperlink{classFullArray_a1fe55cb30365520b3f3a3eb731aecb2a}{00038}} \mbox{\hyperlink{classFullArray_a1fe55cb30365520b3f3a3eb731aecb2a}{FullArray<V, TA>::~FullArray}}()}
+\DoxyCodeLine{00039 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00040 \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00043 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00044}\mbox{\hyperlink{classFullArray_ae9a91c66741570e20758d54664676db8}{00044}} std::size\_t \mbox{\hyperlink{classFullArray_ae9a91c66741570e20758d54664676db8}{FullArray<V, TA>::Size}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00045 \textcolor{keyword}{}\{ \textcolor{comment}{// Size of the array}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} m\_vector.size();}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \textcolor{comment}{// Operators}}
+\DoxyCodeLine{00054 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00055}\mbox{\hyperlink{classFullArray_a0ecf139013ac590276644320dcc663fc}{00055}} V\& \mbox{\hyperlink{classFullArray_a0ecf139013ac590276644320dcc663fc}{FullArray<V, TA>::operator[] }}(std::size\_t index)}
+\DoxyCodeLine{00056 \{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} m\_vector[index -\/ 1];}
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00063}\mbox{\hyperlink{classFullArray_ab20c110bcf7e445dfc410b0fb55fa408}{00063}} \textcolor{keyword}{const} V\& \mbox{\hyperlink{classFullArray_a0ecf139013ac590276644320dcc663fc}{FullArray<V, TA>::operator[] }}(std::size\_t index)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00064 \textcolor{keyword}{}\{ \textcolor{comment}{// Subscripting operator}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} m\_vector[index -\/ 1];}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} TA>}
+\DoxyCodeLine{\Hypertarget{FullArray_8cc_source_l00071}\mbox{\hyperlink{classFullArray_abb4489eb3c6bea585ca00f4b41ae7c1f}{00071}} \mbox{\hyperlink{classFullArray}{FullArray<V, TA>}}\& \mbox{\hyperlink{classFullArray_abb4489eb3c6bea585ca00f4b41ae7c1f}{FullArray<V, TA>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classFullArray}{FullArray<V, TA>}}\& source)}
+\DoxyCodeLine{00072 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00075     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{comment}{// Call base class constructor}}
+\DoxyCodeLine{00078     \mbox{\hyperlink{classArrayStructure_aee8dc21d313bd8706f397a561332d654}{ArrayStructure<V>::operator = }}(source);}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{comment}{// Copy the embedded vector}}
+\DoxyCodeLine{00081     m\_vector=source.m\_vector;}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00084 \}}
+\DoxyCodeLine{00085 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

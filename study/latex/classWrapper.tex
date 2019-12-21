@@ -21,14 +21,88 @@ Collaboration diagram for Wrapper$<$ T $>$\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classWrapper_ac286ab6c8dea5a2b5a243edea78eca7b}\label{classWrapper_ac286ab6c8dea5a2b5a243edea78eca7b}} 
-{\bfseries Wrapper} (T wrapped\+Object)
+\mbox{\hyperlink{classWrapper_a747788c9b29a997f4d805ec60e6e16a2}{Wrapper}} ()
 \item 
-\mbox{\Hypertarget{classWrapper_a722618937323f1c2ae417b77021cf381}\label{classWrapper_a722618937323f1c2ae417b77021cf381}} 
-{\footnotesize template$<$class T2 $>$ }\\bool {\bfseries same\+Type} (const T2 \&t2)
+\mbox{\hyperlink{classWrapper_ac286ab6c8dea5a2b5a243edea78eca7b}{Wrapper}} (T wrapped\+Object)
+\item 
+{\footnotesize template$<$class T2 $>$ }\\bool \mbox{\hyperlink{classWrapper_a722618937323f1c2ae417b77021cf381}{same\+Type}} (const T2 \&t2)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Wrapper$<$ T $>$}
+
+
+
+Definition at line \mbox{\hyperlink{Wrapper_8cc_source_l00024}{24}} of file \mbox{\hyperlink{Wrapper_8cc_source}{Wrapper.\+cc}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWrapper_a747788c9b29a997f4d805ec60e6e16a2}\label{classWrapper_a747788c9b29a997f4d805ec60e6e16a2}} 
+\index{Wrapper$<$ T $>$@{Wrapper$<$ T $>$}!Wrapper@{Wrapper}}
+\index{Wrapper@{Wrapper}!Wrapper$<$ T $>$@{Wrapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Wrapper()}{Wrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{classWrapper}{Wrapper}}$<$ T $>$\+::\mbox{\hyperlink{classWrapper}{Wrapper}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Wrapper_8cc_source_l00030}{30}} of file \mbox{\hyperlink{Wrapper_8cc_source}{Wrapper.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030 \{ obj = \mbox{\hyperlink{namespaceNSEuropeanOption_a62a4ea4e8132239d531a9760dfe36b4d}{T}}();\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWrapper_ac286ab6c8dea5a2b5a243edea78eca7b}\label{classWrapper_ac286ab6c8dea5a2b5a243edea78eca7b}} 
+\index{Wrapper$<$ T $>$@{Wrapper$<$ T $>$}!Wrapper@{Wrapper}}
+\index{Wrapper@{Wrapper}!Wrapper$<$ T $>$@{Wrapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Wrapper()}{Wrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{classWrapper}{Wrapper}}$<$ T $>$\+::\mbox{\hyperlink{classWrapper}{Wrapper}} (\begin{DoxyParamCaption}\item[{T}]{wrapped\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Wrapper_8cc_source_l00032}{32}} of file \mbox{\hyperlink{Wrapper_8cc_source}{Wrapper.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{ obj = wrappedObject;\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWrapper_a722618937323f1c2ae417b77021cf381}\label{classWrapper_a722618937323f1c2ae417b77021cf381}} 
+\index{Wrapper$<$ T $>$@{Wrapper$<$ T $>$}!sameType@{sameType}}
+\index{sameType@{sameType}!Wrapper$<$ T $>$@{Wrapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sameType()}{sameType()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+template$<$class T2 $>$ \\
+bool \mbox{\hyperlink{classWrapper}{Wrapper}}$<$ T $>$\+::same\+Type (\begin{DoxyParamCaption}\item[{const T2 \&}]{t2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Wrapper_8cc_source_l00037}{37}} of file \mbox{\hyperlink{Wrapper_8cc_source}{Wrapper.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038     \{}
+\DoxyCodeLine{00039         }
+\DoxyCodeLine{00040         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(\mbox{\hyperlink{classWrapper}{Wrapper<T>}}) == \textcolor{keyword}{typeid}(t2))}
+\DoxyCodeLine{00041         \{}
+\DoxyCodeLine{00042             }
+\DoxyCodeLine{00043             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00044         \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00047     \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/Wrapper.\+cc\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{Wrapper_8cc}{Wrapper.\+cc}}\end{DoxyCompactItemize}

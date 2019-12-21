@@ -1,0 +1,42 @@
+\hypertarget{TestPayoff_8cc_source}{}\doxysection{Test\+Payoff.\+cc}
+\label{TestPayoff_8cc_source}\index{tests/TestPayoff.cc@{tests/TestPayoff.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// TestPayoff.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing the one-\/factor payoff classes}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// (C) Datasim Education BV 1998 -\/ 2005}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{CallPayoff_8hh}{duffy/CallPayoff.hh}}>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{BullSpreadPayoff_8hh}{duffy/BullSpreadPayoff.hh}}>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{TestPayoff_8cc_source_l00012}\mbox{\hyperlink{TestPayoff_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00012}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestPayoff_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014     }
+\DoxyCodeLine{00015     \mbox{\hyperlink{classCallPayoff}{CallPayoff}} call(20.0);}
+\DoxyCodeLine{00016     }
+\DoxyCodeLine{00017     std::cout << \textcolor{stringliteral}{"Give a stock price (plain Call): "};}
+\DoxyCodeLine{00018     \textcolor{keywordtype}{double} S;}
+\DoxyCodeLine{00019     std::cin >> S;}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     std::cout << \textcolor{stringliteral}{"Call Payoff is: "} << call.\mbox{\hyperlink{classCallPayoff_a388ddb411d45108ab253f9c4dd50bcbb}{payoff}}(S) << std::endl;}
+\DoxyCodeLine{00022     }
+\DoxyCodeLine{00023     \textcolor{keywordtype}{double} K1 = 30.0;       \textcolor{comment}{// Strike price of bought call}}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{double} K2 = 35.0;       \textcolor{comment}{// Strike price of sell call}}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{double} costBuy = 3.0;   \textcolor{comment}{// Cost to buy a call}}
+\DoxyCodeLine{00026     \textcolor{keywordtype}{double} sellPrice = 1.0; \textcolor{comment}{// Sell price for call}}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classBullSpreadPayoff}{BullSpreadPayoff}} bs(K1, K2, costBuy, sellPrice);    \textcolor{comment}{// Hull example}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     std::cout << \textcolor{stringliteral}{"Give a stock price (BullSpread): "};}
+\DoxyCodeLine{00030     std::cin >> S;}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     std::cout << \textcolor{stringliteral}{"Bull Spread Payoff is: "} << bs.\mbox{\hyperlink{classBullSpreadPayoff_a6c3f86354323a9a6149ba2cf88a74ba7}{payoff}}(S) << std::endl;}
+\DoxyCodeLine{00033     std::cout << \textcolor{stringliteral}{"Bull Spread Profit is: "} << bs.\mbox{\hyperlink{classBullSpreadPayoff_ab5b5198456e1449ce0ea4fd2aee6938d}{profit}}(S) << std::endl;}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00036 \}}
+
+\end{DoxyCode}

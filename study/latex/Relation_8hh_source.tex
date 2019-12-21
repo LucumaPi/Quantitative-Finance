@@ -23,84 +23,82 @@
 \DoxyCodeLine{00019 \textcolor{comment}{// (C) Datasim Education BV 2004}}
 \DoxyCodeLine{00020 \textcolor{comment}{//}}
 \DoxyCodeLine{00021 }
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023 \textcolor{preprocessor}{\#ifndef Relation\_HH}}
-\DoxyCodeLine{00024 \textcolor{preprocessor}{\#define Relation\_HH}}
-\DoxyCodeLine{00025 }
-\DoxyCodeLine{00026 \textcolor{preprocessor}{\#include "Set.hh"}}
-\DoxyCodeLine{00027 \textcolor{preprocessor}{\#include <map>}      \textcolor{comment}{// Includes both map and multimap}}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{\Hypertarget{Relation_8hh_source_l00029}\mbox{\hyperlink{classRelation}{00029}} \textcolor{keyword}{template} <\textcolor{keyword}{class} D, \textcolor{keyword}{class} R> \textcolor{keyword}{class }\mbox{\hyperlink{classRelation}{Relation}}}
-\DoxyCodeLine{00030 \{ \textcolor{comment}{// Classes representing mappings from D to R}}
-\DoxyCodeLine{00031 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00032 }
-\DoxyCodeLine{00033     \textcolor{comment}{// 'Control' information}}
-\DoxyCodeLine{00034     \mbox{\hyperlink{classSet}{Set<D>}} s1;            \textcolor{comment}{// Domain Set}}
-\DoxyCodeLine{00035     \mbox{\hyperlink{classSet}{Set<R>}} s2;            \textcolor{comment}{// Range Set}}
-\DoxyCodeLine{00036 }
-\DoxyCodeLine{00037     \textcolor{comment}{// Information about the mapping itself. These two}}
-\DoxyCodeLine{00038     \textcolor{comment}{// multimaps must be kept consistent}}
-\DoxyCodeLine{00039     std::multimap<D, R> f;      \textcolor{comment}{// The mapping itself}}
-\DoxyCodeLine{00040     std::multimap<R, D> finv;   \textcolor{comment}{// The inverse mapping}}
-\DoxyCodeLine{00041 }
-\DoxyCodeLine{00042     \textcolor{comment}{// Private functions}}
-\DoxyCodeLine{00043     \textcolor{comment}{// template <class X, class Y> void removeElements(Relation<X,Y>\& r, const Y\& y);}}
-\DoxyCodeLine{00044 }
-\DoxyCodeLine{00045 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00046     \textcolor{comment}{// Essential members}}
-\DoxyCodeLine{00047     \mbox{\hyperlink{classRelation}{Relation}}();     }
-\DoxyCodeLine{00048     \mbox{\hyperlink{classRelation}{Relation}} (\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<D>}}\& domainSet, \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<R>}}\& rangeSet);}
-\DoxyCodeLine{00049     \mbox{\hyperlink{classRelation}{Relation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& r2);}
+\DoxyCodeLine{00033 \textcolor{preprocessor}{\#ifndef Relation\_HH}}
+\DoxyCodeLine{00034 \textcolor{preprocessor}{\#define Relation\_HH}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{Set_8hh}{Set.hh}}"}}
+\DoxyCodeLine{00037 \textcolor{preprocessor}{\#include <map>}      \textcolor{comment}{// Includes both map and multimap}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{\Hypertarget{Relation_8hh_source_l00039}\mbox{\hyperlink{classRelation}{00039}} \textcolor{keyword}{template} <\textcolor{keyword}{class} D, \textcolor{keyword}{class} R> \textcolor{keyword}{class }\mbox{\hyperlink{classRelation}{Relation}}}
+\DoxyCodeLine{00040 \{ \textcolor{comment}{// Classes representing mappings from D to R}}
+\DoxyCodeLine{00041 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042     \textcolor{comment}{// 'Control' information}}
+\DoxyCodeLine{00043     \mbox{\hyperlink{classSet}{Set<D>}} s1;            \textcolor{comment}{// Domain Set}}
+\DoxyCodeLine{00044     \mbox{\hyperlink{classSet}{Set<R>}} s2;            \textcolor{comment}{// Range Set}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{comment}{// Information about the mapping itself. These two}}
+\DoxyCodeLine{00047     \textcolor{comment}{// multimaps must be kept consistent}}
+\DoxyCodeLine{00048     std::multimap<D, R> f;      \textcolor{comment}{// The mapping itself}}
+\DoxyCodeLine{00049     std::multimap<R, D> finv;   \textcolor{comment}{// The inverse mapping}}
 \DoxyCodeLine{00050 }
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052     \textcolor{comment}{// Building and breaking the Relation}}
-\DoxyCodeLine{00053     \textcolor{comment}{// The set element in the relations}}
-\DoxyCodeLine{00054     \textcolor{keywordtype}{void} addDomainElement(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d); \textcolor{comment}{// Add d to Domain Set (no link)}}
-\DoxyCodeLine{00055     \textcolor{keywordtype}{void} addRangeElement(\textcolor{keyword}{const} R\& r);   \textcolor{comment}{// Add r to Range Set (no link)}}
-\DoxyCodeLine{00056     \textcolor{keywordtype}{void} removeDomainElement(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d);  \textcolor{comment}{// Remove d and all links}}
-\DoxyCodeLine{00057     \textcolor{keywordtype}{void} removeRangeElement(\textcolor{keyword}{const} R\& r);    \textcolor{comment}{// Remove r and all links}}
-\DoxyCodeLine{00058 }
-\DoxyCodeLine{00059     \textcolor{comment}{// Define relationship between EXISTING elements}}
-\DoxyCodeLine{00060     \textcolor{keywordtype}{void} addRelation(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d, \textcolor{keyword}{const} R\& r);  \textcolor{comment}{// }}
-\DoxyCodeLine{00061     \textcolor{keywordtype}{void} removeRelation(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d);   \textcolor{comment}{// Remove between d and ALL r}}
-\DoxyCodeLine{00062     \textcolor{keywordtype}{void} ClearAll();                    \textcolor{comment}{// Break all links and sets}}
-\DoxyCodeLine{00063     \textcolor{keywordtype}{void} ClearLinks();                  \textcolor{comment}{// Break links only, sets remain}}
-\DoxyCodeLine{00064 }
-\DoxyCodeLine{00065 }
-\DoxyCodeLine{00066     \textcolor{comment}{// Iterator functions (going from D direction)}}
-\DoxyCodeLine{00067     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<D, R>::iterator iterator;}
-\DoxyCodeLine{00068     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<D, R>::const\_iterator const\_iterator;}
-\DoxyCodeLine{00069 }
-\DoxyCodeLine{00070     iterator Begin();               \textcolor{comment}{// Return iterator at begin of relation}}
-\DoxyCodeLine{00071     const\_iterator Begin() \textcolor{keyword}{const};   \textcolor{comment}{// Return const iterator at begin of relation}}
-\DoxyCodeLine{00072     iterator End();                 \textcolor{comment}{// Return iterator after end of relation}}
-\DoxyCodeLine{00073     const\_iterator End() \textcolor{keyword}{const};     \textcolor{comment}{// Return const iterator after end of relation}}
+\DoxyCodeLine{00051     \textcolor{comment}{// Private functions}}
+\DoxyCodeLine{00052     \textcolor{comment}{// template <class X, class Y> void removeElements(Relation<X,Y>\& r, const Y\& y);}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055     \textcolor{comment}{// Essential members}}
+\DoxyCodeLine{00056     \mbox{\hyperlink{classRelation_a36145dd40aa468c579ac6e531b0ac588}{Relation}}();     }
+\DoxyCodeLine{00057     \mbox{\hyperlink{classRelation_a36145dd40aa468c579ac6e531b0ac588}{Relation}} (\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<D>}}\& domainSet, \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<R>}}\& rangeSet);}
+\DoxyCodeLine{00058     \mbox{\hyperlink{classRelation_a36145dd40aa468c579ac6e531b0ac588}{Relation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& r2);}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{comment}{// Building and breaking the Relation}}
+\DoxyCodeLine{00062     \textcolor{comment}{// The set element in the relations}}
+\DoxyCodeLine{00063     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRelation_a3850e9c9495624d27e7813cc6e0dc763}{addDomainElement}}(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d); \textcolor{comment}{// Add d to Domain Set (no link)}}
+\DoxyCodeLine{00064     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRelation_a8bbc53597b97db93008a82d5b7ff54cb}{addRangeElement}}(\textcolor{keyword}{const} R\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});   \textcolor{comment}{// Add r to Range Set (no link)}}
+\DoxyCodeLine{00065     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRelation_a30b7ecfff53dda24b5661215e63b3aeb}{removeDomainElement}}(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d);   \textcolor{comment}{// Remove d and all links}}
+\DoxyCodeLine{00066     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRelation_adf2bd0433cf8eb255e0b595d8502afad}{removeRangeElement}}(\textcolor{keyword}{const} R\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}); \textcolor{comment}{// Remove r and all links}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{comment}{// Define relationship between EXISTING elements}}
+\DoxyCodeLine{00069     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRelation_a0d4bdc5ed486ffbef37ae2e489166834}{addRelation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d, \textcolor{keyword}{const} R\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});  \textcolor{comment}{// }}
+\DoxyCodeLine{00070     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRelation_a6fe1980b85fd0a4d59ed6ca3dbb52a2a}{removeRelation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d); \textcolor{comment}{// Remove between d and ALL r}}
+\DoxyCodeLine{00071     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRelation_aac3d30ad0639de420ec0d496ca78696f}{ClearAll}}();                    \textcolor{comment}{// Break all links and sets}}
+\DoxyCodeLine{00072     \textcolor{keywordtype}{void} \mbox{\hyperlink{classRelation_a401a214a659d7005d830e1d5573075ed}{ClearLinks}}();                    \textcolor{comment}{// Break links only, sets remain}}
+\DoxyCodeLine{00073 }
 \DoxyCodeLine{00074 }
-\DoxyCodeLine{00075     \textcolor{comment}{// Iterator functions (going from R direction)}}
-\DoxyCodeLine{00076     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<R, D>::iterator iteratorInv;}
-\DoxyCodeLine{00077     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<R, D>::const\_iterator const\_iteratorInv;}
+\DoxyCodeLine{00075     \textcolor{comment}{// Iterator functions (going from D direction)}}
+\DoxyCodeLine{\Hypertarget{Relation_8hh_source_l00076}\mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{00076}}     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<D, R>::iterator \mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}};}
+\DoxyCodeLine{\Hypertarget{Relation_8hh_source_l00077}\mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{00077}}     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<D, R>::const\_iterator \mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\_iterator}};}
 \DoxyCodeLine{00078 }
-\DoxyCodeLine{00079     iteratorInv BeginInv();             \textcolor{comment}{// Return iterator at begin of relation}}
-\DoxyCodeLine{00080     const\_iteratorInv BeginInv() \textcolor{keyword}{const}; \textcolor{comment}{// Return const iterator at begin of relation}}
-\DoxyCodeLine{00081     iteratorInv EndInv();                   \textcolor{comment}{// Return iterator after end of relation}}
-\DoxyCodeLine{00082     const\_iteratorInv EndInv() \textcolor{keyword}{const};       \textcolor{comment}{// Return const iterator after end of relation}}
+\DoxyCodeLine{00079     \mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation_a97ba3b83f8b68901191248b72b4d2a14}{Begin}}();              \textcolor{comment}{// Return iterator at begin of relation}}
+\DoxyCodeLine{00080     \mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\_iterator}} \mbox{\hyperlink{classRelation_a97ba3b83f8b68901191248b72b4d2a14}{Begin}}() \textcolor{keyword}{const};    \textcolor{comment}{// Return const iterator at begin of relation}}
+\DoxyCodeLine{00081     \mbox{\hyperlink{classRelation_af68e62c9cf16d7e2dff81950298dc778}{iterator}} \mbox{\hyperlink{classRelation_a068ca856b6e3b6bffd24117b405c01ae}{End}}();                  \textcolor{comment}{// Return iterator after end of relation}}
+\DoxyCodeLine{00082     \mbox{\hyperlink{classRelation_a281fd0ec83966c0c8ba00e59364c3152}{const\_iterator}} \mbox{\hyperlink{classRelation_a068ca856b6e3b6bffd24117b405c01ae}{End}}() \textcolor{keyword}{const};        \textcolor{comment}{// Return const iterator after end of relation}}
 \DoxyCodeLine{00083 }
-\DoxyCodeLine{00084 }
-\DoxyCodeLine{00085     \textcolor{comment}{// Selectors}}
-\DoxyCodeLine{00086     \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<D>}}\& DomainSet();}
-\DoxyCodeLine{00087     \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<R>}}\& RangeSet();}
-\DoxyCodeLine{00088         }
-\DoxyCodeLine{00089     \mbox{\hyperlink{classSet}{Set<R>}} range(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d);        \textcolor{comment}{// Set of r for a d}}
-\DoxyCodeLine{00090     \mbox{\hyperlink{classSet}{Set<D>}} domain(\textcolor{keyword}{const} R\& r);        \textcolor{comment}{// Set of d for an r}}
-\DoxyCodeLine{00091 }
-\DoxyCodeLine{00092     \textcolor{keywordtype}{bool} inDomain(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d) \textcolor{keyword}{const};   \textcolor{comment}{// Is an element in domain?}}
-\DoxyCodeLine{00093     \textcolor{keywordtype}{bool} inRange(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& r) \textcolor{keyword}{const};        \textcolor{comment}{// Is an element in range?}}
-\DoxyCodeLine{00094 }
-\DoxyCodeLine{00095     \textcolor{keyword}{virtual} ~\mbox{\hyperlink{classRelation}{Relation}}();}
-\DoxyCodeLine{00096     \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& r2);}
-\DoxyCodeLine{00097 }
-\DoxyCodeLine{00098 \};}
-\DoxyCodeLine{00099 \textcolor{preprocessor}{\#include "../../src/Relation.cc"}}
-\DoxyCodeLine{00100 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00084     \textcolor{comment}{// Iterator functions (going from R direction)}}
+\DoxyCodeLine{\Hypertarget{Relation_8hh_source_l00085}\mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{00085}}     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<R, D>::iterator \mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iteratorInv}};}
+\DoxyCodeLine{\Hypertarget{Relation_8hh_source_l00086}\mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{00086}}     \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::multimap<R, D>::const\_iterator \mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\_iteratorInv}};}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     \mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iteratorInv}} \mbox{\hyperlink{classRelation_ae76135e50d636a11e65658f44ffa0551}{BeginInv}}();              \textcolor{comment}{// Return iterator at begin of relation}}
+\DoxyCodeLine{00089     \mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\_iteratorInv}} \mbox{\hyperlink{classRelation_ae76135e50d636a11e65658f44ffa0551}{BeginInv}}() \textcolor{keyword}{const};    \textcolor{comment}{// Return const iterator at begin of relation}}
+\DoxyCodeLine{00090     \mbox{\hyperlink{classRelation_a3377b326df68d54e890873e4800ac522}{iteratorInv}} \mbox{\hyperlink{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}{EndInv}}();                  \textcolor{comment}{// Return iterator after end of relation}}
+\DoxyCodeLine{00091     \mbox{\hyperlink{classRelation_aecd60a1fa82a4b3dae9ec442dd1096ed}{const\_iteratorInv}} \mbox{\hyperlink{classRelation_a2f972862a46f4d4fdd8f5e607f67a449}{EndInv}}() \textcolor{keyword}{const};        \textcolor{comment}{// Return const iterator after end of relation}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094     \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{00095     \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<D>}}\& \mbox{\hyperlink{classRelation_a6df4cdb10cd950968cf21fafdec4bb83}{DomainSet}}();}
+\DoxyCodeLine{00096     \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<R>}}\& \mbox{\hyperlink{classRelation_ae7d89135038109b9ff7ef4c6590a112e}{RangeSet}}();}
+\DoxyCodeLine{00097         }
+\DoxyCodeLine{00098     \mbox{\hyperlink{classSet}{Set<R>}} \mbox{\hyperlink{classRelation_ab946892376f95ed757414e3fadc36f6d}{range}}(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d);       \textcolor{comment}{// Set of r for a d}}
+\DoxyCodeLine{00099     \mbox{\hyperlink{classSet}{Set<D>}} \mbox{\hyperlink{classRelation_a0ff46cfb436345dab2707b36b94a152a}{domain}}(\textcolor{keyword}{const} R\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}});     \textcolor{comment}{// Set of d for an r}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classRelation_af7602723b04b55522372eae5d70fff52}{inDomain}}(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& d) \textcolor{keyword}{const};   \textcolor{comment}{// Is an element in domain?}}
+\DoxyCodeLine{00102     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classRelation_a8dd9f0681135740849f9dd20ae4ee13a}{inRange}}(\textcolor{keyword}{const} \mbox{\hyperlink{classD}{D}}\& \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}) \textcolor{keyword}{const};        \textcolor{comment}{// Is an element in range?}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{keyword}{virtual} \mbox{\hyperlink{classRelation_acc3976a5e2e72dd33d7d05bee2b286fe}{~Relation}}();}
+\DoxyCodeLine{00105     \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& \mbox{\hyperlink{classRelation_ae4668d138c1cc9cfc607729a32b2772e}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classRelation}{Relation<D,R>}}\& r2);}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107 \};}
+\DoxyCodeLine{00108 \textcolor{preprocessor}{\#include "../../src/Relation.cc"}}
+\DoxyCodeLine{00109 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

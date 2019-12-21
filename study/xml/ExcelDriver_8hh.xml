@@ -15,22 +15,28 @@
       </node>
       <node id="5">
         <label>Vector.hh</label>
-        <link refid="Vector_8hh_source"/>
+        <link refid="Vector_8hh"/>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
       <node id="7">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
+        <link refid="Array_8hh"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -39,35 +45,94 @@
       <node id="4">
         <label>string</label>
       </node>
+      <node id="21">
+        <label>../../src/Matrix.cc</label>
+        <link refid="Matrix_8cc"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
       <node id="12">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
         <label>Matrix.hh</label>
-        <link refid="Matrix_8hh_source"/>
-        <childnode refid="13" relation="include">
+        <link refid="Matrix_8hh"/>
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
       </node>
-      <node id="13">
+      <node id="19">
+        <label>../../src/MatrixStructure.cc</label>
+        <link refid="MatrixStructure_8cc"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>../../src/FullMatrix.cc</label>
+        <link refid="FullMatrix_8cc"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
         <label>FullMatrix.hh</label>
-        <link refid="FullMatrix_8hh_source"/>
-        <childnode refid="14" relation="include">
+        <link refid="FullMatrix_8hh"/>
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="9">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
         <label>NumericMatrix.hh</label>
-        <link refid="NumericMatrix_8hh_source"/>
-        <childnode refid="12" relation="include">
+        <link refid="NumericMatrix_8hh"/>
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
       </node>
-      <node id="10">
+      <node id="23">
+        <label>../../src/NumericMatrix.cc</label>
+        <link refid="NumericMatrix_8cc"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
         <label>vector</label>
+      </node>
+      <node id="22">
+        <label>iostream</label>
       </node>
       <node id="8">
         <label>cstddef</label>
+      </node>
+      <node id="14">
+        <label>../../src/Vector.cc</label>
+        <link refid="Vector_8cc"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>include/duffy/ExcelDriver.hh</label>
@@ -80,24 +145,46 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>FullArray.hh</label>
+        <link refid="FullArray_8hh"/>
         <childnode refid="11" relation="include">
         </childnode>
-      </node>
-      <node id="9">
-        <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
-      <node id="14">
+      <node id="18">
         <label>MatrixStructure.hh</label>
-        <link refid="MatrixStructure_8hh_source"/>
+        <link refid="MatrixStructure_8hh"/>
         <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/ExcelDriver.cc</label>
+        <link refid="ExcelDriver_8cc"/>
+      </node>
+      <node id="3">
+        <label>src/ExcelMechanisms.cc</label>
+        <link refid="ExcelMechanisms_8cc"/>
+      </node>
+      <node id="1">
+        <label>include/duffy/ExcelDriver.hh</label>
+        <link refid="ExcelDriver_8hh"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <innerclass refid="classExcelDriver" prot="public">ExcelDriver</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="ExcelDriver_8hh_1a1b724dd4e99548501ed8e37c192d9eca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -144,8 +231,8 @@
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Datasim<sp/>container<sp/>TEMPLATE<sp/>classes,<sp/>that&apos;s<sp/>why<sp/>include<sp/>CPP!!!!</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;NumericMatrix.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector_8hh" kindref="compound">Vector.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="NumericMatrix_8hh" kindref="compound">NumericMatrix.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Excel<sp/>driver<sp/>class<sp/>definition.<sp/>Contains<sp/>functionality<sp/>to<sp/>add<sp/>charts<sp/></highlight><highlight class="normal"></highlight></codeline>
@@ -175,13 +262,13 @@
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor.<sp/>Starts<sp/>Excel<sp/>in<sp/>invisible<sp/>mode.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classExcelDriver" kindref="compound">ExcelDriver</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classExcelDriver_1a9dbf535e7ef5053210dd2cdbeaa9e76c" kindref="member">ExcelDriver</ref>();</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classExcelDriver" kindref="compound">ExcelDriver</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver_1a111f747fcefaa4b38d986c5c72e742b2" kindref="member">~ExcelDriver</ref>();</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Access<sp/>to<sp/>single,<sp/>shared<sp/>instance<sp/>of<sp/>ExcelDriver<sp/>(singleton).</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver" kindref="compound">ExcelDriver</ref>&amp;<sp/>Instance();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver" kindref="compound">ExcelDriver</ref>&amp;<sp/><ref refid="classExcelDriver_1a6134831444a75b0ddc0bbf7fb949b1f8" kindref="member">Instance</ref>();</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>chart<sp/>with<sp/>a<sp/>number<sp/>of<sp/>functions.<sp/>The<sp/>arguments<sp/>are:</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>x:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector<sp/>with<sp/>input<sp/>values</highlight><highlight class="normal"></highlight></codeline>
@@ -190,7 +277,7 @@
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>chartTitle:<sp/>title<sp/>of<sp/>chart</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>xTitle:<sp/><sp/><sp/><sp/><sp/>label<sp/>of<sp/>x<sp/>axis</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>yTitle:<sp/><sp/><sp/><sp/><sp/>label<sp/>of<sp/>y<sp/>axis</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CreateChart(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref><sp/>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;std::string&gt;<sp/>&amp;<sp/>labels,<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4" kindref="member">CreateChart</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref><sp/>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;std::string&gt;<sp/>&amp;<sp/>labels,<sp/></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;<ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref><sp/>&gt;<sp/>&amp;<sp/>vectorList,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>chartTitle,<sp/></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>xTitle<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;X&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>yTitle<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Y&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
@@ -200,26 +287,26 @@
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>chartTitle:<sp/>title<sp/>of<sp/>chart</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>xTitle:<sp/><sp/><sp/><sp/><sp/>label<sp/>of<sp/>x<sp/>axis</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>yTitle:<sp/><sp/><sp/><sp/><sp/>label<sp/>of<sp/>y<sp/>axis</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CreateChart(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref><sp/>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref><sp/>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>chartTitle,<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver_1acecbf115d498691f0637a58ce6bffbf4" kindref="member">CreateChart</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref><sp/>&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;double, long&gt;</ref><sp/>&amp;<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>chartTitle,<sp/></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>xTitle<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;X&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>yTitle<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Y&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>Matrix<sp/>to<sp/>the<sp/>spreadsheet<sp/>with<sp/>row<sp/>and<sp/>column<sp/>labels.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddMatrix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>sheetName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classNumericMatrix" kindref="compound">NumericMatrix&lt;double, long&gt;</ref>&amp;<sp/>matrix,<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver_1a63753818c5895ff1ed84dad214de4332" kindref="member">AddMatrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>sheetName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classNumericMatrix" kindref="compound">NumericMatrix&lt;double, long&gt;</ref>&amp;<sp/>matrix,<sp/></highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;std::string&gt;&amp;<sp/>rowLabels,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;std::string&gt;&amp;<sp/>columnLabels);</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddMatrix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classNumericMatrix" kindref="compound">NumericMatrix&lt;double, long&gt;</ref>&amp;<sp/>matrix,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>SheetName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Matrix&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver_1a63753818c5895ff1ed84dad214de4332" kindref="member">AddMatrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classNumericMatrix" kindref="compound">NumericMatrix&lt;double, long&gt;</ref>&amp;<sp/>matrix,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>SheetName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Matrix&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MakeVisible(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver_1ade5ecc043b7700ef93014799f278ae9b" kindref="member">MakeVisible</ref>(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceNSEuropeanOption_1a6b26f4d79c6b43133be664e2eb229fff" kindref="member">b</ref>);</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>debugging,<sp/>for<sp/>example</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printStringInExcel(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>s,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>rowNumber,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>colNumber,<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver_1afa7a45b8d3499de788e722c75627e284" kindref="member">printStringInExcel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>s,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>rowNumber,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>colNumber,<sp/></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>sheetName);</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printStringInExcel(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;std::string&gt;&amp;<sp/>s,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>rowNumber,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>colNumber,<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExcelDriver_1afa7a45b8d3499de788e722c75627e284" kindref="member">printStringInExcel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;std::string&gt;&amp;<sp/>s,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>rowNumber,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>colNumber,<sp/></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>sheetName);</highlight></codeline>
 <codeline lineno="91"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Help</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><ref refid="classVector" kindref="compound">Vector &lt;double, long&gt;</ref><sp/>createVector(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classNumericMatrix" kindref="compound">NumericMatrix&lt;double,long&gt;</ref>&amp;<sp/>mat,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>row);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><ref refid="classVector" kindref="compound">Vector &lt;double, long&gt;</ref><sp/><ref refid="ExcelDriver_8hh_1a1b724dd4e99548501ed8e37c192d9eca" kindref="member">createVector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classNumericMatrix" kindref="compound">NumericMatrix&lt;double,long&gt;</ref>&amp;<sp/>mat,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>row);</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="include/duffy/ExcelDriver.hh"/>

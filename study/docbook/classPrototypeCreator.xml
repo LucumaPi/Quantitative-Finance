@@ -23,12 +23,55 @@ Collaboration diagram for PrototypeCreator&lt; T &gt;:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classPrototypeCreator_1ad0d32c2d51be57184e61a4016783e5f0"/><emphasis role="strong">PrototypeCreator</emphasis> (T *prototype)</para>
+            <listitem><para><link linkend="_classPrototypeCreator_1af11e1a6eff1e0d0a879ecc0ed632ae5f">PrototypeCreator</link> ()</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classPrototypeCreator_1abd7061e565987226d957855f98fb6bc2"/>virtual T * <emphasis role="strong">Create</emphasis> ()</para>
+            <listitem><para><link linkend="_classPrototypeCreator_1ad0d32c2d51be57184e61a4016783e5f0">PrototypeCreator</link> (T *prototype)</para>
+</listitem>
+            <listitem><para>virtual T * <link linkend="_classPrototypeCreator_1abd7061e565987226d957855f98fb6bc2">Create</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class T&gt;
+class PrototypeCreator&lt; T &gt;</title></simplesect>
+
+<para>
+Definition at line 31 of file GenericCreator.cc.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPrototypeCreator_1af11e1a6eff1e0d0a879ecc0ed632ae5f"/>    <section>
+    <title>PrototypeCreator()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>PrototypeCreator</primary><secondary>PrototypeCreator&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>PrototypeCreator&lt; T &gt;</primary><secondary>PrototypeCreator</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput><link linkend="_classPrototypeCreator">PrototypeCreator</link>&lt; T &gt;::<link linkend="_classPrototypeCreator">PrototypeCreator</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 36 of file GenericCreator.cc.</para>
+<programlisting>36 {proto&#32;=&#32;0;}
+</programlisting>    </section><anchor xml:id="_classPrototypeCreator_1ad0d32c2d51be57184e61a4016783e5f0"/>    <section>
+    <title>PrototypeCreator()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>PrototypeCreator</primary><secondary>PrototypeCreator&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>PrototypeCreator&lt; T &gt;</primary><secondary>PrototypeCreator</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput><link linkend="_classPrototypeCreator">PrototypeCreator</link>&lt; T &gt;::<link linkend="_classPrototypeCreator">PrototypeCreator</link> (T * prototype)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line 37 of file GenericCreator.cc.</para>
+<programlisting>37 {&#32;proto&#32;=&#32;prototype;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPrototypeCreator_1abd7061e565987226d957855f98fb6bc2"/>    <section>
+    <title>Create()</title>
+<indexterm><primary>Create</primary><secondary>PrototypeCreator&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>PrototypeCreator&lt; T &gt;</primary><secondary>Create</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>virtual T* <link linkend="_classPrototypeCreator">PrototypeCreator</link>&lt; T &gt;::Create ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classAbstractFactory_1a6c6ad72b50ce9e534f54145cd8ba4f47">AbstractFactory&lt; T &gt;</link>.</para>
+<para>
+Definition at line 39 of file GenericCreator.cc.</para>
+<programlisting>40 &#32;&#32;&#32;&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d">T</link>(*proto);
+42 &#32;&#32;&#32;&#32;}
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-src/GenericCreator.cc</section>
+src/<link linkend="_GenericCreator_8cc">GenericCreator.cc</link></section>
+</section>

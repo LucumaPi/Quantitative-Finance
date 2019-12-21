@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_GenericCreator_8cc">
+<title>src/GenericCreator.cc File Reference</title>
+<indexterm><primary>src/GenericCreator.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+#include &lt;duffy/Point.hh&gt;
+</programlisting>Include dependency graph for GenericCreator.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="GenericCreator_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classAbstractFactory">AbstractFactory&lt; T &gt;</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classHeapCreator">HeapCreator&lt; T &gt;</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classPrototypeCreator">PrototypeCreator&lt; T &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class T &gt; </para><para><link linkend="_classAbstractFactory">AbstractFactory</link>&lt; T &gt; * <link linkend="_GenericCreator_8cc_1af68ffa5b985c3dbcfcf6c3628bc92279">GetFactory</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_GenericCreator_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_GenericCreator_8cc_1af68ffa5b985c3dbcfcf6c3628bc92279"/>    <section>
+    <title>GetFactory()</title>
+<indexterm><primary>GetFactory</primary><secondary>GenericCreator.cc</secondary></indexterm>
+<indexterm><primary>GenericCreator.cc</primary><secondary>GetFactory</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput><link linkend="_classAbstractFactory">AbstractFactory</link>&lt;T&gt;* GetFactory ( )</computeroutput></para><para>
+Definition at line 47 of file GenericCreator.cc.</para>
+<programlisting>48 {
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;choice&#32;=&#32;1;
+50 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Factories:&#32;1)&#32;Heap&#32;2)&#32;Prototype&#32;&quot;</emphasis>;
+51 &#32;&#32;&#32;&#32;std::cin&#32;&gt;&gt;&#32;choice;
+52 
+53 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(choice&#32;==&#32;1)
+54 &#32;&#32;&#32;&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classHeapCreator">HeapCreator&lt;T&gt;</link>();
+56 &#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+58 &#32;&#32;&#32;&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classPrototypeCreator">PrototypeCreator&lt;T&gt;</link>();
+60 &#32;&#32;&#32;&#32;}
+61 }
+</programlisting>    </section><anchor xml:id="_GenericCreator_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>GenericCreator.cc</secondary></indexterm>
+<indexterm><primary>GenericCreator.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 63 of file GenericCreator.cc.</para>
+<programlisting>64 {
+65 
+66 &#32;&#32;&#32;&#32;<link linkend="_classHeapCreator">HeapCreator&lt;int&gt;</link>&#32;hfac;
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>*&#32;myInt&#32;=&#32;hfac.<link linkend="_classHeapCreator_1a44904c9903236de51ee2b8f64ac542bc">Create</link>();
+68 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;*myInt&#32;&lt;&lt;&#32;std::endl;
+69 
+70 &#32;&#32;&#32;&#32;<link linkend="_classHeapCreator">HeapCreator&lt;Point&gt;</link>&#32;hfac2;
+71 &#32;&#32;&#32;&#32;<link linkend="_classPoint">Point</link>*&#32;myPt&#32;=&#32;hfac2.<link linkend="_classHeapCreator_1a44904c9903236de51ee2b8f64ac542bc">Create</link>();
+72 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;(*myPt).<link linkend="_classPoint_1ae86421f3b20ffcf813e2736002e68459">X</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;(*myPt).Y()&#32;&lt;&lt;&#32;std::endl;
+73 
+74 &#32;&#32;&#32;&#32;<link linkend="_classAbstractFactory">AbstractFactory&lt;double&gt;</link>*&#32;fac&#32;=&#32;GetFactory&lt;double&gt;();
+75 
+76 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+77 }
+</programlisting></section>
+</section>
+</section>

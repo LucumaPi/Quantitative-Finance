@@ -1,0 +1,227 @@
+\hypertarget{TestSetOperations2_8cc}{}\doxysection{tests/\+Test\+Set\+Operations2.cc File Reference}
+\label{TestSetOperations2_8cc}\index{tests/TestSetOperations2.cc@{tests/TestSetOperations2.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$duffy/\+Set.\+hh$>$}\newline
+Include dependency graph for Test\+Set\+Operations2.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{TestSetOperations2_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}} (const \mbox{\hyperlink{classSet}{Set}}$<$ T $>$ \&l, const std\+::string \&name)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{TestSetOperations2_8cc_a4eba85fda2aa12e5b5dfa8278196c94d}{print\+Set}} (const \mbox{\hyperlink{classSet}{Set}}$<$ std\+::pair$<$ T, T $>$ $>$ \&l, const std\+::string \&name)
+\item 
+int \mbox{\hyperlink{TestSetOperations2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestSetOperations2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestSetOperations2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestSetOperations2.cc@{TestSetOperations2.cc}!main@{main}}
+\index{main@{main}!TestSetOperations2.cc@{TestSetOperations2.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations2_8cc_source_l00045}{45}} of file \mbox{\hyperlink{TestSetOperations2_8cc_source}{Test\+Set\+Operations2.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046 \{}
+\DoxyCodeLine{00047     \mbox{\hyperlink{classSet}{Set<int>}} \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}};                \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// Only unique (new elements) added}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.Insert(1);}
+\DoxyCodeLine{00051     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.Insert(2);}
+\DoxyCodeLine{00052     \mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}.Insert(3);}
+\DoxyCodeLine{00053     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}} (\mbox{\hyperlink{namespaceDatasimFunctions_af51cb9dc97654b194cd73ea7340591f1}{first}}, \textcolor{stringliteral}{"First set"});}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \mbox{\hyperlink{classSet}{Set<char>}} s1;}
+\DoxyCodeLine{00056     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00057     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{00058     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'C'});}
+\DoxyCodeLine{00059     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00060     s1.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'F'});}
+\DoxyCodeLine{00061     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}} (s1, \textcolor{stringliteral}{"s1"});}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \mbox{\hyperlink{classSet}{Set<char>}} s2;}
+\DoxyCodeLine{00064     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00065     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00066     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{00067     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'C'});}
+\DoxyCodeLine{00068     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00069     \textcolor{comment}{//s2.Insert('E');}}
+\DoxyCodeLine{00070     s2+\textcolor{charliteral}{'E'};}
+\DoxyCodeLine{00071     s2.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'H'});}
+\DoxyCodeLine{00072     s2.\mbox{\hyperlink{classSet_a1feb21675fad80514ee3b41fb67f8c20}{Replace}}(\textcolor{charliteral}{'H'}, \textcolor{charliteral}{'G'});}
+\DoxyCodeLine{00073     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}} (s2, \textcolor{stringliteral}{"s2"});}
+\DoxyCodeLine{00074     s2.\mbox{\hyperlink{classSet_a7c93429f1d8f232c421a6fde25cb982b}{Remove}}(\textcolor{charliteral}{'G'});}
+\DoxyCodeLine{00075     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}} (s2, \textcolor{stringliteral}{"s2"});}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \mbox{\hyperlink{classSet}{Set<char>}} ws;      \textcolor{comment}{// Work space}}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     ws = s1 + s2;}
+\DoxyCodeLine{00080     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}}(ws, \textcolor{stringliteral}{"Union"});}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     ws = s1 \string^ s2;}
+\DoxyCodeLine{00083     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}}(ws, \textcolor{stringliteral}{"Intersection"});}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     ws = s1 -\/ s2;}
+\DoxyCodeLine{00086     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}}(ws, \textcolor{stringliteral}{"Difference s1 -\/ s2"});}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     ws = s2 -\/ s1;}
+\DoxyCodeLine{00089     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}}(ws, \textcolor{stringliteral}{"Difference s2 -\/ s1"});}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     ws = s1 \% s2;}
+\DoxyCodeLine{00093     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}}(ws, \textcolor{stringliteral}{"Symmetric Difference"});}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{comment}{// Subset/superset stuff}}
+\DoxyCodeLine{00096     \mbox{\hyperlink{classSet}{Set<char>}} s3;}
+\DoxyCodeLine{00097     s3.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00098     s3.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{00099     s3.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'C'});}
+\DoxyCodeLine{00100     s3.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     \textcolor{keywordflow}{if} (s3.\mbox{\hyperlink{classSet_ac7bb2705235f0d44e4793262510e1dc6}{Subset}}(s1) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00103         std::cout << \textcolor{stringliteral}{"Yes, is subset OK\(\backslash\)n"};}
+\DoxyCodeLine{00104     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00105         std::cout << \textcolor{stringliteral}{"Bah1\(\backslash\)n"};}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107     \textcolor{keywordflow}{if} (s1.Superset(s3) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00108         std::cout << \textcolor{stringliteral}{"Yes, is superset OK\(\backslash\)n"};}
+\DoxyCodeLine{00109     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00110         std::cout << \textcolor{stringliteral}{"Bah1\(\backslash\)n"};}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     \textcolor{keywordflow}{if} (s1.Intersects(s3) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00113         std::cout << \textcolor{stringliteral}{"Yes, we have intersection OK\(\backslash\)n"};}
+\DoxyCodeLine{00114     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00115         std::cout << \textcolor{stringliteral}{"Bah1\(\backslash\)n"};}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \mbox{\hyperlink{classSet}{Set<char>}} s4;}
+\DoxyCodeLine{00118     \textcolor{keywordflow}{if} (s1.Intersects(s4) == \textcolor{keyword}{false})}
+\DoxyCodeLine{00119         std::cout << \textcolor{stringliteral}{"Yes, we have NO intersection OK\(\backslash\)n"};}
+\DoxyCodeLine{00120     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00121         std::cout << \textcolor{stringliteral}{"Bah1\(\backslash\)n"};}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123     s4.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00124     \textcolor{keywordflow}{if} (s1.Intersects(s4) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00125         std::cout << \textcolor{stringliteral}{"Yes, we have intersection OK\(\backslash\)n"};}
+\DoxyCodeLine{00126     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00127         std::cout << \textcolor{stringliteral}{"Bah1\(\backslash\)n"};}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129     \textcolor{comment}{// Sets from lists}}
+\DoxyCodeLine{00130     std::list<char> myList;}
+\DoxyCodeLine{00131     myList.push\_back(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00132     myList.push\_back(\textcolor{charliteral}{'B'});}
+\DoxyCodeLine{00133     myList.push\_back(\textcolor{charliteral}{'C'});}
+\DoxyCodeLine{00134     myList.push\_back(\textcolor{charliteral}{'C'});}
+\DoxyCodeLine{00135     myList.push\_back(\textcolor{charliteral}{'C'});}
+\DoxyCodeLine{00136     myList.push\_back(\textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00137     myList.push\_back(\textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00138     myList.push\_back(\textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00139     myList.push\_back(\textcolor{charliteral}{'D'});}
+\DoxyCodeLine{00140     myList.push\_back(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00141     myList.push\_back(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00142     myList.push\_back(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00143     myList.push\_back(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00144     myList.push\_back(\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146     \mbox{\hyperlink{classSet}{Set<char>}} s5(myList);}
+\DoxyCodeLine{00147     \mbox{\hyperlink{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}{print}}(s5, \textcolor{stringliteral}{"Filtered set"});}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     \textcolor{keywordflow}{if} (s5.Contains(\textcolor{charliteral}{'A'}) == \textcolor{keyword}{true})}
+\DoxyCodeLine{00151         std::cout << \textcolor{stringliteral}{"OK, contains A\(\backslash\)n"};}
+\DoxyCodeLine{00152     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00153         std::cout << \textcolor{stringliteral}{"Bah\(\backslash\)n"};}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155     \textcolor{keywordflow}{if} (s5.Contains(\textcolor{charliteral}{'Z'}) == \textcolor{keyword}{false})}
+\DoxyCodeLine{00156         std::cout << \textcolor{stringliteral}{"OK, contains NOT Z\(\backslash\)n"};}
+\DoxyCodeLine{00157     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00158         std::cout << \textcolor{stringliteral}{"Bah\(\backslash\)n"};}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160     \textcolor{comment}{// Cartesian product}}
+\DoxyCodeLine{00161     \mbox{\hyperlink{classSet}{Set<int>}} s11;}
+\DoxyCodeLine{00162     s11.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(2);}
+\DoxyCodeLine{00163     s11.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(3);}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165     \mbox{\hyperlink{classSet}{Set<int>}} s12;}
+\DoxyCodeLine{00166     s12.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(8);}
+\DoxyCodeLine{00167     s12.\mbox{\hyperlink{classSet_a25791eed3b7ef4be9af5059cf09767f2}{Insert}}(9);}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169     \mbox{\hyperlink{classSet}{Set<std::pair <int, int>}} > S = s11.\mbox{\hyperlink{classSet_ae688c6cb7ec18e29b45eb020c444362f}{CartesianProduct}}(s12);}
+\DoxyCodeLine{00170     \mbox{\hyperlink{TestSetOperations2_8cc_a4eba85fda2aa12e5b5dfa8278196c94d}{printSet}}(S, \textcolor{stringliteral}{"Pr"});}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172     \mbox{\hyperlink{classSet}{Set<std::pair <int, int>}} > S2 = s12.\mbox{\hyperlink{classSet_ae688c6cb7ec18e29b45eb020c444362f}{CartesianProduct}}(s11);}
+\DoxyCodeLine{00173     \mbox{\hyperlink{TestSetOperations2_8cc_a4eba85fda2aa12e5b5dfa8278196c94d}{printSet}}(S2, \textcolor{stringliteral}{"Pr"});}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00176 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}\label{TestSetOperations2_8cc_afc656eda04a46b44b586d145450e773c}} 
+\index{TestSetOperations2.cc@{TestSetOperations2.cc}!print@{print}}
+\index{print@{print}!TestSetOperations2.cc@{TestSetOperations2.cc}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSet}{Set}}$<$ T $>$ \&}]{l,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations2_8cc_source_l00013}{13}} of file \mbox{\hyperlink{TestSetOperations2_8cc_source}{Test\+Set\+Operations2.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{  \textcolor{comment}{// Print the contents of a Set. Notice the presence of a constant iterator.}}
+\DoxyCodeLine{00015     }
+\DoxyCodeLine{00016     std::cout << std::endl << name << \textcolor{stringliteral}{", size of set is "} << l.\mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{Size}}() << \textcolor{stringliteral}{"\(\backslash\)n[ "};}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     \textcolor{keyword}{typename} std::set<T>::const\_iterator i;}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \textcolor{keywordflow}{for} (i = l.\mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{Begin}}(); i != l.\mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{End}}(); ++i)}
+\DoxyCodeLine{00021     \{}
+\DoxyCodeLine{00022             std::cout << *i << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     std::cout << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00027 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{TestSetOperations2_8cc_a4eba85fda2aa12e5b5dfa8278196c94d}\label{TestSetOperations2_8cc_a4eba85fda2aa12e5b5dfa8278196c94d}} 
+\index{TestSetOperations2.cc@{TestSetOperations2.cc}!printSet@{printSet}}
+\index{printSet@{printSet}!TestSetOperations2.cc@{TestSetOperations2.cc}}
+\doxysubsubsection{\texorpdfstring{printSet()}{printSet()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void print\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSet}{Set}}$<$ std\+::pair$<$ T, T $>$ $>$ \&}]{l,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestSetOperations2_8cc_source_l00029}{29}} of file \mbox{\hyperlink{TestSetOperations2_8cc_source}{Test\+Set\+Operations2.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030 \{  \textcolor{comment}{// Print the contents of a Set. Notice the presence of a constant iterator.}}
+\DoxyCodeLine{00031     }
+\DoxyCodeLine{00032     std::cout << std::endl << name << \textcolor{stringliteral}{", size of set is "} << l.\mbox{\hyperlink{classSet_aec2bedbb313cfc25c7100c6984760dd3}{Size}}() << \textcolor{stringliteral}{"\(\backslash\)n[ "};}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keyword}{typename} std::set<std::pair<T, T> >::const\_iterator i;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{for} (i = l.\mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{Begin}}(); i != l.\mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{End}}(); ++i)}
+\DoxyCodeLine{00037     \{}
+\DoxyCodeLine{00038             std::cout << (*i).first << \textcolor{stringliteral}{", "} << (*i).second << std::endl;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     std::cout << \textcolor{stringliteral}{"]\(\backslash\)n"};}
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}

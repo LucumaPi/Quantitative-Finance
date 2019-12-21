@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestNamespace_8cc">
+<title>tests/TestNamespace.cc File Reference</title>
+<indexterm><primary>tests/TestNamespace.cc</primary></indexterm>
+<programlisting>#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestNamespace.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestNamespace_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespaceMyFunctions">MyFunctions</link></para>
+</listitem>
+            <listitem><para> <link linkend="_namespaceYourFunctions">YourFunctions</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_namespaceMyFunctions_1a1b684107f5ed5ced07ccf572734af87e">MyFunctions::diffusion</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceMyFunctions_1a5b14012bf34d586124d09c00d9b75a35">MyFunctions::convection</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceYourFunctions_1acf4b67d567ced3a1632fc2de0de549d0">YourFunctions::diffusion</link> (double x)</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespaceYourFunctions_1aeaa28b7b7d32428165c00d350be7cc41">YourFunctions::convection</link> (double x)</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestNamespace_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestNamespace_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestNamespace.cc</secondary></indexterm>
+<indexterm><primary>TestNamespace.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 30 of file TestNamespace.cc.</para>
+<programlisting>31 {
+32 &#32;&#32;&#32;&#32;{
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>CurrentFunctions&#32;=&#32;<link linkend="_namespaceMyFunctions">MyFunctions</link>;
+34 
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1acf4b67d567ced3a1632fc2de0de549d0">CurrentFunctions::diffusion</link>(3.0)&#32;&lt;&lt;&#32;std::endl;
+36 &#32;&#32;&#32;&#32;}
+37 
+38 &#32;&#32;&#32;&#32;{&#32;&#32;&#32;<emphasis role="comment">//&#32;A&#32;redefinition&#32;of&#32;an&#32;alias&#32;must&#32;be&#32;in&#32;another&#32;block</emphasis>
+39 
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>CurrentFunctions&#32;=&#32;<link linkend="_namespaceYourFunctions">YourFunctions</link>;
+41 
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1acf4b67d567ced3a1632fc2de0de549d0">CurrentFunctions::diffusion</link>(3.0)&#32;&lt;&lt;&#32;std::endl;
+43 &#32;&#32;&#32;&#32;}
+44 
+45 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Choose&#32;from&#32;a&#32;hard-coded&#32;list&#32;of&#32;namespaces.&#32;Useful</emphasis>
+46 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;for&#32;configuration&#32;because&#32;we&#32;often&#32;having&#32;typical</emphasis>
+47 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Prototypical&#32;functions&#32;in&#32;a&#32;logical&#32;grouping.&#32;Has</emphasis>
+48 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;potential&#32;...</emphasis>
+49 
+50 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Choose:&#32;1)&#32;My&#32;2)&#32;You&#32;\n&quot;</emphasis>;
+51 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;j;&#32;std::cin&#32;&gt;&gt;&#32;j;
+52 
+53 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(j&#32;==&#32;1)
+54 &#32;&#32;&#32;&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>CurrentFunctions&#32;=&#32;<link linkend="_namespaceMyFunctions">MyFunctions</link>;
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1aeaa28b7b7d32428165c00d350be7cc41">CurrentFunctions::convection</link>(3.0)&#32;&lt;&lt;&#32;std::endl;
+57 &#32;&#32;&#32;&#32;}
+58 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+59 &#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;This&#32;kind&#32;of&#32;code&#32;in&#32;your&#32;is&#32;&apos;Function-independent&apos;</emphasis>
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>CurrentFunctions&#32;=&#32;<link linkend="_namespaceYourFunctions">YourFunctions</link>;
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis>CurrentFunctions;
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1aeaa28b7b7d32428165c00d350be7cc41">convection</link>(1.0)&#32;&lt;&lt;&#32;std::endl;
+63 &#32;&#32;&#32;&#32;}
+64 &#32;&#32;&#32;&#32;
+65 <emphasis role="comment">//&#32;&#32;using&#32;namespace&#32;MyFunctions;</emphasis>
+66 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Me:&#32;Directive:&#32;\n&quot;</emphasis>;
+67 <emphasis role="comment">//&#32;&#32;cout&#32;&lt;&lt;&#32;convection&#32;(10.0)&#32;&lt;&lt;&#32;endl;</emphasis>
+68 <emphasis role="comment">//&#32;&#32;cout&#32;&lt;&lt;&#32;diffusion&#32;(2.0)&#32;&lt;&lt;&#32;endl;</emphasis>
+69 
+70 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis><link linkend="_namespaceYourFunctions">YourFunctions</link>;
+71 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;You:&#32;Directive:&#32;\n&quot;</emphasis>;
+72 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1aeaa28b7b7d32428165c00d350be7cc41">convection</link>&#32;(10.0)&#32;&lt;&lt;&#32;std::endl;
+73 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1acf4b67d567ced3a1632fc2de0de549d0">diffusion</link>&#32;(2.0)&#32;&lt;&lt;&#32;std::endl;
+74 
+75 &#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>YourAlias&#32;=&#32;<link linkend="_namespaceYourFunctions">YourFunctions</link>;&#32;<emphasis role="comment">//&#32;Define&#32;alias&#32;NS</emphasis>
+76 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1aeaa28b7b7d32428165c00d350be7cc41">YourAlias::convection</link>&#32;(10.0)&#32;&lt;&lt;&#32;std::endl;
+77 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1acf4b67d567ced3a1632fc2de0de549d0">YourAlias::diffusion</link>&#32;(2.0)&#32;&lt;&lt;&#32;std::endl;
+78 &#32;&#32;&#32;&#32;
+79 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1aeaa28b7b7d32428165c00d350be7cc41">YourFunctions::convection</link>&#32;(10.0)&#32;&lt;&lt;&#32;std::endl;
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_namespaceYourFunctions_1aeaa28b7b7d32428165c00d350be7cc41">YourFunctions::convection</link>;
+82 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<link linkend="_namespaceYourFunctions_1aeaa28b7b7d32428165c00d350be7cc41">convection</link>&#32;(10.0)&#32;&lt;&lt;&#32;std::endl;
+83 
+84 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+85 }
+</programlisting></section>
+</section>
+</section>

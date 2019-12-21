@@ -1,0 +1,91 @@
+\hypertarget{TestComplex_8cc}{}\doxysection{tests/\+Test\+Complex.cc File Reference}
+\label{TestComplex_8cc}\index{tests/TestComplex.cc@{tests/TestComplex.cc}}
+{\ttfamily \#include $<$duffy/\+Complex.\+hh$>$}\newline
+Include dependency graph for Test\+Complex.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{TestComplex_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{TestComplex_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestComplex_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{TestComplex_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestComplex.cc@{TestComplex.cc}!main@{main}}
+\index{main@{main}!TestComplex.cc@{TestComplex.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestComplex_8cc_source_l00008}{8}} of file \mbox{\hyperlink{TestComplex_8cc_source}{Test\+Complex.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011     \mbox{\hyperlink{classComplex}{Complex}} z1(-\/23.0, 5.3);}
+\DoxyCodeLine{00012     \mbox{\hyperlink{classComplex}{Complex}} z2(2.0, 3.0);}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \mbox{\hyperlink{classComplex}{Complex}} z3 = z1 * z2;}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classComplex}{Complex}} z4 = 2.0 * z4;}
+\DoxyCodeLine{00016     \mbox{\hyperlink{classComplex}{Complex}} z5 = -\/ z3;}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     std::cout << z1;}
+\DoxyCodeLine{00019     std::cout << z3;}
+\DoxyCodeLine{00020     std::cout << z5; std::cout << \textcolor{stringliteral}{"****\(\backslash\)n"};}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \mbox{\hyperlink{classComplex}{Complex}} z6 = z2 * 2.0;}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classComplex}{Complex}} z7 = 2.0 * z2;}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classComplex}{Complex}} z8 = z2 * 2.0;}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classComplex}{Complex}} z9= z6* z7;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     std::cout << z6;}
+\DoxyCodeLine{00028     std::cout << z7;}
+\DoxyCodeLine{00029     std::cout << z8; std::cout << \textcolor{stringliteral}{"****\(\backslash\)n"};}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \mbox{\hyperlink{classComplex}{Complex}} z10 = z1.\mbox{\hyperlink{classComplex_aa2cbbe9e937f49672084741932c6314c}{add}}(z2);}
+\DoxyCodeLine{00032     std::cout << z10;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \mbox{\hyperlink{classComplex}{Complex}} z0(1.0, 2.0);}
+\DoxyCodeLine{00035     z4 = z3 = z1 = z0;}
+\DoxyCodeLine{00036     std::cout << \textcolor{stringliteral}{"Chain: "} << z0 << z1 << z3 << z4;}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     z4 += z1;   \textcolor{comment}{// Multiply z4 by z1 and modify it}}
+\DoxyCodeLine{00039     std::cout << z4;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keywordtype}{double} \mbox{\hyperlink{Complex_8cc_a5785a70cbc18f01a89cdf4235832d1ba}{real}};}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{double} imaginary;}
+\DoxyCodeLine{00043     std::cout << \textcolor{stringliteral}{"Creating a complex number"} << std::endl;}
+\DoxyCodeLine{00044     std::cout << \textcolor{stringliteral}{"Give real part: "};}
+\DoxyCodeLine{00045     std::cin >> \mbox{\hyperlink{Complex_8cc_a5785a70cbc18f01a89cdf4235832d1ba}{real}};}
+\DoxyCodeLine{00046     std::cout << \textcolor{stringliteral}{"Give imaginary part: "};}
+\DoxyCodeLine{00047     std::cin >> imaginary;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// User-\/defined class and output for its objects}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classComplex}{Complex}} c(\mbox{\hyperlink{Complex_8cc_a5785a70cbc18f01a89cdf4235832d1ba}{real}}, imaginary);}
+\DoxyCodeLine{00051     std::cout << c;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     std::cout << \textcolor{stringliteral}{"First: "} << z1 << \textcolor{stringliteral}{"Second: "} << z2 << std::endl;}
+\DoxyCodeLine{00054     }
+\DoxyCodeLine{00055     \mbox{\hyperlink{classComplex}{Complex}} za = \mbox{\hyperlink{Complex_8cc_aeb56775d93a065d4bd643a5ed679db8c}{exp}}(\mbox{\hyperlink{classComplex}{Complex}}(0.0, 0.0));}
+\DoxyCodeLine{00056     std::cout << za;}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \mbox{\hyperlink{classComplex}{Complex}} zs = \mbox{\hyperlink{Complex_8cc_aeaa6c0b46e054ab969bb0511f2bd74a8}{sinh}}(za);}
+\DoxyCodeLine{00059     \mbox{\hyperlink{classComplex}{Complex}} zc = \mbox{\hyperlink{Complex_8cc_ac205b42a2eec5378f97dfcc3d6428d93}{cosh}}(za);}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     std::cout << zs << zc;}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \mbox{\hyperlink{classComplex}{Complex}} c2(0.0, 0.0);}
+\DoxyCodeLine{00064     std::cout << \mbox{\hyperlink{Complex_8cc_aeaa6c0b46e054ab969bb0511f2bd74a8}{sinh}}(c2) << \mbox{\hyperlink{Complex_8cc_ac205b42a2eec5378f97dfcc3d6428d93}{cosh}}(c2);}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00067 \}}
+
+\end{DoxyCode}

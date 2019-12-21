@@ -1,0 +1,200 @@
+\hypertarget{AssocMatrix_8cc_source}{}\doxysection{Assoc\+Matrix.\+cc}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// AssocMatrix.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Associative array class. In this case we access elements by }}
+\DoxyCodeLine{00004 \textcolor{comment}{// using non-\/integral indices.}}
+\DoxyCodeLine{00005 \textcolor{comment}{// This is a proof-\/of-\/concept (POC) class.}}
+\DoxyCodeLine{00006 \textcolor{comment}{//}}
+\DoxyCodeLine{00007 \textcolor{comment}{// Last modification dates:}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{//  16 August 2003 DD kick off}}
+\DoxyCodeLine{00010 \textcolor{comment}{//  12 January 2004 DD some new member functions}}
+\DoxyCodeLine{00011 \textcolor{comment}{//  2006-\/3-\/24 DD use Set as control; must implement exceptions}}
+\DoxyCodeLine{00012 \textcolor{comment}{//  2006-\/3-\/25 DD copy from ass array}}
+\DoxyCodeLine{00013 \textcolor{comment}{//}}
+\DoxyCodeLine{00014 \textcolor{comment}{// (C) Datasim Component Technology 1999-\/2006}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#ifndef AssocMatrix\_CC}}
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8cc_source_l00017}\mbox{\hyperlink{AssocMatrix_8cc_a71fcca6b82367eabdf7c6fc04eec6c7c}{00017}} \textcolor{preprocessor}{\#define AssocMatrix\_CC}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <duffy/AssocMatrix.hh>}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2> }
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8cc_source_l00024}\mbox{\hyperlink{classAssocMatrix_a804b8f1b6123e030823f18abfdd0efb4}{00024}}     \mbox{\hyperlink{classAssocMatrix_a804b8f1b6123e030823f18abfdd0efb4}{AssocMatrix<V,AI1, AI2>::AssocMatrix}}()}
+\DoxyCodeLine{00025 \{}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     std::cout << \textcolor{stringliteral}{"init"};}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     mat = 0;}
+\DoxyCodeLine{00030     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = \mbox{\hyperlink{classAssocArray}{AssocArray<long, AI1>}} ();}
+\DoxyCodeLine{00031     c = \mbox{\hyperlink{classAssocArray}{AssocArray<long, AI2>}} ();}
+\DoxyCodeLine{00032     keysRows = \mbox{\hyperlink{classSet}{Set<AI1>}}();}
+\DoxyCodeLine{00033     keysColumns = \mbox{\hyperlink{classSet}{Set<AI2>}}();}
+\DoxyCodeLine{00034 \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2> }
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8cc_source_l00037}\mbox{\hyperlink{classAssocMatrix_a1aa35d61f052ac3898ab15e5561084c7}{00037}}     \mbox{\hyperlink{classAssocMatrix_a804b8f1b6123e030823f18abfdd0efb4}{AssocMatrix<V,AI1, AI2>::AssocMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V,AI1, AI2>}}\& mat2)}
+\DoxyCodeLine{00038 \{}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     mat = mat2.mat;}
+\DoxyCodeLine{00041     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = mat2.r; c = mat2.c;}
+\DoxyCodeLine{00042     keysRows = mat2.keysRows;}
+\DoxyCodeLine{00043     keysColumns = mat2.keysColumns;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \textcolor{comment}{// Construct the map from a list of names and a REPEATED val}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2> }
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8cc_source_l00053}\mbox{\hyperlink{classAssocMatrix_a59922d6c221fc62abb54bc1bb91604ca}{00053}} \mbox{\hyperlink{classAssocMatrix_a804b8f1b6123e030823f18abfdd0efb4}{AssocMatrix<V,AI1, AI2>::AssocMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI1>}}\& Rnames, \textcolor{keyword}{const} \mbox{\hyperlink{classSet}{Set<AI2>}}\& Cnames,}
+\DoxyCodeLine{00054                                 \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, long>}}\& matrix) }
+\DoxyCodeLine{00055             : keysRows(Rnames), keysColumns(Cnames)}
+\DoxyCodeLine{00056 \{}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{comment}{// Must build the associative arrays, they have the same values as the}}
+\DoxyCodeLine{00059     \textcolor{comment}{// indices in the matrix}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     mat = \&matrix;}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \textcolor{comment}{// Build rows}}
+\DoxyCodeLine{00064     \textcolor{keywordtype}{long} start = mat-\/>\mbox{\hyperlink{classMatrix_a0505cda9acadb178a38ec97718bf2fab}{MinRowIndex}}();}
+\DoxyCodeLine{00065     \textcolor{keyword}{typename} \mbox{\hyperlink{classSet}{Set<AI1>::const\_iterator}} it; \textcolor{comment}{// Size == size of matrix}}
+\DoxyCodeLine{00066     r = \mbox{\hyperlink{classAssocArray}{AssocArray<long, AI1>}} (keysRows,start);}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordflow}{for} (it = keysRows.\mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{Begin}}(); it != keysRows.\mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{End}}(); it++)}
+\DoxyCodeLine{00069     \{}
+\DoxyCodeLine{00070             std::cout << *it << \textcolor{stringliteral}{", "} << start << std::endl;}
+\DoxyCodeLine{00071             r[*it] = start;}
+\DoxyCodeLine{00072             start++;}
+\DoxyCodeLine{00073     \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{comment}{// Build columns}}
+\DoxyCodeLine{00076     start = mat-\/>\mbox{\hyperlink{classMatrix_a72061ea24736a0ff90e62c1c0f40bad9}{MinColumnIndex}}();}
+\DoxyCodeLine{00077     \textcolor{keyword}{typename} \mbox{\hyperlink{classSet}{Set<AI2>::const\_iterator}} itc; \textcolor{comment}{// Size == size of matrix}}
+\DoxyCodeLine{00078     c = \mbox{\hyperlink{classAssocArray}{AssocArray<long, AI2>}} (keysColumns,start);}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{keywordflow}{for} (itc = keysColumns.\mbox{\hyperlink{classSet_a3ca47221f02ee54c6b627ff73a9b5b98}{Begin}}(); itc != keysColumns.\mbox{\hyperlink{classSet_aeb4a4b2026eb040a24e9b251e0c49dec}{End}}(); itc++)}
+\DoxyCodeLine{00081     \{}
+\DoxyCodeLine{00082             }
+\DoxyCodeLine{00083             c[*itc] = start;}
+\DoxyCodeLine{00084             start++;}
+\DoxyCodeLine{00085     \}}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{comment}{// NO EXCEPTION HANDLING AT THE MOMENT}}
+\DoxyCodeLine{00088     \textcolor{comment}{//print(c);}}
+\DoxyCodeLine{00089 \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091 \textcolor{comment}{// Change values in some range}}
+\DoxyCodeLine{00092 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2> }
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8cc_source_l00093}\mbox{\hyperlink{classAssocMatrix_a326e6e4074d55872bc38d7968d2a3525}{00093}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classAssocMatrix_a326e6e4074d55872bc38d7968d2a3525}{AssocMatrix<V,AI1, AI2>::modify}}(\textcolor{keyword}{const} \mbox{\hyperlink{structSpreadSheetRange}{SpreadSheetRange<AI1, AI2>}}\& range, \textcolor{keywordtype}{void} (*f)(V\& cellValue))}
+\DoxyCodeLine{00094 \{}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     \textcolor{comment}{// Objective is to iterate in a range and apply a function to each }}
+\DoxyCodeLine{00097     \textcolor{comment}{// element in thate range}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099         AI1 rmin = range.\mbox{\hyperlink{structSpreadSheetRange_a162552eb32806cc172e1dc7e7c74da07}{upperLeft}}.first;}
+\DoxyCodeLine{00100         AI2 cmin = range.\mbox{\hyperlink{structSpreadSheetRange_a162552eb32806cc172e1dc7e7c74da07}{upperLeft}}.second;}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102         AI1 rmax = range.\mbox{\hyperlink{structSpreadSheetRange_a3d228f1713cd8d0189f7d2bd0a312512}{lowerRight}}.first;}
+\DoxyCodeLine{00103         AI2 cmax = range.\mbox{\hyperlink{structSpreadSheetRange_a3d228f1713cd8d0189f7d2bd0a312512}{lowerRight}}.second;}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105         std::cout << rmin << \textcolor{stringliteral}{",r  "} << rmax << std::endl;}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107         \textcolor{keywordtype}{long} Rmin = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[rmin]; \textcolor{keywordtype}{long} Rmax = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[rmax];}
+\DoxyCodeLine{00108         \textcolor{keywordtype}{long} Cmin = c[cmin]; \textcolor{keywordtype}{long} Cmax = c[cmax];}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110         std::cout << Rmin << \textcolor{stringliteral}{", "} << Rmax << std::endl;}
+\DoxyCodeLine{00111         std::cout << Cmin << \textcolor{stringliteral}{", "} << Cmax << std::endl;}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113         \textcolor{comment}{// Now must find the integer indices corresponding to these}}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} ri = Rmin; ri <= Rmax; ri++)}
+\DoxyCodeLine{00116         \{}
+\DoxyCodeLine{00117             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} ci = Cmin; ci <= Cmax; ci++)}
+\DoxyCodeLine{00118             \{}
+\DoxyCodeLine{00119                 std::cout << ri << \textcolor{stringliteral}{", "} << ci;}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121                 f((*mat)(ri,ci));}
+\DoxyCodeLine{00122             \}}
+\DoxyCodeLine{00123         \}}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125 \}}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2> }
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8cc_source_l00128}\mbox{\hyperlink{classAssocMatrix_a74a3cfe29f843fd8e52ac0e24f6d62e8}{00128}}     \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, long>}} \mbox{\hyperlink{classAssocMatrix_a74a3cfe29f843fd8e52ac0e24f6d62e8}{AssocMatrix<V,AI1, AI2>::extract}}(\textcolor{keyword}{const} \mbox{\hyperlink{structSpreadSheetRange}{SpreadSheetRange<AI1, AI2>}}\& range)}
+\DoxyCodeLine{00129 \{}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131     \textcolor{comment}{// Slice a matrix}}
+\DoxyCodeLine{00132     AI1 rmin = range.\mbox{\hyperlink{structSpreadSheetRange_a162552eb32806cc172e1dc7e7c74da07}{upperLeft}}.first;}
+\DoxyCodeLine{00133         AI2 cmin = range.\mbox{\hyperlink{structSpreadSheetRange_a162552eb32806cc172e1dc7e7c74da07}{upperLeft}}.second;}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135         AI1 rmax = range.\mbox{\hyperlink{structSpreadSheetRange_a3d228f1713cd8d0189f7d2bd0a312512}{lowerRight}}.first;}
+\DoxyCodeLine{00136         AI2 cmax = range.\mbox{\hyperlink{structSpreadSheetRange_a3d228f1713cd8d0189f7d2bd0a312512}{lowerRight}}.second;}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         std::cout << rmin << \textcolor{stringliteral}{",r  "} << rmax << std::endl;}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140         \textcolor{keywordtype}{long} Rmin = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[rmin]; \textcolor{keywordtype}{long} Rmax = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[rmax];}
+\DoxyCodeLine{00141         \textcolor{keywordtype}{long} Cmin = c[cmin]; \textcolor{keywordtype}{long} Cmax = c[cmax];}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143         std::cout << Rmin << \textcolor{stringliteral}{", "} << Rmax << std::endl;}
+\DoxyCodeLine{00144         std::cout << Cmin << \textcolor{stringliteral}{", "} << Cmax << std::endl;}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146         \textcolor{keywordtype}{int} d;}
+\DoxyCodeLine{00147         std::cin >> d;}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149         \textcolor{comment}{// Now must find the integer indices corresponding to these}}
+\DoxyCodeLine{00150         \mbox{\hyperlink{classNumericMatrix}{NumericMatrix<V, long>}} result(Rmax-\/Rmin+1, Cmax-\/Cmin+1, Rmin, Cmin);}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} ri = Rmin; ri <= Rmax; ri++)}
+\DoxyCodeLine{00153         \{}
+\DoxyCodeLine{00154             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} ci = Cmin; ci <= Cmax; ci++)}
+\DoxyCodeLine{00155             \{}
+\DoxyCodeLine{00156                     result(ri, ci) = (*mat)(ri, ci);}
+\DoxyCodeLine{00157             \}}
+\DoxyCodeLine{00158         \}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162 \}}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2> }
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8cc_source_l00168}\mbox{\hyperlink{classAssocMatrix_a584ec0fa44e926ef4e44d6a251dcf01a}{00168}}     \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V,AI1, AI2>}}\& \mbox{\hyperlink{classAssocMatrix_a584ec0fa44e926ef4e44d6a251dcf01a}{AssocMatrix<V,AI1, AI2>::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classAssocMatrix}{AssocMatrix<V,AI1, AI2>}}\& mat2)}
+\DoxyCodeLine{00169 \{}
+\DoxyCodeLine{00170     \textcolor{keywordflow}{if} (\&mat == \textcolor{keyword}{this})}
+\DoxyCodeLine{00171         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173     mat = mat2.mat;}
+\DoxyCodeLine{00174     \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}} = mat2.r; c = mat2.c;}
+\DoxyCodeLine{00175     keysRows = mat2.keysRows; keysColumns = mat2.keysColumns;}
+\DoxyCodeLine{00176     }
+\DoxyCodeLine{00177     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179 \}}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183 \textcolor{comment}{// New overloaded indexing operator}}
+\DoxyCodeLine{00184 \textcolor{keyword}{template} <\textcolor{keyword}{class} V, \textcolor{keyword}{class} AI1, \textcolor{keyword}{class} AI2>}
+\DoxyCodeLine{\Hypertarget{AssocMatrix_8cc_source_l00185}\mbox{\hyperlink{classAssocMatrix_a0d1563baeba3a42f1b9abcd2d7877779}{00185}}     V\& \mbox{\hyperlink{classAssocMatrix_a0d1563baeba3a42f1b9abcd2d7877779}{AssocMatrix<V,AI1, AI2>::operator () }}(\textcolor{keyword}{const} AI1\& index1, \textcolor{keyword}{const} AI2\& index2)}
+\DoxyCodeLine{00186 \{}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188     \textcolor{keywordtype}{long} rowIndex = \mbox{\hyperlink{namespaceNSEuropeanOption_adf476278b7e6a6960d82dc00e93ef723}{r}}[index1];}
+\DoxyCodeLine{00189     \textcolor{keywordtype}{long} colIndex = c[index2];}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191     \textcolor{keywordflow}{return} (*mat)(rowIndex, colIndex);}
+\DoxyCodeLine{00192 \}}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195 \textcolor{preprocessor}{\#endif  // AssocMatrix\_CC}}
+
+\end{DoxyCode}

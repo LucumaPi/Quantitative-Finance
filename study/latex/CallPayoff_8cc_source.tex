@@ -1,0 +1,75 @@
+\hypertarget{CallPayoff_8cc_source}{}\doxysection{Call\+Payoff.\+cc}
+\label{CallPayoff_8cc_source}\index{src/CallPayoff.cc@{src/CallPayoff.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// CallPayoff.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// CallPayoff class.}}
+\DoxyCodeLine{00004 \textcolor{comment}{//}}
+\DoxyCodeLine{00005 \textcolor{comment}{// 5 june 1998  MB  Started}}
+\DoxyCodeLine{00006 \textcolor{comment}{// 2005-\/5-\/16 DD Modified from Shape hierarchy}}
+\DoxyCodeLine{00007 \textcolor{comment}{//}}
+\DoxyCodeLine{00008 \textcolor{comment}{// (C) Datasim Education BV 1998 -\/ 2005}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{CallPayoff_8hh}{duffy/CallPayoff.hh}}>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{comment}{// Constructors and destructor}}
+\DoxyCodeLine{\Hypertarget{CallPayoff_8cc_source_l00013}\mbox{\hyperlink{classCallPayoff_a19ad977f668dc51f22d00274f18ffd18}{00013}} \mbox{\hyperlink{classCallPayoff_a19ad977f668dc51f22d00274f18ffd18}{CallPayoff::CallPayoff}}(): \mbox{\hyperlink{classPayoff}{Payoff}}()}
+\DoxyCodeLine{00014 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00015     K = 100.0; \textcolor{comment}{// Prototype value}}
+\DoxyCodeLine{00016 \}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{\Hypertarget{CallPayoff_8cc_source_l00018}\mbox{\hyperlink{classCallPayoff_a5febaab90dff1bf068a783b03a20fcda}{00018}} \mbox{\hyperlink{classCallPayoff_a19ad977f668dc51f22d00274f18ffd18}{CallPayoff::CallPayoff}}(\textcolor{keywordtype}{double} strike): \mbox{\hyperlink{classPayoff}{Payoff}}()}
+\DoxyCodeLine{00019 \{ \textcolor{comment}{// Normal constructor with coordinates}}
+\DoxyCodeLine{00020     K = strike;}
+\DoxyCodeLine{00021 \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{\Hypertarget{CallPayoff_8cc_source_l00024}\mbox{\hyperlink{classCallPayoff_a0ab9fa574fecaa3e5b3e2b8ffbb87498}{00024}} \mbox{\hyperlink{classCallPayoff_a19ad977f668dc51f22d00274f18ffd18}{CallPayoff::CallPayoff}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCallPayoff}{CallPayoff}}\& source): \mbox{\hyperlink{classPayoff}{Payoff}}(source)}
+\DoxyCodeLine{00025 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00026     K = source.K;}
+\DoxyCodeLine{00027 \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{\Hypertarget{CallPayoff_8cc_source_l00029}\mbox{\hyperlink{classCallPayoff_a9f3bb9bb9c481a2f77dae23adf207b88}{00029}} \mbox{\hyperlink{classCallPayoff_a9f3bb9bb9c481a2f77dae23adf207b88}{CallPayoff:: ~CallPayoff}}()}
+\DoxyCodeLine{00030 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00031 \} }
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033 \textcolor{comment}{// Selectors}}
+\DoxyCodeLine{\Hypertarget{CallPayoff_8cc_source_l00034}\mbox{\hyperlink{classCallPayoff_a86bd90e9e848ad90532104c3192e06df}{00034}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classCallPayoff_a86bd90e9e848ad90532104c3192e06df}{CallPayoff::Strike}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00035 \textcolor{keyword}{}\{\textcolor{comment}{// Return K}}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} K;}
+\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 \textcolor{comment}{// Modifiers}}
+\DoxyCodeLine{\Hypertarget{CallPayoff_8cc_source_l00041}\mbox{\hyperlink{classCallPayoff_a7a8b83bcf8fece954fb1135458e2b28e}{00041}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classCallPayoff_a86bd90e9e848ad90532104c3192e06df}{CallPayoff::Strike}}(\textcolor{keywordtype}{double} NewStrike)}
+\DoxyCodeLine{00042 \{\textcolor{comment}{// Set K}}
+\DoxyCodeLine{00043     K = NewStrike;}
+\DoxyCodeLine{00044 \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{\Hypertarget{CallPayoff_8cc_source_l00046}\mbox{\hyperlink{classCallPayoff_aac88652e16d519402ccc0efa63f06749}{00046}} \mbox{\hyperlink{classCallPayoff}{CallPayoff}}\& \mbox{\hyperlink{classCallPayoff_aac88652e16d519402ccc0efa63f06749}{CallPayoff::operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classCallPayoff}{CallPayoff}} \&source)}
+\DoxyCodeLine{00047 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{comment}{// Call base class assignment}}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classPayoff_ad2a5f6ec9c8336d4dc6ab00ecdd83393}{Payoff::operator = }}(source);}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{comment}{// Copy state}}
+\DoxyCodeLine{00056     K = source.K;  }
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00059 \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061 \textcolor{comment}{// Implement the pure virtual payoff function from base class}}
+\DoxyCodeLine{\Hypertarget{CallPayoff_8cc_source_l00062}\mbox{\hyperlink{classCallPayoff_a388ddb411d45108ab253f9c4dd50bcbb}{00062}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classCallPayoff_a388ddb411d45108ab253f9c4dd50bcbb}{CallPayoff::payoff}}(\textcolor{keywordtype}{double} S)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00063 \textcolor{keyword}{}\{ \textcolor{comment}{// For a given spot price}}
+\DoxyCodeLine{00064     \textcolor{keywordflow}{if} (S > K)}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{return} (S -\/ K);}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00068     \textcolor{comment}{// remark; possible to say max (S -\/ K, 0); I am a bit longwinded!}}
+\DoxyCodeLine{00069 \}}
+
+\end{DoxyCode}

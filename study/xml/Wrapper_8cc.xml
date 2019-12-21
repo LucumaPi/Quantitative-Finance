@@ -6,31 +6,13 @@
     <includes local="no">typeinfo</includes>
     <includedby refid="TestWrapper_8cc" local="yes">tests/TestWrapper.cc</includedby>
     <incdepgraph>
-      <node id="10">
+      <node id="12">
         <label>list</label>
       </node>
       <node id="3">
         <label>Property.hh</label>
-        <link refid="Property_8hh_source"/>
+        <link refid="Property_8hh"/>
         <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>Set.hh</label>
-        <link refid="Set_8hh_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>duffy/SimplePropertySet.hh</label>
-        <link refid="SimplePropertySet_8hh_source"/>
-        <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -39,19 +21,71 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
+      <node id="10">
+        <label>Set.hh</label>
+        <link refid="Set_8hh"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../../src/PropertyThing.cc</label>
+        <link refid="PropertyThing_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>duffy/SimplePropertySet.hh</label>
+        <link refid="SimplePropertySet_8hh"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../../src/Property.cc</label>
+        <link refid="Property_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../../src/Set.cc</label>
+        <link refid="Set_8cc"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
       <node id="5">
         <label>string</label>
       </node>
-      <node id="7">
+      <node id="9">
         <label>map</label>
+      </node>
+      <node id="15">
+        <label>../../src/SimplePropertySet.cc</label>
+        <link refid="SimplePropertySet_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
       </node>
       <node id="4">
         <label>PropertyThing.hh</label>
-        <link refid="PropertyThing_8hh_source"/>
+        <link refid="PropertyThing_8hh"/>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
-      <node id="11">
+      <node id="16">
         <label>typeinfo</label>
       </node>
       <node id="1">
@@ -59,16 +93,31 @@
         <link refid="Wrapper_8cc"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>iostream</label>
       </node>
-      <node id="9">
+      <node id="11">
         <label>set</label>
       </node>
+      <node id="14">
+        <label>algorithm</label>
+      </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>tests/TestWrapper.cc</label>
+        <link refid="TestWrapper_8cc"/>
+      </node>
+      <node id="1">
+        <label>src/Wrapper.cc</label>
+        <link refid="Wrapper_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <innerclass refid="classAnyType" prot="public">AnyType</innerclass>
     <innerclass refid="classWrapper" prot="public">Wrapper</innerclass>
       <sectiondef kind="define">
@@ -99,32 +148,32 @@
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Wrapper_CC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Wrapper_CC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="Wrapper_8cc_1ace6ce9c648fbb2bc18855c5df2097071" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Wrapper_CC</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;duffy/SimplePropertySet.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="SimplePropertySet_8hh" kindref="compound">duffy/SimplePropertySet.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;typeinfo&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17" refid="classAnyType" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classAnyType" kindref="compound">AnyType</ref><sp/></highlight></codeline>
 <codeline lineno="18"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Base<sp/>class<sp/>for<sp/>all<sp/>wrapped<sp/>types</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAnyType" kindref="compound">AnyType</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="21" refid="classAnyType_1a6fa876cd3334c1b65ac0f99b0b074ccf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classAnyType_1a6fa876cd3334c1b65ac0f99b0b074ccf" kindref="member">AnyType</ref>()<sp/>{}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24" refid="classWrapper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classWrapper" kindref="compound">Wrapper</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classAnyType" kindref="compound">AnyType</ref></highlight></codeline>
 <codeline lineno="25"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Generic<sp/>wrapper<sp/>for<sp/>any<sp/>data<sp/>type</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>obj;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref><sp/>obj;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classWrapper" kindref="compound">Wrapper</ref>()<sp/>{<sp/>obj<sp/>=<sp/>T();}</highlight></codeline>
+<codeline lineno="30" refid="classWrapper_1a747788c9b29a997f4d805ec60e6e16a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classWrapper_1a747788c9b29a997f4d805ec60e6e16a2" kindref="member">Wrapper</ref>()<sp/>{<sp/>obj<sp/>=<sp/><ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref>();}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classWrapper" kindref="compound">Wrapper</ref>(T<sp/>wrappedObject)<sp/>{<sp/>obj<sp/>=<sp/>wrappedObject;}</highlight></codeline>
+<codeline lineno="32" refid="classWrapper_1ac286ab6c8dea5a2b5a243edea78eca7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classWrapper_1ac286ab6c8dea5a2b5a243edea78eca7b" kindref="member">Wrapper</ref>(<ref refid="namespaceNSEuropeanOption_1a62a4ea4e8132239d531a9760dfe36b4d" kindref="member">T</ref><sp/>wrappedObject)<sp/>{<sp/>obj<sp/>=<sp/>wrappedObject;}</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Need<sp/>to<sp/>know<sp/>if<sp/>current<sp/>type<sp/>is<sp/>same<sp/>as<sp/>another<sp/>type</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>template<sp/>member<sp/>function</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sameType<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T2&amp;<sp/>t2)</highlight></codeline>
+<codeline lineno="37" refid="classWrapper_1a722618937323f1c2ae417b77021cf381" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classWrapper_1a722618937323f1c2ae417b77021cf381" kindref="member">sameType</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T2&amp;<sp/>t2)</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">typeid</highlight><highlight class="normal">(<ref refid="classWrapper" kindref="compound">Wrapper&lt;T&gt;</ref>)<sp/>==<sp/></highlight><highlight class="keyword">typeid</highlight><highlight class="normal">(t2))</highlight></codeline>

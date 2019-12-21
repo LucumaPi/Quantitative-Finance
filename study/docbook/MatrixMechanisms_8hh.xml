@@ -1,0 +1,568 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_MatrixMechanisms_8hh">
+<title>include/duffy/MatrixMechanisms.hh File Reference</title>
+<indexterm><primary>include/duffy/MatrixMechanisms.hh</primary></indexterm>
+<programlisting>#include &quot;NumericMatrix.hh&quot;
+#include &quot;ArrayMechanisms.hh&quot;
+#include &quot;../../src/MatrixMechanisms.cc&quot;
+</programlisting>Include dependency graph for MatrixMechanisms.hh:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="MatrixMechanisms_8hh__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="MatrixMechanisms_8hh__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_MatrixMechanisms_8hh_1ab00f24d33b315b3567881ca4f9ae13aa">sumAbsRow</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;m, const I &amp;i)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_MatrixMechanisms_8hh_1a4d1479b88b531287426c66badbcd18cf">sumAbsColumn</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;m, const I &amp;j)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I &gt; <link linkend="_MatrixMechanisms_8hh_1a44ab776341a8a095e655778574b5ce8d">sumAbsRow</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;m)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I &gt; <link linkend="_MatrixMechanisms_8hh_1afbf0607bc3db705b85a955c9cc6be698">sumAbsColumn</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;m)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_MatrixMechanisms_8hh_1ae75fb91cf4b7afa603a41eb07f52a6bb">llNorm</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;matrix)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_MatrixMechanisms_8hh_1ad97ba861ea28d23de371ca12e82dbfbd">FrobeniusNorm</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;matrix)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_MatrixMechanisms_8hh_1a70cd51362f5af358d655ed9c0c7d0fea">lInfinityNorm</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;matrix)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt; std::string, double &gt; <link linkend="_MatrixMechanisms_8hh_1ad19d9c702f4a2500fc5e496d7d9a4b32">allNorms</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_MatrixMechanisms_8hh_1ab756c3f1b13fec78f42862639fb98f7c">initMatrix</link> (<link linkend="_classMatrix">Matrix</link>&lt; V, I &gt; &amp;m, const V &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; <link linkend="_MatrixMechanisms_8hh_1a6f970bd30a1ac58d6f56b0737ecdb2f4">createMatrix</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;lower, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;diagonal, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;upper)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1a6fa2271be30569c2b0ad6c2c850d794e">operator&lt;</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1acd0d84ddee6f504fb2fb9d83281da2b6">operator&lt;=</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1a6539ab5ef7bffef5715b2e142298d70c">operator&gt;</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1a8118170f2dfd63e4c8c666134b79396d">operator&gt;=</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1a8937199c2ef00f8623db12cfc5a59aae">operator==</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1a7d7ac569cc9e63d0a2bf2559a8e9997d">operator!=</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1a0f7651a9e9206b9c8819729e5c571f90">positive</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1aca20512a1e8b7a2f9ac0e6aa6cb7052a">negative</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_MatrixMechanisms_8hh_1a12ccb5c0bda61683615a95fcdd34c59d">diagonallyDominant</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; <link linkend="_MatrixMechanisms_8hh_1a772b0290fcb1ca2b13da74f2e2e75e86">eigenvalueBounds</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_MatrixMechanisms_8hh_1a5c3e43780b81dc05928fe7188e3f2ea9">quadraticForm</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;A, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_MatrixMechanisms_8hh_1a066bb3002419c7b680967d9ca5d4d259">RayleighQuotient</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;A, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_MatrixMechanisms_8hh_1aa6aefb3af5d04fbb310d2b827b11bd13">dominantEigenvalue</link> (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp;A, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;startVec, const V &amp;tolerance)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_MatrixMechanisms_8hh_1a5c3f3bcd8d5077944631817a944f9ff9">print</link> (const <link linkend="_classMatrix">Matrix</link>&lt; V, I &gt; &amp;v)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_MatrixMechanisms_8hh_1ad19d9c702f4a2500fc5e496d7d9a4b32"/>    <section>
+    <title>allNorms()</title>
+<indexterm><primary>allNorms</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>allNorms</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt;std::string, double&gt; allNorms (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 150 of file MatrixMechanisms.cc.</para>
+<programlisting>151 {
+152 
+153 &#32;&#32;&#32;&#32;<link linkend="_classSimplePropertySet">SimplePropertySet&lt;std::string, double&gt;</link>&#32;result;&#32;&#32;<emphasis role="comment">//&#32;Empty&#32;list</emphasis>
+154 
+155 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;l1&quot;</emphasis>,&#32;<link linkend="_MatrixMechanisms_8cc_1a5736210e118bd1f67139779ad143f9ad">l1Norm</link>(m)));
+156 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;l2&quot;</emphasis>,&#32;<link linkend="_MatrixMechanisms_8cc_1ad97ba861ea28d23de371ca12e82dbfbd">FrobeniusNorm</link>(m)));
+157 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;linf&quot;</emphasis>,&#32;<link linkend="_MatrixMechanisms_8cc_1a70cd51362f5af358d655ed9c0c7d0fea">lInfinityNorm</link>(m)));
+158 
+159 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+160 
+161 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a6f970bd30a1ac58d6f56b0737ecdb2f4"/>    <section>
+    <title>createMatrix()</title>
+<indexterm><primary>createMatrix</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>createMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classNumericMatrix">NumericMatrix</link>&lt;V,I&gt; createMatrix (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; lower, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; diagonal, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; upper)</computeroutput></para><para>
+Definition at line 189 of file MatrixMechanisms.cc.</para>
+<programlisting>191 {&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;matrix&#32;based&#32;on&#32;the&#32;diagonal&#32;elements&#32;of&#32;a&#32;tridiagonal&#32;matrix;&#32;bit&#32;wasteful&#32;of</emphasis>
+192 &#32;&#32;<emphasis role="comment">//&#32;space&#32;but&#32;who&#32;cares!&#32;I&apos;ve&#32;got&#32;a&#32;Pentium&#32;with&#32;a&#32;giga&#32;of&#32;memory</emphasis>
+193 
+194 
+195 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;We&#32;use&#32;the&#32;indexing&#32;as&#32;with&#32;LU&#32;decomposition&#32;routines,&#32;i.e.</emphasis>
+196 &#32;&#32;&#32;&#32;<emphasis role="comment">//</emphasis>
+197 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;lower&#32;[2,&#32;J]</emphasis>
+198 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;diagonal&#32;[1,&#32;J]</emphasis>
+199 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;upper&#32;[1,&#32;J-1]</emphasis>
+200 &#32;&#32;&#32;&#32;<emphasis role="comment">//</emphasis>
+201 
+202 &#32;&#32;&#32;&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;V, I&gt;</link>&#32;result(diagonal.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>(),&#32;diagonal.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>(),&#32;1,&#32;1);
+203 
+204 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;All&#32;values&#32;set&#32;to&#32;0</emphasis>
+205 &#32;&#32;&#32;&#32;<link linkend="_MatrixMechanisms_8cc_1ab756c3f1b13fec78f42862639fb98f7c">initMatrix</link>(result,&#32;V(0.0));
+206 
+207 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initialise&#32;the&#32;&apos;extremities&apos;&#32;of&#32;the&#32;matrix</emphasis>
+208 &#32;&#32;&#32;&#32;result(result.MaxRowIndex(),&#32;result.MaxColumnIndex())&#32;=&#32;diagonal[diagonal.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>()];
+209 &#32;&#32;&#32;&#32;result(result.MaxRowIndex(),&#32;result.MaxColumnIndex()&#32;-1)&#32;=&#32;lower[lower.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>()];
+210 
+211 &#32;&#32;&#32;&#32;result(1,&#32;1)&#32;=&#32;diagonal[diagonal.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+212 &#32;&#32;&#32;&#32;result(1,&#32;2)&#32;=&#32;upper[upper.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+213 
+214 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;the&#32;&apos;uniform&apos;&#32;part&#32;of&#32;the&#32;matrix</emphasis>
+215 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;result.MinRowIndex()&#32;+&#32;1;&#32;i&#32;&lt;=&#32;result.MaxRowIndex()&#32;-&#32;1;&#32;i++)
+216 &#32;&#32;&#32;&#32;{
+217 
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;the&#32;diagonal&#32;element&#32;&#32;</emphasis>
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result(i,&#32;i-1)&#32;&#32;=&#32;lower[i];
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result(i,&#32;i)&#32;&#32;&#32;&#32;=&#32;diagonal[i];
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result(i,&#32;i+1)&#32;&#32;=&#32;upper[i];
+222 &#32;&#32;&#32;&#32;}
+223 
+224 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+225 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a12ccb5c0bda61683615a95fcdd34c59d"/>    <section>
+    <title>diagonallyDominant()</title>
+<indexterm><primary>diagonallyDominant</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>diagonallyDominant</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool diagonallyDominant (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 386 of file MatrixMechanisms.cc.</para>
+<programlisting>387 {
+388 
+389 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;m.MinRowIndex();&#32;i&#32;&lt;=&#32;m.MaxRowIndex();&#32;i++)
+390 &#32;&#32;&#32;&#32;{
+391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;tmp&#32;=&#32;fabs(m(i,i));
+392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(tmp&#32;&lt;&#32;<link linkend="_MatrixMechanisms_8cc_1ab00f24d33b315b3567881ca4f9ae13aa">sumAbsRow</link>(m,&#32;i)&#32;-&#32;tmp)
+393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+394 &#32;&#32;&#32;&#32;}
+395 
+396 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+397 
+398 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1aa6aefb3af5d04fbb310d2b827b11bd13"/>    <section>
+    <title>dominantEigenvalue()</title>
+<indexterm><primary>dominantEigenvalue</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>dominantEigenvalue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V dominantEigenvalue (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; A, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; startVec, const V &amp; tolerance)</computeroutput></para><para>
+Definition at line 420 of file MatrixMechanisms.cc.</para>
+<programlisting>422 {
+423 
+424 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;startV&#32;=&#32;svec;
+425 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;currVector&#32;=&#32;(A&#32;*&#32;svec);
+426 &#32;&#32;&#32;&#32;V&#32;tmp(0.0);
+427 &#32;&#32;&#32;&#32;V&#32;nextValue&#32;(tmp);
+428 
+429 &#32;&#32;&#32;&#32;L1:
+430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;<link linkend="_MatrixMechanisms_8cc_1a066bb3002419c7b680967d9ca5d4d259">RayleighQuotient</link>(A,&#32;currVector);
+431 
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fabs(tmp-nextValue)&#32;&gt;&#32;tolerance)
+433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nextValue&#32;=&#32;tmp;
+435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startV&#32;=&#32;currVector;
+436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;currVector&#32;=&#32;A&#32;*&#32;startV;
+437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">goto</emphasis>&#32;L1;
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+439 
+440 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nextValue;
+441 
+442 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a772b0290fcb1ca2b13da74f2e2e75e86"/>    <section>
+    <title>eigenvalueBounds()</title>
+<indexterm><primary>eigenvalueBounds</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>eigenvalueBounds</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classNumericMatrix">NumericMatrix</link>&lt;V,I&gt; eigenvalueBounds (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 403 of file MatrixMechanisms.cc.</para>
+<programlisting>404 {
+405 
+406 &#32;&#32;&#32;&#32;<link linkend="_classNumericMatrix">NumericMatrix&lt;V, I&gt;</link>&#32;mat(m.Rows(),&#32;2,&#32;1,&#32;1);&#32;<emphasis role="comment">//&#32;2&#32;columns</emphasis>
+407 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;m.MinRowIndex();&#32;i&#32;&lt;=&#32;m.MaxRowIndex();&#32;i++)
+408 &#32;&#32;&#32;&#32;{
+409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;tmp&#32;=&#32;fabs(m(i,i));
+410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;rsum&#32;=&#32;<link linkend="_MatrixMechanisms_8cc_1ab00f24d33b315b3567881ca4f9ae13aa">sumAbsRow</link>(m,&#32;i);
+411 
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mat(i,&#32;2)&#32;=&#32;tmp&#32;-&#32;rsum;&#32;<emphasis role="comment">//&#32;Lower&#32;limit</emphasis>
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mat(i,&#32;1)&#32;=&#32;rsum;
+414 &#32;&#32;&#32;&#32;}
+415 
+416 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;mat;
+417 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1ad97ba861ea28d23de371ca12e82dbfbd"/>    <section>
+    <title>FrobeniusNorm()</title>
+<indexterm><primary>FrobeniusNorm</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>FrobeniusNorm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V FrobeniusNorm (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; matrix)</computeroutput></para><para>
+Definition at line 106 of file MatrixMechanisms.cc.</para>
+<programlisting>107 {&#32;&#32;&#32;&#32;&#32;&#32;
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans(0.0);
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;tmp(0.0);
+110 
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;matrix.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;i&#32;&lt;=&#32;matrix.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;i++)
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+113 
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;matrix.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>();&#32;j&lt;=&#32;matrix.<link linkend="_classMatrix_1af6cbab02648446701a31b7bce0110af7">MaxColumnIndex</link>();&#32;j++)
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;matrix(i,&#32;j);
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;(tmp&#32;*&#32;tmp);
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+119 
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+121 
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::sqrt(ans);
+123 }&#32;
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1ab756c3f1b13fec78f42862639fb98f7c"/>    <section>
+    <title>initMatrix()</title>
+<indexterm><primary>initMatrix</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>initMatrix</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void initMatrix (<link linkend="_classMatrix">Matrix</link>&lt; V, I &gt; &amp; m, const V &amp; v)</computeroutput></para><para>
+Definition at line 174 of file MatrixMechanisms.cc.</para>
+<programlisting>175 {&#32;<emphasis role="comment">//&#32;All&#32;elements&#32;get&#32;the&#32;value&#32;v</emphasis>
+176 
+177 
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;m.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;i&#32;&lt;=&#32;m.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;i++)
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;m.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>();&#32;j&#32;&lt;=&#32;m.<link linkend="_classMatrix_1af6cbab02648446701a31b7bce0110af7">MaxColumnIndex</link>();&#32;j++)
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m(i,j)&#32;=&#32;v;
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+185 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a70cd51362f5af358d655ed9c0c7d0fea"/>    <section>
+    <title>lInfinityNorm()</title>
+<indexterm><primary>lInfinityNorm</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>lInfinityNorm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V lInfinityNorm (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; matrix)</computeroutput></para><para>
+Definition at line 125 of file MatrixMechanisms.cc.</para>
+<programlisting>126 {&#32;<emphasis role="comment">//&#32;Largest&#32;row</emphasis>
+127 
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;tmp(ans);
+130 
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;matrix.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;i&#32;&lt;=&#32;matrix.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;i++)
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+133 
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;matrix.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;j&#32;&lt;=&#32;matrix.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;j++)
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;<link linkend="_MatrixMechanisms_8cc_1ab00f24d33b315b3567881ca4f9ae13aa">sumAbsRow</link>(matrix,&#32;j);
+137 
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(tmp&#32;&gt;&#32;ans)
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;tmp;
+142 
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+144 
+145 
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+147 
+148 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1ae75fb91cf4b7afa603a41eb07f52a6bb"/>    <section>
+    <title>llNorm()</title>
+<indexterm><primary>llNorm</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>llNorm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V llNorm (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; matrix)</computeroutput></para>    </section><anchor xml:id="_MatrixMechanisms_8hh_1aca20512a1e8b7a2f9ac0e6aa6cb7052a"/>    <section>
+    <title>negative()</title>
+<indexterm><primary>negative</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>negative</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool negative (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 363 of file MatrixMechanisms.cc.</para>
+<programlisting>364 {
+365 
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;zero&#32;=&#32;V(0.0);
+367 
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;matrix.MinRowIndex();&#32;i&#32;&lt;=&#32;matrix.MaxRowIndex();&#32;i++)
+369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+370 
+371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;matrix.MinColumnIndex();&#32;j&lt;=&#32;matrix.MaxColumnIndex();&#32;j++)
+372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(matrix(i,j)&#32;&gt;=&#32;zero)
+374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+376 
+377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+378 
+379 
+380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+381 &#32;&#32;&#32;&#32;
+382 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a7d7ac569cc9e63d0a2bf2559a8e9997d"/>    <section>
+    <title>operator!=()</title>
+<indexterm><primary>operator!=</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>operator!=</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator!= (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 332 of file MatrixMechanisms.cc.</para>
+<programlisting>333 {
+334 
+335 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m1&#32;==&#32;m2)
+336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+337 
+338 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+339 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a6fa2271be30569c2b0ad6c2c850d794e"/>    <section>
+    <title>operator&lt;()</title>
+<indexterm><primary>operator&lt;</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>operator&lt;</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator&lt; (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 255 of file MatrixMechanisms.cc.</para>
+<programlisting>256 {
+257 
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;m1.MinRowIndex();&#32;i&#32;&lt;=&#32;m1.MaxRowIndex();&#32;i++)
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+260 
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;m1.MinColumnIndex();&#32;j&lt;=&#32;m1.MaxColumnIndex();&#32;j++)
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m1(i,j)&#32;&gt;=&#32;m2(i,j))
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+266 
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+268 
+269 
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+271 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1acd0d84ddee6f504fb2fb9d83281da2b6"/>    <section>
+    <title>operator&lt;=()</title>
+<indexterm><primary>operator&lt;=</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>operator&lt;=</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator&lt;= (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 273 of file MatrixMechanisms.cc.</para>
+<programlisting>274 {
+275 
+276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;m1.MinRowIndex();&#32;i&#32;&lt;=&#32;m1.MaxRowIndex();&#32;i++)
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+278 
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;m1.MinColumnIndex();&#32;j&lt;=&#32;m1.MaxColumnIndex();&#32;j++)
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m1(i,j)&#32;&gt;&#32;m2(i,j))
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+284 
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+286 
+287 
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+289 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a8937199c2ef00f8623db12cfc5a59aae"/>    <section>
+    <title>operator==()</title>
+<indexterm><primary>operator==</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>operator==</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator== (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 313 of file MatrixMechanisms.cc.</para>
+<programlisting>314 {
+315 
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;m1.MinRowIndex();&#32;i&#32;&lt;=&#32;m1.MaxRowIndex();&#32;i++)
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+318 
+319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;m1.MinColumnIndex();&#32;j&lt;=&#32;m1.MaxColumnIndex();&#32;j++)
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m1(i,j)&#32;!=&#32;m2(i,j))
+322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+324 
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+326 
+327 
+328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+329 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a6539ab5ef7bffef5715b2e142298d70c"/>    <section>
+    <title>operator&gt;()</title>
+<indexterm><primary>operator&gt;</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>operator&gt;</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator&gt; (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 292 of file MatrixMechanisms.cc.</para>
+<programlisting>293 {
+294 
+295 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m2&#32;&lt;&#32;m1)
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+297 
+298 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+299 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a8118170f2dfd63e4c8c666134b79396d"/>    <section>
+    <title>operator&gt;=()</title>
+<indexterm><primary>operator&gt;=</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>operator&gt;=</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator&gt;= (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 302 of file MatrixMechanisms.cc.</para>
+<programlisting>303 {
+304 
+305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m2&#32;&lt;=&#32;m1)
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+307 
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+309 
+310 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a0f7651a9e9206b9c8819729e5c571f90"/>    <section>
+    <title>positive()</title>
+<indexterm><primary>positive</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>positive</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool positive (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 342 of file MatrixMechanisms.cc.</para>
+<programlisting>343 {
+344 
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;zero&#32;=&#32;V(0.0);
+346 
+347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;matrix.MinRowIndex();&#32;i&#32;&lt;=&#32;matrix.MaxRowIndex();&#32;i++)
+348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+349 
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;matrix.MinColumnIndex();&#32;j&lt;=&#32;matrix.MaxColumnIndex();&#32;j++)
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(matrix(i,j)&#32;&lt;=&#32;zero)
+353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+355 
+356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+357 
+358 
+359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+360 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a5c3f3bcd8d5077944631817a944f9ff9"/>    <section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classMatrix">Matrix</link>&lt; V, I &gt; &amp; v)</computeroutput></para><para>
+Definition at line 445 of file MatrixMechanisms.cc.</para>
+<programlisting>446 {
+447 
+448 
+449 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;mat.MinRowIndex();&#32;i&#32;&lt;=&#32;mat.MaxRowIndex();&#32;i++)
+450 &#32;&#32;&#32;&#32;{
+451 &#32;&#32;&#32;&#32;
+452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n[&quot;</emphasis>;
+453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;mat.MinColumnIndex();&#32;j&#32;&lt;=&#32;mat.MaxColumnIndex()-1;&#32;j++)
+454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;mat(i,j)&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;mat(i,&#32;mat.MaxColumnIndex());
+458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+459 &#32;&#32;&#32;&#32;
+460 &#32;&#32;&#32;&#32;}
+461 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+462 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a5c3e43780b81dc05928fe7188e3f2ea9"/>    <section>
+    <title>quadraticForm()</title>
+<indexterm><primary>quadraticForm</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>quadraticForm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V quadraticForm (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; A, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 227 of file MatrixMechanisms.cc.</para>
+<programlisting>228 {&#32;&#32;&#32;&#32;
+229 
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+231 
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;matrix.MinRowIndex();&#32;i&#32;&lt;=&#32;matrix.MaxRowIndex();&#32;i++)
+233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+234 
+235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;matrix.MinColumnIndex();&#32;j&lt;=&#32;matrix.MaxColumnIndex();&#32;j++)
+236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;matrix(i,j)&#32;*&#32;x[i]&#32;*&#32;x[j];
+238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+239 
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+241 
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+243 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a066bb3002419c7b680967d9ca5d4d259"/>    <section>
+    <title>RayleighQuotient()</title>
+<indexterm><primary>RayleighQuotient</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>RayleighQuotient</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V RayleighQuotient (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; A, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 245 of file MatrixMechanisms.cc.</para>
+<programlisting>246 {&#32;&#32;&#32;&#32;
+247 
+248 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;Compatibiity,&#32;number&#32;of&#32;columns&#32;of&#32;A&#32;==&#32;number&#32;of&#32;rows&#32;of&#32;x</emphasis>
+249 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;inner&#32;product&#32;does&#32;not&#32;evaluate&#32;to&#32;0.0</emphasis>
+250 
+251 
+252 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_MatrixMechanisms_8cc_1a24189db52fc13554f8f681d3041308c4">quadraticForm</link>(A,&#32;x)&#32;/&#32;<link linkend="_ArrayMechanisms_8hh_1a7feb2b4cbb0c06fa9146125c0e869513">innerProduct</link>&#32;(x,x);
+253 
+254 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1afbf0607bc3db705b85a955c9cc6be698"/>    <section>
+    <title>sumAbsColumn()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>sumAbsColumn</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>sumAbsColumn</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V,I&gt; sumAbsColumn (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; m)</computeroutput></para><para>
+Definition at line 70 of file MatrixMechanisms.cc.</para>
+<programlisting>71 {
+72 
+73 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;result&#32;(m.<link linkend="_classMatrix_1a7e137fcf687b490b80b47269ba8c4ae6">Columns</link>(),&#32;m.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>());
+74 
+75 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Do&#32;for&#32;all&#32;columns</emphasis>
+76 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;m.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>();&#32;j&#32;&lt;=&#32;m.<link linkend="_classMatrix_1af6cbab02648446701a31b7bce0110af7">MaxColumnIndex</link>();&#32;j++)
+77 &#32;&#32;&#32;&#32;{
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[j]&#32;=&#32;<link linkend="_MatrixMechanisms_8cc_1a4d1479b88b531287426c66badbcd18cf">sumAbsColumn</link>(m,&#32;j);
+79 &#32;&#32;&#32;&#32;}
+80 
+81 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+82 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a4d1479b88b531287426c66badbcd18cf"/>    <section>
+    <title>sumAbsColumn()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>sumAbsColumn</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>sumAbsColumn</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V sumAbsColumn (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; m, const I &amp; j)</computeroutput></para><para>
+Definition at line 38 of file MatrixMechanisms.cc.</para>
+<programlisting>39 {&#32;<emphasis role="comment">//&#32;Add&#32;up&#32;for&#32;a&#32;given&#32;column&#32;j</emphasis>
+40 
+41 &#32;&#32;&#32;&#32;V&#32;result&#32;=&#32;std::fabs(m(m.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>(),&#32;j));
+42 
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;m.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>()&#32;+&#32;1;&#32;i&#32;&lt;=&#32;m.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;i++)
+44 &#32;&#32;&#32;&#32;{
+45 
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;+=&#32;std::fabs(m(i,j));
+47 &#32;&#32;&#32;&#32;}
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+50 
+51 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1a44ab776341a8a095e655778574b5ce8d"/>    <section>
+    <title>sumAbsRow()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>sumAbsRow</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>sumAbsRow</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V,I&gt; sumAbsRow (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; m)</computeroutput></para><para>
+Definition at line 54 of file MatrixMechanisms.cc.</para>
+<programlisting>55 {
+56 
+57 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;result&#32;(m.<link linkend="_classMatrix_1a137b54c61fa1a897a903ea3c466dd271">Rows</link>(),&#32;m.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>());
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Do&#32;for&#32;all&#32;rows</emphasis>
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;i&#32;=&#32;m.<link linkend="_classMatrix_1a0505cda9acadb178a38ec97718bf2fab">MinRowIndex</link>();&#32;i&#32;&lt;=&#32;m.<link linkend="_classMatrix_1abd8766ab01ecf06e70cdce889afba641">MaxRowIndex</link>();&#32;i++)
+61 &#32;&#32;&#32;&#32;{
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;<link linkend="_MatrixMechanisms_8cc_1ab00f24d33b315b3567881ca4f9ae13aa">sumAbsRow</link>(m,&#32;i);
+63 &#32;&#32;&#32;&#32;}
+64 
+65 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+66 
+67 }
+</programlisting>    </section><anchor xml:id="_MatrixMechanisms_8hh_1ab00f24d33b315b3567881ca4f9ae13aa"/>    <section>
+    <title>sumAbsRow()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>sumAbsRow</primary><secondary>MatrixMechanisms.hh</secondary></indexterm>
+<indexterm><primary>MatrixMechanisms.hh</primary><secondary>sumAbsRow</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V sumAbsRow (const <link linkend="_classNumericMatrix">NumericMatrix</link>&lt; V, I &gt; &amp; m, const I &amp; i)</computeroutput></para><para>
+Definition at line 24 of file MatrixMechanisms.cc.</para>
+<programlisting>25 {&#32;<emphasis role="comment">//&#32;Add&#32;up&#32;for&#32;a&#32;given&#32;row&#32;i</emphasis>
+26 
+27 &#32;&#32;&#32;&#32;V&#32;result&#32;=&#32;std::fabs(m(i,&#32;m.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>()));
+28 
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;m.<link linkend="_classMatrix_1a72061ea24736a0ff90e62c1c0f40bad9">MinColumnIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;m.<link linkend="_classMatrix_1af6cbab02648446701a31b7bce0110af7">MaxColumnIndex</link>();&#32;j++)
+30 &#32;&#32;&#32;&#32;{
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;+=&#32;std::fabs(m(i,j));
+32 &#32;&#32;&#32;&#32;}
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+35 
+36 }
+</programlisting></section>
+</section>
+</section>

@@ -2,6 +2,10 @@
 \label{classCallPayoff}\index{CallPayoff@{CallPayoff}}
 
 
+{\ttfamily \#include $<$Call\+Payoff.\+hh$>$}
+
+
+
 Inheritance diagram for Call\+Payoff\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,28 +25,195 @@ Collaboration diagram for Call\+Payoff\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classCallPayoff_a5febaab90dff1bf068a783b03a20fcda}\label{classCallPayoff_a5febaab90dff1bf068a783b03a20fcda}} 
-{\bfseries Call\+Payoff} (double strike)
+\mbox{\hyperlink{classCallPayoff_a19ad977f668dc51f22d00274f18ffd18}{Call\+Payoff}} ()
 \item 
-\mbox{\Hypertarget{classCallPayoff_a0ab9fa574fecaa3e5b3e2b8ffbb87498}\label{classCallPayoff_a0ab9fa574fecaa3e5b3e2b8ffbb87498}} 
-{\bfseries Call\+Payoff} (const \mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \&source)
+\mbox{\hyperlink{classCallPayoff_a5febaab90dff1bf068a783b03a20fcda}{Call\+Payoff}} (double strike)
 \item 
-\mbox{\Hypertarget{classCallPayoff_a86bd90e9e848ad90532104c3192e06df}\label{classCallPayoff_a86bd90e9e848ad90532104c3192e06df}} 
-double {\bfseries Strike} () const
+\mbox{\hyperlink{classCallPayoff_a0ab9fa574fecaa3e5b3e2b8ffbb87498}{Call\+Payoff}} (const \mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \&source)
 \item 
-\mbox{\Hypertarget{classCallPayoff_a7a8b83bcf8fece954fb1135458e2b28e}\label{classCallPayoff_a7a8b83bcf8fece954fb1135458e2b28e}} 
-void {\bfseries Strike} (double New\+Strike)
+virtual \mbox{\hyperlink{classCallPayoff_a9f3bb9bb9c481a2f77dae23adf207b88}{$\sim$\+Call\+Payoff}} ()
 \item 
-\mbox{\Hypertarget{classCallPayoff_aac88652e16d519402ccc0efa63f06749}\label{classCallPayoff_aac88652e16d519402ccc0efa63f06749}} 
-\mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \& {\bfseries operator=} (const \mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \&source)
+double \mbox{\hyperlink{classCallPayoff_a86bd90e9e848ad90532104c3192e06df}{Strike}} () const
 \item 
-\mbox{\Hypertarget{classCallPayoff_a388ddb411d45108ab253f9c4dd50bcbb}\label{classCallPayoff_a388ddb411d45108ab253f9c4dd50bcbb}} 
-double {\bfseries payoff} (double S) const
+void \mbox{\hyperlink{classCallPayoff_a7a8b83bcf8fece954fb1135458e2b28e}{Strike}} (double New\+Strike)
+\item 
+\mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \& \mbox{\hyperlink{classCallPayoff_aac88652e16d519402ccc0efa63f06749}{operator=}} (const \mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \&source)
+\item 
+double \mbox{\hyperlink{classCallPayoff_a388ddb411d45108ab253f9c4dd50bcbb}{payoff}} (double S) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8hh_source_l00012}{12}} of file \mbox{\hyperlink{CallPayoff_8hh_source}{Call\+Payoff.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCallPayoff_a19ad977f668dc51f22d00274f18ffd18}\label{classCallPayoff_a19ad977f668dc51f22d00274f18ffd18}} 
+\index{CallPayoff@{CallPayoff}!CallPayoff@{CallPayoff}}
+\index{CallPayoff@{CallPayoff}!CallPayoff@{CallPayoff}}
+\doxysubsubsection{\texorpdfstring{CallPayoff()}{CallPayoff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Call\+Payoff\+::\+Call\+Payoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8cc_source_l00013}{13}} of file \mbox{\hyperlink{CallPayoff_8cc_source}{Call\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013                       : \mbox{\hyperlink{classPayoff_a0f46e76a129a9f3a98d957b083c30157}{Payoff}}()}
+\DoxyCodeLine{00014 \{ \textcolor{comment}{// Default constructor}}
+\DoxyCodeLine{00015     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = 100.0; \textcolor{comment}{// Prototype value}}
+\DoxyCodeLine{00016 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCallPayoff_a5febaab90dff1bf068a783b03a20fcda}\label{classCallPayoff_a5febaab90dff1bf068a783b03a20fcda}} 
+\index{CallPayoff@{CallPayoff}!CallPayoff@{CallPayoff}}
+\index{CallPayoff@{CallPayoff}!CallPayoff@{CallPayoff}}
+\doxysubsubsection{\texorpdfstring{CallPayoff()}{CallPayoff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Call\+Payoff\+::\+Call\+Payoff (\begin{DoxyParamCaption}\item[{double}]{strike }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8cc_source_l00018}{18}} of file \mbox{\hyperlink{CallPayoff_8cc_source}{Call\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018                                    : \mbox{\hyperlink{classPayoff_a0f46e76a129a9f3a98d957b083c30157}{Payoff}}()}
+\DoxyCodeLine{00019 \{ \textcolor{comment}{// Normal constructor with coordinates}}
+\DoxyCodeLine{00020     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = strike;}
+\DoxyCodeLine{00021 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCallPayoff_a0ab9fa574fecaa3e5b3e2b8ffbb87498}\label{classCallPayoff_a0ab9fa574fecaa3e5b3e2b8ffbb87498}} 
+\index{CallPayoff@{CallPayoff}!CallPayoff@{CallPayoff}}
+\index{CallPayoff@{CallPayoff}!CallPayoff@{CallPayoff}}
+\doxysubsubsection{\texorpdfstring{CallPayoff()}{CallPayoff()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Call\+Payoff\+::\+Call\+Payoff (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8cc_source_l00024}{24}} of file \mbox{\hyperlink{CallPayoff_8cc_source}{Call\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                                               : \mbox{\hyperlink{classPayoff_a0f46e76a129a9f3a98d957b083c30157}{Payoff}}(source)}
+\DoxyCodeLine{00025 \{ \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{00026     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = source.K;}
+\DoxyCodeLine{00027 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCallPayoff_a9f3bb9bb9c481a2f77dae23adf207b88}\label{classCallPayoff_a9f3bb9bb9c481a2f77dae23adf207b88}} 
+\index{CallPayoff@{CallPayoff}!````~CallPayoff@{$\sim$CallPayoff}}
+\index{````~CallPayoff@{$\sim$CallPayoff}!CallPayoff@{CallPayoff}}
+\doxysubsubsection{\texorpdfstring{$\sim$CallPayoff()}{~CallPayoff()}}
+{\footnotesize\ttfamily Call\+Payoff\+::$\sim$\+Call\+Payoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8cc_source_l00029}{29}} of file \mbox{\hyperlink{CallPayoff_8cc_source}{Call\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030 \{ \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{00031 \} }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCallPayoff_aac88652e16d519402ccc0efa63f06749}\label{classCallPayoff_aac88652e16d519402ccc0efa63f06749}} 
+\index{CallPayoff@{CallPayoff}!operator=@{operator=}}
+\index{operator=@{operator=}!CallPayoff@{CallPayoff}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \& Call\+Payoff\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCallPayoff}{Call\+Payoff}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8cc_source_l00046}{46}} of file \mbox{\hyperlink{CallPayoff_8cc_source}{Call\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047 \{ \textcolor{comment}{// Assignment operator}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{// Exit if same object}}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{if} (\textcolor{keyword}{this}==\&source) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052     \textcolor{comment}{// Call base class assignment}}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classPayoff_ad2a5f6ec9c8336d4dc6ab00ecdd83393}{Payoff::operator = }}(source);}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{comment}{// Copy state}}
+\DoxyCodeLine{00056     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = source.K;  }
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00059 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCallPayoff_a388ddb411d45108ab253f9c4dd50bcbb}\label{classCallPayoff_a388ddb411d45108ab253f9c4dd50bcbb}} 
+\index{CallPayoff@{CallPayoff}!payoff@{payoff}}
+\index{payoff@{payoff}!CallPayoff@{CallPayoff}}
+\doxysubsubsection{\texorpdfstring{payoff()}{payoff()}}
+{\footnotesize\ttfamily double Call\+Payoff\+::payoff (\begin{DoxyParamCaption}\item[{double}]{S }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPayoff_a541081708c4999142c3db9d5a27b2313}{Payoff}}.
+
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8cc_source_l00062}{62}} of file \mbox{\hyperlink{CallPayoff_8cc_source}{Call\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063 \{ \textcolor{comment}{// For a given spot price}}
+\DoxyCodeLine{00064     \textcolor{keywordflow}{if} (S > \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}})}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{return} (S -\/ \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}});}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00068     \textcolor{comment}{// remark; possible to say max (S -\/ K, 0); I am a bit longwinded!}}
+\DoxyCodeLine{00069 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCallPayoff_a86bd90e9e848ad90532104c3192e06df}\label{classCallPayoff_a86bd90e9e848ad90532104c3192e06df}} 
+\index{CallPayoff@{CallPayoff}!Strike@{Strike}}
+\index{Strike@{Strike}!CallPayoff@{CallPayoff}}
+\doxysubsubsection{\texorpdfstring{Strike()}{Strike()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Call\+Payoff\+::\+Strike (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8cc_source_l00034}{34}} of file \mbox{\hyperlink{CallPayoff_8cc_source}{Call\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035 \{\textcolor{comment}{// Return K}}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}};}
+\DoxyCodeLine{00037 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCallPayoff_a7a8b83bcf8fece954fb1135458e2b28e}\label{classCallPayoff_a7a8b83bcf8fece954fb1135458e2b28e}} 
+\index{CallPayoff@{CallPayoff}!Strike@{Strike}}
+\index{Strike@{Strike}!CallPayoff@{CallPayoff}}
+\doxysubsubsection{\texorpdfstring{Strike()}{Strike()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Call\+Payoff\+::\+Strike (\begin{DoxyParamCaption}\item[{double}]{New\+Strike }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CallPayoff_8cc_source_l00041}{41}} of file \mbox{\hyperlink{CallPayoff_8cc_source}{Call\+Payoff.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042 \{\textcolor{comment}{// Set K}}
+\DoxyCodeLine{00043     \mbox{\hyperlink{namespacePayoffNamespace_ab501f4bdb2c74995b98b666056c671fb}{K}} = NewStrike;}
+\DoxyCodeLine{00044 \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Call\+Payoff.\+hh\item 
-src/Call\+Payoff.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{CallPayoff_8hh}{Call\+Payoff.\+hh}}\item 
+src/\mbox{\hyperlink{CallPayoff_8cc}{Call\+Payoff.\+cc}}\end{DoxyCompactItemize}

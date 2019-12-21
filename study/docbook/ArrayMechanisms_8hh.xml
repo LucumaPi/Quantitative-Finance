@@ -1,0 +1,1125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ArrayMechanisms_8hh">
+<title>include/duffy/ArrayMechanisms.hh File Reference</title>
+<indexterm><primary>include/duffy/ArrayMechanisms.hh</primary></indexterm>
+<programlisting>#include &quot;SimplePropertySet.hh&quot;
+#include &quot;Range.hh&quot;
+#include &quot;Tensor.hh&quot;
+#include &lt;cmath&gt;
+#include &quot;../../src/ArrayMechanisms.cc&quot;
+</programlisting>Include dependency graph for ArrayMechanisms.hh:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ArrayMechanisms_8hh__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ArrayMechanisms_8hh__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0">sum</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d">product</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a1f180ea2ca6f8377075ebe0078a3a535">sumReciprocals</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a259e88a526330c4e69811f4722c472e6">sumAbsoluteValues</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1acdb15569682a2e0bf2c6f8a8f2df74c9">weightedArithMean</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;w)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1abc6df0dcf265521ed3239d9292fb7c62">geometricMean</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a13d345e8be1ef4121580faf897843983">harmonicMean</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a1961ee6c6a6ab7d95cad63dcb8963707">quadraticMean</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1ada1be3fbf31a833d8f891a1d9fbb9f02">sumSquares</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt; std::string, double &gt; <link linkend="_ArrayMechanisms_8hh_1a5213d504673342d3276c3335cc092339">allAverages</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1aabe7146d0ab655df7dea0dda59e33af6">deviationFromMean</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a7f43379194df79cb9bfc98918b3d107d">standardDeviation</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a039fe821f2cc2ebd29c145218b7e594c">variance</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt; std::string, double &gt; <link linkend="_ArrayMechanisms_8hh_1afa77a0c5d6e72e2000a53be658c5362e">allDispersions</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a57b30169c08bc835f06a3b4226d358e3">rthMoment</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x, const I &amp;r)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1abd89b7368c88dc0c18b171191ffce49c">rthMomentMean</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x, const I &amp;r)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a957257f28fea6eeb6990ac8e4f952691">rthMomentMean</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;freq, const I &amp;r)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1aa20bfe76f87b23f972d4ac012e6b54d4">rthMoment</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x, const I &amp;r, const V &amp;A)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1ae0e2e3e59d0a00971d76a4d0fc45951a">rthMoment</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;freq, const I &amp;r, const V &amp;A)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1accd08ee829c11fff840fb28b56c66016">median</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>I <link linkend="_ArrayMechanisms_8hh_1a4dbe91f78965a3973c017e8fdc01d86c">occurs</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x, const V &amp;d)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a5b2af8b958fc1d86e138fb7220db2fae">mode</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a51f76c32be87bbb64dc2b2fe77953108">skewness</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a1629e541754df6662b3c7bcf8c7f7e7a">maxValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a3fd6d636d86485d9e274d6003f9cf981">minValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a224fe3e8a6c63d545f98b44ebbb2bd77">maxAbsValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a1444de407d9592e80d0b9ebcb24d9c9f">minAbsValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>I <link linkend="_ArrayMechanisms_8hh_1a3b3c6f150e27a4d999b14733f81b172c">indexMaxValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a71ec96ee72e5a63195e9627020c77b91">indexMinValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>I <link linkend="_ArrayMechanisms_8hh_1aaa5e1505fda32d2b536b574bd5f7fb0f">indexMaxAbsValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a10dcf29732fc9a591206fed9dad7fdc7">indexMinAbsValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1ae4c6b748a5a46e5d92733fb1d1a34edb">maxValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a059efb34fbff2f079f2ca69e04669d95">minValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a26308a4ecf11e1f8094c7285d7d5f8d8">maxAbsValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a9c1f380040474c6e32ab6d6da2a3a891">minAbsValue</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a7feb2b4cbb0c06fa9146125c0e869513">innerProduct</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a75a652af753fedaf9991ce139cf6e66a">l1Norm</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a668d08308ea702fd8b718c9269666934">l2Norm</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1ae40b9d63ad56566ac2e6032014158066">lpNorm</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x, const I &amp;p)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a61a3356be620e18abfb8e5ccc92945df">lInfinityNorm</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt; std::string, double &gt; <link linkend="_ArrayMechanisms_8hh_1abe75e0a9b49ea9923c15a384761d13d8">allNorms</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1acd4e52a95d6941dfb88a4c1a88a7b9e6">l1Norm</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1af986404a5cbb417ec449769a625929b0">l2Norm</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a385d69301d86f6bbc380ef28a69e0c51">lpNorm</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB, const I &amp;p)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>V <link linkend="_ArrayMechanisms_8hh_1a1791ba9ec7602ca00189b3d031edf634">lInfinityNorm</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt; std::string, double &gt; <link linkend="_ArrayMechanisms_8hh_1a2da550c1edaab463f866ef24685a7053">allNorms</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;vectorB)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_ArrayMechanisms_8hh_1ac6a295c94e7d2e90ae8514dcf05377e5">positive</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_ArrayMechanisms_8hh_1af844f9e94257e30adb2557f72bc776fe">negative</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_ArrayMechanisms_8hh_1a7c74d80e1384b34d96195b6fb7abea03">operator&lt;</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_ArrayMechanisms_8hh_1a10d1dbb4bde9b31e016ae7f59e66d75e">operator&lt;=</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_ArrayMechanisms_8hh_1a537b17e660b3bfc1ed9a5ea8eb5b8fe5">operator&gt;</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_ArrayMechanisms_8hh_1ac246693b295956f27f5823380e5f0941">operator&gt;=</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_ArrayMechanisms_8hh_1a5b73c0e302fb50e0a12d98287b641acb">operator==</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>bool <link linkend="_ArrayMechanisms_8hh_1a76316bb45bc18b42f0098871aa970fac">operator!=</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v2)</para>
+</listitem>
+            <listitem><para>template&lt;class V &gt; </para><para>std::vector&lt; V &gt; <link linkend="_ArrayMechanisms_8hh_1abd5321c0d9d995769f70d91eca8e8e5e">createSTLvector</link> (const <link linkend="_classVector">Vector</link>&lt; V, int &gt; &amp;myVector)</para>
+</listitem>
+            <listitem><para>template&lt;class V &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, int &gt; <link linkend="_ArrayMechanisms_8hh_1a78a90de96c8a055b6921cb51fe868cef">createDatasimVector</link> (const std::vector&lt; V &gt; &amp;mySTLvector)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I &gt; <link linkend="_ArrayMechanisms_8hh_1ae92f1779b28708717fc43981b0d7e721">cumulativeVector</link> (const std::vector&lt; V &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para><link linkend="_classVector">Vector</link>&lt; V, I &gt; <link linkend="_ArrayMechanisms_8hh_1aa733a8c1b1c2946f0dee2369a2c0988d">reverse</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;x)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link> (const <link linkend="_classArray">Array</link>&lt; V, I &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_ArrayMechanisms_8hh_1a499368a9dddb1f6b8d6fb75eb6b9297d">print</link> (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;class V , class I &gt; </para><para>void <link linkend="_ArrayMechanisms_8hh_1a6ff31a903affcca53d6aa3b526b8be2a">print</link> (<link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp;tensor)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_ArrayMechanisms_8hh_1a5213d504673342d3276c3335cc092339"/>    <section>
+    <title>allAverages()</title>
+<indexterm><primary>allAverages</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>allAverages</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt;std::string, double&gt; allAverages (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 138 of file ArrayMechanisms.cc.</para>
+<programlisting>139 {
+140 
+141 &#32;&#32;&#32;&#32;<link linkend="_classSimplePropertySet">SimplePropertySet&lt;std::string, double&gt;</link>&#32;result;&#32;&#32;<emphasis role="comment">//&#32;Empty&#32;list</emphasis>
+142 
+143 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;SUM&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1aea32fac5839587550db96af2d9c443a0">sum</link>(x)));
+144 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;PRODUCT&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a7383833d1a743d1cf913e8748e03e30d">product</link>(x)));
+145 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;SUMREC&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a1f180ea2ca6f8377075ebe0078a3a535">sumReciprocals</link>(x)));
+146 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;SUMABSVAL&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a259e88a526330c4e69811f4722c472e6">sumAbsoluteValues</link>(x)));
+147 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;MEAN&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link>(x)));
+148 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;GMEAN&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1abc6df0dcf265521ed3239d9292fb7c62">geometricMean</link>(x)));
+149 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;HMEAN&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a13d345e8be1ef4121580faf897843983">harmonicMean</link>(x)));
+150 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;RMS&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a1961ee6c6a6ab7d95cad63dcb8963707">quadraticMean</link>(x)));
+151 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;SUMSQ&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1ada1be3fbf31a833d8f891a1d9fbb9f02">sumSquares</link>(x)));
+152 
+153 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+154 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1afa77a0c5d6e72e2000a53be658c5362e"/>    <section>
+    <title>allDispersions()</title>
+<indexterm><primary>allDispersions</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>allDispersions</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt;std::string, double&gt; allDispersions (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 198 of file ArrayMechanisms.cc.</para>
+<programlisting>199 {
+200 
+201 &#32;&#32;&#32;&#32;<link linkend="_classSimplePropertySet">SimplePropertySet&lt;std::string, double&gt;</link>&#32;result;&#32;&#32;<emphasis role="comment">//&#32;Empty&#32;list</emphasis>
+202 
+203 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;MDEV&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1aabe7146d0ab655df7dea0dda59e33af6">deviationFromMean</link>(x)));
+204 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;STD&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a7f43379194df79cb9bfc98918b3d107d">standardDeviation</link>(x)));
+205 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;VARIANCE&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a039fe821f2cc2ebd29c145218b7e594c">variance</link>(x)));
+206 
+207 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+208 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a2da550c1edaab463f866ef24685a7053"/>    <section>
+    <title>allNorms()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>allNorms</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>allNorms</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt;std::string, double&gt; allNorms (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 542 of file ArrayMechanisms.cc.</para>
+<programlisting>543 {
+544 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+545 
+546 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1abe75e0a9b49ea9923c15a384761d13d8">allNorms</link>(vecDiff);
+547 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1abe75e0a9b49ea9923c15a384761d13d8"/>    <section>
+    <title>allNorms()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>allNorms</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>allNorms</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classSimplePropertySet">SimplePropertySet</link>&lt;std::string, double&gt; allNorms (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 531 of file ArrayMechanisms.cc.</para>
+<programlisting>532 {
+533 &#32;&#32;&#32;&#32;<link linkend="_classSimplePropertySet">SimplePropertySet&lt;std::string, double&gt;</link>&#32;result;&#32;&#32;<emphasis role="comment">//&#32;Empty&#32;list</emphasis>
+534 
+535 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;l1&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a75a652af753fedaf9991ce139cf6e66a">l1Norm</link>(x)));
+536 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;l2&quot;</emphasis>,&#32;ManyToManyRelationorm(x)));
+537 &#32;&#32;&#32;&#32;result.<link linkend="_classSimplePropertySet_1a8663619c5669177f23286672ad49ceca">add</link>(<link linkend="_classProperty">Property&lt;std::string, double&gt;</link>&#32;(<emphasis role="stringliteral">&quot;linf&quot;</emphasis>,&#32;<link linkend="_ArrayMechanisms_8cc_1a61a3356be620e18abfb8e5ccc92945df">lInfinityNorm</link>(x)));
+538 
+539 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+540 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a78a90de96c8a055b6921cb51fe868cef"/>    <section>
+    <title>createDatasimVector()</title>
+<indexterm><primary>createDatasimVector</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>createDatasimVector</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, int&gt; createDatasimVector (const std::vector&lt; V &gt; &amp; mySTLvector)</computeroutput></para><para>
+Definition at line 702 of file ArrayMechanisms.cc.</para>
+<programlisting>703 {&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;general&#32;Vector&#32;from&#32;an&#32;STL&#32;vector</emphasis>
+704 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V, int&gt;</link>&#32;result(mySTLvector.size());
+705 
+706 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0,&#32;j&#32;=&#32;result.MinIndex();&#32;i&#32;&lt;&#32;mySTLvector.size();&#32;i++,&#32;j++)
+707 &#32;&#32;&#32;&#32;{
+708 
+709 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[j]&#32;=&#32;mySTLvector[i];
+710 &#32;&#32;&#32;&#32;}
+711 
+712 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+713 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1abd5321c0d9d995769f70d91eca8e8e5e"/>    <section>
+    <title>createSTLvector()</title>
+<indexterm><primary>createSTLvector</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>createSTLvector</secondary></indexterm>
+<computeroutput>template&lt;class V &gt; </computeroutput><para><computeroutput>std::vector&lt;V&gt; createSTLvector (const <link linkend="_classVector">Vector</link>&lt; V, int &gt; &amp; myVector)</computeroutput></para><para>
+Definition at line 688 of file ArrayMechanisms.cc.</para>
+<programlisting>689 {&#32;<emphasis role="comment">//&#32;Create&#32;an&#32;STL&#32;vector&#32;from&#32;a&#32;general&#32;Vector</emphasis>
+690 
+691 &#32;&#32;&#32;&#32;std::vector&lt;V&gt;&#32;result(myVector.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>());
+692 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;result.size();&#32;i++)
+693 &#32;&#32;&#32;&#32;{
+694 
+695 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;myVector[i+myVector.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+696 &#32;&#32;&#32;&#32;}
+697 
+698 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+699 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1ae92f1779b28708717fc43981b0d7e721"/>    <section>
+    <title>cumulativeVector()</title>
+<indexterm><primary>cumulativeVector</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>cumulativeVector</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, I&gt; cumulativeVector (const std::vector&lt; V &gt; &amp; x)</computeroutput></para><para>
+Definition at line 715 of file ArrayMechanisms.cc.</para>
+<programlisting>716 {&#32;<emphasis role="comment">//&#32;Cumulative&#32;vector&#32;c[j]&#32;=&#32;c[j-1]&#32;+&#32;x[j]</emphasis>
+717 
+718 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V, int&gt;</link>&#32;result(x.Size(),&#32;x.MaxIndex());
+719 
+720 &#32;&#32;&#32;&#32;result[x.MinIndex()]&#32;=&#32;x[x.MinIndex()];
+721 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;x.MinIndex()&#32;+&#32;1;&#32;i&#32;&lt;=&#32;x.MaxIndex();&#32;i++)
+722 &#32;&#32;&#32;&#32;{
+723 
+724 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[i]&#32;=&#32;result[i-1]&#32;+&#32;x[i];
+725 &#32;&#32;&#32;&#32;}
+726 
+727 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+728 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1aabe7146d0ab655df7dea0dda59e33af6"/>    <section>
+    <title>deviationFromMean()</title>
+<indexterm><primary>deviationFromMean</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>deviationFromMean</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V deviationFromMean (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 158 of file ArrayMechanisms.cc.</para>
+<programlisting>159 {
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;<link linkend="_ArrayMechanisms_8cc_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link>&#32;=&#32;<link linkend="_ArrayMechanisms_8cc_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link>(x);
+161 
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+163 
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;std::fabs(x[j]&#32;-&#32;<link linkend="_ArrayMechanisms_8cc_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link>);
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+168 
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans&#32;/&#32;x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>();
+170 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1abc6df0dcf265521ed3239d9292fb7c62"/>    <section>
+    <title>geometricMean()</title>
+<indexterm><primary>geometricMean</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>geometricMean</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V geometricMean (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 97 of file ArrayMechanisms.cc.</para>
+<programlisting>98 {
+99 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+100 
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+102 &#32;&#32;&#32;&#32;{
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;*=&#32;x[j];
+104 &#32;&#32;&#32;&#32;}
+105 
+106 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::pow(ans,&#32;1.0&#32;/&#32;x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()&#32;);
+107 }&#32;
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a13d345e8be1ef4121580faf897843983"/>    <section>
+    <title>harmonicMean()</title>
+<indexterm><primary>harmonicMean</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>harmonicMean</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V harmonicMean (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 110 of file ArrayMechanisms.cc.</para>
+<programlisting>111 {
+112 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;sumReciprocals(x)&#32;not&#32;zero</emphasis>
+113 
+114 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;V(x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;/&#32;<link linkend="_ArrayMechanisms_8cc_1a1f180ea2ca6f8377075ebe0078a3a535">sumReciprocals</link>(x);
+115 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1aaa5e1505fda32d2b536b574bd5f7fb0f"/>    <section>
+    <title>indexMaxAbsValue()</title>
+<indexterm><primary>indexMaxAbsValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>indexMaxAbsValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>I indexMaxAbsValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 421 of file ArrayMechanisms.cc.</para>
+<programlisting>422 {
+423 &#32;&#32;&#32;&#32;I&#32;index&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();
+424 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;std::fabs(x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()]);
+425 
+426 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+427 &#32;&#32;&#32;&#32;{
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&lt;&#32;std::fabs(x[j]))
+429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;index&#32;=&#32;j;
+431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;std::fabs(x[j]);
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+433 &#32;&#32;&#32;&#32;}
+434 
+435 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;index;
+436 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a3b3c6f150e27a4d999b14733f81b172c"/>    <section>
+    <title>indexMaxValue()</title>
+<indexterm><primary>indexMaxValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>indexMaxValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>I indexMaxValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 386 of file ArrayMechanisms.cc.</para>
+<programlisting>387 {
+388 &#32;&#32;&#32;&#32;I&#32;index&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();
+389 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+390 
+391 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+392 &#32;&#32;&#32;&#32;{
+393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&lt;&#32;x[j])
+394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;index&#32;=&#32;j;
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;x[j];
+397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+398 &#32;&#32;&#32;&#32;}
+399 
+400 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;index;
+401 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a10dcf29732fc9a591206fed9dad7fdc7"/>    <section>
+    <title>indexMinAbsValue()</title>
+<indexterm><primary>indexMinAbsValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>indexMinAbsValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V indexMinAbsValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 439 of file ArrayMechanisms.cc.</para>
+<programlisting>440 {
+441 &#32;&#32;&#32;&#32;I&#32;index&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();
+442 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;std::fabs(x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()]);
+443 
+444 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+445 &#32;&#32;&#32;&#32;{
+446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&gt;&#32;std::fabs(x[j]))
+447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;index&#32;=&#32;j;
+449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;std::fabs(x[j]);
+450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+451 &#32;&#32;&#32;&#32;}
+452 
+453 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;index;
+454 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a71ec96ee72e5a63195e9627020c77b91"/>    <section>
+    <title>indexMinValue()</title>
+<indexterm><primary>indexMinValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>indexMinValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V indexMinValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 403 of file ArrayMechanisms.cc.</para>
+<programlisting>404 {
+405 
+406 &#32;&#32;&#32;&#32;I&#32;index&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();
+407 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+408 
+409 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+410 &#32;&#32;&#32;&#32;{
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&gt;&#32;x[j])
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;index&#32;=&#32;j;
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;x[j];
+415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+416 &#32;&#32;&#32;&#32;}
+417 
+418 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;index;
+419 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a7feb2b4cbb0c06fa9146125c0e869513"/>    <section>
+    <title>innerProduct()</title>
+<indexterm><primary>innerProduct</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>innerProduct</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V innerProduct (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 490 of file ArrayMechanisms.cc.</para>
+<programlisting>491 {
+492 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;x&#32;and&#32;y&#32;have&#32;same&#32;size</emphasis>
+493 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+494 &#32;&#32;&#32;&#32;
+495 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.MinIndex();&#32;j&#32;&lt;=&#32;x.MaxIndex();&#32;j++)
+496 &#32;&#32;&#32;&#32;{
+497 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;x[j]&#32;*&#32;y[j];
+498 &#32;&#32;&#32;&#32;}
+499 
+500 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+501 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1acd4e52a95d6941dfb88a4c1a88a7b9e6"/>    <section>
+    <title>l1Norm()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>l1Norm</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>l1Norm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V l1Norm (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 550 of file ArrayMechanisms.cc.</para>
+<programlisting>551 {
+552 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+553 
+554 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a75a652af753fedaf9991ce139cf6e66a">l1Norm</link>(vecDiff);
+555 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a75a652af753fedaf9991ce139cf6e66a"/>    <section>
+    <title>l1Norm()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>l1Norm</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>l1Norm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V l1Norm (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 503 of file ArrayMechanisms.cc.</para>
+<programlisting>504 {
+505 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a259e88a526330c4e69811f4722c472e6">sumAbsoluteValues</link>(x);
+506 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1af986404a5cbb417ec449769a625929b0"/>    <section>
+    <title>l2Norm()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>l2Norm</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>l2Norm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V l2Norm (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 558 of file ArrayMechanisms.cc.</para>
+<programlisting>559 {
+560 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+561 
+562 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a668d08308ea702fd8b718c9269666934">l2Norm</link>(vecDiff);
+563 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a668d08308ea702fd8b718c9269666934"/>    <section>
+    <title>l2Norm()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>l2Norm</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>l2Norm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V l2Norm (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 509 of file ArrayMechanisms.cc.</para>
+<programlisting>510 {
+511 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::sqrt(<link linkend="_ArrayMechanisms_8cc_1ada1be3fbf31a833d8f891a1d9fbb9f02">sumSquares</link>(x));
+512 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a1791ba9ec7602ca00189b3d031edf634"/>    <section>
+    <title>lInfinityNorm()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>lInfinityNorm</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>lInfinityNorm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V lInfinityNorm (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 572 of file ArrayMechanisms.cc.</para>
+<programlisting>573 {
+574 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+575 
+576 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a61a3356be620e18abfb8e5ccc92945df">lInfinityNorm</link>(vecDiff);
+577 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a61a3356be620e18abfb8e5ccc92945df"/>    <section>
+    <title>lInfinityNorm()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>lInfinityNorm</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>lInfinityNorm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V lInfinityNorm (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 526 of file ArrayMechanisms.cc.</para>
+<programlisting>527 {
+528 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a224fe3e8a6c63d545f98b44ebbb2bd77">maxAbsValue</link>(x);
+529 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a385d69301d86f6bbc380ef28a69e0c51"/>    <section>
+    <title>lpNorm()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>lpNorm</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>lpNorm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V lpNorm (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB, const I &amp; p)</computeroutput></para><para>
+Definition at line 565 of file ArrayMechanisms.cc.</para>
+<programlisting>566 {
+567 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+568 
+569 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1ae40b9d63ad56566ac2e6032014158066">lpNorm</link>(vecDiff,&#32;p);
+570 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1ae40b9d63ad56566ac2e6032014158066"/>    <section>
+    <title>lpNorm()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>lpNorm</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>lpNorm</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V lpNorm (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x, const I &amp; p)</computeroutput></para><para>
+Definition at line 514 of file ArrayMechanisms.cc.</para>
+<programlisting>515 {
+516 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);&#32;V&#32;myPower&#32;=&#32;V(p);
+517 &#32;&#32;&#32;&#32;
+518 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+519 &#32;&#32;&#32;&#32;{
+520 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;std::pow(x[j],&#32;myPower);
+521 &#32;&#32;&#32;&#32;}
+522 
+523 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::pow(ans,&#32;V(1.0)/&#32;myPower);
+524 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a26308a4ecf11e1f8094c7285d7d5f8d8"/>    <section>
+    <title>maxAbsValue()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>maxAbsValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>maxAbsValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V maxAbsValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 474 of file ArrayMechanisms.cc.</para>
+<programlisting>475 {
+476 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+477 
+478 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a224fe3e8a6c63d545f98b44ebbb2bd77">maxAbsValue</link>(vecDiff);
+479 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a224fe3e8a6c63d545f98b44ebbb2bd77"/>    <section>
+    <title>maxAbsValue()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>maxAbsValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>maxAbsValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V maxAbsValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 358 of file ArrayMechanisms.cc.</para>
+<programlisting>359 {
+360 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;std::fabs(x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()]);
+361 &#32;&#32;&#32;&#32;
+362 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+363 &#32;&#32;&#32;&#32;{
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&lt;&#32;std::fabs(x[j]))
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;std::fabs(x[j]);
+366 &#32;&#32;&#32;&#32;}
+367 
+368 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+369 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1ae4c6b748a5a46e5d92733fb1d1a34edb"/>    <section>
+    <title>maxValue()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>maxValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>maxValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V maxValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 457 of file ArrayMechanisms.cc.</para>
+<programlisting>458 {
+459 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;A&#32;and&#32;B&#32;have&#32;same&#32;size&#32;(holds&#32;for&#32;all&#32;the&#32;following&#32;functions&#32;too)</emphasis>
+460 
+461 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+462 
+463 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a1629e541754df6662b3c7bcf8c7f7e7a">maxValue</link>(vecDiff);
+464 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a1629e541754df6662b3c7bcf8c7f7e7a"/>    <section>
+    <title>maxValue()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>maxValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>maxValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V maxValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 331 of file ArrayMechanisms.cc.</para>
+<programlisting>332 {
+333 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+334 
+335 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+336 &#32;&#32;&#32;&#32;{
+337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&lt;&#32;x[j])
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;x[j];
+339 &#32;&#32;&#32;&#32;}
+340 
+341 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+342 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1acbc48d749bdc03cf251b6db7e93df4c4"/>    <section>
+    <title>mean()</title>
+<indexterm><primary>mean</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>mean</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V mean (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 72 of file ArrayMechanisms.cc.</para>
+<programlisting>73 {
+74 
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1aea32fac5839587550db96af2d9c443a0">sum</link>(x)&#32;/&#32;V(x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>());
+76 
+77 }&#32;
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1accd08ee829c11fff840fb28b56c66016"/>    <section>
+    <title>median()</title>
+<indexterm><primary>median</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>median</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V median (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 258 of file ArrayMechanisms.cc.</para>
+<programlisting>259 {
+260 &#32;&#32;&#32;&#32;std::vector&lt;V&gt;&#32;v&#32;=&#32;<link linkend="_ArrayMechanisms_8cc_1abd5321c0d9d995769f70d91eca8e8e5e">createSTLvector</link>(x);
+261 
+262 &#32;&#32;&#32;&#32;stable_sort(v.begin(),&#32;v.end());
+263 
+264 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;v&#32;is&#32;sorted</emphasis>
+265 
+266 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>&#32;=&#32;v.size();
+267 
+268 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>/2)*2&#32;==&#32;<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>)&#32;&#32;&#32;<emphasis role="comment">//&#32;Even&#32;list</emphasis>
+269 &#32;&#32;&#32;&#32;{
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(v[<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>/2]&#32;+&#32;v[(<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>/2)&#32;-&#32;1])&#32;*&#32;V(0.5);
+271 &#32;&#32;&#32;&#32;}
+272 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+273 &#32;&#32;&#32;&#32;{
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;v[<link linkend="_TestImpliedVolatility_8cc_1a6cbb82a21dec4c4f36c3f78340be64de">N</link>/2];
+275 &#32;&#32;&#32;&#32;}
+276 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a9c1f380040474c6e32ab6d6da2a3a891"/>    <section>
+    <title>minAbsValue()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>minAbsValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>minAbsValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V minAbsValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 481 of file ArrayMechanisms.cc.</para>
+<programlisting>482 {
+483 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+484 
+485 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a1444de407d9592e80d0b9ebcb24d9c9f">minAbsValue</link>(vecDiff);
+486 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a1444de407d9592e80d0b9ebcb24d9c9f"/>    <section>
+    <title>minAbsValue()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>minAbsValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>minAbsValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V minAbsValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 371 of file ArrayMechanisms.cc.</para>
+<programlisting>372 {
+373 
+374 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;std::fabs(x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()]);
+375 &#32;&#32;&#32;&#32;
+376 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+377 &#32;&#32;&#32;&#32;{
+378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&gt;&#32;std::fabs(x[j]))
+379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;std::fabs(x[j]);
+380 &#32;&#32;&#32;&#32;}
+381 
+382 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+383 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a059efb34fbff2f079f2ca69e04669d95"/>    <section>
+    <title>minValue()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>minValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>minValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V minValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorA, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; vectorB)</computeroutput></para><para>
+Definition at line 466 of file ArrayMechanisms.cc.</para>
+<programlisting>467 {
+468 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V,I&gt;</link>&#32;vecDiff&#32;=&#32;vectorA&#32;-&#32;vectorB;
+469 
+470 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a3fd6d636d86485d9e274d6003f9cf981">minValue</link>(vecDiff);
+471 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a3fd6d636d86485d9e274d6003f9cf981"/>    <section>
+    <title>minValue()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>minValue</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>minValue</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V minValue (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 344 of file ArrayMechanisms.cc.</para>
+<programlisting>345 {
+346 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+347 &#32;&#32;&#32;&#32;
+348 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+349 &#32;&#32;&#32;&#32;{
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&gt;&#32;x[j])
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;=&#32;x[j];
+352 &#32;&#32;&#32;&#32;}
+353 
+354 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+355 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a5b2af8b958fc1d86e138fb7220db2fae"/>    <section>
+    <title>mode()</title>
+<indexterm><primary>mode</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>mode</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V mode (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 293 of file ArrayMechanisms.cc.</para>
+<programlisting>294 {
+295 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;value&#32;that&#32;occurs&#32;with&#32;the&#32;greatest&#32;frequency</emphasis>
+296 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Exx.&#32;Code&#32;can&#32;be&#32;optimized</emphasis>
+297 
+298 &#32;&#32;&#32;&#32;std::map&lt;V,&#32;I&gt;&#32;elements;
+299 
+300 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;unique&#32;list&#32;of&#32;elements</emphasis>
+301 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+302 &#32;&#32;&#32;&#32;{
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elements[x[j]]&#32;=&#32;<link linkend="_ArrayMechanisms_8cc_1a4dbe91f78965a3973c017e8fdc01d86c">occurs</link>(x,&#32;x[j]);
+304 &#32;&#32;&#32;&#32;}
+305 
+306 &#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::map&lt;V,&#32;I&gt;::iterator&#32;i&#32;=&#32;elements.begin();
+307 
+308 &#32;&#32;&#32;&#32;I&#32;ans&#32;=&#32;(*i).second;
+309 &#32;&#32;&#32;&#32;V&#32;result&#32;=&#32;(*i).first;
+310 
+311 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(i&#32;!=&#32;elements.end())
+312 &#32;&#32;&#32;&#32;{&#32;
+313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ans&#32;&lt;&#32;(*i).second)
+315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;(*i).second;
+316 
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+318 &#32;&#32;&#32;&#32;}
+319 
+320 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+321 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1af844f9e94257e30adb2557f72bc776fe"/>    <section>
+    <title>negative()</title>
+<indexterm><primary>negative</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>negative</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool negative (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 597 of file ArrayMechanisms.cc.</para>
+<programlisting>598 {
+599 &#32;&#32;&#32;&#32;V&#32;zero&#32;=&#32;V(0.0);
+600 
+601 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+602 &#32;&#32;&#32;&#32;{
+603 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x[j]&#32;&gt;=&#32;zero)
+604 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+605 &#32;&#32;&#32;&#32;}
+606 
+607 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+608 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a4dbe91f78965a3973c017e8fdc01d86c"/>    <section>
+    <title>occurs()</title>
+<indexterm><primary>occurs</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>occurs</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>I occurs (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x, const V &amp; d)</computeroutput></para><para>
+Definition at line 279 of file ArrayMechanisms.cc.</para>
+<programlisting>280 {
+281 &#32;&#32;&#32;&#32;I&#32;result&#32;=&#32;0;
+282 
+283 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+284 &#32;&#32;&#32;&#32;{
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(d&#32;==&#32;x[j])
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result++;
+287 &#32;&#32;&#32;&#32;}
+288 
+289 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+290 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a76316bb45bc18b42f0098871aa970fac"/>    <section>
+    <title>operator!=()</title>
+<indexterm><primary>operator!=</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>operator!=</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator!= (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 679 of file ArrayMechanisms.cc.</para>
+<programlisting>680 {
+681 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(v1&#32;==&#32;v2)&#32;
+682 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+683 
+684 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+685 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a7c74d80e1384b34d96195b6fb7abea03"/>    <section>
+    <title>operator&lt;()</title>
+<indexterm><primary>operator&lt;</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>operator&lt;</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator&lt; (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 611 of file ArrayMechanisms.cc.</para>
+<programlisting>612 {
+613 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterate&#32;in&#32;the&#32;matrix;&#32;when&#32;the&#32;condition&#32;is&#32;NOT&#32;true&#32;</emphasis>
+614 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(the&#32;inverse&#32;of&#32;the&#32;inequality)&#32;then&#32;exit&#32;and&#32;return&#32;false</emphasis>
+615 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;v1.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;v1.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+616 &#32;&#32;&#32;&#32;{
+617 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(v1[j]&#32;&gt;=&#32;v2[j])
+618 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+619 &#32;&#32;&#32;&#32;}
+620 
+621 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+622 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a10d1dbb4bde9b31e016ae7f59e66d75e"/>    <section>
+    <title>operator&lt;=()</title>
+<indexterm><primary>operator&lt;=</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>operator&lt;=</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator&lt;= (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 625 of file ArrayMechanisms.cc.</para>
+<programlisting>626 {
+627 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterate&#32;in&#32;the&#32;matrix;&#32;when&#32;the&#32;condition&#32;is&#32;NOT&#32;true&#32;</emphasis>
+628 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(the&#32;inverse&#32;of&#32;the&#32;inequality)&#32;then&#32;exit&#32;and&#32;return&#32;false</emphasis>
+629 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;v1.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;v1.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+630 &#32;&#32;&#32;&#32;{
+631 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(v1[j]&#32;&gt;&#32;v2[j])
+632 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+633 &#32;&#32;&#32;&#32;}
+634 
+635 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+636 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a5b73c0e302fb50e0a12d98287b641acb"/>    <section>
+    <title>operator==()</title>
+<indexterm><primary>operator==</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>operator==</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator== (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 666 of file ArrayMechanisms.cc.</para>
+<programlisting>667 {
+668 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterate&#32;in&#32;the&#32;matrix;&#32;when&#32;the&#32;condition&#32;is&#32;NOT&#32;true&#32;</emphasis>
+669 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(the&#32;inverse&#32;of&#32;the&#32;inequality)&#32;then&#32;exit&#32;and&#32;return&#32;false</emphasis>
+670 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;v1.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;v1.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+671 &#32;&#32;&#32;&#32;{
+672 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(v1[j]&#32;!=&#32;v2[j])
+673 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+674 &#32;&#32;&#32;&#32;}
+675 
+676 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+677 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a537b17e660b3bfc1ed9a5ea8eb5b8fe5"/>    <section>
+    <title>operator&gt;()</title>
+<indexterm><primary>operator&gt;</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>operator&gt;</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator&gt; (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 639 of file ArrayMechanisms.cc.</para>
+<programlisting>640 {
+641 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterate&#32;in&#32;the&#32;matrix;&#32;when&#32;the&#32;condition&#32;is&#32;NOT&#32;true</emphasis>
+642 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(the&#32;inverse&#32;of&#32;the&#32;inequality)&#32;then&#32;exit&#32;and&#32;return&#32;false</emphasis>
+643 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;v1.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;v1.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+644 &#32;&#32;&#32;&#32;{
+645 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(v1[j]&#32;&lt;=&#32;v2[j])
+646 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+647 &#32;&#32;&#32;&#32;}
+648 
+649 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+650 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1ac246693b295956f27f5823380e5f0941"/>    <section>
+    <title>operator&gt;=()</title>
+<indexterm><primary>operator&gt;=</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>operator&gt;=</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool operator&gt;= (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v1, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v2)</computeroutput></para><para>
+Definition at line 652 of file ArrayMechanisms.cc.</para>
+<programlisting>653 {
+654 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterate&#32;in&#32;the&#32;matrix;&#32;when&#32;the&#32;condition&#32;is&#32;NOT&#32;true&#32;</emphasis>
+655 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(the&#32;inverse&#32;of&#32;the&#32;inequality)&#32;then&#32;exit&#32;and&#32;return&#32;false</emphasis>
+656 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;v1.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;v1.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+657 &#32;&#32;&#32;&#32;{
+658 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(v1[j]&#32;&lt;&#32;v2[j])
+659 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+660 &#32;&#32;&#32;&#32;}
+661 
+662 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+663 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1ac6a295c94e7d2e90ae8514dcf05377e5"/>    <section>
+    <title>positive()</title>
+<indexterm><primary>positive</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>positive</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>bool positive (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 584 of file ArrayMechanisms.cc.</para>
+<programlisting>585 {
+586 &#32;&#32;&#32;&#32;V&#32;zero&#32;=&#32;V(0.0);
+587 
+588 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+589 &#32;&#32;&#32;&#32;{
+590 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(x[j]&#32;&lt;=&#32;zero)
+591 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+592 &#32;&#32;&#32;&#32;}
+593 
+594 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+595 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a7a738d11c1fc7a5a9204c8c2adb08402"/>    <section>
+    <title>print()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classArray">Array</link>&lt; V, I &gt; &amp; v)</computeroutput></para><para>
+Definition at line 744 of file ArrayMechanisms.cc.</para>
+<programlisting>745 {
+746 
+747 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n\nMinIndex:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;,&#32;MaxIndex:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>()&#32;&lt;&lt;&#32;std::endl;
+748 
+749 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nARR:[&quot;</emphasis>;
+750 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+751 &#32;&#32;&#32;&#32;{
+752 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;v[j]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;
+753 &#32;&#32;&#32;&#32;
+754 &#32;&#32;&#32;&#32;}
+755 
+756 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>;
+757 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a499368a9dddb1f6b8d6fb75eb6b9297d"/>    <section>
+    <title>print()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void print (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; v)</computeroutput></para><para>
+Definition at line 759 of file ArrayMechanisms.cc.</para>
+<programlisting>760 {
+761 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n\nMinIndex:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;,&#32;MaxIndex:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>()&#32;&lt;&lt;&#32;std::endl;
+762 
+763 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nARR:[&quot;</emphasis>;
+764 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;v.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;v.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+765 &#32;&#32;&#32;&#32;{
+766 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;v[j]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;&quot;</emphasis>;&#32;&#32;
+767 &#32;&#32;&#32;&#32;}
+768 
+769 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;]&quot;</emphasis>;
+770 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a6ff31a903affcca53d6aa3b526b8be2a"/>    <section>
+    <title>print()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>print</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>void print (<link linkend="_classTensor">Tensor</link>&lt; V, I &gt; &amp; tensor)</computeroutput></para><para>
+Definition at line 772 of file ArrayMechanisms.cc.</para>
+<programlisting>773 {
+774 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Tensor,&#32;Rows&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;tensor.<link linkend="_classTensor_1a1d19abc6ebc88dcd1e31a9035d4f42f1">Rows</link>()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;Columns&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;tensor.<link linkend="_classTensor_1acb5f71b7416a3361164821b624933dd3">Columns</link>()&#32;&lt;&lt;&#32;
+775 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;,&#32;Third&#32;Dimension&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;tensor.<link linkend="_classTensor_1a4e12d325ed245411efd1d65c13110368">sizeThird</link>()&#32;&lt;&lt;&#32;std::endl;
+776 
+777 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">long</emphasis>&#32;k&#32;=&#32;tensor.<link linkend="_classTensor_1aa95268c48800c8ca1dd6243b59a09543">MinThirdIndex</link>();&#32;k&lt;=&#32;tensor.<link linkend="_classTensor_1a6266f47513cc5b5924573ac58390b7cb">MaxThirdIndex</link>();&#32;k++)
+778 &#32;&#32;&#32;&#32;{
+779 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_ArrayMechanisms_8cc_1a7a738d11c1fc7a5a9204c8c2adb08402">print</link>&#32;(tensor[k]);
+780 &#32;&#32;&#32;&#32;}
+781 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a7383833d1a743d1cf913e8748e03e30d"/>    <section>
+    <title>product()</title>
+<indexterm><primary>product</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>product</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V product (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 31 of file ArrayMechanisms.cc.</para>
+<programlisting>32 {&#32;<emphasis role="comment">//&#32;Product&#32;of&#32;elements</emphasis>
+33 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()&#32;+&#32;1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+36 &#32;&#32;&#32;&#32;{
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;*=&#32;x[j];
+38 &#32;&#32;&#32;&#32;}
+39 
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+41 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a1961ee6c6a6ab7d95cad63dcb8963707"/>    <section>
+    <title>quadraticMean()</title>
+<indexterm><primary>quadraticMean</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>quadraticMean</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V quadraticMean (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 118 of file ArrayMechanisms.cc.</para>
+<programlisting>119 {
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::sqrt(&#32;<link linkend="_ArrayMechanisms_8cc_1ada1be3fbf31a833d8f891a1d9fbb9f02">sumSquares</link>(x)&#32;/&#32;V(x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>())&#32;);
+121 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1aa733a8c1b1c2946f0dee2369a2c0988d"/>    <section>
+    <title>reverse()</title>
+<indexterm><primary>reverse</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>reverse</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput><link linkend="_classVector">Vector</link>&lt;V, I&gt; reverse (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 730 of file ArrayMechanisms.cc.</para>
+<programlisting>731 {
+732 &#32;&#32;&#32;&#32;<link linkend="_classVector">Vector&lt;V, I&gt;</link>&#32;result(x);
+733 
+734 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;k&#32;=&#32;result.MinIndex();&#32;k&#32;&lt;=&#32;result.MaxIndex();&#32;k++)
+735 &#32;&#32;&#32;&#32;{
+736 
+737 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result[k]&#32;=&#32;x[x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>()&#32;-&#32;k&#32;+&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+738 &#32;&#32;&#32;&#32;}
+739 
+740 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+741 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a57b30169c08bc835f06a3b4226d358e3"/>    <section>
+    <title>rthMoment()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>rthMoment</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>rthMoment</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V rthMoment (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x, const I &amp; r)</computeroutput></para><para>
+Definition at line 213 of file ArrayMechanisms.cc.</para>
+<programlisting>214 {
+215 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a57b30169c08bc835f06a3b4226d358e3">rthMoment</link>(x,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>,&#32;0.0);
+216 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1aa20bfe76f87b23f972d4ac012e6b54d4"/>    <section>
+    <title>rthMoment()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>rthMoment</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>rthMoment</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V rthMoment (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x, const I &amp; r, const V &amp; A)</computeroutput></para><para>
+Definition at line 231 of file ArrayMechanisms.cc.</para>
+<programlisting>232 {
+233 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);&#32;V&#32;pr&#32;=&#32;V(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+234 &#32;&#32;&#32;&#32;
+235 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+236 &#32;&#32;&#32;&#32;{
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;std::pow(x[j]&#32;-&#32;A,&#32;pr);
+238 &#32;&#32;&#32;&#32;}
+239 
+240 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans&#32;/&#32;x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>();
+241 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1ae0e2e3e59d0a00971d76a4d0fc45951a"/>    <section>
+    <title>rthMoment()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>rthMoment</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>rthMoment</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V rthMoment (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; freq, const I &amp; r, const V &amp; A)</computeroutput></para><para>
+Definition at line 243 of file ArrayMechanisms.cc.</para>
+<programlisting>245 {
+246 &#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+247 &#32;&#32;&#32;&#32;V&#32;vr&#32;=&#32;V(<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>);
+248 
+249 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+250 &#32;&#32;&#32;&#32;{
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;freq[j]&#32;*&#32;pow(x[j]&#32;-&#32;A,&#32;vr);
+252 &#32;&#32;&#32;&#32;}
+253 
+254 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans&#32;/&#32;<link linkend="_ArrayMechanisms_8cc_1aea32fac5839587550db96af2d9c443a0">sum</link>(freq);
+255 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1abd89b7368c88dc0c18b171191ffce49c"/>    <section>
+    <title>rthMomentMean()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>rthMomentMean</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>rthMomentMean</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V rthMomentMean (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x, const I &amp; r)</computeroutput></para><para>
+Definition at line 219 of file ArrayMechanisms.cc.</para>
+<programlisting>220 {
+221 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a57b30169c08bc835f06a3b4226d358e3">rthMoment</link>(x,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>,&#32;<link linkend="_ArrayMechanisms_8cc_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link>(x));
+222 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a957257f28fea6eeb6990ac8e4f952691"/>    <section>
+    <title>rthMomentMean()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>rthMomentMean</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>rthMomentMean</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V rthMomentMean (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; freq, const I &amp; r)</computeroutput></para><para>
+Definition at line 224 of file ArrayMechanisms.cc.</para>
+<programlisting>226 {
+227 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_ArrayMechanisms_8cc_1a57b30169c08bc835f06a3b4226d358e3">rthMoment</link>(x,&#32;freq,&#32;<link linkend="_namespaceNSEuropeanOption_1adf476278b7e6a6960d82dc00e93ef723">r</link>,&#32;<link linkend="_ArrayMechanisms_8cc_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link>(x));
+228 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a51f76c32be87bbb64dc2b2fe77953108"/>    <section>
+    <title>skewness()</title>
+<indexterm><primary>skewness</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>skewness</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V skewness (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 324 of file ArrayMechanisms.cc.</para>
+<programlisting>325 {
+326 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_ArrayMechanisms_8cc_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link>(x)&#32;-&#32;<link linkend="_ArrayMechanisms_8cc_1a5b2af8b958fc1d86e138fb7220db2fae">mode</link>(x))&#32;/&#32;<link linkend="_ArrayMechanisms_8cc_1a7f43379194df79cb9bfc98918b3d107d">standardDeviation</link>(x);
+327 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a7f43379194df79cb9bfc98918b3d107d"/>    <section>
+    <title>standardDeviation()</title>
+<indexterm><primary>standardDeviation</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>standardDeviation</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V standardDeviation (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 173 of file ArrayMechanisms.cc.</para>
+<programlisting>174 {
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;myMean&#32;=&#32;<link linkend="_ArrayMechanisms_8cc_1acbc48d749bdc03cf251b6db7e93df4c4">mean</link>(x);
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;tmp;
+177 
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+179 
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp&#32;=&#32;x[j]&#32;-&#32;myMean;
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;tmp*tmp;
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+185 
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::sqrt(ans&#32;/&#32;V(x.<link linkend="_classArray_1a69342621906b355e8244466f9eeece71">Size</link>()));
+187 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1aea32fac5839587550db96af2d9c443a0"/>    <section>
+    <title>sum()</title>
+<indexterm><primary>sum</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>sum</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V sum (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 19 of file ArrayMechanisms.cc.</para>
+<programlisting>20 {&#32;<emphasis role="comment">//&#32;Sum&#32;of&#32;elements</emphasis>
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()];
+22 
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()+1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;x[j];
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+27 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+29 }&#32;
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a259e88a526330c4e69811f4722c472e6"/>    <section>
+    <title>sumAbsoluteValues()</title>
+<indexterm><primary>sumAbsoluteValues</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>sumAbsoluteValues</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V sumAbsoluteValues (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 58 of file ArrayMechanisms.cc.</para>
+<programlisting>59 {&#32;&#32;<emphasis role="comment">//&#32;Sum&#32;of&#32;reciprocals</emphasis>
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;fabs(x[x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()]);
+61 
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>()+1;&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;fabs(x[j]);
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+66 
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+68 
+69 }&#32;
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a1f180ea2ca6f8377075ebe0078a3a535"/>    <section>
+    <title>sumReciprocals()</title>
+<indexterm><primary>sumReciprocals</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>sumReciprocals</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V sumReciprocals (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 43 of file ArrayMechanisms.cc.</para>
+<programlisting>44 {&#32;&#32;<emphasis role="comment">//&#32;Sum&#32;of&#32;reciprocals&#32;&#32;&#32;&#32;</emphasis>
+45 
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Precondition&#32;(PREC):&#32;x&#32;is&#32;(strictly)&#32;positive</emphasis>
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+48 &#32;&#32;&#32;&#32;
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;1.0/x[j];
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+55 
+56 }&#32;
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1ada1be3fbf31a833d8f891a1d9fbb9f02"/>    <section>
+    <title>sumSquares()</title>
+<indexterm><primary>sumSquares</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>sumSquares</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V sumSquares (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 124 of file ArrayMechanisms.cc.</para>
+<programlisting>125 {
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+127 
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;(x[j]&#32;*&#32;x[j]);
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+132 
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans;
+134 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1a039fe821f2cc2ebd29c145218b7e594c"/>    <section>
+    <title>variance()</title>
+<indexterm><primary>variance</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>variance</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V variance (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x)</computeroutput></para><para>
+Definition at line 189 of file ArrayMechanisms.cc.</para>
+<programlisting>190 {
+191 &#32;&#32;&#32;&#32;V&#32;s&#32;=&#32;<link linkend="_ArrayMechanisms_8cc_1a7f43379194df79cb9bfc98918b3d107d">standardDeviation</link>(x);
+192 
+193 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;s*s;
+194 }
+</programlisting>    </section><anchor xml:id="_ArrayMechanisms_8hh_1acdb15569682a2e0bf2c6f8a8f2df74c9"/>    <section>
+    <title>weightedArithMean()</title>
+<indexterm><primary>weightedArithMean</primary><secondary>ArrayMechanisms.hh</secondary></indexterm>
+<indexterm><primary>ArrayMechanisms.hh</primary><secondary>weightedArithMean</secondary></indexterm>
+<computeroutput>template&lt;class V , class I &gt; </computeroutput><para><computeroutput>V weightedArithMean (const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; x, const <link linkend="_classVector">Vector</link>&lt; V, I &gt; &amp; w)</computeroutput></para><para>
+Definition at line 80 of file ArrayMechanisms.cc.</para>
+<programlisting>81 {
+82 
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;x&#32;and&#32;w&#32;have&#32;the&#32;same&#32;size;&#32;start&#32;indexes&#32;not&#32;necessarily&#32;the&#32;same</emphasis>
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PREC:&#32;sum(w)&#32;is&#32;not&#32;zero</emphasis>
+85 
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;V&#32;ans&#32;=&#32;V(0.0);
+87 
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(I&#32;j&#32;=&#32;x.<link linkend="_classArray_1acffe058a1dd631b05fb71a83e27b445a">MinIndex</link>();&#32;j&#32;&lt;=&#32;x.<link linkend="_classArray_1a8ce7791cd1ec7ba63ec71772a7144965">MaxIndex</link>();&#32;j++)
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ans&#32;+=&#32;w[j]&#32;*&#32;x[j];
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+92 
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ans&#32;/&#32;<link linkend="_ArrayMechanisms_8cc_1aea32fac5839587550db96af2d9c443a0">sum</link>(w);
+94 }&#32;
+</programlisting></section>
+</section>
+</section>

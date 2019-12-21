@@ -1,0 +1,191 @@
+\hypertarget{Example1_8cc}{}\doxysection{tests/\+Example1.cc File Reference}
+\label{Example1_8cc}\index{tests/Example1.cc@{tests/Example1.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$typeinfo$>$}\newline
+Include dependency graph for Example1.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{Example1_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBase}{Base}}
+\item 
+class \mbox{\hyperlink{classD1}{D1}}
+\item 
+class \mbox{\hyperlink{classD2}{D2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{Example1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Example1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Example1_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Example1.cc@{Example1.cc}!main@{main}}
+\index{main@{main}!Example1.cc@{Example1.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Example1_8cc_source_l00057}{57}} of file \mbox{\hyperlink{Example1_8cc_source}{Example1.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058 \{}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     \textcolor{comment}{// Part I: typeinfo}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \mbox{\hyperlink{classD1}{D1}} d1, d11;}
+\DoxyCodeLine{00063     \mbox{\hyperlink{classD2}{D2}} d2;}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \textcolor{comment}{// Define a reference to type}}
+\DoxyCodeLine{00066     \textcolor{keyword}{const} std::type\_info\& myRef = \textcolor{keyword}{typeid}(d1);}
+\DoxyCodeLine{00067     }
+\DoxyCodeLine{00068     std::cout << \textcolor{stringliteral}{"Human-\/readable name: "} << myRef.name() << std::endl;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{comment}{// Test if two objects have same type or not}}
+\DoxyCodeLine{00071     \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(d1) == \textcolor{keyword}{typeid}(d11))}
+\DoxyCodeLine{00072     \{}
+\DoxyCodeLine{00073         std::cout << \textcolor{stringliteral}{"Types are the same\(\backslash\)n"};}
+\DoxyCodeLine{00074     \}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(d1) != \textcolor{keyword}{typeid}(d2))}
+\DoxyCodeLine{00077     \{}
+\DoxyCodeLine{00078         std::cout << \textcolor{stringliteral}{"Types are NOT the same\(\backslash\)n"};}
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \mbox{\hyperlink{classBase}{Base}}* \mbox{\hyperlink{namespaceNSEuropeanOption_a6b26f4d79c6b43133be664e2eb229fff}{b}} = \&d1;}
+\DoxyCodeLine{00083     \textcolor{keyword}{const} std::type\_info\& myRef2 = \textcolor{keyword}{typeid}(*b);}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     std::cout << \textcolor{stringliteral}{"Human-\/readable name: "} << myRef2.name() << std::endl;}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088     \textcolor{comment}{// Create an array of Base class pointers}}
+\DoxyCodeLine{00089     \textcolor{keywordtype}{int} size = 10;}
+\DoxyCodeLine{00090     \mbox{\hyperlink{classBase}{Base}}* myArr[10];    \textcolor{comment}{// An array of pointers!}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 6; j++)}
+\DoxyCodeLine{00093     \{}
+\DoxyCodeLine{00094         myArr[j] = \&d1;}
+\DoxyCodeLine{00095     \}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 6; k < size; k++)}
+\DoxyCodeLine{00098     \{}
+\DoxyCodeLine{00099         myArr[k] = \&d2;}
+\DoxyCodeLine{00100     \}}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     \textcolor{comment}{// Now 'filter' the real types. We have D1 and D2 types!}}
+\DoxyCodeLine{00103     \textcolor{keywordtype}{int} counterD1 = 0;}
+\DoxyCodeLine{00104     \textcolor{keywordtype}{int} counterD2 = 0;}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++)}
+\DoxyCodeLine{00107     \{}
+\DoxyCodeLine{00108         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(*myArr[i]) == \textcolor{keyword}{typeid}(\mbox{\hyperlink{classD1}{D1}}))}
+\DoxyCodeLine{00109         \{}
+\DoxyCodeLine{00110             std::cout << \textcolor{stringliteral}{"We have a D1\(\backslash\)n"}; counterD1++;}
+\DoxyCodeLine{00111         \}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(*myArr[i]) == \textcolor{keyword}{typeid}(\mbox{\hyperlink{classD2}{D2}}))}
+\DoxyCodeLine{00114         \{}
+\DoxyCodeLine{00115             std::cout << \textcolor{stringliteral}{"We have a D2\(\backslash\)n"}; counterD2++;}
+\DoxyCodeLine{00116         \}}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118     \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{comment}{// Print final counts}}
+\DoxyCodeLine{00121     std::cout << \textcolor{stringliteral}{"Number of D1s: "} << counterD1 << std::endl;}
+\DoxyCodeLine{00122     std::cout << \textcolor{stringliteral}{"Number of D2s: "} << counterD2 << std::endl;}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124     \textcolor{comment}{// Part II: dynamic casting}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126     \mbox{\hyperlink{classD1}{D1}} d1A;}
+\DoxyCodeLine{00127     \mbox{\hyperlink{classBase}{Base}}* base2 = \&d1A;}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129     \mbox{\hyperlink{classD1}{D1}}* d1Cast = dynamic\_cast<D1*> (base2);}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131     \textcolor{keywordflow}{if} (d1Cast == 0)}
+\DoxyCodeLine{00132     \{}
+\DoxyCodeLine{00133         std::cout << \textcolor{stringliteral}{"Cast not possible:\(\backslash\)n"};}
+\DoxyCodeLine{00134     \}}
+\DoxyCodeLine{00135     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00136     \{ \textcolor{comment}{// This function gets called}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         std::cout << \textcolor{stringliteral}{"Cast is possible: "};}
+\DoxyCodeLine{00139         d1Cast -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00140     \}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142     \textcolor{comment}{// Now cast a D1 to a D2 (not possible)}}
+\DoxyCodeLine{00143     \mbox{\hyperlink{classD2}{D2}}* d2Cast = dynamic\_cast<D2*> (base2);}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \textcolor{keywordflow}{if} (d2Cast == 0)}
+\DoxyCodeLine{00146     \{ \textcolor{comment}{// This function gets called}}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148         std::cout << \textcolor{stringliteral}{"Cast not possible:\(\backslash\)n"};}
+\DoxyCodeLine{00149     \}}
+\DoxyCodeLine{00150     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00151     \{}
+\DoxyCodeLine{00152         std::cout << \textcolor{stringliteral}{"Cast is possible:\(\backslash\)n"};}
+\DoxyCodeLine{00153         d2Cast -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00154     \}}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156     \textcolor{comment}{// Upcasting}}
+\DoxyCodeLine{00157     \mbox{\hyperlink{classD1}{D1}}* dd = \textcolor{keyword}{new} \mbox{\hyperlink{classD1}{D1}};}
+\DoxyCodeLine{00158     \mbox{\hyperlink{classBase}{Base}}* b3 = dynamic\_cast<Base*> (dd);}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160     \textcolor{keywordflow}{if} (b3 == 0)}
+\DoxyCodeLine{00161     \{ \textcolor{comment}{// This function gets called}}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163         std::cout << \textcolor{stringliteral}{"Cast not possible:\(\backslash\)n"};}
+\DoxyCodeLine{00164     \}}
+\DoxyCodeLine{00165     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00166     \{}
+\DoxyCodeLine{00167         std::cout << \textcolor{stringliteral}{"Cast is possible:\(\backslash\)n"};}
+\DoxyCodeLine{00168         b3 -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00169         b3 -\/> doIt();}
+\DoxyCodeLine{00170     \}}
+\DoxyCodeLine{00171     \textcolor{keyword}{delete} dd;}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173     \textcolor{comment}{// Static casting}}
+\DoxyCodeLine{00174     \mbox{\hyperlink{classBase}{Base}}* bA = \&d1;}
+\DoxyCodeLine{00175     \mbox{\hyperlink{classBase}{Base}}* bB = \&d2;}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177     \mbox{\hyperlink{classD1}{D1}}* dA = static\_cast<D1*> (bA);}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179     \textcolor{comment}{// Unsafe static cast}}
+\DoxyCodeLine{00180     std::cout << \textcolor{stringliteral}{"Unsafe cast ...\(\backslash\)n"};}
+\DoxyCodeLine{00181     \mbox{\hyperlink{classD1}{D1}}* dB = static\_cast<D1*> (bB);}
+\DoxyCodeLine{00182     dB -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184     \textcolor{comment}{// Const Cast}}
+\DoxyCodeLine{00185     std::cout << \textcolor{stringliteral}{"\(\backslash\)n const cast stuff\(\backslash\)n"};}
+\DoxyCodeLine{00186     \mbox{\hyperlink{classD1}{D1}} dAny;}
+\DoxyCodeLine{00187     \textcolor{keyword}{const} \mbox{\hyperlink{classBase}{Base}}* bConst = \&dAny;}
+\DoxyCodeLine{00188     bConst -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00189     \textcolor{comment}{// Base* bNonConst = bConst; DOES NOT WORK}}
+\DoxyCodeLine{00190     \mbox{\hyperlink{classBase}{Base}}* bNonConst = const\_cast<Base*> (bConst);}
+\DoxyCodeLine{00191     bNonConst -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00193     \textcolor{comment}{// The following conversions do not work}}
+\DoxyCodeLine{00194 \textcolor{comment}{//  Base* bNonConst1 = static\_cast<Base*> (bConst);}}
+\DoxyCodeLine{00195 \textcolor{comment}{//  Base* bNonConst2 = dynamic\_cast<Base*> (bConst);}}
+\DoxyCodeLine{00196 \textcolor{comment}{//  Base* bNonConst3 = reinterpret\_cast<Base*> (bConst);}}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198     \textcolor{comment}{// Reinterpret Cast}}
+\DoxyCodeLine{00199     std::cout << \textcolor{stringliteral}{"\(\backslash\)nReinterpret cast stuff\(\backslash\)n"};}
+\DoxyCodeLine{00200 }
+\DoxyCodeLine{00201     \mbox{\hyperlink{classD2}{D2}} d2Any;}
+\DoxyCodeLine{00202     \mbox{\hyperlink{classBase}{Base}}* bb = reinterpret\_cast<Base*>(\&d2Any);}
+\DoxyCodeLine{00203     bb -\/> \mbox{\hyperlink{ArrayMechanisms_8hh_a7a738d11c1fc7a5a9204c8c2adb08402}{print}}();}
+\DoxyCodeLine{00204 }
+\DoxyCodeLine{00205     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00206 \}}
+
+\end{DoxyCode}

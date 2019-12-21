@@ -1,0 +1,62 @@
+\hypertarget{TestNewLatticeBasic_8cc_source}{}\doxysection{Test\+New\+Lattice\+Basic.\+cc}
+\label{TestNewLatticeBasic_8cc_source}\index{tests/TestNewLatticeBasic.cc@{tests/TestNewLatticeBasic.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// testlattice.cpp}}
+\DoxyCodeLine{00002 \textcolor{comment}{//}}
+\DoxyCodeLine{00003 \textcolor{comment}{// Testing the Latice class (basis for binomial and trinomial}}
+\DoxyCodeLine{00004 \textcolor{comment}{// trees)}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{comment}{// In this version we have one class for both binomial and trinomial}}
+\DoxyCodeLine{00007 \textcolor{comment}{// trees.}}
+\DoxyCodeLine{00008 \textcolor{comment}{//}}
+\DoxyCodeLine{00009 \textcolor{comment}{// (C) Datasim Education BV 2003-\/2005}}
+\DoxyCodeLine{00010 \textcolor{comment}{//}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../src/LatticeMechanisms.cc"}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{TestNewLatticeBasic_8cc_source_l00014}\mbox{\hyperlink{TestNewLatticeBasic_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00014}} \textcolor{keywordtype}{int} \mbox{\hyperlink{TestNewLatticeBasic_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016     \textcolor{comment}{/*}}
+\DoxyCodeLine{00017 \textcolor{comment}{    int Continue;           // Break point}}
+\DoxyCodeLine{00018 \textcolor{comment}{}}
+\DoxyCodeLine{00019 \textcolor{comment}{    const int typeB = 2;    // BinomialLatticeType;}}
+\DoxyCodeLine{00020 \textcolor{comment}{    const int typeT = 3;    // Trinomial Type}}
+\DoxyCodeLine{00021 \textcolor{comment}{}}
+\DoxyCodeLine{00022 \textcolor{comment}{    int depth = 5;}}
+\DoxyCodeLine{00023 \textcolor{comment}{}}
+\DoxyCodeLine{00024 \textcolor{comment}{    Lattice<double, int, typeB> lattice1(depth);}}
+\DoxyCodeLine{00025 \textcolor{comment}{    Lattice<double, int, typeT> lattice2(depth);}}
+\DoxyCodeLine{00026 \textcolor{comment}{}}
+\DoxyCodeLine{00027 \textcolor{comment}{    print(lattice1); }}
+\DoxyCodeLine{00028 \textcolor{comment}{    std::cout << std::endl << std::endl;}}
+\DoxyCodeLine{00029 \textcolor{comment}{    print(lattice2);}}
+\DoxyCodeLine{00030 \textcolor{comment}{}}
+\DoxyCodeLine{00031 \textcolor{comment}{    }}
+\DoxyCodeLine{00032 \textcolor{comment}{    std::cout << std::endl;}}
+\DoxyCodeLine{00033 \textcolor{comment}{}}
+\DoxyCodeLine{00034 \textcolor{comment}{    depth = 200;}}
+\DoxyCodeLine{00035 \textcolor{comment}{}}
+\DoxyCodeLine{00036 \textcolor{comment}{    std::cout << "Consistent trinomial tree for short rate\(\backslash\)n";}}
+\DoxyCodeLine{00037 \textcolor{comment}{    std::cout << "How many time divisions: " << std::endl;}}
+\DoxyCodeLine{00038 \textcolor{comment}{    std::cin >> depth;}}
+\DoxyCodeLine{00039 \textcolor{comment}{    if (depth <= 0) return 0;}}
+\DoxyCodeLine{00040 \textcolor{comment}{}}
+\DoxyCodeLine{00041 \textcolor{comment}{    int pr = 0;}}
+\DoxyCodeLine{00042 \textcolor{comment}{    std::cout << "Wanna print tree on screen (Costs time) 1 Yes, 0 No " << std::endl;}}
+\DoxyCodeLine{00043 \textcolor{comment}{    std::cin >> pr;}}
+\DoxyCodeLine{00044 \textcolor{comment}{*/}}
+\DoxyCodeLine{00045     \textcolor{comment}{// Trinomial lattice with matrix entries}}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{int} Nrows = 3;}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{int} Ncols = 2;}
+\DoxyCodeLine{00048     \textcolor{keywordtype}{int} startIndex = 1;}
+\DoxyCodeLine{00049     \textcolor{keywordtype}{int} \mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}} = 3;     \textcolor{comment}{// Number of time steps}}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classMatrix}{Matrix<double, int>}} nodeStructure(Nrows, Ncols, startIndex, startIndex);}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classLattice}{Lattice<Matrix<double, int>}}, int, 3> trinomialLattice(\mbox{\hyperlink{TestImpliedVolatility_8cc_a6cbb82a21dec4c4f36c3f78340be64de}{N}}, nodeStructure);}
+\DoxyCodeLine{00052     std::cout << \textcolor{stringliteral}{"Number of discrete points at end: "} << trinomialLattice.\mbox{\hyperlink{classLattice_a37afc93f46019f322291307c1bed2e11}{BasePyramidSize}}() << std::endl;}
+\DoxyCodeLine{00053     std::cout << \textcolor{stringliteral}{"Total number of nodes: "} << trinomialLattice.\mbox{\hyperlink{classLattice_a114af77d5b77fa52ffd28c42f7f97b5f}{numberNodes}}() << std::endl;}
+\DoxyCodeLine{00054     }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00056 \}}
+
+\end{DoxyCode}

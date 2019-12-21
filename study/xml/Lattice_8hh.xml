@@ -18,14 +18,24 @@
     <incdepgraph>
       <node id="2">
         <label>Vector.hh</label>
-        <link refid="Vector_8hh_source"/>
+        <link refid="Vector_8hh"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>ArrayStructure.hh</label>
-        <link refid="ArrayStructure_8hh_source"/>
+        <link refid="ArrayStructure_8hh"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../../src/Lattice.cc</label>
+        <link refid="Lattice_8cc"/>
+        <childnode refid="1" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -33,54 +43,188 @@
         <link refid="Lattice_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>Array.hh</label>
-        <link refid="Array_8hh_source"/>
+        <link refid="Array_8hh"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="9">
+        <label>../../src/FullArray.cc</label>
+        <link refid="FullArray_8cc"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../../src/ArrayStructure.cc</label>
+        <link refid="ArrayStructure_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>vector</label>
       </node>
       <node id="5">
         <label>cstddef</label>
       </node>
-      <node id="6">
+      <node id="11">
+        <label>../../src/Vector.cc</label>
+        <link refid="Vector_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../../src/Array.cc</label>
+        <link refid="Array_8cc"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
         <label>FullArray.hh</label>
-        <link refid="FullArray_8hh_source"/>
-        <childnode refid="7" relation="include">
+        <link refid="FullArray_8hh"/>
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="11">
+        <label>src/LatticeMechanisms.cc</label>
+        <link refid="LatticeMechanisms_8cc"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>src/TestLatticeNamespace.cc</label>
+        <link refid="TestLatticeNamespace_8cc"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/BinomialMethod.cc</label>
+        <link refid="BinomialMethod_8cc"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/Lattice.cc</label>
+        <link refid="Lattice_8cc"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>include/duffy/Lattice.hh</label>
         <link refid="Lattice_8hh"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>tests/TestNewLatticeBasic.cc</label>
+        <link refid="TestNewLatticeBasic_8cc"/>
+      </node>
+      <node id="13">
+        <label>tests/TestNewLattice.cc</label>
+        <link refid="TestNewLattice_8cc"/>
+      </node>
+      <node id="12">
+        <label>tests/TestLatticeBasic.cc</label>
+        <link refid="TestLatticeBasic_8cc"/>
+      </node>
+      <node id="3">
+        <label>src/BinomialLatticeStrategy.cc</label>
+        <link refid="BinomialLatticeStrategy_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>tests/TestBinomialMethod.cc</label>
+        <link refid="TestBinomialMethod_8cc"/>
+      </node>
+      <node id="18">
+        <label>tests/TestLatticeBackwardInduction.cc</label>
+        <link refid="TestLatticeBackwardInduction_8cc"/>
+      </node>
+      <node id="6">
+        <label>tests/director.cc</label>
+        <link refid="director_8cc"/>
+      </node>
+      <node id="8">
+        <label>tests/TestLatticeFactory.cc</label>
+        <link refid="TestLatticeFactory_8cc"/>
+      </node>
+      <node id="10">
+        <label>include/duffy/LatticeFactory.hh</label>
+        <link refid="LatticeFactory_8hh"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>tests/TestLattice.cc</label>
+        <link refid="TestLattice_8cc"/>
+      </node>
+      <node id="2">
+        <label>include/duffy/BinomialLatticeStrategy.hh</label>
+        <link refid="BinomialLatticeStrategy_8hh"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>include/duffy/LatticeFactory.hh</label>
-        <link refid="LatticeFactory_8hh_source"/>
-      </node>
-      <node id="2">
-        <label>include/duffy/BinomialLatticeStrategy.hh</label>
-        <link refid="BinomialLatticeStrategy_8hh_source"/>
-        <childnode refid="3" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="3">
+      <node id="4">
         <label>include/duffy/BinomialMethod.hh</label>
-        <link refid="BinomialMethod_8hh_source"/>
+        <link refid="BinomialMethod_8hh"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>tests/TestNewLattice2.cc</label>
+        <link refid="TestNewLattice2_8cc"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classLattice" prot="public">Lattice</innerclass>
@@ -113,7 +257,7 @@
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Lattice_hpp</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Lattice_hpp</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector_8hh" kindref="compound">Vector.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27" refid="classLattice" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>V,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>I,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NumberNodes&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLattice" kindref="compound">Lattice</ref></highlight></codeline>
 <codeline lineno="28"><highlight class="normal">{<sp/></highlight><highlight class="comment">//<sp/>Generic<sp/>lattice<sp/>class</highlight><highlight class="normal"></highlight></codeline>
@@ -125,25 +269,25 @@
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>typ;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>What<sp/>kind<sp/>of<sp/>lattice<sp/>(number<sp/>of<sp/>nodes)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructors<sp/>&amp;<sp/>destructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice" kindref="compound">Lattice</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice" kindref="compound">Lattice</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>I&amp;<sp/>Nrows);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Number<sp/>of<sp/>rows<sp/>and<sp/>branch<sp/>factor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice" kindref="compound">Lattice</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>I&amp;<sp/>Nrows,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>V&amp;<sp/>val);<sp/></highlight><highlight class="comment">//<sp/>+<sp/>value<sp/>at<sp/>nodes</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice" kindref="compound">Lattice</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;V, I, NumberNodes&gt;</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classLattice" kindref="compound">Lattice</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice_1a9fe92ce8abfb8668e28064b394f7a057" kindref="member">Lattice</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice_1a9fe92ce8abfb8668e28064b394f7a057" kindref="member">Lattice</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>I&amp;<sp/>Nrows);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Number<sp/>of<sp/>rows<sp/>and<sp/>branch<sp/>factor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice_1a9fe92ce8abfb8668e28064b394f7a057" kindref="member">Lattice</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>I&amp;<sp/>Nrows,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>V&amp;<sp/>val);<sp/></highlight><highlight class="comment">//<sp/>+<sp/>value<sp/>at<sp/>nodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice_1a9fe92ce8abfb8668e28064b394f7a057" kindref="member">Lattice</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;V, I, NumberNodes&gt;</ref>&amp;<sp/>source);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classLattice_1a9625188af2d5da9d88b2f747db907042" kindref="member">~Lattice</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destructor</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Iterating<sp/>in<sp/>a<sp/>Lattice;<sp/>we<sp/>need<sp/>forward<sp/>and<sp/>backward<sp/>versions</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>MinIndex()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>minimum<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>MaxIndex()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>maximum<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>Depth()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>(depth)<sp/>number<sp/>of<sp/>rows<sp/>in<sp/>the<sp/>lattice</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classLattice_1a07442df63222c6627f46efc4ae91acf9" kindref="member">MinIndex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>minimum<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classLattice_1a5cac27496a08f2a14d8e1d65732a4c34" kindref="member">MaxIndex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>maximum<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classLattice_1a0911d29a485c5e8555b8f25e7589434a" kindref="member">Depth</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>(depth)<sp/>number<sp/>of<sp/>rows<sp/>in<sp/>the<sp/>lattice</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Operators</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;V, I, NumberNodes&gt;</ref>&amp;<sp/>operator<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;V, I, NumberNodes&gt;</ref>&amp;<sp/>source);</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V, I&gt;</ref>&amp;<sp/>operator<sp/>[]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>I&amp;<sp/>nLevel<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Subscripting<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;V, I&gt;</ref>&amp;<sp/>operator<sp/>[]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>I&amp;<sp/>nLevel<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Subscripting<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;V, I, NumberNodes&gt;</ref>&amp;<sp/><ref refid="classLattice_1a135fdd0475ed6105b3367d507681a404" kindref="member">operator = </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classLattice" kindref="compound">Lattice&lt;V, I, NumberNodes&gt;</ref>&amp;<sp/>source);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V, I&gt;</ref>&amp;<sp/><ref refid="classLattice_1ab444412f2030b7594d611c1f7429a953" kindref="member">operator [] </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>I&amp;<sp/>nLevel<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Subscripting<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classVector" kindref="compound">Vector&lt;V, I&gt;</ref>&amp;<sp/><ref refid="classLattice_1ab444412f2030b7594d611c1f7429a953" kindref="member">operator [] </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>I&amp;<sp/>nLevel<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Subscripting<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>need<sp/>the<sp/>form<sp/>of<sp/>the<sp/>lattice<sp/>at<sp/>the<sp/>&apos;base&apos;<sp/>of<sp/>the<sp/>pyramid.<sp/>This</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>will<sp/>be<sp/>needed<sp/>when<sp/>we<sp/>use<sp/>backward<sp/>induction<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V, I&gt;</ref><sp/>BasePyramidVector()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>BasePyramidSize()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>number<sp/>of<sp/>discrete<sp/>points<sp/>at<sp/>end</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/>numberNodes()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Total<sp/>number<sp/>of<sp/>mesh<sp/>points</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVector" kindref="compound">Vector&lt;V, I&gt;</ref><sp/><ref refid="classLattice_1a0454fa42ebad2e9fbb71e884f3befaf6" kindref="member">BasePyramidVector</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classLattice_1a37afc93f46019f322291307c1bed2e11" kindref="member">BasePyramidSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>number<sp/>of<sp/>discrete<sp/>points<sp/>at<sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>I<sp/><ref refid="classLattice_1a114af77d5b77fa52ffd28c42f7f97b5f" kindref="member">numberNodes</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Total<sp/>number<sp/>of<sp/>mesh<sp/>points</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/Lattice.cc&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>

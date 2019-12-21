@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_TestAliasNamespace_8cc">
+<title>tests/TestAliasNamespace.cc File Reference</title>
+<indexterm><primary>tests/TestAliasNamespace.cc</primary></indexterm>
+<programlisting>#include &lt;string&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for TestAliasNamespace.cc:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="TestAliasNamespace_8cc__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespaceDatasimFunctions">DatasimFunctions</link></para>
+</listitem>
+            <listitem><para> <link linkend="_namespacemyFunctions">myFunctions</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_TestAliasNamespace_8cc_1a1446b168038e850e8a9ed771998ae16d">algorithm</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespacemyFunctions_1a043870b92253dd0fc566168f21eca13f">myFunctions::first</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_namespacemyFunctions_1a03fb4c33a9d547e52ca6be71c95029d5">myFunctions::second</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_TestAliasNamespace_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>double(* <link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">DatasimFunctions::first</link> )()</para>
+</listitem>
+            <listitem><para>double(* <link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">DatasimFunctions::second</link> )()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_TestAliasNamespace_8cc_1a1446b168038e850e8a9ed771998ae16d"/>    <section>
+    <title>algorithm()</title>
+<indexterm><primary>algorithm</primary><secondary>TestAliasNamespace.cc</secondary></indexterm>
+<indexterm><primary>TestAliasNamespace.cc</primary><secondary>algorithm</secondary></indexterm>
+<para><computeroutput>double algorithm ( )</computeroutput></para><para>
+Definition at line 25 of file TestAliasNamespace.cc.</para>
+<programlisting>26 {
+27 &#32;&#32;&#32;&#32;
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_namespaceDatasimFunctions_1af51cb9dc97654b194cd73ea7340591f1">DatasimFunctions::first</link>()&#32;+&#32;<link linkend="_namespaceDatasimFunctions_1a1619972125d80d0f434b543acca662e6">DatasimFunctions::second</link>();
+29 }
+</programlisting>    </section><anchor xml:id="_TestAliasNamespace_8cc_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>TestAliasNamespace.cc</secondary></indexterm>
+<indexterm><primary>TestAliasNamespace.cc</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line 40 of file TestAliasNamespace.cc.</para>
+<programlisting>41 {
+42 
+43 &#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>DS&#32;=&#32;<link linkend="_namespaceDatasimFunctions">DatasimFunctions</link>;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Shorthand,&#32;alias</emphasis>
+44 &#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>MF&#32;=&#32;<link linkend="_namespacemyFunctions">myFunctions</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Shorthand,&#32;alias</emphasis>
+45 &#32;&#32;&#32;&#32;
+46 &#32;&#32;&#32;&#32;<link linkend="_namespacemyFunctions_1a043870b92253dd0fc566168f21eca13f">DS::first</link>=&#32;<link linkend="_namespacemyFunctions_1a043870b92253dd0fc566168f21eca13f">MF::first</link>;
+47 &#32;&#32;&#32;&#32;<link linkend="_namespacemyFunctions_1a03fb4c33a9d547e52ca6be71c95029d5">DS::second</link>=&#32;<link linkend="_namespacemyFunctions_1a03fb4c33a9d547e52ca6be71c95029d5">MF::second</link>;
+48 
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;d&#32;=&#32;<link linkend="_TestAliasNamespace_8cc_1a1446b168038e850e8a9ed771998ae16d">algorithm</link>();
+50 
+51 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;d&#32;&lt;&lt;&#32;std::endl;
+52 
+53 }
+</programlisting></section>
+</section>
+</section>

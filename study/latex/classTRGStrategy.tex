@@ -2,6 +2,10 @@
 \label{classTRGStrategy}\index{TRGStrategy@{TRGStrategy}}
 
 
+{\ttfamily \#include $<$Binomial\+Lattice\+Strategy.\+hh$>$}
+
+
+
 Inheritance diagram for T\+R\+G\+Strategy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,13 +25,52 @@ Collaboration diagram for T\+R\+G\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classTRGStrategy_a48a3eac7077e04eba3c0a310330b72a7}\label{classTRGStrategy_a48a3eac7077e04eba3c0a310330b72a7}} 
-{\bfseries T\+R\+G\+Strategy} (double vol, double interest, double delta)
+\mbox{\hyperlink{classTRGStrategy_a48a3eac7077e04eba3c0a310330b72a7}{T\+R\+G\+Strategy}} (double vol, double interest, double delta)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{BinomialLatticeStrategy_8hh_source_l00085}{85}} of file \mbox{\hyperlink{BinomialLatticeStrategy_8hh_source}{Binomial\+Lattice\+Strategy.\+hh}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTRGStrategy_a48a3eac7077e04eba3c0a310330b72a7}\label{classTRGStrategy_a48a3eac7077e04eba3c0a310330b72a7}} 
+\index{TRGStrategy@{TRGStrategy}!TRGStrategy@{TRGStrategy}}
+\index{TRGStrategy@{TRGStrategy}!TRGStrategy@{TRGStrategy}}
+\doxysubsubsection{\texorpdfstring{TRGStrategy()}{TRGStrategy()}}
+{\footnotesize\ttfamily T\+R\+G\+Strategy\+::\+T\+R\+G\+Strategy (\begin{DoxyParamCaption}\item[{double}]{vol,  }\item[{double}]{interest,  }\item[{double}]{delta }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{BinomialLatticeStrategy_8cc_source_l00155}{155}} of file \mbox{\hyperlink{BinomialLatticeStrategy_8cc_source}{Binomial\+Lattice\+Strategy.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156         : \mbox{\hyperlink{classBinomialLatticeStrategy_a30116db67055ec31490b298ad9fda14a}{BinomialLatticeStrategy}}(vol, interest, delta)}
+\DoxyCodeLine{00157 \{}
+\DoxyCodeLine{00158     \mbox{\hyperlink{classBinomialLatticeStrategy_a2c17c2472572ea3ae463c7dd079c3035}{bType}} = \mbox{\hyperlink{BinomialLatticeStrategy_8hh_add398b812ca9f586ea244ce5a9dc8c99a0c6c9746e1005a59aad5820dd028191c}{Additive}};}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160     \textcolor{comment}{// Needed for additive method: page 19 formula 2.19 }}
+\DoxyCodeLine{00161     \textcolor{comment}{// "v" is "nu" here, for "v" see  page 17 formula 2.14}}
+\DoxyCodeLine{00162     \textcolor{keywordtype}{double} nu = \mbox{\hyperlink{classBinomialLatticeStrategy_ac86b80f7966630aec0f9248598ad26ae}{r}} -\/ 0.5 * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}};}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164     \textcolor{keywordtype}{double} nudt = nu * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}};}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     \textcolor{comment}{// TRG parameters: page 19 formula 2.19}}
+\DoxyCodeLine{00167     \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}} = std::sqrt( \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a6ba04fb7c76863093785d28ea47a47ce}{s}} * \mbox{\hyperlink{classBinomialLatticeStrategy_a4bc12b761f54d17c11444198d9315ee0}{k}} + nudt * nudt );}
+\DoxyCodeLine{00168     \mbox{\hyperlink{classBinomialLatticeStrategy_a42c25bcca50ca3135b0c7dc6cc0f27e7}{d}} = -\/ \mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}};}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170     \mbox{\hyperlink{classBinomialLatticeStrategy_a6c24c65beebfe499e8e4c1f2950dbc1f}{p}} = 0.5 * (1.0 + (nudt/\mbox{\hyperlink{classBinomialLatticeStrategy_af89429fe1208f6b4ab2175bbc59019c3}{u}}) );}
+\DoxyCodeLine{00171 \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/duffy/Binomial\+Lattice\+Strategy.\+hh\item 
-src/Binomial\+Lattice\+Strategy.\+cc\end{DoxyCompactItemize}
+include/duffy/\mbox{\hyperlink{BinomialLatticeStrategy_8hh}{Binomial\+Lattice\+Strategy.\+hh}}\item 
+src/\mbox{\hyperlink{BinomialLatticeStrategy_8cc}{Binomial\+Lattice\+Strategy.\+cc}}\end{DoxyCompactItemize}

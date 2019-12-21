@@ -2,6 +2,9 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classJRStrategy">
 <title>JRStrategy Class Reference</title>
 <indexterm><primary>JRStrategy</primary></indexterm>
+<para>
+<computeroutput>#include &lt;BinomialLatticeStrategy.hh&gt;</computeroutput>
+</para>
 Inheritance diagram for JRStrategy:<para>
     <informalfigure>
         <mediaobject>
@@ -23,12 +26,37 @@ Collaboration diagram for JRStrategy:<para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classJRStrategy_1a36c42ba9880af4425a68d7784bce5057"/><emphasis role="strong">JRStrategy</emphasis> (double vol, double interest, double delta)</para>
+            <listitem><para><link linkend="_classJRStrategy_1a36c42ba9880af4425a68d7784bce5057">JRStrategy</link> (double vol, double interest, double delta)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 65 of file BinomialLatticeStrategy.hh.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classJRStrategy_1a36c42ba9880af4425a68d7784bce5057"/>    <section>
+    <title>JRStrategy()</title>
+<indexterm><primary>JRStrategy</primary><secondary>JRStrategy</secondary></indexterm>
+<indexterm><primary>JRStrategy</primary><secondary>JRStrategy</secondary></indexterm>
+<para><computeroutput>JRStrategy::JRStrategy (double vol, double interest, double delta)</computeroutput></para><para>
+Definition at line 100 of file BinomialLatticeStrategy.cc.</para>
+<programlisting>101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_classBinomialLatticeStrategy_1a30116db67055ec31490b298ad9fda14a">BinomialLatticeStrategy</link>(vol,&#32;interest,&#32;delta)
+102 {
+103 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;k2&#32;=&#32;std::sqrt(<link linkend="_classBinomialLatticeStrategy_1a4bc12b761f54d17c11444198d9315ee0">k</link>);
+104 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3">u</link>&#32;=&#32;<link linkend="_Complex_8cc_1aeb56775d93a065d4bd643a5ed679db8c">std::exp</link>(<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>&#32;*&#32;k2);
+105 
+106 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1a42c25bcca50ca3135b0c7dc6cc0f27e7">d</link>&#32;=&#32;1.0/<link linkend="_classBinomialLatticeStrategy_1af89429fe1208f6b4ab2175bbc59019c3">u</link>;
+107 
+108 &#32;&#32;&#32;&#32;<link linkend="_classBinomialLatticeStrategy_1a6c24c65beebfe499e8e4c1f2950dbc1f">p</link>&#32;=&#32;0.5&#32;+&#32;((<link linkend="_classBinomialLatticeStrategy_1ac86b80f7966630aec0f9248598ad26ae">r</link>&#32;-&#32;0.5&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>&#32;*&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>)&#32;*&#32;k2&#32;*&#32;0.5)&#32;/&#32;<link linkend="_classBinomialLatticeStrategy_1a6ba04fb7c76863093785d28ea47a47ce">s</link>;
+109 }
+</programlisting></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-include/duffy/BinomialLatticeStrategy.hhsrc/BinomialLatticeStrategy.cc</section>
+include/duffy/<link linkend="_BinomialLatticeStrategy_8hh">BinomialLatticeStrategy.hh</link>src/<link linkend="_BinomialLatticeStrategy_8cc">BinomialLatticeStrategy.cc</link></section>
+</section>
