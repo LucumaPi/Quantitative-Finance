@@ -1,0 +1,17 @@
+sudo: false
+
+branches:
+  only:
+    - development
+
+script:
+  - cd study
+  - doxygen Doxyfile
+
+deploy:
+    provider: pages
+    skip-cleanup: true
+    local_dir: study/html
+    github-token: $GITHUB_TOKEN
+    on:
+      branch: development
