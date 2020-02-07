@@ -99,7 +99,7 @@ message(STATUS "Chapter 15: director, TestCayleyTransform, TestNewLattice2 and T
 # add_executable(TestBlackScholes TestBlackScholes.cc)
 # add_executable(TestSTD TestSTD.cc)
 add_executable(TestInstrument TestInstrument.cc)
-add_executable(TestIBVP TestIBVP.cc)
+#add_executable(TestIBVP TestIBVP.cc)
 message(STATUS "Chapter 16: TestBlackScholes.")
 
 
@@ -165,5 +165,5 @@ target_link_libraries(TestNewLattice2 PRIVATE duffy)
 # target_link_libraries(TestBlackScholes PRIVATE duffy)
 # target_link_libraries(TestSTD PRIVATE duffy)
 target_link_libraries(TestInstrument PRIVATE duffy)
-target_link_libraries(TestIBVP PRIVATE duffy)
+#target_link_libraries(TestIBVP PRIVATE duffy)
 # target_link_libraries(FunctionWrapper PRIVATE duffy)

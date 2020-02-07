@@ -1,0 +1,463 @@
+\begin{frame}[t]{\secname}
+	\begin{block}{Main equation}
+		All formulas are derived by~\eqref{eq:main} equation.
+		\begin{equation}\label{eq:main}
+			\dl S=\mu S \dl t+\sigma S \dl z,
+		\end{equation}
+		where $\mu$ is the expected instantaneous rate of return on the underlying asset, $\sigma$ is the instantaneous volatility of the rate of return and $\dl z$ is a Wiener process.
+	\end{block}
+\end{frame}
+
+\lstinputpath{../../src/}
+
+\begin{frame}[fragile]
+\lstinputlisting[
+	caption={\lstinline|updateLattice| method of \lstinline|BinomialLatticeStrategy|.},
+	label=updateLattice,
+	firstline=23,
+	lastline=29,
+	basicstyle=\scriptsize
+]{BinomialLatticeStrategy.cc}
+\lstinputlisting[
+caption={\lstinline|CRRStrategy| method of \lstinline|BinomialLatticeStrategy|.},
+label=CRRStrategy,
+firstline=50,
+lastline=70,
+basicstyle=\scriptsize
+]{BinomialLatticeStrategy.cc}
+%\begin{lstlisting}
+%$\llabel{class}$class D : public B
+%{ // Derived class
+%private:
+%	int* iarr;
+%public:
+%	D(int N) { iarr = new int[N]; }
+%	~D() { std::cout << "Derived destructor\n"; delete [] iarr; }
+%};
+%\end{lstlisting}
+%\begin{enumerate}
+%	\item[\ref{class}] \lstinline|class D|
+%\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]%[label=conclusion, standout,fragile]{Conclusion}
+\begin{plantuml}
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Context.puml
+
+class Car
+
+Driver - Car : drives >
+Car *- Wheel : have 4 >
+Car -- Person : < owns
+@enduml
+\end{plantuml}
+\end{frame}
+
+\subsection{\alert{Black-Scholes-Merton}: exact, log-normal distribution}
+
+\begin{frame}[t]{\subsecname}
+	\begin{table}[ht!]
+		\caption{First table.}\label{tab:1}
+		\begin{tabular}{c|c}
+			\textbf{Formula} & \textbf{Description}\\\hline
+			\only<1>{\alert{Samuelson} & Precursor of B-S.}
+			\only<2>{\alert{Black-Scholes-Merton} & Progress in option pricing.}
+		\end{tabular}
+	\end{table}
+\only<1>{
+	\begin{equation}
+	c= Se^{\left(\rho-w\right)T} N\left(d_{1}\right)-Xe^{\left(-wT\right)}N\left(d_{2}\right)\tag{Samuelson}
+	\end{equation}
+	where
+	\begin{align*}
+	d_{1}&=\frac{\ln\left(\frac{S}{X}\right)+\left(\rho+\frac{\sigma^{2}}{2}\right)T}{\sigma\sqrt{T}}.\\
+	d_{2}&=d_{1}-\sigma\sqrt{T}.
+	\end{align*}
+	where $\rho$ is the average rate of growth of the share price and $w$ is the averate of growth of the share price and $w$ is the average rate of growth in the value of the call.
+}
+
+\only<2>{
+	\begin{align}
+		\begin{split}
+			c&= S N\left(d_{1}\right)-Xe^{-rT}N\left(d_{2}\right)\\
+			p&= Xe^{-rT}N\left(-d_{2}\right)-SN\left(-d_{1}\right)
+		\end{split}\tag{B-S}
+	\end{align}
+	where
+	\begin{align*}
+		d_{1}&=\frac{\ln\left(\frac{S}{X}\right)+\left(r+\frac{\sigma^{2}}{2}\right)T}{\sigma\sqrt{T}}.\\
+		d_{2}&=d_{1}-\sigma\sqrt{T}.
+	\end{align*}
+	where $S$ is the stock price, $X$ is the strike price of option, $r$ is the risk-free interest rate, $T$ is the time to expiration in years, $\sigma$ is the volatility of the relative price change of the underlying stock price and $N\left(x\right)$ is the cumulative normal distribution.
+}
+\end{frame}
+
+\subsection{\alert{Trees}: numerical method}
+
+\begin{frame}[t]{\subsecname}
+	\begin{table}[ht!]
+		\begin{tabular}{c|c}
+			\textbf{Formula} & \textbf{Description}\\\hline
+			\only<1>{\alert{Binomial trees} & }
+		\end{tabular}
+	\end{table}
+\only<1>{
+	The number of paths leading to a node $\left(j,i\right)$ is equal to \alert{$\binom{j}{i}$} and the corresponding probability of reaching node $\left(j,i\right)$ is \alert{$\binom{j}{i}p^{i}{\left(1-p\right)}^{j-i}$}.
+	\begin{align}
+	\begin{split}
+	c&=e^{-rT}\sum_{i=0}^{n}\binom{n}{i}p^{i}{\left(1-p\right)}^{n-i}\max\left[Su^{i}d^{n-i}-X,0\right].\\
+	p&=e^{-rT}\sum_{i=0}^{n}\binom{n}{i}p^{i}{\left(1-p\right)}^{n-i}\max\left[X-Su^{i}d^{n-i},0\right].
+	\end{split}
+	\end{align}
+}
+\end{frame}
+
+
+%{%
+%	\setbeamertemplate{frame footer}{
+%		CRR: Cox, Ross, Rubinstein\\
+%		JR:\\
+%		TRG:\\
+%		EQP:\\
+%		ModCRR:
+\begin{frame}{Binomial Method}
+	\begin{table}
+		\caption{European Put (exact: 4.0733): $T=1$, $S=5$, $K=10$, $r=0.12$, $\sigma=0.5$.}
+		\begin{tabular}{@{} llll @{}}
+			\toprule
+					&	$N=256$	&	$N=512$	&	$N=1024$\\
+			\midrule
+			CRR									& 4.07278 & 4.07309 & 4.07325\\
+			JR									& 4.07248 & 4.07324 & 4.07316\\
+			TRG									& 4.07248 & 4.07324 & 4.07316\\
+			EQP									& 4.07266 & 4.07302 & 4.0732 \\
+			Modified CRR				& 4.07174 & 4.0725  & 4.07288\\
+			Cayley JR Transform	& 4.07248 & 4.07324 & 4.07316\\
+			Cayley CRR					& 4.07275 & 4.07308 & 4.07325\\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+%}
+%}
+
+%{%
+%	\setbeamertemplate{frame footer}{
+%		CRR: Cox, Ross, Rubinstein\\
+%		JR:\\
+%		TRG:\\
+%		EQP:\\
+%		ModCRR:
+\begin{frame}{Binomial Method}
+	\begin{table}
+		\caption{European Call (exact: 2.1334): $T=0.25$, $S=60$, $K=65$, $r=0.08$, $\sigma=0.30$.}
+		\begin{tabular}{@{} llll @{}}
+		\toprule
+		&	$N=256$	&	$N=512$	&	$N=1024$\\
+		\midrule
+		CRR									& 2.13395 & 2.13464 & 2.13404\\
+		JR									& 2.13468 & 2.1319  & 2.13405\\
+		TRG									& 2.13471 & 2.13191 & 2.13406\\
+		EQP									& 2.12669 & 2.12962 & 2.13046\\
+		Modified CRR				& 2.12951 & 2.13144 & 2.1324 \\
+		Cayley JR Transform	& 2.13468 & 2.1319  & 2.13405\\
+		Cayley CRR					& 2.13398 & 2.13466 & 2.13405\\
+		\bottomrule
+	\end{tabular}
+	\end{table}
+\end{frame}
+%}
+%}
+
+\begin{frame}{Blocks}
+	Three different block environments are pre-defined and may be styled with an
+	optional background color.
+	
+	\begin{columns}[T,onlytextwidth]
+		\column{0.5\textwidth}
+		\begin{block}{Default}
+			Block content.
+		\end{block}
+		
+		\begin{alertblock}{Alert}
+			Block content.
+		\end{alertblock}
+		
+		\begin{exampleblock}{Example}
+			Block content.
+		\end{exampleblock}
+		
+		\column{0.5\textwidth}
+		
+		\metroset{block=fill}
+		
+		\begin{block}{Default}
+			Block content.
+		\end{block}
+		
+		\begin{alertblock}{Alert}
+			Block content.
+		\end{alertblock}
+		
+		\begin{exampleblock}{Example}
+			Block content.
+		\end{exampleblock}
+		
+	\end{columns}
+\end{frame}
+
+\section{The Finite Difference Method for PDEs}
+\subsection{Mathematical Background}
+
+\begin{frame}[t]{\subsecname}
+In general, the PDEs of relevance are of the \emph{convection}-\emph{diffusion}-\emph{reaction} type in $n$ space variables and one time variable. The space variables correspond to underlying financial quantities such as an asset, volatility or interest rate while the non-negative time variable $t$ is bounded above by the expiration $T$. The space variables are usually defined in their respective positive half-planes.
+
+We model derivatives by \emph{initial boundary value problems} of parabolic type. To this end, consider the general parabolic equation:
+\begin{equation}\label{eq:gpe}
+Lu\equiv\sum_{i,j=1}^{n}a_{ij}\left(x,t\right)\diffp[1,1]{u}{x_{i},x_{j}}+\sum_{j=1}^{n}b_{j}\diffp{u}{x_{j}}+c\left(x,t\right)u-\diffp{u}{t}=f\left(x,t\right)
+\end{equation}
+where the functions $a_{ij}$, $b_{j}$, $c$ and $f$ are real valued, $a_{ij}=a_{ji}$ and:
+\begin{equation}
+\sum_{i,j=1}^{n}a_{ij}\left(x,t\right)a_{i}a_{j}>0\text{ if }\sum_{j=1}^{n}a^{2}_{j}>0.
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+In equation~\eqref{eq:gpe} the variable $x$ is a point in $n$-dimensional space and $t$ is considered to be a positive time variable. Equation~\eqref{eq:gpe} is the general equation that describes the behaviour of many derivative types. For example, in the one-dimensional case $\left(n=1\right)$ it reduces to the Black-Scholes equation (here $t^{\ast}=T-t$):
+\begin{equation}\label{eq:onefactor}
+\diffp{V}{t^{\ast}}+\frac{1}{2}\sigma^{2}S^{2}\diffp[2]{V}{S}+\left(r-D\right)S\diffp{V}{S}-rV=0
+\end{equation}
+where $V$ is the derivative type (for example, a call or put option), $S$ is the underlying asset (or stock), $\sigma$ is the constant volatility, $r$ is the constant interest rate and $D$ is a constant dividend.
+
+Equation~\eqref{eq:onefactor} is a one-factor case and it can be generalized, for example to the multivariate case:
+\begin{equation}\label{eq:severalfactors}
+\diffp{V}{t^{\ast}}+\sum_{j=1}^{n}\left(r-D_{j}\right)S_{j}\diffp{V}{S_{j}}+\frac{1}{2}\sum_{i,j=1}^{n}\rho_{ij}\sigma_{i}\sigma_{j}S_{i}S_{j}\diffp[1,1]{V}{S_{i},S_{j}}-rV=0.
+\end{equation}
+This equation models a multi-asset environment. In this case $\sigma_{i}$ is the volatility of the $i$th asset and $\rho_{ij}$ is the correlation $\left(-1\leq\rho_{ij}\leq 1\right)$ between assets $i$ and $j$. The term $D_{j}$ is the constant dividend for asset $j$.
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+ In this case we see that the elliptic part of equation~\eqref{eq:severalfactors} ($t^{\ast}=T-t$, where $T$ is the expiration) is written as the sum of three terms:
+\begin{itemize}
+	\item Interest earned on cash position \[ r\left(V-\sum_{j=1}^{n}S_{j}\diffp{V}{S_{j}}\right). \]
+	\item Gain from dividend yield: \[ \sum_{j=1}^{n}D_{j}S_{j}\diffp{V}{S_{j}}. \]
+	\item Hedging costs or slippage: \[ -\frac{1}{2}\sum_{i,j=1}^{n}\rho_{ij}\sigma_{i}\sigma_{j}S_{i}S_{j}\diffp[1,1]{V}{S_{i},S_{j}}. \]
+\end{itemize}
+Our interest is in discovering robust numerical schemes that produce reliable and accurate results irrespective of the size of the parameter values in equation~\eqref{eq:severalfactors}.
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+Equation~\eqref{eq:gpe} has an infinite number of solutions in general. In order to define a unique solution, we need to define some constrains. To this end, we define \emph{initial condition} and \emph{boundary conditios} for~\eqref{eq:gpe}. We achieve this by defining the space in which equation~\eqref{eq:gpe} is assumed to be valid. In general, we denote that there are three types of boundary conditions associated with equation~\eqref{eq:gpe}. These are:
+\begin{itemize}
+	\item First boundary value problem (\emph{Dirichlet problem}).
+	\item Second boundary value problem (\emph{Neumann, Robin problems}).
+	\item Cauchy problem.
+\end{itemize}
+The first boundary value problem is concerned with the solution of equation~\eqref{eq:gpe} in a bounded domain $D=\Omega\times\left(0,T\right)$, where $\Omega$ is bounded subset of $\mathbb{R}^{n}$ and $T$ is a positive number. In this case we seek a solution of equation~\eqref{eq:gpe} satisfying the conditions:
+\begin{equation}\label{eq:bc}
+\begin{split}
+{\left.u\right\vert}_{t=0}&=\phi\left(x\right)\qquad\left(\text{initial condition}\right)\\
+{\left.u\right\vert}_{\Gamma}&=\Psi\left(x,t\right)\quad\left(\text{boundary condition}\right)
+\end{split}
+\end{equation}
+where $\Gamma$ is the boundary of $\Omega$.
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+The boundary conditions in~\eqref{eq:bc} are called \emph{Dirichlet boundary conditions} because the solution is given on the boundary. These conditions arise when we model single and double barrier options in the one-factor case. They also occur when we model plain options on a transformed or truncated domain.
+
+The second boundary value problem is similar to~\eqref{eq:bc} except instead of giving the value of $u$ on the boundary $\Gamma$ the \emph{directional derivatives} are included, as seen in the following example:
+\begin{equation}\label{eq:bvp}
+\left(\diffp{u}{\eta}+a\left(x,t\right)u\right)=\Psi\left(x,t\right),\quad x\in\Gamma.
+\end{equation}
+In the  $a\left(x,t\right)$ and $\Psi\left(x,t\right)$ are known functions of $x$ and $t$, and $\diffp{}{\eta}$ denotes the derivative of $u$ with respect to the outward normal $\eta$ at $\Gamma$. A special case of~\eqref{eq:bvp} is when $a\left(x,t\right)\equiv0$; then~\eqref{eq:bvp} represents \emph{Neumann boundary conditions}. Finally, the solution of the Cauchy problem for~\eqref{eq:gpe} in the infinite region $\mathbb{R}^{n}\times\left(0,T\right)$ is given by the initial condition:
+\begin{equation}\label{eq:ic}
+{\left.u\right\vert}_{t=n}=\varphi\left(x\right)
+\end{equation}
+where $\varphi\left(x\right)$ is a given continuous function and $u\left(x,t\right)$ satisfies equation~\eqref{eq:gpe} in $\mathbb{R}^{n}\times\left(0,T\right)$ and the initial condition~\eqref{eq:ic}.
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+This problem allows negative values of the components of the independent variable $\left(x_{1},\ldots,x_{n}\right)$. A special case of the Cauchy problem can be seen when modeling one-factor European and American options where $x$ plays the role of underlying asset $S$. Boundary conditions are given by values at $S=0$ and at $S=\infty$. For European call options these conditions are:
+\begin{equation}
+\begin{split}
+C\left(0,t\right)&=0\\
+C\left(S,t\right)&\to S\text{ as }S\to\infty.
+\end{split}
+\end{equation}
+Here $C$ (the role palyed by $u$ in equation~\eqref{eq:gpe}) is the price of the call option. For European put options the boundary conditions are:
+\begin{equation}
+\begin{split}
+P\left(0,t\right)&=Ke^{-rt}\\
+P\left(S,t\right)&\to0\text{ as }S\to\infty.
+\end{split}
+\end{equation}
+Here $P$ (the role payed by $u$ in equation~\eqref{eq:gpe}) is the variable representing the price of the put option, $K$ is the strike price, $r$ is the risk-free interest rate, $T$ is the expiration and $t$ is the current time.
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+We sometimes assume the following `\emph{canonical form}' for the operator $L$ in equation~\eqref{eq:gpe} in the one-factor case:
+\begin{equation}
+Lu\equiv-\diffp{u}{t}+\sigma\left(x,t\right)\diffp[2]{u}{x}+\mu\left(x,t\right)\diffp{u}{x}+b\left(x,t\right)u=f\left(x,t\right)
+\end{equation}
+where $\sigma$, $\mu$, $b$ and $f$ are known functions of $x$ and $t$.
+
+For completeness, we formulate the one-factor initial boundary value problem whose solution we wish to approximate using the finite difference method. To this end, we define the interval $\Omega=\left(A,B\right)$ where $A$ and $B$ are two real numbers with $A<B$. Further, let $T>0$ and $D=\Omega\times\left(0,T\right)$. The statement is:
+
+Find a function $u\colon D\rightarrow\mathbb{R}$ such that:
+\begin{align}\label{eq:p1}
+Lu&=\diffp{u}{t}+\sigma\left(x,t\right)\diffp[2]{u}{x}+\mu\left(x,t\right)\diffp{u}{x}+b\left(x,t\right)u=f\left(x,t\right)\text{ in }D\\\label{eq:p2}
+u\left(x,0\right)&=\varphi\left(x\right),\quad x\in\Omega\\\label{eq:p3}
+u\left(A,t\right)&=g_{0}\left(t\right),\quad u\left(B,t\right)=g_{1}\left(t\right),\quad t\in\left(0,T\right).
+\end{align}
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+The initial boundary value problem~\eqref{eq:p1}--\eqref{eq:p3} subsumes many specific cases (in particular it is a generalization of the Black-Scholes equation).
+
+In general, the coefficients $\sigma\left(x,t\right)$ and $u\left(x,t\right)$ represent \emph{volatility} (diffusivity) and \emph{drift} (convection), respectively. Equation~\eqref{eq:p1} is called a \emph{convection}-\emph{diffusion}-\emph{reaction} equation. It serves as a model for many kinds of problems.
+
+Much research has been carried out in this area, both on the continuous problem and its discrete formulations (for example, using finite difference and finite element methods).
+
+The essence of the finite difference method is to discretise equations~\eqref{eq:p1}--\eqref{eq:p3} by defining \emph{discrete mesh points} and approximating the derivatives of the unknown solution of this system at these mesh points.
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+The goal is to find accurate schemes that will be implemented in a programming language as C++ and C\#. Some typical attention points are:
+\begin{itemize}
+	\item The PDE being approximated may need to be preprocessed in some way, for example transforming it from one on a semi-infinite domain to one on a bounded domain.
+	\item Determining which specific finite difference schemes(s) to use based on requirements such as accuracy, efficiency and maintainability.
+	\item Essential difficulties to resolve: \emph{convection dominance}, avoiding oscillations and how to handle discontinuous initial conditions, for example.
+	\item Developing the algorithms and assembling the discrete system of equations prior to implementation.
+\end{itemize}
+\end{frame}
+
+\section{PDE Preprocessing}
+\begin{frame}[t]{\secname}
+A PDE is defined in a region of two-dimensional space defined by the variables $x$ (the underlying space) and time $t$. Regarding the $x$ variable, the range of values can be:
+\begin{description}
+	\item[Infinite domain] $-\infty<x<\infty$.
+	\item[Semi-infinite domain] $0<x<\infty$.
+	\item[Bounded domain] $A<x<B$, where $-\infty<A<B<\infty$.
+\end{description}
+When approximating PDEs by FDM the underlying domain must be transformed to a bounded domain. Thus, we can decide to modify the PDE in some way before approximating it by the FDM:
+\begin{itemize}
+	\item Change the coefficients of the PDE.
+	\item Truncate an infinite or semi-infinite domain to a bounded domain.
+	\item Transform and infinite or semi-infinite domain to a bounded domain by a change of independent variables.
+	\item Change the structure of a PDE (for example, we can use an \emph{integrating factor} to transform a non-conservative PDE to a conservative PDE).
+\end{itemize}
+It is important to determine what the consequences are when modifying a PDE. We now discuss each of the above topics.
+\end{frame}
+
+\subsection{Log Transformation}
+\begin{frame}[t]{\subsecname}
+This is a popular method to transform the Black-Scholes PDE on a semi-infinite interval to a PDE with constant coefficients on a infinite interval. For example, we define $y=\log S$ and we use this new variable in equation~\eqref{eq:onefactor} to producea PDE with constant coefficients:
+\begin{equation}\label{eq:logt}
+\diffp{V}{t^{\ast}}+\frac{1}{2}\sigma^{2}\diffp{v}{y}+v\diffp{V}{y}-rV=0\text{ where } v=r-D-\frac{1}{2}\sigma^{2}
+\end{equation}
+which may be more computationally attractive in certain cases. Furthermore, we can remove the explicit dependence on the convection term by writing equation~\eqref{eq:logt} in \emph{conservative form}:
+\begin{equation}
+\diffp{V}{t^{\ast}}+A\diffp{}{y}\left(B\diffp{V}{y}\right)-rV=0\text{ where }A=\frac{1}{2}\sigma^{2}e^{cy}, B=e^{-cy},c=\frac{2v}{\sigma^{2}}.
+\end{equation}
+\end{frame}
+
+\section{Software Framework for One-Factor Option Models}
+
+\begin{frame}[t]{\secname}
+\begin{itemize}
+	\item To create a seamless mapping from FD algorithms to C++, thus helping us to create code that is built to be maintained and extended. We achieve this end by using decomposition methods and design patterns.
+	\item To experiment with a range of FD schemes (some of which are new in finance) and determine how stable and accurate they are.
+	\item Having determined that a scheme is to our liking, to optimize the code by modifying the design or the code in some way  in order to improve the performance.
+\end{itemize}
+
+We examine \emph{linear convection}-\emph{diffusion}-\emph{reaction PDEs} of non-conservative type and their approximation by finite difference schemes.
+
+\end{frame}
+
+\begin{frame}[t]{\secname}
+We implement a number of \emph{one-step schemes} in this chapter; they all share the property that they compute a solution at time level $n+1$ in terms of the solution at time level $n$. Furthermore, some schemes are implicit (for example, S2, S4 and S5 below) which demands our having to solve a \emph{tridiagonal system} at each time level while others are explicit (S1, S3) and then the solution at time level $n+1$ is computed directly in terms of the solution at time level $n$ without the need to solve a matrix system. The schemes are as follows.
+\begin{description}
+	\item[S1] Explicit Euler (FTCS) scheme.
+	\item[S2] Fully implicit (BTCS) scheme.
+	\item[S3] ADE (several variants based on how we approximate the diffusion, convection and reaction terms in the PDE).
+	\item[S4] Crank-Nicolson.
+	\item[S5] Richardson extrapolation applied to scheme S2.
+\end{description}
+\end{frame}
+
+\begin{frame}[t]{\secname}
+
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+	The use of finite difference methods in finance was first described by Brennan and Schwartz (1978). Finite difference methods, also called grid models, are simply a numerical technique to solve partial differential equations (PDE). Different finite difference methods can be used to price European and American options, as well as many types of exotic options.
+%TODO: Add picture
+	Finite difference models are as we soon will see very similar to tree models. The finite difference methods is basically a numerical approximation of the PDE. here we will give an overview of the three most common finite difference techniques in option pricing:
+	\begin{itemize}
+		\item Explicit finite difference
+		\item Implicit finite difference
+		\item Crank-Nicolson finite difference
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{\secname}
+All the finite difference models described here build on the same main principle. First we build a grid with time along one dimension/axis and price along the other dimension/axis. Just as in a tree model, the time and price movements are discretized. Time increases in increments of $\Delta t$, while the asset changes in amounts of $\Delta S$. These increments are then used to construct a grid of possible combinations of time and asset price levels. The finite difference technique is then used to approximately solve the relevant PDE on this grid. Just as in a tree model one starts at the ``end'' of the grid, at time $T$, and rolls back through the grid. The calculations done on the grid are a bit different, however.
+
+The finite difference models can be used to solve a large class of PDEs, and thereby a large class of options. If we assume that the underlying asset follows a geometric Brownian motion, we get the following Black-Scholes-Merton PDE for any single asset derivatives
+
+\begin{equation}\label{eq:bsmpde}
+\diffp{f}{x}+\frac{1}{2}\diffp[2]{f}{S}\sigma^{2}S^{2}+b\diffp{f}{S}S=rf,
+\end{equation}
+\end{frame}
+
+\begin{frame}
+where $f$ is the value of a derivative security for example a European call $c$ or and American call $C$ or some type of exotic option. We want to solve this PDE along the grid for the particular derivative instrument under consideration. How this is done depends on the chosen finite difference technique, as well as the derivative's contractual details. We start with the explicit finite difference method.
+\end{frame}
+
+\subsection{\alert{Finite Difference Method}: numerical method}
+
+\begin{frame}[t]{\subsecname}
+	\begin{table}[ht!]
+	\begin{tabular}{c|c}
+		\textbf{Formula} & \textbf{Description}\\\hline
+		\only<1>{\alert{Explicit Euler} & }
+		\only<2>{\alert{Implicit Euler} & }
+		\only<3>{\alert{Cranck-Nicholson} & }
+	\end{tabular}
+\end{table}
+\only<1>{
+	\[ \diffp{f}{t}\approx\frac{f_{j+1,i}-f_{j,i}}{\Delta t}, \] where $f_{j,i}$ is the value of the derivative instrument at time step $j$ and price level $i$. The delta, $\diffp{f}{S}$, and the gamma, $\diffp[2]{f}{S}$, are approximated by central differences: \[ \diffp{f}{S}\approx\frac{f_{j+1,i+1}-f_{j+1,i-1}}{2\Delta S}\quad\diffp[2]{f}{S}\approx\frac{f_{j+1,i+1}-2f_{j+1,i}+f_{j+1,i-1}}{\Delta S^{2}}. \] Replacing the partial derivatives in~\eqref{eq:bsmpde} with these approximations, we get \[ \frac{f_{j]1,i}-f_{j,i}}{\Delta t}+\frac{1}{2}\frac{f_{j+1,i+1}-2f_{j+1,i}+f_{j+1,i-1}}{\Delta S^{2}}\sigma^{2}S^{2}+b\frac{f_{j+1,i+1}-f_{j+1,i-1}}{2\Delta S}=rf_{j,i}, \] which can be rewritten as \[ f_{j,i}=\frac{1}{1+r\Delta t}\left(p_{u}f_{j+1,i+1}+p_{m}f_{j+1,i}+p_{d}f_{j+1,i-1}\right), \] where
+}
+\only<2>{
+	\[ \frac{f_{j+1,i}-f_{j,i}}{\Delta t}+\frac{1}{2}\frac{f_{j,i+1}-2f_{j,i}f_{j,i-1}}{\Delta S^{2}}\sigma^{2}S+b\frac{f_{j,i+1}-f_{j,i-1}}{2\Delta S}S=rf_{j,i}, \] which can be rewritten as
+	\begin{align*}
+	f_{j+1,i}&=p_{u}f_{j,i+1}+p_{m}f_{j,i}+p_{d}f_{j,i-1}\\
+	p_{u}&=\frac{1}{2}i\left(b+-v^{2}i\right)\Delta t\\
+	p_{m}&=1+\left(r+v^{2}i^{2}\right)\Delta t\\
+	p_{d}&=\frac{1}{2}i\left(-b-v^{2}i\right)\Delta t
+	\end{align*}
+	If we use $M$ as the number of price steps in the grid, we now need to solve for $M-1$ unknown derivatives values, $f_{j,i}$ on the grid simultaneously
+}
+\only<3>{
+	In this method the approximation of the PDE equation is done by central differences at time step $j+\frac{1}{2}$ instead of $j+1$ as in the explicit finite difference method, or at point $j$ as in the implicit finite difference method.
+	\begin{multline}
+	-\frac{f_{j+1,i}-f_{j,i}}{\Delta t}=\frac{1}{2}\sigma^{2}\frac{\left(f_{j,i+1}-2f_{j,i}f_{j,i-1}\right)+\left(f_{j+1,i+1}-2f_{j+1,i}f_{j+1,i-1}\right)}{2\Delta x^{2}}\\
+	+\left(b-\frac{\sigma^{2}}{2}\right)\frac{\left(f_{j+1,i+1}-f_{j+1,i-1}\right)+\left(f_{j,i+1}-f_{j,i-1}\right)}{4\Delta x}-r\left(\frac{f_{j+1,i}+f_{j,i}}{2}\right), \end{multline}
+	As we can see, the Crank-Nicolson method is combination of the explicit and implicit methods. It is more efficient than the others. In combination with the same boundary conditions as in the implicit finite difference method, the Crank-Nicolson method will make up a tridiagonal system of equations.
+}
+\end{frame}
+
+\subsection{\alert{Monte Carlo Simulation}: numerical method}
+\begin{frame}[t]{\subsecname}
+	\begin{table}[ht!]
+	\begin{tabular}{c|c}
+		\textbf{Formula} & \textbf{Description}\\\hline
+		\only<1>{\alert{Monte Carlo} & }
+	\end{tabular}
+\end{table}
+\only<1>{
+	\[ S+\dl S = S\exp\left[\left(\mu-\frac{1}{2}\sigma^{2}\right)\dl t+\sigma\dl z\right], \] where $\dl z$ is a Wiener process with standard deviation $1$ and mean $0$. To simulate the process, we consider its values at given discrete time intervals, $\Delta t$ apart: \[ S+\Delta S=S\exp\left[\left(\mu-\frac{1}{2}\sigma^{2}\right)\Delta t+\sigma\epsilon_{t}\sqrt{\Delta t}\right], \] where $\Delta S$ is the change in $S$ in the chosen time interval $\Delta t$, and $\varepsilon_{t}$ is a random drawing from a standard normal distribution. The main drawback of Monte Carlo simulation is that it is computer-intensive. A minimum of $10000$ simulations are typically necessary to price an option with satisfactory accuracy. The standard error in the estimated value from the standard Monte Carlo simulation is normally related to the square root of the number of simulations. More precisely, if $s$ is the standard deviation of the payoffs from $n$ simulations, then the standard error is given by $\frac{s}{\sqrt{n}}$. This means that to double of accuracy, we will need to quadruple the number of simulations. %So if we want to double the accuracy from $10000$ simulations, we will need $40000$ simulations, and so on.
+}
+\end{frame}

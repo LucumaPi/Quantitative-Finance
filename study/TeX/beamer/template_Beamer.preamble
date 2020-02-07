@@ -1,0 +1,176 @@
+\documentclass[
+	10pt,
+	aspectratio=1610,%spanish,utf8,handout,
+	xcolor={table,svgnames,x11names},
+%	noamssymb,
+%	noamsthm,
+	notheorems
+]{beamer}
+
+\usepackage[lite,subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
+\usepackage[ISO]{diffcoeff}
+\usefonttheme{professionalfonts}
+
+\usepackage{etoolbox,ifluatex}
+\ifluatex
+	\usepackage{fontspec}%[no-math]
+%	\setsansfont{TeX Gyre Heros}%Consolas
+	\setmonofont{Fira Code}[
+	Contextuals=Alternate  % Activate the calt feature
+	]
+	\setsansfont[BoldFont={Fira Sans SemiBold}]{Fira Sans Book}
+%\usepackage{mathspec}
+%	\setsansfont[
+%		BoldFont={Fira Sans},
+%		Numbers={OldStyle}
+%	]{Fira Sans Light}
+%	\setmathsfont(Digits)[Numbers={Lining, Proportional}]{Fira Sans Light}
+	\usepackage{listings}
+	\usepackage{lstfiracode} % https://ctan.org/pkg/lstfiracode
+	\lstset{
+		language=C++,
+		style=FiraCodeStyle,   % Use predefined FiraCodeStyle
+		basicstyle=\ttfamily,   % Use \ttfamily for source code listings
+		commentstyle=\color{orange},
+		tabsize=2,
+		mathescape,
+		%	literate={~} {$\sim$}{1},
+		moreliterate=
+		{;;}{{;;}}2
+		{///}{{///}}3
+	}
+	\makeatletter
+	\patchcmd{\PEX@}{\dp\Pbox@>\dp\z@}{\ht\Pbox@>\dp\z@}{}{}
+	\patchcmd{\SQEX@}{\dp\Sbox@>\dp0}{\ht\Sbox@>\dp0}{}{}
+%	\patchcmd{\PEX@}{\ifdim\dp\Pbox@>\dp\z@}{\ifdim\ht\Pbox@>\dp\z@}{}{}
+	\makeatother
+\else
+	\usepackage[T1]{fontenc}
+\fi
+
+\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
+
+\usepackage{booktabs}
+\usepackage[
+	backend = biber,
+	style = numeric,
+	defernumbers = true,
+	sorting = ynt,
+	maxbibnames = 4,
+	maxcitenames = 4
+]{biblatex}
+\addbibresource{bibliography/reference.bib}
+
+\usetheme[
+	titleformat = smallcaps,%allsmallcaps,allcaps
+	{titleformat plain} = smallcaps,%allsmallcaps,allcaps
+	sectionpage = simple,%none
+	subsectionpage = simple,%progressbar
+	numbering = fraction,%none
+	progressbar = frametitle,%head,foot
+	block = fill,
+	background = dark,
+	{titleformat title} = smallcaps,%allsmallcaps,allcaps
+	{titleformat subtitle} = smallcaps,%allsmallcaps,allcaps
+	{titleformat section} = smallcaps,%allsmallcaps,allcaps
+	{titleformat frame} = smallcaps,%allsmallcaps,allcaps
+]{metropolis}
+\usepackage{appendixnumberbeamer}
+%\setbeamercolor{normal text}{fg = red, bg = blue}
+%\setbeamercolor{alerted text}{fg = red, bg = blue}
+%\setbeamercolor{example text}{fg = red, bg = blue}
+%\setbeamercolor{progress bar}{fg = red, bg = blue}
+%\setbeamercolor{title separator}{fg = red, bg = blue}
+%\setbeamercolor{progress bar in head/foot}{fg = red, bg = blue}
+%\setbeamercolor{progress bar in section page}{fg = red, bg = blue}
+%\theoremstyle{definition}
+%\usecolortheme{sidebartab}
+\usepackage{environ}
+%% choose a better name
+\NewEnviron{Bmatrix2}{%
+	\LEFTRIGHT\lcbrace\rcbrace{\,\begin{matrix}\BODY\end{matrix}\,}%
+}
+\makeatletter
+\NewEnviron{cases2}{%
+	\def\arraystretch{1.2}%
+	\LEFTRIGHT\lcbrace.{%
+		\,\array{@{}l@{\quad}l@{}}\BODY\endarray\,
+	}%
+}
+\makeatother
+
+\usepackage{pifont}
+
+\makeatletter
+
+\AtBeginDocument{%
+	% Counter `lstlisting' is not defined before `\begin{document}'
+	\newcounter{llabel}[lstlisting]%
+	\renewcommand*{\thellabel}{%
+		\ifnum\value{llabel}<0 %
+		\@ctrerr
+		\else
+		\ifnum\value{llabel}>10 %
+		\@ctrerr
+		\else
+		\protect\ding{\the\numexpr\value{llabel}+201\relax}%
+		\fi
+		\fi
+	}%
+}
+\newlength{\llabelsep}
+\setlength{\llabelsep}{-400pt}
+
+\newcommand*{\llabel}[1]{%
+	\begingroup
+	\refstepcounter{llabel}%
+	\label{#1}%
+	\llap{%
+		\thellabel\kern\llabelsep
+		%\hphantom{\lst@numberstyle\the\lst@lineno}%
+		\kern\lst@numbersep
+	}%
+	\endgroup
+}
+\makeatother
+
+\setbeamertemplate{bibliography item}{%
+\ifboolexpr{ test {\ifentrytype{book}} or test {\ifentrytype{mvbook}}
+or test {\ifentrytype{collection}} or test {\ifentrytype{mvcollection}}
+or test {\ifentrytype{reference}} or test {\ifentrytype{mvreference}} }
+{\setbeamertemplate{bibliography item}[book]}
+{\ifentrytype{online}
+{\setbeamertemplate{bibliography item}[online]}
+{\setbeamertemplate{bibliography item}[article]}}%
+\usebeamertemplate{bibliography item}}
+
+\defbibenvironment{bibliography}
+{\list{}
+{\settowidth{\labelwidth}{\usebeamertemplate{bibliography item}}%
+\setlength{\leftmargin}{\labelwidth}%
+\setlength{\labelsep}{\biblabelsep}%
+\addtolength{\leftmargin}{\labelsep}%
+\setlength{\itemsep}{\bibitemsep}%
+\setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\item}
+
+\graphicspath{{images/}}
+
+\usepackage{epstopdf}
+\epstopdfDeclareGraphicsRule{.svg}{pdf}{.pdf}{
+	inkscape -z --file=#1 --export-pdf=\OutputFile
+}
+\usepackage[output=svg]{plantuml}
+
+\title{Quantitative Finance in \lstinline|C++|}
+\subtitle{The Binomial Method and One-Factor Option Model}
+\date{\today}
+\author{Oromion}
+\institute{SoftButterfly}
+\titlegraphic{\hfill\includegraphics[height=0.3\paperheight]{softbutterfly}}
+%\setbeamertemplate{background}[grid][step=1cm]
+%\setbeamercovered{transparent}
+%\listfiles
+%\usepackage{pgfpages}
+%\setbeameroption{second mode text on second screen}

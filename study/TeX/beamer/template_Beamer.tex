@@ -1,0 +1,32 @@
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['aux','log','nav','out','snm','synctex.gz','thm','toc',
+% arara: --> 'latex','txt','1.vrb','vrb','pdf']
+% arara: --> }
+% arara: lualatex: { draft: yes }
+% arara: biber
+% arara: lualatex: { shell: true, interaction: nonstopmode }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['aux','log','nav','out','snm','synctex.gz','thm','toc',
+% arara: --> 'latex','txt','1.vrb','vrb']
+% arara: --> }
+\input{template_Beamer.preamble}
+
+\begin{document}
+
+\include{content/portrait}
+\include{content/toc}
+\include{content/introduction}
+\include{content/models}
+\include{content/references}
+\include{content/appendix}
+
+\end{document}
+
+\begin{tikzpicture}[overlay, remember picture]
+	\node[above right=1cm and .8cm of current page.south west] {\includegraphics[width=2.1cm]{gnu}};
+	\node[above =1cm of current page.south] {\includegraphics[width=3.1cm]{todos}};
+	\node[above left=1cm and .8cm of current page.south east] {\includegraphics[width=2.6cm]{gato}};
+\end{tikzpicture}
+\visible<2->{Hello World}

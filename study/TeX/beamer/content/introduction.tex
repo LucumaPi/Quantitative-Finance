@@ -1,0 +1,132 @@
+\section{Introduction}
+
+
+\begin{frame}[t]{\secname}
+We introduce a class of \emph{second-order ordinary differential equations}
+as they contain derivatives up to order $2$ in one independent variable.
+Furthermore, the (unknown) function appearing in the differential equation
+is a function of a single variable. A simple example is the \emph{linear}
+equation
+\begin{equation}\label{eq:linear}
+	Lu\equiv
+	a\left(x\right)u^{\prime\prime}+
+	b\left(x\right)u^{\prime}+c\left(x\right)u=
+	f\left(x\right)
+\end{equation}
+In general we seek a solution $u$ of~\eqref{eq:linear} in conjunction
+with some auxiliary conditions. The coefficients $a$, $b$, $c$ and $f$
+are known functions of the variable $x$. Equation~\eqref{eq:linear} is
+called linear because all coefficients are independent of the unknown
+variable $u$. Furthermore, we have used the following shorthand for
+the first and second order derivatives with respect to $x$:
+\begin{equation}
+	u^{\prime}
+	=\diff{u}{x}\quad\text{and}\quad u^{\prime\prime}=
+	\diff[2]{u}{x}.
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{\secname}
+We examine~\eqref{eq:linear} in some detail because it is part of
+the Black-Scholes equation
+\begin{equation}
+	\diffp{C}{t}+
+	\frac{1}{2}\sigma^{2}S^{2}\diffp[2]{C}{S}+
+	rS\diffp{C}{S}-rC=0
+\end{equation}
+where the asset price $S$ plays the role of the independent variable
+$x$ and $t$ plays the role of time.
+
+We replace the unknown function $u$ by $C$ (the option price).
+Furthermore, in this case, the coefficients in~\eqref{eq:linear} have
+the special form
+\begin{equation}
+	\begin{split}
+		a\left(S\right)&=\frac{1}{2}\sigma^{2}S^{2}\\
+		b\left(S\right)&=rS\\
+		c\left(S\right)&=-r\\
+		f\left(S\right)&=0
+	\end{split}.
+\end{equation}
+In the following chapters our intention is to solve problems of the
+form~\eqref{eq:linear} and we then apply our results to the specialized
+equations in quantitative finance.
+\end{frame}
+
+\subsection{Two-point boundary value problem}
+
+
+\begin{frame}[t]{\subsecname}
+Let us examine a general second-order differential equation given in
+the form
+\begin{equation}\label{eq:second}
+	u^{\prime\prime}=
+	f\left(x;u,u^{\prime}\right)
+\end{equation}
+where the function $f$ depends on three variables. The reader may like
+to check that~\eqref{eq:linear} is a special case of~\eqref{eq:second}.
+In general, there will be many solutions of~\eqref{eq:second} but our
+interest is in defining extra conditions to ensure that it will have a
+unique solution. Intuitively, we might correctly expect that two
+conditions are sufficient, considering the fact that you could
+integrate~\eqref{eq:second} twice and this will deliver two constants
+of integration. To this end, we determine these extra conditions by
+examining~\eqref{eq:second} on a \emph{bounded} interval
+$\left(a,b\right)$. In general, we discuss linear combinations of the
+unknown solution $u$ and its first derivative at these end-points:
+\begin{equation}\label{eq:conditions}
+	\begin{split}
+		a_{0}u\left(a\right)-a_{1}u^{\prime}\left(a\right)
+		&=\alpha,\quad\left|a_{0}\right|+\left|a_{1}\right|\neq0\\
+		b_{0}u\left(a\right)-b_{1}u^{\prime}\left(a\right)
+		&=\beta,\quad\left|b_{0}\right|+\left|b_{1}\right|\neq0
+	\end{split}.
+\end{equation}
+We wish to know the conditions under which problem~\eqref{eq:second},
+~\eqref{eq:conditions} has a unique solution.
+\end{frame}
+
+\begin{frame}[t]{\subsecname}
+%\begin{definition}[Uniformly Lipschitz continuous]
+The function $f\left(x,u,v\right)$ is called
+\emph{uniformly Lipschitz continuous} iff
+\begin{equation}
+	\left|f\left(x;u,v\right)-
+	f\left(x;w,z\right)\right|\leq
+	K\max\left(\left|u-w\right|,\left|v-z\right|\right)
+\end{equation}
+where $K$ is some constant, and $x$, $u$, $w$ and $z$ are real numbers.
+%\end{definition}
+
+%\begin{theorem}\label{thm:ulc}
+Consider the function $f\left(x;u,v\right)$ in~\eqref{eq:second} and
+suppose that it is uniformly Lipschitz continuous in the region $R$,
+defined by:
+\begin{equation}
+	R\colon a\leq x\leq b, u^{2}+v^{2}<\infty.
+\end{equation}
+Suppose, furthermore, that $f$ has continuous derivatives in $R$
+satisfying, for some constant $M$,
+\begin{equation}
+	\diffp{f}{u}>0,\quad\left|\diffp{f}{v}\right|\leq M
+\end{equation}
+and, that
+\begin{equation}
+	a_{0}a_{1}\geq0,\quad b_{0}b_{1}\geq
+	0,\quad\left|a_{0}\right|
+	+\left|b_{0}\right|\neq0.
+\end{equation}
+Then the boundary-value problem~\eqref{eq:second},~\eqref{eq:conditions}
+has a unique solution.
+%\end{theorem}
+\end{frame}
+
+\subsection{Linear boundary value problems}
+
+
+\begin{frame}[t]{\subsecname}
+We now consider a special case of~\eqref{eq:second},
+namely~\eqref{eq:linear}. This is called a \textbf{linear equation}
+and is important in many kinds of applications.
+%A special case of Theorem~\ref{thm:ulc}
+\end{frame}
